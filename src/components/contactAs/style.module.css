@@ -1,0 +1,35 @@
+.section6_wrap {
+  background-color: #F7F7F8;
+  padding: 87px 87px;
+  background-size: cover;
+}
+
+.container {
+  max-width: 95rem;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0px 36px 70px 36px;
+}
+
+@media (min-width: 1536px) {}
+
+@media (min-width: 1280px) {}
+
+@media (max-width: 1024px) {
+  .section6_wrap {
+    padding: 37.8px 0px;
+}
+}
+
+@media (max-width: 768px) {
+  .section6_wrap {
+      padding: 0px;
+      padding-bottom: 37.8px;
+  }
+  .container {
+      max-width: 95rem;
+      align-items: center;
+      margin: 0 auto;
+      padding: 0px;
+  }
+}

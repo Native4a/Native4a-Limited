@@ -1,0 +1,61 @@
+/* All area */
+
+body{
+  background-color: #f7f7f8;
+}
+.container {
+  max-width: 95rem;
+  align-items: center;
+  margin: 0 auto;
+  padding: 200px 36px 0px 36px;
+}
+
+/* Block ① /
+/* Section 1 */
+.sec_wrap {
+  padding: 58px;
+  background-size: cover;
+  z-index: 1;
+}
+
+/* Section 2 */
+.sec2_wrap {
+  padding: 58px;
+  background-size: cover;
+  z-index: 1;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0px 36px 78px 36px;
+  max-width: 95rem;
+}
+
+.sec2_wrap h2 {
+  text-underline-offset: 21px;
+}
+
+/* Media Queries /
+
+  @media screen and (max-width: 1536px) {
+  / Styles for max-width: 1536px 
+}
+
+*/
+
+@media screen and (max-width: 1280px) {
+  /* Styles for max-width: 1280px */
+}
+
+@media screen and (max-width: 1024px) {
+  /* Styles for max-width: 1024px */
+}
+
+@media screen and (max-width: 768px) {
+
+  /* Styles for max-width: 768px */
+  .sec2_wrap {
+    margin-top: 0px;
+    padding: 17px 17px;
+    background-image: none;
+  }
+
+}

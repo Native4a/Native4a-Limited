@@ -2,10 +2,13 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 
+import '../components/variables.css'
+import '../styles/global.css'
 import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 import ArticlePreview from '../components/article-preview'
+
 
 class BlogIndex extends React.Component {
   render() {
@@ -21,18 +24,22 @@ class BlogIndex extends React.Component {
   }
 }
 
+/*=======front end page blog========
+  <ArticlePreview posts={posts} />
+*/
+
 export default BlogIndex
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
-    allContentfulBlogPost(sort: { publishDate: DESC }) {
+    allContentfulBlogPost(sort: {publishDate: DESC}) {
       nodes {
         title
         slug
         publishDate(formatString: "MMMM Do, YYYY")
         tags
         heroImage {
-          gatsbyImage(
+          gatsbyImageData(
             layout: FULL_WIDTH
             placeholder: BLURRED
             width: 424

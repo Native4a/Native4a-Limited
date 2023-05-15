@@ -1,0 +1,116 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--size-max-width);
+  align-items: center;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--size-gutter);
+}
+
+.Navcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 21px 0px;
+}
+
+.Navnavigation {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.NavnavigationItem {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+ul {
+  flex-direction: column;
+}
+
+.menuItem:focus,
+.menuItem:hover {
+  outline: none;
+}
+
+.menuItem:focus .materialIcons,
+.menuItem:hover .materialIcons {
+  color: #342ead;
+}
+
+.menuItem:focus .menuItemLabel,
+.menuItem:hover .menuItemLabel {
+  color: #342ead;
+}
+
+/**SVG css start here**/
+/** Home SVG **/
+.st0{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:13px;}
+/** Horn SVG **/
+.cls1{stroke-width:13px;}
+.cls1,.cls2{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;}
+.cls2{stroke-width:10px;}
+/**SEO search SVG**/
+.cls3,.cls4{fill:none;stroke:#fff;stroke-linejoin:round;stroke-width:11px;}
+.cls4{stroke-linecap:round;}
+/**Cam SVG**/
+.cls5{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:11px;}
+/**Web design SVG**/
+.cls6{stroke-width:10px;}
+.cls6,.cls7{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;}
+.cls7{stroke-width:10px;}
+
+/** Hover **/
+
+@media (max-width: 	1536px) {
+
+}
+
+/**SVG css end**/
+
+.materialIcons {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 26px;
+  color: #fff;
+  transition: 0.25s ease;
+  height: 20px;
+  width: auto;
+}
+
+.materialIconsForHorn {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 26px;
+  color: #fff;
+  transition: 0.25s ease;
+  height: 20px;
+  width: 60%;
+}
+
+.menuItemLabel {
+  display: block;
+  font-size: 10px;
+  color: #fff;
+  transition: 0.25s ease;
+}
+
+@media (max-width: 	1280px) {
+
+}
+  
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 	768px) {
+  .container {
+    padding: 8px 20px;
+    background-color: #fff;
+  }
+}

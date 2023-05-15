@@ -6,7 +6,8 @@
     'Segoe UI Symbol';
   --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
     'Courier New', monospace;
-  --font-serif: 'Times New Roman', Times, serif;
+  --font-serif: 'Poppins', sans-serif;
+
 
   /* palette */
   --white: #fff;
@@ -45,8 +46,10 @@
   --text-lg: 18px;
   --text-xl: 20px;
   --text-2xl: 24px;
+  --text-2-5xl: 28px;
   --text-3xl: 32px;
-  --text-4xl: 48px;
+  --text-3-5xl:40px;
+  --text-4xl: 50px;
   --text-5xl: 64px;
   --text-6xl: 76px;
 
@@ -59,30 +62,46 @@
   /* text */
   /* color */
   --text-color: var(--black);
+  --native-color: #1D1D1D;
   /* size */
   --text-lead: var(--text-lg);
   --text-prose: var(--text-md);
-  --text-title: var(--text-3xl);
+  --text-title: var(--text-3-5xl);
+  --text-subtitle: var(--text-3xl);
   /* tracking */
   --text-prose-tracking: -0.011em;
 
   /* size */
   --size-gutter: var(--space-2xl);
   --size-logo: var(--space-2xl);
-  --size-max-width: 80rem;
+  --size-max-width: 100rem;
 }
 
-@media (min-width: 480px) {
+@media (max-width: 480px) {
   :root {
     --size-gutter: var(--space-3xl);
   }
 }
 
-@media (min-width: 768px) {
-  :root {
+@media (max-width: 768px) {
+  /* :root {
     --text-lead: var(--text-2xl);
-    --text-title: var(--text-4xl);
+    --text-title: var(--text-3xl);
+    --text-subtitle: var(--text-3-5xl);
     --text-prose-tracking: -0.014em;
     --text-prose: var(--text-lg);
-  }
+  }*/
 }
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 	1280px) {
+
+}
+
+@media (min-width: 	1536px) {
+
+}
+  
