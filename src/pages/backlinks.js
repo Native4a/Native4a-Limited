@@ -8,7 +8,7 @@ import { IconContext } from "react-icons";
 import CountUp from 'react-countup';
 
 //components here//
-import Layout from "../components/layout"
+import Layout from "../components/layout" 
 import Seo from "../components/seo"
 import AboutAs from "../components/aboutAs"
 import ContactForm from "../components/contactAs"
