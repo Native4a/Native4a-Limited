@@ -13,13 +13,44 @@ img {
 }
 
 /*-- All area end here--*/
+.SecBg1 {
+  background-image: url('../img/About us Web_01.png');
+  background-size: cover;
+}
 
+.SecBg2 {
+  background-image: url('../img/About us Web_02.png');
+  background-size: cover;
+}
 
+.SecBg3 {
+  background-image: url('../img/About us Web_02.png');
+  background-size: cover;
+}
+
+.SecBg4 {
+  background-image: url('../img/Native_newbanner03.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.SecBg5 {
+  background-image: url('../img/Native_AboutUs_web02.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.SecBg6 {
+  background-image: url('../img/Native_AboutUs_Namecard.png');
+  background-size: cover;
+  background-position: center;
+}
 
 /*-- Block ① start here --*/
 .mainBg {
-  background-image: url('../img/e4e3e3.svg');
+  background-image: url('../img/Native_AboutUs_web.png');
   background-size: cover;
+  background-position: center;
 }
 
 .title {
@@ -193,6 +224,9 @@ video popup
 .seoSpanSquare h2 {
   text-decoration-color: #e4e3e3;
 }
+
+
+
 
 @media screen and (max-width: 1536px) {
   .title {
