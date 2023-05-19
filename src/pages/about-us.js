@@ -58,8 +58,8 @@ class aboutUs extends React.Component {
           </div>
         </section>
         <section className='grid justify-center justify-items-center mt-10'>
-          <h2 className='text-3xl text-gray-700 p-10'>NATIVE ADV LTD</h2>
-          <h3 className='text-5xl text-gray-700'>我們只專注做好一件事。</h3>
+          <h2 className='text-xl md:text-3xl text-gray-700 p-5 md:p-10'>NATIVE ADV LTD</h2>
+          <h3 className='text-3xl md:text-5xl text-gray-700'>我們只專注做好一件事。</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
             <div className="flex justify-center text-6xl px-8">
               <div className="overflow-hidden">
