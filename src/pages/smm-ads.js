@@ -69,7 +69,7 @@ class smmAdsIndex extends React.Component {
                                     <Popup
                                         trigger={
                                             <div className={styles.overlay_container}>
-                                                <img src={plsStep} alt="Girl in a jacket" width="500" height="600" />
+                                                <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
                                             </div>
                                         }
                                         modal
@@ -119,7 +119,7 @@ class smmAdsIndex extends React.Component {
                                             <div className="grid grid-cols-1 gap-6 items-center">
                                                 <div className="">
                                                     {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                                                    <img className="w-32" src={smmPage.servicesImage[0].url} alt="service_Image[0]" />
+                                                    <img className="w-32" src={smmPage.servicesImage[0].url} alt="service_Image[0]" loading="lazy" decoding="async"/>
                                                 </div>
                                                 <div className="text-center text-xl">
                                                     <b>{smmPage.servicesImage[0].title}</b>
@@ -130,7 +130,7 @@ class smmAdsIndex extends React.Component {
                                             <div className="grid grid-cols-1 gap-6 items-center">
                                                 <div className="">
                                                     {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                                                    <img className="w-20" src={smmPage.servicesImage[1].url} alt="service_Image[1]" />
+                                                    <img className="w-20" src={smmPage.servicesImage[1].url} alt="service_Image[1]" loading="lazy" decoding="async"/>
                                                 </div>
                                                 <div className="text-center text-xl">
                                                     <b>{smmPage.servicesImage[1].title}</b>
@@ -141,7 +141,7 @@ class smmAdsIndex extends React.Component {
                                             <div className="grid grid-cols-1 gap-6 items-center">
                                                 <div className="">
                                                     {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                                                    <img className="w-20" src={smmPage.servicesImage[2].url} alt="service_Image[2]" />
+                                                    <img className="w-20" src={smmPage.servicesImage[2].url} alt="service_Image[2]" loading="lazy" decoding="async"/>
                                                 </div>
                                                 <div className="text-center text-xl">
                                                     <b>{smmPage.servicesImage[2].title}</b>
@@ -152,7 +152,7 @@ class smmAdsIndex extends React.Component {
                                             <div className="grid grid-cols-1 gap-6 items-center">
                                                 <div className="">
                                                     {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                                                    <img className="w-20" src={smmPage.servicesImage[3].url} alt="service_Image[3]" />
+                                                    <img className="w-20" src={smmPage.servicesImage[3].url} alt="service_Image[3]" loading="lazy" decoding="async"/>
                                                 </div>
                                                 <div className="text-center text-xl">
                                                     <b>{smmPage.servicesImage[3].title}</b>
@@ -163,7 +163,7 @@ class smmAdsIndex extends React.Component {
                                             <div className="grid grid-cols-1 gap-6 items-center">
                                                 <div className="">
                                                     {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                                                    <img className="w-20" src={smmPage.servicesImage[4].url} alt="service_Image[4]" />
+                                                    <img className="w-20" src={smmPage.servicesImage[4].url} alt="service_Image[4]" loading="lazy" decoding="async"/>
                                                 </div>
                                                 <div className="text-center text-xl">
                                                     <b>{smmPage.servicesImage[4].title}</b>
@@ -174,7 +174,7 @@ class smmAdsIndex extends React.Component {
                                             <div className="grid grid-cols-1 gap-6 items-center">
                                                 <div className="">
                                                     {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                                                    <img className="w-20" src={smmPage.servicesImage[5].url} alt="service_Image[5]" />
+                                                    <img className="w-20" src={smmPage.servicesImage[5].url} alt="service_Image[5]" loading="lazy" decoding="async"/>
                                                 </div>
                                                 <div className="text-center text-xl">
                                                     <b>{smmPage.servicesImage[5].title}</b>
@@ -185,7 +185,7 @@ class smmAdsIndex extends React.Component {
                                             <div className="grid grid-cols-1 gap-6 items-center">
                                                 <div className="">
                                                     {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                                                    <img className="w-20" src={smmPage.servicesImage[6].url} alt="service_Image[6]" />
+                                                    <img className="w-20" src={smmPage.servicesImage[6].url} alt="service_Image[6]" loading="lazy" decoding="async"/>
                                                 </div>
                                                 <div className="text-center text-xl">
                                                     <b>{smmPage.servicesImage[6].title}</b>
@@ -196,7 +196,7 @@ class smmAdsIndex extends React.Component {
                                             <div className="grid grid-cols-1 gap-6 items-center">
                                                 <div className="">
                                                     {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                                                    <img className="w-20" src={smmPage.servicesImage[7].url} alt="service_Image[7]" />
+                                                    <img className="w-20" src={smmPage.servicesImage[7].url} alt="service_Image[7]" loading="lazy" decoding="async"/>
                                                 </div>
                                                 <div className="text-center text-xl">
                                                     <b>{smmPage.servicesImage[7].title}</b>
@@ -207,7 +207,7 @@ class smmAdsIndex extends React.Component {
                                             <div className="grid grid-cols-1 gap-6 items-center">
                                                 <div className="">
                                                     {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                                                    <img className="w-20" src={smmPage.servicesImage[8].url} alt="service_Image[8]" />
+                                                    <img className="w-20" src={smmPage.servicesImage[8].url} alt="service_Image[8]" loading="lazy" decoding="async"/>
                                                 </div>
                                                 <div className="text-center text-xl">
                                                     <b>{smmPage.servicesImage[8].title}</b>

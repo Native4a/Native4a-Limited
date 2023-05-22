@@ -71,7 +71,7 @@ class RootIndex extends React.Component {
                   <Popup
                     trigger={
                       <div className={styles.overlay_container}>
-                        <img src={bN} alt="Girl in a jacket" width="1200" height="600" />
+                        <img src={bN} alt="Girl in a jacket" width="1200" height="600" loading="lazy" decoding="async"/>
                       </div>
                     }
                     modal
@@ -119,7 +119,7 @@ class RootIndex extends React.Component {
                         <div className="flex justify-center">
                           <div>
                             {/*<img src={homePage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                            <img className="w-20" src={homePage.servicesImg.url} alt="service_Video_Production" />
+                            <img className="w-20" src={homePage.servicesImg.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
                           </div>
                         </div>
                         <div className="col-start-2 col-end-4 md:col-start-auto md:col-end-auto">
@@ -137,7 +137,7 @@ class RootIndex extends React.Component {
                         <div className="flex justify-center">
                           <div className="">
                             {/*<img src={homePage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                            <img className="w-20" src={homePage.servicesImg2.url} alt="service_Video_Production" />
+                            <img className="w-20" src={homePage.servicesImg2.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
                           </div>
                         </div>
                         <div className="col-start-2 col-end-4 md:col-start-auto md:col-end-auto">
@@ -155,7 +155,7 @@ class RootIndex extends React.Component {
                         <div className="flex justify-center">
                           <div className="">
                             {/*<img src={homePage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                            <img className="w-20" src={homePage.servicesImg3.url} alt="service_Video_Production" />
+                            <img className="w-20" src={homePage.servicesImg3.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
                           </div>
                         </div>
                         <div className="col-start-2 col-end-4 md:col-start-auto md:col-end-auto">
@@ -173,7 +173,7 @@ class RootIndex extends React.Component {
                         <div className="flex justify-center">
                           <div className="">
                             {/*<img src={homePage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                            <img className="w-20" src={homePage.servicesImg4.url} alt="service_Video_Production" />
+                            <img className="w-20" src={homePage.servicesImg4.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
                           </div>
                         </div>
                         <div className="col-start-2 col-end-4 md:col-start-auto md:col-end-auto">
@@ -191,7 +191,7 @@ class RootIndex extends React.Component {
                         <div className="flex justify-center">
                           <div className="">
                             {/*<img src={homePage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                            <img className="w-20" src={homePage.servicesImg5.url} alt="service_Video_Production" />
+                            <img className="w-20" src={homePage.servicesImg5.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
                           </div>
                         </div>
                         <div className="col-start-2 col-end-4 md:col-start-auto md:col-end-auto">
@@ -209,7 +209,7 @@ class RootIndex extends React.Component {
                         <div className="flex justify-center">
                           <div className="">
                             {/*<img src={homePage.servicesImage[0].url} alt="service_Video_Production"/>*/}
-                            <img className="w-20" src={homePage.servicesImg6.url} alt="service_Video_Production" />
+                            <img className="w-20" src={homePage.servicesImg6.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
                           </div>
                         </div>
                         <div className="col-start-2 col-end-4 md:col-start-auto md:col-end-auto">
@@ -245,7 +245,7 @@ class RootIndex extends React.Component {
                     <Popup
                       trigger={
                         <div className={styles.overlay_container}>
-                          <img src={homePage.clientImage01.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" />
+                          <img src={homePage.clientImage01.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" loading="lazy" decoding="async"/>
                         </div>
                       }
                       modal
@@ -273,7 +273,7 @@ class RootIndex extends React.Component {
                     <div className="w-10/12 m-5">
                       <div className="grid grid-cols-3 gap-4 items-center">
                         <div className="">
-                          <img className="col-end-3 rounded-full 2xl:w-9/12" src={homePage.clientLogo01.url} alt="service_Video_Production" />
+                          <img className="col-end-3 rounded-full 2xl:w-9/12" src={homePage.clientLogo01.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
                         </div>
                         <div className="col-span-2">
                           <div className="pl-4 col-start-3 col-end-9">
@@ -289,7 +289,7 @@ class RootIndex extends React.Component {
                     <Popup
                       trigger={
                         <div className={styles.overlay_container}>
-                          <img src={homePage.clientImage02.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" />
+                          <img src={homePage.clientImage02.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" loading="lazy" decoding="async"/>
                         </div>
                       }
                       modal
@@ -317,7 +317,7 @@ class RootIndex extends React.Component {
                     <div className="w-10/12 m-5">
                       <div className="grid grid-cols-3 gap-4 items-center">
                         <div className="">
-                          <img className="col-end-3 rounded-full 2xl:w-9/12" src={homePage.clientLogo02.url} alt="service_Video_Production" />
+                          <img className="col-end-3 rounded-full 2xl:w-9/12" src={homePage.clientLogo02.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
                         </div>
                         <div className="col-span-2">
                           <div className="pl-4 col-start-3 col-end-9">
@@ -333,7 +333,7 @@ class RootIndex extends React.Component {
                     <Popup
                       trigger={
                         <div className={styles.overlay_container}>
-                          <img src={homePage.clientImage03.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" />
+                          <img src={homePage.clientImage03.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" loading="lazy" decoding="async"/>
                         </div>
                       }
                       modal
@@ -361,7 +361,7 @@ class RootIndex extends React.Component {
                     <div className="w-10/12 m-5">
                       <div className="grid grid-cols-3 gap-4 items-center">
                         <div className="">
-                          <img className="col-end-3 rounded-full" src={homePage.clientLogo03.url} alt="service_Video_Production" />
+                          <img className="col-end-3 rounded-full" src={homePage.clientLogo03.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
                         </div>
                         <div className="col-span-2">
                           <div className="pl-4 col-start-3 col-end-9">
@@ -377,7 +377,7 @@ class RootIndex extends React.Component {
                     <Popup
                       trigger={
                         <div className={styles.overlay_container}>
-                          <img src={homePage.clientImage04.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" />
+                          <img src={homePage.clientImage04.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" loading="lazy" decoding="async"/>
                         </div>
                       }
                       modal
@@ -405,7 +405,7 @@ class RootIndex extends React.Component {
                     <div className="w-10/12 m-5">
                       <div className="grid grid-cols-3 gap-4 items-center">
                         <div className="">
-                          <img className="col-end-3 rounded-full 2xl:w-10/12" src={homePage.clientLogo04.url} alt="service_Video_Production" />
+                          <img className="col-end-3 rounded-full 2xl:w-10/12" src={homePage.clientLogo04.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
                         </div>
                         <div className="col-span-2">
                           <div className="pl-4 col-start-3 col-end-9">
@@ -421,7 +421,7 @@ class RootIndex extends React.Component {
                     <Popup
                       trigger={
                         <div className={styles.overlay_container}>
-                          <img src={homePage.clientImage05.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" />
+                          <img src={homePage.clientImage05.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" loading="lazy" decoding="async"/>
                         </div>
                       }
                       modal
@@ -449,7 +449,7 @@ class RootIndex extends React.Component {
                     <div className="w-10/12 m-5">
                       <div className="grid grid-cols-3 gap-4 items-center">
                         <div className="">
-                          <img className="col-end-3 rounded-full 2xl:w-9/12" src={homePage.clientLogo05.url} alt="service_Video_Production" />
+                          <img className="col-end-3 rounded-full 2xl:w-9/12" src={homePage.clientLogo05.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
                         </div>
                         <div className="col-span-2">
                           <div className="pl-4 col-start-3 col-end-9">
@@ -465,7 +465,7 @@ class RootIndex extends React.Component {
                     <Popup
                       trigger={
                         <div className={styles.overlay_container}>
-                          <img src={homePage.clientImage06.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" />
+                          <img src={homePage.clientImage06.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" loading="lazy" decoding="async"/>
                         </div>
                       }
                       modal
@@ -493,7 +493,7 @@ class RootIndex extends React.Component {
                     <div className="w-10/12 m-5">
                       <div className="grid grid-cols-3 gap-4 items-center">
                         <div className="">
-                          <img className="col-end-3 rounded-full" src={homePage.clientLogo06.url} alt="service_Video_Production" />
+                          <img className="col-end-3 rounded-full" src={homePage.clientLogo06.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
                         </div>
                         <div className="col-span-2">
                           <div className="pl-4 col-start-3 col-end-9">

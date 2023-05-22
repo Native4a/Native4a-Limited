@@ -230,90 +230,116 @@ video popup
 
 @media screen and (max-width: 1536px) {
   .title {
-      font-size: 50px;
+    font-size: 50px;
   }
 
   .subTitle {
-      font-size: 30px;
+    font-size: 30px;
   }
 
   .sec2_wrap {
-      margin-top: 0px;
+    margin-top: 0px;
   }
 }
 
 @media screen and (max-width: 1280px) {
   .title {
-      font-size: 3.6vw;
+    font-size: 3.6vw;
   }
 
   .subTitle {
-      font-size: 2vw;
+    font-size: 2vw;
   }
 
   .container {
-      max-width: 95%;
+    max-width: 95%;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .title {
-      font-size: 55px;
+    font-size: 55px;
   }
 
   .subTitle {
-      font-size: 32px;
+    font-size: 32px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0px;
   }
 
   .sec2_wrap {
-      margin-top: px;
+    margin-top: px;
+  }
+
+  .SecBg6 {
+    background-image: none;
+  }
+
+  .SecBg5 {
+    background-image: none;
+  }
+
+  .mainBg {
+    background-image: none;
   }
 }
 
 
 @media screen and (max-width: 768px) {
   .title {
-      font-size: 37px;
-      margin-bottom: 8px;
+    font-size: 37px;
+    margin-bottom: 8px;
   }
 
   .subTitle {
-      font-size: 27px;
-      margin: 0px;
+    font-size: 27px;
+    margin: 0px;
   }
 
   .containerForSection1 {
-      padding: 0px;
+    padding: 0px;
   }
 
   .sec2_wrap {
-      margin-top: 0px;
+    margin-top: 0px;
   }
 
   .border {
-      display: none;
+    display: none;
   }
 
   .sec2_wrap {
-      padding: 17px 17px;
+    padding: 17px 17px;
+    background-image: none;
+  }
+
+  .SecBg6 {
+    background-image: none;
+  }
+
+  .SecBg5 {
+    background-image: none;
+  }
+
+  .mainBg {
+    background-image: none;
   }
 
   .container {
-      padding: 0px;
-      max-width: 100%;
+    max-width: 100%;
+    padding: 0px;
   }
 
   .shadow {
-      box-shadow: #000 0px 0px 15px;
-  }
-
-  .sec2_wrap {
-      background-image: none;
+    box-shadow: #000 0px 0px 15px;
   }
 
   .videoContainer {
-      padding-top: 56.25%;
-      /* 16:9 Aspect Ratio */
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
   }
 
 }

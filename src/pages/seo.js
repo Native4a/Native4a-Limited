@@ -67,7 +67,7 @@ class seoIndex extends React.Component {
                   <Popup
                     trigger={
                       <div className={styles.overlay_container}>
-                        <img src={plsStep} alt="Girl in a jacket" width="500" height="600" />
+                        <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
                       </div>
                     }
                     modal

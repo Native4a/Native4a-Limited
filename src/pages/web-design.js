@@ -77,7 +77,7 @@ class webIndex extends React.Component {
                   <Popup
                     trigger={
                       <div className={styles.overlay_container}>
-                        <img src={plsStep} alt="Girl in a jacket" width="500" height="600" />
+                        <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
                       </div>
                     }
                     modal
@@ -113,7 +113,7 @@ class webIndex extends React.Component {
               <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 items-center'>
                 <div className='grid grid-row-2'>
                   <div>
-                    <img className='pt-10' src={seo01} alt="" />
+                    <img className='pt-10' src={seo01} alt="" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>Lost HK</h3>
@@ -122,7 +122,7 @@ class webIndex extends React.Component {
                 </div>
                 <div className='grid grid-row-2'>
                   <div>
-                    <img className='pt-10' src={seo02} alt="" />
+                    <img className='pt-10' src={seo02} alt="" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>Taste Design</h3>
@@ -131,7 +131,7 @@ class webIndex extends React.Component {
                 </div>
                 <div className='grid grid-row-2'>
                   <div>
-                    <img className='pt-10' src={seo03} alt="" />
+                    <img className='pt-10' src={seo03} alt="" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>世紀21大灣區</h3>
@@ -140,7 +140,7 @@ class webIndex extends React.Component {
                 </div>
                 <div className='grid grid-row-2'>
                   <div>
-                    <img className='pt-10' src={seo04} alt="" />
+                    <img className='pt-10' src={seo04} alt="" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>Gas Super</h3>
@@ -149,7 +149,7 @@ class webIndex extends React.Component {
                 </div>
                 <div className='grid grid-row-2'>
                   <div>
-                    <img className='pt-10' src={seo05} alt="" />
+                    <img className='pt-10' src={seo05} alt="" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>老佛爺鐘錶</h3>
@@ -158,7 +158,7 @@ class webIndex extends React.Component {
                 </div>
                 <div className='grid grid-row-2'>
                   <div>
-                    <img className='pt-10' src={seo06} alt="" />
+                    <img className='pt-10' src={seo06} alt="" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>Girls 100</h3>
@@ -167,7 +167,7 @@ class webIndex extends React.Component {
                 </div>
                 <div className='grid grid-row-2'>
                   <div>
-                    <img className='pt-10' src={seo07} alt="" />
+                    <img className='pt-10' src={seo07} alt="" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>Home And Window</h3>
@@ -176,7 +176,7 @@ class webIndex extends React.Component {
                 </div>
                 <div className='grid grid-row-2'>
                   <div>
-                    <img className='pt-10' src={seo08} alt="" />
+                    <img className='pt-10' src={seo08} alt="" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>360 Creative Solution</h3>
@@ -185,7 +185,7 @@ class webIndex extends React.Component {
                 </div>
                 <div className='grid grid-row-2'>
                   <div>
-                    <img className='pt-10' src={seo09} alt="" />
+                    <img className='pt-10' src={seo09} alt="" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>apexdesign</h3>
@@ -194,7 +194,7 @@ class webIndex extends React.Component {
                 </div>
                 <div className='grid grid-row-2'>
                   <div>
-                    <img className='pt-10' src={seo10} alt="" />
+                    <img className='pt-10' src={seo10} alt="" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>雅居窗簾</h3>
@@ -203,7 +203,7 @@ class webIndex extends React.Component {
                 </div>
                 <div className='grid grid-row-2'>
                   <div>
-                    <img className='pt-10' src={seo11} alt="" />
+                    <img className='pt-10' src={seo11} alt="" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>A-One Print</h3>
@@ -212,7 +212,7 @@ class webIndex extends React.Component {
                 </div>
                 <div className='grid grid-row-2'>
                   <div>
-                    <img className='pt-10' src={seo12} alt="" />
+                    <img className='pt-10' src={seo12} alt="" loading="lazy" decoding="async"/>
                   </div>
                   <div>
                     <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>宏俊工程</h3>

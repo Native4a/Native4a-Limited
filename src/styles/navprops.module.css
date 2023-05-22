@@ -1,3 +1,17 @@
+.activeLink li a:hover{
+  color:white;
+  font-weight: bold;
+  background-position: -100%;
+}
+
+.activeLink li a {
+  background-image: linear-gradient(to right, #f8f8f900 50%, #faab00 50%);
+  background-position: 0;
+  background-size: 200%;
+  padding: 3px 10px !important;
+  transition: ease-out 0.3s;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -31,15 +45,18 @@
   color: var(--primary);
 }
 
-@media (max-width: 	1536px) {
+@media (max-width: 1536px) {}
 
-}
-
-@media (max-width: 	1280px) {
-
-}
+@media (max-width: 1280px) {}
 
 @media (max-width: 1024px) {
+  .container {
+    padding: 0px 0px 40px 0px;
+  }
+
+  .container:first-child {
+    padding-top: 120px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -53,9 +70,8 @@
   .container {
     padding: 0px 0px 40px 0px;
   }
-  
-  .container:first-child{
-    padding-top: 90px;
+
+  .container:first-child {
+    padding-top: 120px;
   }
 }
-  

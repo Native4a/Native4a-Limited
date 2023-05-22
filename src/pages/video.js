@@ -74,7 +74,7 @@ class videoIndex extends React.Component {
                   <Popup
                     trigger={
                       <div className={styles.overlay_container}>
-                        <img src={plsStep} alt="Girl in a jacket" width="500" height="600" />
+                        <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
                       </div>
                     }
                     modal
@@ -111,7 +111,7 @@ class videoIndex extends React.Component {
                 <Popup
                   trigger={
                     <div className={styles.overlay_container}>
-                      <img src={work01} alt="Girl in a jacket" width="500" height="600" />
+                      <img src={work01} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
                       <div className={styles.overlay}>AnneTso Shop<br />打雀風雲</div>
                     </div>
                   }
@@ -141,7 +141,7 @@ class videoIndex extends React.Component {
                 <Popup
                   trigger={
                     <div className={styles.overlay_container}>
-                      <img src={work02} alt="Girl in a jacket" width="500" height="600" />
+                      <img src={work02} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
                       <div className={styles.overlay}>AnneTso Shop<br />網店廣告花絮</div>
                     </div>
                   }
@@ -171,7 +171,7 @@ class videoIndex extends React.Component {
                 <Popup
                   trigger={
                     <div className={styles.overlay_container}>
-                      <img src={work03} alt="Girl in a jacket" width="500" height="600" />
+                      <img src={work03} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
                       <div className={styles.overlay}>alessandro<br />Mood</div>
                     </div>
                   }
@@ -201,7 +201,7 @@ class videoIndex extends React.Component {
                 <Popup
                   trigger={
                     <div className={styles.overlay_container}>
-                      <img src={work04} alt="Girl in a jacket" width="500" height="600" />
+                      <img src={work04} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
                       <div className={styles.overlay}>alessandro<br />Steps</div>
                     </div>
                   }
@@ -231,7 +231,7 @@ class videoIndex extends React.Component {
                 <Popup
                   trigger={
                     <div className={styles.overlay_container}>
-                      <img src={work05} alt="Girl in a jacket" width="500" height="600" />
+                      <img src={work05} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
                       <div className={styles.overlay}>CARD HERO</div>
                     </div>
                   }
@@ -261,7 +261,7 @@ class videoIndex extends React.Component {
                 <Popup
                   trigger={
                     <div className={styles.overlay_container}>
-                      <img src={work06} alt="Girl in a jacket" width="500" height="600" />
+                      <img src={work06} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
                       <div className={styles.overlay}>ACCOLADE <br />卓遠</div>
                     </div>
                   }
@@ -291,7 +291,7 @@ class videoIndex extends React.Component {
                 <Popup
                   trigger={
                     <div className={styles.overlay_container}>
-                      <img src={work07} alt="Girl in a jacket" width="500" height="600" />
+                      <img src={work07} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
                       <div className={styles.overlay}>方龍飛議員</div>
                     </div>
                   }
@@ -321,7 +321,7 @@ class videoIndex extends React.Component {
                 <Popup
                   trigger={
                     <div className={styles.overlay_container}>
-                      <img src={work08} alt="Girl in a jacket" width="500" height="600" />
+                      <img src={work08} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
                       <div className={styles.overlay}>潘焯鴻議員</div>
                     </div>
                   }
@@ -351,7 +351,7 @@ class videoIndex extends React.Component {
                 <Popup
                   trigger={
                     <div className={styles.overlay_container}>
-                      <img src={work09} alt="Girl in a jacket" width="500" height="600" />
+                      <img src={work09} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
                       <div className={styles.overlay}>SUSHI KEI</div>
                     </div>
                   }

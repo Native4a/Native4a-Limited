@@ -38,7 +38,7 @@ const Navigation = () => {
           paddingBottom: navPaddingBottom
         }}>
         <div className="flex items-center col-start-1 col-end-5 md:col-start-1 md:col-end-2">
-          <div className="">
+          <div className="grid">
             <Link to="/" >
               <img className="my-3 ml-0 text-blue-500 md:w-1/2" src={Native_logo} alt="hello" />
             </Link>

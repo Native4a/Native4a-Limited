@@ -4,11 +4,12 @@ import useAddMenu from '../../hook/useAddMenu'
 import QuoteNow from '../button/quoteNow'
 import * as styles from '../../styles/navprops.module.css'
 
+
 const Navprops = () => {
   const menu = useAddMenu();
   return (
-    <div className='contents'>
-      <ul className='rounded-3xl bg-white pt-16 pb-5 contents'>
+    <div className={`${styles.activeLink} contents`}>
+      <ul className='rounded-3xl bg-white contents'>
         {menu.map((item, index) => {
           const {
             slug,
@@ -16,7 +17,11 @@ const Navprops = () => {
           } = item;
           return (
             <li role="navigation" className={styles.container} aria-label="Main" key={index}>
-              <Link to={slug}>
+              <Link
+                to={slug}
+                activeStyle={{ color: "white", backgroundColor: "#faab00", fontWeight: "bold" }}
+                partiallyActive={true}
+              >
                 {urlTitle}
               </Link>
             </li>

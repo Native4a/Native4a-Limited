@@ -22,6 +22,9 @@ import native4a_logo from '../img/2023_native4a_logo.svg'
 import no1SeoCompany from '../img/no.1 seo company native-600x390.png'
 import Commitment from '../img/Commitment.png'
 import AdsIcon from '../img/AdsIcon.png'
+import NativeAboutUsweb from '../img/Native_AboutUs_web copy.png'
+import AboutUs_web02 from '../img/Native_AboutUs_web02 copy.png'
+import Namecard from '../img/Native_AboutUs_Namecard copy.png'
 
 //import ArticlePreview from '../components/article-preview'
 
@@ -34,17 +37,17 @@ class aboutUs extends React.Component {
           <div className={styles.container}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
               <div className="px-6 xl:px-0 py-0 xl:py-6">
-                <div className="pt-2 md:pt-3 2xl:pt-0">
+                <div className="pt-2 lg:pt-3 2xl:pt-0">
                   <h1 className={styles.title}>Hello,</h1>
                   <div className={styles.border}></div>
-                  <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">多謝您有興趣了解我們，我們是香港一家SEO公司。據客戶的意見，我們專業還是稱得上的。一直以來感謝各行業老闆支持。</p>
-                  <div className="hidden md:grid grid-cols-2 gap-6 py-6">
+                  <p className="py-5 lg:py-3 text-lg lg:text-lg 2xl:text-2xl">多謝您有興趣了解我們，我們是香港一家SEO公司。據客戶的意見，我們專業還是稱得上的。一直以來感謝各行業老闆支持。</p>
+                  <div className="hidden lg:grid grid-cols-2 gap-6 py-6">
                     <div className="flex gap-6 w-full items-center">
                       <SocialMediaBtn />
                     </div>
                     <Whatsapp />
                   </div>
-                  <div className="md:hidden flex gap-4 w-full items-center">
+                  <div className="lg:hidden flex gap-4 w-full items-center">
                     <SocialMediaBtn />
                     <Whatsapp />
                   </div>
@@ -52,14 +55,15 @@ class aboutUs extends React.Component {
                 <div className={styles.seoSpanSquare}><AwardsWeb /></div>
               </div>
               <div className="grid content-center z-0">
+                <img className='w-full h-full lg:hidden flex' src={NativeAboutUsweb} alt='Native4a Logo' loading="lazy" decoding="async" />
               </div>
               <div className={styles.seoSpanSquare}><Awards /></div>
             </div>
           </div>
         </section>
         <section className='grid justify-center justify-items-center mt-10'>
-          <h2 className='text-xl md:text-3xl text-gray-700 p-5 md:p-10'>NATIVE ADV LTD</h2>
-          <h3 className='text-3xl md:text-5xl text-gray-700'>我們只專注做好一件事。</h3>
+          <h2 className='text-xl lg:text-3xl text-gray-700 p-5 lg:p-10'>NATIVE ADV LTD</h2>
+          <h3 className='text-3xl lg:text-5xl text-gray-700'>我們只專注做好一件事。</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
             <div className="flex justify-center text-6xl px-8">
               <div className="overflow-hidden">
@@ -99,56 +103,56 @@ class aboutUs extends React.Component {
           <div className="flex justify-center text-6xl px-8">
             <div className="overflow-hidden grid justify-center justify-items-center">
               <div className="flex justify-center font-bold text-7xl mb-2 rounded-full "><FaQuoteLeft className='bg-white text-[#FAAB00] rounded-full p-4' /></div>
-              <p className="text-white text-4xl text-[#fff] mt-6">「我不怕練過一萬種踢法的人，我只怕將一種踢法練過一萬次的人。」</p>
-              <p className="text-white text-4xl text-[#fff] font-black mt-6">-李小龍-</p>
+              <p className="text-white text-2xl lg:text-4xl text-[#fff] mt-6 text-center">「我不怕練過一萬種踢法的人，我只怕將一種踢法練過一萬次的人。」</p>
+              <p className="text-white text-2xl lg:text-4xl text-[#fff] font-black mt-6">-李小龍-</p>
             </div>
           </div>
         </section>
-        <section className="py-28">
+        <section className="lg:py-28">
           <div className="">
             <div className="container mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-0 items-center">
-                <div>
-                  <h2 className="flex text-2xl md:text-6xl ml-2 font-bold items-center m-16"><b className='ml-3'>我們是誰？</b></h2>
-                  <p className="text-xl ml-4 my-0 md:py-4">Hello，我們是香港一家主流數碼行營公司，一直以來為企業客戶提供專業數碼營銷方案，並為其執行。網上廣告代理入行門檻不高，所以競爭程度相當大，慶幸的是，數碼行銷易學，卻十分難精。我們正正是精的一批，若非，您也不會在搜索引擎上輕易找到我們。</p>
+                <div className='order-2 lg:order-1'>
+                  <h2 className="flex text-4xl lg:text-6xl ml-2 font-bold items-center m-5 lg:m-16">我們是誰？</h2>
+                  <p className="text-xl ml-4 my-0 lg:py-4">Hello，我們是香港一家主流數碼行營公司，一直以來為企業客戶提供專業數碼營銷方案，並為其執行。網上廣告代理入行門檻不高，所以競爭程度相當大，慶幸的是，數碼行銷易學，卻十分難精。我們正正是精的一批，若非，您也不會在搜索引擎上輕易找到我們。</p>
                   <button className='rounded-full px-8 py-2 border-2 border-black text-black font-black my-16'>我想了解您們更多</button>
                 </div>
-                <div>
-                  <img className="w-9/12 py-6 md:py-0 pb-10 md:pb-0" src={native4a_logo} alt="native4a Logo" />
+                <div className='order-1 lg:order-2'>
+                  <img className="w-1/2 lg:w-9/12 py-6 lg:py-0 mt-12 lg:mt-0 mb-3 lg:mb-0" src={native4a_logo} alt="native4a Logo" loading="lazy" decoding="async"/>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section className={`${styles.SecBg1} py-20`}>
+        <section className={`${styles.SecBg1} lg:py-28`}>
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-0 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-0 items-center">
               <div>
-                <h2 className="flex text-2xl md:text-6xl ml-2 font-bold items-center m-16 text-white"><b className='ml-3'>我們的強項在哪裡？</b></h2>
-                <p className="text-xl ml-4 my-0 md:py-4 text-white">您真精明，的確，每家Agency 都有我們的特強之處，要全方位都強就很難做到的。在Search Engine上，我們絕對能比其他行家優勝，因為我們SEO達標率已在去年已超過95%，且一直保持。</p>
+                <h2 className="flex text-4xl lg:text-6xl ml-0 lg:ml-2 font-bold items-center m-5 lg:m-16 text-white mt-20 lg:mt-0 mb-8 lg:mb-0">我們的強項在哪裡？</h2>
+                <p className="text-xl lg:ml-4 my-0 lg:py-4 text-white">您真精明，的確，每家Agency 都有我們的特強之處，要全方位都強就很難做到的。在Search Engine上，我們絕對能比其他行家優勝，因為我們SEO達標率已在去年已超過95%，且一直保持。</p>
                 <button className='rounded-full px-8 py-2 bg-white text-black font-black my-16'>我想約見您們</button>
               </div>
               <div>
-                <img className="w-9/12 py-6 md:py-0 pb-10 md:pb-0" src={no1SeoCompany} alt="native4a Logo" />
+                <img className="w-full lg:w-9/12 py-0 pb-10 lg:pb-0" src={no1SeoCompany} alt="native4a Logo" loading="lazy" decoding="async"/>
               </div>
             </div>
           </div>
         </section>
-        <section className={`${styles.SecBg2} py-20`}>
+        <section className={`${styles.SecBg2} lg:py-28`}>
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-0 items-center">
-              <div className='order-2'>
-                <h2 className="flex text-2xl md:text-6xl ml-2 font-bold items-center m-16 text-white"><b className='ml-3'>為什麼您要選擇我們？</b></h2>
-                <p className="text-xl ml-4 my-0 md:py-4 text-white">選擇，需要在比較下方能決定。在香港，像我們的主流廣告公司，我相信實力相距不大。不過，數碼行銷是長遠合作的關係，您總不想對著自己討厭的人半年或以上吧？我們肯定是您見過最有禮貌，最肯聆聽您需求的廣告代理。</p>
-                <button className='rounded-full px-8 py-2 bg-white text-black font-black my-16'>我想約見您們</button>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-0 items-center">
+              <div className='md:order-2'>
+                <h2 className="flex text-4xl lg:text-6xl ml-0 lg:ml-2 font-bold items-center m-5 lg:m-16 text-white mt-20 lg:mt-0 mb-8 lg:mb-0">為什麼您要選擇我們？</h2>
+                <p className="text-xl lg:ml-4 my-0 lg:py-4 text-white">選擇，需要在比較下方能決定。在香港，像我們的主流廣告公司，我相信實力相距不大。不過，數碼行銷是長遠合作的關係，您總不想對著自己討厭的人半年或以上吧？我們肯定是您見過最有禮貌，最肯聆聽您需求的廣告代理。</p>
+                <button className='rounded-full px-8 py-2 bg-white text-black font-black my-5 lg:my-16'>我想約見您們</button>
               </div>
-              <div className='order-1'>
-                <img className="w-9/12 py-6 md:py-0 pb-10 md:pb-0" src={Commitment} alt="native4a Logo" />
+              <div className='md:order-1'>
+                <img className="w-full lg:w-9/12 py-0 pb-0" src={Commitment} alt="native4a Logo" loading="lazy" decoding="async"/>
               </div>
             </div>
           </div>
         </section>
-        <section className={`${styles.SecBg4} pt-20`}>
+        <section className={`${styles.SecBg4} px-20 lg:p-0`}>
           <div className="container mx-auto">
             <div className="">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -156,9 +160,9 @@ class aboutUs extends React.Component {
                   <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-12 lg:space-y-0 text-center">
                     <div className="group relative rounded-3xl p-6 items-center backdrop-blur-xl bg-white/80 text-center shadow-xl">
                       <div className="relative overflow-hidden rounded-full bg-white group-hover:opacity-75 w-1/2 mx-auto my-0">
-                        <img src={AdsIcon} alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="h-full w-full object-cover object-center" />
+                        <img src={AdsIcon} alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="h-full w-full object-cover object-center" loading="lazy" decoding="async"/>
                       </div>
-                      <h3 className="mt-6 m-2 text-base text-black">
+                      <h3 className="mt-6 m-2 text-base text-black text-xl lg:text-md">
                         <span className="absolute inset-0"></span>
                         最專業
                       </h3>
@@ -166,9 +170,9 @@ class aboutUs extends React.Component {
                     </div>
                     <div className="group relative rounded-3xl p-6 items-center backdrop-blur-xl bg-white/80 text-center shadow-xl">
                       <div className="relative overflow-hidden rounded-full bg-white group-hover:opacity-75 w-1/2 mx-auto my-0">
-                        <img src={AdsIcon} alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="h-full w-full object-cover object-center" />
+                        <img src={AdsIcon} alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="h-full w-full object-cover object-center" loading="lazy" decoding="async"/>
                       </div>
-                      <h3 className="mt-6 m-2 text-base text-black">
+                      <h3 className="mt-6 m-2 text-base text-black text-xl lg:text-md">
                         <span className="absolute inset-0"></span>
                         最專業
                       </h3>
@@ -176,9 +180,9 @@ class aboutUs extends React.Component {
                     </div>
                     <div className="group relative rounded-3xl p-6 items-center backdrop-blur-xl bg-white/80 text-center shadow-xl">
                       <div className="relative overflow-hidden rounded-full bg-white group-hover:opacity-75 w-1/2 mx-auto my-0">
-                        <img src={AdsIcon} alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="h-full w-full object-cover object-center" />
+                        <img src={AdsIcon} alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="h-full w-full object-cover object-center" loading="lazy" decoding="async"/>
                       </div>
-                      <h3 className="mt-6 m-2 text-base text-black">
+                      <h3 className="mt-6 m-2 text-base text-black text-xl lg:text-md">
                         <span className="absolute inset-0"></span>
                         最專業
                       </h3>
@@ -208,47 +212,48 @@ class aboutUs extends React.Component {
         <section className='grid justify-center justify-items-center p-10 bg-[#FAAB00]'>
           <div className="flex justify-center text-6xl ">
             <div className="overflow-hidden grid justify-center justify-items-center">
-              <p className="text-white text-4xl text-[#fff] font-black mt-6">我們給您的一封信</p>
-              <p className="text-white text-2xl text-[#fff] mt-6">感謝您對我們有興趣，若果您還未聯絡我們，看看以下的內容，我能否打動您。</p>
+              <p className="text-white text-3xl lg:text-4xl text-[#fff] font-black mt-6">我們給您的一封信</p>
+              <p className="text-white text-xl lg:text-2xl text-[#fff] mt-6">感謝您對我們有興趣，若果您還未聯絡我們，看看以下的內容，我能否打動您。</p>
             </div>
           </div>
         </section>
-        <section className={`${styles.SecBg5} grid justify-center justify-items-center pt-24 pb-80`}>
+        <section className={`${styles.SecBg5} grid justify-center justify-items-center pt-12 lg:pt-24 pb-0 xl:pb-80`}>
           <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="grid justify-center text-6xl rounded-xl p-6">
                 <p className="text-xl">我們不是大公司，名氣和獎項不多。其實寫到這裡，我一直在想，大公司與我們的分別在哪？大公司資源充足嗎？資源意指莫過於人材。的確，他們人手比較多，但是數碼行銷講求的是精益求精，我有信心我們的工程師平均實力比大型廣告公司還要高。大公司經驗比較多，可以避免很多錯誤嗎？其實又不見得，反而，規模較大的公司被客戶”炸型”的常見。</p>
                 <h2 className="text-2xl mt-10 mb-4">如果您要更專業</h2>
                 <p className="text-xl">大公司能擔當的角色一定比我們多，例如您想在Facebook中加段片，而需要製作團隊，很抱歉，我們不能滿足您。如果您要求在某一方向，如SEO提升排名，我們可以為您做得很專，而且只要您想，便可立即聯絡工程師，我們絕對不會讓您等待超過10秒。更沒有Sales 跟您說”會轉達”。</p>
               </div>
-              <div className=""></div>
+              <div className="lg:hidden"><img src={AboutUs_web02} alt="About Us_web02" loading="lazy" decoding="async"/></div>
             </div>
           </div>
         </section>
-        <section className={`${styles.SecBg6} grid justify-center justify-items-center pt-24 pb-80`}>
+        <section className={`${styles.SecBg6} grid justify-center justify-items-center pt-12 lg:pt-24 pb-0 lg:pb-80`}>
           <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className=""></div>
               <div className="grid justify-center text-6xl rounded-xl p-6">
                 <p className="text-xl">NATIVE的同事對搜索引擎相當熟悉，除了SEO外，SEM都是我們相當強項的地方。過去很多客戶對Google ADS的設定都感到相當困惑，由於Google ADS 是利用龐大數據來計算出最適合購買您產品的人，再向其精準地展示廣告。所以靈活的Google 把廣告設定的後台加入了很多設定，使其能更貼近您的目標客戶特徵。面對如此複雜的設定後台，您或許和我們其他客戶一樣，需要一家專業且成效穩定的廣告代理公司。</p>
                 <h2 className="text-2xl mt-10 mb-4">歡迎與我們談談</h2>
                 <p className="text-xl">NATIVE為了提供實際價值，願意與客戶先了解清楚產品特性和優勢，才能為客戶提供有效的建議。</p>
               </div>
+              <div className="lg:hidden"><img src={Namecard} alt="About Us_web02" loading="lazy" decoding="async"/></div>
             </div>
           </div>
         </section>
         <section className='grid justify-center justify-items-center p-10 bg-[#3A7DFF]'>
-          <div className="flex justify-center text-6xl ">
+          <div className="flex justify-center text-6xl">
             <div className="overflow-hidden grid justify-center justify-items-center">
-              <p className="text-white text-4xl text-[#fff] font-black mt-6">「需要開始您的數碼行銷策略了嗎？」</p>
-              <p className="text-white text-2xl text-[#fff] mt-6">立即預約我們的專家，獲取免費數碼行銷建議。</p>
+              <p className="text-white text-3xl lg:text-4xl text-[#fff] font-black mt-6">「需要開始您的數碼行銷策略了嗎？」</p>
+              <p className="text-white text-xl lg:text-2xl text-[#fff] mt-6">立即預約我們的專家，獲取免費數碼行銷建議。</p>
             </div>
           </div>
         </section>
         <section className='grid justify-center justify-items-center'>
           <div className=''>
             <div className='relative bottom-7'>
-              <button className='rounded-xl px-8 py-2 text-white font-black bg-[#FAAB00]'>開始吧！</button>
+              <button className='rounded-xl text-2xl lg:text-xl px-8 py-2 text-white font-black bg-[#FAAB00]'>開始吧！</button>
             </div>
           </div>
         </section>
