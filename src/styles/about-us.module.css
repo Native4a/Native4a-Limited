@@ -240,6 +240,9 @@ video popup
   .sec2_wrap {
     margin-top: 0px;
   }
+  .container {
+    max-width: 95%;
+  }
 }
 
 @media screen and (max-width: 1280px) {
@@ -267,11 +270,6 @@ video popup
 
   .container {
     max-width: 100%;
-    padding: 0px;
-  }
-
-  .sec2_wrap {
-    margin-top: px;
   }
 
   .SecBg6 {
@@ -303,16 +301,13 @@ video popup
     padding: 0px;
   }
 
-  .sec2_wrap {
-    margin-top: 0px;
-  }
-
   .border {
     display: none;
   }
 
   .sec2_wrap {
     padding: 17px 17px;
+    margin-top: 0px;
     background-image: none;
   }
 

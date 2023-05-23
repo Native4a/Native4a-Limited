@@ -1,5 +1,5 @@
 /*-- All area start here --*/
-img{
+img {
   margin: auto;
 }
 
@@ -11,6 +11,7 @@ img{
   margin: 0 auto;
   padding: 0px 36px 0px 36px;
 }
+
 /*-- All area end here--*/
 
 
@@ -37,7 +38,7 @@ img{
   margin: 0 0 var(--space-xl);
 }
 
-.border{
+.border {
   border-bottom-width: 2px;
   width: 91.666667%;
   --tw-border-opacity: 1;
@@ -246,17 +247,17 @@ img{
   background-size: cover;
 }
 
-.sec9{
+.sec9 {
   background-image: url('../img/Native_backlink_webrf01.png');
   background-size: cover;
 }
 
-.sec10{
+.sec10 {
   background-image: url('../img/Native_backlink_webrf02.png');
   background-size: cover;
 }
 
-.sec11{
+.sec11 {
   background-image: url('../img/Native_backlink_webrf03.png');
   background-size: cover;
 }
@@ -272,6 +273,10 @@ img{
 
   .sec2_wrap {
     margin-top: 0px;
+  }
+
+  .container {
+    max-width: 95%;
   }
 }
 
@@ -289,7 +294,7 @@ img{
   }
 
   .container {
-    max-width: 95%;
+    max-width: 100%;
   }
 }
 
@@ -300,10 +305,6 @@ img{
 
   .subTitle {
     font-size: 32px;
-  }
-
-  .sec2_wrap {
-    margin-top: px;
   }
 }
 

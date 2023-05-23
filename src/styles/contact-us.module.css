@@ -58,4 +58,10 @@ body{
     background-image: none;
   }
 
+  .sec_wrap {
+    padding: 0px;
+    background-size: cover;
+    z-index: 1;
+  }
+
 }

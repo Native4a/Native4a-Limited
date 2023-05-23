@@ -18,7 +18,7 @@ const QuoteNow = () => {
     }, []);
     return (
         <AnchorLink to="#contactAs">
-            <button className="lg:inline hidden rounded-full bg-white text-black px-7 py-1.5 font-black text-base md:text-md xl:text-xl" style={{
+            <button className="xl:inline hidden rounded-full bg-white text-black px-7 py-1.5 font-black text-base md:text-md xl:text-xl" style={{
                 border: quoteBorder
             }}>
                 {quoteButton}

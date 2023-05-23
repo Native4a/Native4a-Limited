@@ -49,7 +49,7 @@ class videoIndex extends React.Component {
         />
         <section className={styles.mainBg}>
           <div className={styles.container}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
               <div className="px-6 xl:px-0 py-0 xl:py-6">
                 <div className="pt-2 md:pt-3 2xl:pt-0">
                   <h1 className={styles.title}>{videoPage.title}</h1>
@@ -62,9 +62,13 @@ class videoIndex extends React.Component {
                     </div>
                     <Whatsapp />
                   </div>
-                  <div className="md:hidden flex gap-4 w-full items-center">
-                    <SocialMediaBtn />
-                    <Whatsapp />
+                  <div className="md:hidden ">
+                    <div className="flex gap-2 w-full items-center">
+                      <SocialMediaBtn />
+                    </div>
+                    <div className="pt-6">
+                      <Whatsapp />
+                    </div>
                   </div>
                 </div>
                 <AwardsWeb />

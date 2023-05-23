@@ -190,6 +190,10 @@ video popup
   .sec2_wrap {
     margin-top: 0px;
   }
+
+  .container {
+    max-width: 95%;
+  }
 }
 
 @media screen and (max-width: 1280px) {
@@ -201,12 +205,8 @@ video popup
     font-size: 2vw;
   }
 
-  .sec2_wrap {
-    margin-top: 198px;
-  }
-
   .container {
-    max-width: 95%;
+    max-width: 100%;
   }
 
 }
@@ -220,8 +220,8 @@ video popup
     font-size: 32px;
   }
 
-  .sec2_wrap {
-    margin-top: px;
+  .container {
+    max-width: 100%;
   }
 }
 

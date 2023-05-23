@@ -231,6 +231,9 @@ mark{
     .smmPad {
         padding: 0 80px;
     }
+    .container {
+        max-width: 95%;
+    }
 }
 
 @media (max-width: 1280px) {
@@ -243,7 +246,7 @@ mark{
     }
 
     .container {
-        max-width: 95%;
+        max-width: 100%;
     }
 }
 
@@ -258,6 +261,10 @@ mark{
 
     .smmPad {
         padding: 0px;
+    }
+
+    .container {
+        max-width: 100%;
     }
 }
 

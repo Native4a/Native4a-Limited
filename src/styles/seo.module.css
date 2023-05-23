@@ -206,6 +206,10 @@ img {
     .sec2_wrap {
         margin-top: 0px;
     }
+
+    .container {
+        max-width: 95%;
+    }
 }
 
 @media screen and (max-width: 1280px) {
@@ -218,7 +222,7 @@ img {
     }
 
     .container {
-        max-width: 95%;
+        max-width: 100%;
     }
 }
 
@@ -231,8 +235,8 @@ img {
         font-size: 32px;
     }
 
-    .sec2_wrap {
-        margin-top: px;
+    .container {
+        max-width: 100%;
     }
 }
 

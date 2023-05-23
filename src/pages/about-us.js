@@ -35,21 +35,25 @@ class aboutUs extends React.Component {
         <Seo title="Blog" />
         <section className={styles.mainBg}>
           <div className={styles.container}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
               <div className="px-6 xl:px-0 py-0 xl:py-6">
                 <div className="pt-2 lg:pt-3 2xl:pt-0">
                   <h1 className={styles.title}>Hello,</h1>
                   <div className={styles.border}></div>
                   <p className="py-5 lg:py-3 text-lg lg:text-lg 2xl:text-2xl">多謝您有興趣了解我們，我們是香港一家SEO公司。據客戶的意見，我們專業還是稱得上的。一直以來感謝各行業老闆支持。</p>
-                  <div className="hidden lg:grid grid-cols-2 gap-6 py-6">
+                  <div className="hidden md:grid grid-cols-2 gap-6 py-6">
                     <div className="flex gap-6 w-full items-center">
                       <SocialMediaBtn />
                     </div>
                     <Whatsapp />
                   </div>
-                  <div className="lg:hidden flex gap-4 w-full items-center">
-                    <SocialMediaBtn />
-                    <Whatsapp />
+                  <div className="md:hidden ">
+                    <div className="flex gap-2 w-full items-center">
+                      <SocialMediaBtn />
+                    </div>
+                    <div className="pt-6">
+                      <Whatsapp />
+                    </div>
                   </div>
                 </div>
                 <div className={styles.seoSpanSquare}><AwardsWeb /></div>

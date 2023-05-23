@@ -29,7 +29,7 @@ const Navigation = () => {
 
   return (
     <div className="">
-      <div className="grid grid-cols-12 md:grid-cols-3 gap-4 px-3 md:px-16 2xl:px-40 fixed z-50 w-full top-0"
+      <div className="grid grid-cols-12 lg:grid-cols-3 gap-4 px-3 md:px-16 2xl:px-40 fixed z-50 w-full top-0"
         style={{
           backgroundColor: navColor,
           transition: "all 0.3s",
@@ -37,18 +37,18 @@ const Navigation = () => {
           paddingTop: navPaddingTop,
           paddingBottom: navPaddingBottom
         }}>
-        <div className="flex items-center col-start-1 col-end-5 md:col-start-1 md:col-end-2">
+        <div className="flex items-center col-start-1 col-end-5 lg:col-start-1 lg:col-end-2">
           <div className="grid">
             <Link to="/" >
-              <img className="my-3 ml-0 text-blue-500 md:w-1/2" src={Native_logo} alt="hello" />
+              <img className="my-3 ml-0 text-blue-500 w-11/12 sm:w-8/12 md:w-6/12" src={Native_logo} alt="hello" />
             </Link>
           </div>
         </div>
-        <div className="md:hidden col-start-5 col-end-11 flex items-center justify-end">
+        <div className="xl:hidden col-start-5 col-end-11 sm:col-start-6 sm:col-end-12 flex items-center justify-end">
           <QuoteNow />
         </div>
-        <div className="md:col-span-2 flex items-center justify-end col-start-12 col-end-12 md:col-start-2 md:col-end-4">
-          <div className="block lg:hidden">
+        <div className="xl:col-span-2 flex items-center justify-end col-start-12 col-end-12 xl:col-start-2 xl:col-end-4">
+          <div className="block xl:hidden">
             <div className="z-50 relative">
               <Hamburger size={20} label="Show menu" toggled={isOpen} toggle={setOpen} />
             </div>
@@ -56,7 +56,7 @@ const Navigation = () => {
               {isOpen ? <Navprops /> : null}
             </div>
           </div>
-          <div className="hidden lg:flex w-full">
+          <div className="hidden xl:flex w-full">
             <Navprops />
           </div>
         </div>

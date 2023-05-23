@@ -22,15 +22,15 @@ class contactUs extends React.Component {
         <Seo title="Blog" />
         <section className={styles.container}>
           <div className={styles.sec_wrap}>
-            <h1 className="text-5xl leading-snug text-center">感謝您準備向我們查詢，預祝您的業務蒸蒸日上。</h1>
-            <p className="text-xl leading-snug text-center">我們十分喜歡與您交流，期待我們能為您帶來凡非價值。</p>
+            <h1 className="text-2xl md:text-5xl leading-snug text-center">感謝您準備向我們查詢，預祝您的業務蒸蒸日上。</h1>
+            <p className="text-base md:text-xl leading-snug text-center">我們十分喜歡與您交流，期待我們能為您帶來凡非價值。</p>
           </div>
         </section>
         <ContactForm />
         <section>
           <div className={styles.sec_wrap}>
-            <h1 className="text-5xl leading-snug text-center">我們將會在辦公時間內回覆您。</h1>
-            <p className="text-xl leading-snug text-center">再次感謝您的垂詢，生意不容易，我們一起加油！</p>
+            <h1 className="text-2xl md:text-5xl leading-snug text-center">我們將會在辦公時間內回覆您。</h1>
+            <p className="text-base md:text-xl leading-snug text-center">再次感謝您的垂詢，生意不容易，我們一起加油！</p>
           </div>
         </section>
         <section className={styles.sec2_wrap}>

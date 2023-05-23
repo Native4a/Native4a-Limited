@@ -54,7 +54,7 @@ class backlinksIndex extends React.Component {
                 />
                 <section className={styles.mainBg}>
                     <div className={styles.container}>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
                             <div className="px-6 xl:px-0 py-0 xl:py-6">
                                 <div className="pt-2 md:pt-3 2xl:pt-0">
                                     <h1 className={styles.title}>{webPage.title}</h1>
@@ -67,9 +67,13 @@ class backlinksIndex extends React.Component {
                                         </div>
                                         <Whatsapp />
                                     </div>
-                                    <div className="md:hidden flex gap-4 w-full items-center">
-                                        <SocialMediaBtn />
-                                        <Whatsapp />
+                                    <div className="md:hidden ">
+                                        <div className="flex gap-2 w-full items-center">
+                                            <SocialMediaBtn />
+                                        </div>
+                                        <div className="pt-6">
+                                            <Whatsapp />
+                                        </div>
                                     </div>
                                 </div>
                                 <div className={styles.backlinksSpanSquare}><AwardsWeb /></div>
@@ -79,7 +83,7 @@ class backlinksIndex extends React.Component {
                                     <Popup
                                         trigger={
                                             <div className={styles.overlay_container}>
-                                                <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
+                                                <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async" />
                                             </div>
                                         }
                                         modal
@@ -123,12 +127,12 @@ class backlinksIndex extends React.Component {
                                 <h2 className="flex text-2xl md:text-3xl ml-2 font-bold items-center leading-0 md:leading-10 pb-5">
                                     <span>
                                         <IconContext.Provider>
-                                            <FaSquare style={FaSquarSstyle}/>
+                                            <FaSquare style={FaSquarSstyle} />
                                         </IconContext.Provider>
                                     </span>
                                     <b className='ml-3'>SEO 反向連結 (Backlinks) 對搜索引擎排名的重要影響</b>
                                 </h2>
-                                <img src={GoogleRanking} alt='' loading="lazy" decoding="async"/></div>
+                                <img src={GoogleRanking} alt='' loading="lazy" decoding="async" /></div>
                             <div className="flex justify-center col-span-2">
                                 <div className="flex flex-col">
                                     <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -177,7 +181,7 @@ class backlinksIndex extends React.Component {
                             <a href="#!" className="flex justify-center rounded-xl bg-amber-500 py-3 text-white">中文Backlinks案例參考</a>
                             <a href="#!" className="flex justify-center rounded-xl bg-white py-3 text-[#436C34]">直接WhatsApp查詢</a>
                             <div className="flex justify-center w-1/3 mx-auto">
-                                <img src={QRcode} alt="" loading="lazy" decoding="async"/>
+                                <img src={QRcode} alt="" loading="lazy" decoding="async" />
                             </div>
                         </div>
                     </div>
@@ -186,7 +190,7 @@ class backlinksIndex extends React.Component {
                     <div className="block rounded-lg pt-24 pb-10 container mx-auto">
                         <div className="grid-cols-1 md:grid-cols-3 gap-12 items-center flex lg:grid flex-col-reverse">
                             <div className="flex justify-center second">
-                                <img src={BacklinkCover} alt='' loading="lazy" decoding="async"/></div>
+                                <img src={BacklinkCover} alt='' loading="lazy" decoding="async" /></div>
                             <div className="flex justify-center col-span-2 first">
                                 <div className="flex flex-col">
                                     <div className="overflow-x-auto">
@@ -216,7 +220,7 @@ class backlinksIndex extends React.Component {
                             <div className="grid grid-cols-12 lg:grid-cols-6 gap-4">
                                 <div className="col-start-1 col-end-13 lg:col-start-1 lg:col-end-12 justify-center ml-0 lg:ml-20 grid text-xl lg:text-2xl font-medium order-2 lg:order-1 px-10">SEO 業界無人不識的 Google 搜索倡導者 John Mueller 在Youtube 谷歌網站管理員中心辦公時間視頻群聊中公開說：</div>
                                 <div className="lg:relative left-32 col-start-4 col-end-10 lg:col-start-2 lg:col-end-3 flex justify-center order-1 lg:order-2 pt-10">
-                                    <img src={John} className="rounded-full shadow-md" alt="John" loading="lazy" decoding="async"/>
+                                    <img src={John} className="rounded-full shadow-md" alt="John" loading="lazy" decoding="async" />
                                 </div>
                                 <div className="lg:relative left-36 col-start-1 col-end-13 lg:col-start-3 lg:col-end-13 flex justify-center col-span-5 order-3 pt-10">
                                     <div className="rounded-3xl shadow-[0_3px_5px_rgba(0,0,0,0.25)] justify-center grid backdrop-blur-md bg-white/50 col-span-5">
@@ -227,7 +231,7 @@ class backlinksIndex extends React.Component {
                         </div>
                     </div>
                     <div className='col-span-2 first'>
-                        <img src={MeetingRoom} alt='meeting room' loading="lazy" decoding="async"/>
+                        <img src={MeetingRoom} alt='meeting room' loading="lazy" decoding="async" />
                     </div>
                 </section>
                 <section className={`${styles.sec7} lg:p-20 mx-auto bg-bottom lg:bg-center`}>
@@ -331,7 +335,7 @@ class backlinksIndex extends React.Component {
                                         </div>
                                     </div>
                                     <div className="grid grid-cols-1 gap-6 p-10 lg:p-0">
-                                        <img className="flex justify-center text-6xl rounded-xl" src={Native_backlink_Rankin01} alt="Native_backlink_Rankin01" loading="lazy" decoding="async"/>
+                                        <img className="flex justify-center text-6xl rounded-xl" src={Native_backlink_Rankin01} alt="Native_backlink_Rankin01" loading="lazy" decoding="async" />
                                     </div>
                                 </div>
                             </div>
@@ -339,7 +343,7 @@ class backlinksIndex extends React.Component {
                     </div>
                 </section>
                 <section className={`${styles.sec10} lg:p-20 mx-auto bg-bottom`}>
-                <div className="container mx-auto p-0 lg:p-6">
+                    <div className="container mx-auto p-0 lg:p-6">
                         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
                             <div className="justify-center text-6xl p-6 lg:p-6 grid grid-cols-1 gap-6 content-between relative lg:static bottom-12 lg:bottom-0">
                                 <div className="flex justify-end lg:justify-center text-2xl py-2 lg:py-6 px-10 lg:px-0 mx-14 lg:mx-0 bg-[#70a665] text-white font-semibold order-2 lg:order-1 relative lg:static right-[150px] sm:right-[350px] md:right-[520px] top-10">成功案例 2</div>
@@ -364,7 +368,7 @@ class backlinksIndex extends React.Component {
                                         </div>
                                     </div>
                                     <div className="grid grid-cols-1 gap-6 p-10 lg:p-0">
-                                        <img className="flex justify-center text-6xl rounded-xl" src={Native_backlink_Rankin01} alt="Native_backlink_Rankin01" loading="lazy" decoding="async"/>
+                                        <img className="flex justify-center text-6xl rounded-xl" src={Native_backlink_Rankin01} alt="Native_backlink_Rankin01" loading="lazy" decoding="async" />
                                     </div>
                                 </div>
                             </div>
@@ -372,7 +376,7 @@ class backlinksIndex extends React.Component {
                     </div>
                 </section>
                 <section className={`${styles.sec11} lg:p-20 mx-auto bg-bottom`}>
-                <div className="container mx-auto p-0 lg:p-6">
+                    <div className="container mx-auto p-0 lg:p-6">
                         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
                             <div className="justify-center text-6xl p-6 lg:p-6 grid grid-cols-1 gap-6 content-between relative lg:static bottom-12 lg:bottom-0">
                                 <div className="flex justify-end lg:justify-center text-2xl py-2 lg:py-6 px-10 lg:px-0 mx-14 lg:mx-0 bg-[#70a665] text-white font-semibold order-2 lg:order-1 relative lg:static right-[150px] sm:right-[350px] md:right-[520px] top-10">成功案例 3</div>
@@ -397,7 +401,7 @@ class backlinksIndex extends React.Component {
                                         </div>
                                     </div>
                                     <div className="grid grid-cols-1 gap-6 p-10 lg:p-0">
-                                        <img className="flex justify-center text-6xl rounded-xl" src={Native_backlink_Rankin01} alt="Native_backlink_Rankin01" loading="lazy" decoding="async"/>
+                                        <img className="flex justify-center text-6xl rounded-xl" src={Native_backlink_Rankin01} alt="Native_backlink_Rankin01" loading="lazy" decoding="async" />
                                     </div>
                                 </div>
                             </div>
