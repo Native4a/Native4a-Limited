@@ -200,7 +200,7 @@ const SliderWrapper = styled("div")`
   .slick-dots {
     position: absolute;
     top: -43px;
-    left: 190px;
+    left: 185px;
     display: block;
     width: 50%;
     padding: 0;
