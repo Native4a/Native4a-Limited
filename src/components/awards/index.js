@@ -1,47 +1,47 @@
 import React from 'react'
-import useClientLogo from '../../hook/useClientLogo'
+import useAwards from '../../hook/useAwards'
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 import * as styles from "../../styles/tabs.module.css"
-
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
 const Awards = () => {
-    const clientLogo = useClientLogo();
+    const awards = useAwards();
     return (
         <div>
-            {clientLogo.map((item, index) => {
+            {awards.map((item, index) => {
                 const {
-                    awardImage, mediaReport } = item;
+                    title_field, subTitle_field01, subTitle_field02, awardImage_field01, awardImage_field02 } = item;
                 return (
                     <div className="md:hidden shadow-md p-6 rounded-3xl bg-white mt-2" key={index}>
                         <div className="pb-8">
                             <h4 className="flex text-2xl pt-12 ml-2 font-bold">
                                 <span><FaSquare /></span>
-                                「Native4a」品牌<br />獲獎的廣告公司
+                                「Native4a」品牌<br />獲獎的廣告公司{renderRichText(title_field)}
                             </h4>
                             <Tabs>
                                 <TabList className={styles.reactTabsTabList}>
-                                    <Tab className={styles.reactTabsTab}>年度獎項</Tab>
-                                    <Tab className={styles.reactTabsTab}>媒體報導</Tab>
+                                    <Tab className={styles.reactTabsTab}>{subTitle_field01}</Tab>
+                                    <Tab className={styles.reactTabsTab}>{subTitle_field02}</Tab>
                                 </TabList>
                                 <TabPanel>
                                     <div className="grid grid-cols-1 md:grid-cols-2 pt-5">
                                         <div className="drop-shadow p-2">
-                                            <img className='rounded-sm' src={awardImage[0].url} alt={awardImage[0].title} />
+                                            <img className='rounded-sm' src={awardImage_field01[0].url} alt={awardImage_field01[0].title} />
                                         </div>
                                         <div className="drop-shadow p-2">
-                                            <img className='rounded-sm' src={awardImage[1].url} alt={awardImage[1].title} />
+                                            <img className='rounded-sm' src={awardImage_field01[1].url} alt={awardImage_field01[1].title} />
                                         </div>
                                     </div>
                                 </TabPanel>
                                 <TabPanel>
                                     <div className="grid grid-cols-2 pt-5">
                                         <div className="drop-shadow p-2">
-                                            <img src={mediaReport[0].url} alt={mediaReport[0].title} />
+                                            <img src={awardImage_field02[0].url} alt={awardImage_field02[0].title} />
                                         </div>
                                         <div className="drop-shadow p-2">
-                                            <img src={mediaReport[1].url} alt={mediaReport[1].title} />
+                                            <img src={awardImage_field02[1].url} alt={awardImage_field02[1].title} />
                                         </div>
                                     </div>
                                 </TabPanel>

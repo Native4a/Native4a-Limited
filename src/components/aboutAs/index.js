@@ -17,8 +17,8 @@ const AboutAs = () => {
         return (
           <section className={styles.secAboutus_wrap} key={index} id="aboutAs">
             <div className={styles.container}>
-              <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-0 items-center">
+              <div className="container mx-auto px-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-0 items-center">
                   <div>
                     <h2 className="flex text-2xl md:text-4xl ml-2 font-bold items-center"><span><FaSquare /></span><b className='ml-3'>{title}</b></h2>
                     <h2 className='text-2xl md:text-3xl pt-3 pb-4 ml-4'><b>{SubTitle}</b></h2>
