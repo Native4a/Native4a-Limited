@@ -1,5 +1,5 @@
 /*-- All area start here --*/
-img{
+img {
   margin: auto;
 }
 
@@ -11,6 +11,7 @@ img{
   max-width: 85%;
   padding: 0 36px;
 }
+
 /*-- All area end here--*/
 
 
@@ -25,19 +26,19 @@ img{
   letter-spacing: -0.012em;
   font-size: 2.8vw;
   font-weight: var(--extrabold);
-  line-height: var(--solid); 
+  line-height: var(--solid);
   margin: 0 0 var(--space-xl);
 }
 
 .subTitle {
   letter-spacing: -0.012em;
-  font-size: var(--text-subtitle);
+  font-size: 1.685vw;
   font-weight: var(--extrabold);
   line-height: var(--solid);
   margin: 0 0 var(--space-xl);
 }
 
-.border{
+.border {
   border-bottom-width: 2px;
   width: 91.666667%;
   --tw-border-opacity: 1;
@@ -192,11 +193,11 @@ video popup
 
 @media screen and (max-width: 1536px) {
   .title {
-    font-size: 50px;
+    font-size: 3.9062vw;
   }
 
   .subTitle {
-    font-size: 30px;
+    font-size: 2.3437vw;
   }
 
   .sec2_wrap {
@@ -210,11 +211,11 @@ video popup
 
 @media screen and (max-width: 1280px) {
   .title {
-    font-size: 3.6vw;
+    font-size: 4.6vw;
   }
 
   .subTitle {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
 
   .sec2_wrap {
@@ -228,16 +229,17 @@ video popup
 
 @media screen and (max-width: 1024px) {
   .title {
-    font-size: 55px;
+    font-size: 7.1614vw;
   }
 
   .subTitle {
-    font-size: 32px;
+    font-size: 4.1666vw;
   }
 
   .sec2_wrap {
     margin-top: px;
   }
+
   .container {
     max-width: 100%;
   }
@@ -246,12 +248,12 @@ video popup
 
 @media screen and (max-width: 768px) {
   .title {
-    font-size: 37px;
+    font-size: 8.3146vw;
     margin-bottom: 8px;
   }
 
   .subTitle {
-    font-size: 27px;
+    font-size: 6.0674vw;
     margin: 0px;
   }
 

@@ -3,8 +3,9 @@ import useAwards from '../../hook/useAwards'
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
-import * as styles from "../../styles/tabs.module.css"
+import * as tabstyles from "../../styles/tabs.module.css"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import * as styles from './style.module.css'
 
 const Awards = () => {
     const awards = useAwards();
@@ -16,14 +17,13 @@ const Awards = () => {
                 return (
                     <div className="md:hidden shadow-md p-6 rounded-3xl bg-white mt-2" key={index}>
                         <div className="pb-8">
-                            <h4 className="flex text-2xl pt-12 ml-2 font-bold">
-                                <span><FaSquare /></span>
-                                「Native4a」品牌<br />獲獎的廣告公司{renderRichText(title_field)}
+                            <h4 className={`${styles.highlight} flex text-[1.3rem] pt-12 pb-5 ml-2 font-bold items-center`}>
+                                <span><FaSquare /></span>{renderRichText(title_field)}
                             </h4>
                             <Tabs>
-                                <TabList className={styles.reactTabsTabList}>
-                                    <Tab className={styles.reactTabsTab}>{subTitle_field01}</Tab>
-                                    <Tab className={styles.reactTabsTab}>{subTitle_field02}</Tab>
+                                <TabList className={tabstyles.reactTabsTabList}>
+                                    <Tab className={tabstyles.reactTabsTab}>{subTitle_field01}</Tab>
+                                    <Tab className={tabstyles.reactTabsTab}>{subTitle_field02}</Tab>
                                 </TabList>
                                 <TabPanel>
                                     <div className="grid grid-cols-1 md:grid-cols-2 pt-5">

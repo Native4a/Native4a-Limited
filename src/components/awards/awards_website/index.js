@@ -1,41 +1,42 @@
 import React from 'react'
+import useAwards from '../../../hook/useAwards'
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
-import useClientLogo from '../../../hook/useClientLogo'
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import * as styles from '../style.module.css'
 
 const AwardsWeb = () => {
-    const clientLogo = useClientLogo();
+    const awards = useAwards();
     return (
         <div>
-            {clientLogo.map((item, index) => {
+            {awards.map((item, index) => {
                 const {
-                    awardImage, mediaReport } = item;
+                    title_field, subTitle_field01, subTitle_field02, awardImage_field01, awardImage_field02 } = item;
                 return (
                     <div className="hidden md:inline" key={index}>
-                        <h4 className="flex items-center text-2xl md:text-lg 2xl:text-2xl pt-5 2xl:pt-12 pb-4 ml-4">
+                        <h4 className={`${styles.highlight} flex items-center text-2xl md:text-lg 2xl:text-2xl pt-5 2xl:pt-12 pb-4 ml-4`}>
                             <span><FaSquare /></span>
-                            「native4a」品牌 -
-                            <mark>獲獎的廣告公司</mark>
+                            {renderRichText(title_field)}
                         </h4>
                         <div className="grid grid-cols-2 gap-6">
                             <div>
-                                <p className="underline px-4 decoration-yellow-400 underline-offset-4 decoration-2"><b>年度獎項</b></p>
+                                <p className="underline px-4 decoration-yellow-400 underline-offset-4 decoration-2"><b>{subTitle_field01}</b></p>
                                 <div className="grid grid-cols-2 pt-5">
                                     <div className="drop-shadow p-2">
-                                        <img  className='rounded-sm' src={awardImage[0].url} alt={awardImage[0].title} />
+                                        <img  className='rounded-sm' src={awardImage_field01[0].url} alt={awardImage_field01[0].title} />
                                     </div>
                                     <div className="drop-shadow p-2">
-                                        <img className='rounded-sm' src={awardImage[1].url} alt={awardImage[1].title} />
+                                        <img className='rounded-sm' src={awardImage_field01[1].url} alt={awardImage_field01[1].title} />
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <p className="underline px-4 decoration-yellow-400 underline-offset-4 decoration-2"><b>媒體報導</b></p>
+                                <p className="underline px-4 decoration-yellow-400 underline-offset-4 decoration-2"><b>{subTitle_field02}</b></p>
                                 <div className="grid grid-cols-2 py-7 items-center gap-6">
                                     <div className="p-2">
-                                        <img src={mediaReport[0].url} alt={mediaReport[0].title} />
+                                        <img src={awardImage_field02[0].url} alt={awardImage_field02[0].title} />
                                     </div>
                                     <div>
-                                        <img src={mediaReport[1].url} alt={mediaReport[1].title} />
+                                        <img src={awardImage_field02[1].url} alt={awardImage_field02[1].title} />
                                     </div>
                                 </div>
                             </div>

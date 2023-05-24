@@ -11,14 +11,6 @@ const useClientLogo = () => {
               url
               title
             }
-            awardImage {
-              url
-              title
-            }
-            mediaReport {
-              url
-              title
-            }
           }
         }
       }

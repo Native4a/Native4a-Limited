@@ -1,0 +1,13 @@
+.highlight b{
+    display: inline;
+    background: #FFC107;
+    box-shadow: .5em 0 0 #FFC107, -.2em 0 0 #FFC107;
+}
+
+@media (max-width: 1536px) {}
+
+@media (max-width: 1280px) {}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 768px) {}
