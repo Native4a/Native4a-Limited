@@ -245,227 +245,7 @@ class RootIndex extends React.Component {
                     <Popup
                       trigger={
                         <div className={styles.overlay_container}>
-                          <img src={homePage.clientImage01.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" loading="lazy" decoding="async"/>
-                        </div>
-                      }
-                      modal
-                      contentStyle=""
-                    >
-                      {(close) => (
-                        <div className={styles.modal}>
-                          <button className={styles.close} onClick={close}>X</button>
-                          {/**Put your youtube link here*/}
-                          <div className={styles.videoContainer}>
-                            <iframe
-                              className={styles.responsiveIframe}
-                              width="100%"
-                              src="https://www.youtube.com/embed/y-KIr1qAEGQ"
-                              title="YouTube video player"
-                              frameborder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowfullscreen
-                            ></iframe>
-                          </div>
-                        </div>
-                      )}
-                    </Popup>
-                    <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">{homePage.clientFeedback01}</p>
-                    <div className="w-10/12 m-5">
-                      <div className="grid grid-cols-3 gap-4 items-center">
-                        <div className="">
-                          <img className="col-end-3 rounded-full 2xl:w-9/12" src={homePage.clientLogo01.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
-                        </div>
-                        <div className="col-span-2">
-                          <div className="pl-4 col-start-3 col-end-9">
-                            <p><b>{homePage.clientImage01.title}</b></p>
-                            <p className="text-sm">{homePage.clientImage01.description}</p>
-                            <Star />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <Popup
-                      trigger={
-                        <div className={styles.overlay_container}>
-                          <img src={homePage.clientImage02.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" loading="lazy" decoding="async"/>
-                        </div>
-                      }
-                      modal
-                      contentStyle=""
-                    >
-                      {(close) => (
-                        <div className={styles.modal}>
-                          <button className={styles.close} onClick={close}>X</button>
-                          {/**Put your youtube link here*/}
-                          <div className={styles.videoContainer}>
-                            <iframe
-                              className={styles.responsiveIframe}
-                              width="100%"
-                              src="https://www.youtube.com/embed/MVoiiO4l4Kg"
-                              title="YouTube video player"
-                              frameborder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowfullscreen
-                            ></iframe>
-                          </div>
-                        </div>
-                      )}
-                    </Popup>
-                    <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">{homePage.clientFeedback02}</p>
-                    <div className="w-10/12 m-5">
-                      <div className="grid grid-cols-3 gap-4 items-center">
-                        <div className="">
-                          <img className="col-end-3 rounded-full 2xl:w-9/12" src={homePage.clientLogo02.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
-                        </div>
-                        <div className="col-span-2">
-                          <div className="pl-4 col-start-3 col-end-9">
-                            <p><b>{homePage.clientImage02.title}</b></p>
-                            <p className="text-sm">{homePage.clientImage02.description}</p>
-                            <Star />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <Popup
-                      trigger={
-                        <div className={styles.overlay_container}>
-                          <img src={homePage.clientImage03.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" loading="lazy" decoding="async"/>
-                        </div>
-                      }
-                      modal
-                      contentStyle=""
-                    >
-                      {(close) => (
-                        <div className={styles.modal}>
-                          <button className={styles.close} onClick={close}>X</button>
-                          {/**Put your youtube link here*/}
-                          <div className={styles.videoContainer}>
-                            <iframe
-                              className={styles.responsiveIframe}
-                              width="100%"
-                              src="https://www.youtube.com/embed/saGJix_uz40"
-                              title="YouTube video player"
-                              frameborder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowfullscreen
-                            ></iframe>
-                          </div>
-                        </div>
-                      )}
-                    </Popup>
-                    <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">{homePage.clientFeedback03}</p>
-                    <div className="w-10/12 m-5">
-                      <div className="grid grid-cols-3 gap-4 items-center">
-                        <div className="">
-                          <img className="col-end-3 rounded-full" src={homePage.clientLogo03.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
-                        </div>
-                        <div className="col-span-2">
-                          <div className="pl-4 col-start-3 col-end-9">
-                            <p><b>{homePage.clientImage03.title}</b></p>
-                            <p className="text-sm">{homePage.clientImage03.description}</p>
-                            <Star />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <Popup
-                      trigger={
-                        <div className={styles.overlay_container}>
-                          <img src={homePage.clientImage04.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" loading="lazy" decoding="async"/>
-                        </div>
-                      }
-                      modal
-                      contentStyle=""
-                    >
-                      {(close) => (
-                        <div className={styles.modal}>
-                          <button className={styles.close} onClick={close}>X</button>
-                          {/**Put your youtube link here*/}
-                          <div className={styles.videoContainer}>
-                            <iframe
-                              className={styles.responsiveIframe}
-                              width="100%"
-                              src="https://www.youtube.com/embed/royT3SSLSbw"
-                              title="YouTube video player"
-                              frameborder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowfullscreen
-                            ></iframe>
-                          </div>
-                        </div>
-                      )}
-                    </Popup>
-                    <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">{homePage.clientFeedback04}</p>
-                    <div className="w-10/12 m-5">
-                      <div className="grid grid-cols-3 gap-4 items-center">
-                        <div className="">
-                          <img className="col-end-3 rounded-full 2xl:w-10/12" src={homePage.clientLogo04.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
-                        </div>
-                        <div className="col-span-2">
-                          <div className="pl-4 col-start-3 col-end-9">
-                            <p><b>{homePage.clientImage04.title}</b></p>
-                            <p className="text-sm">{homePage.clientImage04.description}</p>
-                            <Star />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <Popup
-                      trigger={
-                        <div className={styles.overlay_container}>
-                          <img src={homePage.clientImage05.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" loading="lazy" decoding="async"/>
-                        </div>
-                      }
-                      modal
-                      contentStyle=""
-                    >
-                      {(close) => (
-                        <div className={styles.modal}>
-                          <button className={styles.close} onClick={close}>X</button>
-                          {/**Put your youtube link here*/}
-                          <div className={styles.videoContainer}>
-                            <iframe
-                              className={styles.responsiveIframe}
-                              width="100%"
-                              src="https://www.youtube.com/embed/IrD1A4GWMtQ"
-                              title="YouTube video player"
-                              frameborder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowfullscreen
-                            ></iframe>
-                          </div>
-                        </div>
-                      )}
-                    </Popup>
-                    <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">{homePage.clientFeedback05}</p>
-                    <div className="w-10/12 m-5">
-                      <div className="grid grid-cols-3 gap-4 items-center">
-                        <div className="">
-                          <img className="col-end-3 rounded-full 2xl:w-9/12" src={homePage.clientLogo05.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
-                        </div>
-                        <div className="col-span-2">
-                          <div className="pl-4 col-start-3 col-end-9">
-                            <p><b>{homePage.clientImage05.title}</b></p>
-                            <p className="text-sm">{homePage.clientImage05.description}</p>
-                            <Star />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <Popup
-                      trigger={
-                        <div className={styles.overlay_container}>
-                          <img src={homePage.clientImage06.url} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" loading="lazy" decoding="async"/>
+                          <img src={homePage.clientFeedback.mainVisual} alt="Girl in a jacket" width="500" height="600" className="rounded-sm" loading="lazy" decoding="async"/>
                         </div>
                       }
                       modal
@@ -489,16 +269,16 @@ class RootIndex extends React.Component {
                         </div>
                       )}
                     </Popup>
-                    <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">{homePage.clientFeedback06}</p>
+                    <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold"></p>
                     <div className="w-10/12 m-5">
                       <div className="grid grid-cols-3 gap-4 items-center">
                         <div className="">
-                          <img className="col-end-3 rounded-full" src={homePage.clientLogo06.url} alt="service_Video_Production" loading="lazy" decoding="async"/>
+                          <img className="col-end-3 rounded-full" src="" alt="service_Video_Production" loading="lazy" decoding="async"/>
                         </div>
                         <div className="col-span-2">
                           <div className="pl-4 col-start-3 col-end-9">
-                            <p><b>{homePage.clientImage06.title}</b></p>
-                            <p className="text-sm">{homePage.clientImage06.description}</p>
+                            <p><b></b></p>
+                            <p className="text-sm"></p>
                             <Star />
                           </div>
                         </div>
@@ -576,61 +356,24 @@ export const pageQuery = graphql`
           subTitle2
           subTitle21
           subTitle22
-          clientFeedback01
-          clientFeedback02
-          clientFeedback03
-          clientFeedback04
-          clientFeedback05
-          clientFeedback06
           subTitle21Description {
             subTitle21Description
           }
-          clientImage01 {
-            title
-            description
-            url
-          }
-          clientImage02 {
-            title
-            description
-            url
-          }
-          clientImage03 {
-            title
-            description
-            url
-          }
-          clientImage04 {
-            title
-            description
-            url
-          }
-          clientImage05 {
-            title
-            description
-            url
-          }
-          clientImage06 {
-            title
-            description
-            url
-          }
-          clientLogo01 {
-            url
-          }
-          clientLogo02 {
-            url
-          }
-          clientLogo03 {
-            url
-          }
-          clientLogo04 {
-            url
-          }
-          clientLogo05 {
-            url
-          }
-          clientLogo06 {
+          clientFeedback {
+            order
+            mainVisual {
+              url
+            }
+            companyLogo {
+              url
+            }
+            companyName
+            clientsName
+            clientsPosition
+            clientFeedback {
+              clientFeedback
+            }
+            ranking
             url
           }
           servicesImg {

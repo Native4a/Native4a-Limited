@@ -1,5 +1,7 @@
 //base here//
 import React from 'react'
+import { graphql } from "gatsby"
+import get from "lodash/get"
 
 //components here//
 import Layout from '../components/layout'
@@ -17,20 +19,21 @@ import * as styles from '../styles/contact-us.module.css'
 
 class contactUs extends React.Component {
   render() {
+    const [ContactUsPage] = get(this, "props.data.allContentfulContactUsPage.nodes")
     return (
       <Layout location={this.props.location}>
         <Seo title="Blog" />
         <section className={styles.container}>
           <div className={styles.sec_wrap}>
-            <h1 className="text-2xl md:text-5xl leading-snug text-center">感謝您準備向我們查詢，預祝您的業務蒸蒸日上。</h1>
-            <p className="text-base md:text-xl leading-snug text-center">我們十分喜歡與您交流，期待我們能為您帶來凡非價值。</p>
+            <h1 className="text-2xl md:text-5xl leading-snug text-center">{ContactUsPage.Section1Title}</h1>
+            <p className="text-base md:text-xl leading-snug text-center">{ContactUsPage.Section1Descriptions}</p>
           </div>
         </section>
         <ContactForm />
         <section>
           <div className={styles.sec_wrap}>
-            <h1 className="text-2xl md:text-5xl leading-snug text-center">我們將會在辦公時間內回覆您。</h1>
-            <p className="text-base md:text-xl leading-snug text-center">再次感謝您的垂詢，生意不容易，我們一起加油！</p>
+            <h1 className="text-2xl md:text-5xl leading-snug text-center">{ContactUsPage.section2Title}</h1>
+            <p className="text-base md:text-xl leading-snug text-center">{ContactUsPage.Section2Descriptions}</p>
           </div>
         </section>
         <section className={styles.sec2_wrap}>
@@ -40,7 +43,7 @@ class contactUs extends React.Component {
         </section>
         <section className={styles.sec2_wrap}>
           <div className="grid grid-rows-2 w-full items-center">
-            <h4 className="text-xl leading-snug text-center">追蹤我們，您會有所得益</h4>
+            <h4 className="text-xl leading-snug text-center">{ContactUsPage.section2Text}</h4>
           </div>
         </section>
       </Layout >
@@ -56,3 +59,17 @@ class contactUs extends React.Component {
 */
 
 export default contactUs
+
+export const pageQuery = graphql`
+    query ContactUsQuery {
+      allContentfulContactUsPage {
+        nodes {
+          Section1Title
+          Section1Descriptions
+          section2Title
+          section2Descriptions
+          section2Text
+        }
+      }
+    }
+`

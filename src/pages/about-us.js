@@ -35,7 +35,10 @@ class aboutUs extends React.Component {
     const [AboutUsPage] = get(this, "props.data.allContentfulAboutUsPage.nodes")
     return (
       <Layout location={this.props.location}>
-        <Seo title="Blog" />
+        <Seo 
+          title={AboutUsPage.metaTitle}
+          description={AboutUsPage.metaDescription} 
+        />
         <section className={styles.mainBg}>
           <div className={styles.container}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
@@ -278,6 +281,8 @@ export const pageQuery = graphql`
     query AboutusQuery {
       allContentfulAboutUsPage {
         nodes {
+          metaTitle
+          metaDescription
           title
           titleDescription {
             titleDescription
