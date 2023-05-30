@@ -17,24 +17,13 @@ import AwardsWeb from "../components/awards/awards_website"
 import SocialMediaBtn from '../components/button/socialMedia'
 import Whatsapp from "../components/button/whatsapp"
 import NativeStrengths from '../components/nativeStrengths'
+import AddCases from '../components/Cases'
 
 //css here//
 import Popup from "reactjs-popup"
 import 'reactjs-popup/dist/index.css'
 
 //image here//
-import seo01 from '../img/seoWork_01.png'
-import seo02 from '../img/seoWork_02.png'
-import seo03 from '../img/seoWork_03.png'
-import seo04 from '../img/seoWork_04.png'
-import seo05 from '../img/seoWork_05.png'
-import seo06 from '../img/seoWork_06.png'
-import seo07 from '../img/seoWork_07.png'
-import seo08 from '../img/seoWork_08.png'
-import seo09 from '../img/seoWork_09.png'
-import seo10 from '../img/seoWork_10.png'
-import seo11 from '../img/seoWork_11.png'
-import seo12 from '../img/seoWork_12.png'
 import plsStep from '../img/plsStep.png'
 
 //import ArticlePreview from '../components/article-preview'
@@ -116,114 +105,7 @@ class webIndex extends React.Component {
           <div className={styles.container}>
             <div className='grid items-center'>
               <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 items-center'>
-                <div className='grid grid-row-2'>
-                  <div>
-                    <img className='pt-10' src={seo01} alt="" loading="lazy" decoding="async"/>
-                  </div>
-                  <div>
-                    <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>Lost HK</h3>
-                    <p className='text-center'>密室逃脫</p>
-                  </div>
-                </div>
-                <div className='grid grid-row-2'>
-                  <div>
-                    <img className='pt-10' src={seo02} alt="" loading="lazy" decoding="async"/>
-                  </div>
-                  <div>
-                    <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>Taste Design</h3>
-                    <p className='text-center'>室內設計公司</p>
-                  </div>
-                </div>
-                <div className='grid grid-row-2'>
-                  <div>
-                    <img className='pt-10' src={seo03} alt="" loading="lazy" decoding="async"/>
-                  </div>
-                  <div>
-                    <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>世紀21大灣區</h3>
-                    <p className='text-center'>海外地產代理</p>
-                  </div>
-                </div>
-                <div className='grid grid-row-2'>
-                  <div>
-                    <img className='pt-10' src={seo04} alt="" loading="lazy" decoding="async"/>
-                  </div>
-                  <div>
-                    <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>Gas Super</h3>
-                    <p className='text-center'>煤氣維修公司</p>
-                  </div>
-                </div>
-                <div className='grid grid-row-2'>
-                  <div>
-                    <img className='pt-10' src={seo05} alt="" loading="lazy" decoding="async"/>
-                  </div>
-                  <div>
-                    <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>老佛爺鐘錶</h3>
-                    <p className='text-center'>鐘錶公司</p>
-                  </div>
-                </div>
-                <div className='grid grid-row-2'>
-                  <div>
-                    <img className='pt-10' src={seo06} alt="" loading="lazy" decoding="async"/>
-                  </div>
-                  <div>
-                    <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>Girls 100</h3>
-                    <p className='text-center'>女性雜誌</p>
-                  </div>
-                </div>
-                <div className='grid grid-row-2'>
-                  <div>
-                    <img className='pt-10' src={seo07} alt="" loading="lazy" decoding="async"/>
-                  </div>
-                  <div>
-                    <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>Home And Window</h3>
-                    <p className='text-center'>窗簾公司</p>
-                  </div>
-                </div>
-                <div className='grid grid-row-2'>
-                  <div>
-                    <img className='pt-10' src={seo08} alt="" loading="lazy" decoding="async"/>
-                  </div>
-                  <div>
-                    <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>360 Creative Solution</h3>
-                    <p className='text-center'>媒體營銷公司</p>
-                  </div>
-                </div>
-                <div className='grid grid-row-2'>
-                  <div>
-                    <img className='pt-10' src={seo09} alt="" loading="lazy" decoding="async"/>
-                  </div>
-                  <div>
-                    <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>apexdesign</h3>
-                    <p className='text-center'>室內設計公司</p>
-                  </div>
-                </div>
-                <div className='grid grid-row-2'>
-                  <div>
-                    <img className='pt-10' src={seo10} alt="" loading="lazy" decoding="async"/>
-                  </div>
-                  <div>
-                    <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>雅居窗簾</h3>
-                    <p className='text-center'>窗簾公司</p>
-                  </div>
-                </div>
-                <div className='grid grid-row-2'>
-                  <div>
-                    <img className='pt-10' src={seo11} alt="" loading="lazy" decoding="async"/>
-                  </div>
-                  <div>
-                    <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>A-One Print</h3>
-                    <p className='text-center'>印衫公司</p>
-                  </div>
-                </div>
-                <div className='grid grid-row-2'>
-                  <div>
-                    <img className='pt-10' src={seo12} alt="" loading="lazy" decoding="async"/>
-                  </div>
-                  <div>
-                    <h3 className='text-center text-yellow-400 text-xl font-normal py-5'>宏俊工程</h3>
-                    <p className='text-center'>小型工程公司</p>
-                  </div>
-                </div>
+                <AddCases />
               </div>
             </div>
           </div>
