@@ -37,6 +37,10 @@ const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
           content: image,
         },
         {
+          property: `og:url`,
+          content: "https://nativeaaaa.com.hk/",
+        },
+        {
           property: `og:title`,
           content: title,
         },
