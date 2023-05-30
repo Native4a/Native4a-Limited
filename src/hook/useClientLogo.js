@@ -2,14 +2,16 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 const useClientLogo = () => {
     const {
-        allContentfulHomePage: { nodes }
+      allContentfulClientsLogo: { nodes }
       } = useStaticQuery(graphql`
       query ClientLogoQuery{
-        allContentfulHomePage {
+        allContentfulClientsLogo(sort: {order: ASC}) {
           nodes {
-            clientsLogo{
+            order
+            title
+            clientsAlt
+            clientsLogo {
               url
-              title
             }
           }
         }
