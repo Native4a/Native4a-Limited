@@ -8,6 +8,13 @@ module.exports = {
     description: "",
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://nativeaaaa.com.hk`,
+        stripQueryString: true,
+      },
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",

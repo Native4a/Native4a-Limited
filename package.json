@@ -21,6 +21,7 @@
     "emailjs": "^4.0.1",
     "gatsby": "^5.5.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
+    "gatsby-plugin-canonical-urls": "^5.10.0",
     "gatsby-plugin-image": "^3.5.0",
     "gatsby-plugin-react-helmet": "^6.5.0",
     "gatsby-plugin-sharp": "^5.10.0",
