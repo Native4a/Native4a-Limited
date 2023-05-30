@@ -39,6 +39,7 @@ class smmAdsIndex extends React.Component {
                 <Seo
                     title={smmPage.metaTitle}
                     description={smmPage.metaDescription}
+                    ogUrl="https://nativeaaaa.com.hk/smm-ads/"
                 />
                 <section className={styles.mainBg}>
                     <div className={styles.container}>

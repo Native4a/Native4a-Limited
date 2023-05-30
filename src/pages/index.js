@@ -39,6 +39,7 @@ class RootIndex extends React.Component {
         <Seo
           title={homePage.metaTitle}
           description={homePage.metaDescription}
+          ogUrl="https://nativeaaaa.com.hk/"
         />
         <section className={styles.mainBg}>
           <div className={styles.container}>

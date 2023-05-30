@@ -22,7 +22,11 @@ class contactUs extends React.Component {
     const [ContactUsPage] = get(this, "props.data.allContentfulContactUsPage.nodes")
     return (
       <Layout location={this.props.location}>
-        <Seo title="Blog" />
+        <Seo
+          title={ContactUsPage.metaTitle}
+          description={ContactUsPage.metaDescription}
+          ogUrl="https://nativeaaaa.com.hk/contact-us/"
+        />
         <section className={styles.container}>
           <div className={styles.sec_wrap}>
             <h1 className="text-2xl md:text-5xl leading-snug text-center">{ContactUsPage.Section1Title}</h1>

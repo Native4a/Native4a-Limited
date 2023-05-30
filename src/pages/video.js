@@ -46,6 +46,7 @@ class videoIndex extends React.Component {
         <Seo 
           title={videoPage.metaTitle}
           description={videoPage.metaDescription}
+          ogUrl="https://nativeaaaa.com.hk/video/"
         />
         <section className={styles.mainBg}>
           <div className={styles.container}>

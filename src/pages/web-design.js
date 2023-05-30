@@ -49,6 +49,7 @@ class webIndex extends React.Component {
         <Seo 
           title={webPage.metaTitle}
           description={webPage.metaDescription}
+          ogUrl="https://nativeaaaa.com.hk/web-design/"
         />
         <section className={styles.mainBg}>
           <div className={styles.container}>

@@ -51,6 +51,7 @@ class backlinksIndex extends React.Component {
                 <Seo
                     title={webPage.metaTitle}
                     description={webPage.metaDescription}
+                    ogUrl="https://nativeaaaa.com.hk/backlinks/"
                 />
                 <section className={styles.mainBg}>
                     <div className={styles.container}>

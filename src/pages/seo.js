@@ -39,6 +39,7 @@ class seoIndex extends React.Component {
         <Seo 
           title={seoPage.metaTitle}
           description={seoPage.metaDescription}
+          ogUrl="https://nativeaaaa.com.hk/seo/"
         />
         <section className={styles.mainBg}>
           <div className={styles.container}>

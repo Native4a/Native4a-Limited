@@ -38,6 +38,7 @@ class aboutUs extends React.Component {
         <Seo 
           title={AboutUsPage.metaTitle}
           description={AboutUsPage.metaDescription} 
+          ogUrl="https://nativeaaaa.com.hk/about-us-2/"
         />
         <section className={styles.mainBg}>
           <div className={styles.container}>
