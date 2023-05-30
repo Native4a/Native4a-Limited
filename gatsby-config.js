@@ -14,22 +14,7 @@ module.exports = {
         siteUrl: `https://nativeaaaa.com.hk`,
         stripQueryString: true,
       },
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        sitemap: 'https://nativeaaaa.com.hk/sitemap.xml',
-        resolveEnv: () => process.env.GATSBY_ENV,
-        env: {
-          development: {
-            policy: [{userAgent: '*', disallow: ['/']}]
-          },
-          production: {
-            policy: [{userAgent: '*', allow: '/'}]
-          }
-        }
-      }
     },
-    "gatsby-plugin-robots-txt",
-    
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
