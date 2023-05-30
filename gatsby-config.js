@@ -16,8 +16,8 @@ module.exports = {
       },
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://nativeaaaa.com.hk',
         sitemap: 'https://nativeaaaa.com.hk/sitemap.xml',
+        resolveEnv: () => process.env.GATSBY_ENV,
         env: {
           development: {
             policy: [{userAgent: '*', disallow: ['/']}]
