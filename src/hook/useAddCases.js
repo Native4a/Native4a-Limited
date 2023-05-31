@@ -4,7 +4,7 @@ const useAddCases = () => {
   const {
     allContentfulCases: { nodes }
   } = useStaticQuery(graphql`
-      query CasesQL {
+      query AddCasesQL {
         allContentfulCases(sort: {order: ASC}) {
           nodes {
             order

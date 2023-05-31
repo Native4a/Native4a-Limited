@@ -17,21 +17,13 @@ import AwardsWeb from "../components/awards/awards_website"
 import SocialMediaBtn from '../components/button/socialMedia'
 import Whatsapp from "../components/button/whatsapp"
 import NativeStrengths from '../components/nativeStrengths'
+import VideoJobRef from '../components/videoJobRef'
 
 //CSS here//
 import 'reactjs-popup/dist/index.css'
 import * as styles from '../styles/video.module.css'
 
 //image here//
-import work01 from '../img/work01.png'
-import work02 from '../img/work02.png'
-import work03 from '../img/work03.png'
-import work04 from '../img/work04.png'
-import work05 from '../img/work05.png'
-import work06 from '../img/work06.png'
-import work07 from '../img/work07.png'
-import work08 from '../img/work08.png'
-import work09 from '../img/work09.png'
 import plsStep from '../img/plsStep.png'
 
 //import ArticlePreview from '../components/article-preview'
@@ -75,7 +67,6 @@ class videoIndex extends React.Component {
                 <AwardsWeb />
               </div>
               <div className="grid content-center z-0">
-                <div className="">
                   <Popup
                     trigger={
                       <div className={styles.overlay_container}>
@@ -103,7 +94,6 @@ class videoIndex extends React.Component {
                       </div>
                     )}
                   </Popup>
-                </div>
               </div>
               <Awards />
             </div>
@@ -112,276 +102,7 @@ class videoIndex extends React.Component {
         <section className={styles.sec2_wrap}>
           <div className={styles.container}>
             <div className='grid grid-cols-2 md:grid-cols-3'>
-              <div>
-                <Popup
-                  trigger={
-                    <div className={styles.overlay_container}>
-                      <img src={work01} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
-                      <div className={styles.overlay}>AnneTso Shop<br />打雀風雲</div>
-                    </div>
-                  }
-                  modal
-                  contentStyle=""
-                >
-                  {(close) => (
-                    <div className={styles.modal}>
-                      <button className={styles.close} onClick={close}>X</button>
-                      {/**Put your youtube link here*/}
-                      <div className={styles.videoContainer}>
-                        <iframe
-                          className={styles.responsiveIframe}
-                          width="100%"
-                          src="https://www.youtube.com/embed/_M-2KHwuBQ0"
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    </div>
-                  )}
-                </Popup>
-              </div>
-              <div>
-                <Popup
-                  trigger={
-                    <div className={styles.overlay_container}>
-                      <img src={work02} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
-                      <div className={styles.overlay}>AnneTso Shop<br />網店廣告花絮</div>
-                    </div>
-                  }
-                  modal
-                  contentStyle=""
-                >
-                  {(close) => (
-                    <div className={styles.modal}>
-                      <button className={styles.close} onClick={close}>X</button>
-                      {/**Put your youtube link here*/}
-                      <div className={styles.videoContainer}>
-                        <iframe
-                          className={styles.responsiveIframe}
-                          width="100%"
-                          src="https://www.youtube.com/embed/LjkPVhXHzvQ"
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    </div>
-                  )}
-                </Popup>
-              </div>
-              <div>
-                <Popup
-                  trigger={
-                    <div className={styles.overlay_container}>
-                      <img src={work03} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
-                      <div className={styles.overlay}>alessandro<br />Mood</div>
-                    </div>
-                  }
-                  modal
-                  contentStyle=""
-                >
-                  {(close) => (
-                    <div className={styles.modal}>
-                      <button className={styles.close} onClick={close}>X</button>
-                      {/**Put your youtube link here*/}
-                      <div className={styles.videoContainer}>
-                        <iframe
-                          className={styles.responsiveIframe}
-                          width="100%"
-                          src="https://www.youtube.com/embed/XE_WsnWMWVs"
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    </div>
-                  )}
-                </Popup>
-              </div>
-              <div>
-                <Popup
-                  trigger={
-                    <div className={styles.overlay_container}>
-                      <img src={work04} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
-                      <div className={styles.overlay}>alessandro<br />Steps</div>
-                    </div>
-                  }
-                  modal
-                  contentStyle=""
-                >
-                  {(close) => (
-                    <div className={styles.modal}>
-                      <button className={styles.close} onClick={close}>X</button>
-                      {/**Put your youtube link here*/}
-                      <div className={styles.videoContainer}>
-                        <iframe
-                          className={styles.responsiveIframe}
-                          width="100%"
-                          src="https://www.youtube.com/embed/icd6dJEXQLY"
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    </div>
-                  )}
-                </Popup>
-              </div>
-              <div>
-                <Popup
-                  trigger={
-                    <div className={styles.overlay_container}>
-                      <img src={work05} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
-                      <div className={styles.overlay}>CARD HERO</div>
-                    </div>
-                  }
-                  modal
-                  contentStyle=""
-                >
-                  {(close) => (
-                    <div className={styles.modal}>
-                      <button className={styles.close} onClick={close}>X</button>
-                      {/**Put your youtube link here*/}
-                      <div className={styles.videoContainer}>
-                        <iframe
-                          className={styles.responsiveIframe}
-                          width="100%"
-                          src="https://www.youtube.com/embed/cj4me41MqlY"
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    </div>
-                  )}
-                </Popup>
-              </div>
-              <div>
-                <Popup
-                  trigger={
-                    <div className={styles.overlay_container}>
-                      <img src={work06} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
-                      <div className={styles.overlay}>ACCOLADE <br />卓遠</div>
-                    </div>
-                  }
-                  modal
-                  contentStyle=""
-                >
-                  {(close) => (
-                    <div className={styles.modal}>
-                      <button className={styles.close} onClick={close}>X</button>
-                      {/**Put your youtube link here*/}
-                      <div className={styles.videoContainer}>
-                        <iframe
-                          className={styles.responsiveIframe}
-                          width="100%"
-                          src="https://www.youtube.com/embed/IrD1A4GWMtQ"
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    </div>
-                  )}
-                </Popup>
-              </div>
-              <div>
-                <Popup
-                  trigger={
-                    <div className={styles.overlay_container}>
-                      <img src={work07} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
-                      <div className={styles.overlay}>方龍飛議員</div>
-                    </div>
-                  }
-                  modal
-                  contentStyle=""
-                >
-                  {(close) => (
-                    <div className={styles.modal}>
-                      <button className={styles.close} onClick={close}>X</button>
-                      {/**Put your youtube link here*/}
-                      <div className={styles.videoContainer}>
-                        <iframe
-                          className={styles.responsiveIframe}
-                          width="100%"
-                          src="https://www.youtube.com/embed/w5EDS5gqkQQ"
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    </div>
-                  )}
-                </Popup>
-              </div>
-              <div>
-                <Popup
-                  trigger={
-                    <div className={styles.overlay_container}>
-                      <img src={work08} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
-                      <div className={styles.overlay}>潘焯鴻議員</div>
-                    </div>
-                  }
-                  modal
-                  contentStyle=""
-                >
-                  {(close) => (
-                    <div className={styles.modal}>
-                      <button className={styles.close} onClick={close}>X</button>
-                      {/**Put your youtube link here*/}
-                      <div className={styles.videoContainer}>
-                        <iframe
-                          className={styles.responsiveIframe}
-                          width="100%"
-                          src="https://www.youtube.com/embed/vJe-vdyr-no"
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    </div>
-                  )}
-                </Popup>
-              </div>
-              <div>
-                <Popup
-                  trigger={
-                    <div className={styles.overlay_container}>
-                      <img src={work09} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
-                      <div className={styles.overlay}>SUSHI KEI</div>
-                    </div>
-                  }
-                  modal
-                  contentStyle=""
-                >
-                  {(close) => (
-                    <div className={styles.modal}>
-                      <button className={styles.close} onClick={close}>X</button>
-                      {/**Put your youtube link here*/}
-                      <div className={styles.videoContainer}>
-                        <iframe
-                          className={styles.responsiveIframe}
-                          width="100%"
-                          src="https://www.youtube.com/embed/a0OqzmENr_A"
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    </div>
-                  )}
-                </Popup>
-              </div>
+            <VideoJobRef />
             </div>
           </div>
         </section>

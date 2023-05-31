@@ -51,7 +51,7 @@ class backlinksIndex extends React.Component {
                 <Seo
                     title={webPage.metaTitle}
                     description={webPage.metaDescription}
-                    ogUrl="https://nativeaaaa.com.hk/backlinks/"
+                    ogUrl="https://nativeaaaa.com.hk/contact-us/"
                 />
                 <section className={styles.mainBg}>
                     <div className={styles.container}>
@@ -124,7 +124,7 @@ class backlinksIndex extends React.Component {
                 <section className="w-full px-0 md:px-24 py-10 bg-[#F1F1F1]">
                     <div className="block rounded-lg p-0 md:p-6">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-12 items-center">
-                            <div className="flex justify-center p-8 md:p-0'">
+                            <div className="flex justify-center flex-col p-8 md:p-0">
                                 <h2 className="flex text-2xl md:text-3xl ml-2 font-bold items-center leading-0 md:leading-10 pb-5">
                                     <span>
                                         <IconContext.Provider>
