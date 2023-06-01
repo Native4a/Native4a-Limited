@@ -416,7 +416,7 @@ class backlinksIndex extends React.Component {
                     <div className="backdrop-blur-xl py-20 px-10">
                         <div className="container mx-auto">
                             <div className='text-center'>
-                                <h2 className='text-2xl lg:text-4xl font-extrabold'>Native4a 提供的 香港 中文 反向連結 有12個不一樣 我是Taki test</h2>
+                                <h2 className='text-2xl lg:text-4xl font-extrabold'>Native4a 提供的 香港 中文 反向連結 有12個不一樣</h2>
                                 <div className='border-b-2 border-[#70a566] w-1/6 mx-auto pt-2'></div>
                                 <h3 className='text-base lg:text-2xl font-light pt-4 pb-12'>並非所有反向連結都是生而平等的</h3>
                             </div>
