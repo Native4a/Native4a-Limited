@@ -22,7 +22,6 @@ import BacklinkPriceTable from '../components/backlinkPriceTable'
 import BacklinksSlick from '../components/slickSlider/greenSlider/backlinksSlider'
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
 import NativeStrengths from '../components/nativeStrengths'
-import RankingFactors from '../components/backlinkPage/RankingFactors'
 //import ArticlePreview from '../components/article-preview'
 
 //CSS here//
@@ -44,6 +43,9 @@ class backlinksIndex extends React.Component {
         const [webPage] = get(this, 'props.data.allContentfulBacklinksPage.nodes')
         const FaSquarSstyle = { color: "#70a566" }
         const BacklinksTwelve_different = "grid justify-center grid-cols-4 text-6xl shadow-[1px_1px_10px_#ccc] items-center rounded-xl p-6 backdrop-blur-3xl bg-white/70 justify-items-end";
+        // 定義一個常數來存儲重複的樣式類名
+        const cellStylesBefor = "px-6 py-4 text-5xl text-[#70A665] lg:text-6xl font-bold";
+        const cellStylesAfter = "pr-6 py-4 text-lg md:px-6 lg:py-4 lg:text-3xl";
         return (
             <Layout location={this.props.location}>
                 <Seo
@@ -132,7 +134,36 @@ class backlinksIndex extends React.Component {
                                     <b className='ml-3'>SEO 反向連結 (Backlinks) 對搜索引擎排名的重要影響</b>
                                 </h2>
                                 <img src={GoogleRanking} alt='' loading="lazy" decoding="async" /></div>
-                            <RankingFactors />
+                            <div className="flex justify-center col-span-2 flex-col overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                                    <div className="overflow-hidden">
+                                        <table>
+                                            <tbody>
+                                                <tr className='even:bg-[#C2C2C03D]'>
+                                                    <td className={`${cellStylesBefor}`}>01</td>
+                                                    <td className={`${cellStylesAfter}`}>根據外國網站 First Page Sage 的資料，反向連結 Backlink 是 Google 排名的主要因素</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className={`${cellStylesBefor}`}>02</td>
+                                                    <td className={`${cellStylesAfter}`}>Google上排名第一的頁面平均擁有比排名在第2至 10位的頁面多3.8倍的外部連結，這表明強大的 Backlink 反向連結是實現搜索結果頂部位置的主要貢獻因素。</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className={`${cellStylesBefor}`}>03</td>
+                                                    <td className={`${cellStylesAfter}`}>根據調查，58.1%的SEO專家認為反向連結對搜索引擎排名有顯著影響。</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className={`${cellStylesBefor}`}>04</td>
+                                                    <td className={`${cellStylesAfter}`}>超過60%的企業將其 Backlink 外部連結建設外判給專業人士。</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className={`${cellStylesBefor}`}>05</td>
+                                                    <td className={`${cellStylesAfter}`}>平均而言，企業將其整個SEO預算的25%用於反向鏈接建設</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
