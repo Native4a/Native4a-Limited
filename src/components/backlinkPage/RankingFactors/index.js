@@ -1,7 +1,7 @@
 import React from 'react'
 import useRankingFactors from '../../../hook/useRankingFactors'
 
-const Grf = () => {
+const RankingFactors = () => {
     const GRF = useRankingFactors();
     // 定義一個常數來存儲重複的樣式類名
     const cellStylesBefor = "px-6 py-4 text-5xl text-[#70A665] lg:text-6xl font-bold";
@@ -31,4 +31,4 @@ const Grf = () => {
     );
 }
 
-export default Grf
+export default RankingFactors
