@@ -129,7 +129,7 @@ class backlinksIndex extends React.Component {
                                             <FaSquare style={FaSquarSstyle} />
                                         </IconContext.Provider>
                                     </span>
-                                    <b className='ml-3'>{webPage.section3Title}</b>
+                                    <b className='ml-3'>SEO 反向連結 (Backlinks) 對搜索引擎排名的重要影響</b>
                                 </h2>
                                 <img src={GoogleRanking} alt='' loading="lazy" decoding="async" /></div>
                             <RankingFactors />
