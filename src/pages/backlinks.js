@@ -22,6 +22,10 @@ import BacklinkPriceTable from '../components/backlinkPriceTable'
 import BacklinksSlick from '../components/slickSlider/greenSlider/backlinksSlider'
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
 import NativeStrengths from '../components/nativeStrengths'
+import Anchor from '../components/baseTools/Anchor/index.js'
+import Button from '../components/baseTools/button'
+import EngBacklinksEvaluation from '../components/backlinksEvaluation/eng'
+import ChiBacklinksEvaluation from '../components/backlinksEvaluation/chi'
 //import ArticlePreview from '../components/article-preview'
 
 //CSS here//
@@ -40,14 +44,14 @@ import RankingFactors from '../components/RankingFactors'
 
 class backlinksIndex extends React.Component {
     render() {
-        const [webPage] = get(this, 'props.data.allContentfulBacklinksPage.nodes')
+        const [blacklinkPage] = get(this, 'props.data.allContentfulBacklinksPage.nodes')
         const FaSquarSstyle = { color: "#70a566" }
         const BacklinksTwelve_different = "grid justify-center grid-cols-4 text-6xl shadow-[1px_1px_10px_#ccc] items-center rounded-xl p-6 backdrop-blur-3xl bg-white/70 justify-items-end";
         return (
             <Layout location={this.props.location}>
                 <Seo
-                    title={webPage.metaTitle}
-                    description={webPage.metaDescription}
+                    title={blacklinkPage.metaTitle}
+                    description={blacklinkPage.metaDescription}
                     ogUrl="https://nativeaaaa.com.hk/contact-us/"
                 />
                 <section className={styles.mainBg}>
@@ -55,10 +59,10 @@ class backlinksIndex extends React.Component {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
                             <div className="px-6 xl:px-0 py-0 xl:py-6">
                                 <div className="pt-2 md:pt-3 2xl:pt-0">
-                                    <h1 className={styles.title}>{webPage.title}</h1>
-                                    <h1 className={styles.subTitle}>{webPage.subTitle}</h1>
+                                    <h1 className={styles.title}>{blacklinkPage.title}</h1>
+                                    <h1 className={styles.subTitle}>{blacklinkPage.subTitle}</h1>
                                     <div className={styles.border}></div>
-                                    <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">{renderRichText(webPage.titleDescription)}</p>
+                                    <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">{renderRichText(blacklinkPage.titleDescription)}</p>
                                     <div className="hidden md:grid grid-cols-2 gap-6 py-6">
                                         <div className="flex gap-6 w-full items-center">
                                             <SocialMediaBtn />
@@ -128,7 +132,7 @@ class backlinksIndex extends React.Component {
                                             <FaSquare style={FaSquarSstyle} />
                                         </IconContext.Provider>
                                     </span>
-                                    <b className='ml-3'>{webPage.section3Title}</b>
+                                    <b className='ml-3'>{blacklinkPage.section3Title}</b>
                                 </h2>
                                 <img src={GoogleRanking} alt='' loading="lazy" decoding="async" />
                             </div>
@@ -143,9 +147,9 @@ class backlinksIndex extends React.Component {
                     </div>
                     <div className="container mx-auto lg:relative top-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-16 lg:p-0 items-end text-xl font-black text-white">
-                            <a href="#!" className="flex justify-center rounded-xl bg-blue-600 py-3 text-white">中文Backlinks收費參考</a>
-                            <a href="#!" className="flex justify-center rounded-xl bg-amber-500 py-3 text-white">中文Backlinks案例參考</a>
-                            <a href="#!" className="flex justify-center rounded-xl bg-white py-3 text-[#436C34]">直接WhatsApp查詢</a>
+                            <Anchor to="#Backlink_price" className="flex justify-center rounded-xl bg-blue-600 py-3 text-white">中文Backlinks收費參考</Anchor>
+                            <Anchor to="#Backlink_ref" className="flex justify-center rounded-xl bg-amber-500 py-3 text-white">中文Backlinks案例參考</Anchor>
+                            <Button href="#!" className="flex justify-center rounded-xl bg-white py-3 text-[#608A51]">直接WhatsApp查詢</Button>
                             <div className="flex justify-center w-1/3 mx-auto">
                                 <img src={QRcode} alt="" loading="lazy" decoding="async" />
                             </div>
@@ -204,31 +208,13 @@ class backlinksIndex extends React.Component {
                     {/*Desktop version:*/}
                     <div className="hidden lg:block grid-cols-1 grid-rows-8 gap-4 text-xl items-center p-10">
                         <div className="grid grid-rows-8 lg:grid-rows-4 grid-flow-col gap-4 text-xl items-center">
-                            <div className="row-span-8 lg:row-span-2 col-span-2 flex justify-center items-center text-white text-3xl font-semibold p-14 leading-10 order-1 lg:order-1">準備為你的中文網站 購買香港 Backlink HK 反向連結前請先衡量那一些外部鏈接『是好的』:</div>
-                            <div className="row-span-8 lg:row-span-2 col-span-2 flex justify-center items-center text-white text-3xl font-semibold p-14 leading-10 order-5 lg:order-2">“買外部連結 - Native4a     Backlink HK提供的 中文      反向連結 就是不一樣”</div>
-                            <div className="row-span-4 flex justify-center order-2 lg:order-3">
-                                <div className="grid grid-rows-6 grid-flow-col gap-4">
-                                    <div className='flex justify-center rounded-xl items-center text-white m-6 p-6 relative top-14 z-10 bg-[#3A7DFF]'>來自英文外部連結網站</div>
-                                    <div className='flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center'>外部連結 Spam Score 高企。DA，DR 權重低下</div>
-                                    <div className='flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center'>每條外部連結文章的內容與客戶的行業和關鍵字並不相關</div>
-                                    <div className='flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center'>每條外部連結的URL和關鐽字數量有限制</div>
-                                    <div className='flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center'>每條外部連結袛有一個 Anchor Text 錨點</div>
-                                    <div className='flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center'>同一篇網站連結文章內放了大量其他客戶網站的關鐽字和連結</div>
-                                </div>
-                            </div>
+                            <div className="row-span-8 lg:row-span-2 col-span-2 flex justify-center items-center text-white text-3xl font-semibold p-14 leading-10 order-1 lg:order-1">{blacklinkPage.section4TopTitle}</div>
+                            <div className="row-span-8 lg:row-span-2 col-span-2 flex justify-center items-center text-white text-3xl font-semibold p-14 leading-10 order-5 lg:order-2">{blacklinkPage.section4BottomTitle}</div>
+                            <EngBacklinksEvaluation />
                             <div className="row-span-4 flex bg-[#70a665] px-10 rounded-xl items-center text-white h-1/6 order-3 lg:order-4">
                                 <div className='flex rounded-xl items-center text-4xl font-semibold'>VS</div>
                             </div>
-                            <div className="row-span-4 flex justify-center order-4 lg:order-5">
-                                <div className="grid grid-rows-6 grid-flow-col gap-4">
-                                    <div className='flex justify-center rounded-xl items-center text-white m-6 p-6 relative top-14 z-10 bg-[#FAAB00]'>來自中文外部連結網站</div>
-                                    <div className='flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center'>外部連結 Spam FREE, DA，DR 權重分別達 50+ 或 30+</div>
-                                    <div className='flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center'>每篇反向連結文章內容都是與客戶的行業和關鍵字相關的</div>
-                                    <div className='flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center'>沒有限制每條外部連結的 URL和關鐽字數量</div>
-                                    <div className='flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center'>每條外部連結有三個不同類型的Anchor Text 錨點</div>
-                                    <div className='flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center'>每一篇文章只屬於一個客戶內裡袛有該客戶的關鐽字和連結</div>
-                                </div>
-                            </div>
+                            <ChiBacklinksEvaluation />
                         </div>
                     </div>
                     {/* Mobile version: */}
@@ -237,36 +223,24 @@ class backlinksIndex extends React.Component {
                             <div className='px-10 pt-11 order-1 lg::order-1'>
                                 <div className="row-span-4 md:row-span-2 flex justify-center items-center text-white text-2xl md:text-3xl font-semibold p-6 md:p-14 leading-8 md:leading-10 border-[#70A665] border-l-[20px]">準備為你的中文網站購買香港Backlink HK反向連結前請先衡量那一些外部鏈接『是好的』:</div>
                             </div>
-                            <div className='p-5 order-5 lg::order-2'>
+                            <div className='p-5 order-5 lg:order-2'>
                                 <div className="row-span-4 md:row-span-2 flex justify-center items-center text-white text-2xl md:text-3xl font-semibold p-6 md:p-14 leading-8 md:leading-10">“買外部連結 - Native4a Backlink HK提供的 中文 反向連結 就是不一樣”</div>
                             </div>
-                            <div className="row-span-2 flex justify-center order-2 lg:order-2 px-10">
-                                <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-6 gap-4">
-                                    <div className="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#3A7DFF] p-5">來自英文外部連結網站</div>
-                                    <div className="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/70 text-center">外部連結Spam Score高企。DA，DR權重低下</div>
-                                    <div className="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/70 text-center">每條外部連結文章的內容與客戶的行業和關鍵字並不相關</div>
-                                    <div className="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/70 text-center">每條外部連結的URL和關鐽字數量有限制</div>
-                                    <div className="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/70 text-center">每條外部連結袛有一個Anchor Text錨點</div>
-                                    <div className="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/70 text-center">同一篇網站連結文章內放了大量其他客戶網站的關鐽字和連結</div>
-                                </div>
-                            </div>
+                            <EngBacklinksEvaluation
+                                className1="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#3A7DFF] p-5"
+                                className2="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/70 text-center"
+                            />
                             <div className="flex justify-center row-span-2 bg-[#70a665] pt-16 md:px-10 items-center text-white h-1/6 order-3 lg:order-4">
                                 <div className="flex rounded-xl items-center text-6xl font-semibold">VS</div>
                             </div>
-                            <div className="row-span-2 flex justify-center order-4 lg:order-4 px-10">
-                                <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-6 gap-4">
-                                    <div className="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#FAAB00] p-5">來自中文外部連結網站</div>
-                                    <div className="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center">外部連結Spam FREE, DA，DR權重分別達50+或30+</div>
-                                    <div className="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center">每篇反向連結文章內容都是與客戶的行業和關鍵字相關的</div>
-                                    <div className="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center">沒有限制每條外部連結的URL和關鐽字數量</div>
-                                    <div className="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center">每條外部連結有三個不同類型的Anchor Text錨點</div>
-                                    <div className="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center">每一篇文章只屬於一個客戶內裡袛有該客戶的關鐽字和連結</div>
-                                </div>
-                            </div>
+                            <ChiBacklinksEvaluation
+                                className1="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#FAAB00] p-5"
+                                className2="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center"
+                            />
                         </div>
                     </div>
                 </section>
-                <section className="mx-auto">
+                <section className="mx-auto" id="Backlink_ref">
                     <div className="bg-[#70A665] grid justify-center">
                         <div className='flex justify-center relative top-10 rounded-3xl p-6 items-center backdrop-blur-md text-white text-3xl text-center font-semibold bg-[#FAAB00] z-10'>買中文反向連結 成功案例</div>
                     </div>
@@ -374,7 +348,7 @@ class backlinksIndex extends React.Component {
                         </div>
                     </div>
                 </section>
-                <section className='bg-[#fff]'>
+                <section className='bg-[#fff]' id="Backlink_price">
                     <BacklinkPriceTable />
                 </section>
                 <section className={`${styles.sec8} bg-[#F0F0F0] shadow-[0_15px_35px_35px_#F0F0F0]`}>
@@ -509,6 +483,8 @@ export const backlinksQuery = graphql`
                 url
             }
             section3Title
+            section4TopTitle
+            section4BottomTitle
         }
     }
   }
