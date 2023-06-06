@@ -15,6 +15,7 @@ module.exports = {
         stripQueryString: true,
       },
     },
+    "gatsby-plugin-cname",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
