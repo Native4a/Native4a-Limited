@@ -4,8 +4,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "",
+    title: "NATIVE ADV LTD",
     description: "",
+    siteUrl: 'https://nativeaaaa.com.hk',
   },
   plugins: [
     {
