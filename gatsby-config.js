@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "NATIVE ADV LTD",
+    title: "",
     description: "",
     siteUrl: 'https://nativeaaaa.com.hk',
   },
