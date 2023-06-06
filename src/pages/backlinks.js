@@ -26,6 +26,7 @@ import Anchor from '../components/baseTools/Anchor/index.js'
 import Button from '../components/baseTools/button'
 import EngBacklinksEvaluation from '../components/backlinksEvaluation/eng'
 import ChiBacklinksEvaluation from '../components/backlinksEvaluation/chi'
+import TwelveDifferent from '../components/TwelveDifferent'
 //import ArticlePreview from '../components/article-preview'
 
 //CSS here//
@@ -46,7 +47,6 @@ class backlinksIndex extends React.Component {
     render() {
         const [blacklinkPage] = get(this, 'props.data.allContentfulBacklinksPage.nodes')
         const FaSquarSstyle = { color: "#70a566" }
-        const BacklinksTwelve_different = "grid justify-center grid-cols-4 text-6xl shadow-[1px_1px_10px_#ccc] items-center rounded-xl p-6 backdrop-blur-3xl bg-white/70 justify-items-end";
         return (
             <Layout location={this.props.location}>
                 <Seo
@@ -359,92 +359,7 @@ class backlinksIndex extends React.Component {
                                 <div className='border-b-2 border-[#70a566] w-1/6 mx-auto pt-2'></div>
                                 <h3 className='text-base lg:text-2xl font-light pt-4 pb-12'>並非所有反向連結都是生而平等的</h3>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className={`${BacklinksTwelve_different}`}>
-                                    <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-5">01</div>
-                                    <div className="col-span-3">
-                                        <h3 className="text-xl lg:text-2xl">100個頂層反向連結至您的網站</h3>
-                                        <p className="text-base lg:text-lg">頂層 (即第 一層)反向連結是直接建立到您網站的 Backlink。Tier 1 Backlink 一級反向鏈接被認為是您網站最權威的站外連結，因為它們為 SEO 傳遞了最高權重的外部連結。</p>
-                                    </div>
-                                </div>
-                                <div className={`${BacklinksTwelve_different}`}>
-                                    <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-5">02</div>
-                                    <div className="col-span-3">
-                                        <h3 className="text-xl lg:text-2xl">100個獨立中文網站</h3>
-                                        <p className="text-base lg:text-lg">所有外部連結皆來自100個獨立的頂級域名 (Top Level Domain) 網站。且每個網站的 IP Address 和網站寄存供應商也是不一樣的。</p>
-                                    </div>
-                                </div>
-                                <div className={`${BacklinksTwelve_different}`}>
-                                    <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-5">03</div>
-                                    <div className="col-span-3">
-                                        <h3 className="text-xl lg:text-2xl">全繁體中文 WordPress博客文章</h3>
-                                        <p className="text-base lg:text-lg">所有 反向連結 皆來自以公認為 SEO Friendly 的 WordPress 編寫的繁體中文博客文章。</p>
-                                    </div>
-                                </div>
-                                <div className={`${BacklinksTwelve_different}`}>
-                                    <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-5">04</div>
-                                    <div className="col-span-3">
-                                        <h3 className="text-xl lg:text-2xl">客戶行業相關內容文章</h3>
-                                        <p className="text-base lg:text-lg">所有 反向連結 的文章內容都是為不同客戶而度身訂做。 確保每篇文章內容都是與客戶的行業和關鍵字相關的 (Niche Relevant or contextual backlinks)。</p>
-                                    </div>
-                                </div>
-                                <div className={`${BacklinksTwelve_different}`}>
-                                    <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-5">05</div>
-                                    <div className="col-span-3">
-                                        <h3 className="text-xl lg:text-2xl">可做多個關鍵字和 反向連結</h3>
-                                        <p className="text-base lg:text-lg">每篇 反向連結 的繁體中文博客文章都是為不同客戶度身訂做。可按不同客戶的需求而建立多個不同的關鍵字和 外部連結。</p>
-                                    </div>
-                                </div>
-                                <div className={`${BacklinksTwelve_different}`}>
-                                    <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-5">06</div>
-                                    <div className="col-span-3">
-                                        <h3 className="text-xl lg:text-2xl">每篇文章及連結祗屬一個客戶</h3>
-                                        <p className="text-base lg:text-lg">為確保每篇中文博客文章內的 外部連結的權威性，我們每篇文章內的所有 Backlinks祗專屬一個客戶，不會出現一篇文章放了大量其他客戶連結的情況。</p>
-                                    </div>
-                                </div>
-                                <div className={`${BacklinksTwelve_different}`}>
-                                    <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-5">07</div>
-                                    <div className="col-span-3">
-                                        <h3 className="text-xl lg:text-2xl">自家網站，不會消失，長期有效</h3>
-                                        <p className="text-base lg:text-lg">在淘寶， Fiverr 或其他地方買的廉價 backlinks，可以在一夜間消失。我們的 反向連結 網站全是獨立經營，百份百自主，不會消失，長期有效。</p>
-                                    </div>
-                                </div>
-                                <div className={`${BacklinksTwelve_different}`}>
-                                    <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-5">08</div>
-                                    <div className="col-span-3">
-                                        <h3 className="text-xl lg:text-2xl">金字塔式 反向連結 結構</h3>
-                                        <p className="text-base lg:text-lg">我們的 反向連結 是金字塔式的鏈接結構，有多層與其相關聯的多個層級 Backlinks，以形成金字塔，也稱為 Link Juice</p>
-                                    </div>
-                                </div>
-                                <div className={`${BacklinksTwelve_different}`}>
-                                    <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-5">09</div>
-                                    <div className="col-span-3">
-                                        <h3 className="text-xl lg:text-2xl">反向連結權重達 DA50+ 或 DR 30+</h3>
-                                        <p className="text-base lg:text-lg">DA 和 DR 分別是是 MOZ 和 Ahrefs 自行創建的網站權重指標。 雖則這等指標並不是 Google排名的準則，但也代表了網站的權重。我們的 反向連結 都在DA5 0+ 或 DR 30＋ 的權重。</p>
-                                    </div>
-                                </div>
-                                <div className={`${BacklinksTwelve_different}`}>
-                                    <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-5">10</div>
-                                    <div className="col-span-3">
-                                        <h3 className="text-xl lg:text-2xl">自選 反向連結 目標頁面</h3>
-                                        <p className="text-base lg:text-lg">因為我們的 反向連結 網站全是獨立經營，百份百自主，所以可以因應客戶需求而建立客戶所要求的多個目標頁面。沒有掣肘，全客制化。</p>
-                                    </div>
-                                </div>
-                                <div className={`${BacklinksTwelve_different}`}>
-                                    <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-5">11</div>
-                                    <div className="col-span-3">
-                                        <h3 className="text-xl lg:text-2xl">90% DoFollow, 10% NoFollow</h3>
-                                        <p className="text-base lg:text-lg">我們知道 nofollow 反向連結 是沒有 SEO 價值的。但若所有 Backlinks 都是 Dofollow，在Google 眼中會覺得有做馬之嫌。所以我們的 反向連結 結構是 90% DoFollow, 10% NoFollow</p>
-                                    </div>
-                                </div>
-                                <div className={`${BacklinksTwelve_different}`}>
-                                    <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-5">12</div>
-                                    <div className="col-span-3">
-                                        <h3 className="text-xl lg:text-2xl">每篇文章及 反向連結 的完整報告</h3>
-                                        <p className="text-base lg:text-lg">所有 反向連結 項目完成後，我們會提供詳盡的完整報告。詳列每條 反向連結 的網址。整個 backlink Profile 百份百透明，杜絕偷工減料。</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <TwelveDifferent />
                         </div>
                     </div>
                 </section>
