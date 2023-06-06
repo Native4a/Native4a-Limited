@@ -28,11 +28,5 @@ module.exports = {
         host: process.env.CONTENTFUL_HOST
       },
     },
-    {
-      resolve: `gatsby-plugin-cname`,
-      options: {
-        domain: `www.nativeaaaa.com.hk`,
-      },
-    },
   ],
 };
