@@ -81,7 +81,7 @@ class backlinksIndex extends React.Component {
                                 <div className={styles.backlinksSpanSquare}><AwardsWeb /></div>
                             </div>
                             <div className="grid content-center z-0">
-                                <div className="">
+                                <div>
                                     <Popup
                                         trigger={
                                             <div className={styles.overlay_container}>
