@@ -136,7 +136,7 @@ class RootIndex extends React.Component {
         </section>
         <ClientLogos />
         <section>
-        <ContactForm />
+          <ContactForm />
         </section>
       </Layout >
     )
