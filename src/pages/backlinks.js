@@ -151,7 +151,7 @@ class backlinksIndex extends React.Component {
                             <Anchor to="#Backlink_ref" className="flex justify-center rounded-xl bg-amber-500 py-3 text-white">中文Backlinks案例參考</Anchor>
                             <Button href="#!" className="flex justify-center rounded-xl bg-white py-3 text-[#608A51]">直接WhatsApp查詢</Button>
                             <div className="flex justify-center w-1/3 mx-auto">
-                                <img src={QRcode} alt="" loading="lazy" decoding="async" />
+                                <img src={QRcode} alt="QRcode" loading="lazy" decoding="async" />
                             </div>
                         </div>
                     </div>
@@ -160,7 +160,7 @@ class backlinksIndex extends React.Component {
                     <div className="block rounded-lg pt-24 pb-10 container mx-auto">
                         <div className="grid-cols-1 md:grid-cols-3 gap-12 items-center flex lg:grid flex-col-reverse">
                             <div className="flex justify-center second">
-                                <img src={BacklinkCover} alt='' loading="lazy" decoding="async" /></div>
+                                <img src={BacklinkCover} alt='BacklinkCover' loading="lazy" decoding="async" /></div>
                             <div className="flex justify-center col-span-2 first">
                                 <div className="flex flex-col">
                                     <div className="overflow-x-auto">
