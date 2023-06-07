@@ -12,6 +12,12 @@ const useClientLogo = () => {
             clientsAlt
             clientsLogo {
               url
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                placeholder: BLURRED
+                width: 424
+                height: 212
+              )
             }
           }
         }
