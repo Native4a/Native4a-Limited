@@ -134,7 +134,7 @@ class backlinksIndex extends React.Component {
                                     </span>
                                     <b className='ml-3'>{blacklinkPage.section3Title}</b>
                                 </h2>
-                                <img src={GoogleRanking} alt='' loading="lazy" decoding="async" />
+                                <img src={GoogleRanking} alt='GoogleRanking' loading="lazy" decoding="async" />
                             </div>
                             <RankingFactors />
                         </div>
