@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import get from "lodash/get"
 import Popup from "reactjs-popup"
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
+import { StaticImage } from "gatsby-plugin-image"
 
 //components here//
 import Layout from "../components/layout"
@@ -19,7 +20,6 @@ import Clients from "../components/Client's"
 import ServiceScope from "../components/serviceScope"
 
 //image here//
-import bN from '../img/Native_newbanner02.png'
 
 //CSS here//
 import * as styles from "../styles/index.module.css"
@@ -52,9 +52,9 @@ class RootIndex extends React.Component {
                   <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">{homePage.titleDescription.titleDescription}</p>
                   <div className="hidden md:grid grid-cols-2 gap-6 py-6">
                     <div className="flex gap-6 w-full items-center">
-                      <SocialMediaBtn/>
+                      <SocialMediaBtn />
                     </div>
-                    <Whatsapp/>
+                    <Whatsapp />
                   </div>
                   <div className="md:hidden">
                     <div className="flex gap-2 w-full items-center">
@@ -72,7 +72,14 @@ class RootIndex extends React.Component {
                   <Popup
                     trigger={
                       <div className={styles.overlay_container}>
-                        <img src={bN} alt="Girl in a jacket" width="1200" height="600" loading="lazy" decoding="async" />
+                        <StaticImage
+                          src="../img/Native_newbanner02.png"
+                          alt="A dinosaur"
+                          width={1200}
+                          loading="lazy" 
+                          decoding="async"
+                          formats={["auto", "webp", "avif"]}
+                        />
                       </div>
                     }
                     modal
