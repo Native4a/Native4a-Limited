@@ -28,5 +28,11 @@ module.exports = {
         host: process.env.CONTENTFUL_HOST
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        "icon": "src/img/4afavicon.png"
+      }
+    },
   ],
 };
