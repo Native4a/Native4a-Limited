@@ -2,7 +2,7 @@
 
 Create by Taki Kwan
 
-![An article page of the starter blog](./src/img/Native_logo.svg "An article page of the starter blog")
+![An article page of the starter blog](./src/img/4afavicon.png "An article page of the starter blog")
 
 Static sites are scalable, secure and have very little required maintenance. They come with a drawback though. Not everybody feels good editing files, building a project and uploading it somewhere. This is where Contentful comes into play.
 
