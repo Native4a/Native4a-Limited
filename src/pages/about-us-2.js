@@ -5,16 +5,19 @@ import { FaQuoteLeft } from 'react-icons/fa'
 import { graphql } from "gatsby"
 import get from "lodash/get"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 //components here//
 import Layout from '../components/layout'
 import Seo from '../components/seo'
+import ContactForm from '../components/contactAs'
 import ClientLogos from '../components/clientLogos'
-import Awards from "../components/awards"
-import AwardsWeb from "../components/awards/awards_website"
-import Whatsapp from "../components/button/whatsapp"
+import Awards from '../components/awards'
+import AwardsWeb from '../components/awards/awards_website'
+import Whatsapp from '../components/button/whatsapp'
 import SocialMediaBtn from '../components/button/socialMedia'
-import StarRatings from "react-star-ratings";
+import StarRatings from 'react-star-ratings'
+import Button from '../components/baseTools/button'
 
 //CSS here//
 import 'reactjs-popup/dist/index.css'
@@ -35,9 +38,9 @@ class aboutUs extends React.Component {
     const [AboutUsPage] = get(this, "props.data.allContentfulAboutUsPage.nodes")
     return (
       <Layout location={this.props.location}>
-        <Seo 
+        <Seo
           title={AboutUsPage.metaTitle}
-          description={AboutUsPage.metaDescription} 
+          description={AboutUsPage.metaDescription}
           ogUrl="https://nativeaaaa.com.hk/about-us-2/"
         />
         <section className={styles.mainBg}>
@@ -125,7 +128,7 @@ class aboutUs extends React.Component {
                 <div className='order-2 lg:order-1'>
                   <h2 className="flex text-4xl lg:text-6xl ml-2 font-bold items-center m-5 lg:m-16">{AboutUsPage.section4Title}</h2>
                   <p className="text-xl ml-4 my-0 lg:py-4">{renderRichText(AboutUsPage.section4Description)}</p>
-                  <button className='rounded-full px-8 py-2 border-2 border-black text-black font-black my-16'>我想了解您們更多</button>
+                  <Button href="#moreAbout" className="rounded-full my-16 px-8 py-2 border-2 border-black text-black font-black">我想了解您們更多</Button>
                 </div>
                 <div className='order-1 lg:order-2'>
                   <img className="w-1/2 lg:w-9/12 py-6 lg:py-0 mt-12 lg:mt-0 mb-3 lg:mb-0" src={native4a_logo} alt="native4a Logo" loading="lazy" decoding="async" />
@@ -134,13 +137,13 @@ class aboutUs extends React.Component {
             </div>
           </div>
         </section>
-        <section className={`${styles.SecBg1} lg:py-28`}>
+        <section className={`${styles.SecBg1} lg:py-28`} id='moreAbout'>
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-0 items-center">
               <div>
                 <h2 className="flex text-4xl lg:text-6xl ml-0 lg:ml-2 font-bold items-center m-5 lg:m-16 text-white mt-20 lg:mt-0 mb-8 lg:mb-0">{AboutUsPage.section5Title}</h2>
                 <p className="text-xl lg:ml-4 my-0 lg:py-4 text-white">{renderRichText(AboutUsPage.section5Description)}</p>
-                <button className='rounded-full px-8 py-2 bg-white text-black font-black my-16'>我想約見您們</button>
+                <Button href="https://api.whatsapp.com/send?phone=85267461301" className="rounded-full px-8 py-2 bg-white text-black font-black my-16">我想約見您們</Button>
               </div>
               <div>
                 <img className="w-full lg:w-9/12 py-0 pb-10 lg:pb-0" src={no1SeoCompany} alt="native4a Logo" loading="lazy" decoding="async" />
@@ -154,7 +157,7 @@ class aboutUs extends React.Component {
               <div className='md:order-2'>
                 <h2 className="flex text-4xl lg:text-6xl ml-0 lg:ml-2 font-bold items-center m-5 lg:m-16 text-white mt-20 lg:mt-0 mb-8 lg:mb-0">{AboutUsPage.section6Title}</h2>
                 <p className="text-xl lg:ml-4 my-0 lg:py-4 text-white">{renderRichText(AboutUsPage.section6Description)}</p>
-                <button className='rounded-full px-8 py-2 bg-white text-black font-black my-5 lg:my-16'>我想約見您們</button>
+                <Button href="https://api.whatsapp.com/send?phone=85267461301" className="rounded-full px-8 py-2 bg-white text-black font-black my-16">我想約見您們</Button>
               </div>
               <div className='md:order-1'>
                 <img className="w-full lg:w-9/12 py-0 pb-0" src={Commitment} alt="native4a Logo" loading="lazy" decoding="async" />
@@ -259,11 +262,16 @@ class aboutUs extends React.Component {
         <section className='grid justify-center justify-items-center'>
           <div className=''>
             <div className='relative bottom-7'>
-              <button className='rounded-xl text-2xl lg:text-xl px-8 py-2 text-white font-black bg-[#FAAB00]'>開始吧！</button>
+              <AnchorLink to="#contactAs">
+                <button className="rounded-xl text-2xl lg:text-xl px-8 py-2 text-white font-black bg-[#FAAB00]">開始吧！</button>
+              </AnchorLink>
             </div>
           </div>
         </section>
         <ClientLogos />
+        <section>
+          <ContactForm />
+        </section>
       </Layout >
     )
   }

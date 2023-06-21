@@ -149,7 +149,7 @@ class backlinksIndex extends React.Component {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-16 lg:p-0 items-end text-xl font-black text-white">
                             <Anchor to="#Backlink_price" className="flex justify-center rounded-xl bg-blue-600 py-3 text-white">中文Backlinks收費參考</Anchor>
                             <Anchor to="#Backlink_ref" className="flex justify-center rounded-xl bg-amber-500 py-3 text-white">中文Backlinks案例參考</Anchor>
-                            <Button href="#!" className="flex justify-center rounded-xl bg-white py-3 text-[#608A51]">直接WhatsApp查詢</Button>
+                            <Button href="https://api.whatsapp.com/send?phone=85267461301" className="flex justify-center rounded-xl bg-white py-3 text-[#608A51]">直接WhatsApp查詢</Button>
                             <div className="flex justify-center w-1/3 mx-auto">
                                 <img src={QRcode} alt="QRcode" loading="lazy" decoding="async" />
                             </div>
