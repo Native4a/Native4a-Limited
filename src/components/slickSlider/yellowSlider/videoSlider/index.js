@@ -129,5 +129,4 @@ const VideoSlider = () => {
     );
 };
 
-
 export default VideoSlider;
