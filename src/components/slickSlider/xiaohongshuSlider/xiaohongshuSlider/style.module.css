@@ -1,0 +1,161 @@
+.container {
+    max-width: 95rem;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0px 36px 0px 36px;
+}
+
+.section {
+    background-color: #ffffff;
+    padding: 108px 0;
+}
+
+.strengths {
+    font-size: 12vw;
+    color: #3A7DFF;
+    font-weight: 900;
+    position: relative;
+    z-index: -1;
+}
+
+.step1Title,
+.step2Title,
+.step3Title,
+.step4Title {
+    font-size: 3.3vw;
+    font-weight: 900;
+    position: relative;
+    right: 20px
+}
+
+.step1Description,
+.step2Description,
+.step3Description,
+.step4Description {
+    font-size: 1.5vw;
+}
+
+@media (max-width: 1536px) {
+    .step1Description,
+    .step2Description,
+    .step3Description,
+    .step4Description {
+        font-size: 1.8vw;
+    }
+}
+
+@media (max-width: 1280px) {
+    .strengths {
+        font-size: 15vw;
+        left: 0px;
+        top: -20px;
+    }
+
+    .step1Title,
+    .step2Title,
+    .step3Title,
+    .step4Title {
+        font-size: 3.3vw;
+        font-weight: 900;
+        position: relative;
+        right: 00px
+    }
+
+    .step1Description,
+    .step2Description,
+    .step3Description,
+    .step4Description {
+        font-size: 2vw;
+    }
+}
+
+@media (max-width: 1024px) {
+    .strengths {
+        font-size: 15vw;
+        left: 20px;
+        top: -45px;
+    }
+
+    .step1Title,
+    .step2Title,
+    .step3Title,
+    .step4Title {
+        font-size: 4vw;
+        right: 15px;
+    }
+
+    .step1Description,
+    .step2Description,
+    .step3Description,
+    .step4Description {
+        font-size: 2vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 0;
+    }
+
+    .container {
+        padding: 36px 10px;
+    }
+
+    .strengths {
+        font-size: 20vw;
+        left: 20px;
+        top: -45px;
+    }
+
+    .step1Title,
+    .step2Title,
+    .step3Title,
+    .step4Title {
+        font-size: 7vw;
+        right: 15px;
+    }
+
+    .step1Description,
+    .step2Description,
+    .step3Description,
+    .step4Description {
+        font-size: 3vw;
+        padding-right: 20px;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .section {
+        padding: 0;
+    }
+
+    .container {
+        padding: 36px 10px;
+    }
+
+    .strengths {
+        font-size: 25vw;
+        left: 10px;
+        top: -55px;
+    }
+
+    .step1Title,
+    .step2Title,
+    .step3Title,
+    .step4Title {
+        font-size: 8vw;
+        right: 15px;
+    }
+
+    .step1Description,
+    .step2Description,
+    .step3Description,
+    .step4Description {
+        font-size: 4.5vw;
+        padding-right: 10px;
+        padding-top: 10px;
+        left: -10px;
+        position: relative;
+    }
+}
