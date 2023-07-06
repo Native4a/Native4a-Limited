@@ -18,18 +18,19 @@
 @media (max-width: 1024px) {
   .section6_wrap {
     padding: 37.8px 0px;
-}
+  }
 }
 
 @media (max-width: 768px) {
   .section6_wrap {
-      padding: 0px;
-      padding-bottom: 37.8px;
+    padding: 0px;
+    padding-bottom: 37.8px;
   }
+
   .container {
-      max-width: 95rem;
-      align-items: center;
-      margin: 0 auto;
-      padding: 0px;
+    max-width: 95rem;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0px;
   }
 }
