@@ -8,31 +8,27 @@ import seranking from '../../img/SEranking-Logo.png'
 import * as styles from './style.module.css'
 
 const Partners = () => (
-    <div>
-        <section className={`${styles.section5_wrap} ${styles.PTSpanSquare}`}>
-            <div className={styles.container}>
-                <div className="grid items-center">
-                    <div className="inline md:hidden px-6">
-                        <h2 className="flex text-2xl pt-12 ml-2 font-bold"><span><FaSquare /></span><b className='ml-3'>合作夥伴</b></h2>
-                    </div>
-                    <div className="hidden md:inline">
-                        <h2 className="flex justify-center items-center text-4xl underline decoration-[#70A665] my-14"><span><FaSquare /></span><b className='ml-3'>合作夥伴</b></h2>
-                    </div>
-                    <div class="container mx-auto p-6">
-                        <div class="grid grid-cols-1 md:grid-cols-3 items-center">
-                            <div><img className='rounded-sm px-11 w-[70%] md:w-[95%] lg:w-[70%]' src={moz} alt="service_Video_Production" /></div>
-                            <div><img className='rounded-sm px-11 w-[70%] md:w-[95%] lg:w-[70%]' src={semrush} alt="service_Video_Production" /></div>
-                            <div><img className='rounded-sm px-11 w-[70%] md:w-[95%] lg:w-[70%]' src={ahrefs} alt="service_Video_Production" /></div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 items-center">
-                            <div><img className='rounded-sm px-11 w-[70%] md:w-[80%] lg:w-[60%]' src={majestic} alt="service_Video_Production" /></div>
-                            <div><img className='rounded-sm px-11 w-[70%] md:w-[80%] lg:w-[60%]' src={seranking} alt="service_Video_Production" /></div>
-                        </div>
+    <section className={`${styles.section5_wrap} ${styles.PTSpanSquare}`}>
+        <div className={styles.container}>
+            <div className="grid items-center">
+                <div className="inline md:hidden px-6">
+                    <h2 className="flex text-2xl pt-12 ml-2 font-bold"><span><FaSquare /></span><b className='ml-3'>合作夥伴</b></h2>
+                </div>
+                <div className="hidden md:inline">
+                    <h2 className="flex justify-center items-center text-4xl underline decoration-[#70A665] my-14"><span><FaSquare /></span><b className='ml-3'>合作夥伴</b></h2>
+                </div>
+                <div class="container mx-auto">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 items-center">
+                        <div><img className='flex justify-center text-6xl rounded-xl p-6' src={moz} alt="moz Logo" loading="lazy"/></div>
+                        <div><img className='flex justify-center text-6xl rounded-xl p-6' src={semrush} alt="semrush Logo" loading="lazy"/></div>
+                        <div><img className='flex justify-center text-6xl rounded-xl p-6' src={ahrefs} alt="ahrefs Logo" loading="lazy"/></div>
+                        <div><img className='flex justify-center text-6xl rounded-xl p-6' src={majestic} alt="majestic Logo" loading="lazy"/></div>
+                        <div><img className='flex justify-center text-6xl rounded-xl p-6' src={seranking} alt="seranking Logo" loading="lazy"/></div>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 )
 
 export default Partners
