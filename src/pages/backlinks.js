@@ -17,7 +17,6 @@ import Awards from "../components/awards"
 import AwardsWeb from "../components/awards/awards_website"
 import Whatsapp from "../components/button/whatsapp"
 import SocialMediaBtn from "../components/button/socialMedia"
-import Partners from '../components/partners'
 import BacklinkPriceTable from '../components/backlinkPriceTable'
 import BacklinksSlick from '../components/slickSlider/greenSlider/backlinksSlider'
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
@@ -115,13 +114,13 @@ class backlinksIndex extends React.Component {
                         </div>
                     </div>
                 </section>
-                <section className={styles.sec_wrap}>
+                {/*<section className={styles.sec_wrap}>
                     <div className={styles.container}>
                         <Partners />
                     </div>
                 </section>
                 <section className='bg-[#608A51] p-10'>
-                </section>
+                </section>*/}
                 <section className="w-full px-0 md:px-24 py-10 bg-[#F1F1F1]">
                     <div className="block rounded-lg p-0 md:p-6">
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-12 items-center">

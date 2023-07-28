@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import get from "lodash/get"
 import Popup from "reactjs-popup"
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
-import { StaticImage } from "gatsby-plugin-image"
 
 //components here//
 import Layout from "../components/layout"
@@ -20,14 +19,13 @@ import Clients from "../components/Client's"
 import ServiceScope from "../components/serviceScope"
 
 //image here//
+import plsStep from '../img/plsStep.png'
 
 //CSS here//
 import * as styles from "../styles/index.module.css"
 import 'reactjs-popup/dist/index.css'
 
-
 //import ArticlePreview from "../components/article-preview"
-
 class RootIndex extends React.Component {
 
   render() {
@@ -68,18 +66,11 @@ class RootIndex extends React.Component {
                 <AwardsWeb />
               </div>
               <div className="grid content-center z-0">
-                <div className="pl-5 pr-5">
+                <div>
                   <Popup
                     trigger={
                       <div className={styles.overlay_container}>
-                        <StaticImage
-                          src="../img/Native_newbanner02.png"
-                          alt="A dinosaur"
-                          width={1200}
-                          loading="lazy" 
-                          decoding="async"
-                          formats={["auto", "webp", "avif"]}
-                        />
+                        <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async" />
                       </div>
                     }
                     modal
