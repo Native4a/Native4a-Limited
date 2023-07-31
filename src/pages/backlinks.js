@@ -347,9 +347,9 @@ class backlinksIndex extends React.Component {
                         </div>
                     </div>
                 </section>
-                <section className='bg-[#fff]' id="Backlink_price">
+                {/*<section className='bg-[#fff]' id="Backlink_price">
                     <BacklinkPriceTable />
-                </section>
+            </section>*/}
                 <section className={`${styles.sec8} bg-[#F0F0F0] shadow-[0_15px_35px_35px_#F0F0F0]`}>
                     <div className="backdrop-blur-xl py-20 px-10">
                         <div className="container mx-auto">
