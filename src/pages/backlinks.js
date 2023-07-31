@@ -17,7 +17,6 @@ import Awards from "../components/awards"
 import AwardsWeb from "../components/awards/awards_website"
 import Whatsapp from "../components/button/whatsapp"
 import SocialMediaBtn from "../components/button/socialMedia"
-import BacklinkPriceTable from '../components/backlinkPriceTable'
 import BacklinksSlick from '../components/slickSlider/greenSlider/backlinksSlider'
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
 import NativeStrengths from '../components/nativeStrengths'
@@ -41,6 +40,9 @@ import John from '../img/john.png'
 import MeetingRoom from '../img/meeting-room.png'
 import Native_backlink_Rankin01 from '../img/Interior Design Ranking.png'
 import RankingFactors from '../components/RankingFactors'
+import BacklinkLanding from '../img/BacklinksPage.jpg'
+import c2 from '../img/c2.jpeg'
+import c3 from '../img/c3.jpeg'
 
 class backlinksIndex extends React.Component {
     render() {
@@ -139,6 +141,9 @@ class backlinksIndex extends React.Component {
                         </div>
                     </div>
                 </section>
+                <section>
+                    <img src={BacklinkLanding} alt="BacklinkLanding" loading="lazy" decoding="async" />
+                </section>
                 <section className='bg-[#608A51]'>
                     <div className='container mx-auto grid text-white place-content-center pt-8 lg:pt-24'>
                         <p className='text-3xl text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose indent-0 md:-indent-8'>「什麼是反向連結？了解其在 SEO 中的重要性！」</p>
@@ -146,7 +151,7 @@ class backlinksIndex extends React.Component {
                     </div>
                     <div className="container mx-auto lg:relative top-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-16 lg:p-0 items-end text-xl font-black text-white">
-                            <Anchor to="#Backlink_price" className="flex justify-center rounded-xl bg-blue-600 py-3 text-white">中文Backlinks收費參考</Anchor>
+                            <Button href="https://api.whatsapp.com/send?phone=85267461301" className="flex justify-center rounded-xl bg-blue-600 py-3 text-white">中文Backlinks收費參考</Button>
                             <Anchor to="#Backlink_ref" className="flex justify-center rounded-xl bg-amber-500 py-3 text-white">中文Backlinks案例參考</Anchor>
                             <Button href="https://api.whatsapp.com/send?phone=85267461301" className="flex justify-center rounded-xl bg-white py-3 text-[#608A51]">直接WhatsApp查詢</Button>
                             <div className="flex justify-center w-1/3 mx-auto">
@@ -307,7 +312,7 @@ class backlinksIndex extends React.Component {
                                         </div>
                                     </div>
                                     <div className="grid grid-cols-1 gap-6 p-10 lg:p-0">
-                                        <img className="flex justify-center text-6xl rounded-xl" src={Native_backlink_Rankin01} alt="Native_backlink_Rankin01" loading="lazy" decoding="async" />
+                                        <img className="flex justify-center text-6xl rounded-xl" src={c2} alt="Native_backlink_Rankin01" loading="lazy" decoding="async" />
                                     </div>
                                 </div>
                             </div>
@@ -340,7 +345,7 @@ class backlinksIndex extends React.Component {
                                         </div>
                                     </div>
                                     <div className="grid grid-cols-1 gap-6 p-10 lg:p-0">
-                                        <img className="flex justify-center text-6xl rounded-xl" src={Native_backlink_Rankin01} alt="Native_backlink_Rankin01" loading="lazy" decoding="async" />
+                                        <img className="flex justify-center text-6xl rounded-xl" src={c3} alt="Native_backlink_Rankin01" loading="lazy" decoding="async" />
                                     </div>
                                 </div>
                             </div>
@@ -349,7 +354,7 @@ class backlinksIndex extends React.Component {
                 </section>
                 {/*<section className='bg-[#fff]' id="Backlink_price">
                     <BacklinkPriceTable />
-            </section>*/}
+                </section>*/}
                 <section className={`${styles.sec8} bg-[#F0F0F0] shadow-[0_15px_35px_35px_#F0F0F0]`}>
                     <div className="backdrop-blur-xl py-20 px-10">
                         <div className="container mx-auto">
