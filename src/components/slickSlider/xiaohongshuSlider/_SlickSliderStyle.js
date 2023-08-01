@@ -290,7 +290,7 @@ const SliderWrapper = styled("div")`
   }
   
   .ft-slick__dots--custom:hover{
-    color: #70A665;
+    color: #FF1E45;
   }
 
   .slick-dots li {
@@ -304,7 +304,7 @@ const SliderWrapper = styled("div")`
 
   .slick-dots .slick-active {
     width: 50px;
-    color: #70A665;
+    color: #FF1E45;
     font-size: 35px;
     font-weight:900;
     transition: width 0.3s ease-in-out;

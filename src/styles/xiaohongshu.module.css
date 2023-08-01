@@ -18,7 +18,7 @@ img {
 
 /*-- Block ① start here --*/
 .mainBg {
-    background-image: url('../img/BURectangle.svg');
+    background-image: url('../img/RedRectangle.svg');
     background-size: cover;
 }
 
@@ -51,7 +51,7 @@ mark {
     border-bottom-width: 2px;
     width: 91.666667%;
     --tw-border-opacity: 1;
-    border-color: rgb(251 191 36 / var(--tw-border-opacity));
+    border-color: #FF1E45;
 }
 
 /*--
@@ -64,7 +64,7 @@ mark {
 
 .strengths {
     font-size: 15rem;
-    color: #3A7DFF;
+    color: #FF1E45;
     font-weight: 900;
     position: relative;
     top: -123px;
@@ -72,14 +72,22 @@ mark {
 }
 
 .smmSpanSquare span {
-    color: #3A7DFF;
+    color: #FF1E45;
 }
 
 .smmSpanSquare p,
 .smmSpanSquare h2 {
-    text-decoration-color: #3A7DFF;
+    text-decoration-color: #FF1E45;
 }
 
+.xhs_wrap {
+    background-color: white;
+    padding: 187px 0px;
+}
+
+.xhs_wrap h2 {
+    text-underline-offset: 21px;
+}
 
 /*
   card 
@@ -143,7 +151,7 @@ mark {
 }
 
 .menu-item:hover {
-    color: #2980b9;
+    color: #FF1E45;
 }
 
 .overlay_container {
@@ -208,7 +216,7 @@ mark {
 
 .strengths {
     font-size: 15rem;
-    color: #3A7DFF;
+    color: #FF1E45;
     font-weight: 900;
     position: relative;
     top: -123px;
@@ -216,7 +224,7 @@ mark {
 }
 
 .smmSpanSquare span {
-    color: #3A7DFF;
+    color: #FF1E45;
 }
 
 @media (max-width: 1536px) {
