@@ -48,7 +48,7 @@ const XHSSlider = () => {
                                             <div className='col-span-5 relative lg:top-[48px]'>
                                                 <h4 className={styles.step1Title}>小紅書新帳號營運</h4>
                                                 <p className={styles.step1Description}>帳號設計包裝+帳號維護加深品牌形象風格，建立獨特賣點</p>
-                                                <Whatsapp children='即刻了解' className='bg-[#FF1E45] text-white rounded-lg px-2 py-1.5 font-bold'/>
+                                                <Whatsapp children='即刻了解' className='bg-[#FF1E45] text-white rounded-lg px-2 py-1.5 font-bold' linkto="https://api.whatsapp.com/send?phone=85264602996"/>
                                             </div>
                                         </div>
                                         <div>
@@ -72,7 +72,7 @@ const XHSSlider = () => {
                                             <div className='col-span-4 relative md:top-16 lg:top-[38px] xl:top-[38px]'>
                                                 <h4 className={styles.step2Title}>内容營運</h4>
                                                 <p className={styles.step2Description}>筆記內容設計以及製作通過好內容完成用戶種草</p>
-                                                <Whatsapp children='即刻了解' className='bg-[#FF1E45] text-white rounded-lg px-2 py-1.5 font-bold'/>
+                                                <Whatsapp children='即刻了解' className='bg-[#FF1E45] text-white rounded-lg px-2 py-1.5 font-bold' linkto="https://api.whatsapp.com/send?phone=85264602996"/>
                                             </div>
                                         </div>
                                     </div>
@@ -90,7 +90,7 @@ const XHSSlider = () => {
                                             <div className='col-span-4 relative md:top-16 lg:top-[38px] xl:top-[38px]'>
                                                 <h4 className={styles.step3Title}>關鍵字&搜索優化</h4>
                                                 <p className={styles.step3Description}>行業、长尾精准關鍵字維護獲得自然流量，擴大品牌影響力</p>
-                                                <Whatsapp children='即刻了解' className='bg-[#FF1E45] text-white rounded-lg px-2 py-1.5 font-bold'/>
+                                                <Whatsapp children='即刻了解' className='bg-[#FF1E45] text-white rounded-lg px-2 py-1.5 font-bold' linkto="https://api.whatsapp.com/send?phone=85264602996"/>
                                             </div>
                                         </div>
                                         <div>
@@ -114,7 +114,7 @@ const XHSSlider = () => {
                                             <div className='col-span-4 relative md:top-16 lg:top-[38px] xl:top-[38px]'>
                                                 <h4 className={styles.step4Title}>種草達人&筆記合作</h4>
                                                 <p className={styles.step1Description}>分析對應用戶畫像精準營銷直接轉換更多客戶成交</p>
-                                                <Whatsapp children='即刻了解' className='bg-[#FF1E45] text-white rounded-lg px-2 py-1.5 font-bold'/>
+                                                <Whatsapp children='即刻了解' className='bg-[#FF1E45] text-white rounded-lg px-2 py-1.5 font-bold' linkto="https://api.whatsapp.com/send?phone=85264602996"/>
                                             </div>
                                         </div>
                                     </div>
@@ -132,7 +132,7 @@ const XHSSlider = () => {
                                             <div className='col-span-4 relative md:top-16 lg:top-[38px] xl:top-[38px]'>
                                                 <h4 className={styles.step3Title}>小紅書最新商家資訊同步</h4>
                                                 <p className={styles.step3Description}>分享最新小紅書熱點和案例挖掘內容廣告新賣點</p>
-                                                <Whatsapp children='即刻了解' className='bg-[#FF1E45] text-white rounded-lg px-2 py-1.5 font-bold'/>
+                                                <Whatsapp children='即刻了解' className='bg-[#FF1E45] text-white rounded-lg px-2 py-1.5 font-bold' linkto="https://api.whatsapp.com/send?phone=85264602996"/>
                                             </div>
                                         </div>
                                         <div>
