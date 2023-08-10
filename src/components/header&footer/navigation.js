@@ -28,8 +28,8 @@ const Navigation = () => {
   }, []);
 
   return (
-    <div className="">
-      <div className="grid grid-cols-12 lg:grid-cols-3 gap-4 px-3 md:px-16 2xl:px-40 fixed z-50 w-full top-0"
+    <div>
+      <div className="grid grid-cols-12 lg:grid-cols-4 gap-4 px-3 md:px-16 2xl:px-40 fixed z-50 w-full top-0"
         style={{
           backgroundColor: navColor,
           transition: "all 0.3s",
@@ -47,7 +47,7 @@ const Navigation = () => {
         <div className="xl:hidden col-start-5 col-end-11 sm:col-start-6 sm:col-end-12 flex items-center justify-end">
           <QuoteNow />
         </div>
-        <div className="xl:col-span-2 flex items-center justify-end col-start-12 col-end-12 xl:col-start-2 xl:col-end-4">
+        <div className="xl:col-span-2 flex items-center justify-end col-start-12 col-end-12 xl:col-start-2 xl:col-end-5">
           <div className="block xl:hidden">
             <div className="z-50 relative">
               <Hamburger size={20} label="Show menu" toggled={isOpen} toggle={setOpen} />
