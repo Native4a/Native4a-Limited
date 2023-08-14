@@ -15,7 +15,7 @@ const Footer = () => {
           buttonName,
           native4aLogo,
           copyRight,
-          googlePartnerImage} = item;
+          googlePartnerImage } = item;
         return (
           <Container as="footer" key={index}>
             {/* Block Comments */}
@@ -46,6 +46,16 @@ const Footer = () => {
                 </div>
               </div>
             </section>
+            {/* 其他 Footer 组件内容 */}
+            <script type="text/javascript">
+              {`
+        (function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})
+        (window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
+        vgo('setAccount', '69060812');
+        vgo('setTrackByDefault', true);
+        vgo('process');
+        `}
+            </script>
           </Container>
         );
       })}
