@@ -6,7 +6,6 @@ import '../components/variables.css'
 import '../styles/global.css'
 import Seo from '../components/seo'
 import Layout from '../components/layout'
-import Hero from '../components/hero'
 import ArticlePreview from '../components/article-preview'
 
 
@@ -17,8 +16,7 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Seo title="Blog" />
-        <Hero title="Blog" />
-        <ArticlePreview posts={posts} />
+        <ArticlePreview posts={posts}/>
       </Layout>
     )
   }

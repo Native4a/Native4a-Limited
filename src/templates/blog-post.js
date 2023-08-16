@@ -23,17 +23,17 @@ class BlogPostTemplate extends React.Component {
     )
     const plainTextBody = documentToPlainTextString(JSON.parse(post.body.raw))
     const { minutes: timeToRead } = readingTime(plainTextBody)
-    
+
     const options = {
       renderNode: {
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const { gatsbyImage, description } = node.data.target
-        return (
-           <GatsbyImage
+          const { gatsbyImage, description } = node.data.target
+          return (
+            <GatsbyImage
               image={getImage(gatsbyImage)}
               alt={description}
-           />
-         )
+            />
+          )
         },
       },
     };
@@ -51,13 +51,13 @@ class BlogPostTemplate extends React.Component {
           content={post.description}
         />
         <div className={styles.container}>
-          <span className={styles.meta}>
-            {post.author?.name} &middot;{' '}
-            <time dateTime={post.rawDate}>{post.publishDate}</time> –{' '}
-            {timeToRead} minute read
-          </span>
           <div className={styles.article}>
             <div className={styles.body}>
+              <span className={styles.meta}>
+                {post.author?.name} &middot;{' '}
+                <time dateTime={post.rawDate}>{post.publishDate}</time> –{' '}
+                {timeToRead} minute read
+              </span>
               {post.body?.raw && renderRichText(post.body, options)}
             </div>
             <Tags tags={post.tags} />
