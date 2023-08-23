@@ -1,7 +1,7 @@
 import React from 'react'
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-const Whatsapp = ({ children, className, linkto }) => {
+const Whatsapp = ({ children, className, linkto, customBtn }) => {
     //set default whatsapp button name
     const whatsAppButton = "直接WhatsApp查詢"
     //set default class style with tailwindCSS
@@ -9,8 +9,10 @@ const Whatsapp = ({ children, className, linkto }) => {
     //set default link to 85267461301
     const link = "https://api.whatsapp.com/send?phone=85267461301"
 
+    const btnCustom = "flex justify-center"
+
     return (
-        <div className='grid items-center'>
+        <div className={customBtn ? customBtn : btnCustom}>
             <AnchorLink to={linkto ? linkto : link}>
                 <button className={className ? className : btn}>
                     {children ? children : whatsAppButton}

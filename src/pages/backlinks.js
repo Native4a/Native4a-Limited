@@ -21,7 +21,6 @@ import BacklinksSlick from '../components/slickSlider/greenSlider/backlinksSlide
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
 import NativeStrengths from '../components/nativeStrengths'
 import Anchor from '../components/baseTools/Anchor/index.js'
-import Button from '../components/baseTools/button'
 import EngBacklinksEvaluation from '../components/backlinksEvaluation/eng'
 import ChiBacklinksEvaluation from '../components/backlinksEvaluation/chi'
 import TwelveDifferent from '../components/TwelveDifferent'
@@ -151,9 +150,9 @@ class backlinksIndex extends React.Component {
                     </div>
                     <div className="container mx-auto lg:relative top-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-16 lg:p-0 items-end text-xl font-black text-white">
-                            <Button href="https://api.whatsapp.com/send?phone=85267461301" className="flex justify-center rounded-xl bg-blue-600 py-3 text-white">中文Backlinks收費參考</Button>
+                            <Whatsapp customBtn="flex justify-center rounded-xl bg-blue-600" className="flex justify-center rounded-xl bg-blue-600 py-3 text-white" linkto="https://api.whatsapp.com/send?phone=85264602996">中文Backlinks收費參考</Whatsapp>
                             <Anchor to="#Backlink_ref" className="flex justify-center rounded-xl bg-amber-500 py-3 text-white">中文Backlinks案例參考</Anchor>
-                            <Button href="https://api.whatsapp.com/send?phone=85267461301" className="flex justify-center rounded-xl bg-white py-3 text-[#608A51]">直接WhatsApp查詢</Button>
+                            <Whatsapp customBtn="flex justify-center rounded-xl bg-white" className="flex justify-center rounded-xl bg-white py-3 text-[#608A51]" linkto="https://api.whatsapp.com/send?phone=85264602996">直接WhatsApp查詢</Whatsapp>
                             <div className="flex justify-center w-1/3 mx-auto">
                                 <img src={QRcode} alt="QRcode" loading="lazy" decoding="async" />
                             </div>
