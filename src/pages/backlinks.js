@@ -15,7 +15,7 @@ import ContactForm from "../components/contactAs"
 import ClientLogos from "../components/clientLogos"
 import Awards from "../components/awards"
 import AwardsWeb from "../components/awards/awards_website"
-import Whatsapp from "../components/button/whatsapp"
+import Whatsapp from "../components/baseTools/whatsapp"
 import SocialMediaBtn from "../components/button/socialMedia"
 import BacklinksSlick from '../components/slickSlider/greenSlider/backlinksSlider'
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
@@ -68,14 +68,14 @@ class backlinksIndex extends React.Component {
                                         <div className="flex gap-6 w-full items-center">
                                             <SocialMediaBtn />
                                         </div>
-                                        <Whatsapp />
+                                        <Whatsapp linkto="https://api.whatsapp.com/send?phone=85264602996" />
                                     </div>
                                     <div className="md:hidden ">
                                         <div className="flex gap-2 w-full items-center">
                                             <SocialMediaBtn />
                                         </div>
                                         <div className="pt-6">
-                                            <Whatsapp />
+                                            <Whatsapp linkto="https://api.whatsapp.com/send?phone=85264602996" />
                                         </div>
                                     </div>
                                 </div>

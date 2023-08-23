@@ -11,12 +11,12 @@ const Whatsapp = ({ children, className, linkto }) => {
 
     return (
         <div className='grid items-center'>
-        <AnchorLink to={linkto ? linkto : link}>
-            <button className={className ? className : btn}>
-                {children ? children : whatsAppButton}
-            </button>
-        </AnchorLink>
-    </div>
+            <AnchorLink to={linkto ? linkto : link}>
+                <button className={className ? className : btn}>
+                    {children ? children : whatsAppButton}
+                </button>
+            </AnchorLink>
+        </div>
     );
 }
 
