@@ -67,14 +67,14 @@ class backlinksIndex extends React.Component {
                                         <div className="flex gap-6 w-full items-center">
                                             <SocialMediaBtn />
                                         </div>
-                                        <Whatsapp linkto="https://api.whatsapp.com/send?phone=85264602996" />
+                                        <Whatsapp linkto="https://api.whatsapp.com/send?phone=85267461301" />
                                     </div>
                                     <div className="md:hidden ">
                                         <div className="flex gap-2 w-full items-center">
                                             <SocialMediaBtn />
                                         </div>
                                         <div className="pt-6">
-                                            <Whatsapp linkto="https://api.whatsapp.com/send?phone=85264602996" />
+                                            <Whatsapp linkto="https://api.whatsapp.com/send?phone=85267461301" />
                                         </div>
                                     </div>
                                 </div>
@@ -150,9 +150,9 @@ class backlinksIndex extends React.Component {
                     </div>
                     <div className="container mx-auto lg:relative top-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-16 lg:p-0 items-end text-xl font-black text-white">
-                            <Whatsapp customBtn="flex justify-center rounded-xl bg-blue-600" className="flex justify-center rounded-xl bg-blue-600 py-3 text-white" linkto="https://api.whatsapp.com/send?phone=85264602996">中文Backlinks收費參考</Whatsapp>
+                            <Whatsapp customBtn="flex justify-center rounded-xl bg-blue-600" className="flex justify-center rounded-xl bg-blue-600 py-3 text-white" linkto="https://api.whatsapp.com/send?phone=85267461301">中文Backlinks收費參考</Whatsapp>
                             <Anchor to="#Backlink_ref" className="flex justify-center rounded-xl bg-amber-500 py-3 text-white">中文Backlinks案例參考</Anchor>
-                            <Whatsapp customBtn="flex justify-center rounded-xl bg-white" className="flex justify-center rounded-xl bg-white py-3 text-[#608A51]" linkto="https://api.whatsapp.com/send?phone=85264602996">直接WhatsApp查詢</Whatsapp>
+                            <Whatsapp customBtn="flex justify-center rounded-xl bg-white" className="flex justify-center rounded-xl bg-white py-3 text-[#608A51]" linkto="https://api.whatsapp.com/send?phone=85267461301">直接WhatsApp查詢</Whatsapp>
                             <div className="flex justify-center w-1/3 mx-auto">
                                 <img src={QRcode} alt="QRcode" loading="lazy" decoding="async" />
                             </div>
