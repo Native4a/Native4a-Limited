@@ -64,8 +64,7 @@ const Form = () => {
                                     name='user_website'
                                     type="text"
                                     className="p-3 my-4 block w-full rounded-md shadow-sm"
-                                    placeholder={fieldsWebsite}
-                                    required />
+                                    placeholder={fieldsWebsite} />
                             </label>
                             <label className="block">
                                 <select
@@ -80,7 +79,6 @@ const Form = () => {
                                     <option value={fieldServices[3]}>{fieldServices[3]}</option>
                                     <option value={fieldServices[4]}>{fieldServices[4]}</option>
                                     <option value={fieldServices[5]}>{fieldServices[5]}</option>
-                                    <option value={fieldServices[6]}>{fieldServices[6]}</option>
                                 </select>
                             </label>
                             <label className="block">
