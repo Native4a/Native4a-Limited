@@ -35,6 +35,14 @@ class BlogPostTemplate extends React.Component {
             />
           )
         },
+        "embedded-asset-block": (node) => {
+          const { gatsbyImageData } = node.data.target
+          if (!gatsbyImageData) {
+            // asset is not an image
+            return null
+          }
+          return <GatsbyImage image={gatsbyImageData} />
+        },
       },
     };
 
@@ -112,7 +120,13 @@ export const pageQuery = graphql`
       }
       body {
         raw
-        
+        references {
+          ... on ContentfulAsset {
+            contentful_id
+            __typename
+            gatsbyImageData
+          }
+        }
       }
       tags
       description {
