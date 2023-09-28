@@ -53,11 +53,14 @@ class BlogPostTemplate extends React.Component {
           description={plainTextDescription}
           image={`http:${post.heroImage.resize.src}`}
         />
-        <Hero
-          image={post.heroImage?.gatsbyImage}
-          title={post.title}
-          content={post.description}
-        />
+        <section>
+          <div className={styles.container}>
+            <Hero
+              image={post.heroImage?.gatsbyImage}
+              title={post.title}
+            />
+          </div>
+        </section>
         <div className={styles.container}>
           <div className={styles.article}>
             <div className={styles.body}>

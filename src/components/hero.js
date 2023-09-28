@@ -20,7 +20,7 @@ import * as styles from '../styles/hero.module.css'
 const Hero = ({ title, content, image }) => (
     <div className="flex items-end m-[0 auto] min-h-[200px] relative">
     {image && (
-      <GatsbyImage className="mt-28 h-[61.8vh] w-full" alt={title} image={image} />
+      <GatsbyImage className="mt-28 h-[36vh] xl:h-[61.8vh] w-full" alt={title} image={image} />
     )}
     <div className="absolute pl-6 bg-white">
       <h1 className={styles.title}>{title}</h1>
