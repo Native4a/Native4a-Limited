@@ -11,8 +11,8 @@ const ArticlePreview = ({ posts }) => {
   if (!Array.isArray(posts)) return null
 
   return (
-    <section className='grid grid-cols-6 gap-4'>
-      <div className='col-start-2 col-span-4 my-28'>
+    <section className='grid gap-4'>
+      <div className='my-28 p-5'>
         <h1 className='text-5xl my-10'>Blog</h1>
         <ul className={styles.articleList}>
           {posts.map((post) => {

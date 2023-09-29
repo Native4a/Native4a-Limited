@@ -28,11 +28,10 @@
 
 .title {
   letter-spacing: -0.012em;
-  font-size: var(--text-title);
+  font-size: var(--text-2-5xl);
   font-weight: var(--extrabold);
-  line-height: var(--solid);
-  margin: 0 0 var(--space-xl);
-  padding-top: 30px;
+  line-height: var(--default);
+  padding: 30px;
 }
 
 .content {

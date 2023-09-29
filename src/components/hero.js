@@ -18,26 +18,18 @@ import * as styles from '../styles/hero.module.css'
     </div>
   </div>*/
 const Hero = ({ title, content, image }) => (
-  <div className="
-    flex
-    items-end
-    m-[0 auto]
-    min-h-[200px]
-    relative">
-    {image && (
-      <GatsbyImage className="
-      mt-28 
-      h-[36vh] 
-      xl:h-[61.8vh] 
-      w-full" 
-      alt={title} image={image} />
-    )}
-    <div className="absolute pl-6 bg-white">
-      <h1 className={styles.title}>{title}</h1>
-
-      {content && (
-        <div className={styles.content}>{renderRichText(content)}</div>
-      )}
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1">
+      <div class="flex justify-center ">{image && (
+        <GatsbyImage className="mt-28 w-full" alt={title} image={image} />
+      )}</div>
+      <div class="flex justify-center bg-white">
+        <div className="bg-white">
+        <h1 className={styles.title}>{title}</h1>
+        {content && (
+          <div className={styles.content}>{renderRichText(content)}</div>
+        )}
+      </div></div>
     </div>
   </div>
 )
