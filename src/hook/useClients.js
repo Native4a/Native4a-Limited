@@ -4,27 +4,31 @@ const useClients = () => {
     const {
         allContentfulClients: { nodes }
     } = useStaticQuery(graphql`
-      query ClientsQL {
-        allContentfulClients (sort: {order: ASC}){
-            nodes {
-              order
-              mainVisual {
-                url
+    query ClientsQL {
+      allContentfulClients(sort: {order: ASC}) {
+        nodes {
+          order
+          mainVisual {
+            url
+          }
+          companyLogo {
+            url
+          }
+          companyName
+          clientsName
+          clientsPosition
+          clientFeedback {
+            clientFeedback {
+              internal {
+                content
               }
-              companyLogo {
-                url
-              }
-              companyName
-              clientsName
-              clientsPosition
-              clientFeedback {
-                clientFeedback
-              }
-              ranking
-              url
             }
           }
+          ranking
+          url
+        }
       }
+    }
   `);
     return nodes;
 };

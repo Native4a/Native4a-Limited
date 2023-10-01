@@ -15,7 +15,7 @@ const TwelveDifferent = () => {
                         <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-5">{no}</div>
                         <div className="col-span-3">
                             <h3 className="text-xl lg:text-2xl">{title}</h3>
-                            <p className="text-base lg:text-lg">{descriptions.descriptions}</p>
+                            <p className="text-base lg:text-lg">{descriptions.internal.content}</p>
                         </div>
                     </div>
                 );

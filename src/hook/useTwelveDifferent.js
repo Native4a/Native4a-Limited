@@ -8,7 +8,9 @@ const useTwelveDifferent = () => {
           no
           title
           descriptions {
-            descriptions
+            internal {
+              content
+            }
           }
         }
       }
