@@ -179,7 +179,7 @@ class aboutUs extends React.Component {
                         <span className="absolute inset-0"></span>
                         {AboutUsPage.section7[0].title}
                       </h3>
-                      <p className="text-base text-gray-900">{AboutUsPage.section7[0].internal.content}</p>
+                      <p className="text-base text-gray-900">{AboutUsPage.section7[0].descriptions.internal.content}</p>
                     </div>
                     <div className="group relative rounded-3xl p-6 items-center backdrop-blur-xl bg-white/80 text-center shadow-xl">
                       <div className="relative overflow-hidden rounded-full bg-white group-hover:opacity-75 w-1/2 mx-auto my-0">
@@ -189,7 +189,7 @@ class aboutUs extends React.Component {
                         <span className="absolute inset-0"></span>
                         {AboutUsPage.section7[1].title}
                       </h3>
-                      <p className="text-base text-gray-900">{AboutUsPage.section7[1].internal.content}</p>
+                      <p className="text-base text-gray-900">{AboutUsPage.section7[1].descriptions.internal.content}</p>
                     </div>
                     <div className="group relative rounded-3xl p-6 items-center backdrop-blur-xl bg-white/80 text-center shadow-xl">
                       <div className="relative overflow-hidden rounded-full bg-white group-hover:opacity-75 w-1/2 mx-auto my-0">
@@ -199,7 +199,7 @@ class aboutUs extends React.Component {
                         <span className="absolute inset-0"></span>
                         {AboutUsPage.section7[2].title}
                       </h3>
-                      <p className="text-base text-gray-900">{AboutUsPage.section7[2].internal.content}</p>
+                      <p className="text-base text-gray-900">{AboutUsPage.section7[2].descriptions.internal.content}</p>
                     </div>
                   </div>
                 </div>
