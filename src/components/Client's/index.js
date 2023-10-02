@@ -50,7 +50,7 @@ const Clients = () => {
                                     </div>
                                 )}
                             </Popup>
-                            <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">{clientFeedback.clientFeedback.internal.content}</p>
+                            <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">{clientFeedback.internal.content}</p>
                             <div className="w-10/12 m-5">
                                 <div className="grid grid-cols-3 gap-4 items-center">
                                     <div className="">

@@ -18,10 +18,8 @@ const useClients = () => {
           clientsName
           clientsPosition
           clientFeedback {
-            clientFeedback {
-              internal {
-                content
-              }
+            internal {
+              content
             }
           }
           ranking

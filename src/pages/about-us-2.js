@@ -117,7 +117,7 @@ class aboutUs extends React.Component {
           <div className="flex justify-center text-6xl px-8">
             <div className="overflow-hidden grid justify-center justify-items-center">
               <div className="flex justify-center font-bold text-7xl mb-2 rounded-full "><FaQuoteLeft className='bg-white text-[#FAAB00] rounded-full p-4' /></div>
-              <p className="text-white text-2xl lg:text-4xl text-[#fff] mt-6 text-center">{renderRichText(AboutUsPage.section3)}</p>
+              <p className="text-white text-2xl lg:text-4xl mt-6 text-center">{renderRichText(AboutUsPage.section3)}</p>
             </div>
           </div>
         </section>
@@ -175,7 +175,7 @@ class aboutUs extends React.Component {
                       <div className="relative overflow-hidden rounded-full bg-white group-hover:opacity-75 w-1/2 mx-auto my-0">
                         <img src={AboutUsPage.section7[0].image.url} alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="h-full w-full object-cover object-center" loading="lazy" decoding="async" />
                       </div>
-                      <h3 className="mt-6 m-2 text-base text-black text-xl lg:text-md">
+                      <h3 className="mt-6 m-2 text-base text-black lg:text-md">
                         <span className="absolute inset-0"></span>
                         {AboutUsPage.section7[0].title}
                       </h3>
@@ -185,7 +185,7 @@ class aboutUs extends React.Component {
                       <div className="relative overflow-hidden rounded-full bg-white group-hover:opacity-75 w-1/2 mx-auto my-0">
                         <img src={AboutUsPage.section7[1].image.url} alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="h-full w-full object-cover object-center" loading="lazy" decoding="async" />
                       </div>
-                      <h3 className="mt-6 m-2 text-base text-black text-xl lg:text-md">
+                      <h3 className="mt-6 m-2 text-base text-black lg:text-md">
                         <span className="absolute inset-0"></span>
                         {AboutUsPage.section7[1].title}
                       </h3>
@@ -195,7 +195,7 @@ class aboutUs extends React.Component {
                       <div className="relative overflow-hidden rounded-full bg-white group-hover:opacity-75 w-1/2 mx-auto my-0">
                         <img src={AboutUsPage.section7[2].image.url} alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." className="h-full w-full object-cover object-center" loading="lazy" decoding="async" />
                       </div>
-                      <h3 className="mt-6 m-2 text-base text-black text-xl lg:text-md">
+                      <h3 className="mt-6 m-2 text-base text-black lg:text-md">
                         <span className="absolute inset-0"></span>
                         {AboutUsPage.section7[2].title}
                       </h3>
@@ -225,8 +225,8 @@ class aboutUs extends React.Component {
         <section className='grid justify-center justify-items-center p-10 bg-[#FAAB00]'>
           <div className="flex justify-center text-6xl ">
             <div className="overflow-hidden grid justify-center justify-items-center">
-              <p className="text-white text-3xl lg:text-4xl text-[#fff] font-black mt-6">{AboutUsPage.section8Title}</p>
-              <p className="text-white text-xl lg:text-2xl text-[#fff] mt-6">{AboutUsPage.section8Descriptions}</p>
+              <p className="text-white text-3xl lg:text-4xl font-black mt-6">{AboutUsPage.section8Title}</p>
+              <p className="text-white text-xl lg:text-2xl mt-6">{AboutUsPage.section8Descriptions}</p>
             </div>
           </div>
         </section>
@@ -254,8 +254,8 @@ class aboutUs extends React.Component {
         <section className='grid justify-center justify-items-center p-10 bg-[#3A7DFF]'>
           <div className="flex justify-center text-6xl">
             <div className="overflow-hidden grid justify-center justify-items-center">
-              <p className="text-white text-3xl lg:text-4xl text-[#fff] font-black mt-6">{AboutUsPage.section11Title}</p>
-              <p className="text-white text-xl lg:text-2xl text-[#fff] mt-6">{AboutUsPage.section11TitleDescriptions}</p>
+              <p className="text-white text-3xl lg:text-4xl font-black mt-6">{AboutUsPage.section11Title}</p>
+              <p className="text-white text-xl lg:text-2xl mt-6">{AboutUsPage.section11TitleDescriptions}</p>
             </div>
           </div>
         </section>
