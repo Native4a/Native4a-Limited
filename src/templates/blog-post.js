@@ -130,6 +130,7 @@ export const pageQuery = graphql`
             gatsbyImageData
           }
         }
+        
       }
       tags
       description {
