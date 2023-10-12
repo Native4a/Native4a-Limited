@@ -37,5 +37,4 @@ const ArticlePreview = ({ posts }) => {
     </section>
   )
 }
-
 export default ArticlePreview
