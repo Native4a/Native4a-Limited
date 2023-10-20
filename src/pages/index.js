@@ -51,49 +51,43 @@ class RootIndex extends React.Component {
                     <div className="flex gap-6 w-full items-center">
                       <SocialMediaBtn />
                     </div>
-                    
                   </div>
                   <div className="md:hidden">
                     <div className="flex gap-2 w-full items-center">
                       <SocialMediaBtn />
-                    </div>
-                    <div className="pt-6">
-                      
                     </div>
                   </div>
                 </div>
                 <AwardsWeb />
               </div>
               <div className="grid content-center z-0">
-                <div>
-                  <Popup
-                    trigger={
-                      <div className={styles.overlay_container}>
-                        <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async" />
+                <Popup
+                  trigger={
+                    <div className={styles.overlay_container}>
+                      <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async" />
+                    </div>
+                  }
+                  modal
+                  contentStyle=""
+                >
+                  {(close) => (
+                    <div className={styles.modal}>
+                      <button className={styles.close} onClick={close}>X</button>
+                      {/**Put your youtube link here*/}
+                      <div className={styles.videoContainer}>
+                        <iframe
+                          className={styles.responsiveIframe}
+                          width="100%"
+                          src="https://www.youtube.com/embed/B53Pg3CyDTo"
+                          title="YouTube video player"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                        ></iframe>
                       </div>
-                    }
-                    modal
-                    contentStyle=""
-                  >
-                    {(close) => (
-                      <div className={styles.modal}>
-                        <button className={styles.close} onClick={close}>X</button>
-                        {/**Put your youtube link here*/}
-                        <div className={styles.videoContainer}>
-                          <iframe
-                            className={styles.responsiveIframe}
-                            width="100%"
-                            src="https://www.youtube.com/embed/B53Pg3CyDTo"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                          ></iframe>
-                        </div>
-                      </div>
-                    )}
-                  </Popup>
-                </div>
+                    </div>
+                  )}
+                </Popup>
               </div>
               <Awards />
             </div>
