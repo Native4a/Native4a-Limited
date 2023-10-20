@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import useAddMenu from '../../hook/useAddMenu'
-import QuoteNow from '../button/quoteNow'
+import Whatsapp from "../button/whatsapp"
 import * as styles from '../../styles/navprops.module.css'
 
 
@@ -27,8 +27,8 @@ const Navprops = () => {
             </li>
           );
         })}
-        <div className="hidden lg:flex col-start-4 col-end-7 flex items-center justify-end">
-          <QuoteNow />
+        <div className="hidden xl:flex col-start-4 col-end-7 flex items-center justify-end">
+          <Whatsapp />
         </div>
       </ul>
     </div>

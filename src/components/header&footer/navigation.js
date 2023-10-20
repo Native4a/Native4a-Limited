@@ -3,7 +3,7 @@ import Navprops from "./navprops";
 import { Sling as Hamburger } from 'hamburger-react';
 import { Link } from 'gatsby';
 import Native_logo from '../../img/2023_native4a_logo.svg';
-import QuoteNow from "../button/quoteNow";
+import Whatsapp from "../button/whatsapp";
 import * as styles from '../../styles/navigation.module.css';
 
 const Navigation = () => {
@@ -29,7 +29,7 @@ const Navigation = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-12 lg:grid-cols-4 gap-4 px-3 md:px-16 2xl:px-40 fixed z-50 w-full top-0"
+      <div className="grid grid-cols-12 lg:grid-cols-6 gap-4 px-3 md:px-16 2xl:px-40 fixed z-50 w-full top-0"
         style={{
           backgroundColor: navColor,
           transition: "all 0.3s",
@@ -40,14 +40,14 @@ const Navigation = () => {
         <div className="flex items-center col-start-1 col-end-5 lg:col-start-1 lg:col-end-2">
           <div className="grid">
             <Link to="/" >
-              <img className="my-3 ml-0 text-blue-500 w-11/12 sm:w-8/12 md:w-6/12" src={Native_logo} alt="hello" />
+              <img className="my-3 ml-0 text-blue-500 w-10/12 sm:w-7/12 lg:w-full xl:w-8/12" src={Native_logo} alt="hello" />
             </Link>
           </div>
         </div>
         <div className="xl:hidden col-start-5 col-end-11 sm:col-start-6 sm:col-end-12 flex items-center justify-end">
-          <QuoteNow />
+          <Whatsapp />
         </div>
-        <div className="xl:col-span-2 flex items-center justify-end col-start-12 col-end-12 xl:col-start-2 xl:col-end-5">
+        <div className="xl:col-span-2 flex items-center justify-end col-start-12 col-end-12 xl:col-start-2 xl:col-end-7">
           <div className="block xl:hidden">
             <div className="z-50 relative">
               <Hamburger size={20} label="Show menu" toggled={isOpen} toggle={setOpen} />
