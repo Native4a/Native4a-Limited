@@ -15,7 +15,6 @@ import WebSlick from "../components/slickSlider/yellowSlider/webSlider"
 import Awards from "../components/awards"
 import AwardsWeb from "../components/awards/awards_website"
 import SocialMediaBtn from '../components/button/socialMedia'
-import Whatsapp from "../components/button/whatsapp"
 import NativeStrengths from '../components/nativeStrengths'
 import AddCases from '../components/Cases'
 
@@ -53,14 +52,10 @@ class webIndex extends React.Component {
                     <div className="flex gap-6 w-full items-center">
                       <SocialMediaBtn />
                     </div>
-                    <Whatsapp />
                   </div>
                   <div className="md:hidden ">
                     <div className="flex gap-2 w-full items-center">
                       <SocialMediaBtn />
-                    </div>
-                    <div className="pt-6">
-                      <Whatsapp />
                     </div>
                   </div>
                 </div>

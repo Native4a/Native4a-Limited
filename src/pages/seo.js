@@ -15,7 +15,6 @@ import SeoSlick from "../components/slickSlider/greenSlider/seoSlider"
 import Awards from "../components/awards"
 import AwardsWeb from "../components/awards/awards_website"
 import Partners from '../components/partners'
-import Whatsapp from "../components/button/whatsapp"
 import SocialMediaBtn from '../components/button/socialMedia'
 import NativeStrengths from '../components/nativeStrengths'
 import AddCases from '../components/Cases'
@@ -41,7 +40,7 @@ class seoIndex extends React.Component {
           description={seoPage.metaDescription}
           ogUrl="https://nativeaaaa.com.hk/seo/"
         />
-        <section className={styles.mainBg}>
+        <section className="bg-[url('../img/GRectangle.svg')] bg-cover">
           <div className={styles.container}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
               <div className="px-6 xl:px-0 py-0 xl:py-6">
@@ -54,14 +53,10 @@ class seoIndex extends React.Component {
                     <div className="flex gap-6 w-full items-center">
                       <SocialMediaBtn />
                     </div>
-                    <Whatsapp />
                   </div>
                   <div className="md:hidden ">
                     <div className="flex gap-2 w-full items-center">
                       <SocialMediaBtn />
-                    </div>
-                    <div className="pt-6">
-                      <Whatsapp />
                     </div>
                   </div>
                 </div>

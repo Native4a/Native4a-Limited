@@ -16,7 +16,6 @@ import MediaWork from '../components/mediaWork'
 import Awards from "../components/awards"
 import AwardsWeb from "../components/awards/awards_website"
 import SmmSlick from "../components/slickSlider/blueSlider/smmSlider"
-import Whatsapp from "../components/button/whatsapp"
 import SocialMediaBtn from '../components/button/socialMedia'
 import NativeStrengths from '../components/nativeStrengths'
 
@@ -56,14 +55,10 @@ class smmAdsIndex extends React.Component {
                                         <div className="flex gap-6 w-full items-center">
                                             <SocialMediaBtn />
                                         </div>
-                                        <Whatsapp />
                                     </div>
                                     <div className="md:hidden ">
                                         <div className="flex gap-2 w-full items-center">
                                             <SocialMediaBtn />
-                                        </div>
-                                        <div className="pt-6">
-                                            <Whatsapp />
                                         </div>
                                     </div>
                                 </div>

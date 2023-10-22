@@ -16,6 +16,7 @@ import AwardsWeb from "../components/awards/awards_website"
 import SocialMediaBtn from "../components/button/socialMedia"
 import Clients from "../components/Client's"
 import ServiceScope from "../components/serviceScope"
+import Section from "../components/baseTools/Section"
 
 //image here//
 import plsStep from '../img/plsStep.png'
@@ -38,8 +39,7 @@ class RootIndex extends React.Component {
           description={homePage.metaDescription}
           ogUrl="https://nativeaaaa.com.hk/"
         />
-        <section className={styles.mainBg}>
-          <div className={styles.container}>
+        <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
               <div className="px-6 xl:px-0 py-0 xl:py-6">
                 <div className="pt-2 md:pt-3 2xl:pt-0">
@@ -91,8 +91,7 @@ class RootIndex extends React.Component {
               </div>
               <Awards />
             </div>
-          </div>
-        </section>
+        </Section>
         <section className={styles.sec2_wrap}>
           <div className={styles.container}>
             <div className="grid grid-rows-0">

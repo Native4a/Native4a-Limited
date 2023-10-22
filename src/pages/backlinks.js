@@ -67,14 +67,10 @@ class backlinksIndex extends React.Component {
                                         <div className="flex gap-6 w-full items-center">
                                             <SocialMediaBtn />
                                         </div>
-                                        <Whatsapp linkto="https://api.whatsapp.com/send?phone=85267461301" />
                                     </div>
                                     <div className="md:hidden ">
                                         <div className="flex gap-2 w-full items-center">
                                             <SocialMediaBtn />
-                                        </div>
-                                        <div className="pt-6">
-                                            <Whatsapp linkto="https://api.whatsapp.com/send?phone=85267461301" />
                                         </div>
                                     </div>
                                 </div>
