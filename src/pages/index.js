@@ -14,7 +14,7 @@ import ClientLogos from "../components/clientLogos"
 import Awards from "../components/awards"
 import AwardsWeb from "../components/awards/awards_website"
 import SocialMediaBtn from "../components/button/socialMedia"
-import Clients from "../components/Client's"
+import Clients from "../components/Client"
 import ServiceScope from "../components/serviceScope"
 import Section from "../components/baseTools/Section"
 
