@@ -168,7 +168,7 @@ export const pageQuery = graphql`
             raw
           }
           title
-          heroImage: image {
+          image {
             gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 1180)
           }
           company
