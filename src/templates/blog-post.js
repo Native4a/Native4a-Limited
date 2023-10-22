@@ -45,7 +45,6 @@ class BlogPostTemplate extends React.Component {
         },
       },
     };
-
     return (
       <Layout location={this.props.location}>
         <Seo
