@@ -18,6 +18,7 @@ import Partners from '../components/partners'
 import SocialMediaBtn from '../components/button/socialMedia'
 import NativeStrengths from '../components/nativeStrengths'
 import AddCases from '../components/Cases'
+import Section from '../components/baseTools/Section'
 
 //CSS here//
 import 'reactjs-popup/dist/index.css'
@@ -35,68 +36,66 @@ class seoIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <Seo 
+        <Seo
           title={seoPage.metaTitle}
           description={seoPage.metaDescription}
           ogUrl="https://nativeaaaa.com.hk/seo/"
         />
-        <section className="bg-[url('../img/GRectangle.svg')] bg-cover">
-          <div className={styles.container}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
-              <div className="px-6 xl:px-0 py-0 xl:py-6">
-                <div className="pt-2 md:pt-3 2xl:pt-0">
-                  <h1 className={styles.title}>{seoPage.title}</h1>
-                  <h1 className={styles.subTitle}>{seoPage.subTitle}</h1>
-                  <div className={styles.border}></div>
-                  <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">{renderRichText(seoPage.titleDescription)}</p>
-                  <div className="hidden md:grid grid-cols-2 gap-6 py-6">
-                    <div className="flex gap-6 w-full items-center">
-                      <SocialMediaBtn />
-                    </div>
-                  </div>
-                  <div className="md:hidden ">
-                    <div className="flex gap-2 w-full items-center">
-                      <SocialMediaBtn />
-                    </div>
+        <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
+            <div className="px-6 xl:px-0 py-0 xl:py-6">
+              <div className="pt-2 md:pt-3 2xl:pt-0">
+                <h1 className={styles.title}>{seoPage.title}</h1>
+                <h1 className={styles.subTitle}>{seoPage.subTitle}</h1>
+                <div className={styles.border}></div>
+                <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">{renderRichText(seoPage.titleDescription)}</p>
+                <div className="hidden md:grid grid-cols-2 gap-6 py-6">
+                  <div className="flex gap-6 w-full items-center">
+                    <SocialMediaBtn />
                   </div>
                 </div>
-                <div className={styles.seoSpanSquare}><AwardsWeb /></div>
-              </div>
-              <div className="grid content-center z-0">
-                <div className="">
-                  <Popup
-                    trigger={
-                      <div className={styles.overlay_container}>
-                        <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async"/>
-                      </div>
-                    }
-                    modal
-                    contentStyle=""
-                  >
-                    {(close) => (
-                      <div className={styles.modal}>
-                        <button className={styles.close} onClick={close}>X</button>
-                        {/**Put your youtube link here*/}
-                        <div className={styles.videoContainer}>
-                          <iframe
-                            className={styles.responsiveIframe}
-                            width="100%"
-                            src="https://www.youtube.com/embed/B53Pg3CyDTo"
-                            title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                          ></iframe>
-                        </div>
-                      </div>
-                    )}
-                  </Popup>
+                <div className="md:hidden ">
+                  <div className="flex gap-2 w-full items-center">
+                    <SocialMediaBtn />
+                  </div>
                 </div>
               </div>
-              <div className={styles.seoSpanSquare}><Awards /></div>
+              <div className={styles.seoSpanSquare}><AwardsWeb /></div>
             </div>
+            <div className="grid content-center z-0">
+              <div className="">
+                <Popup
+                  trigger={
+                    <div className={styles.overlay_container}>
+                      <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async" />
+                    </div>
+                  }
+                  modal
+                  contentStyle=""
+                >
+                  {(close) => (
+                    <div className={styles.modal}>
+                      <button className={styles.close} onClick={close}>X</button>
+                      {/**Put your youtube link here*/}
+                      <div className={styles.videoContainer}>
+                        <iframe
+                          className={styles.responsiveIframe}
+                          width="100%"
+                          src="https://www.youtube.com/embed/B53Pg3CyDTo"
+                          title="YouTube video player"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                    </div>
+                  )}
+                </Popup>
+              </div>
+            </div>
+            <div className={styles.seoSpanSquare}><Awards /></div>
           </div>
-        </section>
+        </Section>
         <section className={styles.sec_wrap}>
           <div className={styles.container}>
             <Partners />

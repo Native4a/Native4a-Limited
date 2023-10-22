@@ -3,25 +3,11 @@ img {
     margin: auto;
 }
 
-.container {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    margin: 0 auto;
-    max-width: 85%;
-    padding: 0 36px;
-}
-
 /*-- All area end here--*/
 
 
 
 /*-- Block ① start here --*/
-.mainBg {
-    background-image: url('../img/RedRectangle.svg');
-    background-size: cover;
-}
-
 .title {
     letter-spacing: -0.012em;
     font-size: 2.8vw;

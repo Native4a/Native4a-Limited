@@ -17,6 +17,7 @@ import AwardsWeb from '../components/awards/awards_website'
 import SocialMediaBtn from '../components/button/socialMedia'
 import StarRatings from 'react-star-ratings'
 import Button from '../components/baseTools/button'
+import Section from '../components/baseTools/Section'
 
 //CSS here//
 import 'reactjs-popup/dist/index.css'
@@ -42,8 +43,7 @@ class aboutUs extends React.Component {
           description={AboutUsPage.metaDescription}
           ogUrl="https://nativeaaaa.com.hk/about-us-2/"
         />
-        <section className={styles.mainBg}>
-          <div className={styles.container}>
+        <Section SectionClass="bg-[url('../img/Native_AboutUs_web.png')] bg-cover">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
               <div className="px-6 xl:px-0 py-0 xl:py-6">
                 <div className="pt-2 lg:pt-3 2xl:pt-0">
@@ -68,8 +68,7 @@ class aboutUs extends React.Component {
               </div>
               <div className={styles.seoSpanSquare}><Awards /></div>
             </div>
-          </div>
-        </section>
+        </Section>
         <section className='grid justify-center justify-items-center mt-10'>
           <h2 className='text-xl lg:text-3xl text-gray-700 p-5 lg:p-10'>{AboutUsPage.section2Title}</h2>
           <h3 className='text-3xl lg:text-5xl text-gray-700'>{AboutUsPage.section2Description}</h3>
