@@ -111,6 +111,12 @@ export const pageQuery = graphql`
       title
       publishDate(formatString: "MMMM Do, YYYY")
       rawDate: publishDate
+      heroImage {
+        gatsbyImage(layout: FULL_WIDTH, placeholder: BLURRED, width: 1280)
+        resize(height: 630, width: 1200) {
+          src
+        }
+      }
       author {
         fields {
           name {
@@ -118,13 +124,6 @@ export const pageQuery = graphql`
           }
         }
       }
-      heroImage {
-        gatsbyImage(layout: FULL_WIDTH, placeholder: BLURRED, width: 1280)
-        resize(height: 630, width: 1200) {
-          src
-        }
-      }
-      
       body {
         raw
         references {
@@ -134,7 +133,6 @@ export const pageQuery = graphql`
             gatsbyImageData
           }
         }
-        
       }
       tags
       description {

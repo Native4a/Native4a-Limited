@@ -168,9 +168,6 @@ export const pageQuery = graphql`
             raw
           }
           title
-          image {
-            gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 1180)
-          }
           company
         }
       }
