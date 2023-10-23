@@ -52,7 +52,7 @@ class RootIndex extends React.Component {
                       <SocialMediaBtn />
                     </div>
                   </div>
-                  <div className="lg:hidden">
+                  <div className="md:hidden">
                     <div className="flex gap-2 w-full items-center">
                       <SocialMediaBtn />
                     </div>
