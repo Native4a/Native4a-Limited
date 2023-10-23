@@ -124,6 +124,7 @@ export const pageQuery = graphql`
           src
         }
       }
+      
       body {
         raw
         references {
