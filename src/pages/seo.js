@@ -136,7 +136,6 @@ class seoIndex extends React.Component {
   ===========multi class============
   <div className={`${styles.container} ${styles.bg_write}`}>
 */
-
 export default seoIndex
 
 export const webDesignQuery = graphql`
