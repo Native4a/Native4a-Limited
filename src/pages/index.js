@@ -47,7 +47,7 @@ class RootIndex extends React.Component {
                   <h1 className={styles.subTitle}>{homePage.subTitle}</h1>
                   <div className={styles.border}></div>
                   <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">{homePage.titleDescription.titleDescription}</p>
-                  <div className="hidden md:grid grid-cols-2 gap-6 py-6">
+                  <div className="hidden md:grid grid-cols-1 gap-6 py-6">
                     <div className="flex gap-6 w-full items-center">
                       <SocialMediaBtn />
                     </div>
