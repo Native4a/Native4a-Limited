@@ -9,15 +9,19 @@ import * as styles from '../../styles/navigation.module.css';
 const Navigation = () => {
   const [isOpen, setOpen] = useState(false);
   const [navColor, setnavColor] = useState("transparent");
-  const [navBorder, setnavBorder] = useState("none");
-  const [navPaddingTop, setnavPaddingTop] = useState("1rem");
-  const [navPaddingBottom, setnavPaddingBottom] = useState("1rem");
+  const [navBoxShadow, setnavBoxShadow] = useState("none");
+  const [navBorderRadius, setnavBorderRadius] = useState("none");
+  const [navPaddingY, setnavPaddingY] = useState("1rem");
+  const [navPaddingX, setnavPaddingX] = useState("1rem");
+  const [navBlur, setnavBlur] = useState("blur(16.6px)");
 
   const listenScrollEvent = () => {
-    window.scrollY > 10 ? setnavColor("#fff") : setnavColor("transparent");
-    window.scrollY > 10 ? setnavBorder("1px 1px 10px #ccc") : setnavBorder("none");
-    window.scrollY > 10 ? setnavPaddingTop("0rem") : setnavPaddingTop("1rem");
-    window.scrollY > 10 ? setnavPaddingBottom("0rem") : setnavPaddingBottom("1rem");
+    window.scrollY > 10 ? setnavColor("rgba(255, 255, 255, 0.65)") : setnavColor("transparent");
+    window.scrollY > 10 ? setnavBoxShadow("1px 1px 10px #ccc") : setnavBoxShadow("none");
+    window.scrollY > 10 ? setnavBorderRadius("23px") : setnavBorderRadius("none");
+    window.scrollY > 10 ? setnavPaddingY("0rem") : setnavPaddingY("1rem");
+    window.scrollY > 10 ? setnavPaddingX("1rem") : setnavPaddingX("1rem");
+    window.scrollY > 10 ? setnavBlur("blur(16.6px)") : setnavBlur("none");
   };
 
   useEffect(() => {
@@ -29,18 +33,22 @@ const Navigation = () => {
 
   return (
     <nav className="flex justify-center m-auto">
-      <div className="grid grid-cols-12 lg:grid-cols-6 gap-4 fixed z-50 w-[95%] md:w-[90%] lg:w-[92%] xl:w-[90%] 2xl:w-[79%]"
+      <div className="grid grid-cols-12 lg:grid-cols-6 gap-4 fixed z-50 w-[95%] md:w-[100%] lg:w-[92%] xl:w-[90%] 2xl:w-[85%]"
         style={{
+          borderRadius: navBorderRadius,
           backgroundColor: navColor,
           transition: "all 0.3s",
-          boxShadow: navBorder,
-          paddingTop: navPaddingTop,
-          paddingBottom: navPaddingBottom
+          boxShadow: navBoxShadow,
+          paddingTop: navPaddingY,
+          paddingBottom: navPaddingY,
+          paddingLeft: navPaddingX,
+          paddingRight: navPaddingX,
+          backdropFilter: navBlur,
         }}>
         <div className="flex items-center col-start-1 col-end-5 lg:col-start-1 lg:col-end-2">
           <div className="grid">
             <Link to="/" >
-              <img className="my-3 ml-6 text-blue-500 w-10/12 sm:w-7/12 lg:w-full xl:w-8/12" src={Native_logo} alt="hello" />
+              <img className="my-3 text-blue-500 w-10/12 sm:w-7/12 lg:w-full xl:w-8/12" src={Native_logo} alt="hello" />
             </Link>
           </div>
         </div>
