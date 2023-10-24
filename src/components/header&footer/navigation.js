@@ -13,7 +13,7 @@ const Navigation = () => {
   const [navBorderRadius, setnavBorderRadius] = useState("none");
   const [navPaddingY, setnavPaddingY] = useState("1rem");
   const [navPaddingX, setnavPaddingX] = useState("1rem");
-  const [navBlur, setnavBlur] = useState("blur(16.6px)");
+  const [navBlur, setnavBlur] = useState("none");
 
   const listenScrollEvent = () => {
     window.scrollY > 10 ? setnavColor("rgba(255, 255, 255, 0.65)") : setnavColor("transparent");
