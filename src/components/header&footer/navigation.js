@@ -28,8 +28,8 @@ const Navigation = () => {
   }, []);
 
   return (
-    <div>
-      <div className="grid grid-cols-12 lg:grid-cols-6 gap-4 px-3 md:px-16 2xl:px-40 fixed z-50 w-full top-0"
+    <nav className="flex justify-center m-auto">
+      <div className="grid grid-cols-12 lg:grid-cols-6 gap-4 fixed z-50 w-[95%] md:w-[90%] lg:w-[92%] xl:w-[90%] 2xl:w-[79%]"
         style={{
           backgroundColor: navColor,
           transition: "all 0.3s",
@@ -40,7 +40,7 @@ const Navigation = () => {
         <div className="flex items-center col-start-1 col-end-5 lg:col-start-1 lg:col-end-2">
           <div className="grid">
             <Link to="/" >
-              <img className="my-3 ml-0 text-blue-500 w-10/12 sm:w-7/12 lg:w-full xl:w-8/12" src={Native_logo} alt="hello" />
+              <img className="my-3 ml-6 text-blue-500 w-10/12 sm:w-7/12 lg:w-full xl:w-8/12" src={Native_logo} alt="hello" />
             </Link>
           </div>
         </div>
@@ -135,7 +135,7 @@ const Navigation = () => {
           </nav>
         </div>
       </div>
-    </div >
+    </nav>
   );
 };
 
