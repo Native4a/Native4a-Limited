@@ -3,7 +3,7 @@ import Navprops from "./navprops";
 import { Sling as Hamburger } from 'hamburger-react';
 import { Link } from 'gatsby';
 import Native_logo from '../../img/2023_native4a_logo.svg';
-import Whatsapp from "../button/whatsapp";
+import Whatsapp from "../baseTools/whatsapp";
 import * as styles from '../../styles/navigation.module.css';
 
 const Navigation = () => {
@@ -14,6 +14,8 @@ const Navigation = () => {
   const [navPaddingY, setnavPaddingY] = useState("1rem");
   const [navPaddingX, setnavPaddingX] = useState("1rem");
   const [navBlur, setnavBlur] = useState("none");
+  const [navWebkitNavBlur, setWebkitNavBlur] = useState("none");
+  const [topNav, settopNav] = useState("none");
 
   const listenScrollEvent = () => {
     window.scrollY > 10 ? setnavColor("rgba(255, 255, 255, 0.65)") : setnavColor("transparent");
@@ -22,6 +24,8 @@ const Navigation = () => {
     window.scrollY > 10 ? setnavPaddingY("0rem") : setnavPaddingY("1rem");
     window.scrollY > 10 ? setnavPaddingX("1rem") : setnavPaddingX("1rem");
     window.scrollY > 10 ? setnavBlur("blur(16.6px)") : setnavBlur("none");
+    window.scrollY > 10 ? setWebkitNavBlur("blur(16.6px)") : setWebkitNavBlur("none");
+    window.scrollY > 10 ? settopNav("0.5rem") : settopNav("none");
   };
 
   useEffect(() => {
@@ -44,6 +48,8 @@ const Navigation = () => {
           paddingLeft: navPaddingX,
           paddingRight: navPaddingX,
           backdropFilter: navBlur,
+          WebkitBackdropFilter: navWebkitNavBlur,
+          marginTop: topNav,
         }}>
         <div className="flex items-center col-start-1 col-end-5 lg:col-start-1 lg:col-end-2">
           <div className="grid">
@@ -53,7 +59,7 @@ const Navigation = () => {
           </div>
         </div>
         <div className="xl:hidden col-start-5 col-end-11 sm:col-start-6 sm:col-end-12 flex items-center justify-end">
-          <Whatsapp />
+          <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85267461301&text=%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2Backlinks">WhatsApp查詢</Whatsapp>
         </div>
         <div className="xl:col-span-2 flex items-center justify-end col-start-12 col-end-12 xl:col-start-2 xl:col-end-7">
           <div className="block xl:hidden">
