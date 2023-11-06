@@ -69,14 +69,14 @@ const Navigation = () => {
           WebkitBackdropFilter: navWebkitNavBlur,
           marginTop: topNav
         }}>
-        <div className="flex items-center col-start-1 col-end-6 lg:col-start-1 lg:col-end-2">
+        <div className="flex items-center col-start-1 col-end-5 lg:col-start-1 lg:col-end-2">
           <div className="grid">
             <Link to="/" >
               <img className="my-3 text-blue-500 w-10/12 sm:w-7/12 lg:w-full xl:w-8/12" src={Native_logo} alt="hello" />
             </Link>
           </div>
         </div>
-        <div className="xl:hidden col-start-6 col-end-11 sm:col-start-6 sm:col-end-12 flex items-center justify-end">
+        <div className="xl:hidden col-start-5 col-end-11 sm:col-start-6 sm:col-end-12 flex items-center justify-end">
           <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85267461301&text=%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2Backlinks">WhatsApp查詢</Whatsapp>
         </div>
         <div className="xl:col-span-2 flex items-center justify-end col-start-12 col-end-12 xl:col-start-2 xl:col-end-7">
