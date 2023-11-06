@@ -16,16 +16,33 @@ const Navigation = () => {
   const [navBlur, setnavBlur] = useState("none");
   const [navWebkitNavBlur, setWebkitNavBlur] = useState("none");
   const [topNav, settopNav] = useState("none");
+  const [BottomNav, setBottomNav] = useState("0");
 
+  //監聽網站滾動事件
+  //當網站向下滾動距離大於 10 時，觸發條件，並更新函數狀態值
   const listenScrollEvent = () => {
-    window.scrollY > 10 ? setnavColor("rgba(255, 255, 255, 0.65)") : setnavColor("transparent");
-    window.scrollY > 10 ? setnavBoxShadow("1px 1px 10px #ccc") : setnavBoxShadow("none");
-    window.scrollY > 10 ? setnavBorderRadius("23px") : setnavBorderRadius("none");
-    window.scrollY > 10 ? setnavPaddingY("0rem") : setnavPaddingY("1rem");
-    window.scrollY > 10 ? setnavPaddingX("1rem") : setnavPaddingX("1rem");
-    window.scrollY > 10 ? setnavBlur("blur(16.6px)") : setnavBlur("none");
-    window.scrollY > 10 ? setWebkitNavBlur("blur(16.6px)") : setWebkitNavBlur("none");
-    window.scrollY > 10 ? settopNav("0.5rem") : settopNav("none");
+    const isScrolled = window.scrollY > 10;
+    setnavColor(isScrolled ? "rgba(255, 255, 255, 0.65)" : "transparent");
+    setnavBoxShadow(isScrolled ? "1px 1px 10px #ccc" : "none");
+    setnavBorderRadius(isScrolled ? "23px" : "none");
+    setnavPaddingY(isScrolled ? "0rem" : "1rem");
+    setnavPaddingX("1rem");
+    setnavBlur(isScrolled ? "blur(16.6px)" : "none");
+    setWebkitNavBlur(isScrolled ? "blur(16.6px)" : "none");
+    settopNav(isScrolled ? "0.5rem" : "none");
+    setBottomNav(isScrolled ? "-99px" : "0");
+    // 检查滚动方向并触发相应的函数
+    const scrollDirection = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < prevScrollY) {
+        setBottomNav(isScrolled ? "0" : "-99px");
+      }
+      prevScrollY = currentScrollY;
+    };
+
+    // 监听滚动事件
+    let prevScrollY = 0;
+    window.addEventListener("scroll", scrollDirection);
   };
 
   useEffect(() => {
@@ -35,9 +52,10 @@ const Navigation = () => {
     };
   }, []);
 
+
   return (
     <nav className="flex justify-center m-auto">
-      <div className="grid grid-cols-12 lg:grid-cols-6 gap-4 fixed z-50 w-[95%] md:w-[100%] lg:w-[92%] xl:w-[90%] 2xl:w-[85%]"
+      <div className="grid grid-cols-12 lg:grid-cols-6 fixed z-50 w-[95%] md:w-[100%] lg:w-[92%] xl:w-[90%] 2xl:w-[85%]"
         style={{
           borderRadius: navBorderRadius,
           backgroundColor: navColor,
@@ -49,16 +67,16 @@ const Navigation = () => {
           paddingRight: navPaddingX,
           backdropFilter: navBlur,
           WebkitBackdropFilter: navWebkitNavBlur,
-          marginTop: topNav,
+          marginTop: topNav
         }}>
-        <div className="flex items-center col-start-1 col-end-5 lg:col-start-1 lg:col-end-2">
+        <div className="flex items-center col-start-1 col-end-6 lg:col-start-1 lg:col-end-2">
           <div className="grid">
             <Link to="/" >
               <img className="my-3 text-blue-500 w-10/12 sm:w-7/12 lg:w-full xl:w-8/12" src={Native_logo} alt="hello" />
             </Link>
           </div>
         </div>
-        <div className="xl:hidden col-start-5 col-end-11 sm:col-start-6 sm:col-end-12 flex items-center justify-end">
+        <div className="xl:hidden col-start-6 col-end-11 sm:col-start-6 sm:col-end-12 flex items-center justify-end">
           <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85267461301&text=%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2Backlinks">WhatsApp查詢</Whatsapp>
         </div>
         <div className="xl:col-span-2 flex items-center justify-end col-start-12 col-end-12 xl:col-start-2 xl:col-end-7">
@@ -76,16 +94,16 @@ const Navigation = () => {
         </div>
       </div>
       <div className="relative inline md:hidden">
-        <div className="flex justify-center fixed bottom-0 left-0 right-0 z-50 w-full">
-          <nav className="grid grid-cols-5 bg-[#1d1d1d]/90 rounded-[31px] p-3 content-center justify-items-center backdrop-blur-[10px] gap-3">
-            <Link to="/" className="grid content-center justify-items-center justify-center w-full hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full">
+        <div className="fixed bottom-0 left-0 right-0 z-50 w-full px-[1rem] mb-2" style={{ bottom: BottomNav, transition: "all 0.3s" }}>
+          <nav className="flex justify-around bg-[#1d1d1d]/90 rounded-full p-2 content-center justify-items-center backdrop-blur-[10px] gap-3">
+            <Link to="/" className="p-1 w-1/5 flex flex-col items-center justify-center hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full">
               <svg id="Layer_3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 377.96 335.92" className={styles.materialIcons}>
                 <path className={styles.st0} d="M325.67,159.37v166.55h-97.19l-.81-99.55c-2.5-20.08-20.1-35.07-40.2-34.37-19.93,.69-36.35,16.58-37.7,36.59l-.22,97.33H51.72l-.25-165.47v165.47" />
                 <path className={styles.st0} d="M10,140.34C69.45,96.89,128.9,53.45,188.35,10c59.87,43.56,119.74,87.11,179.61,130.67" />
               </svg>
               <span className={styles.menuItemLabel}>主頁</span>
             </Link>
-            <Link to="/video" className="grid content-center justify-items-center justify-center w-full hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full">
+            <Link to="/video" className="p-1 w-1/5 flex flex-col items-center justify-center hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full">
               <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 368 227.87" className={styles.materialIconsForHorn}>
                 <rect className={styles.cls5} x="9.5" y="9.5" width="232.72" height="208.87" rx="23.47" ry="23.47" />
                 <line className={styles.cls5} x1="358.23" y1="32.34" x2="242.22" y2="79.17" />
@@ -94,7 +112,7 @@ const Navigation = () => {
               </svg>
               <span className={styles.menuItemLabel}>影片製作</span>
             </Link>
-            <Link to="/web-design" className="grid content-center justify-items-center justify-center w-full  hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full">
+            <Link to="/web-design" className="p-1 w-1/5 flex flex-col items-center justify-center hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full">
               <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 335.31 371.09" className={styles.materialIcons}>
                 <g id="Layer_2-2">
                   <path className={styles.cls7} d="M289.45,54.9h16.69c12.25,0,22.18,9.93,22.18,22.18v187.46c0,12.25-9.93,22.18-22.18,22.18H29.18c-12.25,0-22.18-9.93-22.18-22.18V77.08c0-12.25,9.93-22.18,22.18-22.18H226.87" />
@@ -112,7 +130,7 @@ const Navigation = () => {
               </svg>
               <span className={styles.menuItemLabel}>網站設計</span>
             </Link>
-            <Link to="/backlinks/" className="grid content-center justify-items-center justify-center w-full hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full">
+            <Link to="/backlinks/" className="p-1 w-1/5 flex flex-col items-center justify-center hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full">
               <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 368 368.02" className={styles.materialIcons}>
                 <circle className={styles.cls4} cx="153.61" cy="153.61" r="147.61" />
                 <circle className={styles.cls4} cx="153.61" cy="153.61" r="122.45" />
@@ -131,7 +149,7 @@ const Navigation = () => {
               </svg>
               <span className={styles.menuItemLabel}>SEO</span>
             </Link>
-            <Link to="/smm-ads/" className="grid content-center justify-items-center justify-center w-full hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full">
+            <Link to="/smm-ads/" className="p-1 w-1/5 flex flex-col items-center justify-center hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full">
               <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344.68 363" className={styles.materialIcons}>
                 <path className={styles.cls2} d="M67.72,268.79c-2.84,1.91-7.94,4.81-14.92,6.06-4.04,.73-12,1.5-20.81-1.93-13.7-5.33-19.64-17-21.16-20.11-1.46-2.99-5.8-12.18-3.84-23.93,1.24-7.41,4.47-12.85,6.59-15.82,3.34-4.69,7.07-7.7,9.61-9.44,11.27-7.7,22.53-15.38,33.81-23.08,14.87,21.71,29.72,43.4,44.59,65.11-11.29,7.71-22.57,15.43-33.86,23.14h-.01Z" />
                 <path className={styles.cls2} d="M113.18,66.73c-18.73,37.94-37.45,75.89-56.18,113.82,14.92,21.73,29.83,43.45,44.75,65.18,41.28-3.2,82.57-6.41,123.85-9.6" />
