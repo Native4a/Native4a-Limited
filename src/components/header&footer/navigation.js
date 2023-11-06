@@ -84,7 +84,7 @@ const Navigation = () => {
             <div className="z-50 relative">
               <Hamburger size={20} label="Show menu" toggled={isOpen} toggle={setOpen} />
             </div>
-            <div className="col-start-2 col-span-4 fixed z-[-1] w-full h-fit left-0 drop-shadow-md rounded-b-3xl top-0 bg-white">
+            <div className="fixed z-[-1] w-full h-fit left-0 drop-shadow-md rounded-b-3xl top-0 bg-white">
               {isOpen ? <Navprops /> : null}
             </div>
           </div>
