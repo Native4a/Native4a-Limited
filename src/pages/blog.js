@@ -47,6 +47,9 @@ export const pageQuery = graphql`
         description {
           raw
         }
+        author {
+          name
+        }
       }
     }
   }

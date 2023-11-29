@@ -159,6 +159,9 @@ export const pageQuery = graphql`
           description {
             raw
           }
+          author {
+            name
+          }
         }
       }
       allContentfulPerson(filter: {contentful_id: {eq: "15jwOBqpxqSAOy2eOO4S0m"}}) {

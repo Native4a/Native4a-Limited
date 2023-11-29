@@ -3,6 +3,8 @@ import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
+import Section from "./baseTools/Section"
+
 import Tags from './tags'
 import * as styles from '../styles/article-preview.module.css'
 
@@ -11,11 +13,12 @@ const ArticlePreview = ({ posts }) => {
   if (!Array.isArray(posts)) return null
 
   return (
-    <section className='grid gap-4'>
+    <Section>
       <div className='my-28 p-5'>
         <h1 className='text-5xl my-10'>Blog</h1>
         <ul className={styles.articleList}>
           {posts.map((post) => {
+            console.log(post);
             return (
               <li key={post.slug}>
                 <Link to={`/blog/${post.slug}`} className={styles.link}>
@@ -26,6 +29,7 @@ const ArticlePreview = ({ posts }) => {
                   {post.description?.raw && renderRichText(post.description)}
                 </div>
                 <div className={styles.meta}>
+                  <small className="meta">{post.author?.name} &middot;{' '}</small>
                   <small className="meta">{post.publishDate}</small>
                   <Tags tags={post.tags} />
                 </div>
@@ -34,7 +38,7 @@ const ArticlePreview = ({ posts }) => {
           })}
         </ul>
       </div>
-    </section>
+    </Section>
   )
 }
 export default ArticlePreview
