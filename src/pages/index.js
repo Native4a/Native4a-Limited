@@ -39,7 +39,7 @@ class RootIndex extends React.Component {
           description={homePage.metaDescription}
           ogUrl="https://nativeaaaa.com.hk/"
         />
-        <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
+        <Section SectionClass={styles.bgCustomGradient}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
               <div className="px-6 xl:px-0 py-0 xl:py-6">
                 <div className="pt-2 md:pt-3 2xl:pt-0">
@@ -58,7 +58,7 @@ class RootIndex extends React.Component {
                     </div>
                   </div>
                 </div>
-                <AwardsWeb />
+                <AwardsWeb/>
               </div>
               <div className="grid content-center z-0">
                 <Popup
@@ -89,7 +89,7 @@ class RootIndex extends React.Component {
                   )}
                 </Popup>
               </div>
-              <Awards />
+              <Awards/>
             </div>
         </Section>
         <section className={styles.sec2_wrap}>

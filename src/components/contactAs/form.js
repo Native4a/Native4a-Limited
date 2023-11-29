@@ -40,7 +40,7 @@ const Form = () => {
                                     type="text"
                                     className="p-3 my-4 block w-full rounded-md shadow-sm"
                                     placeholder={fieldsName}
-                                    required />
+                                    required/>
                             </label>
                             <label className="block">
                                 <input
@@ -48,7 +48,7 @@ const Form = () => {
                                     type="text"
                                     className="p-3 my-4 block w-full rounded-md shadow-sm"
                                     placeholder={fieldsPhone}
-                                    required />
+                                    required/>
                             </label>
                             <label className="block" for="emails">
                                 <input
@@ -57,7 +57,7 @@ const Form = () => {
                                     multiple
                                     className="p-3 my-4 block w-full rounded-md shadow-sm"
                                     placeholder={fieldsEmail}
-                                    required />
+                                    required/>
                             </label>
                             <label className="block">
                                 <input

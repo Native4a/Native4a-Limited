@@ -18,6 +18,7 @@ class BlogPostTemplate extends React.Component {
     const post = get(this.props, 'data.contentfulBlogPost')
     const previous = get(this.props, 'data.previous')
     const next = get(this.props, 'data.next')
+    const allpost = get(this.props, 'data.allContentfulBlogPost')
     const plainTextDescription = documentToPlainTextString(
       JSON.parse(post.description.raw)
     )
@@ -50,7 +51,7 @@ class BlogPostTemplate extends React.Component {
         <Seo
           title={post.title}
           description={plainTextDescription}
-          image={`http:${post.heroImage.resize.src}`}
+          image={`http:${post.heroImage?.resize.src}`}
         />
         <section>
           <div className={styles.container}>
@@ -64,7 +65,7 @@ class BlogPostTemplate extends React.Component {
           <div className={styles.article}>
             <div className={styles.body}>
               <span className={styles.meta}>
-                {post.author?.fields.name.en_HK} &middot;{' '}
+                {allpost.nodes.author?.name} &middot;{' '}
                 <time dateTime={post.rawDate}>{post.publishDate}</time> –{' '}
                 {timeToRead} minute read
               </span>
@@ -117,13 +118,6 @@ export const pageQuery = graphql`
           src
         }
       }
-      author {
-        fields {
-          name {
-            en_HK
-          }
-        }
-      }
       body {
         raw
         references {
@@ -146,6 +140,13 @@ export const pageQuery = graphql`
     next: contentfulBlogPost(slug: { eq: $nextPostSlug }) {
       slug
       title
+    }
+    allContentfulBlogPost {
+      nodes {
+        author {
+          name
+        }
+      }
     }
   }
 `

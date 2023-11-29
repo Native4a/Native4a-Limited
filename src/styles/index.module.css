@@ -24,6 +24,10 @@ img{
   margin: 0 0 var(--space-xl);
 }
 
+.bgCustomGradient {
+  background: linear-gradient(100deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(112,166,101,1) 60%, rgba(112,166,101,1) 100%);
+}
+
 .subTitle {
   letter-spacing: -0.012em;
   font-size: 1.685vw;
