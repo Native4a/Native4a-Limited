@@ -91,7 +91,16 @@
     padding: 0px;
     max-width: 100%;
   }
+
   img {
     height: auto !important;
+  }
+
+  .article {
+    padding: 0;
+  }
+  
+  .body {
+    padding: 20px;
   }
 }

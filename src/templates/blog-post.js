@@ -69,8 +69,7 @@ class BlogPostTemplate extends React.Component {
                 {timeToRead} minute read
               </span>
               {post.body?.raw && renderRichText(post.body, options)}
-            </div>
-            <Tags tags={post.tags} />
+              <Tags tags={post.tags} />
             {(previous || next) && (
               <nav>
                 <ul className={styles.articleNavigation}>
@@ -91,6 +90,7 @@ class BlogPostTemplate extends React.Component {
                 </ul>
               </nav>
             )}
+            </div>
           </div>
         </div>
       </Layout>
