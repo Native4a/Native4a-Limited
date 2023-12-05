@@ -28,7 +28,7 @@ const Navprops = () => {
           );
         })}
         <div className="hidden xl:flex col-start-4 col-end-7 flex items-center justify-end">
-          <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85267461301&text=%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2Backlinks">WhatsApp查詢</Whatsapp>
+          <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85267461301&text=我想查詢SEO懶人Plan">WhatsApp查詢</Whatsapp>
         </div>
       </ul>
     </div>
