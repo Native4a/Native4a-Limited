@@ -31,7 +31,7 @@ const Navigation = () => {
     setWebkitNavBlur(isScrolled ? "blur(16.6px)" : "none");
     settopNav(isScrolled ? "0.5rem" : "none");
     setBottomNav(isScrolled ? "-99px" : "0");
-    // 检查滚动方向并触发相应的函数
+    // 檢查滾動方向並觸發相應的函數
     const scrollDirection = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY < prevScrollY) {
@@ -40,7 +40,7 @@ const Navigation = () => {
       prevScrollY = currentScrollY;
     };
 
-    // 监听滚动事件
+    // 監聽滾動事件
     let prevScrollY = 0;
     window.addEventListener("scroll", scrollDirection);
   };

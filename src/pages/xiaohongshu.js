@@ -47,14 +47,14 @@ class xiaohongshuIndex extends React.Component {
                                     <div className="flex gap-6 w-full items-center">
                                         <SocialMediaBtn />
                                     </div>
-                                    <XiaohongshuWhatsap className="bg-[#FF1E45] text-white rounded-full px-7 py-1.5 font-medium text-base md:text-md xl:text-xl border-[1px] border-inherit" linkto="https://api.whatsapp.com/send?phone=85264602996" />
+                                    <XiaohongshuWhatsap className="bg-[#FF1E45] text-white rounded-full px-7 py-1.5 font-medium text-base md:text-md xl:text-xl border-[1px] border-inherit" linkto="https://api.whatsapp.com/send/?phone=85267461301&text=%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%B0%8F%E7%B4%85%E6%9B%B8SEO" />
                                 </div>
                                 <div className="md:hidden ">
                                     <div className="flex gap-2 w-full items-center">
                                         <SocialMediaBtn />
                                     </div>
                                     <div className="pt-6">
-                                        <XiaohongshuWhatsap className="bg-[#FF1E45] text-white rounded-full px-7 py-1.5 font-medium text-base md:text-md xl:text-xl" linkto="https://api.whatsapp.com/send?phone=85264602996" />
+                                        <XiaohongshuWhatsap className="bg-[#FF1E45] text-white rounded-full px-7 py-1.5 font-medium text-base md:text-md xl:text-xl" linkto="https://api.whatsapp.com/send/?phone=85267461301&text=%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%B0%8F%E7%B4%85%E6%9B%B8SEO" />
                                     </div>
                                 </div>
                             </div>

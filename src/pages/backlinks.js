@@ -43,6 +43,8 @@ import RankingFactors from '../components/RankingFactors'
 import BacklinkLanding from '../img/BacklinksPage.jpg'
 import c2 from '../img/c2.jpeg'
 import c3 from '../img/c3.jpeg'
+import SeoBacklinksDataA from '../img/繁中Backlinks真實數據A.jpeg'
+import SeoBacklinksDataB from '../img/繁中Backlinks真實數據B.jpeg'
 
 class backlinksIndex extends React.Component {
     render() {
@@ -138,6 +140,18 @@ class backlinksIndex extends React.Component {
                 <section>
                     <img src={BacklinkLanding} alt="BacklinkLanding" loading="lazy" decoding="async" />
                 </section>
+                <Section>
+                    <div class="container mx-auto py-24">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div class="flex justify-center">
+                                <img src={SeoBacklinksDataA} alt="SeoBacklinksDataA" loading="lazy" decoding="async" />
+                            </div>
+                            <div class="flex justify-center">
+                                <img src={SeoBacklinksDataB} alt="SeoBacklinksDataB" loading="lazy" decoding="async" />
+                            </div>
+                        </div>
+                    </div>
+                </Section>
                 <section className='bg-[#608A51]'>
                     <div className='container mx-auto grid text-white place-content-center pt-8 lg:pt-24'>
                         <p className='text-3xl text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose indent-0 md:-indent-8'>「什麼是反向連結？了解其在 SEO 中的重要性！」</p>
