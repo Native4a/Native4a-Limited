@@ -95,7 +95,7 @@ class seoIndex extends React.Component {
           </div>
         </Section>
         <Section>
-          <div className="container mx-auto p-20">
+          <div className="container mx-auto pt-20">
             <div className="grid grid-cols-1 gap-6">
               <div>
                 <h2 className='text-3xl'>1. 網站大量免費曝光機會</h2>
@@ -113,7 +113,7 @@ class seoIndex extends React.Component {
           </div>
         </Section>
         <Section>
-          <div className="container mx-auto p-20">
+          <div className="container mx-auto pt-20">
             <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
               <div>
                 <h2 className='text-3xl'>2.大量關鍵字獲得排名提升</h2>
@@ -126,7 +126,7 @@ class seoIndex extends React.Component {
           </div>
         </Section>
         <Section>
-          <div className="container mx-auto p-20">
+          <div className="container mx-auto pt-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h2 className='text-3xl'>3.品牌信譽&知名度提升</h2>
@@ -147,16 +147,16 @@ class seoIndex extends React.Component {
           </div>
         </Section>
         <Section>
-          <div className="container mx-auto p-20">
+          <div className="container mx-auto pt-20">
             <div>
               <h2 className='text-4xl'>我們實際如何為客戶操作SEO呢？</h2>
             </div>
           </div>
         </Section>
         <Section>
-          <div className="container mx-auto p-20">
+          <div className="container mx-auto pt-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
+              <div className='order-last md:order-first'>
                 <img src='https://images.ctfassets.net/rpza41pe9ev5/34haav5tXB9rZcb41j2roU/671f4cadf47735c91b767cc7f634f97d/5.png?w=1924&h=1069&q=50&fm=webp' alt="SEOimage2" loading="lazy" decoding="async" />
               </div>
               <div>
@@ -168,7 +168,7 @@ class seoIndex extends React.Component {
           </div>
         </Section>
         <Section>
-          <div className="container mx-auto p-20">
+          <div className="container mx-auto pt-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h3 className='text-3xl'>2.網站On-page優化</h3>
@@ -182,12 +182,12 @@ class seoIndex extends React.Component {
           </div>
         </Section>
         <Section>
-          <div className="container mx-auto p-20">
+          <div className="container mx-auto pt-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
+            <div className='order-last md:order-first'>
                 <img src='https://images.ctfassets.net/rpza41pe9ev5/34haav5tXB9rZcb41j2roU/671f4cadf47735c91b767cc7f634f97d/5.png?w=1924&h=1069&q=50&fm=webp' alt="SEOimage2" loading="lazy" decoding="async" />
               </div>
-              <div>
+              <div >
                 <h3 className='text-3xl'>3.內容優化</h3>
                 <p>我們會提供合適的SEO內容創作指南，配合關鍵字方向而優化內容。這些內容是放在你網站的，所以SEO公司與你在這個環節都要參與其中，進行磋商。</p>
                 <p>3a.SEO內容指引，甚至創作基本草稿 3b.SEO文章結構指引 3c.h1-h6標題設計</p>
@@ -196,7 +196,7 @@ class seoIndex extends React.Component {
           </div>
         </Section>
         <Section>
-          <div className="container mx-auto p-20">
+          <div className="container mx-auto pt-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h3 className='text-3xl'>4.連結建立Backlinks Building</h3>
