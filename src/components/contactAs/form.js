@@ -37,31 +37,35 @@ const Form = () => {
                             <label className="block">
                                 <input
                                     name="user_name"
+                                    aria-label="User Name"
                                     type="text"
                                     className="p-3 my-4 block w-full rounded-md shadow-sm"
                                     placeholder={fieldsName}
-                                    required/>
+                                    required />
                             </label>
                             <label className="block">
                                 <input
                                     name="user_phone"
+                                    aria-label="Phone"
                                     type="text"
                                     className="p-3 my-4 block w-full rounded-md shadow-sm"
                                     placeholder={fieldsPhone}
-                                    required/>
+                                    required />
                             </label>
                             <label className="block" for="emails">
                                 <input
                                     name="user_email"
+                                    aria-label="Email"
                                     type="email"
                                     multiple
                                     className="p-3 my-4 block w-full rounded-md shadow-sm"
                                     placeholder={fieldsEmail}
-                                    required/>
+                                    required />
                             </label>
                             <label className="block">
                                 <input
                                     name='user_website'
+                                    aria-label="Website"
                                     type="text"
                                     className="p-3 my-4 block w-full rounded-md shadow-sm"
                                     placeholder={fieldsWebsite} />
@@ -69,6 +73,7 @@ const Form = () => {
                             <label className="block">
                                 <select
                                     name='use_usenquiryService'
+                                    aria-label="Usenquiry Service"
                                     id="usenquiryService"
                                     className="p-3 my-4 block w-full rounded-md shadow-sm"
                                     placeholder={fieldServices[0]}
@@ -84,6 +89,7 @@ const Form = () => {
                             <label className="block">
                                 <select
                                     name='use_findUs'
+                                    aria-label="Where did you find us?"
                                     id="findUs"
                                     className="p-3 my-4 block w-full rounded-md shadow-sm"
                                     placeholder={fieldFindus[0]}
@@ -99,6 +105,7 @@ const Form = () => {
                             <label className="block">
                                 <textarea
                                     name="message"
+                                    aria-label="Message"
                                     className="p-3 my-4 block w-full rounded-md shadow-sm"
                                     rows="6"
                                     cols="40"
