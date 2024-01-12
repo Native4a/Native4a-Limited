@@ -98,39 +98,39 @@ class seoIndex extends React.Component {
         </Section>
         <Section ContainerClass="flex flex-col items-center m-auto w-[95%] md:w-[90%] lg:w-[92%] xl:w-[90%] 2xl:w-[79%]">
           <Column columnClass="container mx-auto pt-20">
-            <h2 className='text-4xl'>1. 網站大量免費曝光機會</h2>
-            <p className='text-xl'>很多人都說SEO是趨勢，到底做好SEO後是怎樣的狀態，在於客戶而言又有何直接效益？</p>
+            <h2 className='text-2xl md:text-4xl'>1. 網站大量免費曝光機會</h2>
+            <p className='text-base'>很多人都說SEO是趨勢，到底做好SEO後是怎樣的狀態，在於客戶而言又有何直接效益？</p>
           </Column>
 
           <Grid>
             <Column>
               <img src='https://images.ctfassets.net/rpza41pe9ev5/3D67OnPP8hAZzaQ7C7ceN3/37c00afea30ecadd83a843e149133ece/1.png?w=1924&h=1069&q=50&fm=webp' alt="SEOimage" loading="lazy" decoding="async" />
-              <p className='text-xl'>以上案例只抽取其中15組關鍵字作例子。 SEM廣告平均支出是HK$11.09*3757次點擊=節省HK$41,665/月</p>
+              <p className='text-base'>以上案例只抽取其中15組關鍵字作例子。 SEM廣告平均支出是HK$11.09*3757次點擊=節省HK$41,665/月</p>
             </Column>
             <Column>
-              <img src='https://images.ctfassets.net/rpza41pe9ev5/3D67OnPP8hAZzaQ7C7ceN3/37c00afea30ecadd83a843e149133ece/1.png?w=1924&h=1069&q=50&fm=webp' alt="SEOimage" loading="lazy" decoding="async" className='m-0'/>
-              <p className='text-xl'>換句話說，當你的SEO完善時，你的網站獲客量將會達到SEM廣告去不到的境界。</p>
+              <img src='https://images.ctfassets.net/rpza41pe9ev5/1BrrlX7WlndmFxenowzmgz/90ef574973787aa374ef19d1a9476b4d/2.png' alt="SEOimage" loading="lazy" decoding="async" className='m-0'/>
+              <p className='text-base'>換句話說，當你的SEO完善時，你的網站獲客量將會達到SEM廣告去不到的境界。</p>
             </Column>
           </Grid>
 
           <Grid>
-            <Column>
+            <Column columnClass='order-last md:order-first'>
               <img src='https://images.ctfassets.net/rpza41pe9ev5/74fmFO8GPdJCsbKVdlo4IS/da2c632617e8392b54c57c9829ba96ac/3.png?w=1924&h=1069&q=50&fm=webp' alt="SEOimage2" loading="lazy" decoding="async" />
             </Column>
             <Column>
-              <h2 className='text-3xl'>2.大量關鍵字獲得排名提升</h2>
-              <p className='text-xl'>隨著SEO公司的努力，搜索引擎會更加信任你的網站，從而提高你的排名。 由於SEO過程是整個網站優化，變相不單止是指定做上去的關鍵字，更會有很多意外驚喜的「流量密碼」。</p>
+              <h2 className='text-2xl md:text-4xl'>2.大量關鍵字獲得排名提升</h2>
+              <p className='text-base'>隨著SEO公司的努力，搜索引擎會更加信任你的網站，從而提高你的排名。 由於SEO過程是整個網站優化，變相不單止是指定做上去的關鍵字，更會有很多意外驚喜的「流量密碼」。</p>
             </Column>
           </Grid>
 
           <Grid>
             <Column>
-              <h2 className='text-3xl'>3.品牌信譽&知名度提升</h2>
-              <p className='text-xl'>Think With Google 的一項研究發現，消費者在購買產品之前平均會進行多達32次的搜索。 消費者們一旦進入你的關鍵字領域，他們搜尋多個關鍵字都會見到你的網站，且排名足夠高，便能提升品牌形象。</p>
+              <h2 className='text-2xl md:text-4xl'>3.品牌信譽&知名度提升</h2>
+              <p className='text-base'>Think With Google 的一項研究發現，消費者在購買產品之前平均會進行多達32次的搜索。 消費者們一旦進入你的關鍵字領域，他們搜尋多個關鍵字都會見到你的網站，且排名足夠高，便能提升品牌形象。</p>
             </Column>
             <Column>
               <img src='https://images.ctfassets.net/rpza41pe9ev5/NPHo6ZhhBRD71WbxC1hzG/879981a4f05623cade01a96854c37c6b/4.png?w=1924&h=1069&q=50&fm=webp' alt="SEOimage2" loading="lazy" decoding="async" />
-              <p className='text-xl'>（更多think with Google研究): https://www.thinkwithgoogle.com/intl/zh-tw/consumer-insights/consumer-trends/shopping-season-insights-tw/amp/</p>
+              <p className='text-base'>（更多think with Google研究): https://www.thinkwithgoogle.com/intl/zh-tw/consumer-insights/consumer-trends/shopping-season-insights-tw/amp/</p>
               <div>
                 <p>以上就是SEO的理想狀態，</p>
                 <p>1.節省大量SEM支出 2.高排名 3.高引流 4.高品牌價值 5.而且不斷擴張</p>
@@ -150,7 +150,7 @@ class seoIndex extends React.Component {
               <img src='https://images.ctfassets.net/rpza41pe9ev5/34haav5tXB9rZcb41j2roU/671f4cadf47735c91b767cc7f634f97d/5.png?w=1924&h=1069&q=50&fm=webp' alt="SEOimage2" loading="lazy" decoding="async" />
             </Column>
             <Column>
-              <h3 className='text-3xl'>1.關鍵字研究</h3>
+              <h3 className='text-2xl md:text-4xl'>1.關鍵字研究</h3>
               <p>在開始SEO之前，我們會從客戶的網站、行業、對手等數據研究關鍵字。</p>
               <p>1a.尋找關鍵字數據 1b.分析你的競爭對手 1c.外連分析（分析Link Profile)</p>
             </Column>
@@ -158,7 +158,7 @@ class seoIndex extends React.Component {
 
           <Grid>
             <Column>
-              <h3 className='text-3xl'>2.網站On-page優化</h3>
+              <h3 className='text-2xl md:text-4xl'>2.網站On-page優化</h3>
               <p>我們會先在技術層面優化你的網站，以提高其在搜索結果中的排名。這可能包括改進你的網站速度，使其對手機Friendly，並優化你的內容以包含關鍵字。</p>
               <p>2a.網站速度提升 2b.手機版面兼容 2c.關鍵字密度檢查</p>
             </Column>
@@ -172,7 +172,7 @@ class seoIndex extends React.Component {
               <img src='https://images.ctfassets.net/rpza41pe9ev5/34haav5tXB9rZcb41j2roU/671f4cadf47735c91b767cc7f634f97d/5.png?w=1924&h=1069&q=50&fm=webp' alt="SEOimage2" loading="lazy" decoding="async" />
             </Column>
             <Column>
-              <h3 className='text-3xl'>3.內容優化</h3>
+              <h3 className='text-2xl md:text-4xl'>3.內容優化</h3>
               <p>我們會提供合適的SEO內容創作指南，配合關鍵字方向而優化內容。這些內容是放在你網站的，所以SEO公司與你在這個環節都要參與其中，進行磋商。</p>
               <p>3a.SEO內容指引，甚至創作基本草稿 3b.SEO文章結構指引 3c.h1-h6標題設計</p>
             </Column>
@@ -180,7 +180,7 @@ class seoIndex extends React.Component {
 
           <Grid>
             <Column>
-              <h3 className='text-3xl'>4.連結建立Backlinks Building</h3>
+              <h3 className='text-2xl md:text-4xl'>4.連結建立Backlinks Building</h3>
               <p>Backlinks是SEO過程中重要的一環，即使你的內容完美無瑕，缺少Backlinks的支援，是不會在熱門關鍵字獲得好排名的。而Backlinks種類有很多，質素亦參次不齊。（如何選擇優質Backlinks：https://nativeaaaa.com.hk/blog/quality-backlinks/）</p>
               <p>而繁體中文在SEO世界而言尋小眾市場，所以專為中文網站而設計的Backlinks非常少，或是台灣公司為主。我們經過很多實驗證明，Backlinks內容的語言相符的連結威力更大，所以研發了「繁中外連系統」專為針對香港網站提供繁中backlinks，有效排名更快、更穩固。</p>
             </Column>

@@ -21,7 +21,7 @@ const Hero = ({ title, content, image }) => (
   <div class="container mx-auto">
     <div class="grid grid-cols-1">
       <div class="flex justify-center ">{image && (
-        <GatsbyImage className="mt-28 w-full" alt={title} image={image} />
+        <GatsbyImage className="mt-20 md:mt-28 w-5/6" alt={title} image={image} />
       )}</div>
       <div class="flex justify-center bg-white">
         <div className="bg-white">
