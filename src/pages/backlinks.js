@@ -314,7 +314,7 @@ class backlinksIndex extends React.Component {
                                         <div className="p-10 lg:p-0">
                                             <div className="flex justify-center text-xl rounded-xl p-3 lg:py-2 mx-5 bg-[#FAAB00] text-white font-semibold relative top-4">買全中文反向連結後</div>
                                             <div className="grid grid-flow-row grid-cols-1 lg:grid-cols-2 text-center text-6xl rounded-xl bg-white">
-                                                <div className="row-span-4 flex justify-center lg:items-end text-base font-semibold pt-6 lg:p-6">Google排名(SERP)</div>
+                                                <div className="row-span-4 flex justify-center lg:items-end text-base font-semibold pt-6 lg:p-6">Google 排名(SERP)</div>
                                                 <div className="row-span-4 flex justify-center lg:items-end text-7xl font-semibold text-[#FAAB00] pt-0 lg:p-6"><CountUp end={2} /></div>
                                             </div>
                                         </div>
