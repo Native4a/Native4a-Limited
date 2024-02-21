@@ -1,38 +1,46 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import useAddMenu from '../../hook/useAddMenu'
-import Whatsapp from "../baseTools/whatsapp"
+import Whatsapp from '../baseTools/whatsapp'
 import * as styles from '../../styles/navprops.module.css'
 
-
 const Navprops = () => {
-  const menu = useAddMenu();
+  const menu = useAddMenu()
   return (
     <div className={`${styles.activeLink} contents`}>
-      <ul className='rounded-3xl bg-white contents'>
+      <ul className="rounded-3xl bg-white contents">
         {menu.map((item, index) => {
-          const {
-            slug,
-            urlTitle
-          } = item;
+          const { slug, urlTitle } = item
           return (
-            <li role="navigation" className={styles.container} aria-label="Main" key={index}>
+            <li
+              role="navigation"
+              className={styles.container}
+              aria-label="Main"
+              key={index}
+            >
               <Link
                 to={slug}
-                activeStyle={{ color: "white", backgroundColor: "#faab00", fontWeight: "bold" }}
+                activeStyle={{
+                  color: 'white',
+                  backgroundColor: '#faab00',
+                  fontWeight: 'bold',
+                }}
                 partiallyActive={true}
               >
                 {urlTitle}
               </Link>
             </li>
-          );
+          )
         })}
         <div className="hidden xl:flex col-start-4 col-end-7 flex items-center justify-end">
-          <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85267461301&text=我想查詢SEO懶人Plan">WhatsApp查詢</Whatsapp>
+          <Whatsapp
+            linkto="https://api.whatsapp.com/send/?phone=85267461301&text=我想查詢SEO懶人Plan"
+            children={'WhatsApp查詢'}
+          ></Whatsapp>
         </div>
       </ul>
     </div>
-  );
+  )
 }
 
 export default Navprops
