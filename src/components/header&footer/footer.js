@@ -39,7 +39,7 @@ const Footer = () => {
               <div class="grid grid-cols-3 gap-1 items-center">
                 <div class="container mx-auto col-span-2">
                   <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
-                    <div className="">
+                    <div>
                       <img
                         className="rounded-sm w-28 md:w-48 m-0"
                         src={native4aLogo.url}
