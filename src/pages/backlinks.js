@@ -196,7 +196,7 @@ class backlinksIndex extends React.Component {
             href="https://nativeaaaa.com.hk/blog/native4a_backlinks_reference/"
             className="bg-emerald-500 text-white rounded-full px-16 py-6 font-medium text-2xl md:text-md xl:text-6xl"
           >
-            中文backIinke樣本
+            中文backlinks樣本
           </Button>
         </Section>
         <section className="bg-[#608A51]">
