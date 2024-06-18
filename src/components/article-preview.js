@@ -24,7 +24,7 @@ const ArticlePreview = ({ posts }) => {
                   <GatsbyImage
                     alt="gatsbyImageData"
                     image={post.heroImage?.gatsbyImageData}
-                    className="w-full h-[166px]"
+                    className="w-full aspect-video"
                   />
                   <h2 className={styles.title}>{post.title}</h2>
                 </Link>
