@@ -134,49 +134,6 @@ const Navigation = () => {
               <span className={styles.menuItemLabel}>主頁</span>
             </Link>
             <Link
-              to="/video"
-              className="p-1 w-1/5 flex flex-col items-center justify-center hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full"
-            >
-              <svg
-                id="Layer_2"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 368 227.87"
-                className={styles.materialIconsForHorn}
-              >
-                <rect
-                  className={styles.cls5}
-                  x="9.5"
-                  y="9.5"
-                  width="232.72"
-                  height="208.87"
-                  rx="23.47"
-                  ry="23.47"
-                />
-                <line
-                  className={styles.cls5}
-                  x1="358.23"
-                  y1="32.34"
-                  x2="242.22"
-                  y2="79.17"
-                />
-                <line
-                  className={styles.cls5}
-                  x1="358.5"
-                  y1="195.59"
-                  x2="358.23"
-                  y2="32.34"
-                />
-                <line
-                  className={styles.cls5}
-                  x1="244.76"
-                  y1="149.62"
-                  x2="358.5"
-                  y2="195.59"
-                />
-              </svg>
-              <span className={styles.menuItemLabel}>影片製作</span>
-            </Link>
-            <Link
               to="/web-design"
               className="p-1 w-1/5 flex flex-col items-center justify-center hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full"
             >
