@@ -47,13 +47,13 @@ class seoIndex extends React.Component {
               <div className="pt-2 md:pt-3 2xl:pt-0">
                 <h1 className={styles.title}>{seoPage.title}</h1>
                 <h2 className={styles.subTitle}>{seoPage.titleH2}</h2>
-                <div className="hidden md:grid grid-cols-2 gap-6 py-6">
+                <div className="hidden md:grid grid-cols-1 gap-6 py-6">
                   <div className="flex gap-6 w-full items-center">
                     <SocialMediaBtn />
                   </div>
                 </div>
-                <div className="md:hidden ">
-                  <div className="flex gap-2 w-full items-center">
+                <div className="md:hidden">
+                  <div className="flex gap-2 w-full items-center pt-5">
                     <SocialMediaBtn />
                   </div>
                 </div>
