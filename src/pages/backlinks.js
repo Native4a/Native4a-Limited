@@ -346,7 +346,7 @@ class backlinksIndex extends React.Component {
           </div>
           {/* Mobile version: */}
           <div className="block lg:hidden">
-            <div className="grid grid-cols-1 md:grid-cols-1 grid-rows-8 md:grid-rows-4 text-xl items-center">
+            <div className="grid grid-cols-1 text-xl items-center">
               <div className="px-10 pt-11 order-1 lg::order-1">
                 <div className="row-span-4 md:row-span-2 flex justify-center items-center text-white text-2xl md:text-3xl font-semibold p-6 md:p-14 leading-8 md:leading-10 border-[#70A665] border-l-[20px]">
                   準備為你的中文網站購買香港Backlink
