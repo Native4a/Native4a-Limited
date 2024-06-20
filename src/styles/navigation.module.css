@@ -50,25 +50,64 @@ ul {
 
 /**SVG css start here**/
 /** Home SVG **/
-.st0{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:13px;}
+.st0 {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 13px;
+}
 /** Horn SVG **/
-.cls1{stroke-width:13px;}
-.cls1,.cls2{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;}
-.cls2{stroke-width:10px;}
+.cls1 {
+  stroke-width: 13px;
+}
+.cls1,
+.cls2 {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.cls2 {
+  stroke-width: 10px;
+}
 /**SEO search SVG**/
-.cls3,.cls4{fill:none;stroke:#fff;stroke-linejoin:round;stroke-width:11px;}
-.cls4{stroke-linecap:round;}
+.cls3,
+.cls4 {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+  stroke-width: 11px;
+}
+.cls4 {
+  stroke-linecap: round;
+}
 /**Cam SVG**/
-.cls5{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:11px;}
+.cls5 {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 11px;
+}
 /**Web design SVG**/
-.cls6{stroke-width:10px;}
-.cls6,.cls7{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;}
-.cls7{stroke-width:10px;}
+.cls6 {
+  stroke-width: 10px;
+}
+.cls6,
+.cls7 {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.cls7 {
+  stroke-width: 10px;
+}
 
 /** Hover **/
 
-@media (max-width: 	1536px) {
-
+@media (max-width: 1536px) {
 }
 
 /**SVG css end**/
@@ -100,15 +139,13 @@ ul {
   transition: 0.25s ease;
 }
 
-@media (max-width: 	1280px) {
-
+@media (max-width: 1280px) {
 }
-  
+
 @media (max-width: 1024px) {
-
 }
 
-@media (max-width: 	768px) {
+@media (max-width: 768px) {
   .container {
     padding: 8px 20px;
     background-color: #fff;

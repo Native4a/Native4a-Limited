@@ -9,6 +9,7 @@ import CountUp from 'react-countup'
 
 //components here//
 import Layout from '../components/layout'
+import BacklinkLayout from '../components/backlinkLayout'
 import Seo from '../components/seo'
 import AboutAs from '../components/aboutAs'
 import ContactForm from '../components/contactAs'
@@ -55,7 +56,7 @@ class backlinksIndex extends React.Component {
     )
     const FaSquarSstyle = { color: '#70a566' }
     return (
-      <Layout location={this.props.location}>
+      <BacklinkLayout location={this.props.location}>
         <Seo
           title={blacklinkPage.metaTitle}
           description={blacklinkPage.metaDescription}
@@ -588,7 +589,7 @@ class backlinksIndex extends React.Component {
         <section className={styles.backlinksSpanSquare}>
           <ContactForm />
         </section>
-      </Layout>
+      </BacklinkLayout>
     )
   }
 }
