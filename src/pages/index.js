@@ -17,6 +17,7 @@ import SocialMediaBtn from '../components/button/socialMedia'
 import Clients from "../components/Client's"
 import ServiceScope from '../components/serviceScope'
 import Section from '../components/baseTools/Section'
+import AiChatbox from '../components/Chatbase'
 
 //image here//
 import plsStep from '../img/plsStep.png'
@@ -93,6 +94,7 @@ class RootIndex extends React.Component {
                 <div className="hidden md:grid grid-cols-1 gap-6 py-6">
                   <div className="flex gap-6 w-full items-center">
                     <SocialMediaBtn />
+                    <AiChatbox />
                   </div>
                 </div>
                 <div className="md:hidden">
