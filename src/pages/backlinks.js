@@ -8,7 +8,6 @@ import { IconContext } from 'react-icons'
 import CountUp from 'react-countup'
 
 //components here//
-import Layout from '../components/layout'
 import BacklinkLayout from '../components/backlinkLayout'
 import Seo from '../components/seo'
 import AboutAs from '../components/aboutAs'
@@ -194,7 +193,7 @@ class backlinksIndex extends React.Component {
         </Section>
         <Section ContainerClass="flex justify-center mb-20">
           <Button
-            href="https://nativeaaaa.com.hk/blog/native4a_backlinks_reference/"
+            linkto="https://nativeaaaa.com.hk/blog/native4a_backlinks_reference/"
             className="bg-emerald-500 text-white rounded-full px-16 py-6 font-medium text-2xl md:text-md xl:text-6xl"
           >
             中文backlinks樣本
