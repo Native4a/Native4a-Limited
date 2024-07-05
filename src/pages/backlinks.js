@@ -9,6 +9,7 @@ import CountUp from 'react-countup'
 
 //components here//
 import BacklinkLayout from '../components/backlinkLayout'
+import Layout from '../components/layout'
 import Seo from '../components/seo'
 import AboutAs from '../components/aboutAs'
 import ContactForm from '../components/contactAs'
