@@ -90,7 +90,10 @@ class SEOsmartKit extends Component {
         <Seo title="" description="" ogUrl="" />
         <Section SectionClass="flex justify-evenly" ContainerClass="grid gap-6">
           <div className="grid gap-4 justify-evenly pt-32 lg:pt-22 xl:pt-22 2xl:pt-36">
-            <h1 className="text-5xl">SEO Calculator</h1>
+            <span>
+              <h1 className="text-5xl text-center">SEO Calculator</h1>
+              <p className="text-center">(測試版)</p>
+            </span>
           </div>
           <div className="grid grid-cols-3 shadow-xl rounded-3xl bg-white p-6 mb-20 bg-white-500/[.06]">
             <div className="grid gap-4 xl:py-14 xl:pl-16">
