@@ -5,10 +5,10 @@ import Layout from '../components/layout'
 
 class SEOsmartKit extends Component {
   state = {
-    lastVolumeValue: 0,
-    lastQuarValue: 0,
-    lastYearValue: 0,
-    lastCompetitionValue: 0,
+    lastVolumeValue: '',
+    lastQuarValue: '',
+    lastYearValue: '',
+    lastCompetitionValue: '',
     vqycSum: 0,
     volCalc: 0,
     quarCalc: 0,
@@ -88,75 +88,90 @@ class SEOsmartKit extends Component {
     return (
       <Layout>
         <Seo title="" description="" ogUrl="" />
-        <Section ContainerClass="grid">
+        <Section SectionClass="flex justify-evenly" ContainerClass="grid gap-6">
           <div className="grid gap-4 justify-evenly pt-32 lg:pt-22 xl:pt-22 2xl:pt-36">
-            <h1 className="text-4xl">SEO Calculator</h1>
+            <h1 className="text-5xl">SEO Calculator</h1>
           </div>
-        </Section>
-        <Section
-          SectionClass="flex justify-evenly"
-          ContainerClass="grid grid-cols-2 border-2 rounded-3xl bg-white p-6 mb-20"
-        >
-          <div className="grid gap-4 justify-evenly 2xl:pt-10 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
-            <div className="">
-              <h3>搜索量：</h3>
-              <input
-                className="border-2 rounded-lg"
-                type="number"
-                onChange={this.VolumeCalc}
-                value={this.state.lastVolumeValue}
-              />
-            </div>
-            <div className="">
-              <h3>三個月變化：</h3>
-              <input
-                className="border-2 rounded-lg"
-                type="number"
-                onChange={this.QuarterCalc}
-                value={this.state.lastQuarValue}
-              />
-            </div>
-            <div className="">
-              <h3>年度變化：</h3>
-              <input
-                className="border-2 rounded-lg"
-                type="number"
-                onChange={this.YearCalc}
-                value={this.state.lastYearValue}
-              />
-            </div>
-            <div className="">
-              <h3>競爭分數：</h3>
-              <input
-                className="border-2 rounded-lg"
-                type="number"
-                onChange={this.CompetitionCalc}
-                value={this.state.lastCompetitionValue}
-              />
-            </div>
-          </div>
-          <div className="grid justify-evenly 2xl:pt-10 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
-            <div className="flex flex-col justify-between">
-              <div className="">
-                <span>肥仔指數：</span>
-                <span className="text-8xl">{this.state.vqycSum}</span>分
+          <div className="grid grid-cols-3 shadow-xl rounded-3xl bg-white p-6 mb-20 bg-white-500/[.06]">
+            <div className="grid gap-4 xl:py-14 xl:pl-16">
+              <div className="flex flex-col gap-2">
+                <h3>搜索量：</h3>
+                <input
+                  className="border-2 rounded-lg px-3 pt-2 pb-1"
+                  type="number"
+                  onChange={this.VolumeCalc}
+                  value={this.state.lastVolumeValue}
+                />
               </div>
-              <div className="grid gap-2 grid-cols-4">
-                <div className="flex flex-col justify-between border-2 rounded-lg p-5">
-                  <h4>search volume</h4>
-                  <span className="text-3xl">{this.state.volCalc}</span>
+              <div className="flex flex-col gap-2">
+                <h3>三個月變化(%)：</h3>
+                <input
+                  className="border-2 rounded-lg px-3 pt-2 pb-1"
+                  type="number"
+                  onChange={this.QuarterCalc}
+                  value={this.state.lastQuarValue}
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3>年度變化(%)：</h3>
+                <input
+                  className="border-2 rounded-lg px-3 pt-2 pb-1"
+                  type="number"
+                  onChange={this.YearCalc}
+                  value={this.state.lastYearValue}
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3>競爭分數：</h3>
+                <input
+                  className="border-2 rounded-lg px-3 pt-2 pb-1"
+                  type="number"
+                  onChange={this.CompetitionCalc}
+                  value={this.state.lastCompetitionValue}
+                />
+              </div>
+            </div>
+            <div className="grid xl:px-16 xl:py-16 col-span-2">
+              <div className="flex flex-col gap-4 justify-between border-l-2 pl-10">
+                <h4 className="text-xl pl-3">肥仔指數</h4>
+                <div className="flex justify-end border-2 rounded-3xl p-10">
+                  <span className="text-8xl">{this.state.vqycSum}</span>分
                 </div>
-                <div className="flex flex-col justify-between border-2 rounded-lg p-5">
-                  <h4>Three Months Change</h4>
-                  <span className="text-3xl">{this.state.quarCalc}</span>
-                </div>
-                <div className="flex flex-col justify-between border-2 rounded-lg p-5">
-                  <h4>Yearly changes</h4>
-                  <span className="text-3xl">{this.state.yearCalc}</span>
-                </div>
-                <div className="flex flex-col justify-between border-2 rounded-lg p-5">
-                  <h4>Competition Score</h4>
-                  <span className="text-3xl">{this.state.compCalc}</span>
+                <div className="grid gap-2 grid-cols-4">
+                  <div className="flex flex-col justify-between border-2 rounded-3xl p-5">
+                    <h4>
+                      search
+                      <br />
+                      volume
+                    </h4>
+                    <span className="text-3xl">{this.state.volCalc}</span>
+                  </div>
+                  <div className="flex flex-col justify-between border-2 rounded-3xl p-5">
+                    <h4>
+                      Three
+                      <br />
+                      Months
+                      <br />
+                      Change
+                    </h4>
+                    <span className="text-3xl">{this.state.quarCalc}</span>
+                  </div>
+                  <div className="flex flex-col justify-between border-2 rounded-3xl p-5">
+                    <h4>
+                      Yearly
+                      <br />
+                      changes
+                    </h4>
+                    <span className="text-3xl">{this.state.yearCalc}</span>
+                  </div>
+                  <div className="flex flex-col justify-between border-2 rounded-3xl p-5">
+                    <h4>
+                      Competition
+                      <br />
+                      Score
+                    </h4>
+                    <span className="text-3xl">{this.state.compCalc}</span>
+                  </div>
                 </div>
               </div>
             </div>
