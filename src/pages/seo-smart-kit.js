@@ -3,6 +3,9 @@ import Seo from '../components/seo'
 import Section from '../components/baseTools/Section'
 import Layout from '../components/layout'
 
+//CSS here//
+import * as styles from '../styles/seo-smart-kit.module.css'
+
 class SEOsmartKit extends Component {
   state = {
     lastVolumeValue: '',
@@ -137,7 +140,10 @@ class SEOsmartKit extends Component {
             <div className="grid xl:px-16 xl:py-16 col-span-2">
               <div className="flex flex-col gap-4 justify-between border-l-2 pl-10">
                 <h4 className="text-xl pl-3">肥仔指數</h4>
-                <div className="flex justify-end border-2 rounded-3xl p-10">
+                <div
+                  className="flex justify-end border-2 rounded-3xl p-10"
+                  id={styles.CalcScreen}
+                >
                   <span className="text-8xl">{this.state.vqycSum}</span>分
                 </div>
                 <div className="grid gap-2 grid-cols-4">
