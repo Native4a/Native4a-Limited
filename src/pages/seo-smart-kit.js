@@ -138,10 +138,10 @@ class SEOsmartKit extends Component {
               </div>
             </div>
             <div className="grid xl:px-16 xl:py-16 col-span-2">
-              <div className="flex flex-col gap-4 justify-between border-l-2 pl-10">
+              <div className="flex flex-col gap-4 justify-between border-l-2 py-10 pl-10">
                 <h4 className="text-xl pl-3">肥仔指數</h4>
                 <div
-                  className="flex justify-end border-2 rounded-3xl p-10"
+                  className="flex justify-end border-2 rounded-3xl px-10 pt-10 pb-3"
                   id={styles.CalcScreen}
                 >
                   <span className="text-8xl">{this.state.vqycSum}</span>分
