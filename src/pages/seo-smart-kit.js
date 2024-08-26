@@ -89,6 +89,12 @@ class SEOsmartKit extends Component {
     )
   }
 
+  handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      this.saveAllCalc()
+    }
+  }
+
   Keyword = (event) => {
     this.setState({ Keyword: event.target.value })
   }
@@ -130,6 +136,7 @@ class SEOsmartKit extends Component {
                   id="textDataInput"
                   placeholder="請輸你要查詢的Keyword"
                   onChange={this.Keyword}
+                  onKeyDown={this.handleKeyDown}
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -139,6 +146,7 @@ class SEOsmartKit extends Component {
                   type="number"
                   onChange={this.VolumeCalc}
                   value={this.state.lastVolumeValue}
+                  onKeyDown={this.handleKeyDown}
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -148,6 +156,7 @@ class SEOsmartKit extends Component {
                   type="number"
                   onChange={this.QuarterCalc}
                   value={this.state.lastQuarValue}
+                  onKeyDown={this.handleKeyDown}
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -157,6 +166,7 @@ class SEOsmartKit extends Component {
                   type="number"
                   onChange={this.YearCalc}
                   value={this.state.lastYearValue}
+                  onKeyDown={this.handleKeyDown}
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -166,6 +176,7 @@ class SEOsmartKit extends Component {
                   type="number"
                   onChange={this.CompetitionCalc}
                   value={this.state.lastCompetitionValue}
+                  onKeyDown={this.handleKeyDown}
                 />
               </div>
             </div>
