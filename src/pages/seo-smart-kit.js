@@ -232,6 +232,9 @@ class SEOsmartKit extends Component {
                   >
                     Save
                   </button>
+                  <span className="flex justify-end text-xs pt-2">
+                    BuildVersion:v2.3.240826-1717 by taki
+                  </span>
                 </div>
               </div>
             </div>
