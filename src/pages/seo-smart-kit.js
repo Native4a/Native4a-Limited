@@ -17,6 +17,14 @@ class SEOsmartKit extends Component {
     quarCalc: 0,
     yearCalc: 0,
     compCalc: 0,
+    Keyword: '',
+    // Save區域的所有狀態值
+    savedVolCalc: 0,
+    savedQuarCalc: 0,
+    savedYearCalc: 0,
+    savedCompCalc: 0,
+    // 新增一個狀態來保存輸入的關鍵字
+    savedKeyword: '',
   }
 
   VolumeCalc = (event) => {
@@ -81,6 +89,20 @@ class SEOsmartKit extends Component {
     )
   }
 
+  Keyword = (event) => {
+    this.setState({ Keyword: event.target.value })
+  }
+
+  saveAllCalc = () => {
+    this.setState({
+      savedKeyword: this.state.Keyword,
+      savedVolCalc: this.state.volCalc,
+      savedQuarCalc: this.state.quarCalc,
+      savedYearCalc: this.state.yearCalc,
+      savedCompCalc: this.state.compCalc,
+    })
+  }
+
   updateSum = () => {
     const { volCalc, quarCalc, yearCalc, compCalc } = this.state
     const sum = volCalc + quarCalc + yearCalc + compCalc
@@ -100,6 +122,16 @@ class SEOsmartKit extends Component {
           </div>
           <div className="grid grid-cols-3 shadow-xl rounded-3xl bg-white p-6 mb-20 bg-white-500/[.06]">
             <div className="grid gap-4 xl:py-14 xl:pl-16">
+              <div className="flex flex-col gap-2">
+                <h3>Keyword：</h3>
+                <input
+                  className="border-2 rounded-lg px-3 pt-2 pb-1"
+                  type="text"
+                  id="textDataInput"
+                  placeholder="請輸你要查詢的Keyword"
+                  onChange={this.Keyword}
+                />
+              </div>
               <div className="flex flex-col gap-2">
                 <h3>搜索量：</h3>
                 <input
@@ -138,7 +170,7 @@ class SEOsmartKit extends Component {
               </div>
             </div>
             <div className="grid xl:px-16 xl:py-16 col-span-2">
-              <div className="flex flex-col gap-4 justify-between border-l-2 py-10 pl-10">
+              <div className="flex flex-col gap-4 justify-between border-l-2 pl-10">
                 <h4 className="text-xl pl-3">肥仔指數</h4>
                 <div
                   className="flex justify-end border-2 rounded-3xl px-10 pt-10 pb-3"
@@ -182,7 +214,34 @@ class SEOsmartKit extends Component {
                     <span className="text-3xl">{this.state.compCalc}</span>
                   </div>
                 </div>
+                <div>
+                  <button
+                    className="download-button transform active:scale-95 bg-blue-500 hover:bg-blue-400 text-white px-16 py-6 rounded-3xl font-bold tracking-widest w-full"
+                    onClick={this.saveAllCalc}
+                  >
+                    Save
+                  </button>
+                </div>
               </div>
+            </div>
+          </div>
+        </Section>
+        <Section ContainerClass="grid gap-6 justify-around">
+          <div class="grid grid-cols-5 gap-6 shadow-xl rounded-3xl bg-white p-6 mb-20 bg-white-500/[.06]">
+            <div class="text-lg font-bold">
+              Keyword: <span>{this.state.savedKeyword}</span>
+            </div>
+            <div class="flex text-lg font-bold justify-center">
+              <span>{this.state.savedVolCalc}</span>分
+            </div>
+            <div class="flex text-lg font-bold justify-center">
+              <span>{this.state.savedQuarCalc}</span>分
+            </div>
+            <div class="flex text-lg font-bold justify-center">
+              <span>{this.state.savedYearCalc}</span>分
+            </div>
+            <div class="flex text-lg font-bold justify-center">
+              <span>{this.state.savedCompCalc}</span>分
             </div>
           </div>
         </Section>
