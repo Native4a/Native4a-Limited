@@ -4,3 +4,8 @@
   background-size: 18px 18px;
   background-position: 50%;
 }
+
+ol {
+  list-style: reset;
+  padding: 15px;
+}
