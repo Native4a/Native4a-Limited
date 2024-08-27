@@ -321,7 +321,7 @@ class SEOsmartKit extends Component {
               <div className="flex text-md font-semibold justify-center">
                 <span>{data.compCalc}</span>分
               </div>
-              <div className="flex text-md font-semibold justify-end">
+              <div className="flex text-xl font-bold justify-end">
                 <span>{data.vqycSum}</span>分
               </div>
             </motion.div>
