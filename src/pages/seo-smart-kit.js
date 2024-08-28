@@ -30,8 +30,10 @@ class SEOsmartKit extends Component {
   }
 
   VolumeCalc = (event) => {
-    const volume = parseInt(event.target.value)
+    const volume = event.target.value.trim() // 使用 Number 來處理輸入
     let volCalc = 0
+
+    // 調整條件以允許負數
     if (volume >= 1000) {
       volCalc = 4
     } else if (volume >= 320) {
@@ -41,21 +43,31 @@ class SEOsmartKit extends Component {
     } else if (volume >= 100) {
       volCalc = 1
     } else {
-      volCalc = 0
+      volCalc = 0 // 這裡可以處理負數情況
     }
+
     this.setState({ lastVolumeValue: volume, volCalc: volCalc }, this.updateSum)
   }
 
   QuarterCalc = (event) => {
-    const quarter = parseInt(event.target.value)
+    let quarter = event.target.value.trim() // 去除首尾空格
     let quarCalc = 0
-    if (quarter >= 20) {
-      quarCalc = 2
-    } else if (quarter <= 19) {
-      quarCalc = 1
+
+    // 检查输入是否为空或者非数字
+    if (quarter === '' || isNaN(quarter)) {
+      quarter = '' // 将空值设置为一个空字符串
     } else {
-      quarCalc = 0
+      quarter = Number(quarter) // 将输入值转换为数字
+
+      if (quarter >= 20) {
+        quarCalc = 2
+      } else if (quarter >= 0) {
+        quarCalc = 1
+      } else {
+        quarCalc = 0
+      }
     }
+
     this.setState(
       { lastQuarValue: quarter, quarCalc: quarCalc },
       this.updateSum
@@ -63,20 +75,29 @@ class SEOsmartKit extends Component {
   }
 
   YearCalc = (event) => {
-    const year = parseInt(event.target.value)
+    let year = event.target.value.trim() // 去除首尾空格
     let yearCalc = 0
-    if (year >= 20) {
-      yearCalc = 3
-    } else if (year <= 19) {
-      yearCalc = 1
+
+    // 检查输入是否为空或者非数字
+    if (year === '' || isNaN(year)) {
+      year = '' // 将空值设置为一个空字符串
     } else {
-      yearCalc = 0
+      year = Number(year) // 将输入值转换为数字
+
+      if (year >= 20) {
+        yearCalc = 3
+      } else if (year >= 0) {
+        yearCalc = 1
+      } else {
+        yearCalc = 0
+      }
     }
+
     this.setState({ lastYearValue: year, yearCalc: yearCalc }, this.updateSum)
   }
 
   CompetitionCalc = (event) => {
-    const comp = parseInt(event.target.value)
+    const comp = Number(event.target.value)
     let compCalc = 0
     if (comp >= 80) {
       compCalc = 0
@@ -149,6 +170,7 @@ class SEOsmartKit extends Component {
                   placeholder="請輸你要查詢的Keyword"
                   onChange={this.Keyword}
                   onKeyDown={this.handleKeyDown}
+                  min="-100"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -159,6 +181,7 @@ class SEOsmartKit extends Component {
                   onChange={this.VolumeCalc}
                   value={this.state.lastVolumeValue}
                   onKeyDown={this.handleKeyDown}
+                  min="-100"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -169,6 +192,7 @@ class SEOsmartKit extends Component {
                   onChange={this.QuarterCalc}
                   value={this.state.lastQuarValue}
                   onKeyDown={this.handleKeyDown}
+                  min="-100"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -179,6 +203,7 @@ class SEOsmartKit extends Component {
                   onChange={this.YearCalc}
                   value={this.state.lastYearValue}
                   onKeyDown={this.handleKeyDown}
+                  min="-100"
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -189,6 +214,7 @@ class SEOsmartKit extends Component {
                   onChange={this.CompetitionCalc}
                   value={this.state.lastCompetitionValue}
                   onKeyDown={this.handleKeyDown}
+                  min="-100"
                 />
               </div>
             </div>
@@ -268,7 +294,7 @@ class SEOsmartKit extends Component {
                   若想自行保存資料，請自行<b>截圖保存</b>下來。
                 </li>
               </ol>
-              <span>BuildVersion: v3.1.240827-1635 by Native4A</span>
+              <span>BuildVersion: v3.1.240828-1631 by Native4A</span>
             </div>
           </div>
         </Section>
