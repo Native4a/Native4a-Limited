@@ -5,8 +5,14 @@ import Layout from '../components/layout'
 import { motion } from 'framer-motion'
 import Text from '../components/baseTools/text'
 import SlackerBag from '../img/White_And_Blue_Illustration_Basic_SEO_Techniques_Instagram_Post.webp'
-import SEO from '../img/SEO.webp'
 import Button from '../components/baseTools/button'
+
+//Image Here//
+import SEO from '../img/SEO.webp'
+import Fat from '../img/fat.avif'
+import Viral from '../img/viral-marketing.avif'
+import Google from '../img/google.avif'
+import Duplicate from '../img/duplicate.avif'
 
 //CSS here//
 import * as styles from '../styles/seo-smart-kit.module.css'
@@ -424,52 +430,48 @@ class SEOsmartKit extends Component {
             <div class="grid grid-cols-1 items-start md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div class="flex flex-col gap-2 justify-center p-14">
                 <img
-                  src={SEO}
+                  src={Fat}
                   alt="Girl in a jacket"
-                  width="500"
-                  height="600"
+                  className="w-1/2"
                   loading="lazy"
                   decoding="async"
                 />
-                <h3 className="text-xl">搵出「肥壯關鍵字」</h3>
+                <h3 className="text-xl text-center">搵出「肥壯關鍵字」</h3>
                 <Text>
                   搵出你行業中嘅潛力關鍵字，無論競爭程度，你都可以搵出超肥仔黃金關鍵字。
                 </Text>
               </div>
               <div class="flex flex-col gap-2 justify-center p-14">
                 <img
-                  src={SEO}
+                  src={Viral}
                   alt="Girl in a jacket"
-                  width="500"
-                  height="600"
+                  className="w-1/2"
                   loading="lazy"
                   decoding="async"
                 />
-                <h3 className="text-xl">「病毒式SEO文章」</h3>
+                <h3 className="text-xl text-center">「病毒式SEO文章」</h3>
                 <Text>設計傳播力超強SEO內容、Google歡迎嘅爆數內容結構。</Text>
               </div>
               <div class="flex flex-col gap-2 justify-center p-14">
                 <img
-                  src={SEO}
+                  src={Google}
                   alt="Girl in a jacket"
-                  width="500"
-                  height="600"
+                  className="w-1/2"
                   loading="lazy"
                   decoding="async"
                 />
-                <h3 className="text-xl">最快7天</h3>
+                <h3 className="text-xl text-center">最快7天</h3>
                 <Text>最快7天內排名首頁的方法。（2024年）</Text>
               </div>
               <div class="flex flex-col gap-2 justify-center p-14">
                 <img
-                  src={SEO}
+                  src={Duplicate}
                   alt="Girl in a jacket"
-                  width="500"
-                  height="600"
+                  className="w-1/2"
                   loading="lazy"
                   decoding="async"
                 />
-                <h3 className="text-xl">持續複製</h3>
+                <h3 className="text-xl text-center">持續複製</h3>
                 <Text>源源不斷從Google搵新客。</Text>
               </div>
             </div>
