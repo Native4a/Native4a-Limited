@@ -3,6 +3,10 @@ import Seo from '../components/seo'
 import Section from '../components/baseTools/Section'
 import Layout from '../components/layout'
 import { motion } from 'framer-motion'
+import Text from '../components/baseTools/text'
+import SlackerBag from '../img/White_And_Blue_Illustration_Basic_SEO_Techniques_Instagram_Post.webp'
+import SEO from '../img/SEO.webp'
+import Button from '../components/baseTools/button'
 
 //CSS here//
 import * as styles from '../styles/seo-smart-kit.module.css'
@@ -53,11 +57,11 @@ class SEOsmartKit extends Component {
     let quarter = event.target.value.trim() // 去除首尾空格
     let quarCalc = 0
 
-    // 检查输入是否为空或者非数字
+    // 檢查輸入是否為空或非數字
     if (quarter === '' || isNaN(quarter)) {
-      quarter = '' // 将空值设置为一个空字符串
+      quarter = '' // 將空值設為一個空字串
     } else {
-      quarter = Number(quarter) // 将输入值转换为数字
+      quarter = Number(quarter) // 將輸入值轉換為數字
 
       if (quarter >= 20) {
         quarCalc = 2
@@ -78,15 +82,15 @@ class SEOsmartKit extends Component {
     let year = event.target.value.trim() // 去除首尾空格
     let yearCalc = 0
 
-    // 检查输入是否为空或者非数字
+    // 檢查輸入是否為空或非數字
     if (year === '' || isNaN(year)) {
-      year = '' // 将空值设置为一个空字符串
+      year = '' // 將空值設為一個空字串
     } else {
-      year = Number(year) // 将输入值转换为数字
+      year = Number(year) // 將輸入值轉換為數字
 
       if (year >= 20) {
         yearCalc = 3
-      } else if (year >= 0) {
+      } else if (year >= 1) {
         yearCalc = 1
       } else {
         yearCalc = 0
@@ -298,7 +302,7 @@ class SEOsmartKit extends Component {
             </div>
           </div>
         </Section>
-        <Section ContainerClass="grid gap-6 justify-around mb-10">
+        <Section ContainerClass="grid gap-6 justify-around mb-32">
           <div Class="container mx-auto mt-5">
             <div Class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div Class="flex col-span-2 text-xl">
@@ -364,6 +368,124 @@ class SEOsmartKit extends Component {
             </motion.div>
           ))}
         </Section>
+        <Section SectionClass="bg-white pt-10">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-7 gap-6 py-10">
+              <div className="flex col-span-3 justify-center text-6xl">
+                <img
+                  src={SlackerBag}
+                  alt="Girl in a jacket"
+                  width="500"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="flex flex-col col-span-4 gap-6 justify-center text-6xl">
+                <h1 className="text-4xl">
+                  你的關鍵字可能7天就能到頂 - SEO懶人包。
+                </h1>
+                <Text className="text-lg">
+                  一套經native4a
+                  八年SEO、超過400個獨立網站優化經驗總結，能令你在7天內排名關鍵字首頁的SEO懶人包。
+                </Text>
+                <Button linkto="https://shop.nativeaaaa.com.hk/">
+                  立即下載SEO懶人包
+                </Button>
+              </div>
+            </div>
+            <div className="grid justify-center">
+              <Text className="text-4xl font-extrabold">
+                Hi, 歡迎嚟到SEO懶人包簡介
+              </Text>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-7 gap-6 py-24">
+              <div className="flex col-span-2 justify-center text-6xl">
+                <img
+                  src={SEO}
+                  alt="Girl in a jacket"
+                  width="500"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="flex flex-col col-span-5 gap-6 justify-center text-6xl">
+                <Text className="text-lg">
+                  我曾經優化超過400網站、最快兩天內攻破超短尾關鍵字Top
+                  10，8年SEO工作累積左唔少實用方法、排名捷徑、尋找出色的「肥壯關鍵字」等價值連城的SEO技巧，我總結左呢啲經驗同方法放入呢套「SEO懶人包」，入面有詳細逐步教學，可以幫你喺幾日之內排升排名到首頁，並且持續穩定。
+                </Text>
+              </div>
+            </div>
+          </div>
+        </Section>
+        <Section>
+          <div class="grid container mx-auto gap-10">
+            <div class="grid grid-cols-1 items-start md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="flex flex-col gap-2 justify-center p-14">
+                <img
+                  src={SEO}
+                  alt="Girl in a jacket"
+                  width="500"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <h3 className="text-xl">搵出「肥壯關鍵字」</h3>
+                <Text>
+                  搵出你行業中嘅潛力關鍵字，無論競爭程度，你都可以搵出超肥仔黃金關鍵字。
+                </Text>
+              </div>
+              <div class="flex flex-col gap-2 justify-center p-14">
+                <img
+                  src={SEO}
+                  alt="Girl in a jacket"
+                  width="500"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <h3 className="text-xl">「病毒式SEO文章」</h3>
+                <Text>設計傳播力超強SEO內容、Google歡迎嘅爆數內容結構。</Text>
+              </div>
+              <div class="flex flex-col gap-2 justify-center p-14">
+                <img
+                  src={SEO}
+                  alt="Girl in a jacket"
+                  width="500"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <h3 className="text-xl">最快7天</h3>
+                <Text>最快7天內排名首頁的方法。（2024年）</Text>
+              </div>
+              <div class="flex flex-col gap-2 justify-center p-14">
+                <img
+                  src={SEO}
+                  alt="Girl in a jacket"
+                  width="500"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <h3 className="text-xl">持續複製</h3>
+                <Text>源源不斷從Google搵新客。</Text>
+              </div>
+            </div>
+            <Button linkto="https://shop.nativeaaaa.com.hk/">
+              立即下載SEO懶人包
+            </Button>
+          </div>
+        </Section>
+        <Section ContainerClass="flex justify-center m-auto w-[95%] md:w-[90%] lg:w-[92%] xl:w-[90%] 2xl:w-[79%] py-10">
+          <div className="grid ">
+            <Text className="text-4xl font-extrabold">
+              Hi, 歡迎嚟到SEO懶人包簡介
+            </Text>
+          </div>
+        </Section>
+        <Section></Section>
       </Layout>
     )
   }
