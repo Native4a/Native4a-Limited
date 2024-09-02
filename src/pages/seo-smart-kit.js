@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import Text from '../components/baseTools/text'
 import SlackerBag from '../img/White_And_Blue_Illustration_Basic_SEO_Techniques_Instagram_Post.webp'
 import Button from '../components/baseTools/button'
+import { Accordion } from 'flowbite-react'
 
 //Image Here//
 import SEO from '../img/SEO.webp'
@@ -13,6 +14,9 @@ import Fat from '../img/fat.avif'
 import Viral from '../img/viral-marketing.avif'
 import Google from '../img/google.avif'
 import Duplicate from '../img/duplicate.avif'
+import WisdomTooth from '../img/wisdomTooth.webp'
+import Underwear from '../img/underwear.webp'
+import YouthEntrepreneurship from '../img/Youth Entrepreneurship.webp'
 
 //CSS here//
 import * as styles from '../styles/seo-smart-kit.module.css'
@@ -482,12 +486,190 @@ class SEOsmartKit extends Component {
         </Section>
         <Section ContainerClass="flex justify-center m-auto w-[95%] md:w-[90%] lg:w-[92%] xl:w-[90%] 2xl:w-[79%] py-10">
           <div className="grid ">
-            <Text className="text-4xl font-extrabold">
-              Hi, 歡迎嚟到SEO懶人包簡介
+            <Text className="text-4xl text-center font-extrabold">
+              我用SEO懶人包做到以下效果
             </Text>
+            <div className="container mx-auto mt-10">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+                <div className="col-span-3">
+                  <img
+                    src={WisdomTooth}
+                    alt="WisdomTooth Data"
+                    className="w-full"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="flex col-span-2 items-center p-10">
+                  <div className="flex flex-col gap-6">
+                    <div>
+                      <p>關鍵字</p>
+                      <h4 className="text-3xl">智慧齒</h4>
+                    </div>
+                    <div>
+                      <ul className="text-gray-500 leading-loose tracking-wide">
+                        <li>行業：智慧齒</li>
+                        <li>Volume: 40500</li>
+                        <li>Before：#18</li>
+                        <li>After：#7</li>
+                        <li>用時：10days</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="container mx-auto mt-10">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+                <div className="col-span-3">
+                  <img
+                    src={Underwear}
+                    alt="Underwear Data"
+                    className="w-full"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="flex col-span-2 items-center p-10">
+                  <div className="flex flex-col gap-6">
+                    <div>
+                      <p>關鍵字</p>
+                      <h4 className="text-3xl">內衣</h4>
+                    </div>
+                    <div>
+                      <ul className="text-gray-500 leading-loose tracking-wide">
+                        <li>行業：功能內衣</li>
+                        <li>Volume: 49500</li>
+                        <li>Before：#74</li>
+                        <li>After：#7</li>
+                        <li>用時：4 days</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="container mx-auto mt-10">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+                <div className="col-span-3">
+                  <img
+                    src={YouthEntrepreneurship}
+                    alt="Youth Entrepreneurship Data"
+                    className="w-full"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="flex col-span-2 items-center p-10">
+                  <div className="flex flex-col gap-6">
+                    <div>
+                      <p>關鍵字</p>
+                      <h4 className="text-3xl">青年創業補助不用還</h4>
+                    </div>
+                    <div>
+                      <ul className="text-gray-500 leading-loose tracking-wide">
+                        <li>行業：青年創業補助</li>
+                        <li>Volume: 4800</li>
+                        <li>Before：#201</li>
+                        <li>After：：#7</li>
+                        <li>用時：2 days</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </Section>
-        <Section></Section>
+        <Section>
+          <div className="container mx-auto mb-10">
+            <div className="grid grid-cols-1 gap-6">
+              <div className="flex flex-col items-center text-white p-10 border-2 border-gray-300 rounded-xl bg-gray-800">
+                <span>8年SEO經驗結晶，7日提升關鍵字排名的方法</span>
+                <h3 className="text-3xl">SEO懶人包</h3>
+              </div>
+              <div>
+                <Accordion>
+                  <Accordion.Panel>
+                    <Accordion.Title>「潛力關鍵字計算機」</Accordion.Title>
+                    <Accordion.Content>
+                      <p className="mb-2 text-gray-500 dark:text-gray-400">
+                        短尾轉化率低，長尾無人搜索。
+                        所以要搵到黃金肥仔「肥壯關鍵字」
+                      </p>
+                      <p className="mb-2 text-gray-500 font-extrabold dark:text-gray-400">
+                        ．找出黃金「肥壯關鍵字」
+                      </p>
+                      <p className="text-gray-500 dark:text-gray-400">
+                        可以幫你計算出該Keywords的抵做指數（1～10✨）
+                        並非搵最熱門，而係搵「最抵做」 幫你準確投資爆數keywords
+                      </p>
+                    </Accordion.Content>
+                  </Accordion.Panel>
+                  <Accordion.Panel>
+                    <Accordion.Title>「病毒式內容創作包」</Accordion.Title>
+                    <Accordion.Content>
+                      <p className="mb-2 text-gray-500 dark:text-gray-400">
+                        點解有啲內容吸引人閱讀，有啲卻跳出率勁高。係因為你嘅內容並非由讀者嘅口味。
+                      </p>
+                      <p className="mb-2 text-gray-500 font-extrabold dark:text-gray-400">
+                        ．創作病毒式內容
+                      </p>
+                      <p className="text-gray-500 dark:text-gray-400">
+                        可以幫你創作出容易爆share、爆升排名的內容，好似病毒一樣喺客戶群中傳播。
+                      </p>
+                    </Accordion.Content>
+                  </Accordion.Panel>
+                  <Accordion.Panel>
+                    <Accordion.Title>「SEO內容模板」</Accordion.Title>
+                    <Accordion.Content>
+                      <p className="mb-2 text-gray-500 dark:text-gray-400">
+                        SEO內容有某些規律可以跟從，特別容易提升排名嘅內容有樣睇。
+                      </p>
+                      <p className="mb-2 text-gray-500 font-extrabold dark:text-gray-400">
+                        ．SEO結構Template
+                      </p>
+                      <p className="mb-2 text-gray-500 dark:text-gray-400">
+                        超快排名，穩定不跌的SEO內容Template。
+                      </p>
+                    </Accordion.Content>
+                  </Accordion.Panel>
+                  <Accordion.Panel>
+                    <Accordion.Title>「超勁Backlinks懶人包」</Accordion.Title>
+                    <Accordion.Content>
+                      <p className="mb-2 text-gray-500 dark:text-gray-400">
+                        7天排名計劃的重中之重 Backlinks能短時間內帶你排名飛天。
+                        同時都要小心選擇
+                      </p>
+                      <p className="mb-2 text-gray-500 font-extrabold dark:text-gray-400">
+                        ．Backlinks懶人包
+                      </p>
+                      <p className="mb-2 text-gray-500 dark:text-gray-400">
+                        可以幫你獲得大量呢種超強排名武器。（部分涉及黑帽方法，需謹慎使用）
+                      </p>
+                    </Accordion.Content>
+                  </Accordion.Panel>
+                  <Accordion.Panel>
+                    <Accordion.Title>「Black-Hat技巧包」</Accordion.Title>
+                    <Accordion.Content>
+                      <p className="mb-2 text-gray-500 dark:text-gray-400">
+                        Black-Hat
+                        SEO技巧，就好似粗口咁，唔一定要講，但最好要識。
+                      </p>
+                      <p className="mb-2 text-gray-500 font-extrabold dark:text-gray-400">
+                        ．Black-Hat技巧包
+                      </p>
+                      <p className="mb-2 text-gray-500 dark:text-gray-400">
+                        Black-hat
+                        SEO並非想像中咁罪惡，如果用得小心，可能會幫你網站收獲意想唔到效果。
+                      </p>
+                    </Accordion.Content>
+                  </Accordion.Panel>
+                </Accordion>
+              </div>
+            </div>
+          </div>
+        </Section>
       </Layout>
     )
   }
