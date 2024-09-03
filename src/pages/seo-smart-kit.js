@@ -169,7 +169,7 @@ class SEOsmartKit extends Component {
         <Section SectionClass="flex justify-evenly" ContainerClass="grid">
           <div className="grid gap-4 justify-evenly pt-32 lg:pt-22 xl:pt-22 2xl:pt-36">
             <span className="mb-5">
-              <h1 className="text-5xl text-center">SEO Calculator</h1>
+              <h1 className="text-5xl text-center">肥仔關鍵字計算機</h1>
               <p className="text-center">(Web測試版)</p>
             </span>
           </div>
@@ -181,7 +181,7 @@ class SEOsmartKit extends Component {
                   className="border-2 rounded-lg px-3 pt-2 pb-1"
                   type="text"
                   id="textDataInput"
-                  placeholder="請輸你要查詢的Keyword"
+                  placeholder="請輸入你要查詢的Keyword"
                   onChange={this.Keyword}
                   onKeyDown={this.handleKeyDown}
                   min="-100"
@@ -587,6 +587,9 @@ class SEOsmartKit extends Component {
               <div className="flex flex-col items-center text-white p-10 border-2 border-gray-300 rounded-xl bg-gray-800">
                 <span>8年SEO經驗結晶，7日提升關鍵字排名的方法</span>
                 <h3 className="text-3xl">SEO懶人包</h3>
+                <Button linkto="https://shop.nativeaaaa.com.hk/">
+                  立即下載SEO懶人包
+                </Button>
               </div>
               <div>
                 <Accordion>
