@@ -308,7 +308,7 @@ class SEOsmartKit extends Component {
                   若想自行保存資料，請自行<b>截圖保存</b>下來。
                 </li>
               </ol>
-              <span>BuildVersion: v3.1.240828-1631 by Native4A</span>
+              <span>BuildVersion: v3.1.240903-1610 by Native4A</span>
             </div>
           </div>
         </Section>
