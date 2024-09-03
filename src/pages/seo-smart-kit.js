@@ -173,8 +173,8 @@ class SEOsmartKit extends Component {
               <p className="text-center">(Web測試版)</p>
             </span>
           </div>
-          <div className="grid grid-cols-3 shadow-xl rounded-3xl bg-white p-6 mb-8 bg-white-500/[.06]">
-            <div className="grid gap-4 xl:py-14 xl:pl-16">
+          <div className="grid grid-cols-3 shadow-xl rounded-3xl bg-white p-6 m-8 bg-white-500/[.06] md:p-14">
+            <div className="grid gap-4 xl:py-14 xl:pl-16 col-span-3 md:col-span-1">
               <div className="flex flex-col gap-2">
                 <h3>Keyword：</h3>
                 <input
@@ -232,8 +232,8 @@ class SEOsmartKit extends Component {
                 />
               </div>
             </div>
-            <div className="grid xl:px-16 xl:py-16 col-span-2">
-              <div className="flex flex-col gap-4 justify-between border-l-2 pl-10">
+            <div className="grid xl:px-16 xl:py-16 col-span-3 md:col-span-2">
+              <div className="flex flex-col gap-4 justify-between border-l-2 p-5 my-10">
                 <h4 className="text-xl pl-3">肥仔指數</h4>
                 <div
                   className="flex justify-end border-2 rounded-3xl px-10 pt-10 pb-3"
@@ -241,7 +241,7 @@ class SEOsmartKit extends Component {
                 >
                   <span className="text-8xl">{this.state.vqycSum}</span>分
                 </div>
-                <div className="grid gap-2 grid-cols-4">
+                <div className="grid gap-2 grid-cols-2 md:grid-cols-4">
                   <div className="flex flex-col justify-between border-2 rounded-3xl p-5">
                     <h4>
                       search
@@ -312,13 +312,13 @@ class SEOsmartKit extends Component {
             </div>
           </div>
         </Section>
-        <Section ContainerClass="grid gap-6 justify-around mb-32">
+        <Section ContainerClass="grid gap-6 justify-around mb-32 mx-10 ">
           <div Class="container mx-auto mt-5">
-            <div Class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div Class="flex col-span-2 text-xl">
+            <div Class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              <div Class="flex col-span-1 lg:col-span-2 text-xl">
                 <h3>Keyword儲存區</h3>
               </div>
-              <div Class="flex col-span-2 justify-end text-md">
+              <div Class="flex col-span-1 lg:col-span-2 justify-end text-md">
                 <button
                   onClick={this.resetSavedData}
                   className="rounded-3xl px-10 text-white bg-red-600"
@@ -378,7 +378,7 @@ class SEOsmartKit extends Component {
             </motion.div>
           ))}
         </Section>
-        <Section SectionClass="bg-white pt-10">
+        <Section SectionClass="bg-white p-10">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-7 gap-6 py-10">
               <div className="flex col-span-3 justify-center text-6xl">
@@ -392,7 +392,7 @@ class SEOsmartKit extends Component {
                 />
               </div>
               <div className="flex flex-col col-span-4 gap-6 justify-center text-6xl">
-                <h1 className="text-4xl">
+                <h1 className="text-3xl md:text-4xl">
                   你的關鍵字可能7天就能到頂 - SEO懶人包。
                 </h1>
                 <Text className="text-lg">
@@ -405,22 +405,21 @@ class SEOsmartKit extends Component {
               </div>
             </div>
             <div className="grid justify-center">
-              <Text className="text-4xl font-extrabold">
+              <Text className="text-3xl md:text-4xl font-extrabold">
                 Hi, 歡迎嚟到SEO懶人包簡介
               </Text>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-7 gap-6 py-24">
-              <div className="flex col-span-2 justify-center text-6xl">
+              <div className="flex col-span-7 md:col-span-2 justify-center text-6xl">
                 <img
                   src={SEO}
-                  alt="Girl in a jacket"
-                  width="500"
-                  height="600"
+                  alt="Marcus is signing"
+                  className="w-full"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <div className="flex flex-col col-span-5 gap-6 justify-center text-6xl">
+              <div className="flex flex-col col-span-7 md:col-span-5 gap-6 justify-center text-6xl">
                 <Text className="text-lg">
                   我曾經優化超過400網站、最快兩天內攻破超短尾關鍵字Top
                   10，8年SEO工作累積左唔少實用方法、排名捷徑、尋找出色的「肥壯關鍵字」等價值連城的SEO技巧，我總結左呢啲經驗同方法放入呢套「SEO懶人包」，入面有詳細逐步教學，可以幫你喺幾日之內排升排名到首頁，並且持續穩定。
@@ -430,7 +429,7 @@ class SEOsmartKit extends Component {
           </div>
         </Section>
         <Section>
-          <div class="grid container mx-auto gap-10">
+          <div class="grid container mx-auto gap-10 p-10">
             <div class="grid grid-cols-1 items-start md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div class="flex flex-col gap-2 justify-center p-14">
                 <img
@@ -484,7 +483,7 @@ class SEOsmartKit extends Component {
             </Button>
           </div>
         </Section>
-        <Section ContainerClass="flex justify-center m-auto w-[95%] md:w-[90%] lg:w-[92%] xl:w-[90%] 2xl:w-[79%] py-10">
+        <Section ContainerClass="flex justify-center m-auto w-[95%] md:w-[90%] lg:w-[92%] xl:w-[90%] 2xl:w-[79%] p-5">
           <div className="grid ">
             <Text className="text-4xl text-center font-extrabold">
               我用SEO懶人包做到以下效果
@@ -582,7 +581,7 @@ class SEOsmartKit extends Component {
           </div>
         </Section>
         <Section>
-          <div className="container mx-auto mb-10">
+          <div className="container mx-auto mb-10 p-3">
             <div className="grid grid-cols-1 gap-6">
               <div className="flex flex-col items-center text-white p-10 border-2 border-gray-300 rounded-xl bg-gray-800">
                 <span>8年SEO經驗結晶，7日提升關鍵字排名的方法</span>
