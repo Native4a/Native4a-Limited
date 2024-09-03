@@ -586,7 +586,7 @@ class SEOsmartKit extends Component {
             <div className="grid grid-cols-1 gap-6">
               <div className="flex flex-col items-center text-white p-10 border-2 border-gray-300 rounded-xl bg-gray-800">
                 <span>8年SEO經驗結晶，7日提升關鍵字排名的方法</span>
-                <h3 className="text-3xl">SEO懶人包</h3>
+                <h3 className="text-3xl m-3">SEO懶人包</h3>
                 <Button linkto="https://shop.nativeaaaa.com.hk/">
                   立即下載SEO懶人包
                 </Button>
