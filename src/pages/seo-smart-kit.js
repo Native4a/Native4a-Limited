@@ -174,11 +174,11 @@ class SEOsmartKit extends Component {
             </span>
           </div>
           <div className="grid grid-cols-3 shadow-xl rounded-3xl bg-white p-6 m-8 bg-white-500/[.06] md:p-14">
-            <div className="grid gap-4 xl:py-14 xl:pl-16 col-span-3 md:col-span-1">
-              <div className="flex flex-col gap-2">
+            <div class="grid gap-4 xl:py-14 xl:pl-16 col-span-3 md:col-span-1">
+              <div class="flex flex-col gap-2">
                 <h3>Keyword：</h3>
                 <input
-                  className="border-2 rounded-lg px-3 pt-2 pb-1"
+                  class="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="text"
                   id="textDataInput"
                   placeholder="請輸入你要查詢的Keyword"
@@ -187,10 +187,10 @@ class SEOsmartKit extends Component {
                   min="-100"
                 />
               </div>
-              <div className="flex flex-col gap-2">
+              <div class="flex flex-col gap-2">
                 <h3>搜索量：</h3>
                 <input
-                  className="border-2 rounded-lg px-3 pt-2 pb-1"
+                  class="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="number"
                   onChange={this.VolumeCalc}
                   value={this.state.lastVolumeValue}
@@ -198,10 +198,10 @@ class SEOsmartKit extends Component {
                   min="-100"
                 />
               </div>
-              <div className="flex flex-col gap-2">
+              <div class="flex flex-col gap-2">
                 <h3>三個月變化(%)：</h3>
                 <input
-                  className="border-2 rounded-lg px-3 pt-2 pb-1"
+                  class="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="number"
                   onChange={this.QuarterCalc}
                   value={this.state.lastQuarValue}
@@ -209,10 +209,10 @@ class SEOsmartKit extends Component {
                   min="-100"
                 />
               </div>
-              <div className="flex flex-col gap-2">
+              <div class="flex flex-col gap-2">
                 <h3>年度變化(%)：</h3>
                 <input
-                  className="border-2 rounded-lg px-3 pt-2 pb-1"
+                  class="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="number"
                   onChange={this.YearCalc}
                   value={this.state.lastYearValue}
@@ -220,10 +220,10 @@ class SEOsmartKit extends Component {
                   min="-100"
                 />
               </div>
-              <div className="flex flex-col gap-2">
+              <div class="flex flex-col gap-2">
                 <h3>競爭分數：</h3>
                 <input
-                  className="border-2 rounded-lg px-3 pt-2 pb-1"
+                  class="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="number"
                   onChange={this.CompetitionCalc}
                   value={this.state.lastCompetitionValue}
