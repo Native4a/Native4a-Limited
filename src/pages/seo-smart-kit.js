@@ -325,14 +325,14 @@ class SEOsmartKit extends Component {
                   onClick={this.resetSavedData}
                   className="rounded-3xl px-10 text-white bg-red-600"
                 >
-                  ⟲ Reset
+                  Reset
                 </button>
               </div>
             </div>
           </div>
           <div className="grid grid-cols-6 p-6">
             <div className="text-lg font-bold">
-              Keyword: <span></span>
+              <span>Keyword: </span>
             </div>
             <div className="flex text-lg font-bold justify-center border-r-2 px-3">
               <span>search volume</span>
