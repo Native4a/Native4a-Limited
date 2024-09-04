@@ -169,7 +169,9 @@ class SEOsmartKit extends Component {
         <Section SectionClass="flex justify-evenly" ContainerClass="grid">
           <div className="grid gap-4 justify-evenly pt-32 lg:pt-22 xl:pt-22 2xl:pt-36">
             <span className="mb-5">
-              <h1 className="text-5xl text-center">肥仔關鍵字計算機</h1>
+              <h1 className="text-3xl md:text-5xl text-center">
+                肥仔關鍵字計算機
+              </h1>
               <p className="text-center">(Web測試版)</p>
             </span>
           </div>
@@ -312,7 +314,7 @@ class SEOsmartKit extends Component {
             </div>
           </div>
         </Section>
-        <Section ContainerClass="grid gap-6 justify-around mb-32 mx-10 ">
+        <Section ContainerClass="hidden xl:grid gap-6 justify-around mb-32 mx-10">
           <div Class="container mx-auto mt-5">
             <div Class="grid grid-cols-2 lg:grid-cols-4 gap-6">
               <div Class="flex col-span-1 lg:col-span-2 text-xl">
@@ -374,6 +376,74 @@ class SEOsmartKit extends Component {
               </div>
               <div className="flex text-xl font-bold justify-end">
                 <span>{data.vqycSum}</span>分
+              </div>
+            </motion.div>
+          ))}
+        </Section>
+        <Section ContainerClass="md:grid xl:hidden gap-6 justify-around mb-32 mx-10">
+          <div Class="container mx-auto mt-5">
+            <div Class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              <div Class="flex col-span-1 items-center lg:col-span-2 text-md">
+                <h3>Keyword儲存區</h3>
+              </div>
+              <div Class="flex col-span-1 lg:col-span-2 justify-end text-md">
+                <button
+                  onClick={this.resetSavedData}
+                  className="rounded-3xl px-10 text-white bg-red-600"
+                >
+                  Reset
+                </button>
+              </div>
+            </div>
+          </div>
+          {this.state.savedData.map((data, index) => (
+            <motion.div
+              key={index}
+              className="grid gap-6 shadow-xl rounded-3xl bg-white p-6 bg-white-500/[.06] mt-10"
+              initial={{ opacity: 0, y: -20 }} // 初始狀態：透明且向上偏移
+              animate={{ opacity: 1, y: 0 }} // 動畫狀態：完全可見且回到原位
+              exit={{ opacity: 0, y: -20 }} // 離開狀態：透明且向上偏移
+              transition={{ duration: 0.5 }} // 動畫持續時間
+            >
+              <div className="flex justify-between font-semibold border-b-2 pb-5">
+                <div className="flex justify-start items-center text-md">
+                  <span>Keyword:</span>
+                </div>
+                <span className="flex justify-end text-xl font-bold">
+                  {data.Keyword}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <div className="flex justify-start items-center">
+                  <span>search volume:</span>
+                </div>
+                <span className="flex justify-end">{data.volCalc}分</span>
+              </div>
+              <div className="flex justify-between">
+                <div className="flex justify-start items-center">
+                  <span>3 Months Change:</span>
+                </div>
+                <span className="flex justify-end">{data.quarCalc}分</span>
+              </div>
+              <div className="flex justify-between">
+                <div className="flex justify-start items-center">
+                  <span>Yearly changes:</span>
+                </div>
+                <span className="flex justify-end">{data.yearCalc}分</span>
+              </div>
+              <div className="flex justify-between">
+                <div className="flex justify-start items-center">
+                  <span>Competition Score:</span>
+                </div>
+                <span className="flex justify-end">{data.compCalc}分</span>
+              </div>
+              <div className="flex justify-between border-t-2 pt-5">
+                <div className="flex justify-start items-center">
+                  <span>Total Score:</span>
+                </div>
+                <span className="flex justify-end text-4xl font-bold">
+                  {data.vqycSum}分
+                </span>
               </div>
             </motion.div>
           ))}
