@@ -1,5 +1,5 @@
 import React from 'react'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
+//import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import Container from '../container'
 import * as styles from '../../styles/footer.module.css'
 import useFooter from '../../hook/useFooter'
