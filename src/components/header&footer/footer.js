@@ -15,9 +15,11 @@ const Footer = () => {
           description,
           buttonName,
           native4aLogo,
-          copyRight,
+          //copyRight,
           googlePartnerImage,
         } = item
+        // 獲取當前年份
+        const currentYear = new Date().getFullYear()
         return (
           <Container as="footer" key={index}>
             {/* Block Comments */}
@@ -36,26 +38,24 @@ const Footer = () => {
               </div>
             </section>
             <section className="bg-neutral-200 pt-5 md:pt-0 pb-20 md:py-0 px-5 md:px-11">
-              <div class="grid grid-cols-3 gap-1 items-center">
-                <div class="container mx-auto col-span-2">
-                  <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
-                    <div>
-                      <img
-                        className="rounded-sm w-28 md:w-48 m-0"
-                        src={native4aLogo.url}
-                        alt="service_Video_Production"
-                      />
-                    </div>
-                    <div className="col-span-2 flex md:top-0">
-                      <p className="col-span-4 flex text-[10px] md:text-base items-center">
-                        {renderRichText(copyRight)}
-                      </p>
-                    </div>
-                  </div>
+              <div className="grid grid-cols-3 gap-1 items-center">
+                <div className="">
+                  <img
+                    className="rounded-sm w-28 md:w-48 m-0"
+                    src={native4aLogo.url}
+                    alt="service_Video_Production"
+                  />
+                </div>
+                <div className="flex text-[10px] md:text-base items-center text-center">
+                  <p>
+                    {/* {renderRichText(copyRight)} */}
+                    Copyright © 2016 - {currentYear} Native4a . All Rights
+                    Reserved. Privacy-Policy｜Terms of Business
+                  </p>
                 </div>
                 <div className="">
                   <img
-                    className="rounded-sm w-48 float-right"
+                    className="rounded-sm float-right w-8/12 md:w-48"
                     src={googlePartnerImage.url}
                     alt="service_Video_Production"
                   />
