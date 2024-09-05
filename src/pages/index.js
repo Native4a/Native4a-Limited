@@ -146,7 +146,10 @@ class RootIndex extends React.Component {
             <Awards />
           </div>
         </Section>
-        <section className={styles.sec2_wrap}>
+        <Section
+          SectionClass={`${styles.sec2_wrap} ${'flex justify-evenly'}`}
+          ContainerClass="flex flex-col items-center m-auto"
+        >
           <div className="grid grid-rows-0 relative container mx-auto">
             <h2 className="flex items-center text-2xl pt-12 ml-2 font-bold">
               <span>
@@ -160,27 +163,28 @@ class RootIndex extends React.Component {
             <p className="text-xl mx-4"></p>
           </div>
           <ServiceScope />
-        </section>
-        <section className={styles.sec3_wrap}>
-          <div className={styles.container}>
-            <div className="grid items-center shadow-none rounded-3xl">
-              <div className="inline md:hidden">
-                <h2 className="flex items-center text-2xl ml-4 my-16">
-                  <span>
-                    <FaSquare />
-                  </span>
-                  {contactBox2}
-                </h2>
-              </div>
-              <div className="hidden md:inline text-center">
-                <h2 className="text-4xl underline decoration-yellow-400 my-14">
-                  {contactBox2}
-                </h2>
-              </div>
-              <Clients />
+        </Section>
+        <Section
+          SectionClass={`${styles.sec3_wrap} ${'flex justify-evenly'}`}
+          ContainerClass="flex flex-col items-center m-auto"
+        >
+          <div className="grid items-center shadow-none rounded-3xl">
+            <div className="inline md:hidden">
+              <h2 className="flex items-center text-2xl ml-4 my-16">
+                <span>
+                  <FaSquare />
+                </span>
+                {contactBox2}
+              </h2>
             </div>
+            <div className="hidden md:inline text-center">
+              <h2 className="text-4xl underline decoration-yellow-400 my-14">
+                {contactBox2}
+              </h2>
+            </div>
+            <Clients />
           </div>
-        </section>
+        </Section>
         <section>
           <AboutAs />
         </section>
