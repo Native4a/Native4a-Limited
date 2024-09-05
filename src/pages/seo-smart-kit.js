@@ -165,7 +165,11 @@ class SEOsmartKit extends Component {
   render() {
     return (
       <Layout>
-        <Seo title="" description="" ogUrl="" />
+        <Seo
+          title="肥仔關鍵字計算機"
+          description="肥仔關鍵字計算機是一款強大的SEO工具，幫助您輕鬆計算和分析關鍵字的效果，提升網站的搜索引擎排名。立即使用，讓您的網站脫穎而出！"
+          ogUrl="seo-smart-kit"
+        />
         <Section SectionClass="flex justify-evenly" ContainerClass="grid">
           <div className="grid gap-4 justify-evenly pt-32 lg:pt-22 xl:pt-22 2xl:pt-36">
             <span className="mb-5">
@@ -175,12 +179,12 @@ class SEOsmartKit extends Component {
               <p className="text-center">(Web測試版)</p>
             </span>
           </div>
-          <div className="grid grid-cols-3 shadow-xl rounded-3xl bg-white p-6 m-8 bg-white-500/[.06] md:p-14">
-            <div class="grid gap-4 xl:py-14 xl:pl-16 col-span-3 md:col-span-1">
-              <div class="flex flex-col gap-2">
+          <div className="grid grid-cols-3 shadow-xl rounded-3xl bg-white p-6 m-8 bg-white-500/[.06] md:p-7">
+            <div className="grid gap-4 md:col-span-1 md:pr-7 xl:py-14 xl:pl-16 col-span-3">
+              <div className="flex flex-col gap-2">
                 <h3>Keyword：</h3>
                 <input
-                  class="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
+                  className="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="text"
                   id="textDataInput"
                   placeholder="請輸入你要查詢的Keyword"
@@ -189,10 +193,10 @@ class SEOsmartKit extends Component {
                   min="-100"
                 />
               </div>
-              <div class="flex flex-col gap-2">
+              <div className="flex flex-col gap-2">
                 <h3>搜索量：</h3>
                 <input
-                  class="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
+                  className="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="number"
                   onChange={this.VolumeCalc}
                   value={this.state.lastVolumeValue}
@@ -200,10 +204,10 @@ class SEOsmartKit extends Component {
                   min="-100"
                 />
               </div>
-              <div class="flex flex-col gap-2">
+              <div className="flex flex-col gap-2">
                 <h3>三個月變化(%)：</h3>
                 <input
-                  class="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
+                  className="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="number"
                   onChange={this.QuarterCalc}
                   value={this.state.lastQuarValue}
@@ -211,10 +215,10 @@ class SEOsmartKit extends Component {
                   min="-100"
                 />
               </div>
-              <div class="flex flex-col gap-2">
+              <div className="flex flex-col gap-2">
                 <h3>年度變化(%)：</h3>
                 <input
-                  class="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
+                  className="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="number"
                   onChange={this.YearCalc}
                   value={this.state.lastYearValue}
@@ -222,10 +226,10 @@ class SEOsmartKit extends Component {
                   min="-100"
                 />
               </div>
-              <div class="flex flex-col gap-2">
+              <div className="flex flex-col gap-2">
                 <h3>競爭分數：</h3>
                 <input
-                  class="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
+                  className="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="number"
                   onChange={this.CompetitionCalc}
                   value={this.state.lastCompetitionValue}
@@ -315,12 +319,12 @@ class SEOsmartKit extends Component {
           </div>
         </Section>
         <Section ContainerClass="hidden xl:grid gap-6 justify-around mb-32 mx-10">
-          <div Class="container mx-auto mt-5">
-            <div Class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              <div Class="flex col-span-1 lg:col-span-2 text-xl">
+          <div className="container mx-auto mt-5">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="flex col-span-1 lg:col-span-2 text-xl">
                 <h3>Keyword儲存區</h3>
               </div>
-              <div Class="flex col-span-1 lg:col-span-2 justify-end text-md">
+              <div className="flex col-span-1 lg:col-span-2 justify-end text-md">
                 <button
                   onClick={this.resetSavedData}
                   className="rounded-3xl px-10 text-white bg-red-600"
@@ -380,13 +384,13 @@ class SEOsmartKit extends Component {
             </motion.div>
           ))}
         </Section>
-        <Section ContainerClass="md:grid xl:hidden gap-6 justify-around mb-32 mx-10">
-          <div Class="container mx-auto mt-5">
-            <div Class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              <div Class="flex col-span-1 items-center lg:col-span-2 text-md">
+        <Section ContainerClass="xl:hidden gap-6 mx-10">
+          <div className="container mx-auto mt-5">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="flex col-span-1 items-center lg:col-span-2 text-md">
                 <h3>Keyword儲存區</h3>
               </div>
-              <div Class="flex col-span-1 lg:col-span-2 justify-end text-md">
+              <div className="flex col-span-1 lg:col-span-2 justify-end text-md">
                 <button
                   onClick={this.resetSavedData}
                   className="rounded-3xl px-10 text-white bg-red-600"
@@ -396,6 +400,11 @@ class SEOsmartKit extends Component {
               </div>
             </div>
           </div>
+        </Section>
+        <Section
+          SectionClass="md:flex md:justify-evenly"
+          ContainerClass="md:grid md:grid-cols-2 lg:grid-cols-3 xl:hidden gap-6 justify-around mb-32 mx-10 md:w-10/12"
+        >
           {this.state.savedData.map((data, index) => (
             <motion.div
               key={index}
@@ -454,7 +463,7 @@ class SEOsmartKit extends Component {
               <div className="flex col-span-3 justify-center text-6xl">
                 <img
                   src={SlackerBag}
-                  alt="Girl in a jacket"
+                  alt="Slacker Bag"
                   width="500"
                   height="600"
                   loading="lazy"
@@ -499,12 +508,12 @@ class SEOsmartKit extends Component {
           </div>
         </Section>
         <Section>
-          <div class="grid container mx-auto gap-10 p-10">
-            <div class="grid grid-cols-1 items-start md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div class="flex flex-col gap-2 justify-center p-14">
+          <div className="grid container mx-auto gap-10 p-10">
+            <div className="grid grid-cols-1 items-start md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="flex flex-col gap-2 justify-center p-14">
                 <img
                   src={Fat}
-                  alt="Girl in a jacket"
+                  alt="Fat cardbox"
                   className="w-1/2"
                   loading="lazy"
                   decoding="async"
@@ -514,10 +523,10 @@ class SEOsmartKit extends Component {
                   搵出你行業中嘅潛力關鍵字，無論競爭程度，你都可以搵出超肥仔黃金關鍵字。
                 </Text>
               </div>
-              <div class="flex flex-col gap-2 justify-center p-14">
+              <div className="flex flex-col gap-2 justify-center p-14">
                 <img
                   src={Viral}
-                  alt="Girl in a jacket"
+                  alt="Viral cardbox"
                   className="w-1/2"
                   loading="lazy"
                   decoding="async"
@@ -525,10 +534,10 @@ class SEOsmartKit extends Component {
                 <h3 className="text-xl text-center">「病毒式SEO文章」</h3>
                 <Text>設計傳播力超強SEO內容、Google歡迎嘅爆數內容結構。</Text>
               </div>
-              <div class="flex flex-col gap-2 justify-center p-14">
+              <div className="flex flex-col gap-2 justify-center p-14">
                 <img
                   src={Google}
-                  alt="Girl in a jacket"
+                  alt="Google cardbox"
                   className="w-1/2"
                   loading="lazy"
                   decoding="async"
@@ -536,10 +545,10 @@ class SEOsmartKit extends Component {
                 <h3 className="text-xl text-center">最快7天</h3>
                 <Text>最快7天內排名首頁的方法。（2024年）</Text>
               </div>
-              <div class="flex flex-col gap-2 justify-center p-14">
+              <div className="flex flex-col gap-2 justify-center p-14">
                 <img
                   src={Duplicate}
-                  alt="Girl in a jacket"
+                  alt="Duplicate cardbox"
                   className="w-1/2"
                   loading="lazy"
                   decoding="async"
