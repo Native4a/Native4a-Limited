@@ -299,7 +299,7 @@ class SEOsmartKit extends Component {
                 </li>
                 <li>
                   目前只提供<b>電腦版</b>，<b>平板</b> 和 <b>手機版</b>
-                  待開發中。
+                  還在測試階段。
                 </li>
                 <li>
                   儲存區最多可以儲存 <b>5筆 資料</b>
@@ -314,7 +314,7 @@ class SEOsmartKit extends Component {
                   若想自行保存資料，請自行<b>截圖保存</b>下來。
                 </li>
               </ol>
-              <span>BuildVersion: v3.1.240903-1610 by Native4A</span>
+              <span>BuildVersion: v3.1.240905-11:47 by Native4A</span>
             </div>
           </div>
         </Section>
