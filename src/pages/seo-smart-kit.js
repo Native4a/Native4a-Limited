@@ -590,77 +590,106 @@ class SEOsmartKit extends Component {
               <div>
                 <Accordion>
                   <Accordion.Panel>
-                    <Accordion.Title>「潛力關鍵字計算機」</Accordion.Title>
+                    <Accordion.Title>SEO懶人包適合新手嗎？</Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        短尾轉化率低，長尾無人搜索。
-                        所以要搵到黃金肥仔「肥壯關鍵字」
-                      </p>
-                      <p className="mb-2 text-gray-500 font-extrabold dark:text-gray-400">
-                        ．找出黃金「肥壯關鍵字」
-                      </p>
-                      <p className="text-gray-500 dark:text-gray-400">
-                        可以幫你計算出該Keywords的抵做指數（1～10✨）
-                        並非搵最熱門，而係搵「最抵做」 幫你準確投資爆數keywords
+                        SEO懶人包是一套工具，適合任何想提升排名的人，當然包括全新手。
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
                   <Accordion.Panel>
-                    <Accordion.Title>「病毒式內容創作包」</Accordion.Title>
+                    <Accordion.Title>我具體要做什麼？</Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        點解有啲內容吸引人閱讀，有啲卻跳出率勁高。係因為你嘅內容並非由讀者嘅口味。
-                      </p>
-                      <p className="mb-2 text-gray-500 font-extrabold dark:text-gray-400">
-                        ．創作病毒式內容
-                      </p>
-                      <p className="text-gray-500 dark:text-gray-400">
-                        可以幫你創作出容易爆share、爆升排名的內容，好似病毒一樣喺客戶群中傳播。
+                        按照SEO懶人包步驟表，每日大約1-2小時管理你的網站，將越來越多的關鍵字做上首頁，甚至複製至多個行業。
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
                   <Accordion.Panel>
-                    <Accordion.Title>「SEO內容模板」</Accordion.Title>
+                    <Accordion.Title>如何快速提升網站排名？</Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        SEO內容有某些規律可以跟從，特別容易提升排名嘅內容有樣睇。
+                        解決以下3個問題，排名立即原地上升：
                       </p>
-                      <p className="mb-2 text-gray-500 font-extrabold dark:text-gray-400">
-                        ．SEO結構Template
-                      </p>
+                      <ul className="list-disc pl-10 py-10">
+                        <li>
+                          <h5 className="mb-2 text-gray-500 dark:text-gray-400">
+                            關鍵字篩選
+                          </h5>
+                          <p className="mb-2 text-gray-500 dark:text-gray-400">
+                            先用Google
+                            ads選擇大量相關關鍵字，再放入肥仔計算機篩選高回報關鍵字。
+                          </p>
+                        </li>
+                        <li>
+                          <h5 className="mb-2 text-gray-500 dark:text-gray-400">
+                            內客創作
+                          </h5>
+                          <p className="mb-2 text-gray-500 dark:text-gray-400">
+                            用病毒式標題庫搵岩用標題，再用SEO內容結構template，直接套用
+                          </p>
+                        </li>
+                        <li>
+                          <h5 className="mb-2 text-gray-500 dark:text-gray-400">
+                            backlinks
+                          </h5>
+                          <p className="mb-2 text-gray-500 dark:text-gray-400">
+                            高質Backlinks源頭集合中有很多可靠的backlinks來源，任何行業都搵到，白帽黑帽都有。
+                          </p>
+                        </li>
+                      </ul>
+                    </Accordion.Content>
+                  </Accordion.Panel>
+                  <Accordion.Panel>
+                    <Accordion.Title>
+                      肥壯關鍵字計算器是如何工作的？
+                    </Accordion.Title>
+                    <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        超快排名，穩定不跌的SEO內容Template。
+                        收集關鍵字的過去表現，套用公式，能幫助計算出低成本+高回報的關鍵字。短尾關鍵字：「瑜伽墊」🔥肥壯關鍵字：「防滑瑜伽墊」長尾關鍵字：「初學者用的加厚防滑瑜伽墊」
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
                   <Accordion.Panel>
-                    <Accordion.Title>「超勁Backlinks懶人包」</Accordion.Title>
+                    <Accordion.Title>
+                      我可以在短時間內看到效果嗎？
+                    </Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        7天排名計劃的重中之重 Backlinks能短時間內帶你排名飛天。
-                        同時都要小心選擇
-                      </p>
-                      <p className="mb-2 text-gray-500 font-extrabold dark:text-gray-400">
-                        ．Backlinks懶人包
-                      </p>
-                      <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        可以幫你獲得大量呢種超強排名武器。（部分涉及黑帽方法，需謹慎使用）
+                        當然可以，以下幾個例子都是幾日內上升，並且穩定。
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
                   <Accordion.Panel>
-                    <Accordion.Title>「Black-Hat技巧包」</Accordion.Title>
+                    <Accordion.Title>
+                      這個工具如何幫助我創作高質內容？
+                    </Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        Black-Hat
-                        SEO技巧，就好似粗口咁，唔一定要講，但最好要識。
+                        SEO內容結構template
+                        是實際驗證過嘅內容模版，最容易被Google
+                        收錄的內容結構，你只需要套用到你的內容。
                       </p>
-                      <p className="mb-2 text-gray-500 font-extrabold dark:text-gray-400">
-                        ．Black-Hat技巧包
-                      </p>
+                    </Accordion.Content>
+                  </Accordion.Panel>
+                  <Accordion.Panel>
+                    <Accordion.Title>
+                      SEO懶人包包含什麼樣的反向連結資源？
+                    </Accordion.Title>
+                    <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        Black-hat
-                        SEO並非想像中咁罪惡，如果用得小心，可能會幫你網站收獲意想唔到效果。
+                        多種類型backlinks網站，無論任何行業。
+                      </p>
+                    </Accordion.Content>
+                  </Accordion.Panel>
+                  <Accordion.Panel>
+                    <Accordion.Title>
+                      這個工具如何持續幫助我獲得新客戶？
+                    </Accordion.Title>
+                    <Accordion.Content>
+                      <p className="mb-2 text-gray-500 dark:text-gray-400">
+                        SEO都係有公式嘅，否則SEO公司就handle
+                        唔到咁多客戶，所以，SEO懶人包是將我們過去8年經驗成功的排名方法。你可以理解為一套SEO系統，請你必須要利用這套系統複製至多個行業，令你有更多自動收入來源。
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
