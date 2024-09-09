@@ -9,11 +9,6 @@ import Button from '../components/baseTools/button'
 import { Accordion } from 'flowbite-react'
 
 //Image Here//
-import SEO from '../img/SEO.webp'
-import Fat from '../img/fat.avif'
-import Viral from '../img/viral-marketing.avif'
-import Google from '../img/google.avif'
-import Duplicate from '../img/duplicate.avif'
 import WisdomTooth from '../img/wisdomTooth.webp'
 import Underwear from '../img/underwear.webp'
 import YouthEntrepreneurship from '../img/Youth Entrepreneurship.webp'
@@ -472,7 +467,7 @@ class SEOsmartKit extends Component {
               </div>
               <div className="flex flex-col col-span-4 gap-6 justify-center text-6xl">
                 <h1 className="text-3xl md:text-4xl">
-                  你的關鍵字可能7天就能到頂 - SEO懶人包。
+                  快速提升SEO排名的全能工具
                 </h1>
                 <Text className="text-lg">
                   一套經native4a
@@ -483,83 +478,6 @@ class SEOsmartKit extends Component {
                 </Button>
               </div>
             </div>
-            <div className="grid justify-center">
-              <Text className="text-3xl md:text-4xl font-extrabold">
-                Hi, 歡迎嚟到SEO懶人包簡介
-              </Text>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-7 gap-6 py-24">
-              <div className="flex col-span-7 md:col-span-2 justify-center text-6xl">
-                <img
-                  src={SEO}
-                  alt="Marcus is signing"
-                  className="w-full"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div className="flex flex-col col-span-7 md:col-span-5 gap-6 justify-center text-6xl">
-                <Text className="text-lg">
-                  我曾經優化超過400網站、最快兩天內攻破超短尾關鍵字Top
-                  10，8年SEO工作累積左唔少實用方法、排名捷徑、尋找出色的「肥壯關鍵字」等價值連城的SEO技巧，我總結左呢啲經驗同方法放入呢套「SEO懶人包」，入面有詳細逐步教學，可以幫你喺幾日之內排升排名到首頁，並且持續穩定。
-                </Text>
-              </div>
-            </div>
-          </div>
-        </Section>
-        <Section>
-          <div className="grid container mx-auto gap-10 p-10">
-            <div className="grid grid-cols-1 items-start md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="flex flex-col gap-2 justify-center p-14">
-                <img
-                  src={Fat}
-                  alt="Fat cardbox"
-                  className="w-1/2"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <h3 className="text-xl text-center">搵出「肥壯關鍵字」</h3>
-                <Text>
-                  搵出你行業中嘅潛力關鍵字，無論競爭程度，你都可以搵出超肥仔黃金關鍵字。
-                </Text>
-              </div>
-              <div className="flex flex-col gap-2 justify-center p-14">
-                <img
-                  src={Viral}
-                  alt="Viral cardbox"
-                  className="w-1/2"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <h3 className="text-xl text-center">「病毒式SEO文章」</h3>
-                <Text>設計傳播力超強SEO內容、Google歡迎嘅爆數內容結構。</Text>
-              </div>
-              <div className="flex flex-col gap-2 justify-center p-14">
-                <img
-                  src={Google}
-                  alt="Google cardbox"
-                  className="w-1/2"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <h3 className="text-xl text-center">最快7天</h3>
-                <Text>最快7天內排名首頁的方法。（2024年）</Text>
-              </div>
-              <div className="flex flex-col gap-2 justify-center p-14">
-                <img
-                  src={Duplicate}
-                  alt="Duplicate cardbox"
-                  className="w-1/2"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <h3 className="text-xl text-center">持續複製</h3>
-                <Text>源源不斷從Google搵新客。</Text>
-              </div>
-            </div>
-            <Button linkto="https://shop.nativeaaaa.com.hk/">
-              立即下載SEO懶人包
-            </Button>
           </div>
         </Section>
         <Section ContainerClass="flex justify-center m-auto w-[95%] md:w-[90%] lg:w-[92%] xl:w-[90%] 2xl:w-[79%] p-5">

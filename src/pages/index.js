@@ -55,6 +55,7 @@ class RootIndex extends React.Component {
         return null // 或者返回你想要的預設值
       }
     })
+
     return (
       <Layout location={this.props.location}>
         <Seo
