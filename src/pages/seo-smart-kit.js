@@ -36,6 +36,7 @@ class SEOsmartKit extends Component {
     // 新增一個狀態來保存輸入的關鍵字
     savedKeyword: '',
     savedData: [], // 用來儲存所有資料的陣列
+    textColor: 'black',
   }
 
   VolumeCalc = (event) => {
@@ -150,7 +151,17 @@ class SEOsmartKit extends Component {
   updateSum = () => {
     const { volCalc, quarCalc, yearCalc, compCalc } = this.state
     const sum = volCalc + quarCalc + yearCalc + compCalc
-    this.setState({ vqycSum: sum })
+    this.setState({ vqycSum: sum }, () => {
+      if (this.state.vqycSum >= 7) {
+        this.setState({ textColor: '#0ca959' })
+      } else if (this.state.vqycSum >= 5 && this.state.vqycSum <= 6) {
+        this.setState({ textColor: '#faab00' })
+      } else if (this.state.vqycSum >= 0 && this.state.vqycSum <= 4) {
+        this.setState({ textColor: '#eb4131' })
+      } else {
+        this.setState({ textColor: 'black' })
+      }
+    })
   }
 
   resetSavedData = () => {
@@ -158,6 +169,7 @@ class SEOsmartKit extends Component {
   }
 
   render() {
+    const { textColor } = this.state
     return (
       <Layout>
         <Seo
@@ -235,12 +247,22 @@ class SEOsmartKit extends Component {
             </div>
             <div className="grid xl:px-16 xl:py-16 col-span-3 md:col-span-2">
               <div className="flex flex-col gap-4 justify-between border-l-2 p-5 my-10">
-                <h4 className="text-xl pl-3">肥仔指數</h4>
+                <div className="flex justify-between">
+                  <h4 className="text-xl pl-3">肥仔指數</h4>
+                  <div>
+                    <Text className="text-[#0ca959]">7-10分 - 必做！</Text>
+                    <Text className="text-[#faab00]">5-6分 - 自己決定</Text>
+                    <Text className="text-[#eb4131]">0-5分 - 果斷放棄</Text>
+                  </div>
+                </div>
                 <div
                   className="flex justify-end border-2 rounded-3xl px-10 pt-10 pb-3"
                   id={styles.CalcScreen}
                 >
-                  <span className="text-8xl">{this.state.vqycSum}</span>分
+                  <span style={{ color: textColor }} className="text-8xl">
+                    {this.state.vqycSum}
+                  </span>
+                  分
                 </div>
                 <div className="grid gap-2 grid-cols-2 md:grid-cols-4">
                   <div className="flex flex-col justify-between border-2 rounded-3xl p-5">
@@ -309,7 +331,7 @@ class SEOsmartKit extends Component {
                   若想自行保存資料，請自行<b>截圖保存</b>下來。
                 </li>
               </ol>
-              <span>BuildVersion: v3.1.240905-11:47 by Native4A</span>
+              <span>BuildVersion: v3.1.240911-1824 by Native4A</span>
             </div>
           </div>
         </Section>
@@ -379,8 +401,8 @@ class SEOsmartKit extends Component {
             </motion.div>
           ))}
         </Section>
-        <Section ContainerClass="xl:hidden gap-6 mx-10">
-          <div className="container mx-auto mt-5">
+        <Section ContainerClass="md:grid xl:hidden gap-6 justify-around mb-32 mx-10">
+          <div className="grid container mx-auto mt-5">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="flex col-span-1 items-center lg:col-span-2 text-md">
                 <h3>Keyword儲存區</h3>
@@ -401,55 +423,57 @@ class SEOsmartKit extends Component {
           ContainerClass="md:grid md:grid-cols-2 lg:grid-cols-3 xl:hidden gap-6 justify-around mb-32 mx-10 md:w-10/12"
         >
           {this.state.savedData.map((data, index) => (
-            <motion.div
-              key={index}
-              className="grid gap-6 shadow-xl rounded-3xl bg-white p-6 bg-white-500/[.06] mt-10"
-              initial={{ opacity: 0, y: -20 }} // 初始狀態：透明且向上偏移
-              animate={{ opacity: 1, y: 0 }} // 動畫狀態：完全可見且回到原位
-              exit={{ opacity: 0, y: -20 }} // 離開狀態：透明且向上偏移
-              transition={{ duration: 0.5 }} // 動畫持續時間
-            >
-              <div className="flex justify-between font-semibold border-b-2 pb-5">
-                <div className="flex justify-start items-center text-md">
-                  <span>Keyword:</span>
+            <div>
+              <motion.div
+                key={index}
+                className="grid gap-6 shadow-xl rounded-3xl bg-white p-6 bg-white-500/[.06] mt-10"
+                initial={{ opacity: 0, y: -20 }} // 初始狀態：透明且向上偏移
+                animate={{ opacity: 1, y: 0 }} // 動畫狀態：完全可見且回到原位
+                exit={{ opacity: 0, y: -20 }} // 離開狀態：透明且向上偏移
+                transition={{ duration: 0.5 }} // 動畫持續時間
+              >
+                <div className="flex justify-between font-semibold border-b-2 pb-5">
+                  <div className="flex justify-start items-center text-md">
+                    <span>Keyword:</span>
+                  </div>
+                  <span className="flex justify-end text-xl font-bold">
+                    {data.Keyword}
+                  </span>
                 </div>
-                <span className="flex justify-end text-xl font-bold">
-                  {data.Keyword}
-                </span>
-              </div>
-              <div className="flex justify-between">
-                <div className="flex justify-start items-center">
-                  <span>search volume:</span>
+                <div className="flex justify-between">
+                  <div className="flex justify-start items-center">
+                    <span>search volume:</span>
+                  </div>
+                  <span className="flex justify-end">{data.volCalc}分</span>
                 </div>
-                <span className="flex justify-end">{data.volCalc}分</span>
-              </div>
-              <div className="flex justify-between">
-                <div className="flex justify-start items-center">
-                  <span>3 Months Change:</span>
+                <div className="flex justify-between">
+                  <div className="flex justify-start items-center">
+                    <span>3 Months Change:</span>
+                  </div>
+                  <span className="flex justify-end">{data.quarCalc}分</span>
                 </div>
-                <span className="flex justify-end">{data.quarCalc}分</span>
-              </div>
-              <div className="flex justify-between">
-                <div className="flex justify-start items-center">
-                  <span>Yearly changes:</span>
+                <div className="flex justify-between">
+                  <div className="flex justify-start items-center">
+                    <span>Yearly changes:</span>
+                  </div>
+                  <span className="flex justify-end">{data.yearCalc}分</span>
                 </div>
-                <span className="flex justify-end">{data.yearCalc}分</span>
-              </div>
-              <div className="flex justify-between">
-                <div className="flex justify-start items-center">
-                  <span>Competition Score:</span>
+                <div className="flex justify-between">
+                  <div className="flex justify-start items-center">
+                    <span>Competition Score:</span>
+                  </div>
+                  <span className="flex justify-end">{data.compCalc}分</span>
                 </div>
-                <span className="flex justify-end">{data.compCalc}分</span>
-              </div>
-              <div className="flex justify-between border-t-2 pt-5">
-                <div className="flex justify-start items-center">
-                  <span>Total Score:</span>
+                <div className="flex justify-between border-t-2 pt-5">
+                  <div className="flex justify-start items-center">
+                    <span>Total Score:</span>
+                  </div>
+                  <span className="flex justify-end text-4xl font-bold">
+                    {data.vqycSum}分
+                  </span>
                 </div>
-                <span className="flex justify-end text-4xl font-bold">
-                  {data.vqycSum}分
-                </span>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           ))}
         </Section>
         <Section SectionClass="bg-white p-10">
