@@ -184,6 +184,9 @@ class SEOsmartKit extends Component {
                 肥仔關鍵字計算機
               </h1>
               <p className="text-center">(Web測試版)</p>
+              <h3 className="text-center text-2xl">
+                SEO & SEM 適用，幫你搵出超潛力黃金關鍵字的工具
+              </h3>
             </span>
           </div>
           <div className="grid grid-cols-3 shadow-xl rounded-3xl bg-white p-6 m-8 bg-white-500/[.06] md:p-7">
@@ -308,7 +311,7 @@ class SEOsmartKit extends Component {
                 </div>
               </div>
             </div>
-            <div className="grid col-span-3 justify-start text-xs pt-2">
+            <div className="grid col-span-2 justify-start text-xs pt-2">
               <p>規則：</p>
               <ol>
                 <li>
@@ -332,6 +335,11 @@ class SEOsmartKit extends Component {
                 </li>
               </ol>
               <span>BuildVersion: v3.1.240911-1824 by Native4A</span>
+            </div>
+            <div className="grid col-span-1 items-center text-xs pt-2">
+              <Button linkto="https://shop.nativeaaaa.com.hk/">
+                下載永久使用版
+              </Button>
             </div>
           </div>
         </Section>

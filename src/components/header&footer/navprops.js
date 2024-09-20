@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import useAddMenu from '../../hook/useAddMenu'
 import Whatsapp from '../baseTools/whatsapp'
 import * as styles from '../../styles/navprops.module.css'
+import { Dropdown, DropdownItem } from 'flowbite-react'
 
 const Navprops = () => {
   const menu = useAddMenu()
@@ -32,6 +33,19 @@ const Navprops = () => {
             </li>
           )
         })}
+        <div className="flex items-center gap-4">
+          <Dropdown label="SEO 服務" size="sm">
+            <DropdownItem as="a" href="/seo/" target="_blank">
+              SEO
+            </DropdownItem>
+            <DropdownItem as="a" href="/backlinks/" target="_blank">
+              Backlink
+            </DropdownItem>
+            <Dropdown.Item as="a" href="/seo-smart-kit/" target="_blank">
+              SEO 懶人包
+            </Dropdown.Item>
+          </Dropdown>
+        </div>
         <div className="hidden xl:flex col-start-4 col-end-7 flex items-center justify-end">
           <Whatsapp
             linkto="https://api.whatsapp.com/send/?phone=85267461301&text=你好，我想查詢______服務。"
