@@ -7,6 +7,7 @@ import Text from '../components/baseTools/text'
 import SlackerBag from '../img/White_And_Blue_Illustration_Basic_SEO_Techniques_Instagram_Post.webp'
 import Button from '../components/baseTools/button'
 import { Accordion } from 'flowbite-react'
+import Popup from 'reactjs-popup'
 
 //Image Here//
 import WisdomTooth from '../img/wisdomTooth.webp'
@@ -183,11 +184,45 @@ class SEOsmartKit extends Component {
               <h1 className="text-3xl md:text-5xl text-center">
                 肥仔關鍵字計算機
               </h1>
-              <p className="text-center">(Web測試版)</p>
+              <p className="text-center">(Beta)</p>
               <h3 className="text-center text-2xl">
                 SEO & SEM 適用，幫你搵出超潛力黃金關鍵字的工具
               </h3>
             </span>
+          </div>
+          <div className="container mx-auto">
+            <div className="grid justify-center">
+              <div className="flex text-white px-8 py-1 rounded-xl bg-red-600">
+                <Popup
+                  trigger={
+                    <p className="cursor-pointer">▶ 查看 YouTube 教學影片</p>
+                  }
+                  modal
+                  contentStyle=""
+                >
+                  {(close) => (
+                    <div className={styles.modal}>
+                      <button className={styles.close} onClick={close}>
+                        X
+                      </button>
+                      {/**Put your youtube link here*/}
+                      <div className={styles.videoContainer}>
+                        <iframe
+                          width="100%"
+                          height="400"
+                          src="https://www.youtube.com/embed/9hDiSH3NSGQ"
+                          title="肥仔計算機教學片"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerpolicy="strict-origin-when-cross-origin"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                    </div>
+                  )}
+                </Popup>
+              </div>
+            </div>
           </div>
           <div className="grid grid-cols-3 shadow-xl rounded-3xl bg-white p-6 m-8 bg-white-500/[.06] md:p-7">
             <div className="grid gap-4 md:col-span-1 md:pr-7 xl:py-14 xl:pl-16 col-span-3">

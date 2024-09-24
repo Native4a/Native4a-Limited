@@ -9,3 +9,56 @@ ol {
   list-style: reset;
   padding: 15px;
 }
+
+.modal {
+  font-size: 12px;
+}
+
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.modal > .actions {
+  margin: auto;
+}
+
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  color: #000;
+  z-index: 99;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* 16:9 Aspect Ratio */
+}
+
+@media screen and (max-width: 1536px) {
+}
+
+@media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+}
