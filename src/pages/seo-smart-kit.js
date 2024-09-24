@@ -213,7 +213,7 @@ class SEOsmartKit extends Component {
                           src="https://www.youtube.com/embed/9hDiSH3NSGQ"
                           title="肥仔計算機教學片"
                           frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                           referrerpolicy="strict-origin-when-cross-origin"
                           allowfullscreen
                         ></iframe>
