@@ -195,7 +195,7 @@ class SEOsmartKit extends Component {
               <div className="flex text-white px-8 py-1 rounded-xl bg-red-600">
                 <Popup
                   trigger={
-                    <p className="cursor-pointer">▶ 查看 YouTube 教學影片</p>
+                    <p className="cursor-pointer">▶ 查看計算機教學影片</p>
                   }
                   modal
                   contentStyle=""
