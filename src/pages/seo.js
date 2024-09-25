@@ -3,7 +3,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import Popup from 'reactjs-popup'
 
 //components here//
 import Layout from '../components/layout'
@@ -15,7 +14,6 @@ import SeoSlick from '../components/slickSlider/greenSlider/seoSlider'
 import Awards from '../components/awards'
 import AwardsWeb from '../components/awards/awards_website'
 import SocialMediaBtn from '../components/button/socialMedia'
-import NativeStrengths from '../components/nativeStrengths'
 import Section from '../components/baseTools/Section'
 import Grid from '../components/baseTools/Grid'
 import Column from '../components/baseTools/Grid/Column'
@@ -25,7 +23,6 @@ import 'reactjs-popup/dist/index.css'
 import * as styles from '../styles/seo.module.css'
 
 //image here//
-import plsStep from '../img/plsStep.png'
 
 //import ArticlePreview from '../components/article-preview'
 
@@ -62,46 +59,7 @@ class seoIndex extends React.Component {
                 <AwardsWeb />
               </div>
             </div>
-            <div className="grid content-center z-0">
-              <div className="">
-                <Popup
-                  trigger={
-                    <div className={styles.overlay_container}>
-                      <img
-                        src={plsStep}
-                        alt="Girl in a jacket"
-                        width="500"
-                        height="600"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                  }
-                  modal
-                  contentStyle=""
-                >
-                  {(close) => (
-                    <div className={styles.modal}>
-                      <button className={styles.close} onClick={close}>
-                        X
-                      </button>
-                      {/**Put your youtube link here*/}
-                      <div className={styles.videoContainer}>
-                        <iframe
-                          className={styles.responsiveIframe}
-                          width="100%"
-                          src="https://www.youtube.com/embed/B53Pg3CyDTo"
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    </div>
-                  )}
-                </Popup>
-              </div>
-            </div>
+            <div className="grid content-center z-0"></div>
             <div className={styles.seoSpanSquare}>
               <Awards />
             </div>
@@ -308,9 +266,6 @@ class seoIndex extends React.Component {
             </Column>
           </Grid>
         </Section>
-        <section className={styles.seoSpanSquare}>
-          <NativeStrengths />
-        </section>
         <section className={styles.seoSpanSquare}>
           <SeoSlick />
         </section>

@@ -3,7 +3,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import Popup from 'reactjs-popup'
 import { IconContext } from 'react-icons'
 import CountUp from 'react-countup'
 
@@ -19,7 +18,6 @@ import Whatsapp from '../components/baseTools/whatsapp'
 import SocialMediaBtn from '../components/button/socialMedia'
 import BacklinksSlick from '../components/slickSlider/greenSlider/backlinksSlider'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
-import NativeStrengths from '../components/nativeStrengths'
 import Anchor from '../components/baseTools/Anchor/index.js'
 import EngBacklinksEvaluation from '../components/backlinksEvaluation/eng'
 import ChiBacklinksEvaluation from '../components/backlinksEvaluation/chi'
@@ -32,7 +30,6 @@ import 'reactjs-popup/dist/index.css'
 import * as styles from '../styles/backlinks.module.css'
 
 //image here//
-import plsStep from '../img/plsStep.png'
 import QRcode from '../img/QRcode.jpeg'
 import BacklinkCover from '../img/Native_backlink 2.png'
 import GoogleRanking from '../img/SEO-google-排名因素.png'
@@ -86,46 +83,7 @@ class backlinksIndex extends React.Component {
                 <AwardsWeb />
               </div>
             </div>
-            <div className="grid content-center z-0">
-              <div>
-                <Popup
-                  trigger={
-                    <div className={styles.overlay_container}>
-                      <img
-                        src={plsStep}
-                        alt="Girl in a jacket"
-                        width="500"
-                        height="600"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                  }
-                  modal
-                  contentStyle=""
-                >
-                  {(close) => (
-                    <div className={styles.modal}>
-                      <button className={styles.close} onClick={close}>
-                        X
-                      </button>
-                      {/**Put your youtube link here*/}
-                      <div className={styles.videoContainer}>
-                        <iframe
-                          className={styles.responsiveIframe}
-                          width="100%"
-                          src="https://www.youtube.com/embed/B53Pg3CyDTo"
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    </div>
-                  )}
-                </Popup>
-              </div>
-            </div>
+            <div className="grid content-center z-0"></div>
             <div className={styles.backlinksSpanSquare}>
               <Awards />
             </div>
@@ -574,9 +532,6 @@ class backlinksIndex extends React.Component {
               <TwelveDifferent />
             </div>
           </div>
-        </section>
-        <section className={styles.backlinksSpanSquare}>
-          <NativeStrengths />
         </section>
         <section className={styles.backlinksSpanSquare}>
           <BacklinksSlick />

@@ -2,7 +2,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
-import Popup from 'reactjs-popup'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 
 //components here//
@@ -20,7 +19,6 @@ import Section from '../components/baseTools/Section'
 import AiChatbox from '../components/Chatbase'
 
 //image here//
-import plsStep from '../img/plsStep.png'
 
 //CSS here//
 import * as styles from '../styles/index.module.css'
@@ -106,44 +104,7 @@ class RootIndex extends React.Component {
               </div>
               <AwardsWeb />
             </div>
-            <div className="grid content-center z-0">
-              <Popup
-                trigger={
-                  <div className={styles.overlay_container}>
-                    <img
-                      src={plsStep}
-                      alt="Girl in a jacket"
-                      width="500"
-                      height="600"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                }
-                modal
-                contentStyle=""
-              >
-                {(close) => (
-                  <div className={styles.modal}>
-                    <button className={styles.close} onClick={close}>
-                      X
-                    </button>
-                    {/**Put your youtube link here*/}
-                    <div className={styles.videoContainer}>
-                      <iframe
-                        className={styles.responsiveIframe}
-                        width="100%"
-                        src="https://www.youtube.com/embed/B53Pg3CyDTo"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                      ></iframe>
-                    </div>
-                  </div>
-                )}
-              </Popup>
-            </div>
+            <div className="grid content-center z-0"></div>
             <Awards />
           </div>
         </Section>
