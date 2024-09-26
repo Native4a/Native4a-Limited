@@ -290,7 +290,7 @@ class SEOsmartKit extends Component {
                   <div>
                     <Text className="text-[#0ca959]">7-10分 - 必做！</Text>
                     <Text className="text-[#faab00]">5-6分 - 自己決定</Text>
-                    <Text className="text-[#eb4131]">0-5分 - 果斷放棄</Text>
+                    <Text className="text-[#eb4131]">0-4分 - 果斷放棄</Text>
                   </div>
                 </div>
                 <div
