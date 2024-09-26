@@ -65,7 +65,13 @@ class smmAdsIndex extends React.Component {
                 <AwardsWeb />
               </div>
             </div>
-            <div className="grid content-center z-0"></div>
+            <div className="grid content-center z-0">
+              <img
+                className="w-3/4 md:w-full"
+                src="https://images.ctfassets.net/rpza41pe9ev5/2mxKUi7jcAG1bIELwx1mz9/a8f72b5da3fce13c91a78186535ed066/SocialM_02.svg"
+                alt="video Graphic01"
+              />
+            </div>
             <div className={styles.smmSpanSquare}>
               <Awards />
             </div>

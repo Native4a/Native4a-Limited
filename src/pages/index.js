@@ -2,6 +2,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
+import Popup from 'reactjs-popup'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 
 //components here//
@@ -19,6 +20,7 @@ import Section from '../components/baseTools/Section'
 import AiChatbox from '../components/Chatbase'
 
 //image here//
+import plsStep from '../img/plsStep.png'
 
 //CSS here//
 import * as styles from '../styles/index.module.css'
@@ -104,7 +106,13 @@ class RootIndex extends React.Component {
               </div>
               <AwardsWeb />
             </div>
-            <div className="grid content-center z-0"></div>
+            <div className="grid content-center z-0">
+              <img
+                className="w-3/4 md:w-full"
+                src="https://images.ctfassets.net/rpza41pe9ev5/2N9UX4mHGNopzec4Ev39x0/3318d6f1f1a5671b0945ff8af283a6cd/SocialM_03.svg"
+                alt="video Graphic01"
+              />
+            </div>
             <Awards />
           </div>
         </Section>
