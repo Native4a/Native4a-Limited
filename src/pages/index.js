@@ -19,6 +19,7 @@ import Section from '../components/baseTools/Section'
 import AiChatbox from '../components/Chatbase'
 
 //image here//
+import heroBanner_Award from '../img/Award02_2.png'
 
 //CSS here//
 import * as styles from '../styles/index.module.css'
@@ -107,7 +108,7 @@ class RootIndex extends React.Component {
             <div className="grid content-center z-0">
               <img
                 className="w-3/4 md:w-full"
-                src="https://images.ctfassets.net/rpza41pe9ev5/3ft9YcqxLo39PuYuOfatDs/63a81358563fa484739ce0383fc9d821/native4aAward02.webp"
+                src={heroBanner_Award}
                 alt="Award02"
               />
             </div>
