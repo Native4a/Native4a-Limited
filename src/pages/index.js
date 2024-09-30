@@ -105,7 +105,7 @@ class RootIndex extends React.Component {
               </div>
               <AwardsWeb />
             </div>
-            <div className="grid content-center z-0">
+            <div className="hidden md:grid content-center z-0">
               <img className="w-3/4" src={heroBanner_Award} alt="Award02" />
             </div>
             <Awards />
