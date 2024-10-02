@@ -29,14 +29,13 @@ import 'reactjs-popup/dist/index.css'
 import * as styles from '../styles/backlinks.module.css'
 
 //image here//
-import QRcode from '../img/QRcode.jpeg'
 import BacklinkCover from '../img/Native_backlink 2.png'
 import GoogleRanking from '../img/SEO-google-排名因素.png'
 import John from '../img/john.png'
 import MeetingRoom from '../img/meeting-room.png'
 import Native_backlink_Rankin01 from '../img/Interior Design Ranking.png'
 import RankingFactors from '../components/RankingFactors'
-import BacklinkLanding from '../img/BacklinksPage.jpg'
+import BacklinkLanding from '../img/native出品質素.jpeg'
 import c2 from '../img/c2.jpeg'
 import c3 from '../img/c3.jpeg'
 import SeoBacklinksDataA from '../img/繁中Backlinks真實數據A.jpeg'
@@ -171,14 +170,14 @@ class backlinksIndex extends React.Component {
             </div>
           </div>
         </section>
-        <section>
+        <Section>
           <img
             src={BacklinkLanding}
             alt="BacklinkLanding"
             loading="lazy"
             decoding="async"
           />
-        </section>
+        </Section>
         <Section>
           <div class="container mx-auto py-24">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -221,35 +220,20 @@ class backlinksIndex extends React.Component {
             </p>
           </div>
           <div className="container mx-auto lg:relative top-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-16 lg:p-0 items-end text-xl font-black text-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-16 lg:p-0 items-end text-xl font-black text-white">
               <Whatsapp
                 customBtn="flex justify-center rounded-xl bg-blue-600"
-                className="flex justify-center rounded-xl bg-blue-600 py-3 text-white"
+                className="flex justify-center rounded-xl bg-blue-600 py-3 px-5 text-white"
                 linkto="https://api.whatsapp.com/send?phone=85267461301"
               >
                 中文Backlinks收費參考
               </Whatsapp>
               <Anchor
                 to="#Backlink_ref"
-                className="flex justify-center rounded-xl bg-amber-500 py-3 text-white"
+                className="flex justify-center rounded-xl bg-amber-500 py-3 px-5 text-white"
               >
                 中文Backlinks案例參考
               </Anchor>
-              <Whatsapp
-                customBtn="flex justify-center rounded-xl bg-white"
-                className="flex justify-center rounded-xl bg-white py-3 text-[#608A51]"
-                linkto="https://api.whatsapp.com/send?phone=85267461301"
-              >
-                直接WhatsApp查詢
-              </Whatsapp>
-              <div className="flex justify-center w-1/3 mx-auto">
-                <img
-                  src={QRcode}
-                  alt="QRcode"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
             </div>
           </div>
         </section>
