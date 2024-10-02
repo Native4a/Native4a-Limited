@@ -12,8 +12,6 @@ import Seo from '../components/seo'
 import AboutAs from '../components/aboutAs'
 import ContactForm from '../components/contactAs'
 import ClientLogos from '../components/clientLogos'
-import Awards from '../components/awards'
-import AwardsWeb from '../components/awards/awards_website'
 import Whatsapp from '../components/baseTools/whatsapp'
 import SocialMediaBtn from '../components/button/socialMedia'
 import BacklinksSlick from '../components/slickSlider/greenSlider/backlinksSlider'
@@ -23,6 +21,7 @@ import EngBacklinksEvaluation from '../components/backlinksEvaluation/eng'
 import ChiBacklinksEvaluation from '../components/backlinksEvaluation/chi'
 import TwelveDifferent from '../components/TwelveDifferent'
 import Section from '../components/baseTools/Section'
+import Img from '../components/baseTools/Image'
 //import ArticlePreview from '../components/article-preview'
 
 //CSS here//
@@ -59,43 +58,96 @@ class backlinksIndex extends React.Component {
           ogUrl="https://nativeaaaa.com.hk/contact-us/"
         />
         <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
-            <div className="px-6 xl:px-0 py-0 xl:py-6">
-              <div className="pt-2 md:pt-3 2xl:pt-0">
-                <h1 className={styles.title}>{blacklinkPage.title}</h1>
-                <h1 className={styles.subTitle}>{blacklinkPage.subTitle}</h1>
-                <div className={styles.border}></div>
-                <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
-                  {renderRichText(blacklinkPage.titleDescription)}
-                </p>
-                <div className="hidden md:grid grid-cols-2 gap-6 py-6">
-                  <div className="flex gap-6 w-full items-center">
-                    <SocialMediaBtn />
+          <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
+              <div class="flex justify-center items-center">
+                <div className="pt-2 md:pt-3 2xl:pt-0">
+                  <h1 className={styles.title}>{blacklinkPage.title}</h1>
+                  <h1 className={styles.subTitle}>{blacklinkPage.subTitle}</h1>
+                  <div className={styles.border}></div>
+                  <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
+                    {renderRichText(blacklinkPage.titleDescription)}
+                  </p>
+                  <div className="hidden md:grid grid-cols-2 gap-6 py-6">
+                    <div className="flex gap-6 w-full items-center">
+                      <SocialMediaBtn />
+                    </div>
                   </div>
-                </div>
-                <div className="md:hidden ">
-                  <div className="flex gap-2 w-full items-center">
-                    <SocialMediaBtn />
+                  <div className="md:hidden">
+                    <div className="flex gap-2 w-full items-center">
+                      <SocialMediaBtn />
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className={styles.backlinksSpanSquare}>
-                <AwardsWeb />
+              <div class="flex justify-center items-center">
+                <div class="container mx-auto">
+                  <div class="grid grid-cols-1 gap-6">
+                    <div class="flex justify-center items-center">
+                      <div>
+                        <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
+                          <b>年度獎項</b>
+                        </p>
+                        <div className="container mx-auto pt-5">
+                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <Img
+                              Desktop="rounded-sm"
+                              Size=""
+                              URL="https://images.ctfassets.net/rpza41pe9ev5/2jWem3YqlEdNaaoxpYQa7h/7b9e824531232e1da44d84d2defd0164/IMG_8643.webp"
+                              Alt="Award01"
+                              Mobile=""
+                            />
+                            <Img
+                              Desktop="rounded-sm"
+                              Size=""
+                              URL="https://images.ctfassets.net/rpza41pe9ev5/3ft9YcqxLo39PuYuOfatDs/63a81358563fa484739ce0383fc9d821/native4aAward02.webp"
+                              Alt="Award02"
+                              Mobile=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex justify-center items-center">
+                      <div className="grid gap-6">
+                        <div className="">
+                          <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
+                            <b>媒體報導</b>
+                          </p>
+                        </div>
+                        <div className="container mx-auto">
+                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <Img
+                              Desktop="rounded-sm"
+                              Size="w-2/4"
+                              URL="https://images.ctfassets.net/rpza41pe9ev5/1Z9kABymRLNig6bmCDInfA/531d55423f66acf4585737dde8852224/logo_hket-0802f63cfd8456776825bba969fdb6f0.png"
+                              Alt="HKET"
+                              Mobile=""
+                            />
+                            <Img
+                              Desktop="rounded-sm"
+                              Size="w-2/3"
+                              URL="https://images.ctfassets.net/rpza41pe9ev5/6lzmfxu8TRwbdcAIUuHDmC/7251b6e1b6c8b22aca23fdc6b8caba63/The_Standard_Logo-a81712920c34ac9bdcc256254e8599a9.png"
+                              Alt="Standrad"
+                              Mobile=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="grid content-center z-0"></div>
-            <div className={styles.backlinksSpanSquare}>
-              <Awards />
             </div>
           </div>
         </Section>
         {/*<section className={styles.sec_wrap}>
-                    <div className={styles.container}>
-                        <Partners />
-                    </div>
-                </section>
-                <section className='bg-[#608A51] p-10'>
-                </section>*/}
+            <div className={styles.container}>
+              <Partners />
+            </div>
+          </section>
+          <section className='bg-[#608A51] p-10'>
+          </section>*/}
         <section className="w-full px-0 md:px-24 py-10 bg-[#F1F1F1]">
           <div className="block rounded-lg p-0 md:p-6">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-12 items-center">
