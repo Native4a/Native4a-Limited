@@ -74,7 +74,7 @@ class backlinksIndex extends React.Component {
                   </div>
                   <div className="md:hidden">
                     <div className="flex gap-2 w-full items-center">
-                      <Icon>Your Text Here</Icon>
+                      <Icon></Icon>
                     </div>
                   </div>
                 </div>
@@ -140,6 +140,35 @@ class backlinksIndex extends React.Component {
             </div>
           </div>
         </Section>
+        <section className="bg-[#608A51]">
+          <div className="container mx-auto grid text-white place-content-center pt-8 lg:pt-24">
+            <p className="text-3xl text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose indent-0 md:-indent-8">
+              「什麼是反向連結？了解其在 SEO 中的重要性！」
+            </p>
+            <p className="text-sm lg:text-2xl leading-normal lg:leading-loose px-10 lg:p-0">
+              中文網站
+              買中文反向連結，實證對改善網站權重和SEO排名有顯著正面效果。歡迎索取外部連結Backlink
+              HK樣本和查詢成功案例
+            </p>
+          </div>
+          <div className="container mx-auto lg:relative top-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-16 lg:p-0 items-end text-xl font-black text-white">
+              <Whatsapp
+                customBtn="flex justify-center rounded-xl bg-blue-600"
+                className="flex justify-center rounded-xl bg-blue-600 py-3 px-5 text-white"
+                linkto="https://api.whatsapp.com/send?phone=85267461301"
+              >
+                中文Backlinks收費參考
+              </Whatsapp>
+              <Anchor
+                to="#Backlink_ref"
+                className="flex justify-center rounded-xl bg-amber-500 py-3 px-5 text-white"
+              >
+                中文Backlinks案例參考
+              </Anchor>
+            </div>
+          </div>
+        </section>
         {/*<section className={styles.sec_wrap}>
             <div className={styles.container}>
               <Partners />
@@ -208,35 +237,6 @@ class backlinksIndex extends React.Component {
             中文backlinks樣本
           </Button>
         </Section>
-        <section className="bg-[#608A51]">
-          <div className="container mx-auto grid text-white place-content-center pt-8 lg:pt-24">
-            <p className="text-3xl text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose indent-0 md:-indent-8">
-              「什麼是反向連結？了解其在 SEO 中的重要性！」
-            </p>
-            <p className="text-sm lg:text-2xl leading-normal lg:leading-loose px-10 lg:p-0">
-              中文網站
-              買中文反向連結，實證對改善網站權重和SEO排名有顯著正面效果。歡迎索取外部連結Backlink
-              HK樣本和查詢成功案例
-            </p>
-          </div>
-          <div className="container mx-auto lg:relative top-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-16 lg:p-0 items-end text-xl font-black text-white">
-              <Whatsapp
-                customBtn="flex justify-center rounded-xl bg-blue-600"
-                className="flex justify-center rounded-xl bg-blue-600 py-3 px-5 text-white"
-                linkto="https://api.whatsapp.com/send?phone=85267461301"
-              >
-                中文Backlinks收費參考
-              </Whatsapp>
-              <Anchor
-                to="#Backlink_ref"
-                className="flex justify-center rounded-xl bg-amber-500 py-3 px-5 text-white"
-              >
-                中文Backlinks案例參考
-              </Anchor>
-            </div>
-          </div>
-        </section>
         <section className="p-10 lg:p-0 w-full bg-[#F1F1F1]">
           <div className="block rounded-lg pt-24 pb-10 container mx-auto">
             <div className="grid-cols-1 md:grid-cols-3 gap-12 items-center flex lg:grid flex-col-reverse">
