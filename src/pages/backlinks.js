@@ -13,7 +13,7 @@ import AboutAs from '../components/aboutAs'
 import ContactForm from '../components/contactAs'
 import ClientLogos from '../components/clientLogos'
 import Whatsapp from '../components/baseTools/whatsapp'
-import SocialMediaBtn from '../components/button/socialMedia'
+import Icon from '../components/baseTools/Icon'
 import BacklinksSlick from '../components/slickSlider/greenSlider/backlinksSlider'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 import Anchor from '../components/baseTools/Anchor/index.js'
@@ -57,9 +57,9 @@ class backlinksIndex extends React.Component {
           ogUrl="https://nativeaaaa.com.hk/contact-us/"
         />
         <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
-          <div class="container mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
-              <div class="flex justify-center items-center">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
+              <div className="flex justify-center items-center">
                 <div className="pt-2 md:pt-3 2xl:pt-0">
                   <h1 className={styles.title}>{blacklinkPage.title}</h1>
                   <h1 className={styles.subTitle}>{blacklinkPage.subTitle}</h1>
@@ -69,20 +69,20 @@ class backlinksIndex extends React.Component {
                   </p>
                   <div className="hidden md:grid grid-cols-2 gap-6 py-6">
                     <div className="flex gap-6 w-full items-center">
-                      <SocialMediaBtn />
+                      <Icon>@Native4A</Icon>
                     </div>
                   </div>
                   <div className="md:hidden">
                     <div className="flex gap-2 w-full items-center">
-                      <SocialMediaBtn />
+                      <Icon>Your Text Here</Icon>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="flex justify-center items-center">
-                <div class="container mx-auto">
-                  <div class="grid grid-cols-1 gap-6">
-                    <div class="flex justify-center items-center">
+              <div className="flex justify-center items-center">
+                <div className="container mx-auto">
+                  <div className="grid grid-cols-1 gap-6">
+                    <div className="flex justify-center items-center">
                       <div>
                         <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
                           <b>年度獎項</b>
