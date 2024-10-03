@@ -3,11 +3,12 @@ import useClients from '../../hook/useClients'
 import * as styles from '../../styles/index.module.css'
 import Popup from 'reactjs-popup'
 import StarRatings from 'react-star-ratings'
+import Section from '../baseTools/Section'
 
 const Clients = () => {
   const clients = useClients()
   return (
-    <div className="container mx-auto">
+    <Section className="container mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         {clients.map((item, index) => {
           const {
@@ -100,7 +101,7 @@ const Clients = () => {
           )
         })}
       </div>
-    </div>
+    </Section>
   )
 }
 
