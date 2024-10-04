@@ -62,7 +62,6 @@ class backlinksIndex extends React.Component {
               <div className="flex justify-center items-center">
                 <div className="pt-2 md:pt-3 2xl:pt-0">
                   <h1 className={styles.title}>{blacklinkPage.title}</h1>
-                  <h1 className={styles.subTitle}>{blacklinkPage.subTitle}</h1>
                   <div className={styles.border}></div>
                   <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
                     {renderRichText(blacklinkPage.titleDescription)}
@@ -142,13 +141,12 @@ class backlinksIndex extends React.Component {
         </Section>
         <section className="bg-[#608A51]">
           <div className="container mx-auto grid text-white place-content-center pt-8 lg:pt-24">
-            <p className="text-3xl text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose indent-0 md:-indent-8">
-              「什麼是反向連結？了解其在 SEO 中的重要性！」
-            </p>
+            <h2 className="text-3xl text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose indent-0 md:-indent-8">
+              「SEO+Backlinks懶人包」整合方案
+            </h2>
             <p className="text-sm lg:text-2xl leading-normal lg:leading-loose px-10 lg:p-0">
-              中文網站
-              買中文反向連結，實證對改善網站權重和SEO排名有顯著正面效果。歡迎索取外部連結Backlink
-              HK樣本和查詢成功案例
+              在香港做好SEO，繁中backlinks少不了我們研發了中文backlinks系統
+              歡迎客戶或同行購買。
             </p>
           </div>
           <div className="container mx-auto lg:relative top-6">
@@ -593,7 +591,6 @@ export const backlinksQuery = graphql`
         metaTitle
         metaDescription
         title
-        subTitle
         titleDescription {
           raw
         }
