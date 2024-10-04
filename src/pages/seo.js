@@ -59,6 +59,46 @@ class seoIndex extends React.Component {
                 <AwardsWeb />
               </div>
             </div>
+            <div className="grid content-center z-0">
+              <div>
+                <img
+                  className="w-3/4 md:w-full"
+                  src="https://images.ctfassets.net/rpza41pe9ev5/1CMlkXQWkA35qCVZsziyaq/9bdd9b5af440b2ab5d2de1309c5dbf83/SEO_02.svg"
+                  alt="video Graphic01"
+                />
+              </div>
+              {/**
+               *               <div className="">
+                <Popup
+                  trigger={
+                    <div className={styles.overlay_container}>
+                      <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async" />
+                    </div>
+                  }
+                  modal
+                  contentStyle=""
+                >
+                  {(close) => (
+                    <div className={styles.modal}>
+                      <button className={styles.close} onClick={close}>X</button>
+                      /**Put your youtube link here*
+                      <div className={styles.videoContainer}>
+                        <iframe
+                          className={styles.responsiveIframe}
+                          width="100%"
+                          src="https://www.youtube.com/embed/B53Pg3CyDTo"
+                          title="YouTube video player"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                    </div>
+                  )}
+                </Popup>
+              </div>
+               */}
+            </div>
             <div className="grid content-center z-0"></div>
             <div className={styles.seoSpanSquare}>
               <Awards />
@@ -77,7 +117,6 @@ class seoIndex extends React.Component {
               很多人都說SEO是趨勢，到底做好SEO後是怎樣的狀態，在於客戶而言又有何直接效益？
             </p>
           </Column>
-
           <Grid>
             <Column>
               <img
