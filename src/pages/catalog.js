@@ -29,7 +29,7 @@ class Catalog extends React.Component {
             </Text>
             <Button
               className="bg-emerald-500 text-white rounded-full px-7 py-1.5 font-medium text-xl"
-              linkto=""
+              linkto="https://api.whatsapp.com/send/?phone=85264602996&text=2024SEO%E6%8E%92%E5%90%8D%E5%85%A7%E5%AE%B9Template"
               customBtn=""
             >
               免費素取
@@ -42,7 +42,7 @@ class Catalog extends React.Component {
             <Text className="text-center text-2xl font-bold">肥仔計算機</Text>
             <Button
               className="bg-emerald-500 text-white rounded-full px-7 py-1.5 font-medium text-xl"
-              linkto=""
+              linkto="https://api.whatsapp.com/send?phone=85264602996&text=%E5%85%8D%E8%B2%BB%E8%82%A5%E4%BB%94%E9%97%9C%E9%8D%B5%E5%AD%97%E8%A8%88%E7%AE%97%E6%A9%9F"
               customBtn=""
             >
               免費素取
