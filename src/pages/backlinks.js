@@ -23,6 +23,7 @@ import TwelveDifferent from '../components/TwelveDifferent'
 import Section from '../components/baseTools/Section'
 import Img from '../components/baseTools/Image'
 import Text from '../components/baseTools/text'
+import Awards from '../components/awards'
 //import ArticlePreview from '../components/article-preview'
 
 //CSS here//
@@ -87,7 +88,7 @@ class backlinksIndex extends React.Component {
               <div className="flex justify-center items-center">
                 <div className="container mx-auto">
                   <div className="grid grid-cols-1 gap-6">
-                    <div className="flex justify-center items-center">
+                    <div className="hidden md:flex justify-center items-center bg-white p-8 md:p-0 md:bg-inherit shadow-md rounded-3xl mt-2 pt-12">
                       <div>
                         <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
                           <b>年度獎項</b>
@@ -112,7 +113,7 @@ class backlinksIndex extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <div className="flex justify-center items-center">
+                    <div className="hidden md:flex justify-center items-center">
                       <div className="grid gap-6">
                         <div className="">
                           <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
@@ -139,6 +140,7 @@ class backlinksIndex extends React.Component {
                         </div>
                       </div>
                     </div>
+                    <Awards />
                   </div>
                 </div>
               </div>
@@ -147,10 +149,10 @@ class backlinksIndex extends React.Component {
         </Section>
         <section className="bg-[#608A51]">
           <div className="container mx-auto grid text-white place-content-center pt-8 lg:pt-24">
-            <h2 className="text-3xl text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose indent-0 md:-indent-8">
-              「SEO+Backlinks懶人包」整合方案
+            <h2 className="text-3xl text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose indent-[-1rem] md:indent-[-2rem]">
+              「SEO+Backlinks懶人包」<p>整合方案</p>
             </h2>
-            <p className="text-sm lg:text-2xl leading-normal lg:leading-loose px-10 lg:p-0">
+            <p className="text-lg md:text-2xl leading-normal lg:leading-loose px-10 lg:p-0">
               在香港做好SEO，繁中backlinks少不了我們研發了中文backlinks系統
               歡迎客戶或同行購買。
             </p>
