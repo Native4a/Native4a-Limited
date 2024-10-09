@@ -22,6 +22,7 @@ import ChiBacklinksEvaluation from '../components/backlinksEvaluation/chi'
 import TwelveDifferent from '../components/TwelveDifferent'
 import Section from '../components/baseTools/Section'
 import Img from '../components/baseTools/Image'
+import Text from '../components/baseTools/text'
 //import ArticlePreview from '../components/article-preview'
 
 //CSS here//
@@ -61,7 +62,12 @@ class backlinksIndex extends React.Component {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
               <div className="flex justify-center items-center">
                 <div className="pt-2 md:pt-3 2xl:pt-0">
-                  <h1 className={styles.title}>{blacklinkPage.title}</h1>
+                  <Text
+                    tag="h1"
+                    className="indent-[-1rem] tracking-tight font-black text-3xl md:leading-snug md:text-[2.8vw] md:indent-[-2rem]"
+                  >
+                    {blacklinkPage.title}
+                  </Text>
                   <div className={styles.border}></div>
                   <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
                     {renderRichText(blacklinkPage.titleDescription)}
