@@ -12,11 +12,12 @@ import ContactForm from '../components/contactAs'
 import ClientLogos from '../components/clientLogos'
 import SeoSlick from '../components/slickSlider/greenSlider/seoSlider'
 import Awards from '../components/awards'
-import AwardsWeb from '../components/awards/awards_website'
-import SocialMediaBtn from '../components/button/socialMedia'
 import Section from '../components/baseTools/Section'
 import Grid from '../components/baseTools/Grid'
 import Column from '../components/baseTools/Grid/Column'
+import Img from '../components/baseTools/Image'
+import Text from '../components/baseTools/text'
+import Icon from '../components/baseTools/Icon'
 
 //CSS here//
 import 'reactjs-popup/dist/index.css'
@@ -38,70 +39,95 @@ class seoIndex extends React.Component {
           description={seoPage.metaDescription}
           ogUrl="https://nativeaaaa.com.hk/seo/"
         />
-        <Section SectionclassName="bg-[url('../img/GRectangle.svg')] bg-cover">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
-            <div className="px-6 xl:px-0 py-0 xl:py-6">
-              <div className="pt-2 md:pt-3 2xl:pt-0">
-                <h1 className={styles.title}>{seoPage.title}</h1>
-                <h2 className={styles.subTitle}>{seoPage.titleH2}</h2>
-                <div className="hidden md:grid grid-cols-1 gap-6 py-6">
-                  <div className="flex gap-6 w-full items-center">
-                    <SocialMediaBtn />
-                  </div>
-                </div>
-                <div className="md:hidden">
-                  <div className="flex gap-2 w-full items-center pt-5">
-                    <SocialMediaBtn />
-                  </div>
-                </div>
-              </div>
-              <div className={styles.seoSpanSquare}>
-                <AwardsWeb />
-              </div>
-            </div>
-            <div className="grid content-center z-0">
-              <div>
-                <img
-                  className="w-3/4 md:w-full"
-                  src="https://images.ctfassets.net/rpza41pe9ev5/1CMlkXQWkA35qCVZsziyaq/9bdd9b5af440b2ab5d2de1309c5dbf83/SEO_02.svg"
-                  alt="video Graphic01"
-                />
-              </div>
-              {/**
-               *               <div className="">
-                <Popup
-                  trigger={
-                    <div className={styles.overlay_container}>
-                      <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async" />
+        <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
+              <div className="flex justify-center items-center">
+                <div className="pt-2 md:pt-3 2xl:pt-0">
+                  <Text
+                    tag="h1"
+                    className="indent-[-1rem] tracking-tight font-black text-3xl md:leading-snug md:text-[2.8vw] md:indent-[-2rem]"
+                  >
+                    {seoPage.title}
+                  </Text>
+                  <Text
+                    tag="h2"
+                    className="indent-[-1rem] tracking-tight font-black text-3xl md:leading-snug md:text-[2.8vw] md:indent-[-2rem]"
+                  >
+                    {seoPage.titleH2}
+                  </Text>
+                  <div className={styles.border}></div>
+                  <div className="hidden md:grid grid-cols-2 gap-6 py-6">
+                    <div className="flex gap-6 w-full items-center">
+                      <Icon>@Native4A</Icon>
                     </div>
-                  }
-                  modal
-                  contentStyle=""
-                >
-                  {(close) => (
-                    <div className={styles.modal}>
-                      <button className={styles.close} onClick={close}>X</button>
-                      /**Put your youtube link here*
-                      <div className={styles.videoContainer}>
-                        <iframe
-                          className={styles.responsiveIframe}
-                          width="100%"
-                          src="https://www.youtube.com/embed/B53Pg3CyDTo"
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
+                  </div>
+                  <div className="md:hidden">
+                    <div className="flex gap-2 w-full items-center">
+                      <Icon>@Native4A</Icon>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-center items-center">
+                <div className="container mx-auto">
+                  <div className="grid grid-cols-1 gap-6">
+                    <div className="hidden md:flex justify-center items-center bg-white p-8 md:p-0 md:bg-inherit shadow-md rounded-3xl mt-2 pt-12">
+                      <div>
+                        <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
+                          <b>年度獎項</b>
+                        </p>
+                        <div className="container mx-auto pt-5">
+                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <Img
+                              Desktop="rounded-sm"
+                              Size=""
+                              URL="https://images.ctfassets.net/rpza41pe9ev5/2jWem3YqlEdNaaoxpYQa7h/7b9e824531232e1da44d84d2defd0164/IMG_8643.webp"
+                              Alt="Award01"
+                              Mobile=""
+                            />
+                            <Img
+                              Desktop="rounded-sm"
+                              Size=""
+                              URL="https://images.ctfassets.net/rpza41pe9ev5/3ft9YcqxLo39PuYuOfatDs/63a81358563fa484739ce0383fc9d821/native4aAward02.webp"
+                              Alt="Award02"
+                              Mobile=""
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  )}
-                </Popup>
+                    <div className="hidden md:flex justify-center items-center">
+                      <div className="grid gap-6">
+                        <div className="">
+                          <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
+                            <b>媒體報導</b>
+                          </p>
+                        </div>
+                        <div className="container mx-auto">
+                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <Img
+                              Desktop="rounded-sm"
+                              Size="w-2/4"
+                              URL="https://images.ctfassets.net/rpza41pe9ev5/1Z9kABymRLNig6bmCDInfA/531d55423f66acf4585737dde8852224/logo_hket-0802f63cfd8456776825bba969fdb6f0.png"
+                              Alt="HKET"
+                              Mobile=""
+                            />
+                            <Img
+                              Desktop="rounded-sm"
+                              Size="w-2/3"
+                              URL="https://images.ctfassets.net/rpza41pe9ev5/6lzmfxu8TRwbdcAIUuHDmC/7251b6e1b6c8b22aca23fdc6b8caba63/The_Standard_Logo-a81712920c34ac9bdcc256254e8599a9.png"
+                              Alt="Standrad"
+                              Mobile=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <Awards />
+                  </div>
+                </div>
               </div>
-               */}
-            </div>
-            <div className="grid content-center z-0"></div>
-            <div className={styles.seoSpanSquare}>
-              <Awards />
             </div>
           </div>
         </Section>
