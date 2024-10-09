@@ -149,7 +149,7 @@ class backlinksIndex extends React.Component {
         </Section>
         <section className="bg-[#608A51]">
           <div className="container mx-auto grid text-white place-content-center pt-8 lg:pt-24">
-            <h2 className="text-3xl text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose">
+            <h2 className="text-[1.7rem] text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose">
               「SEO+Backlinks懶人包」<p>整合方案</p>
             </h2>
             <p className="text-lg md:text-2xl leading-normal lg:leading-loose px-10 lg:p-0">
