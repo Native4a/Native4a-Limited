@@ -3,6 +3,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 
 //components here//
 import Layout from '../components/layout'
@@ -138,7 +139,17 @@ class seoIndex extends React.Component {
             <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl mb-10">
               {renderRichText(seoPage.titleDescription)}
             </p>
-            <h2 className="text-2xl md:text-3xl">1. 網站大量免費曝光機會</h2>
+            <Text
+              tag="h2"
+              className="flex text-2xl md:text-3xl pt-12 pb-5 ml-2 font-bold items-center"
+            >
+              <span>
+                <FaSquare />
+              </span>
+              <Text tag="p" className="pl-3">
+                網站大量免費曝光機會
+              </Text>
+            </Text>
             <p className="text-base">
               很多人都說SEO是趨勢，到底做好SEO後是怎樣的狀態，在於客戶而言又有何直接效益？
             </p>
@@ -180,17 +191,36 @@ class seoIndex extends React.Component {
               />
             </Column>
             <Column>
-              <h2 className="text-2xl md:text-3xl">2.大量關鍵字獲得排名提升</h2>
+              <Text
+                tag="h2"
+                className="flex text-2xl md:text-3xl pt-12 pb-5 ml-2 font-bold items-center"
+              >
+                <span>
+                  <FaSquare />
+                </span>
+                <Text tag="p" className="pl-3">
+                  大量關鍵字獲得排名提升
+                </Text>
+              </Text>
               <p className="text-base">
                 隨著SEO公司的努力，搜索引擎會更加信任你的網站，從而提高你的排名。
                 由於SEO過程是整個網站優化，變相不單止是指定做上去的關鍵字，更會有很多意外驚喜的「流量密碼」。
               </p>
             </Column>
           </Grid>
-
           <Grid>
             <Column>
-              <h2 className="text-2xl md:text-3xl">3.品牌信譽&知名度提升</h2>
+              <Text
+                tag="h2"
+                className="flex text-2xl md:text-3xl pt-12 pb-5 ml-2 font-bold items-center"
+              >
+                <span>
+                  <FaSquare />
+                </span>
+                <Text tag="p" className="pl-3">
+                  品牌信譽&知名度提升
+                </Text>
+              </Text>
               <p className="text-base">
                 Think With Google
                 的一項研究發現，消費者在購買產品之前平均會進行多達32次的搜索。
@@ -241,7 +271,17 @@ class seoIndex extends React.Component {
               />
             </Column>
             <Column>
-              <h3 className="text-2xl md:text-3xl">1.關鍵字研究</h3>
+              <Text
+                tag="h3"
+                className="flex text-2xl md:text-3xl pt-12 pb-5 ml-2 font-bold items-center"
+              >
+                <span>
+                  <FaSquare />
+                </span>
+                <Text tag="p" className="pl-3">
+                  關鍵字研究
+                </Text>
+              </Text>
               <p>
                 在開始SEO之前，我們會從客戶的網站、行業、對手等數據研究關鍵字。
               </p>
@@ -254,7 +294,17 @@ class seoIndex extends React.Component {
 
           <Grid>
             <Column>
-              <h3 className="text-2xl md:text-3xl">2.網站On-page優化</h3>
+              <Text
+                tag="h3"
+                className="flex text-2xl md:text-3xl pt-12 pb-5 ml-2 font-bold items-center"
+              >
+                <span>
+                  <FaSquare />
+                </span>
+                <Text tag="p" className="pl-3">
+                  網站On-page優化
+                </Text>
+              </Text>
               <p>
                 我們會先在技術層面優化你的網站，以提高其在搜索結果中的排名。這可能包括改進你的網站速度，使其對手機Friendly，並優化你的內容以包含關鍵字。
               </p>
@@ -280,7 +330,17 @@ class seoIndex extends React.Component {
               />
             </Column>
             <Column>
-              <h3 className="text-2xl md:text-3xl">3.內容優化</h3>
+              <Text
+                tag="h3"
+                className="flex text-2xl md:text-3xl pt-12 pb-5 ml-2 font-bold items-center"
+              >
+                <span>
+                  <FaSquare />
+                </span>
+                <Text tag="p" className="pl-3">
+                  內容優化
+                </Text>
+              </Text>
               <p>
                 我們會提供合適的SEO內容創作指南，配合關鍵字方向而優化內容。這些內容是放在你網站的，所以SEO公司與你在這個環節都要參與其中，進行磋商。
               </p>
@@ -293,9 +353,17 @@ class seoIndex extends React.Component {
 
           <Grid>
             <Column>
-              <h3 className="text-2xl md:text-3xl">
-                4.連結建立Backlinks Building
-              </h3>
+              <Text
+                tag="h3"
+                className="flex text-2xl md:text-3xl pt-12 pb-5 ml-2 font-bold items-center"
+              >
+                <span>
+                  <FaSquare />
+                </span>
+                <Text tag="p" className="pl-3">
+                  連結建立Backlinks Building
+                </Text>
+              </Text>
               <p>
                 Backlinks是SEO過程中重要的一環，即使你的內容完美無瑕，缺少Backlinks的支援，是不會在熱門關鍵字獲得好排名的。而Backlinks種類有很多，質素亦參次不齊。（如何選擇優質Backlinks：https://nativeaaaa.com.hk/blog/quality-backlinks/）
               </p>
