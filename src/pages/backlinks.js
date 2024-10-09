@@ -393,7 +393,7 @@ class backlinksIndex extends React.Component {
           <div className="container mx-auto p-0 lg:p-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
               <div className="justify-center text-6xl p-6 lg:p-6 grid grid-cols-1 gap-6 content-between relative lg:static bottom-12 lg:bottom-0">
-                <div className="flex justify-end lg:justify-center text-2xl py-2 lg:py-6 px-10 lg:px-0 mx-14 lg:mx-0 bg-[#70a665] text-white font-semibold order-2 lg:order-1 relative lg:static right-[150px] sm:right-[350px] md:right-[520px] top-10">
+                <div className="flex justify-end lg:justify-center text-2xl py-2 lg:py-6 px-10 lg:px-0 mx-14 lg:mx-0 bg-[#70a665] text-white font-semibold order-2 lg:order-1 relative lg:static right-[120px] sm:right-[350px] md:right-[520px] top-10">
                   成功案例 1
                 </div>
                 <div className="flex justify-center text-2xl lg:text-3xl rounded-xl p-2 lg:p-6 bg-[#70a665] lg:bg-white text-white lg:text-[#70a665] font-semibold order-1 lg:order-2 static lg:relative top-2">
@@ -448,7 +448,7 @@ class backlinksIndex extends React.Component {
           <div className="container mx-auto p-0 lg:p-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
               <div className="justify-center text-6xl p-6 lg:p-6 grid grid-cols-1 gap-6 content-between relative lg:static bottom-12 lg:bottom-0">
-                <div className="flex justify-end lg:justify-center text-2xl py-2 lg:py-6 px-10 lg:px-0 mx-14 lg:mx-0 bg-[#70a665] text-white font-semibold order-2 lg:order-1 relative lg:static right-[150px] sm:right-[350px] md:right-[520px] top-10">
+                <div className="flex justify-end lg:justify-center text-2xl py-2 lg:py-6 px-10 lg:px-0 mx-14 lg:mx-0 bg-[#70a665] text-white font-semibold order-2 lg:order-1 relative lg:static right-[120px] sm:right-[350px] md:right-[520px] top-10">
                   成功案例 2
                 </div>
                 <div className="flex justify-center text-2xl lg:text-3xl rounded-xl p-2 lg:p-6 bg-[#70a665] lg:bg-white text-white lg:text-[#70a665] font-semibold order-1 lg:order-2 static lg:relative top-2">
@@ -503,7 +503,7 @@ class backlinksIndex extends React.Component {
           <div className="container mx-auto p-0 lg:p-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
               <div className="justify-center text-6xl p-6 lg:p-6 grid grid-cols-1 gap-6 content-between relative lg:static bottom-12 lg:bottom-0">
-                <div className="flex justify-end lg:justify-center text-2xl py-2 lg:py-6 px-10 lg:px-0 mx-14 lg:mx-0 bg-[#70a665] text-white font-semibold order-2 lg:order-1 relative lg:static right-[150px] sm:right-[350px] md:right-[520px] top-10">
+                <div className="flex justify-end lg:justify-center text-2xl py-2 lg:py-6 px-10 lg:px-0 mx-14 lg:mx-0 bg-[#70a665] text-white font-semibold order-2 lg:order-1 relative lg:static right-[120px] sm:right-[350px] md:right-[520px] top-10">
                   成功案例 3
                 </div>
                 <div className="flex justify-center text-2xl lg:text-3xl rounded-xl p-2 lg:p-6 bg-[#70a665] lg:bg-white text-white lg:text-[#70a665] font-semibold order-1 lg:order-2 static lg:relative top-2">
@@ -560,7 +560,7 @@ class backlinksIndex extends React.Component {
         <section
           className={`${styles.sec8} bg-[#F0F0F0] shadow-[0_15px_35px_35px_#F0F0F0]`}
         >
-          <div className="backdrop-blur-xl py-20 px-10">
+          <div className="backdrop-blur-xl py-20 px-6">
             <div className="container mx-auto">
               <div className="text-center">
                 <h2 className="text-2xl lg:text-4xl font-extrabold">
