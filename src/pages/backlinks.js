@@ -73,7 +73,7 @@ class backlinksIndex extends React.Component {
                   </div>
                   <div className="md:hidden">
                     <div className="flex gap-2 w-full items-center">
-                      <Icon></Icon>
+                      <Icon>@Native4A</Icon>
                     </div>
                   </div>
                 </div>
