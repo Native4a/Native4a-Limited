@@ -149,7 +149,7 @@ class backlinksIndex extends React.Component {
         </Section>
         <section className="bg-[#608A51]">
           <div className="container mx-auto grid text-white place-content-center pt-8 lg:pt-24">
-            <h2 className="text-3xl text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose indent-[-1rem] md:indent-[-2rem]">
+            <h2 className="text-3xl text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose">
               「SEO+Backlinks懶人包」<p>整合方案</p>
             </h2>
             <p className="text-lg md:text-2xl leading-normal lg:leading-loose px-10 lg:p-0">
@@ -158,10 +158,10 @@ class backlinksIndex extends React.Component {
             </p>
           </div>
           <div className="container mx-auto lg:relative top-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-16 lg:p-0 items-end text-xl font-black text-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-8 py-12 lg:p-0 items-end text-xl font-black text-white">
               <Whatsapp
                 customBtn="flex justify-center rounded-xl bg-blue-600"
-                className="flex justify-center rounded-xl bg-blue-600 py-3 px-5 text-white"
+                className="py-3 px-5 text-white"
                 linkto="https://api.whatsapp.com/send?phone=85267461301"
               >
                 中文Backlinks收費參考
