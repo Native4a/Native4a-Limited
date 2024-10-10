@@ -24,6 +24,7 @@ import Section from '../components/baseTools/Section'
 import Img from '../components/baseTools/Image'
 import Text from '../components/baseTools/text'
 import Awards from '../components/awards'
+import Grid from '../components/baseTools/Grid/index.js'
 //import ArticlePreview from '../components/article-preview'
 
 //CSS here//
@@ -60,14 +61,22 @@ class backlinksIndex extends React.Component {
         />
         <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
           <div className="container mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
-              <div className="flex justify-center items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
+              <div className="flex justify-center items-center p-6">
                 <div className="pt-2 md:pt-3 2xl:pt-0">
-                  <Text
-                    tag="h1"
-                    className="indent-[-1rem] tracking-tight font-black text-3xl md:leading-snug md:text-[2.8vw] md:indent-[-2rem]"
-                  >
-                    {blacklinkPage.title}
+                  <Grid>
+                    <Text
+                      tag="h1"
+                      className="indent-[-1rem] tracking-tight font-black text-3xl md:leading-snug md:text-[2.8vw] md:indent-[-2rem]"
+                    >
+                      {blacklinkPage.title}
+                    </Text>
+                  </Grid>
+                  <Text tag="h2" className="tracking-tight font-black text-xl">
+                    <p>
+                      <b className="bg-[#FFC107]">無咗佢</b>
+                      ，你可能都會有排名，但Top 10？No Way
+                    </p>
                   </Text>
                   <div className={styles.border}></div>
                   <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
@@ -599,6 +608,7 @@ export const backlinksQuery = graphql`
         metaTitle
         metaDescription
         title
+        subTitle
         titleDescription {
           raw
         }
