@@ -80,12 +80,13 @@ const Tryform = () => {
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-500 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             id="grid-last-name"
-            type="number"
-            max="8"
+            type="tel"
+            pattern="[0-9]{8}"
             placeholder="Phone Number"
             name="user_contact-number"
             aria-label="user_contact-number"
             required
+            oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 8);"
           />
         </div>
         <p className="block uppercase tracking-wide text-gray-500 text-md font-bold mb-2">
