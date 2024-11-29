@@ -49,6 +49,7 @@ const Tryform = () => {
             placeholder="Jane"
             name="user_first-name"
             aria-label="user_first-name"
+            required
           />
           <p className="text-red-500 text-xs italic"></p>
         </div>
@@ -66,6 +67,7 @@ const Tryform = () => {
             placeholder="Doe"
             name="user_last-name"
             aria-label="user_last-name"
+            required
           />
         </div>
         <div className="w-full px-3 mb-16">
@@ -82,6 +84,7 @@ const Tryform = () => {
             placeholder="Phone Number"
             name="user_contact-number"
             aria-label="user_contact-number"
+            required
           />
         </div>
         <p className="block uppercase tracking-wide text-gray-500 text-md font-bold mb-2">
@@ -101,6 +104,7 @@ const Tryform = () => {
             placeholder="http://example.com  or  @example_ig"
             name="user_Question-1"
             aria-label="user_Question-1"
+            required
           />
         </div>
         <div className="w-full px-3 mb-5">
@@ -117,6 +121,7 @@ const Tryform = () => {
             placeholder=""
             name="user_Question-2"
             aria-label="user_Question-2"
+            required
           />
         </div>
         <div className="w-full px-3 mb-5">
@@ -133,6 +138,7 @@ const Tryform = () => {
             placeholder=""
             name="user_Question-3"
             aria-label="user_Question-3"
+            required
           />
         </div>
         <div className="w-full px-3 mb-5">
@@ -149,6 +155,7 @@ const Tryform = () => {
             placeholder=""
             name="user_Question-4"
             aria-label="user_Question-4"
+            required
           />
         </div>
         <div className="w-full px-3 mb-5">
@@ -164,6 +171,7 @@ const Tryform = () => {
             name="user_Question-5"
             value="yes"
             aria-label="user_Question-5"
+            required
           />
            {' '}
           <label className="text-gray-200" for="yes">
