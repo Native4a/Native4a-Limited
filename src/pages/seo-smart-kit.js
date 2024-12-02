@@ -372,7 +372,7 @@ class SEOsmartKit extends Component {
               <span>BuildVersion: v3.1.240911-1824 by Native4A</span>
             </div>
             <div className="grid col-span-1 items-center text-xs pt-2">
-              <Button linkto="https://shop.nativeaaaa.com.hk/">
+              <Button linkto="https://shop.nativeaaaa.com.hk/product/seo%e6%87%b6%e4%ba%ba%e5%8c%85_7%e5%a4%a9%e4%b8%8a%e9%a6%96%e9%a0%81%e5%85%b6%e5%af%a6%e5%94%94%e9%9b%a3/">
                 下載永久使用版
               </Button>
             </div>
@@ -540,7 +540,7 @@ class SEOsmartKit extends Component {
                   一套經native4a
                   八年SEO、超過400個獨立網站優化經驗總結，能令你在7天內排名關鍵字首頁的SEO懶人包。
                 </Text>
-                <Button linkto="https://shop.nativeaaaa.com.hk/">
+                <Button linkto="https://shop.nativeaaaa.com.hk/product/seo%e6%87%b6%e4%ba%ba%e5%8c%85_7%e5%a4%a9%e4%b8%8a%e9%a6%96%e9%a0%81%e5%85%b6%e5%af%a6%e5%94%94%e9%9b%a3/">
                   立即下載SEO懶人包
                 </Button>
               </div>
@@ -650,7 +650,7 @@ class SEOsmartKit extends Component {
               <div className="flex flex-col items-center text-white p-10 border-2 border-gray-300 rounded-xl bg-gray-800">
                 <span>8年SEO經驗結晶，7日提升關鍵字排名的方法</span>
                 <h3 className="text-3xl m-3">SEO懶人包</h3>
-                <Button linkto="https://shop.nativeaaaa.com.hk/">
+                <Button linkto="https://shop.nativeaaaa.com.hk/product/seo%e6%87%b6%e4%ba%ba%e5%8c%85_7%e5%a4%a9%e4%b8%8a%e9%a6%96%e9%a0%81%e5%85%b6%e5%af%a6%e5%94%94%e9%9b%a3/">
                   立即下載SEO懶人包
                 </Button>
               </div>
