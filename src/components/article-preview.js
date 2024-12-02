@@ -14,7 +14,6 @@ const ArticlePreview = ({ posts }) => {
   return (
     <Section>
       <div className="my-28 p-5">
-        <h1 className="text-5xl my-10">Blog</h1>
         <ul className={styles.articleList}>
           {posts.map((post) => {
             console.log(post)
