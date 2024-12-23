@@ -61,7 +61,7 @@ class seoKeywords extends React.Component {
                 如果你需要，可以免費索取👇🏻
               </Text>
               <Button
-                linkto="https://api.whatsapp.com/send?phone=85264602996&text=seo_keywords"
+                linkto="https://api.whatsapp.com/send?phone=85264602996&text=2025_keywords"
                 customBtn="flex"
               >
                 免費索取
