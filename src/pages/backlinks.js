@@ -12,7 +12,7 @@ import Seo from '../components/seo'
 import AboutAs from '../components/aboutAs'
 import ContactForm from '../components/contactAs'
 import ClientLogos from '../components/clientLogos'
-import Whatsapp from '../components/baseTools/whatsapp'
+import Button from '../components/baseTools/button'
 import Icon from '../components/baseTools/Icon'
 import BacklinksSlick from '../components/slickSlider/greenSlider/backlinksSlider'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
@@ -43,8 +43,6 @@ import c2 from '../img/c2.jpeg'
 import c3 from '../img/c3.jpeg'
 import SeoBacklinksDataA from '../img/繁中Backlinks真實數據A.jpeg'
 import SeoBacklinksDataB from '../img/繁中Backlinks真實數據B.jpeg'
-import Button from '../components/baseTools/button'
-
 class backlinksIndex extends React.Component {
   render() {
     const [blacklinkPage] = get(
@@ -168,13 +166,13 @@ class backlinksIndex extends React.Component {
           </div>
           <div className="container mx-auto lg:relative top-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-8 py-12 lg:p-0 items-end text-xl font-black text-white">
-              <Whatsapp
+              <Button
                 customBtn="flex justify-center rounded-xl bg-blue-600"
                 className="py-3 px-5 text-white"
                 linkto="https://api.whatsapp.com/send?phone=85267461301"
               >
                 中文Backlinks收費參考
-              </Whatsapp>
+              </Button>
               <Anchor
                 to="#Backlink_ref"
                 className="flex justify-center rounded-xl bg-amber-500 py-3 px-5 text-white"

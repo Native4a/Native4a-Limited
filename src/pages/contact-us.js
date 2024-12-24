@@ -8,8 +8,7 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import ContactForm from '../components/contactAs'
 import SocialMediaBtn from '../components/button/socialMedia'
-import Whatsapp from '../components/baseTools/whatsapp'
-import Line from '../components/baseTools/button'
+import Button from '../components/baseTools/button'
 
 //CSS here//
 import 'reactjs-popup/dist/index.css'
@@ -43,12 +42,12 @@ class contactUs extends React.Component {
           </div>
         </section>
         <div className="flex justify-center gap-6 py-10 rounded-t-lg overflow-hidden text-center">
-          <Whatsapp
+          <Button
             className="bg-emerald-500 text-white drop-shadow-lg rounded-full px-7 py-1.5 font-medium text-[0.83rem] md:text-md xl:text-xl"
             linkto="https://api.whatsapp.com/send/?phone=85267461301&text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3backlinks%E6%9C%8D%E5%8B%99%E3%80%82"
             children="whatsapp"
           />
-          <Line
+          <Button
             className="bg-white text-[#06C755] drop-shadow-lg rounded-full px-7 py-1.5 font-medium text-base md:text-md xl:text-xl"
             linkto="https://line.me/ti/p/ZqH9CPaYkE"
             children="Line"
