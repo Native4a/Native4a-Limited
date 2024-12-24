@@ -10,7 +10,7 @@ const Navprops = () => {
     <div className={`${styles.activeLink} contents`}>
       <ul className="rounded-3xl bg-white contents">
         {menu.map((item, index) => {
-          const { slug, urlTitle } = item
+          const { slug, urlTitle, url } = item
           return (
             <li
               role="navigation"
@@ -19,7 +19,7 @@ const Navprops = () => {
               key={index}
             >
               <Link
-                to={slug}
+                to={slug ? slug : url}
                 activeStyle={{
                   color: 'white',
                   backgroundColor: '#faab00',
