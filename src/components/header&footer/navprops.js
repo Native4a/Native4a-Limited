@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import useAddMenu from '../../hook/useAddMenu'
 import Whatsapp from '../baseTools/whatsapp'
+import { TbShoppingCart } from 'react-icons/tb'
+import Button from '../baseTools/button'
 import * as styles from '../../styles/navprops.module.css'
 
 const Navprops = () => {
@@ -10,7 +12,7 @@ const Navprops = () => {
     <div className={`${styles.activeLink} contents`}>
       <ul className="rounded-3xl bg-white contents">
         {menu.map((item, index) => {
-          const { slug, urlTitle, url } = item
+          const { slug, urlTitle } = item
           return (
             <li
               role="navigation"
@@ -19,7 +21,7 @@ const Navprops = () => {
               key={index}
             >
               <Link
-                to={slug ? slug : url}
+                to={slug}
                 activeStyle={{
                   color: 'white',
                   backgroundColor: '#faab00',
@@ -32,7 +34,13 @@ const Navprops = () => {
             </li>
           )
         })}
-        <div className="hidden xl:flex col-start-4 col-end-7 flex items-center justify-end">
+        <div className="hidden xl:flex col-start-4 col-end-7 flex items-center justify-end gap-2">
+          <Button
+            linkto="https://shop.nativeaaaa.com.hk/"
+            className="bg-transparent text-[#1d1d1d] rounded-full px-7 py-1.5 font-medium text-base md:text-md xl:text-xl"
+          >
+            <TbShoppingCart className="text-2xl" />
+          </Button>
           <Whatsapp
             linkto="https://api.whatsapp.com/send/?phone=85267461301&text=你好，我想查詢______服務。"
             children={'WhatsApp查詢'}
