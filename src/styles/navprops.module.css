@@ -1,7 +1,8 @@
-.activeLink li a:hover{
-  color:white;
+.activeLink li a:hover {
+  color: white;
   font-weight: bold;
   background-position: -100%;
+  border-radius: 3px;
 }
 
 .activeLink li a {
@@ -45,7 +46,8 @@
   color: var(--primary);
 }
 
-@media (max-width: 1536px) {}
+@media (max-width: 1536px) {
+}
 
 @media (max-width: 1280px) {
   .container:first-child {

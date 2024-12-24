@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import useAddMenu from '../../hook/useAddMenu'
-import Whatsapp from '../baseTools/whatsapp'
 import { TbShoppingCart } from 'react-icons/tb'
 import Button from '../baseTools/button'
 import * as styles from '../../styles/navprops.module.css'
@@ -26,6 +25,7 @@ const Navprops = () => {
                   color: 'white',
                   backgroundColor: '#faab00',
                   fontWeight: 'bold',
+                  borderRadius: '3px',
                 }}
                 partiallyActive={true}
               >
@@ -37,14 +37,13 @@ const Navprops = () => {
         <div className="hidden xl:flex col-start-4 col-end-7 flex items-center justify-end gap-2">
           <Button
             linkto="https://shop.nativeaaaa.com.hk/"
-            className="bg-transparent text-[#1d1d1d] rounded-full px-7 py-1.5 font-medium text-base md:text-md xl:text-xl"
+            className="text-white bg-yellow-400 rounded-full px-7 py-1.5 font-medium text-base md:text-md xl:text-xl"
           >
             <TbShoppingCart className="text-2xl" />
           </Button>
-          <Whatsapp
-            linkto="https://api.whatsapp.com/send/?phone=85267461301&text=你好，我想查詢______服務。"
-            children={'WhatsApp查詢'}
-          ></Whatsapp>
+          <Button linkto="https://api.whatsapp.com/send/?phone=85267461301&text=你好，我想查詢______服務。">
+            WhatsApp查詢
+          </Button>
         </div>
       </ul>
     </div>
