@@ -12,13 +12,13 @@ const Button = ({ children, className, linkto, customBtn }) => {
   const btnCustom = 'flex justify-center'
 
   return (
-    <div className={customBtn ? customBtn : btnCustom}>
+    <button className={customBtn ? customBtn : btnCustom}>
       <AnchorLink to={linkto ? linkto : link}>
-        <button className={className ? className : btn}>
+        <p className={className ? className : btn}>
           {children ? children : buttonName}
-        </button>
+        </p>
       </AnchorLink>
-    </div>
+    </button>
   )
 }
 
