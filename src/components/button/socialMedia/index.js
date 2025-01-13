@@ -2,19 +2,20 @@ import React from 'react'
 import { Link } from 'gatsby'
 import useSocialMedia from '../../../hook/useSocialMedia'
 
-const SocialMediaBtn = ({ selectedItems = [] }) => {
+const SocialMediaBtn = ({ showPartialItems }) => {
   const socialM = useSocialMedia()
 
   return (
     <div className="contents">
       <ul className="rounded-3xl bg-white pt-16 pb-5 contents">
         {socialM.map((item, index) => {
-          if (!selectedItems.includes(index)) {
-            return null // 如果不在選擇的項目中，則返回 null 不顯示
-          }
-
           const { socialMediaLogo, url, title, backgroundColor, description } =
             item
+
+          // 檢查是否只顯示部分元素
+          if (showPartialItems && ![0].includes(index)) {
+            return null
+          }
 
           return (
             <li

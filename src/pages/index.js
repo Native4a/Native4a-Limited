@@ -93,13 +93,13 @@ class RootIndex extends React.Component {
                 })}
                 <div className="hidden md:grid grid-cols-1 gap-6 py-6">
                   <div className="flex gap-6 w-full items-center">
-                    <SocialMediaBtn selectedItems={[0, 1]} />
+                    <SocialMediaBtn />
                     <AiChatbox />
                   </div>
                 </div>
                 <div className="md:hidden">
                   <div className="flex gap-2 w-full items-center">
-                    <SocialMediaBtn selectedItems={[0, 1]} />
+                    <SocialMediaBtn />
                   </div>
                 </div>
               </div>

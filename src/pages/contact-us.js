@@ -66,7 +66,7 @@ class contactUs extends React.Component {
         </section>
         <section className={styles.sec2_wrap}>
           <div className="flex grid-rows-2 gap-6 w-full justify-center">
-            <SocialMediaBtn selectedItems={[0, 1]} />
+            <SocialMediaBtn />
           </div>
         </section>
         <section className={styles.sec2_wrap}>
