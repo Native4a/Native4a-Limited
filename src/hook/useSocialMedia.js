@@ -1,20 +1,26 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby'
 
 const useSocialMedia = () => {
-  const { allContentfulSocialMedia: { nodes }} = useStaticQuery(graphql`
-  query SocialMediaQL {
-    allContentfulSocialMedia {
+  const {
+    allContentfulSocialMedia: { nodes },
+  } = useStaticQuery(graphql`
+    query SocialMediaQL {
+      allContentfulSocialMedia {
         nodes {
           title
+          description
           socialMediaLogo {
             url
+          }
+          backgroundColor {
+            value
           }
           url
         }
       }
-  }
-`);
-  return nodes;
-};
+    }
+  `)
+  return nodes
+}
 
-export default useSocialMedia;
+export default useSocialMedia

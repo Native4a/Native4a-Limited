@@ -41,9 +41,6 @@ const Navprops = () => {
           >
             <TbShoppingCart className="text-2xl" />
           </Button>
-          <Button linkto="https://api.whatsapp.com/send/?phone=85267461301&text=你好，我想查詢______服務。">
-            WhatsApp查詢
-          </Button>
         </div>
       </ul>
     </div>

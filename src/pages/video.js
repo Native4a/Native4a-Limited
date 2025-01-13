@@ -3,17 +3,17 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import Popup from "reactjs-popup"
+import Popup from 'reactjs-popup'
 
 //components here//
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import AboutAs from "../components/aboutAs"
+import AboutAs from '../components/aboutAs'
 import ContactForm from '../components/contactAs'
 import ClientLogos from '../components/clientLogos'
-import VideoSlick from "../components/slickSlider/yellowSlider/videoSlider"
-import Awards from "../components/awards"
-import AwardsWeb from "../components/awards/awards_website"
+import VideoSlick from '../components/slickSlider/yellowSlider/videoSlider'
+import Awards from '../components/awards'
+import AwardsWeb from '../components/awards/awards_website'
 import SocialMediaBtn from '../components/button/socialMedia'
 import NativeStrengths from '../components/nativeStrengths'
 import VideoJobRef from '../components/videoJobRef'
@@ -47,15 +47,17 @@ class videoIndex extends React.Component {
                 <h1 className={styles.title}>{videoPage.title}</h1>
                 <h1 className={styles.subTitle}>{videoPage.subTitle}</h1>
                 <div className={styles.border}></div>
-                <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">{renderRichText(videoPage.titleDescription)}</p>
+                <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
+                  {renderRichText(videoPage.titleDescription)}
+                </p>
                 <div className="hidden md:grid grid-cols-2 gap-6 py-6">
                   <div className="flex gap-6 w-full items-center">
-                    <SocialMediaBtn />
+                    <SocialMediaBtn selectedItems={[0, 1]} />
                   </div>
                 </div>
                 <div className="md:hidden ">
                   <div className="flex gap-2 w-full items-center">
-                    <SocialMediaBtn />
+                    <SocialMediaBtn selectedItems={[0, 1]} />
                   </div>
                 </div>
               </div>
@@ -65,7 +67,14 @@ class videoIndex extends React.Component {
               <Popup
                 trigger={
                   <div className={styles.overlay_container}>
-                    <img src={plsStep} alt="Girl in a jacket" width="500" height="600" loading="lazy" decoding="async" />
+                    <img
+                      src={plsStep}
+                      alt="Girl in a jacket"
+                      width="500"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                 }
                 modal
@@ -73,7 +82,9 @@ class videoIndex extends React.Component {
               >
                 {(close) => (
                   <div className={styles.modal}>
-                    <button className={styles.close} onClick={close}>X</button>
+                    <button className={styles.close} onClick={close}>
+                      X
+                    </button>
                     {/**Put your youtube link here*/}
                     <div className={styles.videoContainer}>
                       <iframe
@@ -95,7 +106,7 @@ class videoIndex extends React.Component {
         </Section>
         <section className={styles.sec2_wrap}>
           <div className={styles.container}>
-            <div className='grid grid-cols-2 md:grid-cols-3'>
+            <div className="grid grid-cols-2 md:grid-cols-3">
               <VideoJobRef />
             </div>
           </div>
@@ -133,9 +144,9 @@ export const videoQuery = graphql`
           raw
         }
         nativeBanner {
-           url
+          url
         }
       }
     }
   }
-  `
+`

@@ -46,8 +46,8 @@ class xiaohongshuIndex extends React.Component {
                   </p>
                 </div>
                 <div className="hidden md:grid grid-cols-2 gap-6 py-6">
-                  <div className="flex gap-6 w-full items-center">
-                    <SocialMediaBtn />
+                  <div className="flex gap-2 w-full items-center">
+                    <SocialMediaBtn selectedItems={[0]} />
                   </div>
                   <Button
                     className="bg-[#FF1E45] text-white rounded-full px-7 py-1.5 font-medium text-base md:text-md xl:text-xl border-[1px] border-inherit"
@@ -57,7 +57,7 @@ class xiaohongshuIndex extends React.Component {
                 </div>
                 <div className="md:hidden ">
                   <div className="flex gap-2 w-full items-center">
-                    <SocialMediaBtn />
+                    <SocialMediaBtn selectedItems={[0]} />
                   </div>
                   <div className="pt-6">
                     <Button
