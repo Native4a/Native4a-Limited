@@ -5,7 +5,7 @@ const useSocialMedia = () => {
     allContentfulSocialMedia: { nodes },
   } = useStaticQuery(graphql`
     query SocialMediaQL {
-      allContentfulSocialMedia {
+      allContentfulSocialMedia(sort: { order: ASC }) {
         nodes {
           title
           description
@@ -16,6 +16,7 @@ const useSocialMedia = () => {
             value
           }
           url
+          order
         }
       }
     }
