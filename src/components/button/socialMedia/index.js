@@ -11,7 +11,6 @@ const SocialMediaBtn = ({ showPartialItems }) => {
         {socialM.map((item, index) => {
           const { socialMediaLogo, url, title, backgroundColor, description } =
             item
-
           // 檢查是否只顯示部分元素
           if (showPartialItems && ![0].includes(index)) {
             return null
