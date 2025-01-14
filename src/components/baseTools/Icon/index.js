@@ -17,7 +17,7 @@ const Icon = ({
   const desktop_style = ''
   const alternate_text = 'facebook icon'
   const mobile_style = ''
-  const content = 'Your Text Here'
+  const content = ''
   const link = 'https://www.instagram.com/native_4a/?hl=zh-tw_'
   const text_style = 'text-xl'
 
