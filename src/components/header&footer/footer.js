@@ -31,7 +31,7 @@ const Footer = () => {
                 </p>
                 <div className="rounded-t-lg overflow-hidden text-center p-0 md:p-4 mt-3">
                   <Whatsapp
-                    linkto="https://api.whatsapp.com/send/?phone=85267461301&text=我想查詢SEO懶人Plan"
+                    linkto="https://api.whatsapp.com/send/?phone=85267461301&text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E6%95%B8%E7%A2%BC%E7%87%9F%E9%8A%B7%E6%9C%8D%E5%8B%99%E3%80%82"
                     children={buttonName}
                   ></Whatsapp>
                 </div>
