@@ -47,13 +47,13 @@ class seoIndex extends React.Component {
                 <div className="pt-2 md:pt-3 2xl:pt-0">
                   <Text
                     tag="h1"
-                    className="indent-[-1rem] tracking-tight font-black text-3xl md:leading-snug md:text-[2.8vw] md:indent-[-2rem]"
+                    className="tracking-tight font-black text-3xl md:leading-snug md:text-[2.8vw]"
                   >
                     {seoPage.title}
                   </Text>
                   <Text
                     tag="h2"
-                    className="indent-[-1rem] tracking-tight font-black text-3xl md:leading-snug md:text-[2.8vw] md:indent-[-2rem]"
+                    className="tracking-tight font-black text-3xl md:leading-snug md:text-[2.8vw]"
                   >
                     {seoPage.titleH2}
                   </Text>
