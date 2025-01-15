@@ -4,6 +4,8 @@ import Container from '../container'
 import * as styles from '../../styles/footer.module.css'
 import useFooter from '../../hook/useFooter'
 import Whatsapp from '../baseTools/whatsapp'
+import Icon from '../baseTools/Icon'
+import Whatsapp_sticky from '../baseTools/Icon/img/whatsappContact_text.svg'
 
 const Footer = () => {
   const footer = useFooter()
@@ -61,6 +63,15 @@ const Footer = () => {
                   />
                 </div>
               </div>
+            </section>
+            <section>
+              <Icon
+                URL={Whatsapp_sticky}
+                linkto="https://api.whatsapp.com/send/?phone=85267461301&text=你好，我想查詢數碼營銷服務。"
+                Size="w-24 fixed bottom-0 right-0 md:translate-y-[-25%] md:translate-x-[-25%] z-50"
+                Mobile="translate-y-[-80%] translate-x-[-10%]"
+                Alt="sticky whatsapp button"
+              ></Icon>
             </section>
             {/* 其他组件内容 */}
             <script type="text/javascript">
