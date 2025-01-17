@@ -31,7 +31,12 @@ class RootIndex extends React.Component {
     //const posts = get(this, "props.data.allContentfulBlogPost.nodes")
     const [addNewPage] = get(this, 'props.data.allContentfulAddNewPage.nodes')
     //For ServiceScope data
-    const inContactBox1 = addNewPage.contact[0].textContact[0] // 從第一個元素中獲取 textContact
+    const contact = get(addNewPage, 'contact[0]') // 確保 addNewPage.contact 存在並且有第一個元素
+    const textContact = get(contact, 'textContact[0]') // 確保 contact.textContact 存在並且有第一個元素
+
+    const inContactBox1 = textContact ? textContact.content.content : '' // 確保 textContact 存在後再訪問 content 屬性
+
+    // 然後您可以在使用 inContactBox1 之前進行進一步的處理或檢查
     //console.log(inContactBox2);
     //由於heading為陣列資料，而非直接包含 fields 屬性。必須定義資料才可使用
     //如果你只想收集兩次迭代的結果，你可以在 map() 函式中添加一個計數器slice()，以限制迭代的次數。
@@ -122,7 +127,7 @@ class RootIndex extends React.Component {
               {contactBox}
             </h2>
             <h2 className="text-2xl md:text-4xl py-3 ml-0 md:ml-4 leading-0 md:leading-[3.5rem]">
-              {inContactBox1.content}
+              {inContactBox1}
             </h2>
             <p className="text-xl mx-4"></p>
           </div>
@@ -224,12 +229,20 @@ export const pageQuery = graphql`
           }
         }
         contact {
-          title
-          textContact {
-            ... on ContentfulToolsText {
-              childContentfulToolsTextContentTextNode {
-                content
+          ... on ContentfulToolsContactBox {
+            id
+            title
+            order
+            textContact {
+              ... on ContentfulToolsText {
+                id
+                content {
+                  content
+                }
               }
+            }
+            icon {
+              url
             }
           }
         }
