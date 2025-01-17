@@ -1,15 +1,20 @@
 import React from 'react'
-
-//components here//
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import AboutAs from '../components/aboutAs'
 import ClientLogos from '../components/clientLogos'
 import Text from '../components/baseTools/text'
 import { graphql } from 'gatsby'
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import get from 'lodash/get'
+import Section from '../components/baseTools/Section'
 
-class privacyPolicy extends React.Component {
+class PrivacyPolicy extends React.Component {
   render() {
+    const [policy] = get(this, 'props.data.allContentfulAddNewPage.nodes')
+    const longTextData = get(policy, 'contact[0].longText')
+    const headingContent = get(policy, 'heading[0].content.content')
+
     return (
       <Layout location={this.props.location}>
         <Seo
@@ -17,17 +22,14 @@ class privacyPolicy extends React.Component {
           description="this is native4a website thanks you page."
           ogUrl="https://nativeaaaa.com.hk/thanks-you/"
         />
-        <section className="flex justify-center">
+        <Section className="flex justify-center">
           <div className="grid grid-cols-1 gap-6 pt-48 pb-0">
-            <Text
-              tag="h1"
-              className="flex items-center text-6xl py-12 ml-2 font-bold"
-            >
-              隱私權政策 Privacy Policy
+            <Text tag="h1" className="text-4xl">
+              {headingContent}
             </Text>
-            <Text tag="h3">1. 我們收集的資料 What Information We Collect</Text>
+            <Text>{longTextData && renderRichText(longTextData)}</Text>
           </div>
-        </section>
+        </Section>
         <section>
           <AboutAs />
         </section>
@@ -39,10 +41,13 @@ class privacyPolicy extends React.Component {
   }
 }
 
-export default privacyPolicy
+export default PrivacyPolicy
+
 export const privacyPolicyQuery = graphql`
   query privacyPolicyQuery {
-    allContentfulAddNewPage {
+    allContentfulAddNewPage(
+      filter: { contentful_id: { eq: "4YFHkwSOOjgijcFN6Kht67" } }
+    ) {
       nodes {
         order
         pageName
@@ -58,6 +63,11 @@ export const privacyPolicyQuery = graphql`
             longText {
               raw
             }
+          }
+        }
+        heading {
+          content {
+            content
           }
         }
       }
