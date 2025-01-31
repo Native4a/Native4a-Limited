@@ -6,6 +6,7 @@ import ClientLogos from '../components/clientLogos'
 import Text from '../components/baseTools/text'
 import { graphql } from 'gatsby'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import ReactMarkdown from 'react-markdown'
 import get from 'lodash/get'
 import Section from '../components/baseTools/Section'
 
@@ -25,9 +26,9 @@ class PrivacyPolicy extends React.Component {
         <Section className="flex justify-center">
           <div className="grid grid-cols-1 gap-6 pt-48 pb-0">
             <Text tag="h1" className="text-4xl">
-              {headingContent}
+              <ReactMarkdown>{headingContent}</ReactMarkdown>
             </Text>
-            <Text>{longTextData && renderRichText(longTextData)}</Text>
+            {longTextData && renderRichText(longTextData)}
           </div>
         </Section>
         <section>
