@@ -38,7 +38,7 @@ const Tryform = () => {
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
-            for="grid-first-name"
+            htmlFor="grid-first-name"
           >
             First Name（姓氏）
           </label>
@@ -56,7 +56,7 @@ const Tryform = () => {
         <div className="w-full md:w-1/2 px-3">
           <label
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
-            for="grid-last-name"
+            htmlFor="grid-last-name"
           >
             Last Name（名字）
           </label>
@@ -73,7 +73,7 @@ const Tryform = () => {
         <div className="w-full px-3 mb-16">
           <label
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
-            for="grid-last-name"
+            htmlFor="grid-last-name"
           >
             contact number（聯絡方法）
           </label>
@@ -95,7 +95,7 @@ const Tryform = () => {
         <div className="w-full px-3 mb-5">
           <label
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
-            for="grid-last-name"
+            htmlFor="grid-last-name"
           >
             1.你的公司網站或ig?
           </label>
@@ -112,7 +112,7 @@ const Tryform = () => {
         <div className="w-full px-3 mb-5">
           <label
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
-            for="grid-last-name"
+            htmlFor="grid-last-name"
           >
             2.請問你的行業？
           </label>
@@ -129,7 +129,7 @@ const Tryform = () => {
         <div className="w-full px-3 mb-5">
           <label
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
-            for="grid-last-name"
+            htmlFor="grid-last-name"
           >
             3.你目前主要透過什麼方式獲客？
           </label>
@@ -146,7 +146,7 @@ const Tryform = () => {
         <div className="w-full px-3 mb-5">
           <label
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
-            for="grid-last-name"
+            htmlFor="grid-last-name"
           >
             4.你目前的查詢容易轉化成生意嗎？
           </label>
@@ -163,7 +163,7 @@ const Tryform = () => {
         <div className="w-full px-3 mb-5">
           <label
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
-            for="grid-last-name"
+            htmlFor="grid-last-name"
           >
             5.你收到查詢後會進行再營銷嗎？
           </label>
@@ -176,7 +176,7 @@ const Tryform = () => {
             required
           />
            {' '}
-          <label className="text-gray-200" for="yes">
+          <label className="text-gray-200" htmlFor="yes">
             會
           </label>
            {' '}
@@ -187,7 +187,7 @@ const Tryform = () => {
             aria-label="user_Question-5"
           />
            {' '}
-          <label className="text-gray-200" for="no">
+          <label className="text-gray-200" htmlFor="no">
             不會
           </label>
            {' '}
@@ -195,7 +195,7 @@ const Tryform = () => {
         <div className="w-full px-3 mb-5">
           <label
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
-            for="grid-last-name"
+            htmlFor="grid-last-name"
           >
             6.你的客戶平均查詢多少次後才能成交？
           </label>
