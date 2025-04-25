@@ -3,7 +3,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import Popup from 'reactjs-popup'
 
 //components here//
 import Layout from '../components/layout'
@@ -15,7 +14,6 @@ import VideoSlick from '../components/slickSlider/yellowSlider/videoSlider'
 import Awards from '../components/awards'
 import AwardsWeb from '../components/awards/awards_website'
 import SocialMediaBtn from '../components/button/socialMedia'
-import NativeStrengths from '../components/nativeStrengths'
 import VideoJobRef from '../components/videoJobRef'
 import Section from '../components/baseTools/Section'
 
@@ -24,7 +22,6 @@ import 'reactjs-popup/dist/index.css'
 import * as styles from '../styles/video.module.css'
 
 //image here//
-import plsStep from '../img/plsStep.png'
 
 //import ArticlePreview from '../components/article-preview'
 
@@ -64,42 +61,16 @@ class videoIndex extends React.Component {
               <AwardsWeb />
             </div>
             <div className="grid content-center z-0">
-              <Popup
-                trigger={
-                  <div className={styles.overlay_container}>
-                    <img
-                      src={plsStep}
-                      alt="Girl in a jacket"
-                      width="500"
-                      height="600"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                }
-                modal
-                contentStyle=""
-              >
-                {(close) => (
-                  <div className={styles.modal}>
-                    <button className={styles.close} onClick={close}>
-                      X
-                    </button>
-                    {/**Put your youtube link here*/}
-                    <div className={styles.videoContainer}>
-                      <iframe
-                        className={styles.responsiveIframe}
-                        width="100%"
-                        src="https://www.youtube.com/embed/B53Pg3CyDTo"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                      ></iframe>
-                    </div>
-                  </div>
-                )}
-              </Popup>
+              <div className={styles.overlay_container}>
+                <img
+                  src="https://images.ctfassets.net/rpza41pe9ev5/2jWem3YqlEdNaaoxpYQa7h/7b9e824531232e1da44d84d2defd0164/IMG_8643.webp"
+                  alt="年度獎項"
+                  width="500"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
             <Awards />
           </div>
@@ -110,9 +81,6 @@ class videoIndex extends React.Component {
               <VideoJobRef />
             </div>
           </div>
-        </section>
-        <section>
-          <NativeStrengths />
         </section>
         <VideoSlick />
         <AboutAs />
