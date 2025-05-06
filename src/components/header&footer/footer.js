@@ -6,6 +6,7 @@ import useFooter from '../../hook/useFooter'
 import Whatsapp from '../baseTools/whatsapp'
 import Icon from '../baseTools/Icon'
 import Whatsapp_sticky from '../baseTools/Icon/img/whatsappContact_text.svg'
+import line_icon from '../baseTools/Icon/img/line_Icon.svg'
 
 const Footer = () => {
   const footer = useFooter()
@@ -70,6 +71,13 @@ const Footer = () => {
                 linkto="https://api.whatsapp.com/send/?phone=85267461301&text=你好，我想查詢數碼營銷服務。"
                 Size="w-24 fixed bottom-0 right-0 md:translate-y-[-25%] md:translate-x-[-25%] z-50"
                 Mobile="translate-y-[-80%] translate-x-[-10%]"
+                Alt="sticky whatsapp button"
+              ></Icon>
+              <Icon
+                URL={line_icon}
+                linkto="https://line.me/ti/p/ZqH9CPaYkE"
+                Size="w-24 fixed bottom-0 right-0 md:translate-y-[-120%] md:translate-x-[-25%] z-50"
+                Mobile="translate-y-[-170%] translate-x-[-10%]"
                 Alt="sticky whatsapp button"
               ></Icon>
             </section>
