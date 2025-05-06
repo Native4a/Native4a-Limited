@@ -16,14 +16,14 @@ const Icon = ({
   const desktop_size = 'w-full'
   const desktop_style = ''
   const mobile_style = ''
-  const alternate_text = 'facebook icon'
+  const alternate_text = 'instagram icon'
   const content = ''
   const link = 'https://www.instagram.com/native_4a/?hl=zh-tw_'
   const text_style = 'text-xl'
 
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-3">
+      <div className="grid">
         <AnchorLink to={linkto ? linkto : link}>
           <div className="flex items-center">
             <img

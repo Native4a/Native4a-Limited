@@ -1,32 +1,26 @@
-<svg version="1.1" id="Layer_1" xmlns:svgjs="http://svgjs.com/svgjs"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-	 style="enable-background:new 0 0 512 512;" xml:space="preserve" width="100" height="50px">
-<style type="text/css">
-	.st0{fill:url(#SVGID_1_);}
-	.st1{fill:#FFFFFF;}
-</style>
-<g>
-	<g>
-		
-			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="61.0748" y1="61.0748" x2="424.8792" y2="424.8792" gradientTransform="matrix(1 0 0 -1 0 512)">
-			<stop  offset="0" style="stop-color:#FEE411"/>
-			<stop  offset="5.184586e-02" style="stop-color:#FEDB16"/>
-			<stop  offset="0.1381" style="stop-color:#FEC125"/>
-			<stop  offset="0.2481" style="stop-color:#FE983D"/>
-			<stop  offset="0.3762" style="stop-color:#FE5F5E"/>
-			<stop  offset="0.5" style="stop-color:#FE2181"/>
-			<stop  offset="1" style="stop-color:#9000DC"/>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+	<title>line_Icon</title>
+	<defs>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(31.296,-31.296,31.296,31.296,15.156,48.773)">
+			<stop offset="0" stop-color="#fee411"/>
+			<stop offset=".052" stop-color="#fedb16"/>
+			<stop offset=".138" stop-color="#fec125"/>
+			<stop offset=".248" stop-color="#fe983d"/>
+			<stop offset=".376" stop-color="#fe5f5e"/>
+			<stop offset=".5" stop-color="#fe2181"/>
+			<stop offset="1" stop-color="#9000dc"/>
 		</linearGradient>
-		<circle class="st0" cx="256" cy="256" r="256"/>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+		.s1 { fill: #ffffff } 
+	</style>
+	<g>
+		<path fill-rule="evenodd" class="s0" d="m31.9 54c-12.2 0-22-9.8-22-22 0-12.2 9.8-22 22-22 12.2 0 22 9.8 22 22 0 12.2-9.8 22-22 22z"/>
 		<g>
-			<path class="st1" d="M310.4,113.8H201.7c-48.5,0-87.8,39.4-87.8,87.8v108.7c0,48.5,39.4,87.8,87.8,87.8h108.7
-				c48.5,0,87.8-39.4,87.8-87.8V201.6C398.2,153.1,358.9,113.8,310.4,113.8L310.4,113.8z M366.5,310.4c0,30.9-25.1,56.2-56.2,56.2
-				H201.6c-30.9,0-56.2-25.1-56.2-56.2V201.7c0-30.9,25.1-56.2,56.2-56.2h108.7c30.9,0,56.2,25.1,56.2,56.2V310.4z"/>
-			<path class="st1" d="M256,183.3c-40,0-72.7,32.7-72.7,72.7s32.7,72.7,72.7,72.7s72.7-32.7,72.7-72.7S296,183.3,256,183.3z
-				 M256,300.1c-24.3,0-44.1-19.8-44.1-44.1s19.8-44.1,44.1-44.1c24.3,0,44.1,19.8,44.1,44.1S280.3,300.1,256,300.1L256,300.1z"/>
-			
-				<ellipse transform="matrix(0.9871 -0.16 0.16 0.9871 -24.3838 55.4786)" class="st1" cx="332.3" cy="179.1" rx="12.3" ry="12.3"/>
+			<path class="s1" d="m36.6 19.8h-9.3c-4.2 0-7.6 3.4-7.6 7.5v9.4c0 4.1 3.4 7.5 7.6 7.5h9.3c4.2 0 7.6-3.4 7.6-7.5v-9.4c0-4.1-3.4-7.5-7.6-7.5zm4.8 16.9c0 2.6-2.1 4.8-4.8 4.8h-9.4c-2.6 0-4.8-2.1-4.8-4.8v-9.4c0-2.6 2.2-4.8 4.8-4.8h9.4c2.7 0 4.8 2.2 4.8 4.8z"/>
+			<path class="s1" d="m31.9 25.8c-3.4 0-6.2 2.8-6.2 6.2 0 3.4 2.8 6.3 6.2 6.3 3.5 0 6.3-2.9 6.3-6.3 0-3.4-2.8-6.2-6.3-6.2zm0 10c-2.1 0-3.8-1.7-3.8-3.8 0-2.1 1.7-3.8 3.8-3.8 2.1 0 3.8 1.7 3.8 3.8 0 2.1-1.7 3.8-3.8 3.8z"/>
+			<path fill-rule="evenodd" class="s1" d="m38.5 26.4c-0.6 0-1.1-0.4-1.1-1 0-0.6 0.5-1.1 1.1-1.1 0.6 0 1 0.5 1 1.1 0 0.6-0.4 1-1 1z"/>
 		</g>
 	</g>
-</g>
 </svg>

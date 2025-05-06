@@ -19,6 +19,8 @@ import Column from '../components/baseTools/Grid/Column'
 import Img from '../components/baseTools/Image'
 import Text from '../components/baseTools/text'
 import Icon from '../components/baseTools/Icon'
+import whatsApp_icon from '../components/baseTools/Icon/img/whatsapp.svg'
+import line_icon from '../components/baseTools/Icon/img/line_Icon.svg'
 
 //CSS here//
 import 'reactjs-popup/dist/index.css'
@@ -43,7 +45,7 @@ class seoIndex extends React.Component {
         <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
-              <div className="flex justify-center items-center">
+              <div className="flex items-center">
                 <div className="pt-2 md:pt-3 2xl:pt-0">
                   <Text
                     tag="h1"
@@ -58,14 +60,19 @@ class seoIndex extends React.Component {
                     {seoPage.titleH2}
                   </Text>
                   <div className={styles.border}></div>
-                  <div className="hidden md:grid grid-cols-2 gap-6 py-6">
-                    <div className="flex gap-6 w-full items-center">
-                      <Icon>@Native4A</Icon>
-                    </div>
-                  </div>
-                  <div className="md:hidden">
-                    <div className="flex gap-2 w-full items-center">
-                      <Icon>@Native4A</Icon>
+                  <div className="md:grid grid-cols-1 gap-6 py-6">
+                    <div className="flex gap-6 w-1/2 items-center">
+                      <Icon Alt="Instagram link" />
+                      <Icon
+                        Alt="whatsapp link"
+                        URL={whatsApp_icon}
+                        linkto="https://api.whatsapp.com/send/?phone=85267461301&text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3backlinks%E6%9C%8D%E5%8B%99%E3%80%82"
+                      />
+                      <Icon
+                        Alt="Line link"
+                        URL={line_icon}
+                        linkto="https://line.me/ti/p/ZqH9CPaYkE"
+                      />
                     </div>
                   </div>
                 </div>
