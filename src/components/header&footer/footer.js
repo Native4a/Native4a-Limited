@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation } from '@reach/router'
 import Container from '../container'
 import * as styles from '../../styles/footer.module.css'
@@ -15,8 +16,21 @@ const Footer = () => {
 
   // ❗在這裡設定你不想顯示 Icon 的路徑
   const hiddenPaths = ['/seo/', '/backlinks/']
-  const shouldShowIcon = !hiddenPaths.includes(pathname)
+  const [isMobile, setIsMobile] = useState(false)
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  const shouldShowIcon = !(
+    isMobile && hiddenPaths.some((path) => pathname.startsWith(path))
+  )
   return (
     <div>
       {footer.map((item, index) => {
