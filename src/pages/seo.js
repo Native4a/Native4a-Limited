@@ -6,7 +6,7 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 
 //components here//
-import Layout from '../components/layout'
+import BacklinkLayout from '../components/backlinkLayout'
 import Seo from '../components/seo'
 import AboutAs from '../components/aboutAs'
 import ContactForm from '../components/contactAs'
@@ -36,7 +36,7 @@ class seoIndex extends React.Component {
     const [seoPage] = get(this, 'props.data.allContentfulSeoPage.nodes')
 
     return (
-      <Layout location={this.props.location}>
+      <BacklinkLayout location={this.props.location}>
         <Seo
           title={seoPage.metaTitle}
           description={seoPage.metaDescription}
@@ -61,7 +61,7 @@ class seoIndex extends React.Component {
                   </Text>
                   <div className={styles.border}></div>
                   <div className="md:grid grid-cols-1 gap-6 py-6">
-                    <div className="flex gap-6 w-1/2 items-center">
+                    <div className="flex gap-6 w-3/4 md:w-1/2 items-center">
                       <Icon Alt="Instagram link" />
                       <Icon
                         Alt="whatsapp link"
@@ -418,7 +418,7 @@ class seoIndex extends React.Component {
         <section className={styles.seoSpanSquare}>
           <ContactForm />
         </section>
-      </Layout>
+      </BacklinkLayout>
     )
   }
 }
