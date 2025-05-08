@@ -39,7 +39,7 @@ const ChatCall = () => {
         >
           <nav className="flex gap-2 justify-around bg-[#1d1d1d]/90 rounded-full p-2 content-center justify-items-center backdrop-blur-[10px]">
             <Link
-              to="https://api.whatsapp.com/send/?phone=85267461301&text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3backlinks%E6%9C%8D%E5%8B%99%E3%80%82"
+              to="https://api.whatsapp.com/send/?phone=85267461301&text=你好，我想查詢SEO服務。"
               className="p-1 w-full flex gap-2 bg-[#25D366] px-5 py-2 rounded-full items-center justify-center"
             >
               <svg
