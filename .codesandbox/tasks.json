@@ -11,7 +11,11 @@
   "tasks": {
     "dev": {
       "name": "dev",
+<<<<<<< HEAD
       "command": "npm dev run",
+=======
+      "command": "yarn dev",
+>>>>>>> 788eff7eef0823d1029c54006ee5ae266f184086
       "runAtStart": true
     },
     "build": {
