@@ -2,11 +2,57 @@
   // These tasks will run in order when initializing your CodeSandbox project.
   "setupTasks": [
     {
-      "command": "yarn install",
+      "command": "npm install",
       "name": "Installing Dependencies"
     }
   ],
 
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
-  "tasks": []
+  "tasks": {
+    "dev": {
+      "name": "dev",
+      "command": "npm run dev",
+      "runAtStart": true
+    },
+    "build": {
+      "name": "build",
+      "command": "yarn build",
+      "runAtStart": false
+    },
+    "heroku-postbuild": {
+      "name": "heroku-postbuild",
+      "command": "yarn heroku-postbuild",
+      "runAtStart": false
+    },
+    "serve": {
+      "name": "serve",
+      "command": "yarn serve",
+      "runAtStart": false
+    },
+    "postinstall": {
+      "name": "postinstall",
+      "command": "yarn postinstall",
+      "runAtStart": false
+    },
+    "setup": {
+      "name": "setup",
+      "command": "yarn setup",
+      "runAtStart": false
+    },
+    "netlify:login": {
+      "name": "netlify:login",
+      "command": "yarn netlify:login",
+      "runAtStart": false
+    },
+    "netlify:deploy": {
+      "name": "netlify:deploy",
+      "command": "yarn netlify:deploy",
+      "runAtStart": false
+    },
+    "gatsby-provision": {
+      "name": "gatsby-provision",
+      "command": "yarn gatsby-provision",
+      "runAtStart": false
+    }
+  }
 }
