@@ -8,6 +8,7 @@
   ],
 
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+<<<<<<< HEAD
   "tasks": {
     "dev": {
       "name": "dev",
@@ -47,4 +48,7 @@
       "command": "yarn gatsby-provision"
     }
   }
+=======
+  "tasks": []
+>>>>>>> d4191784ecd0d921a7090c7ad5711218d72a713f
 }

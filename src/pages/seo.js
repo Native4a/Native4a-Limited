@@ -66,7 +66,7 @@ class seoIndex extends React.Component {
                       <Icon
                         Alt="whatsapp link"
                         URL={whatsApp_icon}
-                        linkto="https://api.whatsapp.com/send/?phone=85267461301&text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3backlinks%E6%9C%8D%E5%8B%99%E3%80%82"
+                        linkto="https://api.whatsapp.com/send/?phone=85267461301&text=我想查詢SEO服務。"
                       />
                       <Icon
                         Alt="Line link"
