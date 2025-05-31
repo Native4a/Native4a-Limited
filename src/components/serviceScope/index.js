@@ -8,12 +8,12 @@ const ServiceScope = () => {
   return (
     <div className="relative pt-20">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 static z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-0 static z-10">
           {serviceScope.map((item, index) => {
             const { icon, title, descriptions } = item
             return (
               <div
-                className="bg-white drop-shadow-lg p-10 m-2 md:m-5 xl:m-2 2xl:m-4 rounded-3xl"
+                className="bg-white drop-shadow-lg p-10 sm:p-4 md:p-6 lg:p-10 m-2 md:m-5 xl:m-2 2xl:m-4 rounded-3xl"
                 key={index}
               >
                 <div className="grid grid-cols-3 md:grid-cols-1 gap-6 items-center">
