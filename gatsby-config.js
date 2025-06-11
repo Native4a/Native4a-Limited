@@ -62,6 +62,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://nativeaaaa.com.hk',
+        sitemap: 'https://nativeaaaa.com.hk/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/img/4afavicon.png',
