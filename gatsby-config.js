@@ -1,5 +1,5 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: '.env.${process.env.NODE_ENV}',
 })
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: 'gatsby-plugin-google-gtag',
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
@@ -42,9 +42,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-canonical-urls`,
+      resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: `https://nativeaaaa.com.hk`,
+        siteUrl: 'https://nativeaaaa.com.hk',
         stripQueryString: true,
       },
     },
@@ -73,6 +73,32 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/img/4afavicon.png',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-i18next',
+      options: {
+        localeJsonSourceName: 'locales', // 這是用來讀 json 檔的，暫時可保留
+        languages: ['en', 'zh-HK', 'zh-CN'],
+        defaultLanguage: 'en',
+        siteUrl: 'https://nativeaaaa.com.hk',
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false,
+          },
+          keySeparator: false,
+          nsSeparator: false,
+        },
+        pages: [
+          {
+            matchPath: '/:lang?/blog/:uid',
+            getLanguageFromPath: true,
+          },
+          {
+            matchPath: '/:lang?/about',
+            getLanguageFromPath: true,
+          },
+        ],
       },
     },
   ],

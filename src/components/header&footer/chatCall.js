@@ -1,7 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
+import { useLocation } from '@reach/router'
 
 const ChatCall = () => {
+  const location = useLocation()
+  const currentPath = location.pathname
+
+  const whatsappMessages = {
+    '/backlinks/': '索取backlinks收費表。',
+    '/seo/': '你好，我想查詢SEO顧問服務。',
+  }
+
+  const defaultText = '你好，我想查詢SEO服務。'
+  const whatsappText = whatsappMessages[currentPath] || defaultText
+  const whatsappLink = `https://api.whatsapp.com/send/?phone=85267461301&text=${encodeURIComponent(
+    whatsappText
+  )}`
+
   const [BottomNav, setBottomNav] = useState('0')
 
   //監聽網站滾動事件
@@ -39,7 +54,7 @@ const ChatCall = () => {
         >
           <nav className="flex gap-2 justify-around bg-[#1d1d1d]/90 rounded-full p-2 content-center justify-items-center backdrop-blur-[10px]">
             <Link
-              to="https://api.whatsapp.com/send/?phone=85267461301&text=你好，我想查詢SEO服務。"
+              to={whatsappLink}
               className="p-1 w-full flex gap-2 bg-[#25D366] px-5 py-2 rounded-full items-center justify-center"
             >
               <svg

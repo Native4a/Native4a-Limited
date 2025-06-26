@@ -31,6 +31,19 @@ const Footer = () => {
   const shouldShowIcon = !(
     isMobile && hiddenPaths.some((path) => pathname.startsWith(path))
   )
+
+  const whatsappMessages = {
+    '/backlinks/': '索取backlinks收費表。',
+    '/seo/': '你好，我想查詢SEO顧問服務。',
+  }
+
+  const defaultText = '你好，我想查詢SEO服務。'
+  const whatsappText = whatsappMessages[pathname] || defaultText
+
+  const whatsappLink = `https://api.whatsapp.com/send/?phone=85267461301&text=${encodeURIComponent(
+    whatsappText
+  )}`
+
   return (
     <div>
       {footer.map((item, index) => {
@@ -53,9 +66,7 @@ const Footer = () => {
                   {description.description}
                 </p>
                 <div className="rounded-t-lg overflow-hidden text-center p-0 md:p-4 mt-3">
-                  <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85267461301&text=你好，我想查詢SEO服務。">
-                    {buttonName}
-                  </Whatsapp>
+                  <Whatsapp linkto={whatsappLink}>{buttonName}</Whatsapp>
                 </div>
               </div>
             </section>
@@ -87,7 +98,7 @@ const Footer = () => {
               <section>
                 <Icon
                   URL={Whatsapp_sticky}
-                  linkto="https://api.whatsapp.com/send/?phone=85267461301&text=你好，我想查詢SEO服務。"
+                  linkto={whatsappLink}
                   Size="w-24 fixed bottom-0 right-0 md:translate-y-[-25%] md:translate-x-[-25%] z-50"
                   Mobile="translate-y-[-80%] translate-x-[-10%]"
                   Alt="sticky whatsapp button"

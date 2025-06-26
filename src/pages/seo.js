@@ -60,20 +60,18 @@ class seoIndex extends React.Component {
                     {seoPage.titleH2}
                   </Text>
                   <div className={styles.border}></div>
-                  <div className="md:grid grid-cols-1 gap-6 py-6">
-                    <div className="flex gap-6 w-3/4 md:w-1/2 items-center">
-                      <Icon Alt="Instagram link" />
-                      <Icon
-                        Alt="whatsapp link"
-                        URL={whatsApp_icon}
-                        linkto="https://api.whatsapp.com/send/?phone=85267461301&text=我想查詢SEO服務。"
-                      />
-                      <Icon
-                        Alt="Line link"
-                        URL={line_icon}
-                        linkto="https://line.me/ti/p/ZqH9CPaYkE"
-                      />
-                    </div>
+                  <div className="grid grid-cols-5 md:grid-cols-6 gap-2 md:gap-6 py-6">
+                    <Icon Alt="Instagram link" />
+                    <Icon
+                      Alt="whatsapp link"
+                      URL={whatsApp_icon}
+                      linkto="https://api.whatsapp.com/send/?phone=85267461301&text=我想查詢SEO服務。"
+                    />
+                    <Icon
+                      Alt="Line link"
+                      URL={line_icon}
+                      linkto="https://line.me/ti/p/ZqH9CPaYkE"
+                    />
                   </div>
                 </div>
               </div>
