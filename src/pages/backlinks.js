@@ -168,7 +168,7 @@ class backlinksIndex extends React.Component {
               <Button
                 customBtn="flex justify-center rounded-xl bg-blue-600"
                 className="py-3 px-5 text-white"
-                linkto="https://api.whatsapp.com/send?phone=85267461301"
+                linkto="https://api.whatsapp.com/send/?phone=85264602996&text=索取backlinks收費表"
               >
                 中文Backlinks收費參考
               </Button>
