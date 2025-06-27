@@ -86,7 +86,7 @@ class backlinksIndex extends React.Component {
                     <Icon
                       Alt="whatsapp link"
                       URL={whatsApp_icon}
-                      linkto="https://api.whatsapp.com/send/?phone=85267461301&text=索取backlinks收費表"
+                      linkto="https://api.whatsapp.com/send/?phone=85264602996&text=索取backlinks收費表"
                     />
                   </div>
                 </div>
