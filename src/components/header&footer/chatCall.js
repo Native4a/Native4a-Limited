@@ -4,17 +4,28 @@ import { useLocation } from '@reach/router'
 
 const ChatCall = () => {
   const location = useLocation()
-  const currentPath = location.pathname
+  const pathname = location.pathname
 
-  const whatsappMessages = {
-    '/backlinks/': '索取backlinks收費表。',
-    '/seo/': '你好，我想查詢SEO顧問服務。',
+  const whatsappConfigs = {
+    '/backlinks/': {
+      phone: '85264602996',
+      text: '索取backlinks收費表。',
+    },
+    '/seo/': {
+      phone: '85267461301',
+      text: '你好，我想查詢SEO顧問服務。',
+    },
   }
 
-  const defaultText = '你好，我想查詢SEO服務。'
-  const whatsappText = whatsappMessages[currentPath] || defaultText
-  const whatsappLink = `https://api.whatsapp.com/send/?phone=85267461301&text=${encodeURIComponent(
-    whatsappText
+  const defaultConfig = {
+    phone: '85267461301',
+    text: '你好，我想查詢SEO服務。',
+  }
+
+  const { phone, text } = whatsappConfigs[pathname] || defaultConfig
+
+  const whatsappLink = `https://api.whatsapp.com/send/?phone=${phone}&text=${encodeURIComponent(
+    text
   )}`
 
   const [BottomNav, setBottomNav] = useState('0')
