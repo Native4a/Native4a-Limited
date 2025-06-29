@@ -12,13 +12,13 @@ const ChatCall = () => {
       text: '索取backlinks收費表。',
     },
     '/seo/': {
-      phone: '85267461301',
+      phone: '85264602996',
       text: '你好，我想查詢SEO顧問服務。',
     },
   }
 
   const defaultConfig = {
-    phone: '85267461301',
+    phone: '85264602996',
     text: '你好，我想查詢SEO服務。',
   }
 
