@@ -44,7 +44,7 @@ class contactUs extends React.Component {
         <div className="flex justify-center gap-6 py-10 rounded-t-lg overflow-hidden text-center">
           <Button
             className="bg-emerald-500 text-white drop-shadow-lg rounded-full px-7 py-1.5 font-medium text-[0.83rem] md:text-md xl:text-xl"
-            linkto="https://api.whatsapp.com/send/?phone=85267461301&text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3backlinks%E6%9C%8D%E5%8B%99%E3%80%82"
+            linkto="https://api.whatsapp.com/send/?phone=85264602996&text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3backlinks%E6%9C%8D%E5%8B%99%E3%80%82"
             children="whatsapp"
           />
           <Button

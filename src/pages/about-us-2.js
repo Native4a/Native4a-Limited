@@ -189,7 +189,7 @@ class aboutUs extends React.Component {
                   {renderRichText(AboutUsPage.section5Description)}
                 </p>
                 <Button
-                  href="https://api.whatsapp.com/send?phone=85267461301"
+                  href="https://api.whatsapp.com/send?phone=85264602996"
                   className="rounded-full px-8 py-2 bg-white text-black font-black my-16"
                 >
                   我想約見您們
@@ -218,7 +218,7 @@ class aboutUs extends React.Component {
                   {renderRichText(AboutUsPage.section6Description)}
                 </p>
                 <Button
-                  href="https://api.whatsapp.com/send?phone=85267461301"
+                  href="https://api.whatsapp.com/send?phone=85264602996"
                   className="rounded-full px-8 py-2 bg-white text-black font-black my-16"
                 >
                   我想約見您們

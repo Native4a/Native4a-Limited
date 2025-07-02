@@ -25,6 +25,7 @@ import Img from '../components/baseTools/Image'
 import Text from '../components/baseTools/text'
 import Awards from '../components/awards'
 import Grid from '../components/baseTools/Grid/index.js'
+import whatsApp_icon from '../components/baseTools/Icon/img/whatsapp.svg'
 //import ArticlePreview from '../components/article-preview'
 
 //CSS here//
@@ -80,15 +81,13 @@ class backlinksIndex extends React.Component {
                   <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
                     {renderRichText(blacklinkPage.titleDescription)}
                   </p>
-                  <div className="hidden md:grid grid-cols-2 gap-6 py-6">
-                    <div className="flex gap-6 w-full items-center">
-                      <Icon>@Native4A</Icon>
-                    </div>
-                  </div>
-                  <div className="md:hidden">
-                    <div className="flex gap-2 w-full items-center">
-                      <Icon>@Native4A</Icon>
-                    </div>
+                  <div className="grid grid-cols-5 md:grid-cols-6 gap-2 md:gap-6 py-6">
+                    <Icon Alt="Instagram link" />
+                    <Icon
+                      Alt="whatsapp link"
+                      URL={whatsApp_icon}
+                      linkto="https://api.whatsapp.com/send/?phone=85264602996&text=索取backlinks收費表"
+                    />
                   </div>
                 </div>
               </div>
@@ -169,7 +168,7 @@ class backlinksIndex extends React.Component {
               <Button
                 customBtn="flex justify-center rounded-xl bg-blue-600"
                 className="py-3 px-5 text-white"
-                linkto="https://api.whatsapp.com/send?phone=85267461301"
+                linkto="https://api.whatsapp.com/send?phone=85264602996"
               >
                 中文Backlinks收費參考
               </Button>
