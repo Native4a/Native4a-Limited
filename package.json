@@ -15,7 +15,9 @@
     "@emailjs/browser": "^3.7.0",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@popperjs/core": "^2.11.8",
     "@react-icons/all-files": "^4.1.0",
+    "@types/react": "^19.1.8",
     "bootstrap": "^5.3.0",
     "contentful": "^9.1.33",
     "emailjs": "^4.0.1",
@@ -48,12 +50,14 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.9.0",
     "react-markdown": "^9.0.3",
+    "react-router-dom": "^7.6.3",
     "react-router-hash-link": "^2.4.3",
     "react-slick": "^0.29.0",
     "react-star-ratings": "^2.3.0",
     "react-tabs": "^5.2.0",
     "reactjs-popup": "^2.0.5",
     "reading-time": "^2.0.0-1",
+    "sharp": "^0.34.2",
     "tw-elements": "^2.0.0",
     "url-encode-decode": "^1.0.0"
   },
@@ -92,5 +96,6 @@
     "netlify:login": "netlify login",
     "netlify:deploy": "netlify deploy -d public -p",
     "gatsby-provision": "gatsby-provision-contentful --contentful-data-path='./contentful/export.json' --space-id=$CONTENTFUL_SPACE_ID --management-token=$CONTENTFUL_MANAGEMENT_TOKEN"
-  }
+  },
+  "packageManager": "yarn@4.9.2"
 }
