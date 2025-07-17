@@ -15,8 +15,11 @@ import MediaWork from '../components/mediaWork'
 import Awards from '../components/awards'
 import AwardsWeb from '../components/awards/awards_website'
 import SmmSlick from '../components/slickSlider/blueSlider/smmSlider'
-import SocialMediaBtn from '../components/button/socialMedia'
+//import SocialMediaBtn from '../components/button/socialMedia'
 import Section from '../components/baseTools/Section'
+//import Whatsapp from '../components/baseTools/whatsapp'
+import Icon from '../components/baseTools/Icon'
+import whatsApp_icon from '../components/baseTools/Icon/img/whatsapp.svg'
 
 //CSS here//
 import 'reactjs-popup/dist/index.css'
@@ -50,15 +53,13 @@ class smmAdsIndex extends React.Component {
                     {renderRichText(smmPage.titleDescription)}
                   </p>
                 </div>
-                <div className="hidden md:grid grid-cols-2 gap-6 py-6">
-                  <div className="flex gap-6 w-full items-center">
-                    <SocialMediaBtn />
-                  </div>
-                </div>
-                <div className="md:hidden ">
-                  <div className="flex gap-2 w-full items-center">
-                    <SocialMediaBtn />
-                  </div>
+                <div className="grid grid-cols-5 md:grid-cols-6 gap-2 md:gap-6 py-6">
+                  <Icon Alt="Instagram link" />
+                  <Icon
+                    Alt="whatsapp link"
+                    URL={whatsApp_icon}
+                    linkto="https://api.whatsapp.com/send/?phone=85267461301&text=我想查詢廣告服務"
+                  />
                 </div>
               </div>
               <div className={styles.smmSpanSquare}>
