@@ -53,7 +53,7 @@ const Footer = () => {
                   {description.description}
                 </p>
                 <div className="rounded-t-lg overflow-hidden text-center p-0 md:p-4 mt-3">
-                  <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85264602996&text=你好，我想查詢SEO服務。">
+                  <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85264602996">
                     {buttonName}
                   </Whatsapp>
                 </div>
