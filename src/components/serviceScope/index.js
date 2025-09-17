@@ -8,7 +8,7 @@ const ServiceScope = () => {
   return (
     <div className="relative pt-20">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-0 static z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 static z-10">
           {serviceScope.map((item, index) => {
             const { icon, title, descriptions } = item
             return (

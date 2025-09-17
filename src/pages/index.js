@@ -117,7 +117,7 @@ class RootIndex extends React.Component {
         </Section>
         <Section
           SectionClass={`${styles.sec2_wrap} ${'flex justify-evenly'}`}
-          ContainerClass="flex flex-col items-center m-auto"
+          ContainerClass="flex flex-col items-center m-auto w-full"
         >
           <div className="grid grid-rows-0 relative container mx-auto">
             <h2 className="flex items-center text-2xl pt-12 ml-2 font-bold">
