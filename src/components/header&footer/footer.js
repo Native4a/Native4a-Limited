@@ -87,7 +87,7 @@ const Footer = () => {
               <section>
                 <Icon
                   URL={Whatsapp_sticky}
-                  linkto="https://api.whatsapp.com/send/?phone=85264602996&text=你好，我想查詢SEO服務。"
+                  linkto="https://api.whatsapp.com/send/?phone=85264602996"
                   Size="w-24 fixed bottom-0 right-0 md:translate-y-[-25%] md:translate-x-[-25%] z-50"
                   Mobile="translate-y-[-80%] translate-x-[-10%]"
                   Alt="sticky whatsapp button"
