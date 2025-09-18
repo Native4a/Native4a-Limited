@@ -58,7 +58,7 @@ class smmAdsIndex extends React.Component {
                   <Icon
                     Alt="whatsapp link"
                     URL={whatsApp_icon}
-                    linkto="https://api.whatsapp.com/send/?phone=85267461301&text=我想查詢廣告服務"
+                    linkto="https://api.whatsapp.com/send/?phone=85264602996&text=%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%BB%A3%E5%91%8A%E6%9C%8D%E5%8B%99"
                   />
                 </div>
               </div>
