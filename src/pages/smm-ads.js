@@ -85,7 +85,7 @@ class smmAdsIndex extends React.Component {
         <section className={styles.sec2_wrap}>
           <MediaWork />
         </section>
-        <Section SectionClass="bg-[linear-gradient(to_right,white_50%,#3a7dff_50%)]">
+        <Section SectionClass="bg-[linear-gradient(to_top,#3a7dff_30%,white_70%)] md:bg-[linear-gradient(to_right,white_50%,#3a7dff_50%)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 py-12">
             <div className="p-6">
               <div className="grid gap-y-8">
@@ -122,7 +122,7 @@ class smmAdsIndex extends React.Component {
             </div>
           </div>
         </Section>
-        <Section SectionClass="bg-[linear-gradient(to_right,#3a7dff_50%,white_50%)]">
+        <Section SectionClass="bg-[linear-gradient(to_top,white_30%,#3a7dff_70%)] md:bg-[linear-gradient(to_right,#3a7dff_50%,white_50%)]">
           <div className="grid grid-cols-1 gap-6 py-12">
             <div className="px-6 xl:px-0 py-0 xl:py-6">
               <div className="grid gap-y-8 text-white">
@@ -146,7 +146,7 @@ class smmAdsIndex extends React.Component {
             </div>
           </div>
         </Section>
-        <Section SectionClass="bg-[linear-gradient(to_right,white_50%,#3a7dff_50%)]">
+        <Section SectionClass="bg-[linear-gradient(to_top,#3a7dff_30%,white_70%)] md:bg-[linear-gradient(to_right,white_50%,#3a7dff_50%)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 py-12">
             <div className="px-6 xl:px-0 py-0 xl:py-6">
               <div className="grid gap-y-8">
@@ -173,7 +173,7 @@ class smmAdsIndex extends React.Component {
             </div>
           </div>
         </Section>
-        <Section SectionClass="bg-[linear-gradient(to_right,#3a7dff_50%,white_50%)]">
+        <Section SectionClass="bg-[linear-gradient(to_top,white_30%,#3a7dff_70%)] md:bg-[linear-gradient(to_right,#3a7dff_50%,white_50%)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 py-12">
             <div className="px-6 xl:px-0 py-0 xl:py-6">
               <div className="grid gap-y-8 text-white">
