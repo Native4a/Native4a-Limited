@@ -26,6 +26,10 @@ import 'reactjs-popup/dist/index.css'
 import * as styles from '../styles/smm-ads.module.css'
 
 //image here//
+import GOAL_image from '../img/完整廣告策略圖.png'
+import SSads_image from '../img/波衫圖.png'
+import conputer$$Ads from '../img/電腦$$Ads.png'
+import conputerSet from '../img/conputer setting.png'
 
 //import ArticlePreview from '../components/article-preview'
 
@@ -81,9 +85,98 @@ class smmAdsIndex extends React.Component {
         <section className={styles.sec2_wrap}>
           <MediaWork />
         </section>
+        <Section SectionClass="bg-[linear-gradient(to_right,white_50%,#3a7dff_50%)]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 py-12">
+            <div className="px-6 xl:px-0 py-0 xl:py-6">
+              <div className="grid gap-y-8">
+                <h2 className="text-4xl font-black">
+                  完整廣告策略（引流廣告、成交廣告組合技）
+                </h2>
+                <p className="text-2xl">
+                  唔同內容，吸引到唔同階段嘅客戶查詢，一啲廣告負責引流用，可以設計一啲輕鬆玩味
+                  <span className="text-emerald-800">Reels做導流</span>。
+                </p>
+                <p className="text-2xl">
+                  面向曾經互動過的客戶（like過或睇過Profile已經係），可以用
+                  <span className="text-emerald-800">產品廣告</span>吸引佢哋。
+                </p>
+                <p className="text-2xl">
+                  對於已查詢/已睇過產品嘅客戶，則可以用
+                  <span className="text-emerald-800">
+                    「再營銷Re-marketing」
+                  </span>
+                  嚟追蹤，俾優惠佢吸引成交。
+                </p>
+                <p className="text-4xl font-bold text-orange-400">
+                  所以，FB/IG廣告係有唔同職責架
+                </p>
+              </div>
+            </div>
+            <div className="grid content-center z-0">
+              <img className="w-full" src={GOAL_image} alt="video Graphic01" />
+            </div>
+          </div>
+        </Section>
+        <Section SectionClass="bg-[linear-gradient(to_right,#3a7dff_50%,white_50%)]">
+          <div className="grid grid-cols-1 gap-6 py-12">
+            <div className="px-6 xl:px-0 py-0 xl:py-6">
+              <div className="grid gap-y-8 text-white">
+                <h2 className="text-4xl font-black">廣告稿設計</h2>
+                <p className="text-2xl">
+                  以時下散播力最快的廣告形式包裝你的產品或服務。
+                  <br />
+                  無論專業風、輕鬆趣品風格全都做到。
+                  <br />
+                  碌落啲會有過往作品👇🏻
+                </p>
+              </div>
+            </div>
+            <div className="grid content-center z-0">
+              <img className="w-full" src={SSads_image} alt="video Graphic01" />
+            </div>
+          </div>
+        </Section>
+        <Section SectionClass="bg-[linear-gradient(to_right,white_50%,#3a7dff_50%)]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 py-12">
+            <div className="px-6 xl:px-0 py-0 xl:py-6">
+              <div className="grid gap-y-8">
+                <h2 className="text-4xl font-black">廣告Setting成效提升</h2>
+                <p className="text-2xl">
+                  競價策略、受眾設定、版位設定等，在預算控制範圍內，提升更多查詢。
+                </p>
+                <p className="text-4xl font-bold text-orange-400">
+                  相同budget，獲得更多查詢
+                </p>
+              </div>
+            </div>
+            <div className="grid content-center z-0">
+              <img
+                className="w-2/3"
+                src={conputer$$Ads}
+                alt="video Graphic01"
+              />
+            </div>
+          </div>
+        </Section>
+        <Section SectionClass="bg-[linear-gradient(to_right,#3a7dff_50%,white_50%)]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 py-12">
+            <div className="px-6 xl:px-0 py-0 xl:py-6">
+              <div className="grid gap-y-8 text-white">
+                <h2 className="text-4xl font-black">監察廣告表現</h2>
+                <p className="text-2xl">
+                  廣告數據隨時變化，需要有人長期𥄫住。
+                  仲可以Check埋競爭對手廣告。
+                </p>
+              </div>
+            </div>
+            <div className="grid content-center z-0">
+              <img className="w-2/3" src={conputerSet} alt="video Graphic01" />
+            </div>
+          </div>
+        </Section>
         <section className={styles.sec2p5_wrap}>
           <div className={styles.container}>
-            <div className="grid grid-cols-12">
+            <div className="grid grid-cols-12 pt-18">
               <div className="relative container mx-auto col-start-1 col-end-12 lg:col-end-5 xl:col-end-6">
                 <div className={styles.smmSpanSquare}>
                   <h2 className="flex items-center text-2xl ml-2 font-bold">
