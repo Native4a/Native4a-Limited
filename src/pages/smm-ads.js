@@ -90,13 +90,18 @@ class smmAdsIndex extends React.Component {
             <div className="p-6">
               <div className="grid gap-y-8">
                 <h2 className="flex items-center text-3xl font-black">
+                  <b className="ml-3 text-4xl font-bold text-orange-400">
+                    Meta廣告服務內容：
+                  </b>
+                </h2>
+                <h3 className="flex items-center text-3xl font-black">
                   <span>
                     <FaSquare color="#3A7DFF" />
                   </span>
                   <b className="ml-3">
                     完整廣告策略（引流廣告、成交廣告組合技）
                   </b>
-                </h2>
+                </h3>
                 <p className="text-2xl">
                   唔同內容，吸引到唔同階段嘅客戶查詢，一啲廣告負責引流用，可以設計一啲輕鬆玩味
                   <span className="text-emerald-800">Reels做導流</span>。
@@ -126,12 +131,12 @@ class smmAdsIndex extends React.Component {
           <div className="grid grid-cols-1 gap-6 py-12">
             <div className="px-6 xl:px-0 py-0 xl:py-6">
               <div className="grid gap-y-8 text-white">
-                <h2 className="flex items-center text-3xl font-black">
+                <h3 className="flex items-center text-3xl font-black">
                   <span>
                     <FaSquare color="white" />
                   </span>
                   <b className="ml-3">廣告稿設計</b>
-                </h2>
+                </h3>
                 <p className="text-2xl">
                   以時下散播力最快的廣告形式包裝你的產品或服務。
                   <br />
@@ -150,12 +155,12 @@ class smmAdsIndex extends React.Component {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 py-12">
             <div className="px-6 xl:px-0 py-0 xl:py-6">
               <div className="grid gap-y-8">
-                <h2 className="flex items-center text-3xl font-black">
+                <h3 className="flex items-center text-3xl font-black">
                   <span>
                     <FaSquare color="#3A7DFF" />
                   </span>
                   <b className="ml-3">廣告Setting成效提升</b>
-                </h2>
+                </h3>
                 <p className="text-2xl">
                   競價策略、受眾設定、版位設定等，在預算控制範圍內，提升更多查詢。
                 </p>
@@ -177,12 +182,12 @@ class smmAdsIndex extends React.Component {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 py-12">
             <div className="px-6 xl:px-0 py-0 xl:py-6">
               <div className="grid gap-y-8 text-white">
-                <h2 className="flex items-center text-3xl font-black">
+                <h3 className="flex items-center text-3xl font-black">
                   <span>
                     <FaSquare color="white" />
                   </span>
                   <b className="ml-3">監察廣告表現</b>
-                </h2>
+                </h3>
                 <p className="text-2xl">
                   廣告數據隨時變化，需要有人長期𥄫住。
                   仲可以Check埋競爭對手廣告。
