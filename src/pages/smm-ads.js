@@ -90,7 +90,7 @@ class smmAdsIndex extends React.Component {
             <div className="p-6">
               <div className="grid gap-y-8">
                 <h2 className="flex items-center text-3xl font-black">
-                  <b className="ml-3 text-4xl font-bold text-orange-400">
+                  <b className="ml-3 text-5xl font-bold text-orange-400">
                     Meta廣告服務內容：
                   </b>
                 </h2>
