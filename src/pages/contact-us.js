@@ -7,14 +7,15 @@ import get from 'lodash/get'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import ContactForm from '../components/contactAs'
-import SocialMediaBtn from '../components/button/socialMedia'
 import Button from '../components/baseTools/button'
-
+import Section from '../components/baseTools/Section'
+import Icon from '../components/baseTools/Icon'
 //CSS here//
 import 'reactjs-popup/dist/index.css'
 import * as styles from '../styles/contact-us.module.css'
 
 //image here//
+import Whatsapp_icon from '../components/baseTools/Icon/img/whatsapp.svg'
 
 //import ArticlePreview from '../components/article-preview'
 
@@ -64,11 +65,18 @@ class contactUs extends React.Component {
             </p>
           </div>
         </section>
-        <section className={styles.sec2_wrap}>
-          <div className="flex grid-rows-2 gap-6 w-full justify-center">
-            <SocialMediaBtn />
+        <Section ContainerClass="flex justify-center items-center m-auto">
+          <div className="grid grid-cols-2 justify-center items-center">
+            <Icon Size="w-2/6" />
+            <Icon
+              Size="w-2/6"
+              Top_class="flex items-center bg-emerald-500 text-white drop-shadow-lg rounded-full font-medium pr-5"
+              URL={Whatsapp_icon}
+              inner_children="WhatsApp查詢"
+              linkto="https://api.whatsapp.com/send/?phone=85264602996"
+            ></Icon>
           </div>
-        </section>
+        </Section>
         <section className={styles.sec2_wrap}>
           <div className="grid grid-rows-2 w-full items-center">
             <h4 className="text-xl leading-snug text-center">

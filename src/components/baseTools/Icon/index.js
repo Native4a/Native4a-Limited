@@ -4,6 +4,8 @@ import def_icon from './img/instagram.svg'
 
 const Icon = ({
   children,
+  inner_children,
+  Top_class,
   Desktop,
   Size,
   URL,
@@ -13,11 +15,13 @@ const Icon = ({
   Textstyle,
 }) => {
   //set default class style with tailwindCSS
+  const top_class = 'flex items-center'
   const desktop_size = 'w-full'
   const desktop_style = ''
   const mobile_style = ''
   const alternate_text = 'instagram icon'
   const content = ''
+  const button_content = ''
   const link = 'https://www.instagram.com/native_4a/?hl=zh-tw_'
   const text_style = 'text-xl'
 
@@ -25,7 +29,7 @@ const Icon = ({
     <div className="container mx-auto">
       <div className="grid">
         <AnchorLink to={linkto ? linkto : link}>
-          <div className="flex items-center">
+          <div className={Top_class ? Top_class : top_class}>
             <img
               className={`${Desktop ? Desktop : desktop_style} ${
                 Size ? Size : desktop_size
@@ -33,6 +37,7 @@ const Icon = ({
               src={URL ? URL : def_icon}
               alt={Alt ? Alt : alternate_text}
             />
+            {inner_children ? inner_children : button_content}
           </div>
           <div className="flex items-center col-span-2">
             <h3 className={Textstyle ? Textstyle : text_style}>
