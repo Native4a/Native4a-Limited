@@ -68,7 +68,7 @@ const Navigation = () => {
         </div>
         <div className="xl:hidden col-start-5 col-end-11 sm:col-start-6 sm:col-end-12 flex items-center justify-end">
           {/* 備註：這是手機版的WhatsApp */}
-          <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85264602996&text=你好，我想查詢SEO服務。">
+          <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85264602996">
             WhatsApp查詢
           </Whatsapp>
         </div>
