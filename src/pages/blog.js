@@ -8,7 +8,6 @@ import Seo from '../components/seo'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 
-
 class BlogIndex extends React.Component {
   render() {
     const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
@@ -16,7 +15,7 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Seo title="Blog" />
-        <ArticlePreview posts={posts}/>
+        <ArticlePreview posts={posts} />
       </Layout>
     )
   }
@@ -30,7 +29,7 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
-    allContentfulBlogPost(sort: {publishDate: DESC}) {
+    allContentfulBlogPost(sort: { publishDate: DESC }) {
       nodes {
         title
         slug
@@ -54,4 +53,3 @@ export const pageQuery = graphql`
     }
   }
 `
-

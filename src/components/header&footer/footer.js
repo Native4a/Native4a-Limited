@@ -32,7 +32,7 @@ const Footer = () => {
     isMobile && hiddenPaths.some((path) => pathname.startsWith(path))
   )
   return (
-    <div>
+    <div className="grayscale">
       {footer.map((item, index) => {
         const {
           title,

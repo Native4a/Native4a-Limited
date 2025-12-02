@@ -28,14 +28,9 @@ class BlogPostTemplate extends React.Component {
       renderNode: {
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
           const { gatsbyImage, description } = node.data.target
-          return (
-            <GatsbyImage
-              image={getImage(gatsbyImage)}
-              alt={description}
-            />
-          )
+          return <GatsbyImage image={getImage(gatsbyImage)} alt={description} />
         },
-        "embedded-asset-block": (node) => {
+        'embedded-asset-block': (node) => {
           const { gatsbyImageData } = node.data.target
           if (!gatsbyImageData) {
             // asset is not an image
@@ -44,7 +39,7 @@ class BlogPostTemplate extends React.Component {
           return <GatsbyImage image={gatsbyImageData} />
         },
       },
-    };
+    }
     return (
       <Layout location={this.props.location}>
         <Seo
@@ -54,10 +49,7 @@ class BlogPostTemplate extends React.Component {
         />
         <section>
           <div className={styles.container}>
-            <Hero
-              image={post.heroImage?.gatsbyImage}
-              title={post.title}
-            />
+            <Hero image={post.heroImage?.gatsbyImage} title={post.title} />
           </div>
         </section>
         <div className={styles.container}>
@@ -70,26 +62,26 @@ class BlogPostTemplate extends React.Component {
               </span>
               {post.body?.raw && renderRichText(post.body, options)}
               <Tags tags={post.tags} />
-            {(previous || next) && (
-              <nav>
-                <ul className={styles.articleNavigation}>
-                  {previous && (
-                    <li>
-                      <Link to={`/blog/${previous.slug}`} rel="prev">
-                        ← {previous.title}
-                      </Link>
-                    </li>
-                  )}
-                  {next && (
-                    <li>
-                      <Link to={`/blog/${next.slug}`} rel="next">
-                        {next.title} →
-                      </Link>
-                    </li>
-                  )}
-                </ul>
-              </nav>
-            )}
+              {(previous || next) && (
+                <nav>
+                  <ul className={styles.articleNavigation}>
+                    {previous && (
+                      <li>
+                        <Link to={`/blog/${previous.slug}`} rel="prev">
+                          ← {previous.title}
+                        </Link>
+                      </li>
+                    )}
+                    {next && (
+                      <li>
+                        <Link to={`/blog/${next.slug}`} rel="next">
+                          {next.title} →
+                        </Link>
+                      </li>
+                    )}
+                  </ul>
+                </nav>
+              )}
             </div>
           </div>
         </div>
