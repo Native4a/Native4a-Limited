@@ -68,7 +68,7 @@ class RootIndex extends React.Component {
           ogUrl="https://nativeaaaa.com.hk/"
         />
         <Section SectionClass={styles.bgCustomGradient}>
-          <div className="grayscale grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
             <div className="px-6 xl:px-0 py-0 xl:py-6">
               <div className="pt-2 md:pt-3 2xl:pt-0">
                 {
@@ -116,10 +116,8 @@ class RootIndex extends React.Component {
           </div>
         </Section>
         <Section
-          SectionClass={`${
-            styles.sec2_wrap
-          } ${'grayscale flex justify-evenly'}`}
-          ContainerClass="grayscale flex flex-col items-center m-auto w-full"
+          SectionClass={`${styles.sec2_wrap} ${'flex justify-evenly'}`}
+          ContainerClass="flex flex-col items-center m-auto w-full"
         >
           <div className="grid grid-rows-0 relative container mx-auto">
             <h2 className="flex items-center text-2xl pt-12 ml-2 font-bold">
@@ -136,10 +134,8 @@ class RootIndex extends React.Component {
           <ServiceScope />
         </Section>
         <Section
-          SectionClass={`${
-            styles.sec3_wrap
-          } ${'grayscale flex justify-evenly'}`}
-          ContainerClass="grayscale flex flex-col items-center m-auto"
+          SectionClass={`${styles.sec3_wrap} ${'flex justify-evenly'}`}
+          ContainerClass="flex flex-col items-center m-auto"
         >
           <div className="grid items-center shadow-none rounded-3xl">
             <div className="inline md:hidden">
@@ -158,13 +154,11 @@ class RootIndex extends React.Component {
             <Clients />
           </div>
         </Section>
-        <section className="grayscale">
+        <section>
           <AboutAs />
         </section>
-        <Section SectionClass="grayscale">
-          <ClientLogos />
-        </Section>
-        <section className="grayscale">
+        <ClientLogos />
+        <section>
           <ContactForm />
         </section>
       </Layout>
