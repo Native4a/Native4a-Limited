@@ -27,9 +27,9 @@ import * as styles from '../styles/about-us.module.css'
 import native4a_logo from '../img/2023_native4a_logo.svg'
 import no1SeoCompany from '../img/no.1 seo company native-600x390.png'
 import Commitment from '../img/Commitment.png'
-import NativeAboutUsweb from '../img/Native_AboutUs_web copy.png'
-import AboutUs_web02 from '../img/Native_AboutUs_web02 copy.png'
-import Namecard from '../img/Native_AboutUs_Namecard copy.png'
+import NativeAboutUsweb from '../img/Native_AboutUs_web.png'
+import AboutUs_web02 from '../img/Native_AboutUs_web02.png'
+import Namecard from '../img/Native_AboutUs_Namecard.png'
 
 //import ArticlePreview from '../components/article-preview'
 
