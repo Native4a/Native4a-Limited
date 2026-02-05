@@ -1,10 +1,8 @@
 import React from 'react'
 import CountUp from 'react-countup'
-import { FaQuoteLeft } from 'react-icons/fa'
 import { graphql, PageProps } from 'gatsby'
 import get from 'lodash/get'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 import Layout from '../components/layout'
 import Seo from '../components/seo'
@@ -13,7 +11,6 @@ import ClientLogos from '../components/clientLogos'
 import Awards from '../components/awards'
 import AwardsWeb from '../components/awards/awards_website'
 import SocialMediaBtn from '../components/button/socialMedia'
-import StarRatings from 'react-star-ratings'
 import Button from '../components/baseTools/button'
 import Section from '../components/baseTools/Section'
 import AboutAs from '../components/aboutAs'
@@ -25,8 +22,6 @@ import native4a_logo from '../img/2023_native4a_logo.svg'
 import no1SeoCompany from '../img/no.1 seo company native-600x390.png'
 import Commitment from '../img/Commitment.png'
 import NativeAboutUsweb from '../img/Native_AboutUs_web.png'
-import AboutUs_web02 from '../img/Native_AboutUs_web02.png'
-import Namecard from '../img/Native_AboutUs_Namecard.png'
 
 interface AboutUsPageData {
   title: string
