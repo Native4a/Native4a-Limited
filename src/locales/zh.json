@@ -14,8 +14,9 @@
     "contactUs": "聯絡我們"
   },
   "hero": {
-    "title": "提升您的數字形象",
-    "subtitle": "專業的SEO和數字營銷服務",
+    "title": "香港數碼營銷公司",
+    "subtitle": "native讓你站在巨人肩上",
+    "description": "我們提供全面的數碼營銷解決方案，幫助你的業務在線上世界中成長和成功。",
     "cta": "開始"
   },
   "about": {
@@ -24,6 +25,7 @@
   },
   "services": {
     "title": "我們的服務",
+    "heading": "我們提供的服務",
     "seo": "SEO服務",
     "marketing": "數字營銷",
     "webDesign": "網頁設計",

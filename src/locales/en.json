@@ -14,8 +14,9 @@
     "contactUs": "Contact Us"
   },
   "hero": {
-    "title": "Elevate Your Digital Presence",
-    "subtitle": "Professional SEO & Digital Marketing Services",
+    "title": "Hong Kong Digital Marketing Company",
+    "subtitle": "Native stands on the shoulders of giants",
+    "description": "We provide comprehensive digital marketing solutions to help your business grow and succeed in the online world.",
     "cta": "Get Started"
   },
   "about": {
@@ -24,6 +25,7 @@
   },
   "services": {
     "title": "Our Services",
+    "heading": "What We Offer",
     "seo": "SEO Services",
     "marketing": "Digital Marketing",
     "webDesign": "Web Design",
