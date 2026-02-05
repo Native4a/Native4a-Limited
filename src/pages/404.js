@@ -18,7 +18,7 @@ const NotFoundPage = () => (
               }}
             >
               <Text tag="h1" className="text-6xl">
-                404: Not Found the page!!
+                404: Not Found the page!!我係taki test
               </Text>
               <Text tag="p">
                 You just hit a route that doesn&#39;t exist... the sadness.{' '}
