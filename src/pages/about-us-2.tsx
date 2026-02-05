@@ -16,6 +16,7 @@ import SocialMediaBtn from '../components/button/socialMedia'
 import StarRatings from 'react-star-ratings'
 import Button from '../components/baseTools/button'
 import Section from '../components/baseTools/Section'
+import AboutAs from '../components/aboutAs'
 
 import 'reactjs-popup/dist/index.css'
 import * as styles from '../styles/about-us.module.css'
@@ -28,8 +29,6 @@ import AboutUs_web02 from '../img/Native_AboutUs_web02.png'
 import Namecard from '../img/Native_AboutUs_Namecard.png'
 
 interface AboutUsPageData {
-  metaTitle: string
-  metaDescription: string
   title: string
   titleDescription: {
     titleDescription: string
@@ -54,8 +53,8 @@ class aboutUs extends React.Component<AboutUsPageProps> {
     return (
       <Layout location={this.props.location}>
         <Seo
-          title={AboutUsPage.metaTitle}
-          description={AboutUsPage.metaDescription}
+          title={AboutUsPage?.title || 'About Us'}
+          description={AboutUsPage?.titleDescription?.titleDescription || 'About Us'}
           ogUrl="https://nativeaaaa.com.hk/about-us-2/"
         />
         <Section SectionClass="bg-[url('../img/Native_AboutUs_web.png')] bg-cover">
@@ -131,14 +130,8 @@ class aboutUs extends React.Component<AboutUsPageProps> {
 export default aboutUs
 export const pageQuery = graphql`
   query AboutUsQuery {
-    allContentfulAboutUsPage(
-      filter: { contentful_id: { eq: "7CW0R5P60BgGgCHqXPjbho" } }
-    ) {
+    allContentfulAboutUsPage {
       nodes {
-        contentful_id
-        id
-        metaTitle
-        metaDescription
         title
         titleDescription {
           titleDescription
