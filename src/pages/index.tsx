@@ -91,7 +91,7 @@ function RootIndexContent(props: PageDataProps) {
     <Layout location={props.location}>
       <Seo
         title={addNewPage.seo.metaTitle}
-        description={addNewPage.seo.metaDescription}
+        description={addNewPage.seo.metaDescription?.metaDescription || ''}
         ogUrl="https://nativeaaaa.com.hk/"
       />
       <Section SectionClass={styles.bgCustomGradient}>
