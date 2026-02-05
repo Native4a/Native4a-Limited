@@ -15,6 +15,7 @@ import SocialMediaBtn from '../components/button/socialMedia'
 import Clients from "../components/Client's"
 import ServiceScope from '../components/serviceScope'
 import Section from '../components/baseTools/Section'
+import TranslationTest from '../components/TranslationTest'
 
 //image here//
 import heroBanner_Award from '../img/Award02_2.png'
@@ -89,6 +90,9 @@ class RootIndex extends React.Component<PageDataProps> {
           description={addNewPage.seo.metaDescription}
           ogUrl="https://nativeaaaa.com.hk/"
         />
+        <div className="container mx-auto px-4">
+          <TranslationTest />
+        </div>
         <Section SectionClass={styles.bgCustomGradient}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
             <div className="px-6 xl:px-0 py-0 xl:py-6">

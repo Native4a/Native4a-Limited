@@ -10,20 +10,22 @@ const resources = {
   zh: { translation: zh },
 }
 
-// Get saved language from localStorage or default to Chinese
-const savedLanguage = typeof window !== 'undefined' 
-  ? localStorage.getItem('language') || 'zh'
-  : 'zh'
-
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: savedLanguage,
-    fallbackLng: 'zh',
-    interpolation: {
-      escapeValue: false,
-    },
-  })
+// Initialize i18n only once, avoid calling init multiple times
+if (!i18n.isInitialized) {
+  i18n
+    .use(initReactI18next)
+    .init({
+      resources,
+      lng: 'zh',
+      fallbackLng: 'zh',
+      interpolation: {
+        escapeValue: false,
+      },
+      react: {
+        useSuspense: false, // Disable suspense for Gatsby compatibility
+      },
+    })
+}
 
 export default i18n
+
