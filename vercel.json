@@ -3,6 +3,8 @@
     "silent": true
   },
   "installCommand": "npm install --legacy-peer-deps",
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
   "build": {
     "env": {
       "ENABLE_EXPERIMENTAL_COREPACK": "0"
