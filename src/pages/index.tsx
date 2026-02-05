@@ -56,38 +56,25 @@ interface PageDataProps extends PageProps {
   }
 }
 
+function toSafeString(val: any): string {
+  if (val == null) return ''
+  if (typeof val === 'string') return val
+  if (typeof val === 'number' || typeof val === 'boolean') return String(val)
+  return ''
+}
+
 function RootIndexContent(props: PageDataProps) {
   const { t } = useTranslation()
   const [addNewPage] = get(props, 'data.allContentfulAddNewPage.nodes')
   const contact = get(addNewPage, 'contact[0]')
   const textContact = get(contact, 'textContact[0]')
 
-  // Handle rich text or string content
-  const textContactContent = textContact?.content?.content
-  const inContactBox1 = typeof textContactContent === 'string' ? textContactContent : ''
+  const inContactBox1 = toSafeString(get(textContact, 'content.content'))
 
-  const headingContents = addNewPage.heading.map(
-    (item) => item.content.content
-  )
-  
-  // Safely extract contact box titles, ensuring they're strings
-  const contactBox = addNewPage.contact
-    .map((item, index) => {
-      if (index === 0 && typeof item.title === 'string') {
-        return item.title
-      }
-      return null
-    })
-    .filter(Boolean)[0] || ''
+  const headingCount = addNewPage.heading ? addNewPage.heading.length : 0
 
-  const contactBox2 = addNewPage.contact
-    .map((item, index) => {
-      if (index === 1 && typeof item.title === 'string') {
-        return item.title
-      }
-      return null
-    })
-    .filter(Boolean)[0] || ''
+  const contactBox = toSafeString(get(addNewPage, 'contact[0].title'))
+  const contactBox2 = toSafeString(get(addNewPage, 'contact[1].title'))
 
   return (
     <Layout location={props.location}>
@@ -100,26 +87,20 @@ function RootIndexContent(props: PageDataProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
           <div className="px-6 xl:px-0 py-0 xl:py-6">
             <div className="pt-2 md:pt-3 2xl:pt-0">
-              {headingContents.map((content, index) => {
-                if (index === 0) {
-                  return <h1 key={index} className={styles.title}>{t('hero.title')}</h1>
-                } else if (index === 1) {
-                  return (
-                    <div key={index}>
-                      <h2 className={styles.subTitle}>{t('hero.subtitle')}</h2>
-                      <div className={styles.border}></div>
-                    </div>
-                  )
-                } else if (index === 2) {
-                  return (
-                    <p key={index} className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
-                      {t('hero.description')}
-                    </p>
-                  )
-                } else {
-                  return null
-                }
-              })}
+              {headingCount > 0 && (
+                <h1 className={styles.title}>{t('hero.title')}</h1>
+              )}
+              {headingCount > 1 && (
+                <div>
+                  <h2 className={styles.subTitle}>{t('hero.subtitle')}</h2>
+                  <div className={styles.border}></div>
+                </div>
+              )}
+              {headingCount > 2 && (
+                <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
+                  {t('hero.description')}
+                </p>
+              )}
               <div className="hidden md:grid grid-cols-1 gap-6 py-6">
                 <div className="flex gap-6 w-full items-center">
                   <SocialMediaBtn />
