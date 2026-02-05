@@ -333,7 +333,7 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                 <div className="lg:relative left-36 col-start-1 col-end-13 lg:col-start-3 lg:col-end-13 flex justify-center col-span-5 order-3 pt-10">
                   <div className="rounded-3xl shadow-[0_3px_5px_rgba(0,0,0,0.25)] justify-center grid backdrop-blur-md bg-white/50 col-span-5">
                     <p className="grid text-2xl font-bold items-center p-8">
-                      ”有時候頁面上的連結可以提高頁面的質量，但我認為這是一種你不希望看到的人為因素，只因為頁面上有連結並不意味著它一定是好的。”
+                      ”有時候頁面上的連結可以提高頁面的質量，但我認為這是一種你不希望看到的人為因素，只因為頁面上有連結並不意味著它一定是好的。���
                     </p>
                   </div>
                 </div>
@@ -615,9 +615,6 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
     )
   }
 }
-
-export default backlinksIndex
-
 
 export default backlinksIndex
 
