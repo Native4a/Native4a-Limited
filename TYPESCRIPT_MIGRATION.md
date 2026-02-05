@@ -26,10 +26,14 @@
 ### Pages (1 file)
 - ✅ src/pages/index.tsx (home page)
 
-### Hooks (2 files)
+### Hooks (7 files)
 - ✅ src/hook/useAboutAs.ts
 - ✅ src/hook/useAddCases.ts
 - ✅ src/hook/useContactForm.ts
+- ✅ src/hook/useWebSlider.ts
+- ✅ src/hook/useVideoSlider.ts
+- ✅ src/hook/useSocialMedia.ts
+- ✅ src/hook/useServiceScope.ts
 
 ### Additional Components (8 files)
 - ✅ src/components/Cases/index.tsx
@@ -41,7 +45,7 @@
 - ✅ src/components/article-preview.tsx
 - ✅ src/templates/blog-post.tsx
 
-**Total Converted: 28 critical files**
+**Total Converted: 32 critical files (28% of the project)**
 
 ## Remaining Files to Convert (Approximately 84 files)
 
