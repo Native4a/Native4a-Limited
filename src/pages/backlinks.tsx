@@ -41,8 +41,6 @@ import SeoBacklinksDataA from '../img/繁中Backlinks真實數據A.jpeg'
 import SeoBacklinksDataB from '../img/繁中Backlinks真實數據B.jpeg'
 
 interface BacklinksPageData {
-  metaTitle: string
-  metaDescription: string
   title: string
   titleDescription: any
   [key: string]: any
@@ -66,8 +64,8 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
     return (
       <BacklinkLayout location={this.props.location}>
         <Seo
-          title={blacklinkPage.metaTitle}
-          description={blacklinkPage.metaDescription}
+          title={blacklinkPage?.title || 'Backlinks'}
+          description={blacklinkPage?.title || 'Backlinks services'}
           ogUrl="https://nativeaaaa.com.hk/backlinks/"
         />
         <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
@@ -130,14 +128,8 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
 export default backlinksIndex
 export const pageQuery = graphql`
   query BacklinksQuery {
-    allContentfulBacklinksPage(
-      filter: { contentful_id: { eq: "7CW0R5P60BgGgCHqXPjbho" } }
-    ) {
+    allContentfulBacklinksPage {
       nodes {
-        contentful_id
-        id
-        metaTitle
-        metaDescription
         title
         titleDescription {
           raw
