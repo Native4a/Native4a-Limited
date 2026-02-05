@@ -105,50 +105,69 @@ declare module '../components/backlinksEvaluation/chi' {
   export default Component
 }
 
+declare module '../components/layout' {
+  const Component: any
+  export default Component
+}
+
+declare module '../components/seo' {
+  const Component: any
+  export default Component
+}
+
+declare module '../components/aboutAs' {
+  const Component: any
+  export default Component
+}
+
+declare module '../components/Form/Tryform' {
+  const Component: any
+  export default Component
+}
+
 // lodash
 declare module 'lodash/get' {
   function get(object: any, path: string | string[], defaultValue?: any): any
   export = get
 }
 
-// Image imports
-declare module '../img/Award02_2.png' {
+declare module 'lodash' {
+  export function get(object: any, path: string | string[], defaultValue?: any): any
+}
+
+// Image imports - wildcard declarations for all image types
+declare module '*.png' {
   const value: string
   export default value
 }
 
-declare module '../img/*.png' {
+declare module '*.jpg' {
   const value: string
   export default value
 }
 
-declare module '../img/*.jpg' {
+declare module '*.jpeg' {
   const value: string
   export default value
 }
 
-declare module '../img/*.jpeg' {
+declare module '*.svg' {
   const value: string
   export default value
 }
 
-declare module '../img/*.svg' {
+declare module '*.webp' {
   const value: string
   export default value
 }
 
-declare module '../components/baseTools/Icon/img/*.svg' {
+declare module '*.gif' {
   const value: string
   export default value
 }
 
 // CSS Modules
-declare module '../styles/index.module.css' {
-  const classes: Record<string, string>
-  export default classes
-}
-
-declare module '../styles/*.module.css' {
+declare module '*.module.css' {
   const classes: Record<string, string>
   export default classes
 }
