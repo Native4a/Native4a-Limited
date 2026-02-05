@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import i18n from '../i18n/config'
 
@@ -19,10 +19,7 @@ const BacklinkLayout: React.FC<BacklinkLayoutProps> = ({
   children,
   location,
 }) => {
-  const [isClient, setIsClient] = useState(false)
-
   useEffect(() => {
-    setIsClient(true)
     if (typeof window !== 'undefined') {
       const savedLanguage = localStorage.getItem('language')
       if (savedLanguage && i18n.language !== savedLanguage) {
@@ -30,19 +27,6 @@ const BacklinkLayout: React.FC<BacklinkLayoutProps> = ({
       }
     }
   }, [])
-
-  if (!isClient) {
-    return (
-      <>
-        <Seo />
-        <TwitterPixel pixelId="ozpmk" />
-        <Navigation />
-        <MobileNavigation />
-        <main>{children}</main>
-        <Footer />
-      </>
-    )
-  }
 
   return (
     <I18nextProvider i18n={i18n}>
