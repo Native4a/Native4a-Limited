@@ -1,0 +1,11 @@
+{
+  "github": {
+    "silent": true
+  },
+  "installCommand": "npm install --legacy-peer-deps",
+  "build": {
+    "env": {
+      "ENABLE_EXPERIMENTAL_COREPACK": "0"
+    }
+  }
+}
