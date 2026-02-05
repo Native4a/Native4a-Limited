@@ -62,7 +62,9 @@ function RootIndexContent(props: PageDataProps) {
   const contact = get(addNewPage, 'contact[0]')
   const textContact = get(contact, 'textContact[0]')
 
-  const inContactBox1 = textContact ? textContact.content.content : ''
+  // Handle rich text or string content
+  const textContactContent = textContact?.content?.content
+  const inContactBox1 = typeof textContactContent === 'string' ? textContactContent : ''
 
   const headingContents = addNewPage.heading.map(
     (item) => item.content.content
