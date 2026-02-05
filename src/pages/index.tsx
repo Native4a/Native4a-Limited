@@ -11,6 +11,7 @@ import AboutAs from '../components/aboutAs'
 import ContactForm from '../components/contactAs'
 import ClientLogos from '../components/clientLogos'
 import Awards from '../components/awards'
+import AwardsWeb from '../components/awards/awards_website'
 import SocialMediaBtn from '../components/button/socialMedia'
 import Clients from "../components/Client's"
 import ServiceScope from '../components/serviceScope'
