@@ -314,6 +314,8 @@ img {
   border-radius: 8px;
   text-align: center;
 }
+
+@media screen and (max-width: 768px) {
   .subTitle {
     font-size: 6.0674vw;
     margin: 0px;
@@ -331,11 +333,6 @@ img {
   .border {
     display: none;
   }
-  /**.Yellow_Ellipse {
-    position: absolute;
-    z-index: -1;
-    top: 0px;
-  }**/
 
   .container {
     padding: 0px;
