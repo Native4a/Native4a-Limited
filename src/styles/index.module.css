@@ -308,11 +308,12 @@ img {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .title {
-    font-size: 8.3146vw;
-    margin-bottom: 8px;
-  }
+.clientsInfo {
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  text-align: center;
+}
   .subTitle {
     font-size: 6.0674vw;
     margin: 0px;

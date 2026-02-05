@@ -67,21 +67,25 @@ function RootIndexContent(props: PageDataProps) {
   const headingContents = addNewPage.heading.map(
     (item) => item.content.content
   )
-  const contactBox = addNewPage.contact.map((item, index) => {
-    if (index === 0) {
-      return item.title
-    } else {
-      return null
-    }
-  })
+  const contactBox = addNewPage.contact
+    .map((item, index) => {
+      if (index === 0) {
+        return item.title
+      } else {
+        return null
+      }
+    })
+    .filter(Boolean)[0]
 
-  const contactBox2 = addNewPage.contact.map((item, index) => {
-    if (index === 1) {
-      return item.title
-    } else {
-      return null
-    }
-  })
+  const contactBox2 = addNewPage.contact
+    .map((item, index) => {
+      if (index === 1) {
+        return item.title
+      } else {
+        return null
+      }
+    })
+    .filter(Boolean)[0]
 
   return (
     <Layout location={props.location}>
