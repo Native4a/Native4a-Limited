@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 import get from 'lodash/get'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
-import { useTranslation } from 'react-i18next'
+import { useLanguage } from '../context/LanguageContext'
 
 //components here//
 import Layout from '../components/layout'
@@ -64,7 +64,7 @@ function toSafeString(val: any): string {
 }
 
 function RootIndexContent(props: PageDataProps) {
-  const { t } = useTranslation()
+  const { t } = useLanguage()
   const [addNewPage] = get(props, 'data.allContentfulAddNewPage.nodes')
   const contact = get(addNewPage, 'contact[0]')
   const textContact = get(contact, 'textContact[0]')
