@@ -74,7 +74,7 @@ const Clients: React.FC = () => {
                   starDimension="20px"
                   starSpacing="2px"
                 />
-                <p className="text-sm">{clientFeedback}</p>
+                <p className="text-sm">{clientFeedback?.internal?.content || ''}</p>
               </div>
             </div>
           )
