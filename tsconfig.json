@@ -24,7 +24,7 @@
     "moduleResolution": "node",
     "types": []
   },
-  "include": ["src/**/*.tsx", "src/**/*.ts"],
+  "include": ["src/**/*.tsx", "src/**/*.ts", "src/**/*.d.ts"],
   "exclude": ["node_modules", "dist", ".cache", "public", "src/**/*.js"]
 }
 
