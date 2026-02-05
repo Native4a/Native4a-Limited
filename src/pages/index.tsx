@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 import get from 'lodash/get'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
+import { useTranslation } from 'react-i18next'
 
 //components here//
 import Layout from '../components/layout'
@@ -55,135 +56,136 @@ interface PageDataProps extends PageProps {
   }
 }
 
-class RootIndex extends React.Component<PageDataProps> {
-  render() {
-    const [addNewPage] = get(this, 'props.data.allContentfulAddNewPage.nodes')
-    const contact = get(addNewPage, 'contact[0]')
-    const textContact = get(contact, 'textContact[0]')
+function RootIndexContent(props: PageDataProps) {
+  const { t } = useTranslation()
+  const [addNewPage] = get(props, 'data.allContentfulAddNewPage.nodes')
+  const contact = get(addNewPage, 'contact[0]')
+  const textContact = get(contact, 'textContact[0]')
 
-    const inContactBox1 = textContact ? textContact.content.content : ''
+  const inContactBox1 = textContact ? textContact.content.content : ''
 
-    const headingContents = addNewPage.heading.map(
-      (item) => item.content.content
-    )
-    const contactBox = addNewPage.contact.map((item, index) => {
-      if (index === 0) {
-        return item.title
-      } else {
-        return null
-      }
-    })
+  const headingContents = addNewPage.heading.map(
+    (item) => item.content.content
+  )
+  const contactBox = addNewPage.contact.map((item, index) => {
+    if (index === 0) {
+      return item.title
+    } else {
+      return null
+    }
+  })
 
-    const contactBox2 = addNewPage.contact.map((item, index) => {
-      if (index === 1) {
-        return item.title
-      } else {
-        return null
-      }
-    })
+  const contactBox2 = addNewPage.contact.map((item, index) => {
+    if (index === 1) {
+      return item.title
+    } else {
+      return null
+    }
+  })
 
-    return (
-      <Layout location={this.props.location}>
-        <Seo
-          title={addNewPage.seo.metaTitle}
-          description={addNewPage.seo.metaDescription}
-          ogUrl="https://nativeaaaa.com.hk/"
-        />
-        <Section SectionClass={styles.bgCustomGradient}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
-            <div className="px-6 xl:px-0 py-0 xl:py-6">
-              <div className="pt-2 md:pt-3 2xl:pt-0">
-                {headingContents.map((content, index) => {
-                  if (index === 0) {
-                    return <h1 key={index} className={styles.title}>{content}</h1>
-                  } else if (index === 1) {
-                    return (
-                      <div key={index}>
-                        <h2 className={styles.subTitle}>{content}</h2>
-                        <div className={styles.border}></div>
-                      </div>
-                    )
-                  } else if (index === 2) {
-                    return (
-                      <p key={index} className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
-                        {content}
-                      </p>
-                    )
-                  } else {
-                    return null
-                  }
-                })}
-                <div className="hidden md:grid grid-cols-1 gap-6 py-6">
-                  <div className="flex gap-6 w-full items-center">
-                    <SocialMediaBtn />
-                  </div>
-                </div>
-                <div className="md:hidden">
-                  <div className="flex gap-2 w-full items-center">
-                    <SocialMediaBtn />
-                  </div>
+  return (
+    <Layout location={props.location}>
+      <Seo
+        title={addNewPage.seo.metaTitle}
+        description={addNewPage.seo.metaDescription}
+        ogUrl="https://nativeaaaa.com.hk/"
+      />
+      <Section SectionClass={styles.bgCustomGradient}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
+          <div className="px-6 xl:px-0 py-0 xl:py-6">
+            <div className="pt-2 md:pt-3 2xl:pt-0">
+              {headingContents.map((content, index) => {
+                if (index === 0) {
+                  return <h1 key={index} className={styles.title}>{t('hero.title')}</h1>
+                } else if (index === 1) {
+                  return (
+                    <div key={index}>
+                      <h2 className={styles.subTitle}>{t('hero.subtitle')}</h2>
+                      <div className={styles.border}></div>
+                    </div>
+                  )
+                } else if (index === 2) {
+                  return (
+                    <p key={index} className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
+                      {t('hero.description')}
+                    </p>
+                  )
+                } else {
+                  return null
+                }
+              })}
+              <div className="hidden md:grid grid-cols-1 gap-6 py-6">
+                <div className="flex gap-6 w-full items-center">
+                  <SocialMediaBtn />
                 </div>
               </div>
-              <AwardsWeb />
+              <div className="md:hidden">
+                <div className="flex gap-2 w-full items-center">
+                  <SocialMediaBtn />
+                </div>
+              </div>
             </div>
-            <div className="hidden md:grid content-center z-0">
-              <img className="w-3/4" src={heroBanner_Award} alt="Award02" />
-            </div>
-            <Awards />
+            <AwardsWeb />
           </div>
-        </Section>
-        <Section
-          SectionClass={`${styles.sec2_wrap} ${'flex justify-evenly'}`}
-          ContainerClass="flex flex-col items-center m-auto w-full"
-        >
-          <div className="grid grid-rows-0 relative container mx-auto">
-            <h2 className="flex items-center text-2xl pt-12 ml-2 font-bold">
+          <div className="hidden md:grid content-center z-0">
+            <img className="w-3/4" src={heroBanner_Award} alt="Award02" />
+          </div>
+          <Awards />
+        </div>
+      </Section>
+      <Section
+        SectionClass={`${styles.sec2_wrap} ${'flex justify-evenly'}`}
+        ContainerClass="flex flex-col items-center m-auto w-full"
+      >
+        <div className="grid grid-rows-0 relative container mx-auto">
+          <h2 className="flex items-center text-2xl pt-12 ml-2 font-bold">
+            <span>
+              <FaSquare />
+            </span>
+            {contactBox}
+          </h2>
+          <h2 className="text-2xl md:text-4xl py-3 ml-0 md:ml-4 leading-0 md:leading-[3.5rem]">
+            {inContactBox1}
+          </h2>
+          <p className="text-xl mx-4"></p>
+        </div>
+        <ServiceScope />
+      </Section>
+      <Section
+        SectionClass={`${styles.sec3_wrap} ${'flex justify-evenly'}`}
+        ContainerClass="flex flex-col items-center m-auto"
+      >
+        <div className="grid items-center shadow-none rounded-3xl">
+          <div className="inline md:hidden">
+            <h2 className="flex items-center text-2xl ml-4 my-16">
               <span>
                 <FaSquare />
               </span>
-              {contactBox}
+              {contactBox2}
             </h2>
-            <h2 className="text-2xl md:text-4xl py-3 ml-0 md:ml-4 leading-0 md:leading-[3.5rem]">
-              {inContactBox1}
+          </div>
+          <div className="hidden md:inline text-center">
+            <h2 className="text-4xl underline decoration-yellow-400 my-14">
+              {contactBox2}
             </h2>
-            <p className="text-xl mx-4"></p>
           </div>
-          <ServiceScope />
-        </Section>
-        <Section
-          SectionClass={`${styles.sec3_wrap} ${'flex justify-evenly'}`}
-          ContainerClass="flex flex-col items-center m-auto"
-        >
-          <div className="grid items-center shadow-none rounded-3xl">
-            <div className="inline md:hidden">
-              <h2 className="flex items-center text-2xl ml-4 my-16">
-                <span>
-                  <FaSquare />
-                </span>
-                {contactBox2}
-              </h2>
-            </div>
-            <div className="hidden md:inline text-center">
-              <h2 className="text-4xl underline decoration-yellow-400 my-14">
-                {contactBox2}
-              </h2>
-            </div>
-            <Clients />
-          </div>
-        </Section>
-        <section>
-          <AboutAs />
-        </section>
-        <ClientLogos />
-        <section>
-          <ContactForm />
-        </section>
-      </Layout>
-    )
-  }
+          <Clients />
+        </div>
+      </Section>
+      <section>
+        <AboutAs />
+      </section>
+      <ClientLogos />
+      <section>
+        <ContactForm />
+      </section>
+    </Layout>
+  )
 }
 
-export default RootIndex
+class RootIndex extends React.Component<PageDataProps> {
+  render() {
+    return <RootIndexContent {...this.props} />
 export const pageQuery = graphql`
   query HomeQuery {
     allContentfulBlogPost(sort: { publishDate: DESC }) {
