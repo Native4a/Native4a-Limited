@@ -14,7 +14,6 @@ import Section from '../components/baseTools/Section'
 class PrivacyPolicy extends React.Component<PageProps> {
   render() {
     const [policy] = get(this, 'props.data.allContentfulAddNewPage.nodes')
-    const longTextData = get(policy, 'contact[0].longText')
     const headingContent = get(policy, 'heading[0].content.content')
 
     return (
@@ -29,7 +28,6 @@ class PrivacyPolicy extends React.Component<PageProps> {
             <Text tag="h1" className="text-4xl">
               <ReactMarkdown>{headingContent}</ReactMarkdown>
             </Text>
-            {longTextData && renderRichText(longTextData)}
           </div>
         </Section>
         <section>
@@ -52,11 +50,6 @@ export const query = graphql`
         heading {
           content {
             content
-          }
-        }
-        contact {
-          longText {
-            raw
           }
         }
       }
