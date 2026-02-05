@@ -69,25 +69,25 @@ function RootIndexContent(props: PageDataProps) {
   const headingContents = addNewPage.heading.map(
     (item) => item.content.content
   )
+  
+  // Safely extract contact box titles, ensuring they're strings
   const contactBox = addNewPage.contact
     .map((item, index) => {
-      if (index === 0) {
+      if (index === 0 && typeof item.title === 'string') {
         return item.title
-      } else {
-        return null
       }
+      return null
     })
-    .filter(Boolean)[0]
+    .filter(Boolean)[0] || ''
 
   const contactBox2 = addNewPage.contact
     .map((item, index) => {
-      if (index === 1) {
+      if (index === 1 && typeof item.title === 'string') {
         return item.title
-      } else {
-        return null
       }
+      return null
     })
-    .filter(Boolean)[0]
+    .filter(Boolean)[0] || ''
 
   return (
     <Layout location={props.location}>
