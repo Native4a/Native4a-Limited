@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { LanguageProvider } from '../context/LanguageContext'
 
 import './variables.css'
@@ -9,12 +9,12 @@ import Navigation from './header&footer/navigation'
 import MobileNavigation from './header&footer/mobileNavigation'
 import Footer from './header&footer/footer'
 
-interface LayoutProps {
-  children: React.ReactNode
+interface BacklinkLayoutProps {
+  children: ReactNode
   location?: any
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, location }) => {
+const BacklinkLayout: React.FC<BacklinkLayoutProps> = ({ children, location }) => {
   return (
     <LanguageProvider>
       <Seo />
@@ -27,4 +27,4 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
   )
 }
 
-export default Layout
+export default BacklinkLayout

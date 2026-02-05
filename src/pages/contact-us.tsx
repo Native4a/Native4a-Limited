@@ -10,7 +10,6 @@ import Section from '../components/baseTools/Section'
 import Icon from '../components/baseTools/Icon'
 
 import 'reactjs-popup/dist/index.css'
-import * as styles from '../styles/contact-us.module.css'
 
 import Whatsapp_icon from '../components/baseTools/Icon/img/whatsapp.svg'
 
@@ -44,8 +43,8 @@ class contactUs extends React.Component<ContactUsPageProps> {
           description={ContactUsPage.Section1Descriptions}
           ogUrl="https://nativeaaaa.com.hk/contact-us/"
         />
-        <section className={styles.container}>
-          <div className={styles.sec_wrap}>
+        <section className="max-w-[95rem] mx-auto px-9 pt-48">
+          <div className="p-[58px] bg-cover z-[1]">
             <h1 className="text-2xl md:text-5xl leading-snug text-center">
               {ContactUsPage.Section1Title}
             </h1>
@@ -68,7 +67,7 @@ class contactUs extends React.Component<ContactUsPageProps> {
         </div>
         <ContactForm />
         <section>
-          <div className={styles.sec_wrap}>
+          <div className="p-[58px] bg-cover z-[1] md:p-0">
             <h1 className="text-2xl md:text-5xl leading-snug text-center">
               {ContactUsPage.section2Title}
             </h1>
@@ -89,7 +88,7 @@ class contactUs extends React.Component<ContactUsPageProps> {
             ></Icon>
           </div>
         </Section>
-        <section className={styles.sec2_wrap}>
+        <section className="px-9 pb-[78px] bg-cover z-[1] max-w-[95rem] mx-auto md:mt-0 md:p-[17px] md:bg-no-repeat">
           <div className="grid grid-rows-2 w-full items-center">
             <h4 className="text-xl leading-snug text-center">
               {ContactUsPage.section2Text}
