@@ -8,6 +8,7 @@
     "url": "https://github.com/contentful/starter-gatsby-blog/issues"
   },
   "dependencies": {
+    "ajv": "^8.12.0",
     "@babel/types": "^7.21.4",
     "@contentful/rich-text-html-renderer": "^15.13.1",
     "@contentful/rich-text-plain-text-renderer": "^15.15.1",
