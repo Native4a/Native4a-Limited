@@ -15,12 +15,10 @@ import * as styles from '../styles/contact-us.module.css'
 import Whatsapp_icon from '../components/baseTools/Icon/img/whatsapp.svg'
 
 interface ContactUsPageData {
-  metaTitle: string
-  metaDescription: string
   Section1Title: string
   Section1Descriptions: string
   section2Title: string
-  Section2Descriptions: string
+  section2Descriptions: string
   section2Text: string
   [key: string]: any
 }
@@ -42,8 +40,8 @@ class contactUs extends React.Component<ContactUsPageProps> {
     return (
       <Layout location={this.props.location}>
         <Seo
-          title={ContactUsPage.metaTitle}
-          description={ContactUsPage.metaDescription}
+          title={ContactUsPage.Section1Title}
+          description={ContactUsPage.Section1Descriptions}
           ogUrl="https://nativeaaaa.com.hk/contact-us/"
         />
         <section className={styles.container}>
@@ -75,7 +73,7 @@ class contactUs extends React.Component<ContactUsPageProps> {
               {ContactUsPage.section2Title}
             </h1>
             <p className="text-base md:text-xl leading-snug text-center">
-              {ContactUsPage.Section2Descriptions}
+              {ContactUsPage.section2Descriptions}
             </p>
           </div>
         </section>
@@ -106,18 +104,12 @@ class contactUs extends React.Component<ContactUsPageProps> {
 export default contactUs
 export const pageQuery = graphql`
   query ContactUsQuery {
-    allContentfulContactUsPage(
-      filter: { contentful_id: { eq: "7CW0R5P60BgGgCHqXPjbho" } }
-    ) {
+    allContentfulContactUsPage {
       nodes {
-        contentful_id
-        id
-        metaTitle
-        metaDescription
         Section1Title
         Section1Descriptions
         section2Title
-        Section2Descriptions
+        section2Descriptions
         section2Text
       }
     }
