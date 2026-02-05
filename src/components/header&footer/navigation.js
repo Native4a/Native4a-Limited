@@ -4,6 +4,7 @@ import { Sling as Hamburger } from 'hamburger-react'
 import { Link } from 'gatsby'
 import Native_logo from '../../img/2023_native4a_logo.svg'
 import Whatsapp from '../baseTools/whatsapp'
+import LanguageSwitcher from '../LanguageSwitcher'
 
 const Navigation = () => {
   const [isOpen, setOpen] = useState(false)
@@ -66,13 +67,17 @@ const Navigation = () => {
             </Link>
           </div>
         </div>
-        <div className="xl:hidden col-start-5 col-end-11 sm:col-start-6 sm:col-end-12 flex items-center justify-end">
+        <div className="xl:hidden col-start-5 col-end-11 sm:col-start-6 sm:col-end-12 flex items-center justify-end gap-3">
+          {/* 語言切換按鈕 */}
+          <LanguageSwitcher className="flex items-center gap-2" />
           {/* 備註：這是手機版的WhatsApp */}
           <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85264602996">
             WhatsApp查詢
           </Whatsapp>
         </div>
-        <div className="xl:col-span-2 flex items-center justify-end col-start-12 col-end-12 xl:col-start-2 xl:col-end-7">
+        <div className="xl:col-span-2 flex items-center justify-end col-start-12 col-end-12 xl:col-start-2 xl:col-end-7 gap-3">
+          {/* 桌面版語言切換按鈕 */}
+          <LanguageSwitcher className="hidden xl:flex items-center gap-2" />
           <div className="block xl:hidden">
             <div className="z-50 relative">
               <Hamburger
