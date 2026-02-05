@@ -186,6 +186,11 @@ function RootIndexContent(props: PageDataProps) {
 class RootIndex extends React.Component<PageDataProps> {
   render() {
     return <RootIndexContent {...this.props} />
+  }
+}
+
+export default RootIndex
+
 export const pageQuery = graphql`
   query HomeQuery {
     allContentfulBlogPost(sort: { publishDate: DESC }) {
