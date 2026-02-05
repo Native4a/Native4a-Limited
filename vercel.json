@@ -1,0 +1,10 @@
+{
+  "github": {
+    "silent": true
+  },
+  "build": {
+    "env": {
+      "ENABLE_EXPERIMENTAL_COREPACK": "0"
+    }
+  }
+}
