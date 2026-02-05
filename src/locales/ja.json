@@ -1,0 +1,39 @@
+{
+  "common": {
+    "language": "言語",
+    "english": "English",
+    "japanese": "日本語",
+    "chinese": "中文"
+  },
+  "nav": {
+    "home": "ホーム",
+    "aboutUs": "当社について",
+    "services": "サービス",
+    "cases": "ケース",
+    "backlinks": "バックリンク",
+    "contactUs": "お問い合わせ"
+  },
+  "hero": {
+    "title": "デジタルプレゼンスを向上させる",
+    "subtitle": "プロのSEO＆デジタルマーケティングサービス",
+    "cta": "始める"
+  },
+  "about": {
+    "title": "Native4aについて",
+    "description": "香港のデジタルマーケティングエージェンシーのリーディングカンパニーです"
+  },
+  "services": {
+    "title": "サービス",
+    "seo": "SEOサービス",
+    "marketing": "デジタルマーケティング",
+    "webDesign": "ウェブデザイン",
+    "videoProduction": "ビデオプロダクション"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "description": "当社のチームにお問い合わせください",
+    "whatsapp": "WhatsApp問い合わせ",
+    "email": "メール",
+    "phone": "電話"
+  }
+}

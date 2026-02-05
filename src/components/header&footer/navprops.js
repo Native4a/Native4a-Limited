@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { useTranslation } from 'react-i18next'
 import useAddMenu from '../../hook/useAddMenu'
 import { TbShoppingCart } from 'react-icons/tb'
 import Button from '../baseTools/button'
@@ -7,14 +8,16 @@ import * as styles from '../../styles/navprops.module.css'
 import clsx from 'clsx'
 
 const Navprops = () => {
+  const { t } = useTranslation()
   const menu = useAddMenu()
+  
   return (
     <div className={`${styles.activeLink} contents`}>
       <ul className="rounded-3xl bg-white contents">
         {menu.map((item, index) => {
           const { slug, urlTitle, submenu } = item
           return (
-            <li className={clsx('relative group', styles.container)}>
+            <li className={clsx('relative group', styles.container)} key={index}>
               <Link
                 to={slug}
                 activeStyle={{
@@ -33,6 +36,7 @@ const Navprops = () => {
                 <ul className="absolute left-0 top-[80%] hidden group-hover:block bg-white shadow-md rounded z-50">
                   {submenu.map((subItem, subIndex) => (
                     <Link
+                      key={subIndex}
                       to={subItem.slug}
                       className="block px-4 py-2 hover:bg-yellow-300 hover:text-white whitespace-nowrap"
                       activeStyle={{

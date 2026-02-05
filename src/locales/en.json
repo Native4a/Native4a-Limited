@@ -1,0 +1,39 @@
+{
+  "common": {
+    "language": "Language",
+    "english": "English",
+    "japanese": "日本語",
+    "chinese": "中文"
+  },
+  "nav": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "services": "Services",
+    "cases": "Cases",
+    "backlinks": "Backlinks",
+    "contactUs": "Contact Us"
+  },
+  "hero": {
+    "title": "Elevate Your Digital Presence",
+    "subtitle": "Professional SEO & Digital Marketing Services",
+    "cta": "Get Started"
+  },
+  "about": {
+    "title": "About Native4a",
+    "description": "We are a leading digital marketing agency in Hong Kong"
+  },
+  "services": {
+    "title": "Our Services",
+    "seo": "SEO Services",
+    "marketing": "Digital Marketing",
+    "webDesign": "Web Design",
+    "videoProduction": "Video Production"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team",
+    "whatsapp": "WhatsApp Inquiry",
+    "email": "Email",
+    "phone": "Phone"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "common": {
+    "language": "語言",
+    "english": "English",
+    "japanese": "日本語",
+    "chinese": "中文"
+  },
+  "nav": {
+    "home": "首頁",
+    "aboutUs": "關於我們",
+    "services": "服務",
+    "cases": "案例",
+    "backlinks": "反向連結",
+    "contactUs": "聯絡我們"
+  },
+  "hero": {
+    "title": "提升您的數字形象",
+    "subtitle": "專業的SEO和數字營銷服務",
+    "cta": "開始"
+  },
+  "about": {
+    "title": "關於Native4a",
+    "description": "我們是香港領先的數字營銷代理商"
+  },
+  "services": {
+    "title": "我們的服務",
+    "seo": "SEO服務",
+    "marketing": "數字營銷",
+    "webDesign": "網頁設計",
+    "videoProduction": "視頻製作"
+  },
+  "contact": {
+    "title": "聯絡我們",
+    "description": "與我們的團隊聯繫",
+    "whatsapp": "WhatsApp查詢",
+    "email": "電子郵件",
+    "phone": "電話"
+  }
+}
