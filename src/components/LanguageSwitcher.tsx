@@ -74,7 +74,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     )
   }
 
-  // 桌面版的液态效果切换器
+  // 桌面版的液态效果切换器 - 以中文为中心向下展开
   return (
     <>
       <div 
@@ -84,25 +84,25 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
         style={{ 
           cursor: 'pointer', 
           position: 'relative', 
-          width: '70px', 
-          height: isHovered ? '180px' : '70px',
+          width: '65px', 
+          height: isHovered ? '175px' : '65px',
           transition: 'height 0.3s ease-out'
         }}
       >
         <svg 
           style={{ 
-            width: '70px', 
-            height: '180px', 
+            width: '65px', 
+            height: '175px', 
             display: 'block',
             position: 'absolute',
             top: 0,
             left: 0
           }}
           xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 100 260"
+          viewBox="0 0 100 270"
         >
           <defs>
-            <filter id="goo-effect" width="150%" height="240%">
+            <filter id="goo-effect" width="160%" height="250%">
               <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
               <feColorMatrix 
                 in="blur" 
@@ -114,11 +114,11 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             </filter>
           </defs>
           <g filter="url(#goo-effect)">
-            {/* 第一个圆 - 中文 (始终在顶部) */}
+            {/* 中文圆 - 始终在中心位置 */}
             <circle 
               cx="50" 
               cy="50" 
-              r="30" 
+              r="28" 
               fill={i18n.language === 'zh' ? '#faab00' : '#e5e7eb'}
               style={{ 
                 transition: 'all 0.8s ease-out',
@@ -126,11 +126,11 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
               }}
               onClick={() => handleLanguageChange('zh')}
             />
-            {/* 第二个圆 - 英文 (悬停时展开到中间) */}
+            {/* 英文圆 - 悬停时向下展开 */}
             <circle 
               cx="50" 
-              cy={isHovered ? 120 : 50}
-              r="30" 
+              cy={isHovered ? 115 : 50}
+              r="28" 
               fill={i18n.language === 'en' ? '#faab00' : '#e5e7eb'}
               style={{ 
                 transition: 'all 0.8s ease-out',
@@ -138,11 +138,11 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
               }}
               onClick={() => handleLanguageChange('en')}
             />
-            {/* 第三个圆 - 日文 (悬停时展开到底部) */}
+            {/* 日文圆 - 悬停时向下展开更远 */}
             <circle 
               cx="50" 
-              cy={isHovered ? 190 : 50}
-              r="30" 
+              cy={isHovered ? 180 : 50}
+              r="28" 
               fill={i18n.language === 'ja' ? '#faab00' : '#e5e7eb'}
               style={{ 
                 transition: 'all 0.8s ease-out',
@@ -153,14 +153,14 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           </g>
         </svg>
         
-        {/* 中文标签 - 始终显示在顶部圆圈中心 */}
+        {/* 中文标签 - 始终显示，对齐中文圆圈中心(cy=50) */}
         <div 
           style={{
             position: 'absolute',
-            top: '18px',
+            top: 'calc(50 / 270 * 175px - 8px)',
             left: '0',
-            width: '70px',
-            height: '34px',
+            width: '65px',
+            height: '16px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -177,21 +177,21 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           中
         </div>
         
-        {/* 英文标签 - 悬停时显示在中间圆圈中心 */}
+        {/* 英文标签 - 悬停时显示，对齐英文圆圈中心(cy=115) */}
         {isHovered && (
           <div 
             style={{
               position: 'absolute',
-              top: '85px',
+              top: 'calc(115 / 270 * 175px - 7px)',
               left: '0',
-              width: '70px',
-              height: '34px',
+              width: '65px',
+              height: '14px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               color: i18n.language === 'en' ? 'white' : '#6b7280',
               fontWeight: 'bold',
-              fontSize: '14px',
+              fontSize: '13px',
               zIndex: 10,
               cursor: 'pointer',
               animation: 'fadeIn 0.2s linear 0.6s forwards',
@@ -204,21 +204,21 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           </div>
         )}
         
-        {/* 日文标签 - 悬停时显示在底部圆圈中心 */}
+        {/* 日文标签 - 悬停时显示，对齐日文圆圈中心(cy=180) */}
         {isHovered && (
           <div 
             style={{
               position: 'absolute',
-              top: '155px',
+              top: 'calc(180 / 270 * 175px - 7px)',
               left: '0',
-              width: '70px',
-              height: '34px',
+              width: '65px',
+              height: '14px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               color: i18n.language === 'ja' ? 'white' : '#6b7280',
               fontWeight: 'bold',
-              fontSize: '14px',
+              fontSize: '13px',
               zIndex: 10,
               cursor: 'pointer',
               animation: 'fadeIn 0.2s linear 0.6s forwards',
