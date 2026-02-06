@@ -5,28 +5,15 @@ import { MdCheck } from 'react-icons/md'
 interface LanguageSwitcherProps {
   className?: string
   isInMenu?: boolean
-  onHoverChange?: (isHovered: boolean) => void
 }
 
-const LanguageSwitcher = React.forwardRef<
-  { isHovered: boolean },
-  LanguageSwitcherProps
->(({ 
+const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ 
   className = '',
-  isInMenu = false,
-  onHoverChange
-}, ref) => {
+  isInMenu = false
+}) => {
   const { i18n } = useTranslation()
   const [isHovered, setIsHovered] = React.useState(false)
   const [isOpen, setIsOpen] = React.useState(false)
-
-  React.useImperativeHandle(ref, () => ({
-    isHovered
-  }))
-
-  React.useEffect(() => {
-    onHoverChange?.(isHovered)
-  }, [isHovered, onHoverChange])
 
   const languages = [
     { code: 'zh', name: '中文', label: '中' },
@@ -215,8 +202,6 @@ const LanguageSwitcher = React.forwardRef<
       </svg>
     </div>
   )
-})
-
-LanguageSwitcher.displayName = 'LanguageSwitcher'
+}
 
 export default LanguageSwitcher
