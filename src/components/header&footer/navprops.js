@@ -11,6 +11,8 @@ import clsx from 'clsx'
 const Navprops = () => {
   const { t } = useTranslation()
   const menu = useAddMenu()
+  const langSwitcherRef = React.useRef(null)
+  const [isLangHovered, setIsLangHovered] = React.useState(false)
   
   return (
     <div className={`${styles.activeLink} contents`} style={{ position: 'relative' }}>
@@ -74,18 +76,22 @@ const Navprops = () => {
         </div>
       </ul>
       
-      {/* 語言切換器 - 桌面版，使用 absolute 定位在右邊 */}
+      {/* 語言切換器 - 桌面版，根據 hover 狀態動態改變位置 */}
       <div 
         className="hidden xl:block" 
         style={{ 
           position: 'absolute', 
           right: '-110px', 
-          top: '50%',
-          transform: 'translateY(-50%)',
+          top: isLangHovered ? '100%' : '50%',
+          transform: isLangHovered ? 'translateY(0)' : 'translateY(-50%)',
+          transition: 'top 0.3s ease-out, transform 0.3s ease-out',
           zIndex: 100
         }}
       >
-        <LanguageSwitcher />
+        <LanguageSwitcher 
+          ref={langSwitcherRef}
+          onHoverChange={setIsLangHovered}
+        />
       </div>
     </div>
   )

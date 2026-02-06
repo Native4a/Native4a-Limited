@@ -5,15 +5,28 @@ import { MdCheck } from 'react-icons/md'
 interface LanguageSwitcherProps {
   className?: string
   isInMenu?: boolean
+  onHoverChange?: (isHovered: boolean) => void
 }
 
-const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ 
+const LanguageSwitcher = React.forwardRef<
+  { isHovered: boolean },
+  LanguageSwitcherProps
+>(({ 
   className = '',
-  isInMenu = false
-}) => {
+  isInMenu = false,
+  onHoverChange
+}, ref) => {
   const { i18n } = useTranslation()
   const [isHovered, setIsHovered] = React.useState(false)
   const [isOpen, setIsOpen] = React.useState(false)
+
+  React.useImperativeHandle(ref, () => ({
+    isHovered
+  }))
+
+  React.useEffect(() => {
+    onHoverChange?.(isHovered)
+  }, [isHovered, onHoverChange])
 
   const languages = [
     { code: 'zh', name: '中文', label: '中' },
@@ -22,7 +35,6 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   ]
 
   const currentLanguage = languages.find(lang => lang.code === i18n.language)
-  const otherLanguages = languages.filter(lang => lang.code !== i18n.language)
 
   const handleLanguageChange = (langCode: string) => {
     i18n.changeLanguage(langCode)
@@ -75,14 +87,13 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   }
 
   // 桌面版的液态效果切换器
-  // 1:1 坐标系统，中文在顶部固定，EN/JA 向下展开
   const W = 60
-  const R = 25           // 圆半径稍大
-  const CX = W / 2       // 30
-  const CY_ZH = R + 4    // 中文圆心 = 29
-  const GAP = R * 2 + 14 // 圆间距 = 64
-  const CY_EN = CY_ZH + GAP       // EN 圆心 = 93
-  const CY_JA = CY_ZH + GAP * 2   // JA 圆心 = 157
+  const R = 25
+  const CX = W / 2
+  const CY_ZH = R + 4
+  const GAP = R * 2 + 14
+  const CY_EN = CY_ZH + GAP
+  const CY_JA = CY_ZH + GAP * 2
   const H_COLLAPSED = CY_ZH + R + 6
   const H_EXPANDED = CY_JA + R + 8
 
@@ -120,9 +131,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           </filter>
         </defs>
 
-        {/* Goo 液态效果组 - 只包含 EN 和 JA，它们从中文位置展开 */}
         <g filter="url(#goo-effect)">
-          {/* JA 圆 */}
           <circle 
             cx={CX} 
             cy={isHovered ? CY_JA : CY_ZH}
@@ -131,7 +140,6 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             style={{ transition: 'cy 0.8s ease-out, fill 0.3s', cursor: 'pointer' }}
             onClick={() => handleLanguageChange('ja')}
           />
-          {/* EN 圆 */}
           <circle 
             cx={CX} 
             cy={isHovered ? CY_EN : CY_ZH}
@@ -140,7 +148,6 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             style={{ transition: 'cy 0.8s ease-out, fill 0.3s', cursor: 'pointer' }}
             onClick={() => handleLanguageChange('en')}
           />
-          {/* 中文圆 - 也放在 goo 组中以获得液态连接效果，但位置固定不变 */}
           <circle 
             cx={CX} 
             cy={CY_ZH}
@@ -151,7 +158,6 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           />
         </g>
 
-        {/* 中文圆 - 额外画一个在 goo 组外面，确保始终可见不被滤镜吃掉 */}
         <circle 
           cx={CX} 
           cy={CY_ZH}
@@ -161,7 +167,6 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           onClick={() => handleLanguageChange('zh')}
         />
 
-        {/* 文字标签 - SVG text 保证与圆心完美对齐 */}
         <text 
           x={CX} y={CY_ZH} 
           textAnchor="middle" dominantBaseline="central"
@@ -210,6 +215,8 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
       </svg>
     </div>
   )
-}
+})
+
+LanguageSwitcher.displayName = 'LanguageSwitcher'
 
 export default LanguageSwitcher
