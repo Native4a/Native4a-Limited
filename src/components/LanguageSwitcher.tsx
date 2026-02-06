@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { IoGlobeOutline } from 'react-icons/io5'
+import { MdCheck } from 'react-icons/md'
 
 interface LanguageSwitcherProps {
   className?: string
@@ -32,28 +33,36 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`${className} px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium text-sm`}
+        className={`${className} px-4 py-2.5 rounded-lg bg-gradient-to-r from-blue-50 to-blue-50 hover:from-blue-100 hover:to-blue-100 transition-all duration-300 font-semibold text-sm text-blue-700 border border-blue-200 hover:border-blue-300 shadow-sm hover:shadow-md`}
         aria-label="Change language"
       >
-        <IoGlobeOutline size={18} />
+        <IoGlobeOutline size={18} className="text-blue-600" />
         <span className="hidden md:inline">{currentLanguage?.label}</span>
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
-          {languages.map((lang) => (
-            <button
-              key={lang.code}
-              onClick={() => handleLanguageChange(lang.code)}
-              className={`w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors ${
-                i18n.language === lang.code
-                  ? 'bg-blue-50 text-blue-600 font-semibold'
-                  : 'text-gray-700'
-              }`}
-            >
-              {lang.name}
-            </button>
-          ))}
+        <div className="absolute right-0 mt-3 w-48 bg-white rounded-xl shadow-xl border border-gray-100 z-50 overflow-hidden">
+          <div className="py-2">
+            {languages.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => handleLanguageChange(lang.code)}
+                className={`w-full flex items-center justify-between px-4 py-3 text-left transition-all duration-200 ${
+                  i18n.language === lang.code
+                    ? 'bg-blue-50 text-blue-700'
+                    : 'text-gray-700 hover:bg-gray-50'
+                }`}
+              >
+                <div className="flex flex-col">
+                  <span className="font-semibold">{lang.name}</span>
+                  <span className="text-xs text-gray-500">{lang.label}</span>
+                </div>
+                {i18n.language === lang.code && (
+                  <MdCheck size={20} className="text-blue-600" />
+                )}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </div>
