@@ -37,5 +37,10 @@
     "whatsapp": "WhatsApp問い合わせ",
     "email": "メール",
     "phone": "電話"
+  },
+  "homepage": {
+    "serviceScope": "サービス範囲",
+    "popularMethods": "デジタルマーケティングの6つの人気的な方法",
+    "customerTestimonial": "お客様が私たちの成長を証言"
   }
 }
