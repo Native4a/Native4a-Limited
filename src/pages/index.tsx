@@ -142,10 +142,10 @@ function RootIndexContent(props: PageDataProps) {
             <span>
               <FaSquare />
             </span>
-            {contactBox}
+            服務範圍
           </h2>
           <h2 className="text-2xl md:text-4xl py-3 ml-0 md:ml-4 leading-0 md:leading-[3.5rem]">
-            {inContactBox1}
+            數碼營銷6種熱門方法
           </h2>
           <p className="text-xl mx-4"></p>
         </div>
@@ -161,12 +161,12 @@ function RootIndexContent(props: PageDataProps) {
               <span>
                 <FaSquare />
               </span>
-              {contactBox2}
+              客戶見證我們成長
             </h2>
           </div>
           <div className="hidden md:inline text-center">
             <h2 className="text-4xl underline decoration-yellow-400 my-14">
-              {contactBox2}
+              客戶見證我們成長
             </h2>
           </div>
           <Clients />
