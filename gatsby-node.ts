@@ -15,6 +15,9 @@ interface GraphQLResult {
   }
 }
 
+const LANGUAGES = ['en', 'ja', 'zh']
+const DEFAULT_LANGUAGE = 'zh'
+
 export const createPages: GatsbyNode['createPages'] = async ({
   graphql,
   actions,
@@ -48,24 +51,24 @@ export const createPages: GatsbyNode['createPages'] = async ({
 
   const posts = result.data?.allContentfulBlogPost.nodes || []
 
-  // Create blog posts pages
-  // But only if there's at least one blog post found in Contentful
-  // `context` is available in the template as a prop and as a variable in GraphQL
-
+  // Create blog posts pages with language prefixes
   if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previousPostSlug = index === 0 ? null : posts[index - 1].slug
-      const nextPostSlug =
-        index === posts.length - 1 ? null : posts[index + 1].slug
+    LANGUAGES.forEach((language) => {
+      posts.forEach((post, index) => {
+        const previousPostSlug = index === 0 ? null : posts[index - 1].slug
+        const nextPostSlug =
+          index === posts.length - 1 ? null : posts[index + 1].slug
 
-      createPage({
-        path: `/blog/${post.slug}/`,
-        component: blogPost,
-        context: {
-          slug: post.slug,
-          previousPostSlug,
-          nextPostSlug,
-        },
+        createPage({
+          path: `/${language}/blog/${post.slug}/`,
+          component: blogPost,
+          context: {
+            slug: post.slug,
+            previousPostSlug,
+            nextPostSlug,
+            language,
+          },
+        })
       })
     })
   }
