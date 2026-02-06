@@ -37,5 +37,10 @@
     "whatsapp": "WhatsApp Inquiry",
     "email": "Email",
     "phone": "Phone"
+  },
+  "homepage": {
+    "serviceScope": "Service Scope",
+    "popularMethods": "6 Popular Digital Marketing Methods",
+    "customerTestimonial": "Customers Witness Our Growth"
   }
 }
