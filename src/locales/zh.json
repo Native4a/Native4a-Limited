@@ -37,5 +37,10 @@
     "whatsapp": "WhatsApp查詢",
     "email": "電子郵件",
     "phone": "電話"
+  },
+  "homepage": {
+    "serviceScope": "服務範圍",
+    "popularMethods": "數碼營銷6種熱門方法",
+    "customerTestimonial": "客戶見證我們成長"
   }
 }
