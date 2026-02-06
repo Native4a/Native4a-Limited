@@ -76,67 +76,98 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
 
   // 桌面版的液态效果切换器
   return (
-    <div 
-      className={`relative ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{ cursor: 'pointer' }}
-    >
-      <svg 
-        className="w-24 h-40" 
-        xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 100 200"
-      >
-        <defs>
-          <filter id="goo-effect" width="110%" height="215%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-            <feColorMatrix 
-              in="blur" 
-              mode="matrix" 
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" 
-              result="goo-effect" 
-            />
-            <feBlend in="SourceGraphic" in2="goo-effect" />
-          </filter>
-        </defs>
-        <g filter="url(#goo-effect)">
-          <circle 
-            cx="50" 
-            cy="50" 
-            r="45" 
-            fill="#faab00"
-            className="transition-all duration-1000 ease-out"
-          />
-          <circle 
-            cx="50" 
-            cy={isHovered ? 144 : 50}
-            r="45" 
-            fill="#faab00"
-            className="transition-all duration-1000 ease-out"
-            style={{ cursor: 'pointer' }}
-          />
-        </g>
-      </svg>
-      
-      {/* 当前语言标签 */}
+    <>
       <div 
-        className="absolute top-0 left-0 w-full h-24 flex items-center justify-center text-white font-bold text-2xl z-10 pointer-events-none"
+        className={`${className}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        style={{ cursor: 'pointer', position: 'relative', width: '80px', height: '140px' }}
       >
-        {currentLanguage?.label}
+        <svg 
+          style={{ width: '80px', height: '140px', display: 'block' }}
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 100 175"
+        >
+          <defs>
+            <filter id="goo-effect" width="120%" height="220%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix 
+                in="blur" 
+                mode="matrix" 
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" 
+                result="goo-effect" 
+              />
+              <feBlend in="SourceGraphic" in2="goo-effect" />
+            </filter>
+          </defs>
+          <g filter="url(#goo-effect)">
+            <circle 
+              cx="50" 
+              cy="50" 
+              r="38" 
+              fill="#faab00"
+              style={{ transition: 'all 1s ease-out' }}
+            />
+            <circle 
+              cx="50" 
+              cy={isHovered ? 125 : 50}
+              r="38" 
+              fill="#faab00"
+              style={{ transition: 'all 1s ease-out', cursor: 'pointer' }}
+            />
+          </g>
+        </svg>
+        
+        {/* 当前语言标签 - 顶部 */}
+        <div 
+          style={{
+            position: 'absolute',
+            top: '10px',
+            left: '0',
+            width: '80px',
+            height: '70px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: '20px',
+            zIndex: 10,
+            pointerEvents: 'none'
+          }}
+        >
+          {currentLanguage?.label}
+        </div>
+        
+        {/* 下一个语言标签 - 悬停时显示在底部 */}
+        {isHovered && otherLanguages.length > 0 && (
+          <div 
+            style={{
+              position: 'absolute',
+              bottom: '10px',
+              left: '0',
+              width: '80px',
+              height: '70px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: '20px',
+              zIndex: 10,
+              cursor: 'pointer',
+              animation: 'fadeIn 0.2s linear 0.7s forwards',
+              opacity: 0
+            }}
+            onClick={() => handleLanguageChange(otherLanguages[0].code)}
+          >
+            {otherLanguages[0]?.label}
+          </div>
+        )}
       </div>
       
-      {/* 其他语言标签 - 悬停时显示 */}
-      {isHovered && otherLanguages.length > 0 && (
-        <div 
-          className="absolute bottom-0 left-0 w-full h-24 flex items-center justify-center text-white font-bold text-2xl z-10 animate-fade-in cursor-pointer"
-          onClick={() => handleLanguageChange(otherLanguages[0].code)}
-        >
-          {otherLanguages[0]?.label}
-        </div>
-      )}
-      
-      <style jsx>{`
-        @keyframes fade-in {
+      <style>{`
+        @keyframes fadeIn {
           from {
             opacity: 0;
           }
@@ -144,12 +175,8 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             opacity: 1;
           }
         }
-        .animate-fade-in {
-          animation: fade-in 0.2s linear 0.7s forwards;
-          opacity: 0;
-        }
       `}</style>
-    </div>
+    </>
   )
 }
 

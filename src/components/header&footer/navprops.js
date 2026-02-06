@@ -13,7 +13,7 @@ const Navprops = () => {
   const menu = useAddMenu()
   
   return (
-    <div className={`${styles.activeLink} contents`}>
+    <div className={`${styles.activeLink} contents`} style={{ position: 'relative' }}>
       <ul className="rounded-3xl bg-white contents">
         {menu.map((item, index) => {
           const { slug, urlTitle, submenu } = item
@@ -57,9 +57,8 @@ const Navprops = () => {
           )
         })}
         
-        {/* 語言切換按鈕和購物按鈕 - 桌面版 */}
-        <div className="hidden xl:flex col-start-4 col-end-7 items-center justify-end gap-3 pl-4 border-l border-gray-200">
-          <LanguageSwitcher className="flex items-center gap-2" />
+        {/* 購物按鈕 - 桌面版 */}
+        <div className="hidden xl:flex col-start-4 col-end-7 items-center justify-end gap-3">
           <Button
             linkto="https://shop.nativeaaaa.com.hk/"
             className="text-white bg-yellow-400 hover:bg-yellow-500 transition-colors rounded-full px-6 py-2 font-semibold text-base md:text-md xl:text-lg shadow-md hover:shadow-lg flex items-center gap-2"
@@ -74,6 +73,19 @@ const Navprops = () => {
           <LanguageSwitcher isInMenu={true} />
         </div>
       </ul>
+      
+      {/* 語言切換器 - 桌面版，使用 absolute 定位在右邊 */}
+      <div 
+        className="hidden xl:block" 
+        style={{ 
+          position: 'absolute', 
+          right: '-100px', 
+          top: '-20px',
+          zIndex: 100
+        }}
+      >
+        <LanguageSwitcher />
+      </div>
     </div>
   )
 }
