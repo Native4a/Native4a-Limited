@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import useAddMenu from '../../hook/useAddMenu'
 import { TbShoppingCart } from 'react-icons/tb'
 import Button from '../baseTools/button'
+import LanguageSwitcher from '../LanguageSwitcher'
 import * as styles from '../../styles/navprops.module.css'
 import clsx from 'clsx'
 
@@ -55,13 +56,22 @@ const Navprops = () => {
             </li>
           )
         })}
-        <div className="hidden xl:flex col-start-4 col-end-7 items-center justify-end gap-2">
+        
+        {/* 語言切換按鈕和購物按鈕 - 桌面版 */}
+        <div className="hidden xl:flex col-start-4 col-end-7 items-center justify-end gap-3 pl-4 border-l border-gray-200">
+          <LanguageSwitcher className="flex items-center gap-2" />
           <Button
             linkto="https://shop.nativeaaaa.com.hk/"
-            className="text-white bg-yellow-400 rounded-full px-7 py-1.5 font-medium text-base md:text-md xl:text-xl"
+            className="text-white bg-yellow-400 hover:bg-yellow-500 transition-colors rounded-full px-6 py-2 font-semibold text-base md:text-md xl:text-lg shadow-md hover:shadow-lg flex items-center gap-2"
           >
-            <TbShoppingCart className="text-2xl" />
+            <TbShoppingCart className="text-xl" />
+            <span>購物</span>
           </Button>
+        </div>
+        
+        {/* 手機版語言切換 */}
+        <div className="xl:hidden w-full border-t border-gray-100 mt-2 pt-2">
+          <LanguageSwitcher isInMenu={true} />
         </div>
       </ul>
     </div>
