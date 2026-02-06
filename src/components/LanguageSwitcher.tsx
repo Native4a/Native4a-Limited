@@ -21,7 +21,13 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     { code: 'ja', name: '日本語', label: 'JA' },
   ]
 
-  const currentLanguage = languages.find(lang => lang.code === i18n.language)
+  // 确保 currentLanguage 总是有效的，默认为中文
+  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0]
+
+  React.useEffect(() => {
+    console.log("[v0] Current i18n language:", i18n.language)
+    console.log("[v0] Current language object:", currentLanguage)
+  }, [i18n.language, currentLanguage])
 
   const handleLanguageChange = (langCode: string) => {
     i18n.changeLanguage(langCode)
