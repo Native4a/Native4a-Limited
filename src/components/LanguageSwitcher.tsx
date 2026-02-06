@@ -81,15 +81,28 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
         className={`${className}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        style={{ cursor: 'pointer', position: 'relative', width: '80px', height: '140px' }}
+        style={{ 
+          cursor: 'pointer', 
+          position: 'relative', 
+          width: '90px', 
+          height: isHovered ? '220px' : '90px',
+          transition: 'height 0.3s ease-out'
+        }}
       >
         <svg 
-          style={{ width: '80px', height: '140px', display: 'block' }}
+          style={{ 
+            width: '90px', 
+            height: '220px', 
+            display: 'block',
+            position: 'absolute',
+            top: 0,
+            left: 0
+          }}
           xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 100 175"
+          viewBox="0 0 100 250"
         >
           <defs>
-            <filter id="goo-effect" width="120%" height="220%">
+            <filter id="goo-effect" width="130%" height="230%">
               <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
               <feColorMatrix 
                 in="blur" 
@@ -101,67 +114,117 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             </filter>
           </defs>
           <g filter="url(#goo-effect)">
+            {/* 第一个圆 - 中文 */}
             <circle 
               cx="50" 
               cy="50" 
-              r="38" 
-              fill="#faab00"
-              style={{ transition: 'all 1s ease-out' }}
+              r="35" 
+              fill={i18n.language === 'zh' ? '#faab00' : '#e5e7eb'}
+              style={{ 
+                transition: 'all 0.8s ease-out',
+                cursor: 'pointer'
+              }}
+              onClick={() => handleLanguageChange('zh')}
             />
+            {/* 第二个圆 - 英文 */}
             <circle 
               cx="50" 
               cy={isHovered ? 125 : 50}
-              r="38" 
-              fill="#faab00"
-              style={{ transition: 'all 1s ease-out', cursor: 'pointer' }}
+              r="35" 
+              fill={i18n.language === 'en' ? '#faab00' : '#e5e7eb'}
+              style={{ 
+                transition: 'all 0.8s ease-out',
+                cursor: 'pointer'
+              }}
+              onClick={() => handleLanguageChange('en')}
+            />
+            {/* 第三个圆 - 日文 */}
+            <circle 
+              cx="50" 
+              cy={isHovered ? 200 : 50}
+              r="35" 
+              fill={i18n.language === 'ja' ? '#faab00' : '#e5e7eb'}
+              style={{ 
+                transition: 'all 0.8s ease-out',
+                cursor: 'pointer'
+              }}
+              onClick={() => handleLanguageChange('ja')}
             />
           </g>
         </svg>
         
-        {/* 当前语言标签 - 顶部 */}
+        {/* 中文标签 */}
         <div 
           style={{
             position: 'absolute',
-            top: '10px',
+            top: '15px',
             left: '0',
-            width: '80px',
-            height: '70px',
+            width: '90px',
+            height: '60px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: 'white',
+            color: i18n.language === 'zh' ? 'white' : '#6b7280',
             fontWeight: 'bold',
-            fontSize: '20px',
+            fontSize: '18px',
             zIndex: 10,
-            pointerEvents: 'none'
+            cursor: 'pointer',
+            transition: 'all 0.3s ease'
           }}
+          onClick={() => handleLanguageChange('zh')}
         >
-          {currentLanguage?.label}
+          中
         </div>
         
-        {/* 下一个语言标签 - 悬停时显示在底部 */}
-        {isHovered && otherLanguages.length > 0 && (
+        {/* 英文标签 - 悬停时显示 */}
+        {isHovered && (
           <div 
             style={{
               position: 'absolute',
-              bottom: '10px',
+              top: '90px',
               left: '0',
-              width: '80px',
-              height: '70px',
+              width: '90px',
+              height: '60px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: 'white',
+              color: i18n.language === 'en' ? 'white' : '#6b7280',
               fontWeight: 'bold',
-              fontSize: '20px',
+              fontSize: '18px',
               zIndex: 10,
               cursor: 'pointer',
-              animation: 'fadeIn 0.2s linear 0.7s forwards',
+              animation: 'fadeIn 0.2s linear 0.6s forwards',
               opacity: 0
             }}
-            onClick={() => handleLanguageChange(otherLanguages[0].code)}
+            onClick={() => handleLanguageChange('en')}
           >
-            {otherLanguages[0]?.label}
+            EN
+          </div>
+        )}
+        
+        {/* 日文标签 - 悬停时显示 */}
+        {isHovered && (
+          <div 
+            style={{
+              position: 'absolute',
+              top: '165px',
+              left: '0',
+              width: '90px',
+              height: '60px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: i18n.language === 'ja' ? 'white' : '#6b7280',
+              fontWeight: 'bold',
+              fontSize: '18px',
+              zIndex: 10,
+              cursor: 'pointer',
+              animation: 'fadeIn 0.2s linear 0.6s forwards',
+              opacity: 0
+            }}
+            onClick={() => handleLanguageChange('ja')}
+          >
+            JA
           </div>
         )}
       </div>

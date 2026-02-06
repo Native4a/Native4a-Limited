@@ -79,8 +79,9 @@ const Navprops = () => {
         className="hidden xl:block" 
         style={{ 
           position: 'absolute', 
-          right: '-100px', 
-          top: '-20px',
+          right: '-110px', 
+          top: '50%',
+          transform: 'translateY(-50%)',
           zIndex: 100
         }}
       >
