@@ -43,6 +43,11 @@ interface BlogPostTemplateProps extends PageProps {
     previous?: { slug: string; title: string }
     next?: { slug: string; title: string }
   }
+  pageContext?: {
+    language?: string
+    previousPostSlug?: string
+    nextPostSlug?: string
+  }
 }
 
 class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
@@ -50,11 +55,20 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
     const post = get(this.props, 'data.contentfulBlogPost')
     const previous = get(this.props, 'data.previous')
     const next = get(this.props, 'data.next')
+    const language = this.props.pageContext?.language || 'zh'
     const plainTextDescription = documentToPlainTextString(
       JSON.parse(post.description?.raw || '{}')
     )
     const plainTextBody = documentToPlainTextString(JSON.parse(post.body?.raw || '{}'))
     const { minutes: timeToRead } = readingTime(plainTextBody)
+
+    // Helper function to get language-prefixed path
+    const getLocalizedPath = (path: string) => {
+      if (language === 'zh') {
+        return path
+      }
+      return `/${language}${path}`
+    }
 
     const options = {
       renderNode: {
@@ -99,14 +113,14 @@ class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
                   <ul className={styles.articleNavigation}>
                     {previous && (
                       <li>
-                        <Link to={`/blog/${previous.slug}`} rel="prev">
+                        <Link to={getLocalizedPath(`/blog/${previous.slug}`)} rel="prev">
                           ← {previous.title}
                         </Link>
                       </li>
                     )}
                     {next && (
                       <li>
-                        <Link to={`/blog/${next.slug}`} rel="next">
+                        <Link to={getLocalizedPath(`/blog/${next.slug}`)} rel="next">
                           {next.title} →
                         </Link>
                       </li>

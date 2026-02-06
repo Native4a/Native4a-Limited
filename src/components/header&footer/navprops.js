@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import { useTranslation } from 'react-i18next'
 import useAddMenu from '../../hook/useAddMenu'
@@ -11,6 +11,24 @@ import clsx from 'clsx'
 const Navprops = () => {
   const { t } = useTranslation()
   const menu = useAddMenu()
+  const [language, setLanguage] = useState('zh')
+
+  // Extract language from URL on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const currentPath = window.location.pathname
+      const langMatch = currentPath.match(/^\/(en|ja|zh)(\/|$)/)
+      const urlLanguage = langMatch ? langMatch[1] : 'zh'
+      setLanguage(urlLanguage)
+    }
+  }, [])
+
+  const getLocalizedPath = (path) => {
+    if (language === 'zh') {
+      return path
+    }
+    return `/${language}${path}`
+  }
   
   return (
     <>
@@ -24,10 +42,11 @@ const Navprops = () => {
       <ul className="rounded-3xl bg-white contents">
         {menu.map((item, index) => {
           const { slug, urlTitle, submenu } = item
+          const localizedSlug = getLocalizedPath(slug)
           return (
             <li className={clsx('relative group', styles.container)} key={index}>
               <Link
-                to={slug}
+                to={localizedSlug}
                 activeStyle={{
                   color: 'white',
                   backgroundColor: '#faab00',
@@ -57,7 +76,7 @@ const Navprops = () => {
                   {submenu.map((subItem, subIndex) => (
                     <Link
                       key={subIndex}
-                      to={subItem.slug}
+                      to={getLocalizedPath(subItem.slug)}
                       className="block px-5 py-2.5 text-sm text-gray-700 whitespace-nowrap transition-all duration-200 hover:text-yellow-600 hover:bg-yellow-50"
                       style={{
                         borderRadius: '8px',

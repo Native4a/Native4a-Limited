@@ -16,6 +16,7 @@ interface GraphQLResult {
 }
 
 const LANGUAGES = ['en', 'ja', 'zh']
+const DEFAULT_LANGUAGE = 'zh'
 
 export const createPages: GatsbyNode['createPages'] = async ({
   graphql,
@@ -68,15 +69,15 @@ export const createPages: GatsbyNode['createPages'] = async ({
             language,
           },
         })
+      })
+    })
 
-        // Create redirect from old blog URLs to language-specific ones
-        if (language === 'zh') {
-          createRedirect({
-            fromPath: `/blog/${post.slug}/`,
-            toPath: `/zh/blog/${post.slug}/`,
-            isPermanent: false,
-          })
-        }
+    // Create redirect from old blog URLs to language-specific ones (Chinese default)
+    posts.forEach((post) => {
+      createRedirect({
+        fromPath: `/blog/${post.slug}/`,
+        toPath: `/zh/blog/${post.slug}/`,
+        isPermanent: false,
       })
     })
   }
@@ -85,47 +86,55 @@ export const createPages: GatsbyNode['createPages'] = async ({
 export const onCreatePage: GatsbyNode['onCreatePage'] = ({ page, actions }) => {
   const { createPage, createRedirect } = actions
 
-  // Only apply language routing to pages that don't already have language prefix
-  if (!page.path.match(/^\/(en|ja|zh)(\/|$)/)) {
-    // Create language-specific versions of each page
-    LANGUAGES.forEach((language) => {
-      // For root page, handle specially
-      if (page.path === '/') {
-        createPage({
-          ...page,
-          path: `/${language}/`,
-          context: {
-            ...page.context,
-            language,
-          },
-        })
-      } else {
-        // For other pages, add language prefix
-        createPage({
-          ...page,
-          path: `/${language}${page.path}`,
-          context: {
-            ...page.context,
-            language,
-          },
-        })
-      }
-    })
+  // Skip if page already has language prefix
+  if (page.path.match(/^\/(en|ja|zh)(\/|$)/)) {
+    return
+  }
 
-    // Create redirect from non-prefixed paths to Chinese (default language)
-    if (page.path === '/') {
-      createRedirect({
-        fromPath: '/',
-        toPath: '/zh/',
-        isPermanent: false,
-      })
+  // Skip special pages that shouldn't be duplicated
+  const skipPages = ['/404/', '/404.html', '/dev-404-page/']
+  if (skipPages.some(skipPage => page.path === skipPage)) {
+    return
+  }
+
+  // Create language-specific versions for all other pages
+  const originalPath = page.path
+
+  LANGUAGES.forEach((language) => {
+    let newPath: string
+
+    if (originalPath === '/') {
+      newPath = `/${language}/`
     } else {
-      createRedirect({
-        fromPath: page.path,
-        toPath: `/zh${page.path}`,
-        isPermanent: false,
-      })
+      newPath = `/${language}${originalPath}`
     }
+
+    createPage({
+      ...page,
+      path: newPath,
+      context: {
+        ...page.context,
+        language,
+      },
+    })
+  })
+
+  // For original non-prefixed path, only keep it if it's the Chinese version
+  // and redirect other requests to Chinese version
+  if (originalPath === '/') {
+    createRedirect({
+      fromPath: '/',
+      toPath: `/${DEFAULT_LANGUAGE}/`,
+      isPermanent: false,
+    })
+  } else {
+    createRedirect({
+      fromPath: originalPath,
+      toPath: `/${DEFAULT_LANGUAGE}${originalPath}`,
+      isPermanent: false,
+    })
   }
 }
+
+
 
