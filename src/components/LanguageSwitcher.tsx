@@ -74,7 +74,17 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     )
   }
 
-  // 桌面版的液态效果切换器 - 以中文为中心向下展开
+  // 桌面版的液态效果切换器
+  // 使用 1:1 坐标 (viewBox = 实际像素)，彻底避免缩放偏移
+  const W = 60           // 容器/SVG 宽度
+  const R = 22           // 圆半径
+  const CX = W / 2       // 圆心 X = 30
+  const CY_ZH = 30       // 中文圆心 Y (固定)
+  const CY_EN = 90       // EN 展开后圆心 Y
+  const CY_JA = 150      // JA 展开后圆心 Y
+  const H_COLLAPSED = CY_ZH + R + 8  // 收起高度 ≈ 60
+  const H_EXPANDED = CY_JA + R + 10  // 展开高度 ≈ 182
+
   return (
     <>
       <div 
@@ -84,26 +94,22 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
         style={{ 
           cursor: 'pointer', 
           position: 'relative', 
-          width: '65px', 
-          height: isHovered ? '175px' : '65px',
+          width: `${W}px`, 
+          height: isHovered ? `${H_EXPANDED}px` : `${H_COLLAPSED}px`,
           transition: 'height 0.3s ease-out'
         }}
       >
+        {/* SVG 与容器 1:1，不缩放 */}
         <svg 
-          style={{ 
-            width: '65px', 
-            height: '175px', 
-            display: 'block',
-            position: 'absolute',
-            top: 0,
-            left: 0
-          }}
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 100 270"
+          width={W}
+          height={H_EXPANDED}
+          viewBox={`0 0 ${W} ${H_EXPANDED}`}
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ position: 'absolute', top: 0, left: 0, display: 'block' }}
         >
           <defs>
-            <filter id="goo-effect" width="160%" height="250%">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <filter id="goo-effect" x="-50%" y="-20%" width="200%" height="250%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
               <feColorMatrix 
                 in="blur" 
                 mode="matrix" 
@@ -114,134 +120,80 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             </filter>
           </defs>
           <g filter="url(#goo-effect)">
-            {/* 中文圆 - 始终在中心位置 */}
+            {/* JA 圆 - 先画，在最底层 */}
             <circle 
-              cx="50" 
-              cy="50" 
-              r="28" 
-              fill={i18n.language === 'zh' ? '#faab00' : '#e5e7eb'}
-              style={{ 
-                transition: 'all 0.8s ease-out',
-                cursor: 'pointer'
-              }}
-              onClick={() => handleLanguageChange('zh')}
-            />
-            {/* 英文圆 - 悬停时向下展开 */}
-            <circle 
-              cx="50" 
-              cy={isHovered ? 115 : 50}
-              r="28" 
-              fill={i18n.language === 'en' ? '#faab00' : '#e5e7eb'}
-              style={{ 
-                transition: 'all 0.8s ease-out',
-                cursor: 'pointer'
-              }}
-              onClick={() => handleLanguageChange('en')}
-            />
-            {/* 日文圆 - 悬停时向下展开更远 */}
-            <circle 
-              cx="50" 
-              cy={isHovered ? 180 : 50}
-              r="28" 
+              cx={CX} 
+              cy={isHovered ? CY_JA : CY_ZH}
+              r={R} 
               fill={i18n.language === 'ja' ? '#faab00' : '#e5e7eb'}
-              style={{ 
-                transition: 'all 0.8s ease-out',
-                cursor: 'pointer'
-              }}
+              style={{ transition: 'cy 0.8s ease-out, fill 0.3s', cursor: 'pointer' }}
               onClick={() => handleLanguageChange('ja')}
             />
+            {/* EN 圆 - 中间层 */}
+            <circle 
+              cx={CX} 
+              cy={isHovered ? CY_EN : CY_ZH}
+              r={R} 
+              fill={i18n.language === 'en' ? '#faab00' : '#e5e7eb'}
+              style={{ transition: 'cy 0.8s ease-out, fill 0.3s', cursor: 'pointer' }}
+              onClick={() => handleLanguageChange('en')}
+            />
+            {/* 中文圆 - 最后画，在最上层，始终在顶部 */}
+            <circle 
+              cx={CX} 
+              cy={CY_ZH}
+              r={R} 
+              fill={i18n.language === 'zh' ? '#faab00' : '#e5e7eb'}
+              style={{ transition: 'fill 0.3s', cursor: 'pointer' }}
+              onClick={() => handleLanguageChange('zh')}
+            />
           </g>
-        </svg>
-        
-        {/* 中文标签 - 始终显示，对齐中文圆圈中心(cy=50) */}
-        <div 
-          style={{
-            position: 'absolute',
-            top: 'calc(50 / 270 * 175px - 8px)',
-            left: '0',
-            width: '65px',
-            height: '16px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: i18n.language === 'zh' ? 'white' : '#6b7280',
-            fontWeight: 'bold',
-            fontSize: '16px',
-            zIndex: 10,
-            cursor: 'pointer',
-            transition: 'all 0.3s ease',
-            pointerEvents: 'auto'
-          }}
-          onClick={() => handleLanguageChange('zh')}
-        >
-          中
-        </div>
-        
-        {/* 英文标签 - 悬停时显示，对齐英文圆圈中心(cy=115) */}
-        {isHovered && (
-          <div 
-            style={{
-              position: 'absolute',
-              top: 'calc(115 / 270 * 175px - 7px)',
-              left: '0',
-              width: '65px',
-              height: '14px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: i18n.language === 'en' ? 'white' : '#6b7280',
-              fontWeight: 'bold',
-              fontSize: '13px',
-              zIndex: 10,
-              cursor: 'pointer',
-              animation: 'fadeIn 0.2s linear 0.6s forwards',
-              opacity: 0,
-              pointerEvents: 'auto'
+
+          {/* 文字直接画在 SVG 里，保证与圆心完美对齐 */}
+          <text 
+            x={CX} y={CY_ZH} 
+            textAnchor="middle" dominantBaseline="central"
+            fill={i18n.language === 'zh' ? 'white' : '#6b7280'}
+            fontWeight="bold" fontSize="15" 
+            style={{ cursor: 'pointer', pointerEvents: 'auto' }}
+            onClick={() => handleLanguageChange('zh')}
+          >
+            中
+          </text>
+
+          <text 
+            x={CX} y={CY_EN} 
+            textAnchor="middle" dominantBaseline="central"
+            fill={i18n.language === 'en' ? 'white' : '#6b7280'}
+            fontWeight="bold" fontSize="13"
+            style={{ 
+              cursor: 'pointer', 
+              pointerEvents: isHovered ? 'auto' : 'none',
+              opacity: isHovered ? 1 : 0,
+              transition: 'opacity 0.3s ease 0.6s'
             }}
             onClick={() => handleLanguageChange('en')}
           >
             EN
-          </div>
-        )}
-        
-        {/* 日文标签 - 悬停时显示，对齐日文圆圈中心(cy=180) */}
-        {isHovered && (
-          <div 
-            style={{
-              position: 'absolute',
-              top: 'calc(180 / 270 * 175px - 7px)',
-              left: '0',
-              width: '65px',
-              height: '14px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: i18n.language === 'ja' ? 'white' : '#6b7280',
-              fontWeight: 'bold',
-              fontSize: '13px',
-              zIndex: 10,
-              cursor: 'pointer',
-              animation: 'fadeIn 0.2s linear 0.6s forwards',
-              opacity: 0,
-              pointerEvents: 'auto'
+          </text>
+
+          <text 
+            x={CX} y={CY_JA} 
+            textAnchor="middle" dominantBaseline="central"
+            fill={i18n.language === 'ja' ? 'white' : '#6b7280'}
+            fontWeight="bold" fontSize="13"
+            style={{ 
+              cursor: 'pointer', 
+              pointerEvents: isHovered ? 'auto' : 'none',
+              opacity: isHovered ? 1 : 0,
+              transition: 'opacity 0.3s ease 0.6s'
             }}
             onClick={() => handleLanguageChange('ja')}
           >
             JA
-          </div>
-        )}
+          </text>
+        </svg>
       </div>
-      
-      <style>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-      `}</style>
     </>
   )
 }
