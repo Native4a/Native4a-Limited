@@ -31,11 +31,28 @@ const plugins: Plugin[] = [
       stripQueryString: true,
     },
   },
+  {
+    resolve: 'gatsby-plugin-image',
+    options: {
+      quality: 75,
+      webp: {
+        quality: 75,
+      },
+      blurred: true,
+      placeholder: 'blurred',
+    },
+  },
+  {
+    resolve: 'gatsby-plugin-sharp',
+    options: {
+      quality: 75,
+      stripMetadata: true,
+      defaultQuality: 75,
+    },
+  },
   'gatsby-transformer-sharp',
   'gatsby-plugin-react-helmet',
-  'gatsby-plugin-sharp',
   'gatsby-plugin-sitemap',
-  'gatsby-plugin-image',
   {
     resolve: 'gatsby-plugin-robots-txt',
     options: {

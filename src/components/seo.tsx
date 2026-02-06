@@ -2,6 +2,12 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
+interface StructuredData {
+  '@context': string
+  '@type': string
+  [key: string]: unknown
+}
+
 interface SeoProps {
   description?: string
   lang?: string
@@ -11,6 +17,7 @@ interface SeoProps {
   ogUrl?: string
   keywords?: string
   noindex?: boolean
+  structuredData?: StructuredData
 }
 
 interface SiteMetadata {
@@ -38,6 +45,7 @@ const Seo: React.FC<SeoProps> = ({
   ogUrl,
   keywords,
   noindex = false,
+  structuredData,
 }) => {
   const { site } = useStaticQuery<SiteData>(
     graphql`
@@ -153,6 +161,11 @@ const Seo: React.FC<SeoProps> = ({
       ].concat(meta)}
     >
       <link rel="canonical" href={ogUrl} />
+      {structuredData && (
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      )}
     </Helmet>
   )
 }

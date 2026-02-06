@@ -16,6 +16,7 @@ import SocialMediaBtn from '../components/button/socialMedia'
 import Clients from "../components/Client's"
 import ServiceScope from '../components/serviceScope'
 import Section from '../components/baseTools/Section'
+import { buildOrganizationStructuredData } from '../utils/structuredData'
 
 //image here//
 import heroBanner_Award from '../img/Award02_2.png'
@@ -89,6 +90,7 @@ function RootIndexContent(props: PageDataProps) {
         title={addNewPage.seo.metaTitle}
         description={addNewPage.seo.metaDescription}
         ogUrl="https://nativeaaaa.com.hk/"
+        structuredData={buildOrganizationStructuredData()}
       />
       <Section SectionClass={styles.bgCustomGradient}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
