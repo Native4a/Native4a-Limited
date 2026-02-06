@@ -119,25 +119,28 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
         </defs>
 
         <g filter="url(#goo-effect)">
+          {/* JA 圓 - 未選中時回到中文位置，選中時固定在展開位置 */}
           <circle 
             cx={CX} 
-            cy={isHovered ? CY_JA : CY_ZH}
+            cy={i18n.language === 'ja' ? CY_ZH : (isHovered ? CY_JA : CY_ZH)}
             r={R} 
             fill={i18n.language === 'ja' ? '#faab00' : '#d1d5db'}
             style={{ transition: 'cy 0.8s ease-out, fill 0.3s', cursor: 'pointer' }}
             onClick={() => handleLanguageChange('ja')}
           />
+          {/* EN 圓 - 未選中時回到中文位置，選中時固定在展開位置 */}
           <circle 
             cx={CX} 
-            cy={isHovered ? CY_EN : CY_ZH}
+            cy={i18n.language === 'en' ? CY_ZH : (isHovered ? CY_EN : CY_ZH)}
             r={R} 
             fill={i18n.language === 'en' ? '#faab00' : '#d1d5db'}
             style={{ transition: 'cy 0.8s ease-out, fill 0.3s', cursor: 'pointer' }}
             onClick={() => handleLanguageChange('en')}
           />
+          {/* 中文圓 - 固定在頂部位置 */}
           <circle 
             cx={CX} 
-            cy={CY_ZH}
+            cy={i18n.language === 'zh' ? CY_ZH : (isHovered ? CY_ZH : CY_ZH)}
             r={R} 
             fill={i18n.language === 'zh' ? '#faab00' : '#d1d5db'}
             style={{ cursor: 'pointer' }}
