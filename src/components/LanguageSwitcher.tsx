@@ -21,13 +21,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     { code: 'ja', name: '日本語', label: 'JA' },
   ]
 
-  // 确保 currentLanguage 总是有效的，默认为中文
   const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0]
-
-  React.useEffect(() => {
-    console.log("[v0] Current i18n language:", i18n.language)
-    console.log("[v0] Current language object:", currentLanguage)
-  }, [i18n.language, currentLanguage])
 
   const handleLanguageChange = (langCode: string) => {
     i18n.changeLanguage(langCode)
@@ -80,15 +74,18 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   }
 
   // 桌面版的液态效果切换器
+  // 当前语言始终显示在顶部，其他两个语言悬停时向下展开
+  const otherLanguages = languages.filter(lang => lang.code !== i18n.language)
+
   const W = 60
   const R = 25
   const CX = W / 2
-  const CY_ZH = R + 4
+  const CY_TOP = R + 4         // 顶部（当前语言）圆心
   const GAP = R * 2 + 14
-  const CY_EN = CY_ZH + GAP
-  const CY_JA = CY_ZH + GAP * 2
-  const H_COLLAPSED = CY_ZH + R + 6
-  const H_EXPANDED = CY_JA + R + 8
+  const CY_MID = CY_TOP + GAP  // 第二个选项圆心
+  const CY_BOT = CY_TOP + GAP * 2 // 第三个选项圆心
+  const H_COLLAPSED = CY_TOP + R + 6
+  const H_EXPANDED = CY_BOT + R + 8
 
   return (
     <div 
@@ -125,60 +122,60 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
         </defs>
 
         <g filter="url(#goo-effect)">
-          {/* JA 圓 - 未選中時回到中文位置，選中時固定在展開位置 */}
+          {/* 第三个选项圆 - 悬停时展开到底部 */}
           <circle 
             cx={CX} 
-            cy={i18n.language === 'ja' ? CY_ZH : (isHovered ? CY_JA : CY_ZH)}
+            cy={isHovered ? CY_BOT : CY_TOP}
             r={R} 
-            fill={i18n.language === 'ja' ? '#faab00' : '#d1d5db'}
-            style={{ transition: 'cy 0.8s ease-out, fill 0.3s', cursor: 'pointer' }}
-            onClick={() => handleLanguageChange('ja')}
+            fill="#d1d5db"
+            style={{ transition: 'cy 0.8s ease-out', cursor: 'pointer' }}
+            onClick={() => handleLanguageChange(otherLanguages[1].code)}
           />
-          {/* EN 圓 - 未選中時回到中文位置，選中時固定在展開位置 */}
+          {/* 第二个选项圆 - 悬停时展开到中间 */}
           <circle 
             cx={CX} 
-            cy={i18n.language === 'en' ? CY_ZH : (isHovered ? CY_EN : CY_ZH)}
+            cy={isHovered ? CY_MID : CY_TOP}
             r={R} 
-            fill={i18n.language === 'en' ? '#faab00' : '#d1d5db'}
-            style={{ transition: 'cy 0.8s ease-out, fill 0.3s', cursor: 'pointer' }}
-            onClick={() => handleLanguageChange('en')}
+            fill="#d1d5db"
+            style={{ transition: 'cy 0.8s ease-out', cursor: 'pointer' }}
+            onClick={() => handleLanguageChange(otherLanguages[0].code)}
           />
-          {/* 中文圓 - 固定在頂部位置 */}
+          {/* 当前语言圆 - 固定在顶部 */}
           <circle 
             cx={CX} 
-            cy={i18n.language === 'zh' ? CY_ZH : (isHovered ? CY_ZH : CY_ZH)}
+            cy={CY_TOP}
             r={R} 
-            fill={i18n.language === 'zh' ? '#faab00' : '#d1d5db'}
+            fill="#faab00"
             style={{ cursor: 'pointer' }}
-            onClick={() => handleLanguageChange('zh')}
           />
         </g>
 
+        {/* 当前语言圆 - goo 外层保证始终可见 */}
         <circle 
           cx={CX} 
-          cy={CY_ZH}
+          cy={CY_TOP}
           r={R} 
-          fill={i18n.language === 'zh' ? '#faab00' : '#d1d5db'}
+          fill="#faab00"
           style={{ cursor: 'pointer' }}
-          onClick={() => handleLanguageChange('zh')}
         />
 
+        {/* 当前语言文字 - 始终显示在顶部 */}
         <text 
-          x={CX} y={CY_ZH} 
+          x={CX} y={CY_TOP} 
           textAnchor="middle" dominantBaseline="central"
-          fill={i18n.language === 'zh' ? 'white' : '#6b7280'}
+          fill="white"
           fontWeight="bold" fontSize="16"
           fontFamily="sans-serif"
           style={{ cursor: 'pointer', pointerEvents: 'auto' }}
-          onClick={() => handleLanguageChange('zh')}
         >
-          中
+          {currentLanguage.label}
         </text>
 
+        {/* 第二个选项文字 */}
         <text 
-          x={CX} y={CY_EN} 
+          x={CX} y={CY_MID} 
           textAnchor="middle" dominantBaseline="central"
-          fill={i18n.language === 'en' ? 'white' : '#6b7280'}
+          fill="#6b7280"
           fontWeight="bold" fontSize="14"
           fontFamily="sans-serif"
           style={{ 
@@ -187,15 +184,16 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             opacity: isHovered ? 1 : 0,
             transition: 'opacity 0.2s ease 0.6s'
           }}
-          onClick={() => handleLanguageChange('en')}
+          onClick={() => handleLanguageChange(otherLanguages[0].code)}
         >
-          EN
+          {otherLanguages[0].label}
         </text>
 
+        {/* 第三个选项文字 */}
         <text 
-          x={CX} y={CY_JA} 
+          x={CX} y={CY_BOT} 
           textAnchor="middle" dominantBaseline="central"
-          fill={i18n.language === 'ja' ? 'white' : '#6b7280'}
+          fill="#6b7280"
           fontWeight="bold" fontSize="14"
           fontFamily="sans-serif"
           style={{ 
@@ -204,9 +202,9 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             opacity: isHovered ? 1 : 0,
             transition: 'opacity 0.2s ease 0.6s'
           }}
-          onClick={() => handleLanguageChange('ja')}
+          onClick={() => handleLanguageChange(otherLanguages[1].code)}
         >
-          JA
+          {otherLanguages[1].label}
         </text>
       </svg>
     </div>
