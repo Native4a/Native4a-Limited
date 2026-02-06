@@ -13,6 +13,13 @@ const Navprops = () => {
   const menu = useAddMenu()
   
   return (
+    <>
+    <style>{`
+      @keyframes dropdownFadeIn {
+        from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+        to { opacity: 1; transform: translateX(-50%) translateY(0); }
+      }
+    `}</style>
     <div className={`${styles.activeLink} contents`} style={{ position: 'relative' }}>
       <ul className="rounded-3xl bg-white contents">
         {menu.map((item, index) => {
@@ -34,17 +41,32 @@ const Navprops = () => {
 
               {/* ➤ 如果有 submenu 才顯示下拉清單 */}
               {submenu && Array.isArray(submenu) && (
-                <ul className="absolute left-0 top-[80%] hidden group-hover:block bg-white shadow-md rounded z-50">
+                <ul 
+                  className="absolute left-1/2 top-full hidden group-hover:block z-50 py-2 min-w-[180px]"
+                  style={{
+                    transform: 'translateX(-50%)',
+                    background: 'rgba(255, 255, 255, 0.95)',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)',
+                    borderRadius: '12px',
+                    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)',
+                    border: '1px solid rgba(0, 0, 0, 0.06)',
+                    animation: 'dropdownFadeIn 0.2s ease-out'
+                  }}
+                >
                   {submenu.map((subItem, subIndex) => (
                     <Link
                       key={subIndex}
                       to={subItem.slug}
-                      className="block px-4 py-2 hover:bg-yellow-300 hover:text-white whitespace-nowrap"
+                      className="block px-5 py-2.5 text-sm text-gray-700 whitespace-nowrap transition-all duration-200 hover:text-yellow-600 hover:bg-yellow-50"
+                      style={{
+                        borderRadius: '8px',
+                        margin: '0 6px',
+                      }}
                       activeStyle={{
-                        color: 'white',
-                        backgroundColor: '#faab00',
-                        fontWeight: 'bold',
-                        borderRadius: '3px',
+                        color: '#ca8a04',
+                        backgroundColor: '#fef9c3',
+                        fontWeight: '600',
                       }}
                       partiallyActive={true}
                     >
@@ -88,6 +110,7 @@ const Navprops = () => {
         <LanguageSwitcher />
       </div>
     </div>
+    </>
   )
 }
 
