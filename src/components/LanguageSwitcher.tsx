@@ -75,126 +75,140 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   }
 
   // 桌面版的液态效果切换器
-  // 使用 1:1 坐标 (viewBox = 实际像素)，彻底避免缩放偏移
-  const W = 60           // 容器/SVG 宽度
-  const R = 22           // 圆半径
-  const CX = W / 2       // 圆心 X = 30
-  const CY_ZH = 30       // 中文圆心 Y (固定)
-  const CY_EN = 90       // EN 展开后圆心 Y
-  const CY_JA = 150      // JA 展开后圆心 Y
-  const H_COLLAPSED = CY_ZH + R + 8  // 收起高度 ≈ 60
-  const H_EXPANDED = CY_JA + R + 10  // 展开高度 ≈ 182
+  // 1:1 坐标系统，中文在顶部固定，EN/JA 向下展开
+  const W = 60
+  const R = 25           // 圆半径稍大
+  const CX = W / 2       // 30
+  const CY_ZH = R + 4    // 中文圆心 = 29
+  const GAP = R * 2 + 14 // 圆间距 = 64
+  const CY_EN = CY_ZH + GAP       // EN 圆心 = 93
+  const CY_JA = CY_ZH + GAP * 2   // JA 圆心 = 157
+  const H_COLLAPSED = CY_ZH + R + 6
+  const H_EXPANDED = CY_JA + R + 8
 
   return (
-    <>
-      <div 
-        className={`${className}`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        style={{ 
-          cursor: 'pointer', 
-          position: 'relative', 
-          width: `${W}px`, 
-          height: isHovered ? `${H_EXPANDED}px` : `${H_COLLAPSED}px`,
-          transition: 'height 0.3s ease-out'
-        }}
+    <div 
+      className={`${className}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{ 
+        cursor: 'pointer', 
+        position: 'relative', 
+        width: `${W}px`, 
+        height: isHovered ? `${H_EXPANDED}px` : `${H_COLLAPSED}px`,
+        transition: 'height 0.3s ease-out',
+        overflow: isHovered ? 'visible' : 'hidden'
+      }}
+    >
+      <svg 
+        width={W}
+        height={H_EXPANDED}
+        viewBox={`0 0 ${W} ${H_EXPANDED}`}
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ position: 'absolute', top: 0, left: 0, display: 'block', overflow: 'visible' }}
       >
-        {/* SVG 与容器 1:1，不缩放 */}
-        <svg 
-          width={W}
-          height={H_EXPANDED}
-          viewBox={`0 0 ${W} ${H_EXPANDED}`}
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ position: 'absolute', top: 0, left: 0, display: 'block' }}
-        >
-          <defs>
-            <filter id="goo-effect" x="-50%" y="-20%" width="200%" height="250%">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-              <feColorMatrix 
-                in="blur" 
-                mode="matrix" 
-                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" 
-                result="goo-effect" 
-              />
-              <feBlend in="SourceGraphic" in2="goo-effect" />
-            </filter>
-          </defs>
-          <g filter="url(#goo-effect)">
-            {/* JA 圆 - 先画，在最底层 */}
-            <circle 
-              cx={CX} 
-              cy={isHovered ? CY_JA : CY_ZH}
-              r={R} 
-              fill={i18n.language === 'ja' ? '#faab00' : '#e5e7eb'}
-              style={{ transition: 'cy 0.8s ease-out, fill 0.3s', cursor: 'pointer' }}
-              onClick={() => handleLanguageChange('ja')}
+        <defs>
+          <filter id="goo-effect" x="-50%" y="-30%" width="200%" height="260%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+            <feColorMatrix 
+              in="blur" 
+              mode="matrix" 
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" 
+              result="goo-effect" 
             />
-            {/* EN 圆 - 中间层 */}
-            <circle 
-              cx={CX} 
-              cy={isHovered ? CY_EN : CY_ZH}
-              r={R} 
-              fill={i18n.language === 'en' ? '#faab00' : '#e5e7eb'}
-              style={{ transition: 'cy 0.8s ease-out, fill 0.3s', cursor: 'pointer' }}
-              onClick={() => handleLanguageChange('en')}
-            />
-            {/* 中文圆 - 最后画，在最上层，始终在顶部 */}
-            <circle 
-              cx={CX} 
-              cy={CY_ZH}
-              r={R} 
-              fill={i18n.language === 'zh' ? '#faab00' : '#e5e7eb'}
-              style={{ transition: 'fill 0.3s', cursor: 'pointer' }}
-              onClick={() => handleLanguageChange('zh')}
-            />
-          </g>
+            <feBlend in="SourceGraphic" in2="goo-effect" />
+          </filter>
+        </defs>
 
-          {/* 文字直接画在 SVG 里，保证与圆心完美对齐 */}
-          <text 
-            x={CX} y={CY_ZH} 
-            textAnchor="middle" dominantBaseline="central"
-            fill={i18n.language === 'zh' ? 'white' : '#6b7280'}
-            fontWeight="bold" fontSize="15" 
-            style={{ cursor: 'pointer', pointerEvents: 'auto' }}
-            onClick={() => handleLanguageChange('zh')}
-          >
-            中
-          </text>
-
-          <text 
-            x={CX} y={CY_EN} 
-            textAnchor="middle" dominantBaseline="central"
-            fill={i18n.language === 'en' ? 'white' : '#6b7280'}
-            fontWeight="bold" fontSize="13"
-            style={{ 
-              cursor: 'pointer', 
-              pointerEvents: isHovered ? 'auto' : 'none',
-              opacity: isHovered ? 1 : 0,
-              transition: 'opacity 0.3s ease 0.6s'
-            }}
-            onClick={() => handleLanguageChange('en')}
-          >
-            EN
-          </text>
-
-          <text 
-            x={CX} y={CY_JA} 
-            textAnchor="middle" dominantBaseline="central"
-            fill={i18n.language === 'ja' ? 'white' : '#6b7280'}
-            fontWeight="bold" fontSize="13"
-            style={{ 
-              cursor: 'pointer', 
-              pointerEvents: isHovered ? 'auto' : 'none',
-              opacity: isHovered ? 1 : 0,
-              transition: 'opacity 0.3s ease 0.6s'
-            }}
+        {/* Goo 液态效果组 - 只包含 EN 和 JA，它们从中文位置展开 */}
+        <g filter="url(#goo-effect)">
+          {/* JA 圆 */}
+          <circle 
+            cx={CX} 
+            cy={isHovered ? CY_JA : CY_ZH}
+            r={R} 
+            fill={i18n.language === 'ja' ? '#faab00' : '#d1d5db'}
+            style={{ transition: 'cy 0.8s ease-out, fill 0.3s', cursor: 'pointer' }}
             onClick={() => handleLanguageChange('ja')}
-          >
-            JA
-          </text>
-        </svg>
-      </div>
-    </>
+          />
+          {/* EN 圆 */}
+          <circle 
+            cx={CX} 
+            cy={isHovered ? CY_EN : CY_ZH}
+            r={R} 
+            fill={i18n.language === 'en' ? '#faab00' : '#d1d5db'}
+            style={{ transition: 'cy 0.8s ease-out, fill 0.3s', cursor: 'pointer' }}
+            onClick={() => handleLanguageChange('en')}
+          />
+          {/* 中文圆 - 也放在 goo 组中以获得液态连接效果，但位置固定不变 */}
+          <circle 
+            cx={CX} 
+            cy={CY_ZH}
+            r={R} 
+            fill={i18n.language === 'zh' ? '#faab00' : '#d1d5db'}
+            style={{ cursor: 'pointer' }}
+            onClick={() => handleLanguageChange('zh')}
+          />
+        </g>
+
+        {/* 中文圆 - 额外画一个在 goo 组外面，确保始终可见不被滤镜吃掉 */}
+        <circle 
+          cx={CX} 
+          cy={CY_ZH}
+          r={R} 
+          fill={i18n.language === 'zh' ? '#faab00' : '#d1d5db'}
+          style={{ cursor: 'pointer' }}
+          onClick={() => handleLanguageChange('zh')}
+        />
+
+        {/* 文字标签 - SVG text 保证与圆心完美对齐 */}
+        <text 
+          x={CX} y={CY_ZH} 
+          textAnchor="middle" dominantBaseline="central"
+          fill={i18n.language === 'zh' ? 'white' : '#6b7280'}
+          fontWeight="bold" fontSize="16"
+          fontFamily="sans-serif"
+          style={{ cursor: 'pointer', pointerEvents: 'auto' }}
+          onClick={() => handleLanguageChange('zh')}
+        >
+          中
+        </text>
+
+        <text 
+          x={CX} y={CY_EN} 
+          textAnchor="middle" dominantBaseline="central"
+          fill={i18n.language === 'en' ? 'white' : '#6b7280'}
+          fontWeight="bold" fontSize="14"
+          fontFamily="sans-serif"
+          style={{ 
+            cursor: 'pointer', 
+            pointerEvents: isHovered ? 'auto' : 'none',
+            opacity: isHovered ? 1 : 0,
+            transition: 'opacity 0.2s ease 0.6s'
+          }}
+          onClick={() => handleLanguageChange('en')}
+        >
+          EN
+        </text>
+
+        <text 
+          x={CX} y={CY_JA} 
+          textAnchor="middle" dominantBaseline="central"
+          fill={i18n.language === 'ja' ? 'white' : '#6b7280'}
+          fontWeight="bold" fontSize="14"
+          fontFamily="sans-serif"
+          style={{ 
+            cursor: 'pointer', 
+            pointerEvents: isHovered ? 'auto' : 'none',
+            opacity: isHovered ? 1 : 0,
+            transition: 'opacity 0.2s ease 0.6s'
+          }}
+          onClick={() => handleLanguageChange('ja')}
+        >
+          JA
+        </text>
+      </svg>
+    </div>
   )
 }
 
