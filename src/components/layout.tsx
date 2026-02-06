@@ -20,12 +20,21 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
 
   useEffect(() => {
     setIsClient(true)
-    // Restore saved language from localStorage on client side only
+    
+    // Extract language from URL or localStorage
     if (typeof window !== 'undefined') {
+      const currentPath = window.location.pathname
+      const langMatch = currentPath.match(/^\/(en|ja|zh)(\/|$)/)
+      const urlLanguage = langMatch ? langMatch[1] : null
       const savedLanguage = localStorage.getItem('language')
-      if (savedLanguage && i18n.language !== savedLanguage) {
-        i18n.changeLanguage(savedLanguage)
+      const languageToUse = urlLanguage || savedLanguage || 'zh'
+
+      if (i18n.language !== languageToUse) {
+        i18n.changeLanguage(languageToUse)
       }
+      
+      // Save the detected language
+      localStorage.setItem('language', languageToUse)
     }
   }, [])
 

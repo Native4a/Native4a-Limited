@@ -16,14 +16,13 @@ interface GraphQLResult {
 }
 
 const LANGUAGES = ['en', 'ja', 'zh']
-const DEFAULT_LANGUAGE = 'zh'
 
 export const createPages: GatsbyNode['createPages'] = async ({
   graphql,
   actions,
   reporter,
 }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
   // Define a template for blog post
   const blogPost = path.resolve('./src/templates/blog-post.tsx')
@@ -69,7 +68,64 @@ export const createPages: GatsbyNode['createPages'] = async ({
             language,
           },
         })
+
+        // Create redirect from old blog URLs to language-specific ones
+        if (language === 'zh') {
+          createRedirect({
+            fromPath: `/blog/${post.slug}/`,
+            toPath: `/zh/blog/${post.slug}/`,
+            isPermanent: false,
+          })
+        }
       })
     })
   }
 }
+
+export const onCreatePage: GatsbyNode['onCreatePage'] = ({ page, actions }) => {
+  const { createPage, createRedirect } = actions
+
+  // Only apply language routing to pages that don't already have language prefix
+  if (!page.path.match(/^\/(en|ja|zh)(\/|$)/)) {
+    // Create language-specific versions of each page
+    LANGUAGES.forEach((language) => {
+      // For root page, handle specially
+      if (page.path === '/') {
+        createPage({
+          ...page,
+          path: `/${language}/`,
+          context: {
+            ...page.context,
+            language,
+          },
+        })
+      } else {
+        // For other pages, add language prefix
+        createPage({
+          ...page,
+          path: `/${language}${page.path}`,
+          context: {
+            ...page.context,
+            language,
+          },
+        })
+      }
+    })
+
+    // Create redirect from non-prefixed paths to Chinese (default language)
+    if (page.path === '/') {
+      createRedirect({
+        fromPath: '/',
+        toPath: '/zh/',
+        isPermanent: false,
+      })
+    } else {
+      createRedirect({
+        fromPath: page.path,
+        toPath: `/zh${page.path}`,
+        isPermanent: false,
+      })
+    }
+  }
+}
+

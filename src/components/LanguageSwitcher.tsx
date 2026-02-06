@@ -29,23 +29,14 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     if (typeof window !== 'undefined') {
       localStorage.setItem('language', langCode)
       
-      // Get current path and replace language prefix
+      // Get current path
       const currentPath = window.location.pathname
-      let newPath = currentPath
       
-      // Remove existing language prefix if present
-      const langRegex = /^\/(en|ja|zh)(\/|$)/
-      if (langRegex.test(currentPath)) {
-        newPath = currentPath.replace(langRegex, '/')
-      }
+      // Extract path without language prefix
+      const pathWithoutLang = currentPath.replace(/^\/(en|ja|zh)/, '') || '/'
       
-      // Add new language prefix (except for default language on home page)
-      if (langCode !== 'zh') {
-        newPath = `/${langCode}${newPath === '/' ? '' : newPath}`
-      } else {
-        newPath = newPath === '/' ? '/' : newPath
-      }
-      
+      // Navigate to new language path
+      const newPath = langCode === 'zh' ? pathWithoutLang : `/${langCode}${pathWithoutLang}`
       navigate(newPath)
     }
     setIsHovered(false)
