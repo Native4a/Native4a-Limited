@@ -25,11 +25,19 @@ interface Post {
 
 interface ArticlePreviewProps {
   posts?: Post[]
+  language?: string
 }
 
-const ArticlePreview: React.FC<ArticlePreviewProps> = ({ posts }) => {
+const ArticlePreview: React.FC<ArticlePreviewProps> = ({ posts, language = 'zh' }) => {
   if (!posts) return null
   if (!Array.isArray(posts)) return null
+
+  const getLocalizedPath = (path: string) => {
+    if (language === 'zh') {
+      return path
+    }
+    return `/${language}${path}`
+  }
 
   return (
     <Section>
@@ -38,7 +46,7 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({ posts }) => {
           {posts.map((post) => {
             return (
               <li key={post.slug}>
-                <Link to={`/blog/${post.slug}`} className={styles.link}>
+                <Link to={getLocalizedPath(`/blog/${post.slug}`)} className={styles.link}>
                   <GatsbyImage
                     alt="gatsbyImageData"
                     image={post.heroImage?.gatsbyImageData}
