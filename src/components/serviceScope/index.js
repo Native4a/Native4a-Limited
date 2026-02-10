@@ -1,10 +1,24 @@
 import React from 'react'
-import useServiceScope from '../../hook/useServiceScope'
 import * as styles from '../../styles/index.module.css'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { serviceScopeDataZH, serviceScopeDataEN, serviceScopeDataJP } from '../../data/serviceScopeConstants'
+import useLanguage from '../../hooks/useLanguage'
 
 const ServiceScope = () => {
-  const serviceScope = useServiceScope()
+  const { currentLanguage } = useLanguage()
+
+  const getServiceScopeData = (lang) => {
+    switch (lang) {
+      case 'en':
+        return serviceScopeDataEN
+      case 'ja':
+        return serviceScopeDataJP
+      case 'zh':
+      default:
+        return serviceScopeDataZH
+    }
+  }
+
+  const serviceScope = getServiceScopeData(currentLanguage)
   return (
     <div className="relative pt-20">
       <div className="container mx-auto">
@@ -34,7 +48,7 @@ const ServiceScope = () => {
                       <b>{title}</b>
                     </div>
                     <div className={styles.taUlTag}>
-                      <p>{renderRichText(descriptions)}</p>
+                      <p>{descriptions}</p>
                     </div>
                   </div>
                 </div>
