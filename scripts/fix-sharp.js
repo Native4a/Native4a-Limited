@@ -31,9 +31,9 @@ async function fixSharp() {
       LOG.success('Removed old sharp module');
     }
 
-    // Step 2: Rebuild sharp for Linux platform
+    // Step 2: Rebuild sharp for Linux platform using pnpm
     LOG.info('Installing sharp for Linux x64 platform...');
-    execSync('npm install --platform=linux --arch=x64 sharp@0.32.6', {
+    execSync('pnpm install --platform=linux --arch=x64 sharp@0.32.6', {
       cwd: path.join(__dirname, '..'),
       stdio: 'inherit',
     });
@@ -55,7 +55,7 @@ async function fixSharp() {
     
     try {
       LOG.info('Cleaning node_modules and reinstalling...');
-      execSync('rm -rf node_modules && npm install', {
+      execSync('rm -rf node_modules && pnpm install', {
         cwd: path.join(__dirname, '..'),
         stdio: 'inherit',
       });

@@ -27,14 +27,14 @@ try {
     // Execute the fix script
     const { execSync } = require('child_process');
     try {
-      execSync('node scripts/fix-sharp.js', { 
+      execSync('pnpm exec node scripts/fix-sharp.js', { 
         cwd: path.join(__dirname, '..'),
         stdio: 'inherit' 
       });
       LOG.success('Sharp module has been fixed successfully!');
       process.exit(0);
     } catch (fixError) {
-      LOG.error('Failed to automatically fix sharp. Please run: npm run fix-sharp');
+      LOG.error('Failed to automatically fix sharp. Please run: pnpm run fix-sharp');
       process.exit(1);
     }
   } else {
