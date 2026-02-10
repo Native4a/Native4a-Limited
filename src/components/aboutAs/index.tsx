@@ -2,6 +2,7 @@ import React from 'react'
 import * as styles from './style.module.css'
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
 import { aboutAsDataZH, aboutAsDataEN, aboutAsDataJP } from '../../data/aboutAsConstants'
+import useLanguage from '../../hooks/useLanguage'
 
 interface AboutAsItem {
   title: string
@@ -12,16 +13,14 @@ interface AboutAsItem {
   }
 }
 
-interface AboutAsProps {
-  language?: 'zh' | 'en' | 'jp'
-}
+const AboutAs: React.FC = () => {
+  const { currentLanguage } = useLanguage()
 
-const AboutAs: React.FC<AboutAsProps> = ({ language = 'zh' }) => {
   const getAboutAsData = (lang: string): AboutAsItem[] => {
     switch (lang) {
       case 'en':
         return aboutAsDataEN
-      case 'jp':
+      case 'ja':
         return aboutAsDataJP
       case 'zh':
       default:
@@ -29,7 +28,7 @@ const AboutAs: React.FC<AboutAsProps> = ({ language = 'zh' }) => {
     }
   }
 
-  const aboutAs: AboutAsItem[] = getAboutAsData(language)
+  const aboutAs: AboutAsItem[] = getAboutAsData(currentLanguage)
   return (
     <div>
       {aboutAs.map((item, index) => {
