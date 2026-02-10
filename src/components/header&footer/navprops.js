@@ -33,40 +33,54 @@ const Navprops = () => {
     {
       slug: 'seo',
       urlTitle: 'SEO',
+      urlTitleEn: 'SEO',
+      urlTitleJa: 'SEO',
       submenu: [
-        { slug: 'backlinks', title: 'Backlinks' },
-        { slug: 'seo', title: 'SEO' },
-        { slug: 'seo-smart-kit', title: '肥仔計算機' },
+        { slug: 'backlinks', title: 'Backlinks', titleEn: 'Backlinks', titleJa: 'バックリンク' },
+        { slug: 'seo', title: 'SEO', titleEn: 'SEO', titleJa: 'SEO' },
+        { slug: 'seo-smart-kit', title: '肥仔計算機', titleEn: 'Smart SEO Calculator', titleJa: 'SEO計算機' },
       ],
     },
     {
       slug: 'video',
       urlTitle: '影片製作',
+      urlTitleEn: 'Video Production',
+      urlTitleJa: '動画制作',
       submenu: null,
     },
     {
       slug: 'smm-ads',
       urlTitle: '社交媒體廣告',
+      urlTitleEn: 'Social Media Ads',
+      urlTitleJa: 'ソーシャルメディア広告',
       submenu: null,
     },
     {
       slug: 'web-design',
       urlTitle: '網站設計',
+      urlTitleEn: 'Web Design',
+      urlTitleJa: 'ウェブデザイン',
       submenu: null,
     },
     {
       slug: 'xiaohongshu',
       urlTitle: '小紅書',
+      urlTitleEn: 'Xiaohongshu',
+      urlTitleJa: 'Xiaohongshu',
       submenu: null,
     },
     {
       slug: 'contact-us',
       urlTitle: '聯絡我們',
+      urlTitleEn: 'Contact Us',
+      urlTitleJa: 'お問い合わせ',
       submenu: null,
     },
     {
       slug: 'Blog',
       urlTitle: 'Blog',
+      urlTitleEn: 'Blog',
+      urlTitleJa: 'ブログ',
       submenu: null,
     }
     // 在這裡繼續加你的菜單項目...
@@ -84,8 +98,10 @@ const Navprops = () => {
       <div className={`${styles.activeLink} contents`} style={{ position: 'relative' }}>
         <ul className="rounded-3xl bg-white contents">
           {menu.map((item, index) => {
-            const { slug, urlTitle, submenu } = item
+            const { slug, urlTitle, urlTitleEn, urlTitleJa, submenu } = item
             const localizedSlug = getLocalizedPath(slug)
+            // Get the correct title based on current language
+            const displayTitle = language === 'en' ? urlTitleEn : language === 'ja' ? urlTitleJa : urlTitle
 
             return (
               <li className={clsx('relative group', styles.container)} key={index}>
@@ -99,7 +115,7 @@ const Navprops = () => {
                   }}
                   partiallyActive={true}
                 >
-                  {urlTitle}
+                  {displayTitle}
                 </Link>
 
                 {/* ➤ 如果有 submenu 才顯示下拉清單 */}
@@ -117,7 +133,9 @@ const Navprops = () => {
                       animation: 'dropdownFadeIn 0.2s ease-out'
                     }}
                   >
-                    {submenu.map((subItem, subIndex) => (
+                    {submenu.map((subItem, subIndex) => {
+                      const subDisplayTitle = language === 'en' ? subItem.titleEn : language === 'ja' ? subItem.titleJa : subItem.title
+                      return (
                       <Link
                         key={subIndex}
                         to={getLocalizedPath(subItem.slug)}
@@ -133,9 +151,10 @@ const Navprops = () => {
                         }}
                         partiallyActive={true}
                       >
-                        {subItem.title}
+                        {subDisplayTitle}
                       </Link>
-                    ))}
+                    )
+                    })}
                   </ul>
                 )}
               </li>
