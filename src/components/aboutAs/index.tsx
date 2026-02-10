@@ -1,7 +1,7 @@
 import React from 'react'
 import * as styles from './style.module.css'
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
-import aboutAsData from '../../data/aboutAs.json'
+import { aboutAsDataZH, aboutAsDataEN, aboutAsDataJP } from '../../data/aboutAsConstants'
 
 interface AboutAsItem {
   title: string
@@ -12,8 +12,24 @@ interface AboutAsItem {
   }
 }
 
-const AboutAs: React.FC = () => {
-  const aboutAs: AboutAsItem[] = aboutAsData
+interface AboutAsProps {
+  language?: 'zh' | 'en' | 'jp'
+}
+
+const AboutAs: React.FC<AboutAsProps> = ({ language = 'zh' }) => {
+  const getAboutAsData = (lang: string): AboutAsItem[] => {
+    switch (lang) {
+      case 'en':
+        return aboutAsDataEN
+      case 'jp':
+        return aboutAsDataJP
+      case 'zh':
+      default:
+        return aboutAsDataZH
+    }
+  }
+
+  const aboutAs: AboutAsItem[] = getAboutAsData(language)
   return (
     <div>
       {aboutAs.map((item, index) => {
