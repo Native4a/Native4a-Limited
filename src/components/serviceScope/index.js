@@ -48,7 +48,11 @@ const ServiceScope = () => {
                       <b>{title}</b>
                     </div>
                     <div className={styles.taUlTag}>
-                      <p>{descriptions}</p>
+                      <ul>
+                        {descriptions.map((desc, idx) => (
+                          <li key={idx}>{desc}</li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
