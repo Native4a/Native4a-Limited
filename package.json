@@ -59,7 +59,7 @@
     "react-tabs": "^5.2.0",
     "reactjs-popup": "^2.0.5",
     "reading-time": "^2.0.0-1",
-    "sharp": "0.32.6",
+    "sharp": "^0.33.5",
     "slick-carousel": "^1.8.1",
     "yargs-parser": "^22.0.0"
   },
@@ -99,5 +99,11 @@
     "netlify:login": "netlify login",
     "netlify:deploy": "netlify deploy -d public -p",
     "gatsby-provision": "gatsby-provision-contentful --contentful-data-path='./contentful/export.json' --space-id=$CONTENTFUL_SPACE_ID --management-token=$CONTENTFUL_MANAGEMENT_TOKEN"
+  },
+  "pnpm": {
+    "overrides": {
+      "sharp": "0.33.5"
+    },
+    "onlyBuiltDependencies": ["sharp"]
   }
 }
