@@ -31,11 +31,18 @@ async function fixSharp() {
       LOG.success('Removed old sharp module');
     }
 
-    // Step 2: Rebuild sharp for Linux platform using pnpm
+    // Step 2: Rebuild sharp for Linux platform using pnpm with environment variables
     LOG.info('Installing sharp for Linux x64 platform...');
-    execSync('pnpm install --platform=linux --arch=x64 sharp@0.32.6', {
+    const env = {
+      ...process.env,
+      npm_config_platform: 'linux',
+      npm_config_arch: 'x64',
+      npm_config_build_from_source: 'true',
+    };
+    execSync('pnpm install sharp@latest', {
       cwd: path.join(__dirname, '..'),
       stdio: 'inherit',
+      env: env,
     });
     LOG.success('Sharp module installed successfully');
 
