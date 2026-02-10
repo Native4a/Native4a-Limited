@@ -333,7 +333,7 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                 <div className="lg:relative left-36 col-start-1 col-end-13 lg:col-start-3 lg:col-end-13 flex justify-center col-span-5 order-3 pt-10">
                   <div className="rounded-3xl shadow-[0_3px_5px_rgba(0,0,0,0.25)] justify-center grid backdrop-blur-md bg-white/50 col-span-5">
                     <p className="grid text-2xl font-bold items-center p-8">
-                      ”有時候頁面上的連結可以提高頁面的質量，但我認為這是一種你不希望看到的人為因素，只因為頁面上有連結並不意味著它一定是好的。���
+                      ”有時候頁面上的連結可以提高頁面的質量，但我認為這是一種你不希望看到的人為因素，只因為頁面上有連結並不意味著它一定是好的。�����
                     </p>
                   </div>
                 </div>
@@ -415,167 +415,152 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
           </div>
           <div className="block md:hidden bg-[#70a665] p-10"></div>
         </section>
-        <section className={`${styles.sec9} lg:p-20 mx-auto bg-bottom`}>
-          <div className="container mx-auto p-0 lg:p-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
-              <div className="justify-center text-6xl p-6 lg:p-6 grid grid-cols-1 gap-6 content-between relative lg:static bottom-12 lg:bottom-0">
-                <div className="flex justify-end lg:justify-center text-2xl py-2 lg:py-6 px-10 lg:px-0 mx-14 lg:mx-0 bg-[#70a665] text-white font-semibold order-2 lg:order-1 relative lg:static right-[120px] sm:right-[350px] md:right-[520px] top-10">
-                  成功案例 1
-                </div>
-                <div className="flex justify-center text-2xl lg:text-3xl rounded-xl p-2 lg:p-6 bg-[#70a665] lg:bg-white text-white lg:text-[#70a665] font-semibold order-1 lg:order-2 static lg:relative top-2">
-                  關鍵字 : 室內設計
-                </div>
+        <section className={`${styles.sec9} lg:p-20 mx-auto`}>
+          <div className="container mx-auto px-6 lg:px-0 py-12 lg:py-0">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+              <div className="order-2 lg:order-1 flex flex-col justify-center">
+                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+                  <span className="flex items-center gap-3 mb-4">
+                    <IconContext.Provider>
+                      <FaSquare style={{ color: '#FAAB00' }} />
+                    </IconContext.Provider>
+                    成功案例 1
+                  </span>
+                </h2>
+                <p className="text-white text-lg lg:text-xl font-semibold">關鍵字 : 室內設計</p>
               </div>
-              <div className="flex justify-center text-6xl rounded-xl p-0 lg:p-6">
-                <div className="container mx-auto grid gap-6 relative lg:static bottom-10">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
-                    <div className="p-10 lg:p-0">
-                      <div className="flex justify-center text-xl rounded-xl p-3 lg:py-2 mx-5 bg-[#3A7DFF] text-white font-semibold relative top-4">
-                        沒有中文反向連結
-                      </div>
-                      <div className="grid grid-flow-row grid-cols-1 lg:grid-cols-2 text-center text-6xl rounded-xl bg-white">
-                        <div className="row-span-4 flex justify-center lg:items-end text-base font-semibold pt-6 lg:p-6">
-                          Google排名(SERP)
-                        </div>
-                        <div className="row-span-4 flex justify-center lg:items-end text-7xl font-semibold text-[#3A7DFF] pt-0 lg:p-6">
-                          <CountUp end={201} />
-                        </div>
-                      </div>
+              <div className="order-1 lg:order-2 lg:col-span-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                  <div className="bg-white rounded-lg p-6">
+                    <div className="bg-blue-500 text-white text-center py-3 rounded-lg mb-4 font-semibold">
+                      沒有中文反向連結
                     </div>
-                    <div className="p-10 lg:p-0">
-                      <div className="flex justify-center text-xl rounded-xl p-3 lg:py-2 mx-5 bg-[#FAAB00] text-white font-semibold relative top-4">
-                        買全中文反向連結後
-                      </div>
-                      <div className="grid grid-flow-row grid-cols-1 lg:grid-cols-2 text-center text-6xl rounded-xl bg-white">
-                        <div className="row-span-4 flex justify-center lg:items-end text-base font-semibold pt-6 lg:p-6">
-                          Google排名(SERP)
-                        </div>
-                        <div className="row-span-4 flex justify-center lg:items-end text-7xl font-semibold text-[#FAAB00] pt-0 lg:p-6">
-                          <CountUp end={4} />
-                        </div>
-                      </div>
+                    <div className="text-center">
+                      <p className="text-gray-600 mb-2 text-sm">Google排名(SERP)</p>
+                      <p className="text-4xl lg:text-5xl font-bold text-blue-500">
+                        <CountUp end={201} />
+                      </p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 gap-6 p-10 lg:p-0">
-                    <img
-                      className="flex justify-center text-6xl rounded-xl"
-                      src={Native_backlink_Rankin01}
-                      alt="Native_backlink_Rankin01"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                  <div className="bg-white rounded-lg p-6">
+                    <div className="bg-amber-400 text-white text-center py-3 rounded-lg mb-4 font-semibold">
+                      買全中文反向連結後
+                    </div>
+                    <div className="text-center">
+                      <p className="text-gray-600 mb-2 text-sm">Google排名(SERP)</p>
+                      <p className="text-4xl lg:text-5xl font-bold text-amber-400">
+                        <CountUp end={4} />
+                      </p>
+                    </div>
                   </div>
                 </div>
+                <img
+                  src={Native_backlink_Rankin01}
+                  alt="成功案例1"
+                  className="w-full rounded-lg"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>
         </section>
-        <section className={`${styles.sec10} lg:p-20 mx-auto bg-bottom`}>
-          <div className="container mx-auto p-0 lg:p-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
-              <div className="justify-center text-6xl p-6 lg:p-6 grid grid-cols-1 gap-6 content-between relative lg:static bottom-12 lg:bottom-0">
-                <div className="flex justify-end lg:justify-center text-2xl py-2 lg:py-6 px-10 lg:px-0 mx-14 lg:mx-0 bg-[#70a665] text-white font-semibold order-2 lg:order-1 relative lg:static right-[120px] sm:right-[350px] md:right-[520px] top-10">
-                  成功案例 2
-                </div>
-                <div className="flex justify-center text-2xl lg:text-3xl rounded-xl p-2 lg:p-6 bg-[#70a665] lg:bg-white text-white lg:text-[#70a665] font-semibold order-1 lg:order-2 static lg:relative top-2">
-                  關鍵字 : 床褥
-                </div>
+        <section className={`${styles.sec10} lg:p-20 mx-auto`}>
+          <div className="container mx-auto px-6 lg:px-0 py-12 lg:py-0">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+              <div className="order-2 lg:order-1 flex flex-col justify-center">
+                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+                  <span className="flex items-center gap-3 mb-4">
+                    <IconContext.Provider>
+                      <FaSquare style={{ color: '#FAAB00' }} />
+                    </IconContext.Provider>
+                    成功案例 2
+                  </span>
+                </h2>
+                <p className="text-white text-lg lg:text-xl font-semibold">關鍵字 : 床褥</p>
               </div>
-              <div className="flex justify-center text-6xl rounded-xl p-0 lg:p-6">
-                <div className="container mx-auto grid gap-6 relative lg:static bottom-10">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
-                    <div className="p-10 lg:p-0">
-                      <div className="flex justify-center text-xl rounded-xl p-3 lg:py-2 mx-5 bg-[#3A7DFF] text-white font-semibold relative top-4">
-                        沒有中文反向連結
-                      </div>
-                      <div className="grid grid-flow-row grid-cols-1 lg:grid-cols-2 text-center text-6xl rounded-xl bg-white">
-                        <div className="row-span-4 flex justify-center lg:items-end text-base font-semibold pt-6 lg:p-6">
-                          Google排名(SERP)
-                        </div>
-                        <div className="row-span-4 flex justify-center lg:items-end text-7xl font-semibold text-[#3A7DFF] pt-0 lg:p-6">
-                          <CountUp end={26} />
-                        </div>
-                      </div>
+              <div className="order-1 lg:order-2 lg:col-span-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                  <div className="bg-white rounded-lg p-6">
+                    <div className="bg-blue-500 text-white text-center py-3 rounded-lg mb-4 font-semibold">
+                      沒有中文反向連結
                     </div>
-                    <div className="p-10 lg:p-0">
-                      <div className="flex justify-center text-xl rounded-xl p-3 lg:py-2 mx-5 bg-[#FAAB00] text-white font-semibold relative top-4">
-                        買全中文反向連結後
-                      </div>
-                      <div className="grid grid-flow-row grid-cols-1 lg:grid-cols-2 text-center text-6xl rounded-xl bg-white">
-                        <div className="row-span-4 flex justify-center lg:items-end text-base font-semibold pt-6 lg:p-6">
-                          Google 排名(SERP)
-                        </div>
-                        <div className="row-span-4 flex justify-center lg:items-end text-7xl font-semibold text-[#FAAB00] pt-0 lg:p-6">
-                          <CountUp end={2} />
-                        </div>
-                      </div>
+                    <div className="text-center">
+                      <p className="text-gray-600 mb-2 text-sm">Google排名(SERP)</p>
+                      <p className="text-4xl lg:text-5xl font-bold text-blue-500">
+                        <CountUp end={26} />
+                      </p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 gap-6 p-10 lg:p-0">
-                    <img
-                      className="flex justify-center text-6xl rounded-xl"
-                      src={c2}
-                      alt="Native_backlink_Rankin01"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                  <div className="bg-white rounded-lg p-6">
+                    <div className="bg-amber-400 text-white text-center py-3 rounded-lg mb-4 font-semibold">
+                      買全中文反向連結後
+                    </div>
+                    <div className="text-center">
+                      <p className="text-gray-600 mb-2 text-sm">Google 排名(SERP)</p>
+                      <p className="text-4xl lg:text-5xl font-bold text-amber-400">
+                        <CountUp end={2} />
+                      </p>
+                    </div>
                   </div>
                 </div>
+                <img
+                  src={c2}
+                  alt="成功案例2"
+                  className="w-full rounded-lg"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>
         </section>
-        <section className={`${styles.sec11} lg:p-20 mx-auto bg-bottom`}>
-          <div className="container mx-auto p-0 lg:p-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
-              <div className="justify-center text-6xl p-6 lg:p-6 grid grid-cols-1 gap-6 content-between relative lg:static bottom-12 lg:bottom-0">
-                <div className="flex justify-end lg:justify-center text-2xl py-2 lg:py-6 px-10 lg:px-0 mx-14 lg:mx-0 bg-[#70a665] text-white font-semibold order-2 lg:order-1 relative lg:static right-[120px] sm:right-[350px] md:right-[520px] top-10">
-                  成功案例 3
-                </div>
-                <div className="flex justify-center text-2xl lg:text-3xl rounded-xl p-2 lg:p-6 bg-[#70a665] lg:bg-white text-white lg:text-[#70a665] font-semibold order-1 lg:order-2 static lg:relative top-2">
-                  關鍵字 : 輪椅
-                </div>
+        <section className={`${styles.sec11} lg:p-20 mx-auto`}>
+          <div className="container mx-auto px-6 lg:px-0 py-12 lg:py-0">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+              <div className="order-2 lg:order-1 flex flex-col justify-center">
+                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+                  <span className="flex items-center gap-3 mb-4">
+                    <IconContext.Provider>
+                      <FaSquare style={{ color: '#FAAB00' }} />
+                    </IconContext.Provider>
+                    成功案例 3
+                  </span>
+                </h2>
+                <p className="text-white text-lg lg:text-xl font-semibold">關鍵字 : 輪椅</p>
               </div>
-              <div className="flex justify-center text-6xl rounded-xl p-0 lg:p-6">
-                <div className="container mx-auto grid gap-6 relative lg:static bottom-10">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6">
-                    <div className="p-10 lg:p-0">
-                      <div className="flex justify-center text-xl rounded-xl p-3 lg:py-2 mx-5 bg-[#3A7DFF] text-white font-semibold relative top-4">
-                        沒有中文反向連結
-                      </div>
-                      <div className="grid grid-flow-row grid-cols-1 lg:grid-cols-2 text-center text-6xl rounded-xl bg-white">
-                        <div className="row-span-4 flex justify-center lg:items-end text-base font-semibold pt-6 lg:p-6">
-                          Google排名(SERP)
-                        </div>
-                        <div className="row-span-4 flex justify-center lg:items-end text-7xl font-semibold text-[#3A7DFF] pt-0 lg:p-6">
-                          <CountUp end={27} />
-                        </div>
-                      </div>
+              <div className="order-1 lg:order-2 lg:col-span-2">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                  <div className="bg-white rounded-lg p-6">
+                    <div className="bg-blue-500 text-white text-center py-3 rounded-lg mb-4 font-semibold">
+                      沒有中文反向連結
                     </div>
-                    <div className="p-10 lg:p-0">
-                      <div className="flex justify-center text-xl rounded-xl p-3 lg:py-2 mx-5 bg-[#FAAB00] text-white font-semibold relative top-4">
-                        買全中文反向連結後
-                      </div>
-                      <div className="grid grid-flow-row grid-cols-1 lg:grid-cols-2 text-center text-6xl rounded-xl bg-white">
-                        <div className="row-span-4 flex justify-center lg:items-end text-base font-semibold pt-6 lg:p-6">
-                          Google排名(SERP)
-                        </div>
-                        <div className="row-span-4 flex justify-center lg:items-end text-7xl font-semibold text-[#FAAB00] pt-0 lg:p-6">
-                          <CountUp end={4} />
-                        </div>
-                      </div>
+                    <div className="text-center">
+                      <p className="text-gray-600 mb-2 text-sm">Google排名(SERP)</p>
+                      <p className="text-4xl lg:text-5xl font-bold text-blue-500">
+                        <CountUp end={27} />
+                      </p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 gap-6 p-10 lg:p-0">
-                    <img
-                      className="flex justify-center text-6xl rounded-xl"
-                      src={c3}
-                      alt="Native_backlink_Rankin01"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                  <div className="bg-white rounded-lg p-6">
+                    <div className="bg-amber-400 text-white text-center py-3 rounded-lg mb-4 font-semibold">
+                      買全中文反向連結後
+                    </div>
+                    <div className="text-center">
+                      <p className="text-gray-600 mb-2 text-sm">Google排名(SERP)</p>
+                      <p className="text-4xl lg:text-5xl font-bold text-amber-400">
+                        <CountUp end={4} />
+                      </p>
+                    </div>
                   </div>
                 </div>
+                <img
+                  src={c3}
+                  alt="成功案例3"
+                  className="w-full rounded-lg"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>

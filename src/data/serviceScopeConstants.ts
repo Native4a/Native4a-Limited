@@ -1,48 +1,56 @@
 // Traditional Chinese
 export const serviceScopeDataZH = [
   {
-    icon: { url: '/images/services/seo.png' },
-    title: "SEO 搜索引擎優化",
+    icon: { url: '../img/IMG_0820.png' },
+    title: "社交媒體廣告",
     descriptions: [
-      "提高您的網站在搜索引擎中的排名",
-      "增加有機流量和品牌知名度",
-      "覆蓋主要搜索引擎如Google、Bing等"
+      "IG&FB廣告",
+      "小紅書廣告",
+      "Linkedin廣告"
     ]
   },
   {
-    icon: { url: '/images/services/smm.png' },
-    title: "社交媒體營銷",
+    icon: { url: '../img/IMG_0821.png' },
+    title: "Google廣告",
     descriptions: [
-      "通過Facebook、Instagram等平台建立品牌存在感",
-      "與目標客戶互動和培養粉絲社群",
-      "製作高質量內容提升品牌影響力"
+      "Google關鍵字",
+      "Google GDN廣告",
+      "Google購物廣告"
     ]
   },
   {
-    icon: { url: '/images/services/edm.png' },
-    title: "電子郵件營銷",
+    icon: { url: '../img/IMG_0822.png' },
+    title: "SEO",
     descriptions: [
-      "利用精準的郵件營銷策略提高客戶轉化率",
-      "提高重複購買率和客戶忠誠度",
-      "自動化營銷流程節省時間和成本"
+      "排名提升方案",
+      "獨家繁中Backlinks",
+      "SEO特效文案"
     ]
   },
   {
-    icon: { url: '/images/services/sem.png' },
-    title: "搜索引擎營銷",
+    icon: { url: '../img/IMG_0823.png' },
+    title: "網站設計及開發",
     descriptions: [
-      "通過付費廣告快速提高網站流量",
-      "精確定位目標客戶提高轉化率",
-      "實時監控和優化廣告效果"
+      "超強網店系統",
+      "精美展示型網站"
     ]
   },
   {
-    icon: { url: '/images/services/video.png' },
-    title: "影片廣告製作",
+    icon: { url: 'https://images.ctfassets.net/rpza41pe9ev5/6rlGUbeEXUlQT6WvxOyoMx/e84e348b59083b3e2937a66676898277/____________.svg' },
+    title: "通訊營銷",
     descriptions: [
-      "創作高質量的影片內容",
-      "提升品牌認知度和用戶參與度",
-      "在多個平台發佈提高曝光度"
+      "WhatsApp營銷",
+      "Email營銷"
+    ]
+  },
+  {
+    icon: { url: '../img/IMG_0824.png' },
+    title: "短片製作",
+    descriptions: [
+      "唔使露面，唔使錄音",
+      "製作短影片在全平台吸客",
+      "IG Reels，Youtube Shorts",
+      "小紅書等多平台曝光"
     ]
   }
 ]
