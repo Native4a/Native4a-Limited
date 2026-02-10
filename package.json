@@ -94,10 +94,15 @@
     "build": "gatsby build",
     "heroku-postbuild": "gatsby build",
     "serve": "gatsby serve",
-    "postinstall": "node ./bin/hello.js",
+    "postinstall": "node ./bin/hello.js && npx sharp install",
     "setup": "node ./bin/setup.js",
     "netlify:login": "netlify login",
     "netlify:deploy": "netlify deploy -d public -p",
     "gatsby-provision": "gatsby-provision-contentful --contentful-data-path='./contentful/export.json' --space-id=$CONTENTFUL_SPACE_ID --management-token=$CONTENTFUL_MANAGEMENT_TOKEN"
+  },
+  "pnpm": {
+    "overrides": {
+      "sharp": "0.33.5"
+    }
   }
 }
