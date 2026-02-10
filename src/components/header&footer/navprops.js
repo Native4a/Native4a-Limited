@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import { useTranslation } from 'react-i18next'
-import useAddMenu from '../../hook/useAddMenu'
 import { TbShoppingCart } from 'react-icons/tb'
 import Button from '../baseTools/button'
 import LanguageSwitcher from '../LanguageSwitcher'
@@ -10,7 +9,6 @@ import clsx from 'clsx'
 
 const Navprops = () => {
   const { t } = useTranslation()
-  const menu = useAddMenu()
   const [language, setLanguage] = useState('zh')
 
   // Extract language from URL on mount
@@ -25,24 +23,86 @@ const Navprops = () => {
 
   const getLocalizedPath = (path) => {
     if (language === 'zh') {
-      return path
+      return path === '/' ? '/' : `/${path}`
     }
-    return `/${language}${path}`
+    return path === '/' ? `/${language}/` : `/${language}/${path}`
   }
+
+  // === 在這裡直接定義你的菜單資料 ===
+  const menu = [
+    {
+      slug: 'seo',
+      urlTitle: 'SEO',
+      urlTitleEn: 'SEO',
+      urlTitleJa: 'SEO',
+      submenu: [
+        { slug: 'backlinks', title: 'Backlinks', titleEn: 'Backlinks', titleJa: 'バックリンク' },
+        { slug: 'seo', title: 'SEO', titleEn: 'SEO', titleJa: 'SEO' },
+        { slug: 'seo-smart-kit', title: '肥仔計算機', titleEn: 'Smart SEO Calculator', titleJa: 'SEO計算機' },
+      ],
+    },
+    {
+      slug: 'video',
+      urlTitle: '影片製作',
+      urlTitleEn: 'Video Production',
+      urlTitleJa: '動画制作',
+      submenu: null,
+    },
+    {
+      slug: 'smm-ads',
+      urlTitle: '社交媒體廣告',
+      urlTitleEn: 'Social Media Ads',
+      urlTitleJa: 'ソーシャルメディア広告',
+      submenu: null,
+    },
+    {
+      slug: 'web-design',
+      urlTitle: '網站設計',
+      urlTitleEn: 'Web Design',
+      urlTitleJa: 'ウェブデザイン',
+      submenu: null,
+    },
+    {
+      slug: 'xiaohongshu',
+      urlTitle: '小紅書',
+      urlTitleEn: 'Xiaohongshu',
+      urlTitleJa: 'Xiaohongshu',
+      submenu: null,
+    },
+    {
+      slug: 'contact-us',
+      urlTitle: '聯絡我們',
+      urlTitleEn: 'Contact Us',
+      urlTitleJa: 'お問い合わせ',
+      submenu: null,
+    },
+    {
+      slug: 'Blog',
+      urlTitle: 'Blog',
+      urlTitleEn: 'Blog',
+      urlTitleJa: 'ブログ',
+      submenu: null,
+    }
+    // 在這裡繼續加你的菜單項目...
+  ]
+  // ======================================
 
   return (
     <>
       <style>{`
-      @keyframes dropdownFadeIn {
-        from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
-        to { opacity: 1; transform: translateX(-50%) translateY(0); }
-      }
-    `}</style>
+        @keyframes dropdownFadeIn {
+          from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+          to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+      `}</style>
       <div className={`${styles.activeLink} contents`} style={{ position: 'relative' }}>
         <ul className="rounded-3xl bg-white contents">
           {menu.map((item, index) => {
-            const { slug, urlTitle, submenu } = item
+            const { slug, urlTitle, urlTitleEn, urlTitleJa, submenu } = item
             const localizedSlug = getLocalizedPath(slug)
+            // Get the correct title based on current language
+            const displayTitle = language === 'en' ? urlTitleEn : language === 'ja' ? urlTitleJa : urlTitle
+
             return (
               <li className={clsx('relative group', styles.container)} key={index}>
                 <Link
@@ -55,11 +115,11 @@ const Navprops = () => {
                   }}
                   partiallyActive={true}
                 >
-                  {urlTitle}
+                  {displayTitle}
                 </Link>
 
                 {/* ➤ 如果有 submenu 才顯示下拉清單 */}
-                {submenu && Array.isArray(submenu) && (
+                {submenu && Array.isArray(submenu) && submenu.length > 0 && (
                   <ul
                     className="absolute left-1/2 top-full hidden group-hover:block z-50 py-2 min-w-[180px]"
                     style={{
@@ -73,7 +133,9 @@ const Navprops = () => {
                       animation: 'dropdownFadeIn 0.2s ease-out'
                     }}
                   >
-                    {submenu.map((subItem, subIndex) => (
+                    {submenu.map((subItem, subIndex) => {
+                      const subDisplayTitle = language === 'en' ? subItem.titleEn : language === 'ja' ? subItem.titleJa : subItem.title
+                      return (
                       <Link
                         key={subIndex}
                         to={getLocalizedPath(subItem.slug)}
@@ -89,9 +151,10 @@ const Navprops = () => {
                         }}
                         partiallyActive={true}
                       >
-                        {subItem.title}
+                        {subDisplayTitle}
                       </Link>
-                    ))}
+                    )
+                    })}
                   </ul>
                 )}
               </li>
@@ -107,27 +170,40 @@ const Navprops = () => {
               <TbShoppingCart className="text-xl" />
               <span>購物</span>
             </Button>
+
+            {/* 語言切換器 - 桌面版 (XL以上) */}
+            <div
+              style={{
+                marginLeft: '20px',
+                paddingLeft: '20px',
+                borderLeft: '1px solid #e5e7eb'
+              }}
+            >
+              <LanguageSwitcher />
+            </div>
+          </div>
+
+          {/* 購物按鈕和語言切換 - 平板版 (md到lg) */}
+          <div className="hidden md:flex lg:hidden items-center justify-between w-full border-t border-gray-100 mt-3 pt-3 gap-3">
+            <Button
+              linkto="https://shop.nativeaaaa.com.hk/"
+              className="flex-1 text-white bg-yellow-400 hover:bg-yellow-500 transition-colors rounded-full px-4 py-2 font-semibold text-sm shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+            >
+              <TbShoppingCart className="text-lg" />
+              <span>購物</span>
+            </Button>
+            <div style={{ paddingLeft: '20px' }}>
+              <LanguageSwitcher />
+            </div>
           </div>
 
           {/* 手機版語言切換 */}
-          <div className="xl:hidden w-full border-t border-gray-100 mt-2 pt-2">
+          <div className="md:hidden w-full border-t border-gray-100 mt-2 pt-2">
             <LanguageSwitcher isInMenu={true} />
           </div>
         </ul>
 
-        {/* 語言切換器 - 桌面版，使用 absolute 定位在右邊 */}
-        <div
-          className="hidden xl:block"
-          style={{
-            position: 'absolute',
-            right: '-110px',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            zIndex: 100
-          }}
-        >
-          <LanguageSwitcher />
-        </div>
+
       </div>
     </>
   )
