@@ -1,7 +1,7 @@
 // Traditional Chinese
 export const serviceScopeDataZH = [
   {
-    icon: { url: '../img/IMG_0820.png' },
+    icon: { url: '/img/IMG_0820.png' },
     title: "社交媒體廣告",
     descriptions: [
       "IG&FB廣告",
@@ -10,7 +10,7 @@ export const serviceScopeDataZH = [
     ]
   },
   {
-    icon: { url: '../img/IMG_0821.png' },
+    icon: { url: '/img/IMG_0821.png' },
     title: "Google廣告",
     descriptions: [
       "Google關鍵字",
@@ -19,7 +19,7 @@ export const serviceScopeDataZH = [
     ]
   },
   {
-    icon: { url: '../img/IMG_0822.png' },
+    icon: { url: '/img/IMG_0822.png' },
     title: "SEO",
     descriptions: [
       "排名提升方案",
@@ -28,7 +28,7 @@ export const serviceScopeDataZH = [
     ]
   },
   {
-    icon: { url: '../img/IMG_0823.png' },
+    icon: { url: '/img/IMG_0823.png' },
     title: "網站設計及開發",
     descriptions: [
       "超強網店系統",
@@ -44,7 +44,7 @@ export const serviceScopeDataZH = [
     ]
   },
   {
-    icon: { url: '../img/IMG_0824.png' },
+    icon: { url: '/img/IMG_0824.png' },
     title: "短片製作",
     descriptions: [
       "唔使露面，唔使錄音",
@@ -58,48 +58,56 @@ export const serviceScopeDataZH = [
 // English
 export const serviceScopeDataEN = [
   {
-    icon: { url: '/images/services/seo.png' },
-    title: "SEO Search Engine Optimization",
+    icon: { url: '/img/IMG_0820.png' },
+    title: "Social Media Advertising",
     descriptions: [
-      "Improve your website's ranking in search engines",
-      "Increase organic traffic and brand awareness",
-      "Coverage of major search engines like Google, Bing, etc."
+      "IG & FB Ads",
+      "Red Ads",
+      "LinkedIn Ads"
     ]
   },
   {
-    icon: { url: '/images/services/smm.png' },
-    title: "Social Media Marketing",
+    icon: { url: '/img/IMG_0821.png' },
+    title: "Google Ads",
     descriptions: [
-      "Build brand presence through Facebook, Instagram and other platforms",
-      "Engage with target customers and cultivate follower communities",
-      "Create high-quality content to enhance brand influence"
+      "Google Keywords",
+      "Google GDN Ads",
+      "Google Shopping Ads"
     ]
   },
   {
-    icon: { url: '/images/services/edm.png' },
-    title: "Email Marketing",
+    icon: { url: '/img/IMG_0822.png' },
+    title: "SEO",
     descriptions: [
-      "Leverage precise email marketing strategies to increase customer conversion",
-      "Increase repeat purchase rates and customer loyalty",
-      "Automate marketing processes to save time and costs"
+      "Ranking Improvement Plan",
+      "Exclusive Chinese Backlinks",
+      "SEO Copywriting"
     ]
   },
   {
-    icon: { url: '/images/services/sem.png' },
-    title: "Search Engine Marketing",
+    icon: { url: '/img/IMG_0823.png' },
+    title: "Website Design and Development",
     descriptions: [
-      "Quickly increase website traffic through paid advertising",
-      "Precisely target customers to increase conversion rates",
-      "Monitor and optimize ad performance in real-time"
+      "Powerful E-commerce System",
+      "Beautiful Showcase Websites"
     ]
   },
   {
-    icon: { url: '/images/services/video.png' },
-    title: "Video Advertisement Production",
+    icon: { url: 'https://images.ctfassets.net/rpza41pe9ev5/6rlGUbeEXUlQT6WvxOyoMx/e84e348b59083b3e2937a66676898277/____________.svg' },
+    title: "Communication Marketing",
     descriptions: [
-      "Create high-quality video content",
-      "Enhance brand awareness and user engagement",
-      "Publish across multiple platforms to increase exposure"
+      "WhatsApp Marketing",
+      "Email Marketing"
+    ]
+  },
+  {
+    icon: { url: '/img/IMG_0824.png' },
+    title: "Short Video Production",
+    descriptions: [
+      "No need to appear on camera or record audio",
+      "Create short videos to attract customers across all platforms",
+      "IG Reels, Youtube Shorts",
+      "Exposure across multiple platforms like Little Red Book"
     ]
   }
 ]
@@ -107,48 +115,56 @@ export const serviceScopeDataEN = [
 // Japanese
 export const serviceScopeDataJP = [
   {
-    icon: { url: '/images/services/seo.png' },
-    title: "SEO 検索エンジン最適化",
+    icon: { url: '/img/IMG_0820.png' },
+    title: "ソーシャルメディア広告",
     descriptions: [
-      "検索エンジン内でのウェブサイトランキングを向上させます",
-      "オーガニックトラフィックとブランド認知度を増やします",
-      "Google、Bingなど主要検索エンジンに対応"
+      "IG＆FB広告",
+      "小紅書広告",
+      "LinkedIn広告"
     ]
   },
   {
-    icon: { url: '/images/services/smm.png' },
-    title: "ソーシャルメディアマーケティング",
+    icon: { url: '/img/IMG_0821.png' },
+    title: "Google広告",
     descriptions: [
-      "Facebook、Instagramなどのプラットフォームを通じてブランドプレゼンスを構築",
-      "ターゲット顧客と関わり、フォロワーコミュニティを育成",
-      "高品質なコンテンツを作成してブランド影響力を向上"
+      "Googleキーワード",
+      "Google GDN広告",
+      "Googleショッピング広告"
     ]
   },
   {
-    icon: { url: '/images/services/edm.png' },
-    title: "メールマーケティング",
+    icon: { url: '/img/IMG_0822.png' },
+    title: "SEO",
     descriptions: [
-      "正確なメールマーケティング戦略を活用して顧客転換率を向上させます",
-      "リピート購買率と顧客ロイヤルティを増加させます",
-      "マーケティングプロセスを自動化して時間とコストを節約"
+      "ランキング向上プラン",
+      "独占的な中文バックリンク",
+      "SEOコピーライティング"
     ]
   },
   {
-    icon: { url: '/images/services/sem.png' },
-    title: "検索エンジンマーケティング",
+    icon: { url: '/img/IMG_0823.png' },
+    title: "ウェブサイト設計・開発",
     descriptions: [
-      "有料広告を通じてウェブサイトトラフィックを迅速に増加させます",
-      "ターゲット顧客を正確にターゲットにして転換率を向上させます",
-      "広告パフォーマンスをリアルタイムで監視して最適化"
+      "強力なEコマースシステム",
+      "美しいショーケースサイト"
     ]
   },
   {
-    icon: { url: '/images/services/video.png' },
-    title: "ビデオ広告制作",
+    icon: { url: 'https://images.ctfassets.net/rpza41pe9ev5/6rlGUbeEXUlQT6WvxOyoMx/e84e348b59083b3e2937a66676898277/____________.svg' },
+    title: "コミュニケーションマーケティング",
     descriptions: [
-      "高品質のビデオコンテンツを作成します",
-      "ブランド認知度とユーザーエンゲージメントを向上させます",
-      "複数のプラットフォームに発行して露出度を増加"
+      "WhatsAppマーケティング",
+      "メールマーケティング"
+    ]
+  },
+  {
+    icon: { url: '/img/IMG_0824.png' },
+    title: "ショートビデオ制作",
+    descriptions: [
+      "顔出しなし、音声録音なし",
+      "すべてのプラットフォームで顧客を引き付けるためにショートビデオを作成",
+      "IGリール、Youtubeショーツ",
+      "小紅書などの複数プラットフォームでの露出"
     ]
   }
 ]
