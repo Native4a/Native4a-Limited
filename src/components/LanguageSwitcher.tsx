@@ -17,9 +17,9 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   const [isOpen, setIsOpen] = React.useState(false)
 
   const languages = [
-    { code: 'zh', name: '中文', label: '中' },
-    { code: 'en', name: 'English', label: 'EN' },
-    { code: 'ja', name: '日本語', label: 'JA' },
+    { code: 'zh', name: '中文', label: '中', labelEn: 'Chinese', labelJa: '中国語' },
+    { code: 'en', name: 'English', label: 'EN', labelEn: 'English', labelJa: '英語' },
+    { code: 'ja', name: '日本語', label: 'JA', labelEn: 'Japanese', labelJa: '日本語' },
   ]
 
   const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0]
