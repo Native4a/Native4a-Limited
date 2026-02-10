@@ -48,9 +48,9 @@ const Footer = () => {
           <Container as="footer" key={index}>
             <section className={styles.container}>
               <div className="grid grid-rows-2 items-center my-10 md:my-20">
-                <h2 className="text-center text-2xl md:text-4xl">{title}</h2>
+                <h2 className="text-center text-2xl md:text-4xl">Native 讓你站在巨人肩上。</h2>
                 <p className="text-center text-xl md:text-2xl">
-                  {description.description}
+                  歡迎直接Whatsapp查詢
                 </p>
                 <div className="rounded-t-lg overflow-hidden text-center p-0 md:p-4 mt-3">
                   <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85264602996">

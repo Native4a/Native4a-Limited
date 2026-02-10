@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import { useTranslation } from 'react-i18next'
-import useAddMenu from '../../hook/useAddMenu'
 import { TbShoppingCart } from 'react-icons/tb'
 import Button from '../baseTools/button'
 import LanguageSwitcher from '../LanguageSwitcher'
@@ -10,7 +9,6 @@ import clsx from 'clsx'
 
 const Navprops = () => {
   const { t } = useTranslation()
-  const menu = useAddMenu()
   const [language, setLanguage] = useState('zh')
 
   // Extract language from URL on mount
@@ -25,24 +23,70 @@ const Navprops = () => {
 
   const getLocalizedPath = (path) => {
     if (language === 'zh') {
-      return path
+      return path === '/' ? '/' : `/${path}`
     }
-    return `/${language}${path}`
+    return path === '/' ? `/${language}/` : `/${language}/${path}`
   }
+
+  // === 在這裡直接定義你的菜單資料 ===
+  const menu = [
+    {
+      slug: 'seo',
+      urlTitle: '關於我們',
+      submenu: [
+        { slug: 'backlinks', title: 'Backlinks' },
+        { slug: 'seo', title: 'SEO' },
+        { slug: 'seo-smart-kit', title: '肥仔計算機' },
+      ],
+    },
+    {
+      slug: 'video',
+      urlTitle: '影片製作',
+      submenu: null,
+    },
+    {
+      slug: 'smm-ads',
+      urlTitle: '社交媒體廣告',
+      submenu: null,
+    },
+    {
+      slug: 'web-design',
+      urlTitle: '網站設計',
+      submenu: null,
+    },
+    {
+      slug: 'xiaohongshu',
+      urlTitle: '小紅書',
+      submenu: null,
+    },
+    {
+      slug: 'contact-us',
+      urlTitle: '聯絡我們',
+      submenu: null,
+    },
+    {
+      slug: 'Blog',
+      urlTitle: 'Blog',
+      submenu: null,
+    }
+    // 在這裡繼續加你的菜單項目...
+  ]
+  // ======================================
 
   return (
     <>
       <style>{`
-      @keyframes dropdownFadeIn {
-        from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
-        to { opacity: 1; transform: translateX(-50%) translateY(0); }
-      }
-    `}</style>
+        @keyframes dropdownFadeIn {
+          from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+          to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+      `}</style>
       <div className={`${styles.activeLink} contents`} style={{ position: 'relative' }}>
         <ul className="rounded-3xl bg-white contents">
           {menu.map((item, index) => {
             const { slug, urlTitle, submenu } = item
             const localizedSlug = getLocalizedPath(slug)
+
             return (
               <li className={clsx('relative group', styles.container)} key={index}>
                 <Link
@@ -59,7 +103,7 @@ const Navprops = () => {
                 </Link>
 
                 {/* ➤ 如果有 submenu 才顯示下拉清單 */}
-                {submenu && Array.isArray(submenu) && (
+                {submenu && Array.isArray(submenu) && submenu.length > 0 && (
                   <ul
                     className="absolute left-1/2 top-full hidden group-hover:block z-50 py-2 min-w-[180px]"
                     style={{
@@ -110,14 +154,14 @@ const Navprops = () => {
           </div>
 
           {/* 手機版語言切換 */}
-          <div className="xl:hidden w-full border-t border-gray-100 mt-2 pt-2">
+          <div className="lg:hidden w-full border-t border-gray-100 mt-2 pt-2">
             <LanguageSwitcher isInMenu={true} />
           </div>
         </ul>
 
-        {/* 語言切換器 - 桌面版，使用 absolute 定位在右邊 */}
+        {/* 語言切換器 - 桌面版 */}
         <div
-          className="hidden xl:block"
+          className="hidden lg:block"
           style={{
             position: 'absolute',
             right: '-110px',
