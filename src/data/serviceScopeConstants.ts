@@ -1,7 +1,13 @@
+import IMG_0820 from '../img/IMG_0820.png'
+import IMG_0821 from '../img/IMG_0821.png'
+import IMG_0822 from '../img/IMG_0822.png'
+import IMG_0823 from '../img/IMG_0823.png'
+import IMG_0824 from '../img/IMG_0824.png'
+
 // Traditional Chinese
 export const serviceScopeDataZH = [
   {
-    icon: { url: '/IMG_0820.png' },
+    icon: { url: IMG_0820 },
     title: "社交媒體廣告",
     descriptions: [
       "IG&FB廣告",
@@ -10,7 +16,7 @@ export const serviceScopeDataZH = [
     ]
   },
   {
-    icon: { url: '/IMG_0821.png' },
+    icon: { url: IMG_0821 },
     title: "Google廣告",
     descriptions: [
       "Google關鍵字",
@@ -19,7 +25,7 @@ export const serviceScopeDataZH = [
     ]
   },
   {
-    icon: { url: '/IMG_0822.png' },
+    icon: { url: IMG_0822 },
     title: "SEO",
     descriptions: [
       "排名提升方案",
@@ -28,7 +34,7 @@ export const serviceScopeDataZH = [
     ]
   },
   {
-    icon: { url: '/IMG_0823.png' },
+    icon: { url: IMG_0823 },
     title: "網站設計及開發",
     descriptions: [
       "超強網店系統",
@@ -44,7 +50,7 @@ export const serviceScopeDataZH = [
     ]
   },
   {
-    icon: { url: '/IMG_0824.png' },
+    icon: { url: IMG_0824 },
     title: "短片製作",
     descriptions: [
       "唔使露面，唔使錄音",
@@ -58,7 +64,7 @@ export const serviceScopeDataZH = [
 // English
 export const serviceScopeDataEN = [
   {
-    icon: { url: '/IMG_0820.png' },
+    icon: { url: IMG_0820 },
     title: "Social Media Advertising",
     descriptions: [
       "IG & FB Ads",
@@ -67,7 +73,7 @@ export const serviceScopeDataEN = [
     ]
   },
   {
-    icon: { url: '/IMG_0821.png' },
+    icon: { url: IMG_0821 },
     title: "Google Ads",
     descriptions: [
       "Google Keywords",
@@ -76,7 +82,7 @@ export const serviceScopeDataEN = [
     ]
   },
   {
-    icon: { url: '/IMG_0822.png' },
+    icon: { url: IMG_0822 },
     title: "SEO",
     descriptions: [
       "Ranking Improvement Plan",
@@ -85,7 +91,7 @@ export const serviceScopeDataEN = [
     ]
   },
   {
-    icon: { url: '/IMG_0823.png' },
+    icon: { url: IMG_0823 },
     title: "Website Design and Development",
     descriptions: [
       "Powerful E-commerce System",
@@ -101,7 +107,7 @@ export const serviceScopeDataEN = [
     ]
   },
   {
-    icon: { url: '/IMG_0824.png' },
+    icon: { url: IMG_0824 },
     title: "Short Video Production",
     descriptions: [
       "No need to appear on camera or record audio",
@@ -115,7 +121,7 @@ export const serviceScopeDataEN = [
 // Japanese
 export const serviceScopeDataJP = [
   {
-    icon: { url: '/IMG_0820.png' },
+    icon: { url: IMG_0820 },
     title: "ソーシャルメディア広告",
     descriptions: [
       "IG＆FB広告",
@@ -124,7 +130,7 @@ export const serviceScopeDataJP = [
     ]
   },
   {
-    icon: { url: '/IMG_0821.png' },
+    icon: { url: IMG_0821 },
     title: "Google広告",
     descriptions: [
       "Googleキーワード",
@@ -133,7 +139,7 @@ export const serviceScopeDataJP = [
     ]
   },
   {
-    icon: { url: '/IMG_0822.png' },
+    icon: { url: IMG_0822 },
     title: "SEO",
     descriptions: [
       "ランキング向上プラン",
@@ -142,7 +148,7 @@ export const serviceScopeDataJP = [
     ]
   },
   {
-    icon: { url: '/IMG_0823.png' },
+    icon: { url: IMG_0823 },
     title: "ウェブサイト設計・開発",
     descriptions: [
       "強力なEコマースシステム",
@@ -158,7 +164,7 @@ export const serviceScopeDataJP = [
     ]
   },
   {
-    icon: { url: '/IMG_0824.png' },
+    icon: { url: IMG_0824 },
     title: "ショートビデオ制作",
     descriptions: [
       "顔出しなし、音声録音なし",
