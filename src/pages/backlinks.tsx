@@ -5,6 +5,7 @@ import get from 'lodash/get'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { IconContext } from 'react-icons'
 import CountUp from 'react-countup'
+import { useTranslation } from 'react-i18next'
 
 //components here//
 import BacklinkLayout from '../components/backlinkLayout'
@@ -64,20 +65,18 @@ interface BacklinksPageProps extends PageProps {
   }
 }
 
-class backlinksIndex extends React.Component<BacklinksPageProps> {
-  render() {
-    const [blacklinkPage] = get(
-      this,
-      'props.data.allContentfulBacklinksPage.nodes'
-    )
-    const FaSquarSstyle = { color: '#70a566' }
-    return (
-      <BacklinkLayout location={this.props.location}>
-        <Seo
-          title={blacklinkPage.metaTitle}
-          description={blacklinkPage.metaDescription}
-          ogUrl="https://nativeaaaa.com.hk/contact-us/"
-        />
+const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
+  const { t } = useTranslation()
+  const FaSquarSstyle = { color: '#70a566' }
+  const blacklinkPage = get(data, 'allContentfulBacklinksPage.nodes[0]', {})
+
+  return (
+    <BacklinkLayout location={location}>
+      <Seo
+        title={t('backlinks.metaTitle')}
+        description={t('backlinks.metaDescription')}
+        ogUrl="https://nativeaaaa.com.hk/contact-us/"
+      />
         <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
@@ -88,18 +87,18 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                       tag="h1"
                       className="indent-[-1rem] tracking-tight font-black text-3xl md:leading-snug md:text-[2.8vw] md:indent-[-2rem]"
                     >
-                      {blacklinkPage.title}
+                      {t('backlinks.heroTitle')}
                     </Text>
                   </Grid>
                   <Text tag="h2" className="tracking-tight font-black text-xl">
                     <p>
-                      <b className="bg-[#FFC107]">無咗佢</b>
-                      ，你可能都會有排名，但Top 10？No Way
+                      <b className="bg-[#FFC107]">{t('backlinks.heroSubtitle').split('，')[0]}</b>
+                      {t('backlinks.heroSubtitle').includes('，') ? '，' + t('backlinks.heroSubtitle').split('，')[1] : t('backlinks.heroSubtitle')}
                     </p>
                   </Text>
                   <div className={styles.border}></div>
                   <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
-                    {renderRichText(blacklinkPage.titleDescription)}
+                    {t('backlinks.heroDescription')}
                   </p>
                   <div className="grid grid-cols-5 md:grid-cols-6 gap-2 md:gap-6 py-6">
                     <Icon Alt="Instagram link" />
@@ -117,7 +116,7 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                     <div className="hidden md:flex justify-center items-center bg-white p-8 md:p-0 md:bg-inherit shadow-md rounded-3xl mt-2 pt-12">
                       <div>
                         <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
-                          <b>年度獎項</b>
+                          <b>{t('backlinks.annualAwards')}</b>
                         </p>
                         <div className="container mx-auto pt-5">
                           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -143,7 +142,7 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                       <div className="grid gap-6">
                         <div className="">
                           <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
-                            <b>媒體報導</b>
+                            <b>{t('backlinks.mediaFeatures')}</b>
                           </p>
                         </div>
                         <div className="container mx-auto">
@@ -176,11 +175,10 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
         <section className="bg-[#608A51]">
           <div className="container mx-auto grid text-white place-content-center pt-8 lg:pt-24">
             <h2 className="text-[1.7rem] text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose">
-              「SEO+Backlinks懶人包」<p>整合方案</p>
+              {t('backlinks.section2Title')}<p>{t('backlinks.section2Subtitle')}</p>
             </h2>
             <p className="text-lg md:text-2xl leading-normal lg:leading-loose px-10 lg:p-0">
-              在香港做好SEO，繁中backlinks少不了我們研發了中文backlinks系統
-              歡迎客戶或同行購買。
+              {t('backlinks.section2Description')}
             </p>
           </div>
           <div className="container mx-auto lg:relative top-6">
@@ -190,13 +188,13 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                 className="py-3 px-5 text-white"
                 linkto="https://api.whatsapp.com/send?phone=85264602996"
               >
-                中文Backlinks收費參考
+                {t('backlinks.btnChineseBacklinksPricing')}
               </Button>
               <Anchor
                 to="#Backlink_ref"
                 className="flex justify-center rounded-xl bg-amber-500 py-3 px-5 text-white"
               >
-                中文Backlinks案例參考
+                {t('backlinks.btnChineseBacklinksCases')}
               </Anchor>
             </div>
           </div>
@@ -218,7 +216,7 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                       <FaSquare style={FaSquarSstyle} />
                     </IconContext.Provider>
                   </span>
-                  <b className="ml-3">{blacklinkPage.section3Title}</b>
+                  <b className="ml-3">{t('backlinks.section3Title')}</b>
                 </h2>
                 <img
                   src={GoogleRanking}
@@ -266,7 +264,7 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
             linkto="https://nativeaaaa.com.hk/blog/native4a_backlinks_reference/"
             className="bg-emerald-500 text-white rounded-full px-16 py-6 font-medium text-2xl md:text-md xl:text-6xl"
           >
-            中文backlinks樣本
+            {t('backlinks.btnChineseBacklinksSample')}
           </Button>
         </Section>
         <section className="p-10 lg:p-0 w-full bg-[#F1F1F1]">
@@ -281,20 +279,18 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                 />
               </div>
               <div className="flex justify-center col-span-2 first">
-                <div className="flex flex-col">
+                  <div className="flex flex-col">
                   <div className="overflow-x-auto">
                     <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8 items-center">
                       <h2 className="text-3xl lg:text-4xl leading-normal font-extrabold mb-3">
-                        反向連結 (backlink) 在 SEO
-                        中代表了一種網站間相互連結的情形...
+                        {t('backlinks.section5Title')}
                       </h2>
                       <p className="text-lg">
-                        也就是說，當一個網站連結到另一個網站時，前者就是後者的外部連結。反向連結
-                        被認為是搜索引擎排名的重要因素之一，所以買中文反向連結
-                        Backlinks HK
-                        可以給予網站權威性和信任度的指標。它可以影響搜索引擎排名的算法，使網站獲得更多流量和提高搜索引擎排名，從而獲得更多訂單和利潤
+                        {t('backlinks.section5Description')}
                       </p>
                     </div>
+                  </div>
+                </div>
                   </div>
                 </div>
               </div>
@@ -312,15 +308,31 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                     </IconContext.Provider>
                   </span>
                   <b className="ml-3">
-                    買反向連結 backlink 前，讓我們先認清楚事實 . . .
+                    {t('backlinks.section6Title')}
                   </b>
                 </h2>
               </div>
-              <div className="grid grid-cols-12 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-12 lg:grid-cols-6 gap-4">
                 <div className="col-start-1 col-end-13 lg:col-start-1 lg:col-end-12 justify-center ml-0 lg:ml-20 grid text-xl lg:text-2xl font-medium order-2 lg:order-1 px-10">
-                  SEO 業界無人不識的 Google 搜索倡導者 John Mueller 在Youtube
-                  谷歌網站管理員中心辦公時間視頻群聊中公開說：
+                  {t('backlinks.johnMuellerQuote')}
                 </div>
+                <div className="lg:relative left-32 col-start-4 col-end-10 lg:col-start-2 lg:col-end-3 flex justify-center order-1 lg:order-2 pt-10">
+                  <img
+                    src={John}
+                    className="rounded-full shadow-md"
+                    alt="John"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="lg:relative left-36 col-start-1 col-end-13 lg:col-start-3 lg:col-end-13 flex justify-center col-span-5 order-3 pt-10">
+                  <div className="rounded-3xl shadow-[0_3px_5px_rgba(0,0,0,0.25)] justify-center grid backdrop-blur-md bg-white/50 col-span-5">
+                    <p className="grid text-2xl font-bold items-center p-8">
+                      "{t('backlinks.johnMuellerText')}"
+                    </p>
+                  </div>
+                </div>
+              </div>
                 <div className="lg:relative left-32 col-start-4 col-end-10 lg:col-start-2 lg:col-end-3 flex justify-center order-1 lg:order-2 pt-10">
                   <img
                     src={John}
@@ -356,10 +368,10 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
           <div className="hidden lg:block grid-cols-1 grid-rows-8 gap-4 text-xl items-center p-10">
             <div className="grid grid-rows-8 lg:grid-rows-4 grid-flow-col gap-4 text-xl items-center">
               <div className="row-span-8 lg:row-span-2 col-span-2 flex justify-center items-center text-white text-3xl font-semibold p-14 leading-10 order-1 lg:order-1">
-                {blacklinkPage.section4TopTitle}
+                {t('backlinks.section4TopTitle')}
               </div>
               <div className="row-span-8 lg:row-span-2 col-span-2 flex justify-center items-center text-white text-3xl font-semibold p-14 leading-10 order-5 lg:order-2">
-                {blacklinkPage.section4BottomTitle}
+                {t('backlinks.section4BottomTitle')}
               </div>
               <EngBacklinksEvaluation />
               <div className="row-span-4 flex bg-[#70a665] px-10 rounded-xl items-center text-white h-1/6 order-3 lg:order-4">
@@ -375,9 +387,14 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
             <div className="grid grid-cols-1 text-xl items-center">
               <div className="px-10 pt-11 order-1 lg::order-1">
                 <div className="row-span-4 md:row-span-2 flex justify-center items-center text-white text-2xl md:text-3xl font-semibold p-6 md:p-14 leading-8 md:leading-10 border-[#70A665] border-l-[20px]">
-                  準備為你的中文網站購買香港Backlink
-                  HK反向連結前請先衡量那一些外部鏈接『是好的』:
+                  {t('backlinks.section7TopTitle')}
                 </div>
+              </div>
+              <div className="p-5 order-5 lg:order-2">
+                <div className="row-span-4 md:row-span-2 flex justify-center items-center text-white text-2xl md:text-3xl font-semibold p-6 md:p-14 leading-8 md:leading-10">
+                  {t('backlinks.section4BottomTitle')}
+                </div>
+              </div>
               </div>
               <div className="p-5 order-5 lg:order-2">
                 <div className="row-span-4 md:row-span-2 flex justify-center items-center text-white text-2xl md:text-3xl font-semibold p-6 md:p-14 leading-8 md:leading-10">
@@ -404,13 +421,12 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
         <section className="mx-auto" id="Backlink_ref">
           <div className="bg-[#70A665] grid justify-center">
             <div className="flex justify-center relative top-10 rounded-3xl p-6 items-center backdrop-blur-md text-white text-3xl text-center font-semibold bg-[#FAAB00] z-10">
-              買中文反向連結 成功案例
+              {t('backlinks.successCasesTitle')}
             </div>
           </div>
           <div className="mx-auto">
             <div className="flex justify-center items-center backdrop-blur-md bg-[#FAAB00] text-white text-xl text-center font-semibold p-10">
-              Native4A 首創的 全中文反向連結，能有效加強中文網站的 SEO
-              進度，令網站 SEO 關鍵字排名有明顯進步，甚或上升到首頁頭十位
+              {t('backlinks.successCasesSubtitle')}
             </div>
           </div>
           <div className="block md:hidden bg-[#70a665] p-10"></div>
@@ -424,19 +440,19 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                     <IconContext.Provider>
                       <FaSquare style={{ color: '#FAAB00' }} />
                     </IconContext.Provider>
-                    成功案例 1
+                    {t('backlinks.successCase1')}
                   </span>
                 </h2>
-                <p className="text-white text-lg lg:text-xl font-semibold">關鍵字 : 室內設計</p>
+                <p className="text-white text-lg lg:text-xl font-semibold">{t('backlinks.keyword')} {t('backlinks.keywordInteriorDesign')}</p>
               </div>
               <div className="order-1 lg:order-2 lg:col-span-2">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
                   <div className="bg-white rounded-lg p-6">
                     <div className="bg-blue-500 text-white text-center py-3 rounded-lg mb-4 font-semibold">
-                      沒有中文反向連結
+                      {t('backlinks.withoutChineseBacklinks')}
                     </div>
                     <div className="text-center">
-                      <p className="text-gray-600 mb-2 text-sm">Google排名(SERP)</p>
+                      <p className="text-gray-600 mb-2 text-sm">{t('backlinks.googleRanking')}</p>
                       <p className="text-4xl lg:text-5xl font-bold text-blue-500">
                         <CountUp end={201} />
                       </p>
@@ -444,10 +460,10 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                   </div>
                   <div className="bg-white rounded-lg p-6">
                     <div className="bg-amber-400 text-white text-center py-3 rounded-lg mb-4 font-semibold">
-                      買全中文反向連結後
+                      {t('backlinks.afterBuyingChineseBacklinks')}
                     </div>
                     <div className="text-center">
-                      <p className="text-gray-600 mb-2 text-sm">Google排名(SERP)</p>
+                      <p className="text-gray-600 mb-2 text-sm">{t('backlinks.googleRanking')}</p>
                       <p className="text-4xl lg:text-5xl font-bold text-amber-400">
                         <CountUp end={4} />
                       </p>
@@ -474,19 +490,19 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                     <IconContext.Provider>
                       <FaSquare style={{ color: '#FAAB00' }} />
                     </IconContext.Provider>
-                    成功案例 2
+                    {t('backlinks.successCase2')}
                   </span>
                 </h2>
-                <p className="text-white text-lg lg:text-xl font-semibold">關鍵字 : 床褥</p>
+                <p className="text-white text-lg lg:text-xl font-semibold">{t('backlinks.keyword')} {t('backlinks.keywordMattress')}</p>
               </div>
               <div className="order-1 lg:order-2 lg:col-span-2">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
                   <div className="bg-white rounded-lg p-6">
                     <div className="bg-blue-500 text-white text-center py-3 rounded-lg mb-4 font-semibold">
-                      沒有中文反向連結
+                      {t('backlinks.withoutChineseBacklinks')}
                     </div>
                     <div className="text-center">
-                      <p className="text-gray-600 mb-2 text-sm">Google排名(SERP)</p>
+                      <p className="text-gray-600 mb-2 text-sm">{t('backlinks.googleRanking')}</p>
                       <p className="text-4xl lg:text-5xl font-bold text-blue-500">
                         <CountUp end={26} />
                       </p>
@@ -494,10 +510,10 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                   </div>
                   <div className="bg-white rounded-lg p-6">
                     <div className="bg-amber-400 text-white text-center py-3 rounded-lg mb-4 font-semibold">
-                      買全中文反向連結後
+                      {t('backlinks.afterBuyingChineseBacklinks')}
                     </div>
                     <div className="text-center">
-                      <p className="text-gray-600 mb-2 text-sm">Google 排名(SERP)</p>
+                      <p className="text-gray-600 mb-2 text-sm">{t('backlinks.googleRanking')}</p>
                       <p className="text-4xl lg:text-5xl font-bold text-amber-400">
                         <CountUp end={2} />
                       </p>
@@ -524,19 +540,19 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                     <IconContext.Provider>
                       <FaSquare style={{ color: '#FAAB00' }} />
                     </IconContext.Provider>
-                    成功案例 3
+                    {t('backlinks.successCase3')}
                   </span>
                 </h2>
-                <p className="text-white text-lg lg:text-xl font-semibold">關鍵字 : 輪椅</p>
+                <p className="text-white text-lg lg:text-xl font-semibold">{t('backlinks.keyword')} {t('backlinks.keywordWheelchair')}</p>
               </div>
               <div className="order-1 lg:order-2 lg:col-span-2">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
                   <div className="bg-white rounded-lg p-6">
                     <div className="bg-blue-500 text-white text-center py-3 rounded-lg mb-4 font-semibold">
-                      沒有中文反向連結
+                      {t('backlinks.withoutChineseBacklinks')}
                     </div>
                     <div className="text-center">
-                      <p className="text-gray-600 mb-2 text-sm">Google排名(SERP)</p>
+                      <p className="text-gray-600 mb-2 text-sm">{t('backlinks.googleRanking')}</p>
                       <p className="text-4xl lg:text-5xl font-bold text-blue-500">
                         <CountUp end={27} />
                       </p>
@@ -544,10 +560,10 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
                   </div>
                   <div className="bg-white rounded-lg p-6">
                     <div className="bg-amber-400 text-white text-center py-3 rounded-lg mb-4 font-semibold">
-                      買全中文反向連結後
+                      {t('backlinks.afterBuyingChineseBacklinks')}
                     </div>
                     <div className="text-center">
-                      <p className="text-gray-600 mb-2 text-sm">Google排名(SERP)</p>
+                      <p className="text-gray-600 mb-2 text-sm">{t('backlinks.googleRanking')}</p>
                       <p className="text-4xl lg:text-5xl font-bold text-amber-400">
                         <CountUp end={4} />
                       </p>
@@ -575,11 +591,11 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
             <div className="container mx-auto">
               <div className="text-center">
                 <h2 className="text-2xl lg:text-4xl font-extrabold">
-                  Native4a 提供的 香港 中文 反向連結 有12個不一樣
+                  {t('backlinks.section8Title')}
                 </h2>
                 <div className="border-b-2 border-[#70a566] w-1/6 mx-auto pt-2"></div>
                 <h3 className="text-base lg:text-2xl font-light pt-4 pb-12">
-                  並非所有反向連結都是生而平等的
+                  {t('backlinks.section8Subtitle')}
                 </h3>
               </div>
               <TwelveDifferent />
@@ -598,10 +614,9 @@ class backlinksIndex extends React.Component<BacklinksPageProps> {
         </section>
       </BacklinkLayout>
     )
-  }
 }
 
-export default backlinksIndex
+export default BacklinksIndex
 
 export const pageQuery = graphql`
   query BacklinksQuery {
