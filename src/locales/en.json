@@ -11,7 +11,13 @@
     "services": "Services",
     "cases": "Cases",
     "backlinks": "Backlinks",
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "seo": "SEO",
+    "videoProduction": "Video Production",
+    "socialMediaAds": "Social Media Ads",
+    "webDesign": "Web Design",
+    "xiaohongshu": "Xiaohongshu",
+    "blog": "Blog"
   },
   "hero": {
     "title": "Hong Kong Digital Marketing Company",
@@ -159,7 +165,14 @@
       "feature12": "Complete Reports for Each Article and Link"
     }
   },
-  "xiaohongshuu": {
+  "contactAs": {
+    "title": "Contact Us",
+    "aboutNative": "About NATIVE4A",
+    "exclusiveBacklink": "Exclusive Traditional Chinese Backlink",
+    "webDesignDevelopment": "Web Design and Development",
+    "socialMediaAds": "Social Media Ads"
+  },
+  "xiaohongshu": {
     "title": "Service Scope",
     "step1Title": "Xiaohongshu New Account Management",
     "step1Description": "Account design packaging + account maintenance to deepen brand image and establish unique selling points",

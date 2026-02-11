@@ -11,7 +11,13 @@
     "services": "サービス",
     "cases": "ケース",
     "backlinks": "バックリンク",
-    "contactUs": "お問い合わせ"
+    "contactUs": "お問い合わせ",
+    "seo": "SEO",
+    "videoProduction": "動画制作",
+    "socialMediaAds": "ソーシャルメディア広告",
+    "webDesign": "ウェブデザイン",
+    "xiaohongshu": "小紅書",
+    "blog": "ブログ"
   },
   "hero": {
     "title": "香港デジタルマーケティング会社",
@@ -150,7 +156,7 @@
       "feature3": "完全な繁体字中国語WordPressブログ記事",
       "feature4": "顧客業界関連のコンテンツ記事",
       "feature5": "複数のキーワードとリンクが利用可能",
-      "feature6": "各記事とリンクは1つのクライアントのみに属する",
+      "feature6": "各記事とリンクは1���のクライアントのみに属する",
       "feature7": "独自のウェブサイト、消失しない、長期有効",
       "feature8": "ピラミッド構造",
       "feature9": "DA50+またはDR30+",
@@ -159,7 +165,14 @@
       "feature12": "各記事とリンクの完全なレポート"
     }
   },
-  "xiaohongshuu": {
+  "contactAs": {
+    "title": "お問い合わせ",
+    "aboutNative": "NATIVE4Aについて",
+    "exclusiveBacklink": "独占的な繁体字中国語バックリンク",
+    "webDesignDevelopment": "ウェブデザイン・開発",
+    "socialMediaAds": "ソーシャルメディア広告"
+  },
+  "xiaohongshu": {
     "title": "サービス範囲",
     "step1Title": "小紅書新規アカウント運営",
     "step1Description": "アカウント設計パッケージ+アカウント保守により、ブランドイメージを深掘りし、ユニークなセリングポイントを確立",
