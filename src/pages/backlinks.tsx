@@ -1,7 +1,6 @@
 //base here//
 import React from 'react'
 import { graphql, PageProps } from 'gatsby'
-import get from 'lodash/get'
 import CountUp from 'react-countup'
 import { useTranslation } from 'react-i18next'
 
@@ -20,6 +19,9 @@ import Section from '../components/baseTools/Section'
 import Text from '../components/baseTools/text'
 import Awards from '../components/awards'
 import Grid from '../components/baseTools/Grid/index.js'
+
+//styles here//
+import * as styles from '../styles/backlinks.module.css'
 
 interface BacklinksPageData {
   metaTitle: string
@@ -73,14 +75,8 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
                 <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
                   {t('backlinks.heroDescription')}
                 </p>
-                <div className="grid grid-cols-5 md:grid-cols-6 gap-2 md:gap-6 py-6">
-                  <Icon Alt="Instagram link" />
-                  <Icon
-                    Alt="whatsapp link"
-                    URL={whatsApp_icon}
-                    linkto="https://api.whatsapp.com/send/?phone=85264602996&text=索取backlinks收費表"
-                  />
-                </div>
+              </div>
+            </div>
               </div>
             </div>
             <div className="flex justify-center items-center">
@@ -271,13 +267,13 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
                     </div>
                   </div>
                 </div>
-                <img
-                  src={Native_backlink_Rankin01}
-                  alt="成功案例1"
-                  className="w-full rounded-lg"
-                  loading="lazy"
-                  decoding="async"
-                />
+                  <img
+                    src="https://via.placeholder.com/600x400?text=Success+Case+1"
+                    alt={t('backlinks.successCase1')}
+                    className="w-full rounded-lg"
+                    loading="lazy"
+                    decoding="async"
+                  />
               </div>
             </div>
           </div>
@@ -319,13 +315,13 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
                     </div>
                   </div>
                 </div>
-                <img
-                  src={c2}
-                  alt="成功案例2"
-                  className="w-full rounded-lg"
-                  loading="lazy"
-                  decoding="async"
-                />
+                  <img
+                    src="https://via.placeholder.com/600x400?text=Success+Case+2"
+                    alt={t('backlinks.successCase2')}
+                    className="w-full rounded-lg"
+                    loading="lazy"
+                    decoding="async"
+                  />
               </div>
             </div>
           </div>
@@ -367,13 +363,13 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
                     </div>
                   </div>
                 </div>
-                <img
-                  src={c3}
-                  alt="成功案例3"
-                  className="w-full rounded-lg"
-                  loading="lazy"
-                  decoding="async"
-                />
+                  <img
+                    src="https://via.placeholder.com/600x400?text=Success+Case+3"
+                    alt={t('backlinks.successCase3')}
+                    className="w-full rounded-lg"
+                    loading="lazy"
+                    decoding="async"
+                  />
               </div>
             </div>
           </div>
@@ -410,10 +406,6 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
         <section className={styles.backlinksSpanSquare}>
           <BacklinksSlick />
         </section>
-        <section className={styles.backlinksSpanSquare}>
-          <AboutAs />
-        </section>
-        <ClientLogos />
         <section className={styles.backlinksSpanSquare}>
           <ContactForm />
         </section>
