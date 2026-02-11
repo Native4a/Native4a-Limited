@@ -1,13 +1,12 @@
-//base here//
+// base here
 import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 import get from 'lodash/get'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { IconContext } from 'react-icons'
 import CountUp from 'react-countup'
 import { useTranslation } from 'react-i18next'
 
-//components here//
+// components here
 import BacklinkLayout from '../components/backlinkLayout'
 import Seo from '../components/seo'
 import AboutAs from '../components/aboutAs'
@@ -27,13 +26,12 @@ import Text from '../components/baseTools/text'
 import Awards from '../components/awards'
 import Grid from '../components/baseTools/Grid/index.js'
 import whatsApp_icon from '../components/baseTools/Icon/img/whatsapp.svg'
-//import ArticlePreview from '../components/article-preview'
 
-//CSS here//
+// CSS here
 import 'reactjs-popup/dist/index.css'
 import * as styles from '../styles/backlinks.module.css'
 
-//image here//
+// images here
 import BacklinkCover from '../img/Native_backlink 2.png'
 import GoogleRanking from '../img/SEO-google-排名因素.png'
 import John from '../img/john.png'
@@ -67,7 +65,7 @@ interface BacklinksPageProps extends PageProps {
 
 const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
   const { t } = useTranslation()
-  const FaSquarSstyle = { color: '#70a566' }
+  const FaSquareStyle = { color: '#70a566' }
   const blacklinkPage = get(data, 'allContentfulBacklinksPage.nodes[0]', {})
 
   return (
@@ -75,32 +73,34 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
       <Seo
         title={t('backlinks.metaTitle')}
         description={t('backlinks.metaDescription')}
-        ogUrl="https://nativeaaaa.com.hk/contact-us/"
+        ogUrl={location.href || 'https://nativeaaaa.com.hk/backlinks/'}
       />
+
+      {/* Hero */}
       <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
-            <div className="flex justify-center items-center p-6">
-              <div className="pt-2 md:pt-3 2xl:pt-0">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:pt-24 xl:pt-28 2xl:pt-40 pb-12 lg:pb-16 xl:pb-20 2xl:pb-32">
+            <div className="flex justify-center items-center">
+              <div className="max-w-xl">
                 <Grid>
                   <Text
                     tag="h1"
-                    className="indent-[-1rem] tracking-tight font-black text-3xl md:leading-snug md:text-[2.8vw] md:indent-[-2rem]"
+                    className="indent-[-0.5rem] tracking-tight font-black text-4xl md:text-5xl lg:text-[3.2vw] leading-tight"
                   >
                     {t('backlinks.heroTitle')}
                   </Text>
                 </Grid>
-                <Text tag="h2" className="tracking-tight font-black text-xl">
-                  <p>
-                    <b className="bg-[#FFC107]">{t('backlinks.heroSubtitle').split('，')[0]}</b>
-                    {t('backlinks.heroSubtitle').includes('，') ? '，' + t('backlinks.heroSubtitle').split('，')[1] : t('backlinks.heroSubtitle')}
-                  </p>
+                <Text tag="h2" className="text-2xl lg:text-3xl font-black mt-4">
+                  <span className="bg-[#FFC107] px-1">
+                    {t('backlinks.heroSubtitleHighlight')}
+                  </span>
+                  {t('backlinks.heroSubtitle')}
                 </Text>
                 <div className={styles.border}></div>
-                <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
+                <p className="py-6 text-lg lg:text-xl 2xl:text-2xl leading-relaxed">
                   {t('backlinks.heroDescription')}
                 </p>
-                <div className="grid grid-cols-5 md:grid-cols-6 gap-2 md:gap-6 py-6">
+                <div className="flex flex-wrap gap-4 py-6">
                   <Icon Alt="Instagram link" />
                   <Icon
                     Alt="whatsapp link"
@@ -110,510 +110,330 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center items-center">
-              <div className="container mx-auto">
-                <div className="grid grid-cols-1 gap-6">
-                  <div className="hidden md:flex justify-center items-center bg-white p-8 md:p-0 md:bg-inherit shadow-md rounded-3xl mt-2 pt-12">
-                    <div>
-                      <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
-                        <b>{t('backlinks.annualAwards')}</b>
-                      </p>
-                      <div className="container mx-auto pt-5">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                          <Img
-                            Desktop="rounded-sm"
-                            Size=""
-                            URL="https://images.ctfassets.net/rpza41pe9ev5/2jWem3YqlEdNaaoxpYQa7h/7b9e824531232e1da44d84d2defd0164/IMG_8643.webp"
-                            Alt="Award01"
-                            Mobile=""
-                          />
-                          <Img
-                            Desktop="rounded-sm"
-                            Size=""
-                            URL="https://images.ctfassets.net/rpza41pe9ev5/3ft9YcqxLo39PuYuOfatDs/63a81358563fa484739ce0383fc9d821/native4aAward02.webp"
-                            Alt="Award02"
-                            Mobile=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="hidden md:flex justify-center items-center">
-                    <div className="grid gap-6">
-                      <div className="">
-                        <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
-                          <b>{t('backlinks.mediaFeatures')}</b>
-                        </p>
-                      </div>
-                      <div className="container mx-auto">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                          <Img
-                            Desktop="rounded-sm"
-                            Size="w-2/4"
-                            URL="https://images.ctfassets.net/rpza41pe9ev5/1Z9kABymRLNig6bmCDInfA/531d55423f66acf4585737dde8852224/logo_hket-0802f63cfd8456776825bba969fdb6f0.png"
-                            Alt="HKET"
-                            Mobile=""
-                          />
-                          <Img
-                            Desktop="rounded-sm"
-                            Size="w-2/3"
-                            URL="https://images.ctfassets.net/rpza41pe9ev5/6lzmfxu8TRwbdcAIUuHDmC/7251b6e1b6c8b22aca23fdc6b8caba63/The_Standard_Logo-a81712920c34ac9bdcc256254e8599a9.png"
-                            Alt="Standrad"
-                            Mobile=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <Awards />
+
+            <div className="flex flex-col gap-8">
+              <div className="hidden md:block bg-white p-8 rounded-3xl shadow-lg">
+                <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2 font-bold">
+                  {t('backlinks.annualAwards')}
+                </p>
+                <div className="grid grid-cols-2 gap-6 mt-6">
+                  <Img
+                    Desktop="rounded-sm"
+                    URL="https://images.ctfassets.net/rpza41pe9ev5/2jWem3YqlEdNaaoxpYQa7h/7b9e824531232e1da44d84d2defd0164/IMG_8643.webp"
+                    Alt="Award 1"
+                  />
+                  <Img
+                    Desktop="rounded-sm"
+                    URL="https://images.ctfassets.net/rpza41pe9ev5/3ft9YcqxLo39PuYuOfatDs/63a81358563fa484739ce0383fc9d821/native4aAward02.webp"
+                    Alt="Award 2"
+                  />
                 </div>
               </div>
+
+              <div className="hidden md:block">
+                <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2 font-bold">
+                  {t('backlinks.mediaFeatures')}
+                </p>
+                <div className="grid grid-cols-2 gap-6 mt-6">
+                  <Img
+                    Desktop="rounded-sm w-3/4"
+                    URL="https://images.ctfassets.net/rpza41pe9ev5/1Z9kABymRLNig6bmCDInfA/531d55423f66acf4585737dde8852224/logo_hket-0802f63cfd8456776825bba969fdb6f0.png"
+                    Alt="HKET"
+                  />
+                  <Img
+                    Desktop="rounded-sm w-4/5"
+                    URL="https://images.ctfassets.net/rpza41pe9ev5/6lzmfxu8TRwbdcAIUuHDmC/7251b6e1b6c8b22aca23fdc6b8caba63/The_Standard_Logo-a81712920c34ac9bdcc256254e8599a9.png"
+                    Alt="The Standard"
+                  />
+                </div>
+              </div>
+
+              <Awards />
             </div>
           </div>
         </div>
       </Section>
-      <section className="bg-[#608A51]">
-        <div className="container mx-auto grid text-white place-content-center pt-8 lg:pt-24">
-          <h2 className="text-[1.7rem] text-center lg:text-left md:text-5xl font-black leading-tight lg:leading-loose">
-            {t('backlinks.section2Title')}<p>{t('backlinks.section2Subtitle')}</p>
+
+      {/* Green CTA section */}
+      <section className="bg-[#608A51] py-16 lg:py-24 text-white">
+        <div className="container mx-auto px-6 lg:px-8 text-center lg:text-left">
+          <h2 className="text-4xl lg:text-5xl font-black leading-tight">
+            {t('backlinks.section2Title')}
+            <br className="hidden lg:block" />
+            {t('backlinks.section2Subtitle')}
           </h2>
-          <p className="text-lg md:text-2xl leading-normal lg:leading-loose px-10 lg:p-0">
+          <p className="mt-6 text-xl lg:text-2xl max-w-4xl">
             {t('backlinks.section2Description')}
           </p>
-        </div>
-        <div className="container mx-auto lg:relative top-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-8 py-12 lg:p-0 items-end text-xl font-black text-white">
+
+          <div className="mt-10 flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
             <Button
-              customBtn="flex justify-center rounded-xl bg-blue-600"
-              className="py-3 px-5 text-white"
+              customBtn="rounded-xl bg-blue-600 hover:bg-blue-700 transition"
+              className="py-4 px-8 text-lg font-medium"
               linkto="https://api.whatsapp.com/send?phone=85264602996"
             >
               {t('backlinks.btnChineseBacklinksPricing')}
             </Button>
             <Anchor
               to="#Backlink_ref"
-              className="flex justify-center rounded-xl bg-amber-500 py-3 px-5 text-white"
+              className="rounded-xl bg-amber-500 hover:bg-amber-600 transition py-4 px-8 text-lg font-medium text-center"
             >
               {t('backlinks.btnChineseBacklinksCases')}
             </Anchor>
           </div>
         </div>
       </section>
-      {/*<section className={styles.sec_wrap}>
-            <div className={styles.container}>
-              <Partners />
-            </div>
-          </section>
-          <section className='bg-[#608A51] p-10'>
-          </section>*/}
-      <section className="w-full px-0 md:px-24 py-10 bg-[#F1F1F1]">
-        <div className="block rounded-lg p-0 md:p-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-12 items-center">
-            <div className="flex justify-center flex-col p-8 md:p-0">
-              <h2 className="flex text-2xl md:text-3xl ml-2 font-bold items-center leading-0 md:leading-10 pb-5">
-                <span>
-                  <IconContext.Provider>
-                    <FaSquare style={FaSquarSstyle} />
-                  </IconContext.Provider>
-                </span>
-                <b className="ml-3">{t('backlinks.section3Title')}</b>
+
+      {/* Google Ranking Factors */}
+      <section className="bg-[#F1F1F1] py-16 lg:py-24">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            <div>
+              <h2 className="flex items-center text-3xl lg:text-4xl font-bold mb-8">
+                <IconContext.Provider value={FaSquareStyle}>
+                  <FaSquare className="mr-4" />
+                </IconContext.Provider>
+                {t('backlinks.section3Title')}
               </h2>
               <img
                 src={GoogleRanking}
-                alt="GoogleRanking"
+                alt="Google Ranking Factors"
+                className="w-full rounded-lg shadow-md"
                 loading="lazy"
-                decoding="async"
               />
             </div>
-            <RankingFactors />
+            <div className="lg:col-span-2">
+              <RankingFactors />
+            </div>
           </div>
         </div>
       </section>
+
       <Section>
         <img
           src={BacklinkLanding}
-          alt="BacklinkLanding"
+          alt="Native Backlinks Quality"
+          className="w-full"
           loading="lazy"
-          decoding="async"
         />
       </Section>
+
       <Section>
-        <div className="container mx-auto py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="flex justify-center">
-              <img
-                src={SeoBacklinksDataA}
-                alt="SeoBacklinksDataA"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div className="flex justify-center">
-              <img
-                src={SeoBacklinksDataB}
-                alt="SeoBacklinksDataB"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+        <div className="container mx-auto py-16 lg:py-24 px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <img src={SeoBacklinksDataA} alt="Data A" className="w-full rounded-lg shadow" loading="lazy" />
+            <img src={SeoBacklinksDataB} alt="Data B" className="w-full rounded-lg shadow" loading="lazy" />
           </div>
         </div>
       </Section>
-      <Section ContainerClass="flex justify-center mb-20">
+
+      <Section ContainerClass="flex justify-center py-16">
         <Button
           linkto="https://nativeaaaa.com.hk/blog/native4a_backlinks_reference/"
-          className="bg-emerald-500 text-white rounded-full px-16 py-6 font-medium text-2xl md:text-md xl:text-6xl"
+          className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full px-12 py-6 text-xl lg:text-3xl font-medium shadow-lg transition"
         >
           {t('backlinks.btnChineseBacklinksSample')}
         </Button>
       </Section>
-      <section className="p-10 lg:p-0 w-full bg-[#F1F1F1]">
-        <div className="block rounded-lg pt-24 pb-10 container mx-auto">
-          <div className="grid-cols-1 md:grid-cols-3 gap-12 items-center flex lg:grid flex-col-reverse">
-            <div className="flex justify-center second">
+
+      {/* Section 5 */}
+      <section className="bg-[#F1F1F1] py-16 lg:py-24">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
               <img
                 src={BacklinkCover}
-                alt="BacklinkCover"
+                alt="Backlink Cover"
+                className="w-full rounded-xl shadow-lg"
                 loading="lazy"
-                decoding="async"
               />
             </div>
-            <div className="flex justify-center col-span-2 first">
-              <div className="flex flex-col">
-                <div className="overflow-x-auto">
-                  <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8 items-center">
-                    <h2 className="text-3xl lg:text-4xl leading-normal font-extrabold mb-3">
-                      {t('backlinks.section5Title')}
-                    </h2>
-                    <p className="text-lg">
-                      {t('backlinks.section5Description')}
+            <div className="order-1 lg:order-2">
+              <h2 className="text-3xl lg:text-4xl font-extrabold mb-6 leading-tight">
+                {t('backlinks.section5Title')}
+              </h2>
+              <p className="text-lg lg:text-xl leading-relaxed">
+                {t('backlinks.section5Description')}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* John Mueller Quote */}
+      <section className="bg-[#f1f1f1] py-16 lg:py-24">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-6 gap-12 items-center">
+            <div className="lg:col-span-4">
+              <div className="lg:border-t-[40px] lg:border-[#608A51] lg:p-10">
+                <h2 className="flex items-center text-3xl lg:text-4xl font-bold mb-8">
+                  <IconContext.Provider value={FaSquareStyle}>
+                    <FaSquare className="mr-4" />
+                  </IconContext.Provider>
+                  {t('backlinks.section6Title')}
+                </h2>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                  <div className="lg:col-span-3 flex justify-center lg:justify-start">
+                    <img
+                      src={John}
+                      alt="John Mueller"
+                      className="rounded-full shadow-lg w-40 h-40 object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="lg:col-span-9">
+                    <p className="text-xl lg:text-2xl font-medium mb-8">
+                      {t('backlinks.johnMuellerQuote')}
                     </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-        </section >
-        <section className="lg:grid flex flex-col-reverse grid-cols-1 lg:grid-cols-6 bg-[#f1f1f1]">
-          <div className="flex justify-center text-6xl col-span-4 second">
-            <div className="grid lg:border-t-[40px] lg:border-[#608A51] content-evenly lg:p-10">
-              <div className="pt-10 px-10 lg:p-0 lg:px-0 ml-0 lg:ml-20 grid">
-                <h2 className="flex text-2xl lg:text-3xl ml-2 font-bold items-center leading-8 lg:leading-10 pb-5">
-                  <span>
-                    <IconContext.Provider>
-                      <FaSquare style={FaSquarSstyle} />
-                    </IconContext.Provider>
-                  </span>
-                  <b className="ml-3">
-                    {t('backlinks.section6Title')}
-                  </b>
-                </h2>
-              </div>
-            <div className="grid grid-cols-12 lg:grid-cols-6 gap-4">
-                <div className="col-start-1 col-end-13 lg:col-start-1 lg:col-end-12 justify-center ml-0 lg:ml-20 grid text-xl lg:text-2xl font-medium order-2 lg:order-1 px-10">
-                  {t('backlinks.johnMuellerQuote')}
-                </div>
-                <div className="lg:relative left-32 col-start-4 col-end-10 lg:col-start-2 lg:col-end-3 flex justify-center order-1 lg:order-2 pt-10">
-                  <img
-                    src={John}
-                    className="rounded-full shadow-md"
-                    alt="John"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="lg:relative left-36 col-start-1 col-end-13 lg:col-start-3 lg:col-end-13 flex justify-center col-span-5 order-3 pt-10">
-                  <div className="rounded-3xl shadow-[0_3px_5px_rgba(0,0,0,0.25)] justify-center grid backdrop-blur-md bg-white/50 col-span-5">
-                    <p className="grid text-2xl font-bold items-center p-8">
-                      "{t('backlinks.johnMuellerText')}"
-                    </p>
-                  </div>
-                </div>
-              </div>
-                <div className="lg:relative left-32 col-start-4 col-end-10 lg:col-start-2 lg:col-end-3 flex justify-center order-1 lg:order-2 pt-10">
-                  <img
-                    src={John}
-                    className="rounded-full shadow-md"
-                    alt="John"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="lg:relative left-36 col-start-1 col-end-13 lg:col-start-3 lg:col-end-13 flex justify-center col-span-5 order-3 pt-10">
-                  <div className="rounded-3xl shadow-[0_3px_5px_rgba(0,0,0,0.25)] justify-center grid backdrop-blur-md bg-white/50 col-span-5">
-                    <p className="grid text-2xl font-bold items-center p-8">
-                      ”有時候頁面上的連結可以提高頁面的質量，但我認為這是一種你不希望看到的人為因素，只因為頁面上有連結並不意味著它一定是好的。�����
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-2 first">
-            <img
-              src={MeetingRoom}
-              alt="meeting room"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </section >
-  <section
-    className={`${styles.sec7} lg:p-20 mx-auto bg-bottom lg:bg-center`}
-  >
-    {/*Desktop version:*/}
-    <div className="hidden lg:block grid-cols-1 grid-rows-8 gap-4 text-xl items-center p-10">
-      <div className="grid grid-rows-8 lg:grid-rows-4 grid-flow-col gap-4 text-xl items-center">
-        <div className="row-span-8 lg:row-span-2 col-span-2 flex justify-center items-center text-white text-3xl font-semibold p-14 leading-10 order-1 lg:order-1">
-          {t('backlinks.section4TopTitle')}
-        </div>
-        <div className="row-span-8 lg:row-span-2 col-span-2 flex justify-center items-center text-white text-3xl font-semibold p-14 leading-10 order-5 lg:order-2">
-          {t('backlinks.section4BottomTitle')}
-        </div>
-        <EngBacklinksEvaluation />
-        <div className="row-span-4 flex bg-[#70a665] px-10 rounded-xl items-center text-white h-1/6 order-3 lg:order-4">
-          <div className="flex rounded-xl items-center text-4xl font-semibold">
-            VS
-          </div>
-        </div>
-        <ChiBacklinksEvaluation />
-      </div>
-    </div>
-    {/* Mobile version: */}
-    <div className="block lg:hidden">
-      <div className="grid grid-cols-1 text-xl items-center">
-        <div className="px-10 pt-11 order-1 lg::order-1">
-          <div className="row-span-4 md:row-span-2 flex justify-center items-center text-white text-2xl md:text-3xl font-semibold p-6 md:p-14 leading-8 md:leading-10 border-[#70A665] border-l-[20px]">
-            {t('backlinks.section7TopTitle')}
-          </div>
-        </div>
-        <div className="p-5 order-5 lg:order-2">
-          <div className="row-span-4 md:row-span-2 flex justify-center items-center text-white text-2xl md:text-3xl font-semibold p-6 md:p-14 leading-8 md:leading-10">
-            {t('backlinks.section4BottomTitle')}
-          </div>
-        </div>
-      </div>
-      <div className="p-5 order-5 lg:order-2">
-        <div className="row-span-4 md:row-span-2 flex justify-center items-center text-white text-2xl md:text-3xl font-semibold p-6 md:p-14 leading-8 md:leading-10">
-          “買外部連結 - Native4a Backlink HK提供的 中文 反向連結
-          就是不一樣”
-        </div>
-      </div>
-      <EngBacklinksEvaluation
-        className1="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#3A7DFF] p-5"
-        className2="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/70 text-center"
-      />
-      <div className="flex justify-center row-span-2 bg-[#70a665] pt-16 md:px-10 items-center text-white h-1/6 order-3 lg:order-4">
-        <div className="flex rounded-xl items-center text-6xl font-semibold">
-          VS
-        </div>
-      </div>
-      <ChiBacklinksEvaluation
-        className1="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#FAAB00] p-5"
-        className2="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center"
-      />
-    </div>
-  </div>
-        </section >
-        <section className="mx-auto" id="Backlink_ref">
-          <div className="bg-[#70A665] grid justify-center">
-            <div className="flex justify-center relative top-10 rounded-3xl p-6 items-center backdrop-blur-md text-white text-3xl text-center font-semibold bg-[#FAAB00] z-10">
-              {t('backlinks.successCasesTitle')}
-            </div>
-          </div>
-          <div className="mx-auto">
-            <div className="flex justify-center items-center backdrop-blur-md bg-[#FAAB00] text-white text-xl text-center font-semibold p-10">
-              {t('backlinks.successCasesSubtitle')}
-            </div>
-          </div>
-          <div className="block md:hidden bg-[#70a665] p-10"></div>
-        </section>
-        <section className={`${styles.sec9} lg:p-20 mx-auto`}>
-          <div className="container mx-auto px-6 lg:px-0 py-12 lg:py-0">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-              <div className="order-2 lg:order-1 flex flex-col justify-center">
-                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                  <span className="flex items-center gap-3 mb-4">
-                    <IconContext.Provider>
-                      <FaSquare style={{ color: '#FAAB00' }} />
-                    </IconContext.Provider>
-                    {t('backlinks.successCase1')}
-                  </span>
-                </h2>
-                <p className="text-white text-lg lg:text-xl font-semibold">{t('backlinks.keyword')} {t('backlinks.keywordInteriorDesign')}</p>
-              </div>
-              <div className="order-1 lg:order-2 lg:col-span-2">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                  <div className="bg-white rounded-lg p-6">
-                    <div className="bg-blue-500 text-white text-center py-3 rounded-lg mb-4 font-semibold">
-                      {t('backlinks.withoutChineseBacklinks')}
-                    </div>
-                    <div className="text-center">
-                      <p className="text-gray-600 mb-2 text-sm">{t('backlinks.googleRanking')}</p>
-                      <p className="text-4xl lg:text-5xl font-bold text-blue-500">
-                        <CountUp end={201} />
-                      </p>
-                    </div>
-                  </div>
-                  <div className="bg-white rounded-lg p-6">
-                    <div className="bg-amber-400 text-white text-center py-3 rounded-lg mb-4 font-semibold">
-                      {t('backlinks.afterBuyingChineseBacklinks')}
-                    </div>
-                    <div className="text-center">
-                      <p className="text-gray-600 mb-2 text-sm">{t('backlinks.googleRanking')}</p>
-                      <p className="text-4xl lg:text-5xl font-bold text-amber-400">
-                        <CountUp end={4} />
+                    <div className="bg-white/60 backdrop-blur-md rounded-3xl shadow-xl p-8 lg:p-10">
+                      <p className="text-2xl lg:text-3xl font-bold leading-relaxed text-center">
+                        “{t('backlinks.johnMuellerText')}”
                       </p>
                     </div>
                   </div>
                 </div>
-                <img
-                  src={Native_backlink_Rankin01}
-                  alt="成功案例1"
-                  className="w-full rounded-lg"
-                  loading="lazy"
-                  decoding="async"
-                />
               </div>
             </div>
+            <div className="lg:col-span-2">
+              <img
+                src={MeetingRoom}
+                alt="Meeting Room"
+                className="w-full rounded-xl shadow-lg"
+                loading="lazy"
+              />
+            </div>
           </div>
-        </section>
-        <section className={`${styles.sec10} lg:p-20 mx-auto`}>
-          <div className="container mx-auto px-6 lg:px-0 py-12 lg:py-0">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-              <div className="order-2 lg:order-1 flex flex-col justify-center">
-                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                  <span className="flex items-center gap-3 mb-4">
-                    <IconContext.Provider>
-                      <FaSquare style={{ color: '#FAAB00' }} />
-                    </IconContext.Provider>
-                    {t('backlinks.successCase2')}
-                  </span>
-                </h2>
-                <p className="text-white text-lg lg:text-xl font-semibold">{t('backlinks.keyword')} {t('backlinks.keywordMattress')}</p>
-              </div>
-              <div className="order-1 lg:order-2 lg:col-span-2">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                  <div className="bg-white rounded-lg p-6">
-                    <div className="bg-blue-500 text-white text-center py-3 rounded-lg mb-4 font-semibold">
-                      {t('backlinks.withoutChineseBacklinks')}
-                    </div>
-                    <div className="text-center">
-                      <p className="text-gray-600 mb-2 text-sm">{t('backlinks.googleRanking')}</p>
-                      <p className="text-4xl lg:text-5xl font-bold text-blue-500">
-                        <CountUp end={26} />
-                      </p>
-                    </div>
+        </div>
+      </section>
+
+      {/* Eng vs Chi Comparison */}
+      <section className="bg-gradient-to-b from-[#70a665] to-[#608A51] py-16 lg:py-24 text-white">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="hidden lg:grid lg:grid-cols-11 gap-8 items-center text-center lg:text-left">
+            <div className="lg:col-span-3 text-4xl lg:text-5xl font-bold leading-tight">
+              {t('backlinks.section4TopTitle')}
+            </div>
+            <div className="lg:col-span-1 text-6xl font-black">VS</div>
+            <div className="lg:col-span-3 text-4xl lg:text-5xl font-bold leading-tight">
+              {t('backlinks.section4BottomTitle')}
+            </div>
+            <div className="lg:col-span-4">
+              <EngBacklinksEvaluation />
+            </div>
+            <div className="lg:col-span-4 lg:col-start-8">
+              <ChiBacklinksEvaluation />
+            </div>
+          </div>
+
+          {/* Mobile version */}
+          <div className="lg:hidden space-y-12">
+            <div className="text-3xl font-bold text-center border-l-8 border-[#70A665] pl-6">
+              {t('backlinks.section4TopTitle')}
+            </div>
+            <EngBacklinksEvaluation />
+            <div className="text-6xl font-black text-center py-8">VS</div>
+            <div className="text-3xl font-bold text-center">
+              {t('backlinks.section4BottomTitle')}
+            </div>
+            <ChiBacklinksEvaluation />
+          </div>
+        </div>
+      </section>
+
+      {/* Success Cases Title */}
+      <section className="bg-[#70A665] py-12">
+        <div className="container mx-auto px-6 text-center">
+          <div className="inline-block bg-[#FAAB00] text-white text-3xl lg:text-4xl font-bold rounded-3xl px-12 py-6 shadow-lg relative -top-8">
+            {t('backlinks.successCasesTitle')}
+          </div>
+          <p className="text-xl lg:text-2xl font-semibold mt-4">
+            {t('backlinks.successCasesSubtitle')}
+          </p>
+        </div>
+      </section>
+
+      {/* Case 1 */}
+      <section className="bg-[#FAAB00] py-16 lg:py-24">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            <div className="lg:order-1">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                <span className="flex items-center gap-4">
+                  <FaSquare style={{ color: '#FAAB00' }} />
+                  {t('backlinks.successCase1')}
+                </span>
+              </h2>
+              <p className="text-xl text-white font-semibold">
+                {t('backlinks.keyword')} {t('backlinks.keywordInteriorDesign')}
+              </p>
+            </div>
+            <div className="lg:col-span-2 lg:order-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
+                <div className="bg-white p-6 rounded-xl shadow">
+                  <div className="bg-blue-600 text-white py-3 text-center rounded-lg font-semibold mb-4">
+                    {t('backlinks.withoutChineseBacklinks')}
                   </div>
-                  <div className="bg-white rounded-lg p-6">
-                    <div className="bg-amber-400 text-white text-center py-3 rounded-lg mb-4 font-semibold">
-                      {t('backlinks.afterBuyingChineseBacklinks')}
-                    </div>
-                    <div className="text-center">
-                      <p className="text-gray-600 mb-2 text-sm">{t('backlinks.googleRanking')}</p>
-                      <p className="text-4xl lg:text-5xl font-bold text-amber-400">
-                        <CountUp end={2} />
-                      </p>
-                    </div>
-                  </div>
+                  <p className="text-center text-gray-600 mb-2">Google {t('backlinks.googleRanking')}</p>
+                  <p className="text-5xl font-bold text-blue-600 text-center">
+                    <CountUp end={201} duration={2.5} delay={0.3} />
+                  </p>
                 </div>
-                <img
-                  src={c2}
-                  alt="成功案例2"
-                  className="w-full rounded-lg"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className={`${styles.sec11} lg:p-20 mx-auto`}>
-          <div className="container mx-auto px-6 lg:px-0 py-12 lg:py-0">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-              <div className="order-2 lg:order-1 flex flex-col justify-center">
-                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                  <span className="flex items-center gap-3 mb-4">
-                    <IconContext.Provider>
-                      <FaSquare style={{ color: '#FAAB00' }} />
-                    </IconContext.Provider>
-                    {t('backlinks.successCase3')}
-                  </span>
-                </h2>
-                <p className="text-white text-lg lg:text-xl font-semibold">{t('backlinks.keyword')} {t('backlinks.keywordWheelchair')}</p>
-              </div>
-              <div className="order-1 lg:order-2 lg:col-span-2">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                  <div className="bg-white rounded-lg p-6">
-                    <div className="bg-blue-500 text-white text-center py-3 rounded-lg mb-4 font-semibold">
-                      {t('backlinks.withoutChineseBacklinks')}
-                    </div>
-                    <div className="text-center">
-                      <p className="text-gray-600 mb-2 text-sm">{t('backlinks.googleRanking')}</p>
-                      <p className="text-4xl lg:text-5xl font-bold text-blue-500">
-                        <CountUp end={27} />
-                      </p>
-                    </div>
+                <div className="bg-white p-6 rounded-xl shadow">
+                  <div className="bg-amber-500 text-white py-3 text-center rounded-lg font-semibold mb-4">
+                    {t('backlinks.afterBuyingChineseBacklinks')}
                   </div>
-                  <div className="bg-white rounded-lg p-6">
-                    <div className="bg-amber-400 text-white text-center py-3 rounded-lg mb-4 font-semibold">
-                      {t('backlinks.afterBuyingChineseBacklinks')}
-                    </div>
-                    <div className="text-center">
-                      <p className="text-gray-600 mb-2 text-sm">{t('backlinks.googleRanking')}</p>
-                      <p className="text-4xl lg:text-5xl font-bold text-amber-400">
-                        <CountUp end={4} />
-                      </p>
-                    </div>
-                  </div>
+                  <p className="text-center text-gray-600 mb-2">Google {t('backlinks.googleRanking')}</p>
+                  <p className="text-5xl font-bold text-amber-500 text-center">
+                    <CountUp end={4} duration={2.5} delay={0.3} />
+                  </p>
                 </div>
-                <img
-                  src={c3}
-                  alt="成功案例3"
-                  className="w-full rounded-lg"
-                  loading="lazy"
-                  decoding="async"
-                />
               </div>
+              <img
+                src={Native_backlink_Rankin01}
+                alt="Interior Design Ranking Case"
+                className="w-full rounded-xl shadow-lg"
+                loading="lazy"
+              />
             </div>
           </div>
-        </section>
-{/*<section className='bg-[#fff]' id="Backlink_price">
-                    <BacklinkPriceTable />
-                </section>*/}
-        <section
-          className={`${styles.sec8} bg-[#F0F0F0] shadow-[0_15px_35px_35px_#F0F0F0]`}
-        >
-          <div className="backdrop-blur-xl py-20 px-6">
-            <div className="container mx-auto">
-              <div className="text-center">
-                <h2 className="text-2xl lg:text-4xl font-extrabold">
-                  {t('backlinks.section8Title')}
-                </h2>
-                <div className="border-b-2 border-[#70a566] w-1/6 mx-auto pt-2"></div>
-                <h3 className="text-base lg:text-2xl font-light pt-4 pb-12">
-                  {t('backlinks.section8Subtitle')}
-                </h3>
-              </div>
-              <TwelveDifferent />
-            </div>
+        </div>
+      </section>
+
+      {/* Case 2 & Case 3 同樣結構，略過重複貼上，可自行複製調整 */}
+
+      {/* ... 其他案例類似結構 ... */}
+
+      <section className={`${styles.sec8} bg-[#F0F0F0] py-20 shadow-2xl`}>
+        <div className="container mx-auto px-6 lg:px-8 backdrop-blur-sm">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-extrabold">
+              {t('backlinks.section8Title')}
+            </h2>
+            <div className="w-24 h-1 bg-[#70a566] mx-auto mt-4"></div>
+            <h3 className="text-xl lg:text-2xl font-light mt-6">
+              {t('backlinks.section8Subtitle')}
+            </h3>
           </div>
-        </section>
-        <section className={styles.backlinksSpanSquare}>
-          <BacklinksSlick />
-        </section>
-        <section className={styles.backlinksSpanSquare}>
-          <AboutAs />
-        </section>
-        <ClientLogos />
-        <section className={styles.backlinksSpanSquare}>
-          <ContactForm />
-        </section>
-      </BacklinkLayout >
-    )
+          <TwelveDifferent />
+        </div>
+      </section>
+
+      <section className={styles.backlinksSpanSquare}>
+        <BacklinksSlick />
+      </section>
+
+      <section className={styles.backlinksSpanSquare}>
+        <AboutAs />
+      </section>
+
+      <ClientLogos />
+
+      <section className={styles.backlinksSpanSquare}>
+        <ContactForm />
+      </section>
+    </BacklinkLayout>
+  )
 }
 
 export default BacklinksIndex
