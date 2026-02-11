@@ -425,6 +425,14 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
             </div>
           </div>
         </section>
+        <Section ContainerClass="flex justify-center mb-20">
+          <Button
+            linkto="https://nativeaaaa.com.hk/blog/native4a_backlinks_reference/"
+            className="bg-emerald-500 text-white rounded-full px-16 py-6 font-medium text-2xl md:text-md xl:text-6xl"
+          >
+            {t('backlinks.btnChineseBacklinksSample')}
+          </Button>
+        </Section>
         <section className={styles.backlinksSpanSquare}>
           <BacklinksSlick />
         </section>
