@@ -1,6 +1,6 @@
 //base here//
 import React from 'react'
-import { graphql, PageProps } from 'gatsby'
+import { PageProps } from 'gatsby'
 import CountUp from 'react-countup'
 import { useTranslation } from 'react-i18next'
 
@@ -414,25 +414,3 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
 }
 
 export default BacklinksIndex
-
-export const pageQuery = graphql`
-  query BacklinksQuery {
-    allContentfulBacklinksPage {
-      nodes {
-        metaTitle
-        metaDescription
-        title
-        subTitle
-        titleDescription {
-          raw
-        }
-        nativeBanner {
-          url
-        }
-        section3Title
-        section4TopTitle
-        section4BottomTitle
-      }
-    }
-  }
-`
