@@ -42,5 +42,134 @@
     "serviceScope": "服務範圍",
     "popularMethods": "數碼營銷6種熱門方法",
     "customerTestimonial": "客戶見證我們成長"
+  },
+  "footer": {
+    "title": "Native 讓你站在巨人肩上。",
+    "subtitle": "歡迎直接Whatsapp查詢",
+    "cta": "立即查詢",
+    "copyright": "Copyright © 2016 - {year} Native4a . All Rights Reserved.",
+    "privacyPolicy": "隱私政策",
+    "termsOfBusiness": "商業條款"
+  },
+  "awards": {
+    "title": "「native4a」品牌 - 獲獎的廣告公司",
+    "annualAwards": "年度獎項",
+    "mediaFeatures": "媒體報導",
+    "award01Alt": "Native4A 獲獎證書 01",
+    "award02Alt": "Native4A 獲獎證書 02",
+    "media01Alt": "Native4A 媒體報導 01",
+    "media02Alt": "Native4A 媒體報導 02"
+  },
+  "clientLogos": {
+    "title": "更多合作客戶"
+  },
+  "buttons": {
+    "watchVideo": "查看影片",
+    "quoteNow": "立即報價",
+    "shopping": "購物",
+    "submit": "提交",
+    "learnMore": "即刻了解"
+  },
+  "contactForm": {
+    "firstName": "First Name（姓氏）",
+    "lastName": "Last Name（名字）",
+    "contactNumber": "contact number（聯絡方法）",
+    "questions": "請點答以下問題：",
+    "question1": "1.你的公司網站或ig?",
+    "question2": "2.請問你的行業？",
+    "question3": "3.你目前主要透過什麼方式獲客？",
+    "question4": "4.你目前的查詢容易轉化成生意嗎？",
+    "question5": "5.你收到查詢後會進行再營銷嗎？",
+    "question6": "6.你的客戶平均查詢多少次後才能成交？",
+    "yes": "會",
+    "no": "不會",
+    "selectOption": "選擇："
+  },
+  "iconList": {
+    "email": "email",
+    "phone": "phone",
+    "hongKongAddress": "香港地址",
+    "hongKongAddressValue": "新界葵涌葵昌路26-38號 豪華工業大廈6樓",
+    "shenzhenAddress": "深圳地址",
+    "shenzhenAddressValue": "深圳市福田區泰然七路蒼松大廈19樓"
+  },
+  "pricing": {
+    "pricingOne": {
+      "title": "中競爭度行業",
+      "price": "5500",
+      "feature1": "50頂層外連至您的網站",
+      "feature2": "50個獨立中文網站",
+      "feature3": "全繁中WP博客文章",
+      "feature4": "客戶行業相關內容文章",
+      "feature5": "可做多個關鍵字和連結",
+      "feature6": "每篇文章及連結祗屬一個客戶",
+      "feature7": "自家網站，不會消失，長期有效",
+      "feature8": "金字塔式結構",
+      "feature9": "DA50+ 或 DR 30+",
+      "feature10": "自選目標頁面",
+      "feature11": "90% DoFollow, 10% NoFollow",
+      "feature12": "每篇文章及連結的完整報告"
+    },
+    "pricingTwo": {
+      "title": "高難度行業",
+      "price": "7500",
+      "feature1": "100頂層外連至您的網站",
+      "feature2": "100個獨立中文網站",
+      "feature3": "全繁中WP博客文章",
+      "feature4": "客戶行業相關內容文章",
+      "feature5": "可做多個關鍵字和連結",
+      "feature6": "每篇文章及連結祗屬一個客戶",
+      "feature7": "自家網站，不會消失，長期有效",
+      "feature8": "金字塔式結構",
+      "feature9": "DA50+ 或 DR 30+",
+      "feature10": "自選目標頁面",
+      "feature11": "90% DoFollow, 10% NoFollow",
+      "feature12": "每篇文章及連結的完整報告"
+    },
+    "pricingThree": {
+      "title": "霸王",
+      "price": "10000",
+      "feature1": "150頂層外連至您的網站",
+      "feature2": "100個獨立中文網站",
+      "feature3": "全繁中WP博客文章",
+      "feature4": "客戶行業相關內容文章",
+      "feature5": "可做多個關鍵字和連結",
+      "feature6": "每篇文章及連結祗屬一個客戶",
+      "feature7": "自家網站，不會消失，長期有效",
+      "feature8": "金字塔式結構",
+      "feature9": "DA50+ 或 DR 30+",
+      "feature10": "自選目標頁面",
+      "feature11": "90% DoFollow, 10% NoFollow",
+      "feature12": "每篇文章及連結的完整報告"
+    },
+    "pricingFour": {
+      "title": "至尊",
+      "price": "12000",
+      "feature1": "200頂層外連至您的網站",
+      "feature2": "100個獨立中文網站",
+      "feature3": "全繁中WP博客文章",
+      "feature4": "客戶行業相關內容文章",
+      "feature5": "可做多個關鍵字和連結",
+      "feature6": "每篇文章及連結祗屬一個客戶",
+      "feature7": "自家網站，不會消失，長期有效",
+      "feature8": "金字塔式結構",
+      "feature9": "DA50+ 或 DR 30+",
+      "feature10": "自選目標頁面",
+      "feature11": "90% DoFollow, 10% NoFollow",
+      "feature12": "每篇文章及連結的完整報告"
+    }
+  },
+  "xiaohongshuu": {
+    "title": "服務範圍",
+    "step1Title": "小紅書新帳號營運",
+    "step1Description": "帳號設計包裝+帳號維護加深品牌形象風格，建立獨特賣點",
+    "step2Title": "内容營運",
+    "step2Description": "筆記內容設計以及製作通過好內容完成用戶種草",
+    "step3Title": "關鍵字&搜索優化",
+    "step3Description": "行業、长尾精准關鍵字維護獲得自然流量，擴大品牌影響力",
+    "step4Title": "種草達人&筆記合作",
+    "step4Description": "分析對應用戶畫像精準營銷直接轉換更多客戶成交",
+    "step5Title": "小紅書最新商家資訊同步",
+    "step5Description": "分享最新小紅書熱點和案例挖掘內容廣告新賣點"
   }
 }

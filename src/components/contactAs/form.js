@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next'
 import emailjs from '@emailjs/browser';
 import useContactForm from '../../hook/useContactForm';
 
@@ -6,6 +7,7 @@ const Form = () => {
     const form = useRef();
     const contactForm = useContactForm();
     const [status, setStatus] = useState('');
+    const { t } = useTranslation()
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -52,7 +54,7 @@ const Form = () => {
                                     placeholder={fieldsPhone}
                                     required />
                             </label>
-                            <label className="block" for="emails">
+                            <label className="block" htmlFor="emails">
                                 <input
                                     name="user_email"
                                     aria-label="Email"
@@ -116,7 +118,7 @@ const Form = () => {
                             {status && renderAlert()}
                             <input
                                 type="submit"
-                                value="立即報價"
+                                value={t('buttons.quoteNow')}
                                 className="cursor-pointer border rounded-full border-black text-black px-7 py-1.5 font-black text-xl hover:bg-amber-400 active:bg-amber-500" />
                         </form>
                     </div>

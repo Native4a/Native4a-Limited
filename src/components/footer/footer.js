@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useLocation } from '@reach/router'
+import { useTranslation } from 'react-i18next'
 import Container from '../container'
 import * as styles from '../../styles/footer.module.css'
 import useFooter from '../../hook/useFooter'
@@ -13,6 +14,7 @@ const Footer = () => {
   const footer = useFooter()
   const location = useLocation()
   const pathname = location.pathname
+  const { t } = useTranslation()
 
   // ❗在這裡設定你不想顯示 Icon 的路徑
   const hiddenPaths = ['/seo/', '/backlinks/']
@@ -43,18 +45,19 @@ const Footer = () => {
         } = item
 
         const currentYear = new Date().getFullYear()
+        const copyrightText = t('footer.copyright', { year: currentYear })
 
         return (
           <Container as="footer" key={index}>
             <section className={styles.container}>
               <div className="grid grid-rows-2 items-center my-10 md:my-20">
-                <h2 className="text-center text-2xl md:text-4xl">Native 讓你站在巨人肩上。</h2>
+                <h2 className="text-center text-2xl md:text-4xl">{t('footer.title')}</h2>
                 <p className="text-center text-xl md:text-2xl">
-                  歡迎直接Whatsapp查詢
+                  {t('footer.subtitle')}
                 </p>
                 <div className="rounded-t-lg overflow-hidden text-center p-0 md:p-4 mt-3">
                   <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85264602996">
-                    {buttonName}
+                    {t('footer.cta')}
                   </Whatsapp>
                 </div>
               </div>
@@ -70,8 +73,7 @@ const Footer = () => {
                 </div>
                 <div className="flex text-[10px] md:text-base items-center text-center">
                   <p>
-                    Copyright © 2016 - {currentYear} Native4a . All Rights
-                    Reserved. Privacy-Policy｜Terms of Business
+                    {copyrightText} Privacy-Policy｜Terms of Business
                   </p>
                 </div>
                 <div>

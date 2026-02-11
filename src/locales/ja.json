@@ -42,5 +42,134 @@
     "serviceScope": "サービス範囲",
     "popularMethods": "デジタルマーケティングの6つの人気的な方法",
     "customerTestimonial": "お客様が私たちの成長を証言"
+  },
+  "footer": {
+    "title": "Native は巨人の肩に立つお手伝いをします。",
+    "subtitle": "お気軽にWhatsAppでお問い合わせください",
+    "cta": "お問い合わせ",
+    "copyright": "Copyright © 2016 - {year} Native4a . All Rights Reserved.",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfBusiness": "利用規約"
+  },
+  "awards": {
+    "title": "「native4a」ブランド - 受賞した広告代理店",
+    "annualAwards": "年間受賞",
+    "mediaFeatures": "メディア掲載",
+    "award01Alt": "Native4A 受賞証 01",
+    "award02Alt": "Native4A 受賞証 02",
+    "media01Alt": "Native4A メディア掲載 01",
+    "media02Alt": "Native4A メディア掲載 02"
+  },
+  "clientLogos": {
+    "title": "さらに提携クライアント"
+  },
+  "buttons": {
+    "watchVideo": "動画を見る",
+    "quoteNow": "今すぐ見積もり",
+    "shopping": "ショッピング",
+    "submit": "送信",
+    "learnMore": "もっと詳しく"
+  },
+  "contactForm": {
+    "firstName": "名 (First Name)",
+    "lastName": "姓 (Last Name)",
+    "contactNumber": "連絡先",
+    "questions": "以下の質問にお答えください：",
+    "question1": "1. 貴社のウェブサイトまたはInstagram？",
+    "question2": "2. 貴社の業界は？",
+    "question3": "3. 現在、どのような方法で顧客を獲得していますか？",
+    "question4": "4. 現在のお問い合わせはビジネスに容易に転換されますか？",
+    "question5": "5. お問い合わせ後、リマーケティングを行いますか？",
+    "question6": "6. 顧客が成約するまでに平均何回のお問い合わせが必要ですか？",
+    "yes": "はい",
+    "no": "いいえ",
+    "selectOption": "選択："
+  },
+  "iconList": {
+    "email": "メール",
+    "phone": "電話",
+    "hongKongAddress": "香港住所",
+    "hongKongAddressValue": "香港新界葵涌葵昌路26-38号 豪華工業ビル6階",
+    "shenzhenAddress": "深圳住所",
+    "shenzhenAddressValue": "深圳市福田区泰然七路蒼松ビル19階"
+  },
+  "pricing": {
+    "pricingOne": {
+      "title": "中程度の競争業界",
+      "price": "5500",
+      "feature1": "あなたのウェブサイトへの50の最上位バックリンク",
+      "feature2": "50個の独立した中国語ウェブサイト",
+      "feature3": "完全な繁体字中国語WordPressブログ記事",
+      "feature4": "顧客業界関連のコンテンツ記事",
+      "feature5": "複数のキーワードとリンクが利用可能",
+      "feature6": "各記事とリンクは1つのクライアントのみに属する",
+      "feature7": "独自のウェブサイト、消失しない、長期有効",
+      "feature8": "ピラミッド構造",
+      "feature9": "DA50+またはDR30+",
+      "feature10": "ターゲットページを選択",
+      "feature11": "90% DoFollow、10% NoFollow",
+      "feature12": "各記事とリンクの完全なレポート"
+    },
+    "pricingTwo": {
+      "title": "高競争業界",
+      "price": "7500",
+      "feature1": "あなたのウェブサイトへの100の最上位バックリンク",
+      "feature2": "100個の独立した中国語ウェブサイト",
+      "feature3": "完全な繁体字中国語WordPressブログ記事",
+      "feature4": "顧客業界関連のコンテンツ記事",
+      "feature5": "複数のキーワードとリンクが利用可能",
+      "feature6": "各記事とリンクは1つのクライアントのみに属する",
+      "feature7": "独自のウェブサイト、消失しない、長期有効",
+      "feature8": "ピラミッド構造",
+      "feature9": "DA50+またはDR30+",
+      "feature10": "ターゲットページを選択",
+      "feature11": "90% DoFollow、10% NoFollow",
+      "feature12": "各記事とリンクの完全なレポート"
+    },
+    "pricingThree": {
+      "title": "キングパッケージ",
+      "price": "10000",
+      "feature1": "あなたのウェブサイトへの150の最上位バックリンク",
+      "feature2": "100個の独立した中国語ウェブサイト",
+      "feature3": "完全な繁体字中国語WordPressブログ記事",
+      "feature4": "顧客業界関連のコンテンツ記事",
+      "feature5": "複数のキーワードとリンクが利用可能",
+      "feature6": "各記事とリンクは1つのクライアントのみに属する",
+      "feature7": "独自のウェブサイト、消失しない、長期有効",
+      "feature8": "ピラミッド構造",
+      "feature9": "DA50+またはDR30+",
+      "feature10": "ターゲットページを選択",
+      "feature11": "90% DoFollow、10% NoFollow",
+      "feature12": "各記事とリンクの完全なレポート"
+    },
+    "pricingFour": {
+      "title": "プレミアムパッケージ",
+      "price": "12000",
+      "feature1": "あなたのウェブサイトへの200の最上位バックリンク",
+      "feature2": "100個の独立した中国語ウェブサイト",
+      "feature3": "完全な繁体字中国語WordPressブログ記事",
+      "feature4": "顧客業界関連のコンテンツ記事",
+      "feature5": "複数のキーワードとリンクが利用可能",
+      "feature6": "各記事とリンクは1つのクライアントのみに属する",
+      "feature7": "独自のウェブサイト、消失しない、長期有効",
+      "feature8": "ピラミッド構造",
+      "feature9": "DA50+またはDR30+",
+      "feature10": "ターゲットページを選択",
+      "feature11": "90% DoFollow、10% NoFollow",
+      "feature12": "各記事とリンクの完全なレポート"
+    }
+  },
+  "xiaohongshuu": {
+    "title": "サービス範囲",
+    "step1Title": "小紅書新規アカウント運営",
+    "step1Description": "アカウント設計パッケージ+アカウント保守により、ブランドイメージを深掘りし、ユニークなセリングポイントを確立",
+    "step2Title": "コンテンツ運営",
+    "step2Description": "ノートコンテンツの設計と製作により、良質なコンテンツでユーザーのニーズを満たす",
+    "step3Title": "キーワード&検索最適化",
+    "step3Description": "業界および長尾キーワード維持によるオーガニックトラフィック獲得とブランド影響力の拡大",
+    "step4Title": "インフルエンサーコラボレーション＆ノートパートナーシップ",
+    "step4Description": "ユーザーペルソナを分析し、精密マーケティングでより多くの顧客を直接転換",
+    "step5Title": "最新小紅書マーチャント情報同期",
+    "step5Description": "最新の小紅書トレンドとケーススタディを共有し、新しい広告のセリングポイントを発掘"
   }
 }

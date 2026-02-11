@@ -1,7 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { MdCheck } from 'react-icons/md'
-import { navigate } from 'gatsby'
 
 interface LanguageSwitcherProps {
   className?: string
@@ -28,16 +27,6 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     i18n.changeLanguage(langCode)
     if (typeof window !== 'undefined') {
       localStorage.setItem('language', langCode)
-      
-      // Get current path
-      const currentPath = window.location.pathname
-      
-      // Extract path without language prefix
-      const pathWithoutLang = currentPath.replace(/^\/(en|ja|zh)/, '') || '/'
-      
-      // Navigate to new language path
-      const newPath = langCode === 'zh' ? pathWithoutLang : `/${langCode}${pathWithoutLang}`
-      navigate(newPath)
     }
     setIsHovered(false)
     setIsOpen(false)
