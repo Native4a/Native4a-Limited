@@ -32,55 +32,41 @@ const Navprops = () => {
   const menu = [
     {
       slug: 'seo',
-      urlTitle: 'SEO',
-      urlTitleEn: 'SEO',
-      urlTitleJa: 'SEO',
+      translationKey: 'nav.seo',
       submenu: [
-        { slug: 'backlinks', title: 'Backlinks', titleEn: 'Backlinks', titleJa: 'バックリンク' },
-        { slug: 'seo', title: 'SEO', titleEn: 'SEO', titleJa: 'SEO' },
-        { slug: 'seo-smart-kit', title: '肥仔計算機', titleEn: 'Smart SEO Calculator', titleJa: 'SEO計算機' },
+        { slug: 'backlinks', translationKey: 'nav.backlinks', submenu: 'backlinks' },
+        { slug: 'seo', translationKey: 'nav.seo', submenu: 'seo' },
+        { slug: 'seo-smart-kit', titleZh: '肥仔計算機', titleEn: 'Smart SEO Calculator', titleJa: 'SEO計算機', submenu: 'seo-smart-kit' },
       ],
     },
     {
       slug: 'video',
-      urlTitle: '影片製作',
-      urlTitleEn: 'Video Production',
-      urlTitleJa: '動画制作',
+      translationKey: 'nav.videoProduction',
       submenu: null,
     },
     {
       slug: 'smm-ads',
-      urlTitle: '社交媒體廣告',
-      urlTitleEn: 'Social Media Ads',
-      urlTitleJa: 'ソーシャルメディア広告',
+      translationKey: 'nav.socialMediaAds',
       submenu: null,
     },
     {
       slug: 'web-design',
-      urlTitle: '網站設計',
-      urlTitleEn: 'Web Design',
-      urlTitleJa: 'ウェブデザイン',
+      translationKey: 'nav.webDesign',
       submenu: null,
     },
     {
       slug: 'xiaohongshu',
-      urlTitle: '小紅書',
-      urlTitleEn: 'Xiaohongshu',
-      urlTitleJa: '小紅書',
+      translationKey: 'nav.xiaohongshu',
       submenu: null,
     },
     {
       slug: 'contact-us',
-      urlTitle: '聯絡我們',
-      urlTitleEn: 'Contact Us',
-      urlTitleJa: 'お問い合わせ',
+      translationKey: 'nav.contactUs',
       submenu: null,
     },
     {
       slug: 'Blog',
-      urlTitle: 'Blog',
-      urlTitleEn: 'Blog',
-      urlTitleJa: 'ブログ',
+      translationKey: 'nav.blog',
       submenu: null,
     }
     // 在這裡繼續加你的菜單項目...
@@ -98,10 +84,10 @@ const Navprops = () => {
       <div className={`${styles.activeLink} contents`} style={{ position: 'relative' }}>
         <ul className="rounded-3xl bg-white contents">
           {menu.map((item, index) => {
-            const { slug, urlTitle, urlTitleEn, urlTitleJa, submenu } = item
+            const { slug, translationKey, submenu } = item
             const localizedSlug = getLocalizedPath(slug)
-            // Get the correct title based on current language
-            const displayTitle = language === 'en' ? urlTitleEn : language === 'ja' ? urlTitleJa : urlTitle
+            // Get the display title from translation function
+            const displayTitle = t(translationKey)
 
             return (
               <li className={clsx('relative group', styles.container)} key={index}>
@@ -134,7 +120,7 @@ const Navprops = () => {
                     }}
                   >
                     {submenu.map((subItem, subIndex) => {
-                      const subDisplayTitle = language === 'en' ? subItem.titleEn : language === 'ja' ? subItem.titleJa : subItem.title
+                      const subDisplayTitle = subItem.translationKey ? t(subItem.translationKey) : (language === 'en' ? subItem.titleEn : language === 'ja' ? subItem.titleJa : subItem.titleZh)
                       return (
                         <Link
                           key={subIndex}
