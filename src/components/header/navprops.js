@@ -8,84 +8,66 @@ import * as styles from '../../styles/navprops.module.css'
 import clsx from 'clsx'
 
 const Navprops = () => {
-  const { t } = useTranslation()
-  const [language, setLanguage] = useState('zh')
+  const { t, i18n } = useTranslation()
+  const [menuData, setMenuData] = useState([
+    {
+      slug: 'seo',
+      translationKey: 'nav.seo',
+      submenu: [
+        { slug: 'backlinks', translationKey: 'nav.backlinks' },
+        { slug: 'seo', translationKey: 'nav.seo' },
+        { slug: 'seo-smart-kit', titleZh: '肥仔計算機', titleEn: 'Smart SEO Calculator', titleJa: 'SEO計算機' },
+      ],
+    },
+    {
+      slug: 'video',
+      translationKey: 'nav.videoProduction',
+      submenu: null,
+    },
+    {
+      slug: 'smm-ads',
+      translationKey: 'nav.socialMediaAds',
+      submenu: null,
+    },
+    {
+      slug: 'web-design',
+      translationKey: 'nav.webDesign',
+      submenu: null,
+    },
+    {
+      slug: 'xiaohongshu',
+      translationKey: 'nav.xiaohongshu',
+      submenu: null,
+    },
+    {
+      slug: 'contact-us',
+      translationKey: 'nav.contactUs',
+      submenu: null,
+    },
+    {
+      slug: 'Blog',
+      translationKey: 'nav.blog',
+      submenu: null,
+    }
+  ])
 
-  // Extract language from URL on mount
-  useEffect(() => {
+  // Extract language from URL
+  const getLanguageFromUrl = () => {
     if (typeof window !== 'undefined') {
       const currentPath = window.location.pathname
       const langMatch = currentPath.match(/^\/(en|ja|zh)(\/|$)/)
-      const urlLanguage = langMatch ? langMatch[1] : 'zh'
-      setLanguage(urlLanguage)
+      return langMatch ? langMatch[1] : 'zh'
     }
-  }, [])
+    return 'zh'
+  }
 
   const getLocalizedPath = (path) => {
+    const language = i18n.language
     if (language === 'zh') {
       return path === '/' ? '/' : `/${path}`
     }
     return path === '/' ? `/${language}/` : `/${language}/${path}`
   }
-
-  // === 在這裡直接定義你的菜單資料 ===
-  const menu = [
-    {
-      slug: 'seo',
-      urlTitle: 'SEO',
-      urlTitleEn: 'SEO',
-      urlTitleJa: 'SEO',
-      submenu: [
-        { slug: 'backlinks', title: 'Backlinks', titleEn: 'Backlinks', titleJa: 'バックリンク' },
-        { slug: 'seo', title: 'SEO', titleEn: 'SEO', titleJa: 'SEO' },
-        { slug: 'seo-smart-kit', title: '肥仔計算機', titleEn: 'Smart SEO Calculator', titleJa: 'SEO計算機' },
-      ],
-    },
-    {
-      slug: 'video',
-      urlTitle: '影片製作',
-      urlTitleEn: 'Video Production',
-      urlTitleJa: '動画制作',
-      submenu: null,
-    },
-    {
-      slug: 'smm-ads',
-      urlTitle: '社交媒體廣告',
-      urlTitleEn: 'Social Media Ads',
-      urlTitleJa: 'ソーシャルメディア広告',
-      submenu: null,
-    },
-    {
-      slug: 'web-design',
-      urlTitle: '網站設計',
-      urlTitleEn: 'Web Design',
-      urlTitleJa: 'ウェブデザイン',
-      submenu: null,
-    },
-    {
-      slug: 'xiaohongshu',
-      urlTitle: '小紅書',
-      urlTitleEn: 'Xiaohongshu',
-      urlTitleJa: '小紅書',
-      submenu: null,
-    },
-    {
-      slug: 'contact-us',
-      urlTitle: '聯絡我們',
-      urlTitleEn: 'Contact Us',
-      urlTitleJa: 'お問い合わせ',
-      submenu: null,
-    },
-    {
-      slug: 'Blog',
-      urlTitle: 'Blog',
-      urlTitleEn: 'Blog',
-      urlTitleJa: 'ブログ',
-      submenu: null,
-    }
-    // 在這裡繼續加你的菜單項目...
-  ]
-  // ======================================
 
   return (
     <>
@@ -97,11 +79,11 @@ const Navprops = () => {
       `}</style>
       <div className={`${styles.activeLink} contents`} style={{ position: 'relative' }}>
         <ul className="rounded-3xl bg-white contents">
-          {menu.map((item, index) => {
-            const { slug, urlTitle, urlTitleEn, urlTitleJa, submenu } = item
+          {menuData.map((item, index) => {
+            const { slug, translationKey, submenu } = item
             const localizedSlug = getLocalizedPath(slug)
-            // Get the correct title based on current language
-            const displayTitle = language === 'en' ? urlTitleEn : language === 'ja' ? urlTitleJa : urlTitle
+            // Get the display title from translation function
+            const displayTitle = t(translationKey)
 
             return (
               <li className={clsx('relative group', styles.container)} key={index}>
@@ -134,7 +116,8 @@ const Navprops = () => {
                     }}
                   >
                     {submenu.map((subItem, subIndex) => {
-                      const subDisplayTitle = language === 'en' ? subItem.titleEn : language === 'ja' ? subItem.titleJa : subItem.title
+                      // Get sub-item title from translation key or fallback to manual titles
+                      const subDisplayTitle = subItem.translationKey ? t(subItem.translationKey) : (i18n.language === 'en' ? subItem.titleEn : i18n.language === 'ja' ? subItem.titleJa : subItem.titleZh)
                       return (
                         <Link
                           key={subIndex}
