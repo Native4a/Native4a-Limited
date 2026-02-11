@@ -50,5 +50,14 @@
     "copyright": "Copyright © 2016 - {year} Native4a . All Rights Reserved.",
     "privacyPolicy": "隱私政策",
     "termsOfBusiness": "商業條款"
+  },
+  "awards": {
+    "title": "「native4a」品牌 - 獲獎的廣告公司",
+    "annualAwards": "年度獎項",
+    "mediaFeatures": "媒體報導",
+    "award01Alt": "Native4A 獲獎證書 01",
+    "award02Alt": "Native4A 獲獎證書 02",
+    "media01Alt": "Native4A 媒體報導 01",
+    "media02Alt": "Native4A 媒體報導 02"
   }
 }

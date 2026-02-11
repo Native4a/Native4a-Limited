@@ -50,5 +50,14 @@
     "copyright": "Copyright © 2016 - {year} Native4a . All Rights Reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfBusiness": "Terms of Business"
+  },
+  "awards": {
+    "title": "\"native4a\" Brand - Award-Winning Advertising Agency",
+    "annualAwards": "Annual Awards",
+    "mediaFeatures": "Media Features",
+    "award01Alt": "Native4A Award Certificate 01",
+    "award02Alt": "Native4A Award Certificate 02",
+    "media01Alt": "Native4A Media Feature 01",
+    "media02Alt": "Native4A Media Feature 02"
   }
 }

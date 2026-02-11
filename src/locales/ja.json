@@ -50,5 +50,14 @@
     "copyright": "Copyright © 2016 - {year} Native4a . All Rights Reserved.",
     "privacyPolicy": "プライバシーポリシー",
     "termsOfBusiness": "利用規約"
+  },
+  "awards": {
+    "title": "「native4a」ブランド - 受賞した広告代理店",
+    "annualAwards": "年間受賞",
+    "mediaFeatures": "メディア掲載",
+    "award01Alt": "Native4A 受賞証 01",
+    "award02Alt": "Native4A 受賞証 02",
+    "media01Alt": "Native4A メディア掲載 01",
+    "media02Alt": "Native4A メディア掲載 02"
   }
 }
