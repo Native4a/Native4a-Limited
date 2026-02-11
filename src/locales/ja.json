@@ -165,7 +165,13 @@
       "feature12": "各記事とリンクの完全なレポート"
     }
   },
-  "xiaohongshuu": {
+  "contactAs": {
+    "title": "お問い合わせ",
+    "aboutNative": "NATIVE4Aについて",
+    "exclusiveBacklink": "独占的な繁体字中国語バックリンク",
+    "webDesignDevelopment": "ウェブデザイン・開発",
+    "socialMediaAds": "ソーシャルメディア広告"
+  },
     "title": "サービス範囲",
     "step1Title": "小紅書新規アカウント運営",
     "step1Description": "アカウント設計パッケージ+アカウント保守により、ブランドイメージを深掘りし、ユニークなセリングポイントを確立",

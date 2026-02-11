@@ -165,7 +165,13 @@
       "feature12": "每篇文章及連結的完整報告"
     }
   },
-  "xiaohongshuu": {
+  "contactAs": {
+    "title": "聯絡我們",
+    "aboutNative": "關於NATIVE4A",
+    "exclusiveBacklink": "獨家繁中BACKLINK",
+    "webDesignDevelopment": "網站設計及開發",
+    "socialMediaAds": "社交媒體廣告"
+  },
     "title": "服務範圍",
     "step1Title": "小紅書新帳號營運",
     "step1Description": "帳號設計包裝+帳號維護加深品牌形象風格，建立獨特賣點",

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import IconList from './iconList'
 import HyperLink from './hyperLink'
 // import Form from './form'  // 如果之後要用表單再開啟
@@ -6,6 +7,8 @@ import * as styles from './style.module.css'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 
 const ContactForm = () => {
+  const { t } = useTranslation()
+  
   return (
     <section className={styles.section6_wrap} id="contactAs">
       <div className={styles.container}>
@@ -17,7 +20,7 @@ const ContactForm = () => {
                 <span className="mr-3 text-gray-800">
                   <FaSquare />
                 </span>
-                <b>聯絡我們</b>
+                <b>{t('contactAs.title')}</b>
               </h2>
 
               <IconList />
