@@ -66,7 +66,7 @@ const Navprops = () => {
       slug: 'xiaohongshu',
       urlTitle: '小紅書',
       urlTitleEn: 'Xiaohongshu',
-      urlTitleJa: 'Xiaohongshu',
+      urlTitleJa: '小紅書',
       submenu: null,
     },
     {
@@ -136,24 +136,24 @@ const Navprops = () => {
                     {submenu.map((subItem, subIndex) => {
                       const subDisplayTitle = language === 'en' ? subItem.titleEn : language === 'ja' ? subItem.titleJa : subItem.title
                       return (
-                      <Link
-                        key={subIndex}
-                        to={getLocalizedPath(subItem.slug)}
-                        className="block px-5 py-2.5 text-sm text-gray-700 whitespace-nowrap transition-all duration-200 hover:text-yellow-600 hover:bg-yellow-50"
-                        style={{
-                          borderRadius: '8px',
-                          margin: '0 6px',
-                        }}
-                        activeStyle={{
-                          color: '#ca8a04',
-                          backgroundColor: '#fef9c3',
-                          fontWeight: '600',
-                        }}
-                        partiallyActive={true}
-                      >
-                        {subDisplayTitle}
-                      </Link>
-                    )
+                        <Link
+                          key={subIndex}
+                          to={getLocalizedPath(subItem.slug)}
+                          className="block px-5 py-2.5 text-sm text-gray-700 whitespace-nowrap transition-all duration-200 hover:text-yellow-600 hover:bg-yellow-50"
+                          style={{
+                            borderRadius: '8px',
+                            margin: '0 6px',
+                          }}
+                          activeStyle={{
+                            color: '#ca8a04',
+                            backgroundColor: '#fef9c3',
+                            fontWeight: '600',
+                          }}
+                          partiallyActive={true}
+                        >
+                          {subDisplayTitle}
+                        </Link>
+                      )
                     })}
                   </ul>
                 )}
