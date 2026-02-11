@@ -1,21 +1,19 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import useAwards from '../../hook/useAwards'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 import * as tabstyles from '../../styles/tabs.module.css'
 import * as styles from './style.module.css'
 
-import Award01 from '../../../img/native4aAward01.webp'
-import Award02 from '../../../img/native4aAward02.webp'
-import Medaia01 from '../../../img/native4aMedia01.png'
-import Medaia02 from '../../../img/native4aMedia02.png'
+import Award01 from '../../img/native4aAward01.webp'
+import Award02 from '../../img/native4aAward02.webp'
+import Medaia01 from '../../img/native4aMedia01.png'
+import Medaia02 from '../../img/native4aMedia02.png'
 
 import Text from '../baseTools/text'
 
 const Awards = () => {
-  const awards = useAwards()
   const { t } = useTranslation()
 
   return (
