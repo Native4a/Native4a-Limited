@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
 import Navprops from './navprops'
 import { Sling as Hamburger } from 'hamburger-react'
 import { Link } from 'gatsby'
@@ -7,7 +6,6 @@ import Native_logo from '../../img/2023_native4a_logo.svg'
 import Whatsapp from '../baseTools/whatsapp'
 
 const Navigation = () => {
-  const { t } = useTranslation()
   const [isOpen, setOpen] = useState(false)
   const [navColor, setnavColor] = useState('transparent')
   const [navBoxShadow, setnavBoxShadow] = useState('none')
@@ -71,7 +69,7 @@ const Navigation = () => {
         {/* Mobile Right Section */}
         <div className="xl:hidden col-start-5 col-end-11 sm:col-end-12 flex items-center justify-end gap-2">
           <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85264602996">
-            {t('contact.whatsapp')}
+            WhatsApp查詢
           </Whatsapp>
         </div>
 

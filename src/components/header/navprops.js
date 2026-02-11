@@ -168,7 +168,7 @@ const Navprops = () => {
               className="text-white bg-yellow-400 hover:bg-yellow-500 transition-colors rounded-full px-6 py-2 font-semibold text-base md:text-md xl:text-lg shadow-md hover:shadow-lg flex items-center gap-2"
             >
               <TbShoppingCart className="text-xl" />
-              <span>{t('buttons.shopping')}</span>
+              <span>購物</span>
             </Button>
 
             {/* 語言切換器 - 桌面版 (XL以上) */}
@@ -190,7 +190,7 @@ const Navprops = () => {
               className="flex-1 text-white bg-yellow-400 hover:bg-yellow-500 transition-colors rounded-full px-4 py-2 font-semibold text-sm shadow-md hover:shadow-lg flex items-center justify-center gap-2"
             >
               <TbShoppingCart className="text-lg" />
-              <span>{t('buttons.shopping')}</span>
+              <span>購物</span>
             </Button>
             <div style={{ paddingLeft: '20px' }}>
               <LanguageSwitcher />
