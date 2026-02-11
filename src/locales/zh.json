@@ -42,5 +42,13 @@
     "serviceScope": "服務範圍",
     "popularMethods": "數碼營銷6種熱門方法",
     "customerTestimonial": "客戶見證我們成長"
+  },
+  "footer": {
+    "title": "Native 讓你站在巨人肩上。",
+    "subtitle": "歡迎直接Whatsapp查詢",
+    "cta": "立即查詢",
+    "copyright": "Copyright © 2016 - {year} Native4a . All Rights Reserved.",
+    "privacyPolicy": "隱私政策",
+    "termsOfBusiness": "商業條款"
   }
 }

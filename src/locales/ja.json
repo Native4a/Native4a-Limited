@@ -42,5 +42,13 @@
     "serviceScope": "サービス範囲",
     "popularMethods": "デジタルマーケティングの6つの人気的な方法",
     "customerTestimonial": "お客様が私たちの成長を証言"
+  },
+  "footer": {
+    "title": "Native は巨人の肩に立つお手伝いをします。",
+    "subtitle": "お気軽にWhatsAppでお問い合わせください",
+    "cta": "お問い合わせ",
+    "copyright": "Copyright © 2016 - {year} Native4a . All Rights Reserved.",
+    "privacyPolicy": "プライバシーポリシー",
+    "termsOfBusiness": "利用規約"
   }
 }
