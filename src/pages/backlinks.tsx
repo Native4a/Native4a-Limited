@@ -2,18 +2,14 @@
 import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 import get from 'lodash/get'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import CountUp from 'react-countup'
 import { useTranslation } from 'react-i18next'
 
 //components here//
 import BacklinkLayout from '../components/backlinkLayout'
 import Seo from '../components/seo'
-import AboutAs from '../components/aboutAs'
 import ContactForm from '../components/contactAs'
-import ClientLogos from '../components/clientLogos'
 import Button from '../components/baseTools/button'
-import Icon from '../components/baseTools/Icon'
 import BacklinksSlick from '../components/slickSlider/greenSlider/backlinksSlider'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 import Anchor from '../components/baseTools/Anchor/index.js'
@@ -21,29 +17,9 @@ import EngBacklinksEvaluation from '../components/backlinksEvaluation/eng'
 import ChiBacklinksEvaluation from '../components/backlinksEvaluation/chi'
 import TwelveDifferent from '../components/TwelveDifferent'
 import Section from '../components/baseTools/Section'
-import Img from '../components/baseTools/Image'
 import Text from '../components/baseTools/text'
 import Awards from '../components/awards'
 import Grid from '../components/baseTools/Grid/index.js'
-import whatsApp_icon from '../components/baseTools/Icon/img/whatsapp.svg'
-//import ArticlePreview from '../components/article-preview'
-
-//CSS here//
-import 'reactjs-popup/dist/index.css'
-import * as styles from '../styles/backlinks.module.css'
-
-//image here//
-import BacklinkCover from '../img/Native_backlink 2.png'
-import GoogleRanking from '../img/SEO-google-排名因素.png'
-import John from '../img/john.png'
-import MeetingRoom from '../img/meeting-room.png'
-import Native_backlink_Rankin01 from '../img/Interior Design Ranking.png'
-import RankingFactors from '../components/RankingFactors'
-import BacklinkLanding from '../img/native出品質素.jpeg'
-import c2 from '../img/c2.jpeg'
-import c3 from '../img/c3.jpeg'
-import SeoBacklinksDataA from '../img/繁中Backlinks真實數據A.jpeg'
-import SeoBacklinksDataB from '../img/繁中Backlinks真實數據B.jpeg'
 
 interface BacklinksPageData {
   metaTitle: string
@@ -66,8 +42,6 @@ interface BacklinksPageProps extends PageProps {
 
 const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
   const { t } = useTranslation()
-  const FaSquarSstyle = { color: '#70a566' }
-  const blacklinkPage = get(data, 'allContentfulBacklinksPage.nodes[0]', {})
 
   return (
     <BacklinkLayout location={location}>
@@ -196,8 +170,7 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
               {t('backlinks.btnChineseBacklinksCases')}
             </Anchor>
           </div>
-          </div>
-        </div>
+        </section>
         <section
     className={`${styles.sec7} lg:p-20 mx-auto bg-bottom lg:bg-center`}
   >
@@ -245,6 +218,7 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
         className1="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#FAAB00] p-5"
         className2="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center"
       />
+    </div>
     </div>
   </section>
         <section className="mx-auto" id="Backlink_ref">
