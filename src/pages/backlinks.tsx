@@ -196,164 +196,8 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
               {t('backlinks.btnChineseBacklinksCases')}
             </Anchor>
           </div>
-        </div>
-      </section>
-      {/*<section className={styles.sec_wrap}>
-            <div className={styles.container}>
-              <Partners />
-            </div>
-          </section>
-          <section className='bg-[#608A51] p-10'>
-          </section>*/}
-      <section className="w-full px-0 md:px-24 py-10 bg-[#F1F1F1]">
-        <div className="block rounded-lg p-0 md:p-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-12 items-center">
-            <div className="flex justify-center flex-col p-8 md:p-0">
-              <h2 className="flex text-2xl md:text-3xl ml-2 font-bold items-center leading-0 md:leading-10 pb-5">
-                <span>
-                  <FaSquare style={FaSquarSstyle} />
-                </span>
-                <b className="ml-3">{t('backlinks.section3Title')}</b>
-              </h2>
-              <img
-                src={GoogleRanking}
-                alt="GoogleRanking"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <RankingFactors />
           </div>
         </div>
-      </section>
-      <Section>
-        <img
-          src={BacklinkLanding}
-          alt="BacklinkLanding"
-          loading="lazy"
-          decoding="async"
-        />
-      </Section>
-      <Section>
-        <div className="container mx-auto py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="flex justify-center">
-              <img
-                src={SeoBacklinksDataA}
-                alt="SeoBacklinksDataA"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div className="flex justify-center">
-              <img
-                src={SeoBacklinksDataB}
-                alt="SeoBacklinksDataB"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          </div>
-        </div>
-      </Section>
-      <Section ContainerClass="flex justify-center mb-20">
-        <Button
-          linkto="https://nativeaaaa.com.hk/blog/native4a_backlinks_reference/"
-          className="bg-emerald-500 text-white rounded-full px-16 py-6 font-medium text-2xl md:text-md xl:text-6xl"
-        >
-          {t('backlinks.btnChineseBacklinksSample')}
-        </Button>
-      </Section>
-      <section className="p-10 lg:p-0 w-full bg-[#F1F1F1]">
-        <div className="block rounded-lg pt-24 pb-10 container mx-auto">
-          <div className="grid-cols-1 md:grid-cols-3 gap-12 items-center flex lg:grid flex-col-reverse">
-            <div className="flex justify-center second">
-              <img
-                src={BacklinkCover}
-                alt="BacklinkCover"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div className="flex justify-center col-span-2 first">
-              <div className="flex flex-col">
-                <div className="overflow-x-auto">
-                  <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8 items-center">
-                    <h2 className="text-3xl lg:text-4xl leading-normal font-extrabold mb-3">
-                      {t('backlinks.section5Title')}
-                    </h2>
-                    <p className="text-lg">
-                      {t('backlinks.section5Description')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-        <section className="lg:grid flex flex-col-reverse grid-cols-1 lg:grid-cols-6 bg-[#f1f1f1]">
-          <div className="flex justify-center text-6xl col-span-4 second">
-            <div className="grid lg:border-t-[40px] lg:border-[#608A51] content-evenly lg:p-10">
-              <div className="pt-10 px-10 lg:p-0 lg:px-0 ml-0 lg:ml-20 grid">
-                <h2 className="flex text-2xl lg:text-3xl ml-2 font-bold items-center leading-8 lg:leading-10 pb-5">
-                  <span>
-                    <FaSquare style={FaSquarSstyle} />
-                  </span>
-                  <b className="ml-3">
-                    {t('backlinks.section6Title')}
-                  </b>
-                </h2>
-              </div>
-            <div className="grid grid-cols-12 lg:grid-cols-6 gap-4">
-                <div className="col-start-1 col-end-13 lg:col-start-1 lg:col-end-12 justify-center ml-0 lg:ml-20 grid text-xl lg:text-2xl font-medium order-2 lg:order-1 px-10">
-                  {t('backlinks.johnMuellerQuote')}
-                </div>
-                <div className="lg:relative left-32 col-start-4 col-end-10 lg:col-start-2 lg:col-end-3 flex justify-center order-1 lg:order-2 pt-10">
-                  <img
-                    src={John}
-                    className="rounded-full shadow-md"
-                    alt="John"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="lg:relative left-36 col-start-1 col-end-13 lg:col-start-3 lg:col-end-13 flex justify-center col-span-5 order-3 pt-10">
-                  <div className="rounded-3xl shadow-[0_3px_5px_rgba(0,0,0,0.25)] justify-center grid backdrop-blur-md bg-white/50 col-span-5">
-                    <p className="grid text-2xl font-bold items-center p-8">
-                      "{t('backlinks.johnMuellerText')}"
-                    </p>
-                  </div>
-                </div>
-              </div>
-                <div className="lg:relative left-32 col-start-4 col-end-10 lg:col-start-2 lg:col-end-3 flex justify-center order-1 lg:order-2 pt-10">
-                  <img
-                    src={John}
-                    className="rounded-full shadow-md"
-                    alt="John"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="lg:relative left-36 col-start-1 col-end-13 lg:col-start-3 lg:col-end-13 flex justify-center col-span-5 order-3 pt-10">
-                  <div className="rounded-3xl shadow-[0_3px_5px_rgba(0,0,0,0.25)] justify-center grid backdrop-blur-md bg-white/50 col-span-5">
-                    <p className="grid text-2xl font-bold items-center p-8">
-                      ”有時候頁面上的連結可以提高頁面的質量，但我認為這是一種你不希望看到的人為因素，只因為頁面上有��結並不意味著它一定是好的。�����
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-2 first">
-            <img
-              src={MeetingRoom}
-              alt="meeting room"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </section>
         <section
     className={`${styles.sec7} lg:p-20 mx-auto bg-bottom lg:bg-center`}
   >
@@ -388,10 +232,7 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
             {t('backlinks.section4BottomTitle')}
           </div>
         </div>
-      </div>
-
-      </div>
-      <EngBacklinksEvaluation
+        <EngBacklinksEvaluation
         className1="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#3A7DFF] p-5"
         className2="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/70 text-center"
       />
@@ -403,9 +244,9 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
       <ChiBacklinksEvaluation
         className1="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#FAAB00] p-5"
         className2="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center"
-        />
-      </div>
-    </section>
+      />
+    </div>
+  </section>
         <section className="mx-auto" id="Backlink_ref">
           <div className="bg-[#70A665] grid justify-center">
             <div className="flex justify-center relative top-10 rounded-3xl p-6 items-center backdrop-blur-md text-white text-3xl text-center font-semibold bg-[#FAAB00] z-10">
@@ -594,7 +435,7 @@ const BacklinksIndex: React.FC<BacklinksPageProps> = ({ location, data }) => {
         <section className={styles.backlinksSpanSquare}>
           <ContactForm />
         </section>
-      </BacklinkLayout >
+      </BacklinkLayout>
     )
 }
 
