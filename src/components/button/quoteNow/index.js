@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react"
+import { useTranslation } from 'react-i18next'
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 
 const QuoteNow = () => {
-    const quoteButton = "立即報價"
+    const { t } = useTranslation()
     const [quoteBorder, setquoteBorder] = useState("none")
     const [mobileQuoteBorder, setmobileQuoteBorder] = useState("1px solid #000")
     const listenScrollEvent = () => {
@@ -21,12 +22,12 @@ const QuoteNow = () => {
             <button className="xl:inline hidden rounded-full bg-white text-black px-7 py-1.5 font-black text-base md:text-md xl:text-xl" style={{
                 border: quoteBorder
             }}>
-                {quoteButton}
+                {t('buttons.quoteNow')}
             </button>
             <button className="inline lg:hidden rounded-full bg-white text-black px-7 py-1.5 font-black text-base md:text-md xl:text-xl" style={{
                 border: mobileQuoteBorder
             }}>
-                {quoteButton}
+                {t('buttons.quoteNow')}
             </button>
         </AnchorLink>
     )

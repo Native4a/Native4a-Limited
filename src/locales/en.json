@@ -62,5 +62,114 @@
   },
   "clientLogos": {
     "title": "More Partnering Clients"
+  },
+  "buttons": {
+    "watchVideo": "Watch Video",
+    "quoteNow": "Quote Now",
+    "shopping": "Shopping",
+    "submit": "Submit",
+    "learnMore": "Learn More"
+  },
+  "contactForm": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "contactNumber": "Contact Number",
+    "questions": "Please answer the following questions:",
+    "question1": "1. Your company website or Instagram?",
+    "question2": "2. What is your industry?",
+    "question3": "3. How do you currently acquire customers?",
+    "question4": "4. Are your current inquiries easily converted to business?",
+    "question5": "5. Will you perform remarketing after receiving inquiries?",
+    "question6": "6. How many inquiries does it take for your customers to close?",
+    "yes": "Yes",
+    "no": "No",
+    "selectOption": "Select:"
+  },
+  "iconList": {
+    "email": "Email",
+    "phone": "Phone",
+    "hongKongAddress": "Hong Kong Address",
+    "hongKongAddressValue": "6F, Hao Hua Industrial Building, No. 26-38 Kwai Cheong Road, Kwai Chung, New Territories",
+    "shenzhenAddress": "Shenzhen Address",
+    "shenzhenAddressValue": "19F, Cang Song Building, Tairan 7th Road, Futian District, Shenzhen"
+  },
+  "pricing": {
+    "pricingOne": {
+      "title": "Medium Competition Industry",
+      "price": "5500",
+      "feature1": "50 Top-tier Backlinks to Your Website",
+      "feature2": "50 Independent Chinese Websites",
+      "feature3": "Full Traditional Chinese WordPress Blog Articles",
+      "feature4": "Industry-Related Content Articles for Clients",
+      "feature5": "Multiple Keywords and Links Available",
+      "feature6": "Each Article and Link Belongs to Only One Client",
+      "feature7": "Own Websites, Won't Disappear, Long-term Effective",
+      "feature8": "Pyramid Structure",
+      "feature9": "DA50+ or DR 30+",
+      "feature10": "Choose Your Target Pages",
+      "feature11": "90% DoFollow, 10% NoFollow",
+      "feature12": "Complete Reports for Each Article and Link"
+    },
+    "pricingTwo": {
+      "title": "High Competition Industry",
+      "price": "7500",
+      "feature1": "100 Top-tier Backlinks to Your Website",
+      "feature2": "100 Independent Chinese Websites",
+      "feature3": "Full Traditional Chinese WordPress Blog Articles",
+      "feature4": "Industry-Related Content Articles for Clients",
+      "feature5": "Multiple Keywords and Links Available",
+      "feature6": "Each Article and Link Belongs to Only One Client",
+      "feature7": "Own Websites, Won't Disappear, Long-term Effective",
+      "feature8": "Pyramid Structure",
+      "feature9": "DA50+ or DR 30+",
+      "feature10": "Choose Your Target Pages",
+      "feature11": "90% DoFollow, 10% NoFollow",
+      "feature12": "Complete Reports for Each Article and Link"
+    },
+    "pricingThree": {
+      "title": "King Package",
+      "price": "10000",
+      "feature1": "150 Top-tier Backlinks to Your Website",
+      "feature2": "100 Independent Chinese Websites",
+      "feature3": "Full Traditional Chinese WordPress Blog Articles",
+      "feature4": "Industry-Related Content Articles for Clients",
+      "feature5": "Multiple Keywords and Links Available",
+      "feature6": "Each Article and Link Belongs to Only One Client",
+      "feature7": "Own Websites, Won't Disappear, Long-term Effective",
+      "feature8": "Pyramid Structure",
+      "feature9": "DA50+ or DR 30+",
+      "feature10": "Choose Your Target Pages",
+      "feature11": "90% DoFollow, 10% NoFollow",
+      "feature12": "Complete Reports for Each Article and Link"
+    },
+    "pricingFour": {
+      "title": "Premium Package",
+      "price": "12000",
+      "feature1": "200 Top-tier Backlinks to Your Website",
+      "feature2": "100 Independent Chinese Websites",
+      "feature3": "Full Traditional Chinese WordPress Blog Articles",
+      "feature4": "Industry-Related Content Articles for Clients",
+      "feature5": "Multiple Keywords and Links Available",
+      "feature6": "Each Article and Link Belongs to Only One Client",
+      "feature7": "Own Websites, Won't Disappear, Long-term Effective",
+      "feature8": "Pyramid Structure",
+      "feature9": "DA50+ or DR 30+",
+      "feature10": "Choose Your Target Pages",
+      "feature11": "90% DoFollow, 10% NoFollow",
+      "feature12": "Complete Reports for Each Article and Link"
+    }
+  },
+  "xiaohongshuu": {
+    "title": "Service Scope",
+    "step1Title": "Xiaohongshu New Account Management",
+    "step1Description": "Account design packaging + account maintenance to deepen brand image and establish unique selling points",
+    "step2Title": "Content Operations",
+    "step2Description": "Note content design and production to complete user conversion through quality content",
+    "step3Title": "Keywords & Search Optimization",
+    "step3Description": "Industry and long-tail keyword maintenance to gain organic traffic and expand brand influence",
+    "step4Title": "KOL Collaboration & Note Partnership",
+    "step4Description": "Analyze user personas and conduct precise marketing to convert more customers directly",
+    "step5Title": "Latest Xiaohongshu Merchant Info Sync",
+    "step5Description": "Share latest Xiaohongshu trends and cases to discover new advertising selling points"
   }
 }

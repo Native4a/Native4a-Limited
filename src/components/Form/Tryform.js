@@ -1,8 +1,10 @@
 import React, { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import emailjs from '@emailjs/browser'
 
 const Tryform = () => {
   const form = useRef()
+  const { t } = useTranslation()
 
   const sendEmail = (e) => {
     e.preventDefault()
@@ -17,7 +19,6 @@ const Tryform = () => {
       .then(
         (result) => {
           console.log('SUCCESS!', result.text)
-          // 发送成功后刷新页面
           window.location.reload()
         },
         (error) => {
@@ -40,7 +41,7 @@ const Tryform = () => {
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
             htmlFor="grid-first-name"
           >
-            First Name（姓氏）
+            {t('contactForm.firstName')}
           </label>
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-500 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-5"
@@ -58,7 +59,7 @@ const Tryform = () => {
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
             htmlFor="grid-last-name"
           >
-            Last Name（名字）
+            {t('contactForm.lastName')}
           </label>
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-500 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -75,7 +76,7 @@ const Tryform = () => {
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
             htmlFor="grid-last-name"
           >
-            contact number（聯絡方法）
+            {t('contactForm.contactNumber')}
           </label>
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-500 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -86,18 +87,18 @@ const Tryform = () => {
             name="user_contact-number"
             aria-label="user_contact-number"
             required
-            oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 8);"
+            onInput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 8);"
           />
         </div>
         <p className="block uppercase tracking-wide text-gray-500 text-md font-bold mb-2">
-          請點答以下問題：
+          {t('contactForm.questions')}
         </p>
         <div className="w-full px-3 mb-5">
           <label
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
             htmlFor="grid-last-name"
           >
-            1.你的公司網站或ig?
+            {t('contactForm.question1')}
           </label>
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-500 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -114,7 +115,7 @@ const Tryform = () => {
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
             htmlFor="grid-last-name"
           >
-            2.請問你的行業？
+            {t('contactForm.question2')}
           </label>
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-500 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -131,7 +132,7 @@ const Tryform = () => {
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
             htmlFor="grid-last-name"
           >
-            3.你目前主要透過什麼方式獲客？
+            {t('contactForm.question3')}
           </label>
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-500 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -148,7 +149,7 @@ const Tryform = () => {
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
             htmlFor="grid-last-name"
           >
-            4.你目前的查詢容易轉化成生意嗎？
+            {t('contactForm.question4')}
           </label>
           <input
             className="appearance-none block w-full bg-gray-200 text-gray-500 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -165,9 +166,9 @@ const Tryform = () => {
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
             htmlFor="grid-last-name"
           >
-            5.你收到查詢後會進行再營銷嗎？
+            {t('contactForm.question5')}
           </label>
-           {' '}
+           {' '}
           <input
             type="radio"
             name="user_Question-5"
@@ -175,37 +176,37 @@ const Tryform = () => {
             aria-label="user_Question-5"
             required
           />
-           {' '}
+           {' '}
           <label className="text-gray-200" htmlFor="yes">
-            會
+            {t('contactForm.yes')}
           </label>
-           {' '}
+           {' '}
           <input
             type="radio"
             name="user_Question-5"
             value="no"
             aria-label="user_Question-5"
           />
-           {' '}
+           {' '}
           <label className="text-gray-200" htmlFor="no">
-            不會
+            {t('contactForm.no')}
           </label>
-           {' '}
+           {' '}
         </div>
         <div className="w-full px-3 mb-5">
           <label
             className="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2"
             htmlFor="grid-last-name"
           >
-            6.你的客戶平均查詢多少次後才能成交？
+            {t('contactForm.question6')}
           </label>
           <select
-            class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             id="grid-state"
             name="user_Question-6"
             aria-label="user_Question-6"
           >
-            <option>選擇：</option>
+            <option>{t('contactForm.selectOption')}</option>
             <option>1-3次</option>
             <option>3次以上</option>
           </select>
@@ -213,7 +214,7 @@ const Tryform = () => {
       </div>
       <input
         type="submit"
-        value="提交"
+        value={t('buttons.submit')}
         className="cursor-pointer border rounded-full border-black text-black px-7 py-1.5 font-black text-xl bg-amber-300 hover:bg-amber-400 active:bg-amber-500"
       />
     </form>
