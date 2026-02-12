@@ -41,12 +41,13 @@ class videoIndex extends React.Component {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
             <div className="px-6 xl:px-0 py-0 xl:py-6">
               <div className="pt-2 md:pt-3 2xl:pt-0">
-                <h1 className={styles.title}>{videoPage.title}</h1>
-                <h1 className={styles.subTitle}>{videoPage.subTitle}</h1>
+                <h1 className={styles.title}>Native影片製作服務</h1>
+                <h1 className={styles.subTitle}>「度橋」拍攝一站式</h1>
                 <div className={styles.border}></div>
                 <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
-                  {renderRichText(videoPage.titleDescription)}
+                  透過影片建立鮮明的企業形象
                 </p>
+                <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">創意表達您的產品或服務。</p>
                 <div className="hidden md:grid grid-cols-2 gap-6 py-6">
                   <div className="flex gap-6 w-full items-center">
                     <SocialMediaBtn />
