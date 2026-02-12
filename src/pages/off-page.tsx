@@ -1,9 +1,6 @@
-//base here//
-import React from 'react'
 import CountUp from 'react-countup'
 import { useTranslation } from 'react-i18next'
 
-//components here//
 import BacklinkLayout from '../components/backlinkLayout'
 import Seo from '../components/seo'
 import ContactForm from '../components/contactAs'
@@ -20,12 +17,10 @@ import Text from '../components/baseTools/text'
 import Awards from '../components/awards'
 import Grid from '../components/baseTools/Grid/index.js'
 
-//styles here//
 import * as styles from '../styles/backlinks.module.css'
 
 const OffPageIndex = ({ location }: { location: any }) => {
   const { t } = useTranslation()
-  const FaSquarSstyle = { color: '#70a566' }
 
   return (
     <BacklinkLayout location={location}>
