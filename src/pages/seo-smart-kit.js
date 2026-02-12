@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withTranslation } from 'react-i18next'
 import Seo from '../components/seo'
 import Section from '../components/baseTools/Section'
 import Layout from '../components/layout'
@@ -29,22 +30,18 @@ class SEOsmartKit extends Component {
     yearCalc: 0,
     compCalc: 0,
     Keyword: '',
-    // Save區域的所有狀態值
     savedVolCalc: 0,
     savedQuarCalc: 0,
     savedYearCalc: 0,
     savedCompCalc: 0,
-    // 新增一個狀態來保存輸入的關鍵字
     savedKeyword: '',
-    savedData: [], // 用來儲存所有資料的陣列
+    savedData: [],
     textColor: 'black',
   }
 
   VolumeCalc = (event) => {
-    const volume = event.target.value.trim() // 使用 Number 來處理輸入
+    const volume = event.target.value.trim()
     let volCalc = 0
-
-    // 調整條件以允許負數
     if (volume >= 1000) {
       volCalc = 4
     } else if (volume >= 320) {
@@ -54,22 +51,18 @@ class SEOsmartKit extends Component {
     } else if (volume >= 100) {
       volCalc = 1
     } else {
-      volCalc = 0 // 這裡可以處理負數情況
+      volCalc = 0
     }
-
     this.setState({ lastVolumeValue: volume, volCalc: volCalc }, this.updateSum)
   }
 
   QuarterCalc = (event) => {
-    let quarter = event.target.value.trim() // 去除首尾空格
+    let quarter = event.target.value.trim()
     let quarCalc = 0
-
-    // 檢查輸入是否為空或非數字
     if (quarter === '' || isNaN(quarter)) {
-      quarter = '' // 將空值設為一個空字串
+      quarter = ''
     } else {
-      quarter = Number(quarter) // 將輸入值轉換為數字
-
+      quarter = Number(quarter)
       if (quarter >= 20) {
         quarCalc = 2
       } else if (quarter >= 0) {
@@ -78,7 +71,6 @@ class SEOsmartKit extends Component {
         quarCalc = 0
       }
     }
-
     this.setState(
       { lastQuarValue: quarter, quarCalc: quarCalc },
       this.updateSum
@@ -86,15 +78,12 @@ class SEOsmartKit extends Component {
   }
 
   YearCalc = (event) => {
-    let year = event.target.value.trim() // 去除首尾空格
+    let year = event.target.value.trim()
     let yearCalc = 0
-
-    // 檢查輸入是否為空或非數字
     if (year === '' || isNaN(year)) {
-      year = '' // 將空值設為一個空字串
+      year = ''
     } else {
-      year = Number(year) // 將輸入值轉換為數字
-
+      year = Number(year)
       if (year >= 20) {
         yearCalc = 3
       } else if (year >= 1) {
@@ -103,7 +92,6 @@ class SEOsmartKit extends Component {
         yearCalc = 0
       }
     }
-
     this.setState({ lastYearValue: year, yearCalc: yearCalc }, this.updateSum)
   }
 
@@ -140,10 +128,8 @@ class SEOsmartKit extends Component {
       quarCalc: this.state.quarCalc,
       yearCalc: this.state.yearCalc,
       compCalc: this.state.compCalc,
-      vqycSum: this.state.vqycSum, // 將 vqycSum 添加到 newData 對象中
+      vqycSum: this.state.vqycSum,
     }
-
-    // 只保留最新的5筆資料
     this.setState((prevState) => ({
       savedData: [newData, ...prevState.savedData.slice(0, 4)],
     }))
@@ -171,22 +157,23 @@ class SEOsmartKit extends Component {
 
   render() {
     const { textColor } = this.state
+    const { t } = this.props
     return (
       <Layout>
         <Seo
-          title="肥仔關鍵字計算機"
-          description="肥仔關鍵字計算機是一款強大的SEO工具，幫助您輕鬆計算和分析關鍵字的效果，提升網站的搜索引擎排名。立即使用，讓您的網站脫穎而出！"
+          title={t('seoSmartKit.metaTitle')}
+          description={t('seoSmartKit.metaDescription')}
           ogUrl="seo-smart-kit"
         />
         <Section SectionClass="flex justify-evenly" ContainerClass="grid">
           <div className="grid gap-4 justify-evenly pt-32 lg:pt-22 xl:pt-22 2xl:pt-36">
             <span className="mb-5">
               <h1 className="text-3xl md:text-5xl text-center">
-                肥仔關鍵字計算機
+                {t('seoSmartKit.title')}
               </h1>
               <p className="text-center">(Beta)</p>
               <h3 className="text-center text-2xl">
-                SEO & SEM 適用，幫你搵出超潛力黃金關鍵字的工具
+                {t('seoSmartKit.subtitle')}
               </h3>
             </span>
           </div>
@@ -195,7 +182,7 @@ class SEOsmartKit extends Component {
               <div className="flex text-white px-8 py-1 rounded-xl bg-red-600">
                 <Popup
                   trigger={
-                    <p className="cursor-pointer">▶ 查看計算機教學影片</p>
+                    <p className="cursor-pointer">{'▶ '}{t('seoSmartKit.watchVideo')}</p>
                   }
                   modal
                   contentStyle=""
@@ -205,17 +192,16 @@ class SEOsmartKit extends Component {
                       <button className={styles.close} onClick={close}>
                         X
                       </button>
-                      {/**Put your youtube link here*/}
                       <div className={styles.videoContainer}>
                         <iframe
                           width="100%"
                           height="400"
                           src="https://www.youtube.com/embed/9hDiSH3NSGQ"
-                          title="肥仔計算機教學片"
-                          frameborder="0"
+                          title={t('seoSmartKit.metaTitle')}
+                          frameBorder="0"
                           allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          referrerpolicy="strict-origin-when-cross-origin"
-                          allowfullscreen
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
                         ></iframe>
                       </div>
                     </div>
@@ -227,19 +213,19 @@ class SEOsmartKit extends Component {
           <div className="grid grid-cols-3 shadow-xl rounded-3xl bg-white p-6 m-8 bg-white-500/[.06] md:p-7">
             <div className="grid gap-4 md:col-span-1 md:pr-7 xl:py-14 xl:pl-16 col-span-3">
               <div className="flex flex-col gap-2">
-                <h3>Keyword：</h3>
+                <h3>{t('seoSmartKit.keywordLabel')}</h3>
                 <input
                   className="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="text"
                   id="textDataInput"
-                  placeholder="請輸入你要查詢的Keyword"
+                  placeholder={t('seoSmartKit.keywordPlaceholder')}
                   onChange={this.Keyword}
                   onKeyDown={this.handleKeyDown}
                   min="-100"
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <h3>搜索量：</h3>
+                <h3>{t('seoSmartKit.searchVolume')}</h3>
                 <input
                   className="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="number"
@@ -250,7 +236,7 @@ class SEOsmartKit extends Component {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <h3>三個月變化(%)：</h3>
+                <h3>{t('seoSmartKit.threeMonthChange')}</h3>
                 <input
                   className="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="number"
@@ -261,7 +247,7 @@ class SEOsmartKit extends Component {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <h3>年度變化(%)：</h3>
+                <h3>{t('seoSmartKit.yearlyChange')}</h3>
                 <input
                   className="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="number"
@@ -272,7 +258,7 @@ class SEOsmartKit extends Component {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <h3>競爭分數：</h3>
+                <h3>{t('seoSmartKit.competitionScore')}</h3>
                 <input
                   className="border-2 rounded-lg px-3 pt-2 pb-1 w-full"
                   type="number"
@@ -286,11 +272,11 @@ class SEOsmartKit extends Component {
             <div className="grid xl:px-16 xl:py-16 col-span-3 md:col-span-2">
               <div className="flex flex-col gap-4 justify-between border-l-2 p-5 my-10">
                 <div className="flex justify-between">
-                  <h4 className="text-xl pl-3">肥仔指數</h4>
+                  <h4 className="text-xl pl-3">{t('seoSmartKit.fatIndex')}</h4>
                   <div>
-                    <Text className="text-[#0ca959]">7-10分 - 必做！</Text>
-                    <Text className="text-[#faab00]">5-6分 - 自己決定</Text>
-                    <Text className="text-[#eb4131]">0-4分 - 果斷放棄</Text>
+                    <Text className="text-[#0ca959]">{t('seoSmartKit.mustDo')}</Text>
+                    <Text className="text-[#faab00]">{t('seoSmartKit.selfDecide')}</Text>
+                    <Text className="text-[#eb4131]">{t('seoSmartKit.giveUp')}</Text>
                   </div>
                 </div>
                 <div
@@ -300,7 +286,7 @@ class SEOsmartKit extends Component {
                   <span style={{ color: textColor }} className="text-8xl">
                     {this.state.vqycSum}
                   </span>
-                  分
+                  {t('seoSmartKit.point')}
                 </div>
                 <div className="grid gap-2 grid-cols-2 md:grid-cols-4">
                   <div className="flex flex-col justify-between border-2 rounded-3xl p-5">
@@ -347,33 +333,32 @@ class SEOsmartKit extends Component {
               </div>
             </div>
             <div className="grid col-span-2 justify-start text-xs pt-2">
-              <p>規則：</p>
+              <p>{t('seoSmartKit.rules')}</p>
               <ol>
                 <li>
-                  已儲存的資料會暫存到計算機下方的 <b>Keyword儲存區</b>
+                  {t('seoSmartKit.rule1')} <b>{t('seoSmartKit.rule1Bold')}</b>
                 </li>
                 <li>
-                  目前只提供<b>電腦版</b>，<b>平板</b> 和 <b>手機版</b>
-                  還在測試階段。
+                  {t('seoSmartKit.rule2Desktop')}<b>{t('seoSmartKit.rule2DesktopBold')}</b>{'，'}<b>{t('seoSmartKit.rule2Tablet')}</b> {'和'} <b>{t('seoSmartKit.rule2Mobile')}</b>
+                  {t('seoSmartKit.rule2End')}
                 </li>
                 <li>
-                  儲存區最多可以儲存 <b>5筆 資料</b>
-                  。若再儲存超過5筆資料的話，新的一筆資料將會<b>自動覆蓋</b>
-                  最舊的資料。
+                  {t('seoSmartKit.rule3')}<b>{t('seoSmartKit.rule3Bold')}</b>
+                  {t('seoSmartKit.rule3End')}<b>{t('seoSmartKit.rule3EndBold')}</b>
+                  {t('seoSmartKit.rule3EndFinal')}
                 </li>
                 <li>
-                  儲存的資料只是暫存，如果網站被更新，儲存的資料將<b>被重置</b>
-                  。
+                  {t('seoSmartKit.rule4')}<b>{t('seoSmartKit.rule4Bold')}</b>{'。'}
                 </li>
                 <li>
-                  若想自行保存資料，請自行<b>截圖保存</b>下來。
+                  {t('seoSmartKit.rule5')}<b>{t('seoSmartKit.rule5Bold')}</b>{t('seoSmartKit.rule5End')}
                 </li>
               </ol>
               <span>BuildVersion: v3.1.240911-1824 by Native4A</span>
             </div>
             <div className="grid col-span-1 items-center text-xs pt-2">
               <Button linkto="https://shop.nativeaaaa.com.hk/product/seo%e6%87%b6%e4%ba%ba%e5%8c%85_7%e5%a4%a9%e4%b8%8a%e9%a6%96%e9%a0%81%e5%85%b6%e5%af%a6%e5%94%94%e9%9b%a3/">
-                下載永久使用版
+                {t('seoSmartKit.downloadPermanent')}
               </Button>
             </div>
           </div>
@@ -382,7 +367,7 @@ class SEOsmartKit extends Component {
           <div className="container mx-auto mt-5">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="flex col-span-1 lg:col-span-2 text-xl">
-                <h3>Keyword儲存區</h3>
+                <h3>{t('seoSmartKit.keywordStorage')}</h3>
               </div>
               <div className="flex col-span-1 lg:col-span-2 justify-end text-md">
                 <button
@@ -418,28 +403,28 @@ class SEOsmartKit extends Component {
             <motion.div
               key={index}
               className="grid grid-cols-6 gap-6 shadow-xl rounded-3xl bg-white p-6 bg-white-500/[.06]"
-              initial={{ opacity: 0, y: -20 }} // 初始狀態：透明且向上偏移
-              animate={{ opacity: 1, y: 0 }} // 動畫狀態：完全可見且回到原位
-              exit={{ opacity: 0, y: -20 }} // 離開狀態：透明且向上偏移
-              transition={{ duration: 0.5 }} // 動畫持續時間
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
             >
               <div className="text-md font-semibold">
                 <span>{data.Keyword}</span>
               </div>
               <div className="flex text-md font-semibold justify-center">
-                <span>{data.volCalc}</span>分
+                <span>{data.volCalc}</span>{t('seoSmartKit.point')}
               </div>
               <div className="flex text-md font-semibold justify-center">
-                <span>{data.quarCalc}</span>分
+                <span>{data.quarCalc}</span>{t('seoSmartKit.point')}
               </div>
               <div className="flex text-md font-semibold justify-center">
-                <span>{data.yearCalc}</span>分
+                <span>{data.yearCalc}</span>{t('seoSmartKit.point')}
               </div>
               <div className="flex text-md font-semibold justify-center">
-                <span>{data.compCalc}</span>分
+                <span>{data.compCalc}</span>{t('seoSmartKit.point')}
               </div>
               <div className="flex text-xl font-bold justify-end">
-                <span>{data.vqycSum}</span>分
+                <span>{data.vqycSum}</span>{t('seoSmartKit.point')}
               </div>
             </motion.div>
           ))}
@@ -448,7 +433,7 @@ class SEOsmartKit extends Component {
           <div className="grid container mx-auto mt-5">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="flex col-span-1 items-center lg:col-span-2 text-md">
-                <h3>Keyword儲存區</h3>
+                <h3>{t('seoSmartKit.keywordStorage')}</h3>
               </div>
               <div className="flex col-span-1 lg:col-span-2 justify-end text-md">
                 <button
@@ -466,14 +451,13 @@ class SEOsmartKit extends Component {
           ContainerClass="md:grid md:grid-cols-2 lg:grid-cols-3 xl:hidden gap-6 justify-around mb-32 mx-10 md:w-10/12"
         >
           {this.state.savedData.map((data, index) => (
-            <div>
+            <div key={index}>
               <motion.div
-                key={index}
                 className="grid gap-6 shadow-xl rounded-3xl bg-white p-6 bg-white-500/[.06] mt-10"
-                initial={{ opacity: 0, y: -20 }} // 初始狀態：透明且向上偏移
-                animate={{ opacity: 1, y: 0 }} // 動畫狀態：完全可見且回到原位
-                exit={{ opacity: 0, y: -20 }} // 離開狀態：透明且向上偏移
-                transition={{ duration: 0.5 }} // 動畫持續時間
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
               >
                 <div className="flex justify-between font-semibold border-b-2 pb-5">
                   <div className="flex justify-start items-center text-md">
@@ -487,32 +471,32 @@ class SEOsmartKit extends Component {
                   <div className="flex justify-start items-center">
                     <span>search volume:</span>
                   </div>
-                  <span className="flex justify-end">{data.volCalc}分</span>
+                  <span className="flex justify-end">{data.volCalc}{t('seoSmartKit.point')}</span>
                 </div>
                 <div className="flex justify-between">
                   <div className="flex justify-start items-center">
                     <span>3 Months Change:</span>
                   </div>
-                  <span className="flex justify-end">{data.quarCalc}分</span>
+                  <span className="flex justify-end">{data.quarCalc}{t('seoSmartKit.point')}</span>
                 </div>
                 <div className="flex justify-between">
                   <div className="flex justify-start items-center">
                     <span>Yearly changes:</span>
                   </div>
-                  <span className="flex justify-end">{data.yearCalc}分</span>
+                  <span className="flex justify-end">{data.yearCalc}{t('seoSmartKit.point')}</span>
                 </div>
                 <div className="flex justify-between">
                   <div className="flex justify-start items-center">
                     <span>Competition Score:</span>
                   </div>
-                  <span className="flex justify-end">{data.compCalc}分</span>
+                  <span className="flex justify-end">{data.compCalc}{t('seoSmartKit.point')}</span>
                 </div>
                 <div className="flex justify-between border-t-2 pt-5">
                   <div className="flex justify-start items-center">
                     <span>Total Score:</span>
                   </div>
                   <span className="flex justify-end text-4xl font-bold">
-                    {data.vqycSum}分
+                    {data.vqycSum}{t('seoSmartKit.point')}
                   </span>
                 </div>
               </motion.div>
@@ -534,14 +518,13 @@ class SEOsmartKit extends Component {
               </div>
               <div className="flex flex-col col-span-4 gap-6 justify-center text-6xl">
                 <h1 className="text-3xl md:text-4xl">
-                  快速提升SEO排名的全能工具
+                  {t('seoSmartKit.seoToolTitle')}
                 </h1>
                 <Text className="text-lg">
-                  一套經native4a
-                  八年SEO、超過400個獨立網站優化經驗總結，能令你在7天內排名關鍵字首頁的SEO懶人包。
+                  {t('seoSmartKit.seoToolDesc')}
                 </Text>
                 <Button linkto="https://shop.nativeaaaa.com.hk/product/seo%e6%87%b6%e4%ba%ba%e5%8c%85_7%e5%a4%a9%e4%b8%8a%e9%a6%96%e9%a0%81%e5%85%b6%e5%af%a6%e5%94%94%e9%9b%a3/">
-                  立即下載SEO懶人包
+                  {t('seoSmartKit.downloadSmartKit')}
                 </Button>
               </div>
             </div>
@@ -550,7 +533,7 @@ class SEOsmartKit extends Component {
         <Section ContainerClass="flex justify-center m-auto w-[95%] md:w-[90%] lg:w-[92%] xl:w-[90%] 2xl:w-[79%] p-5">
           <div className="grid ">
             <Text className="text-4xl text-center font-extrabold">
-              我用SEO懶人包做到以下效果
+              {t('seoSmartKit.resultsTitle')}
             </Text>
             <div className="container mx-auto mt-10">
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
@@ -566,16 +549,16 @@ class SEOsmartKit extends Component {
                 <div className="flex col-span-2 items-center p-10">
                   <div className="flex flex-col gap-6">
                     <div>
-                      <p>關鍵字</p>
-                      <h4 className="text-3xl">智慧齒</h4>
+                      <p>{t('seoSmartKit.keywordLabel2')}</p>
+                      <h4 className="text-3xl">{t('seoSmartKit.case1Keyword')}</h4>
                     </div>
                     <div>
                       <ul className="text-gray-500 leading-loose tracking-wide">
-                        <li>行業：智慧齒</li>
+                        <li>{t('seoSmartKit.case1Industry')}</li>
                         <li>Volume: 40500</li>
-                        <li>Before：#18</li>
-                        <li>After：#7</li>
-                        <li>用時：10days</li>
+                        <li>{'Before：#18'}</li>
+                        <li>{'After：#7'}</li>
+                        <li>{t('seoSmartKit.case1Time')}</li>
                       </ul>
                     </div>
                   </div>
@@ -596,16 +579,16 @@ class SEOsmartKit extends Component {
                 <div className="flex col-span-2 items-center p-10">
                   <div className="flex flex-col gap-6">
                     <div>
-                      <p>關鍵字</p>
-                      <h4 className="text-3xl">內衣</h4>
+                      <p>{t('seoSmartKit.keywordLabel2')}</p>
+                      <h4 className="text-3xl">{t('seoSmartKit.case2Keyword')}</h4>
                     </div>
                     <div>
                       <ul className="text-gray-500 leading-loose tracking-wide">
-                        <li>行業：功能內衣</li>
+                        <li>{t('seoSmartKit.case2Industry')}</li>
                         <li>Volume: 49500</li>
-                        <li>Before：#74</li>
-                        <li>After：#7</li>
-                        <li>用時：4 days</li>
+                        <li>{'Before：#74'}</li>
+                        <li>{'After：#7'}</li>
+                        <li>{t('seoSmartKit.case2Time')}</li>
                       </ul>
                     </div>
                   </div>
@@ -626,16 +609,16 @@ class SEOsmartKit extends Component {
                 <div className="flex col-span-2 items-center p-10">
                   <div className="flex flex-col gap-6">
                     <div>
-                      <p>關鍵字</p>
-                      <h4 className="text-3xl">青年創業補助不用還</h4>
+                      <p>{t('seoSmartKit.keywordLabel2')}</p>
+                      <h4 className="text-3xl">{t('seoSmartKit.case3Keyword')}</h4>
                     </div>
                     <div>
                       <ul className="text-gray-500 leading-loose tracking-wide">
-                        <li>行業：青年創業補助</li>
+                        <li>{t('seoSmartKit.case3Industry')}</li>
                         <li>Volume: 4800</li>
-                        <li>Before：#201</li>
-                        <li>After：：#7</li>
-                        <li>用時：2 days</li>
+                        <li>{'Before：#201'}</li>
+                        <li>{'After：#7'}</li>
+                        <li>{t('seoSmartKit.case3Time')}</li>
                       </ul>
                     </div>
                   </div>
@@ -648,60 +631,59 @@ class SEOsmartKit extends Component {
           <div className="container mx-auto mb-10 p-3">
             <div className="grid grid-cols-1 gap-6">
               <div className="flex flex-col items-center text-white p-10 border-2 border-gray-300 rounded-xl bg-gray-800">
-                <span>8年SEO經驗結晶，7日提升關鍵字排名的方法</span>
-                <h3 className="text-3xl m-3">SEO懶人包</h3>
+                <span>{t('seoSmartKit.ctaExperience')}</span>
+                <h3 className="text-3xl m-3">{t('seoSmartKit.ctaTitle')}</h3>
                 <Button linkto="https://shop.nativeaaaa.com.hk/product/seo%e6%87%b6%e4%ba%ba%e5%8c%85_7%e5%a4%a9%e4%b8%8a%e9%a6%96%e9%a0%81%e5%85%b6%e5%af%a6%e5%94%94%e9%9b%a3/">
-                  立即下載SEO懶人包
+                  {t('seoSmartKit.downloadSmartKit')}
                 </Button>
               </div>
               <div>
                 <Accordion>
                   <Accordion.Panel>
-                    <Accordion.Title>SEO懶人包適合新手嗎？</Accordion.Title>
+                    <Accordion.Title>{t('seoSmartKit.faq1Q')}</Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        SEO懶人包是一套工具，適合任何想提升排名的人，當然包括全新手。
+                        {t('seoSmartKit.faq1A')}
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
                   <Accordion.Panel>
-                    <Accordion.Title>我具體要做什麼？</Accordion.Title>
+                    <Accordion.Title>{t('seoSmartKit.faq2Q')}</Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        按照SEO懶人包步驟表，每日大約1-2小時管理你的網站，將越來越多的關鍵字做上首頁，甚至複製至多個行業。
+                        {t('seoSmartKit.faq2A')}
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
                   <Accordion.Panel>
-                    <Accordion.Title>如何快速提升網站排名？</Accordion.Title>
+                    <Accordion.Title>{t('seoSmartKit.faq3Q')}</Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        解決以下3個問題，排名立即原地上升：
+                        {t('seoSmartKit.faq3A')}
                       </p>
                       <ul className="list-disc pl-10 py-10">
                         <li>
                           <h5 className="mb-2 text-gray-500 dark:text-gray-400">
-                            關鍵字篩選
+                            {t('seoSmartKit.faq3Item1Title')}
                           </h5>
                           <p className="mb-2 text-gray-500 dark:text-gray-400">
-                            先用Google
-                            ads選擇大量相關關鍵字，再放入肥仔計算機篩選高回報關鍵字。
+                            {t('seoSmartKit.faq3Item1Desc')}
                           </p>
                         </li>
                         <li>
                           <h5 className="mb-2 text-gray-500 dark:text-gray-400">
-                            內客創作
+                            {t('seoSmartKit.faq3Item2Title')}
                           </h5>
                           <p className="mb-2 text-gray-500 dark:text-gray-400">
-                            用病毒式標題庫搵岩用標題，再用SEO內容結構template，直接套用
+                            {t('seoSmartKit.faq3Item2Desc')}
                           </p>
                         </li>
                         <li>
                           <h5 className="mb-2 text-gray-500 dark:text-gray-400">
-                            backlinks
+                            {t('seoSmartKit.faq3Item3Title')}
                           </h5>
                           <p className="mb-2 text-gray-500 dark:text-gray-400">
-                            高質Backlinks源頭集合中有很多可靠的backlinks來源，任何行業都搵到，白帽黑帽都有。
+                            {t('seoSmartKit.faq3Item3Desc')}
                           </p>
                         </li>
                       </ul>
@@ -709,54 +691,51 @@ class SEOsmartKit extends Component {
                   </Accordion.Panel>
                   <Accordion.Panel>
                     <Accordion.Title>
-                      肥壯關鍵字計算器是如何工作的？
+                      {t('seoSmartKit.faq4Q')}
                     </Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        收集關鍵字的過去表現，套用公式，能幫助計算出低成本+高回報的關鍵字。短尾關鍵字：「瑜伽墊」🔥肥壯關鍵字：「防滑瑜伽墊」長尾關鍵字：「初學者用的加厚防滑瑜伽墊」
+                        {t('seoSmartKit.faq4A')}
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
                   <Accordion.Panel>
                     <Accordion.Title>
-                      我可以在短時間內看到效果嗎？
+                      {t('seoSmartKit.faq5Q')}
                     </Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        當然可以，以下幾個例子都是幾日內上升，並且穩定。
+                        {t('seoSmartKit.faq5A')}
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
                   <Accordion.Panel>
                     <Accordion.Title>
-                      這個工具如何幫助我創作高質內容？
+                      {t('seoSmartKit.faq6Q')}
                     </Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        SEO內容結構template
-                        是實際驗證過嘅內容模版，最容易被Google
-                        收錄的內容結構，你只需要套用到你的內容。
+                        {t('seoSmartKit.faq6A')}
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
                   <Accordion.Panel>
                     <Accordion.Title>
-                      SEO懶人包包含什麼樣的反向連結資源？
+                      {t('seoSmartKit.faq7Q')}
                     </Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        多種類型backlinks網站，無論任何行業。
+                        {t('seoSmartKit.faq7A')}
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
                   <Accordion.Panel>
                     <Accordion.Title>
-                      這個工具如何持續幫助我獲得新客戶？
+                      {t('seoSmartKit.faq8Q')}
                     </Accordion.Title>
                     <Accordion.Content>
                       <p className="mb-2 text-gray-500 dark:text-gray-400">
-                        SEO都係有公式嘅，否則SEO公司就handle
-                        唔到咁多客戶，所以，SEO懶人包是將我們過去8年經驗成功的排名方法。你可以理解為一套SEO系統，請你必須要利用這套系統複製至多個行業，令你有更多自動收入來源。
+                        {t('seoSmartKit.faq8A')}
                       </p>
                     </Accordion.Content>
                   </Accordion.Panel>
@@ -770,4 +749,4 @@ class SEOsmartKit extends Component {
   }
 }
 
-export default SEOsmartKit
+export default withTranslation()(SEOsmartKit)
