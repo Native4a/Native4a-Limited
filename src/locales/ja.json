@@ -53,7 +53,7 @@
     "title": "Native は巨人の肩に立つお手伝いをします。",
     "subtitle": "お気軽にWhatsAppでお問い合わせください",
     "cta": "お問い合わせ",
-    "copyright": "Copyright © 2016 - {year} Native4a . All Rights Reserved.",
+    "copyright": "Copyright © 2016 - {{year}} Native4a . All Rights Reserved.",
     "privacyPolicy": "プライバシーポリシー",
     "termsOfBusiness": "利用規約"
   },
@@ -156,7 +156,7 @@
       "feature3": "完全な繁体字中国語WordPressブログ記事",
       "feature4": "顧客業界関連のコンテンツ記事",
       "feature5": "複数のキーワードとリンクが利用可能",
-      "feature6": "各記事とリンクは1���������のクライアントのみに属する",
+      "feature6": "各記事とリンクは1�����������のクライアントのみに属する",
       "feature7": "独自のウェブサイト、消失しない、長期有効",
       "feature8": "ピラミッド構造",
       "feature9": "DA50+またはDR30+",
@@ -328,7 +328,7 @@
     "serviceLinkedin": "LinkedIn広告",
     "serviceGoogleKeyword": "Googleキーワード広告",
     "serviceGoogleGdn": "Google GDN広告",
-    "serviceGoogleRemarketing": "Googleリマーケティング"
+    "serviceGoogleRemarketing": "Googleリマーケ���ィング"
   },
   "seo": {
     "metaTitle": "SEO会社 | Native4a 香港",

@@ -53,7 +53,7 @@
     "title": "Native puts you on the shoulders of giants.",
     "subtitle": "Feel free to WhatsApp us for inquiries",
     "cta": "Inquire Now",
-    "copyright": "Copyright © 2016 - {year} Native4a . All Rights Reserved.",
+    "copyright": "Copyright © 2016 - {{year}} Native4a . All Rights Reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfBusiness": "Terms of Business"
   },
