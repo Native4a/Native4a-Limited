@@ -1,11 +1,9 @@
-//base here//
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { withTranslation } from 'react-i18next'
 
-//components here//
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import AboutAs from '../components/aboutAs'
@@ -15,46 +13,40 @@ import MediaWork from '../components/mediaWork'
 import Awards from '../components/awards'
 import AwardsWeb from '../components/awards/awards_website'
 import SmmSlick from '../components/slickSlider/blueSlider/smmSlider'
-//import SocialMediaBtn from '../components/button/socialMedia'
 import Section from '../components/baseTools/Section'
-//import Whatsapp from '../components/baseTools/whatsapp'
 import Icon from '../components/baseTools/Icon'
 import whatsApp_icon from '../components/baseTools/Icon/img/whatsapp.svg'
 
-//CSS here//
 import 'reactjs-popup/dist/index.css'
 import * as styles from '../styles/smm-ads.module.css'
 
-//image here//
 import GOAL_image from '../img/完整廣告策略圖.png'
 import SSads_image from '../img/波衫圖.png'
 import conputer$$Ads from '../img/電腦$$Ads.png'
 import conputerSet from '../img/conputer setting.png'
 
-//import ArticlePreview from '../components/article-preview'
-
 class smmAdsIndex extends React.Component {
   render() {
-    //const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
     const [smmPage] = get(this, 'props.data.allContentfulSocialMediaPage.nodes')
+    const { t } = this.props
 
     return (
       <Layout location={this.props.location}>
         <Seo
-          title={smmPage.metaTitle}
-          description={smmPage.metaDescription}
+          title={t('smmAds.metaTitle')}
+          description={t('smmAds.metaDescription')}
           ogUrl="https://nativeaaaa.com.hk/smm-ads/"
         />
         <Section SectionClass="bg-[url('../img/BURectangle.svg')] bg-cover">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
             <div className="px-6 xl:px-0 py-0 xl:py-6">
               <div className="pt-2 md:pt-3 2xl:pt-0">
-                <h1 className={styles.title}>{smmPage.title}</h1>
-                <h1 className={styles.subTitle}>{smmPage.subTitle}</h1>
+                <h1 className={styles.title}>{t('smmAds.title')}</h1>
+                <h1 className={styles.subTitle}>{t('smmAds.subtitle')}</h1>
                 <div className={styles.border}></div>
                 <div className={styles.mark}>
                   <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
-                    {renderRichText(smmPage.titleDescription)}
+                    {t('smmAds.description')}
                   </p>
                 </div>
                 <div className="grid grid-cols-5 md:grid-cols-6 gap-2 md:gap-6 py-6">
@@ -91,7 +83,7 @@ class smmAdsIndex extends React.Component {
               <div className="grid gap-y-8">
                 <h2 className="flex items-center text-3xl font-black">
                   <b className="ml-3 text-5xl font-bold text-orange-400">
-                    Meta廣告服務內容：
+                    {t('smmAds.metaAdsTitle')}
                   </b>
                 </h2>
                 <h3 className="flex items-center text-3xl font-black">
@@ -99,26 +91,27 @@ class smmAdsIndex extends React.Component {
                     <FaSquare color="#3A7DFF" />
                   </span>
                   <b className="ml-3">
-                    完整廣告策略（引流廣告、成交廣告組合技）
+                    {t('smmAds.adStrategy')}
                   </b>
                 </h3>
                 <p className="text-2xl">
-                  唔同內容，吸引到唔同階段嘅客戶查詢，一啲廣告負責引流用，可以設計一啲輕鬆玩味
-                  <span className="text-emerald-800">Reels做導流</span>。
+                  {t('smmAds.adStrategyDesc1')}
+                  <span className="text-emerald-800">{t('smmAds.adStrategyReels')}</span>{'。'}
                 </p>
                 <p className="text-2xl">
-                  面向曾經互動過的客戶（like過或睇過Profile已經係），可以用
-                  <span className="text-emerald-800">產品廣告</span>吸引佢哋。
+                  {t('smmAds.adStrategyDesc2')}
+                  <span className="text-emerald-800">{t('smmAds.adStrategyProduct')}</span>
+                  {t('smmAds.adStrategyDesc2End')}
                 </p>
                 <p className="text-2xl">
-                  對於已查詢/已睇過產品嘅客戶，則可以用
+                  {t('smmAds.adStrategyDesc3')}
                   <span className="text-emerald-800">
-                    「再營銷Re-marketing」
+                    {t('smmAds.adStrategyRemarketing')}
                   </span>
-                  嚟追蹤，俾優惠佢吸引成交。
+                  {t('smmAds.adStrategyDesc3End')}
                 </p>
                 <p className="text-4xl font-bold text-orange-400">
-                  所以，FB/IG廣告係有唔同職責架
+                  {t('smmAds.adStrategyConclusion')}
                 </p>
               </div>
             </div>
@@ -135,14 +128,14 @@ class smmAdsIndex extends React.Component {
                   <span>
                     <FaSquare color="white" />
                   </span>
-                  <b className="ml-3">廣告稿設計</b>
+                  <b className="ml-3">{t('smmAds.adDesign')}</b>
                 </h3>
                 <p className="text-2xl">
-                  以時下散播力最快的廣告形式包裝你的產品或服務。
+                  {t('smmAds.adDesignDesc')}
                   <br />
-                  無論專業風、輕鬆趣品風格全都做到。
+                  {t('smmAds.adDesignDesc2')}
                   <br />
-                  碌落啲會有過往作品👇🏻
+                  {t('smmAds.adDesignDesc3')}
                 </p>
               </div>
             </div>
@@ -159,13 +152,13 @@ class smmAdsIndex extends React.Component {
                   <span>
                     <FaSquare color="#3A7DFF" />
                   </span>
-                  <b className="ml-3">廣告Setting成效提升</b>
+                  <b className="ml-3">{t('smmAds.adSetting')}</b>
                 </h3>
                 <p className="text-2xl">
-                  競價策略、受眾設定、版位設定等，在預算控制範圍內，提升更多查詢。
+                  {t('smmAds.adSettingDesc')}
                 </p>
                 <p className="text-4xl font-bold text-orange-400">
-                  相同budget，獲得更多查詢
+                  {t('smmAds.adSettingConclusion')}
                 </p>
               </div>
             </div>
@@ -186,11 +179,10 @@ class smmAdsIndex extends React.Component {
                   <span>
                     <FaSquare color="white" />
                   </span>
-                  <b className="ml-3">監察廣告表現</b>
+                  <b className="ml-3">{t('smmAds.adMonitor')}</b>
                 </h3>
                 <p className="text-2xl">
-                  廣告數據隨時變化，需要有人長期𥄫住。
-                  仲可以Check埋競爭對手廣告。
+                  {t('smmAds.adMonitorDesc')}
                 </p>
               </div>
             </div>
@@ -208,21 +200,20 @@ class smmAdsIndex extends React.Component {
                     <span>
                       <FaSquare />
                     </span>
-                    <b className="ml-3">{smmPage.servicesHeadingTitle}</b>
+                    <b className="ml-3">{t('smmAds.nativeDiff')}</b>
                   </h2>
                 </div>
                 <h2 className="text-2xl lg:text-3xl xl:text-4xl p-3 ml-0 md:ml-4 leading-0 md:leading-[3.5rem] lg:w-4/6">
-                  {smmPage.servicesTitle}
+                  {t('smmAds.nativeDiffDesc')}
                 </h2>
               </div>
               <div className="relative col-start-1 lg:col-start-5 col-end-13 xl:col-start-6">
                 <div className="container mx-auto">
-                  <p className="text-xl mx-4">{smmPage.servicesDescription}</p>
+                  <p className="text-xl mx-4">{t('smmAds.nativeDiffParagraph')}</p>
                   <div className="grid grid-cols-2 lg:grid-cols-3 z-10">
                     <div className="grid bg-white drop-shadow-lg p-3 m-2 md:m-5 xl:m-2 2xl:m-4 rounded-3xl">
                       <div className="grid grid-cols-1 gap-6 items-center">
                         <div className="">
-                          {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
                           <img
                             className="w-32"
                             src={smmPage.servicesImage[0].url}
@@ -232,14 +223,13 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[0].title}</b>
+                          <b>{t('smmAds.serviceFbIg')}</b>
                         </div>
                       </div>
                     </div>
                     <div className="grid bg-white drop-shadow-lg p-3 m-2 md:m-5 xl:m-2 2xl:m-4 rounded-3xl">
                       <div className="grid grid-cols-1 gap-6 items-center">
                         <div className="">
-                          {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
                           <img
                             className="w-20"
                             src={smmPage.servicesImage[1].url}
@@ -249,14 +239,13 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[1].title}</b>
+                          <b>{t('smmAds.serviceYoutube')}</b>
                         </div>
                       </div>
                     </div>
                     <div className="grid bg-white drop-shadow-lg p-3 m-2 md:m-5 xl:m-2 2xl:m-4 rounded-3xl">
                       <div className="grid grid-cols-1 gap-6 items-center">
                         <div className="">
-                          {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
                           <img
                             className="w-20"
                             src={smmPage.servicesImage[2].url}
@@ -266,14 +255,13 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[2].title}</b>
+                          <b>{t('smmAds.serviceWhatsapp')}</b>
                         </div>
                       </div>
                     </div>
                     <div className="grid bg-white drop-shadow-lg p-3 m-2 md:m-5 xl:m-2 2xl:m-4 rounded-3xl">
                       <div className="grid grid-cols-1 gap-6 items-center">
                         <div className="">
-                          {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
                           <img
                             className="w-20"
                             src={smmPage.servicesImage[3].url}
@@ -283,14 +271,13 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[3].title}</b>
+                          <b>{t('smmAds.serviceReels')}</b>
                         </div>
                       </div>
                     </div>
                     <div className="grid bg-white drop-shadow-lg p-3 m-2 md:m-5 xl:m-2 2xl:m-4 rounded-3xl">
                       <div className="grid grid-cols-1 gap-6 items-center">
                         <div className="">
-                          {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
                           <img
                             className="w-20"
                             src={smmPage.servicesImage[4].url}
@@ -300,14 +287,13 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[4].title}</b>
+                          <b>{t('smmAds.serviceXhs')}</b>
                         </div>
                       </div>
                     </div>
                     <div className="grid bg-white drop-shadow-lg p-3 m-2 md:m-5 xl:m-2 2xl:m-4 rounded-3xl">
                       <div className="grid grid-cols-1 gap-6 items-center">
                         <div className="">
-                          {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
                           <img
                             className="w-20"
                             src={smmPage.servicesImage[5].url}
@@ -317,14 +303,13 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[5].title}</b>
+                          <b>{t('smmAds.serviceLinkedin')}</b>
                         </div>
                       </div>
                     </div>
                     <div className="grid bg-white drop-shadow-lg p-3 m-2 md:m-5 xl:m-2 2xl:m-4 rounded-3xl">
                       <div className="grid grid-cols-1 gap-6 items-center">
                         <div className="">
-                          {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
                           <img
                             className="w-20"
                             src={smmPage.servicesImage[6].url}
@@ -334,14 +319,13 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[6].title}</b>
+                          <b>{t('smmAds.serviceGoogleKeyword')}</b>
                         </div>
                       </div>
                     </div>
                     <div className="grid bg-white drop-shadow-lg p-3 m-2 md:m-5 xl:m-2 2xl:m-4 rounded-3xl">
                       <div className="grid grid-cols-1 gap-6 items-center">
                         <div className="">
-                          {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
                           <img
                             className="w-20"
                             src={smmPage.servicesImage[7].url}
@@ -351,14 +335,13 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[7].title}</b>
+                          <b>{t('smmAds.serviceGoogleGdn')}</b>
                         </div>
                       </div>
                     </div>
                     <div className="grid bg-white drop-shadow-lg p-3 m-2 md:m-5 xl:m-2 2xl:m-4 rounded-3xl">
                       <div className="grid grid-cols-1 gap-6 items-center">
                         <div className="">
-                          {/*<img src={smmPage.servicesImage[0].url} alt="service_Video_Production"/>*/}
                           <img
                             className="w-20"
                             src={smmPage.servicesImage[8].url}
@@ -368,7 +351,7 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[8].title}</b>
+                          <b>{t('smmAds.serviceGoogleRemarketing')}</b>
                         </div>
                       </div>
                     </div>
@@ -394,15 +377,8 @@ class smmAdsIndex extends React.Component {
     )
   }
 }
-/*
-  ===========blog post============
-  <ArticlePreview posts={posts} />
 
-  ===========multi className============
-  <div className={`${styles.container} ${styles.bg_write}`}>
-*/
-
-export default smmAdsIndex
+export default withTranslation()(smmAdsIndex)
 
 export const SocialMediaQuery = graphql`
   query SocialMediaQuery {
