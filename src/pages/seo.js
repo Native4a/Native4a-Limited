@@ -51,13 +51,13 @@ class seoIndex extends React.Component {
                     tag="h1"
                     className="tracking-tight font-black text-3xl md:leading-snug md:text-[2.8vw]"
                   >
-                    {seoPage.title}
+                    native4a-香港SEO公司
                   </Text>
                   <Text
                     tag="h2"
                     className="tracking-tight font-black text-3xl md:leading-snug md:text-[2.8vw]"
                   >
-                    {seoPage.titleH2}
+                    讓你站在巨人肩上
                   </Text>
                   <div className={styles.border}></div>
                   <div className="md:grid grid-cols-1 gap-6 py-6">
@@ -141,10 +141,10 @@ class seoIndex extends React.Component {
         </Section>
         <Section ContainerClass="flex flex-col items-center m-auto w-[95%] md:w-[90%] lg:w-[92%] xl:w-[90%] 2xl:w-[79%]">
           <Column columnClass="container mx-auto pt-20">
-            <h3 className="text-4xl">{seoPage.subTitle}</h3>
+            <h3 className="text-4xl">委托SEO公司到底能買到什麼？</h3>
             <div className={styles.border}></div>
             <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl mb-10">
-              {renderRichText(seoPage.titleDescription)}
+              香港主流SEO公司，獨家研發繁中外連系統，有效幫助中文網站提升排名
             </p>
             <Text
               tag="h2"
