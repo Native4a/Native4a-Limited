@@ -1,8 +1,6 @@
-//base here//
 import React from 'react'
-//import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { withTranslation } from 'react-i18next'
 
-//components here//
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import ContactForm from '../components/contactAs'
@@ -13,20 +11,16 @@ import SocialMediaBtn from '../components/button/socialMedia'
 import XiaohongshuSlider from '../components/slickSlider/xiaohongshuSlider/xiaohongshuSlider'
 import Section from '../components/baseTools/Section'
 
-//CSS here//
 import 'reactjs-popup/dist/index.css'
 import * as styles from '../styles/xiaohongshu.module.css'
 
-//image here//
 import xhsBanr from '../img/xhs-benner.png'
 import xhsLogo from '../img/xhs-logo.png'
 import xhsBanr2 from '../img/xhsBanner2.png'
 
-//import ArticlePreview from '../components/article-preview'
-
 class xiaohongshuIndex extends React.Component {
   render() {
-    //const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
+    const { t } = this.props
     return (
       <Layout location={this.props.location}>
         <Seo />
@@ -35,14 +29,14 @@ class xiaohongshuIndex extends React.Component {
             <div className="px-6 xl:px-0 py-0 xl:py-6">
               <div className="pt-2 md:pt-3 2xl:pt-0">
                 <div className="grid grid-cols-2 lg:justify-center">
-                  <h1 className={styles.title}>小紅書行銷</h1>
+                  <h1 className={styles.title}>{t('xiaohongshuPage.title')}</h1>
                   <img src={xhsLogo} alt="xhs Logo" className="w-16 lg:w-32" />
                 </div>
-                <h1 className={styles.subTitle}>讓您的品牌打開種草新市場</h1>
+                <h1 className={styles.subTitle}>{t('xiaohongshuPage.subtitle')}</h1>
                 <div className={styles.border}></div>
                 <div className={styles.mark}>
                   <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
-                    通過小紅書內容種草和品牌營銷策略，連接2億用戶市場，擴大影響力並聯繫目標用戶市場
+                    {t('xiaohongshuPage.description')}
                   </p>
                 </div>
                 <div className="hidden md:grid grid-cols-2 gap-6 py-6">
@@ -52,7 +46,7 @@ class xiaohongshuIndex extends React.Component {
                   <Button
                     className="bg-[#FF1E45] text-white rounded-full px-7 py-1.5 font-medium text-base md:text-md xl:text-xl border-[1px] border-inherit"
                     linkto="https://api.whatsapp.com/send/?phone=85264602996&text=%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%B0%8F%E7%B4%85%E6%9B%B8SEO"
-                    children="直接WhatsApp查詢"
+                    children={t('xiaohongshuPage.whatsappBtn')}
                   />
                 </div>
                 <div className="md:hidden ">
@@ -63,7 +57,7 @@ class xiaohongshuIndex extends React.Component {
                     <Button
                       className="bg-[#FF1E45] text-white rounded-full px-7 py-1.5 font-medium text-base md:text-md xl:text-xl"
                       linkto="https://api.whatsapp.com/send/?phone=85264602996&text=%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%B0%8F%E7%B4%85%E6%9B%B8SEO"
-                      children="直接WhatsApp查詢"
+                      children={t('xiaohongshuPage.whatsappBtn')}
                     />
                   </div>
                 </div>
@@ -90,7 +84,7 @@ class xiaohongshuIndex extends React.Component {
           <div className={styles.container}>
             <div className="grid items-center shadow-none rounded-3xl">
               <div className="hidden md:inline text-center">
-                <h2 className="text-4xl my-14">多種營運方式</h2>
+                <h2 className="text-4xl my-14">{t('xiaohongshuPage.operationTitle')}</h2>
               </div>
               <div className="hidden md:inline text-center">
                 <img src={xhsBanr2} alt="xhswork2" />
@@ -109,4 +103,4 @@ class xiaohongshuIndex extends React.Component {
   }
 }
 
-export default xiaohongshuIndex
+export default withTranslation()(xiaohongshuIndex)
