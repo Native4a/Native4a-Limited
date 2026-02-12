@@ -49,12 +49,12 @@ class smmAdsIndex extends React.Component {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
             <div className="px-6 xl:px-0 py-0 xl:py-6">
               <div className="pt-2 md:pt-3 2xl:pt-0">
-                <h1 className={styles.title}>{smmPage.title}</h1>
-                <h1 className={styles.subTitle}>{smmPage.subTitle}</h1>
+                <h1 className={styles.title}>想喺FB/IG落廣告？</h1>
+                <h1 className={styles.subTitle}>FB&IG [廣告策劃+管理]服務</h1>
                 <div className={styles.border}></div>
                 <div className={styles.mark}>
                   <p className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
-                    {renderRichText(smmPage.titleDescription)}
+                    廣告成效差、經常被Ban、使唔到錢、唔識整廣告圖。廣告成本過高等問題統統可以*即日*解決。
                   </p>
                 </div>
                 <div className="grid grid-cols-5 md:grid-cols-6 gap-2 md:gap-6 py-6">
@@ -208,16 +208,16 @@ class smmAdsIndex extends React.Component {
                     <span>
                       <FaSquare />
                     </span>
-                    <b className="ml-3">{smmPage.servicesHeadingTitle}</b>
+                    <b className="ml-3">NATIVE的與眾不同</b>
                   </h2>
                 </div>
                 <h2 className="text-2xl lg:text-3xl xl:text-4xl p-3 ml-0 md:ml-4 leading-0 md:leading-[3.5rem] lg:w-4/6">
-                  {smmPage.servicesTitle}
+                  一站式構思、設計、數據分析廣告服務。
                 </h2>
               </div>
               <div className="relative col-start-1 lg:col-start-5 col-end-13 xl:col-start-6">
                 <div className="container mx-auto">
-                  <p className="text-xl mx-4">{smmPage.servicesDescription}</p>
+                  <p className="text-xl mx-4">NATIVE有別於其他Google廣告公司，我們不單只為你設定廣告出街。還會為您提供由構思、設計、關鍵字數據分析、廣告設定，一站式服務。</p>
                   <div className="grid grid-cols-2 lg:grid-cols-3 z-10">
                     <div className="grid bg-white drop-shadow-lg p-3 m-2 md:m-5 xl:m-2 2xl:m-4 rounded-3xl">
                       <div className="grid grid-cols-1 gap-6 items-center">
@@ -232,7 +232,7 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[0].title}</b>
+                          <b>FB&IG 廣告</b>
                         </div>
                       </div>
                     </div>
@@ -249,7 +249,7 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[1].title}</b>
+                          <b>Youtube Shorts營銷</b>
                         </div>
                       </div>
                     </div>
@@ -266,7 +266,7 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[2].title}</b>
+                          <b>Whatsapp營銷</b>
                         </div>
                       </div>
                     </div>
@@ -283,7 +283,7 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[3].title}</b>
+                          <b>IG REELS 廣告</b>
                         </div>
                       </div>
                     </div>
@@ -300,7 +300,7 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[4].title}</b>
+                          <b>小紅書廣告</b>
                         </div>
                       </div>
                     </div>
@@ -317,7 +317,7 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[5].title}</b>
+                          <b>LinkedIn廣告</b>
                         </div>
                       </div>
                     </div>
@@ -334,7 +334,7 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[6].title}</b>
+                          <b>Google關鍵字廣告</b>
                         </div>
                       </div>
                     </div>
@@ -351,7 +351,7 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[7].title}</b>
+                          <b>Google GDN廣告</b>
                         </div>
                       </div>
                     </div>
@@ -368,7 +368,7 @@ class smmAdsIndex extends React.Component {
                           />
                         </div>
                         <div className="text-center text-xl">
-                          <b>{smmPage.servicesImage[8].title}</b>
+                          <b>Google再營銷</b>
                         </div>
                       </div>
                     </div>
