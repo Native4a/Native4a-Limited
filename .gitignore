@@ -57,10 +57,14 @@ typings/
 # dotenv environment variables file
 .env*
 
-# Gatsby build folder
+# Next.js
+/.next/
+/out/
+
+# Gatsby build folder (legacy)
 public
 
-# Gatsby cache folder
+# Gatsby cache folder (legacy)
 .cache
 
 # Contentful config file

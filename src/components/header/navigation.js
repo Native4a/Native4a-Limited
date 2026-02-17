@@ -1,7 +1,8 @@
+'use client'
 import React, { useState, useEffect } from 'react'
 import Navprops from './navprops'
 import { Sling as Hamburger } from 'hamburger-react'
-import { Link } from 'gatsby'
+import Link from 'next/link'
 import Native_logo from '../../img/2023_native4a_logo.svg'
 import Whatsapp from '../baseTools/whatsapp'
 
