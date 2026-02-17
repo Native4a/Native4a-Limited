@@ -13,6 +13,7 @@ import ClientLogos from '../components/clientLogos'
 import Awards from '../components/awards'
 import AwardsWeb from '../components/awards/awards_website'
 import SocialMediaBtn from '../components/button/socialMedia'
+import Whatsapp from '../components/baseTools/whatsapp'
 import Clients from "../components/Client's"
 import ServiceScope from '../components/serviceScope'
 import Section from '../components/baseTools/Section'
@@ -119,6 +120,9 @@ function RootIndexContent(props: PageDataProps) {
               <div className="hidden md:grid grid-cols-1 gap-6 py-6">
                 <div className="flex gap-6 w-full items-center">
                   <SocialMediaBtn />
+                  <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85264602996">
+                    {t('footer.cta')}
+                  </Whatsapp>
                 </div>
               </div>
               <div className="md:hidden">
