@@ -121,7 +121,7 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="flex gap-6 w-full items-center">
                   <SocialMediaBtn />
                   <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85264602996">
-                    {t('footer.cta')}
+                    WhatsApp查詢
                   </Whatsapp>
                 </div>
               </div>
