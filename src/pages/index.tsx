@@ -13,6 +13,8 @@ import ClientLogos from '../components/clientLogos'
 import Awards from '../components/awards'
 import AwardsWeb from '../components/awards/awards_website'
 import SocialMediaBtn from '../components/button/socialMedia'
+import Icon from '../components/baseTools/Icon'
+import whatsApp_icon from '../components/baseTools/Icon/img/whatsapp.svg'
 import Clients from "../components/Client's"
 import ServiceScope from '../components/serviceScope'
 import Section from '../components/baseTools/Section'
@@ -118,7 +120,12 @@ function RootIndexContent(props: PageDataProps) {
               })}
               <div className="hidden md:grid grid-cols-1 gap-6 py-6">
                 <div className="flex gap-6 w-full items-center">
-                  <SocialMediaBtn />
+                  <Icon Alt="Instagram link" />
+                  <Icon
+                    Alt="whatsapp link"
+                    URL={whatsApp_icon}
+                    linkto="https://api.whatsapp.com/send/?phone=85264602996&text=%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%BB%A3%E5%91%8A%E6%9C%8D%E5%8B%99"
+                  >whatsapp link</Icon>
                 </div>
               </div>
               <div className="md:hidden">
