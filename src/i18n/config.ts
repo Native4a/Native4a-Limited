@@ -1,31 +1,21 @@
-import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
-import en from '../locales/en.json'
-import ja from '../locales/ja.json'
-import zh from '../locales/zh.json'
+import { notFound } from 'next/navigation';
+import { getRequestConfig } from 'next-intl/server';
 
-const resources = {
-  en: { translation: en },
-  ja: { translation: ja },
-  zh: { translation: zh },
-}
+export const locales = ['en', 'ja', 'zh'] as const;
+export const defaultLocale = 'zh' as const;
 
-// Initialize i18n only once, avoid calling init multiple times
-if (!i18n.isInitialized) {
-  i18n
-    .use(initReactI18next)
-    .init({
-      resources,
-      lng: 'zh',
-      fallbackLng: 'zh',
-      interpolation: {
-        escapeValue: false,
-      },
-      react: {
-        useSuspense: false, // Disable suspense for Gatsby compatibility
-      },
-    })
-}
+export type Locale = (typeof locales)[number];
 
-export default i18n
+export default getRequestConfig(async ({ requestLocale }) => {
+  let locale = await requestLocale;
 
+  // Validate that the incoming `locale` parameter is valid
+  if (!locale || !locales.includes(locale as Locale)) {
+    notFound();
+  }
+
+  return {
+    locale,
+    messages: (await import(`../messages/${locale}.json`)).default,
+  };
+});
