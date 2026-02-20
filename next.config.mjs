@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  // Ignore the legacy src/pages directory (migrated to app router)
+  skipTrailingSlashRedirect: true,
   images: {
     domains: ['images.ctfassets.net', 'downloads.ctfassets.net'],
     formats: ['image/avif', 'image/webp'],

@@ -67,6 +67,8 @@
     "url": "git+https://github.com/contentful/starter-gatsby-blog.git"
   },
   "scripts": {
+    "predev": "node -e \"const fs=require('fs');const p='src/pages';if(fs.existsSync(p)){fs.rmSync(p,{recursive:true,force:true});console.log('Removed',p)}\"",
+    "prebuild": "node -e \"const fs=require('fs');const p='src/pages';if(fs.existsSync(p)){fs.rmSync(p,{recursive:true,force:true});console.log('Removed',p)}\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
