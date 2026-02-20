@@ -1,8 +1,13 @@
 import * as dotenv from 'dotenv'
 
-dotenv.config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+// Safely load environment variables, ignoring errors if file doesn't exist
+try {
+  dotenv.config({
+    path: `.env.${process.env.NODE_ENV}`,
+  })
+} catch (e) {
+  console.warn('Could not load .env file, continuing...')
+}
 
 interface Plugin {
   resolve: string
@@ -96,12 +101,6 @@ export const siteMetadata = {
   author: 'Native4a Limited',
   keywords: 'SEO, digital marketing, Hong Kong, web design, video production, backlinks, social media marketing',
 }
-
-export const __experimentalThemes = [
-  {
-    resolve: 'gatsby-theme-blog-core',
-  },
-]
 
 module.exports = {
   siteMetadata,
