@@ -1,5 +1,7 @@
+'use client'
+
 import React, { useState, useEffect } from 'react'
-import { Link } from 'gatsby'
+import Link from 'next/link'
 import * as styles from '../../styles/navigation.module.css'
 
 const MobileNavigation = () => {
@@ -40,7 +42,7 @@ const MobileNavigation = () => {
         >
           <nav className="flex justify-around bg-[#1d1d1d]/90 rounded-full p-2 content-center justify-items-center backdrop-blur-[10px] gap-3">
             <Link
-              to="/smm-ads/"
+              href="/zh/smm-ads"
               className="p-1 w-1/5 flex flex-col items-center justify-center hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full"
             >
               <svg
@@ -106,7 +108,7 @@ const MobileNavigation = () => {
               <span className={styles.menuItemLabel}>廣告服務</span>
             </Link>
             <Link
-              to="/seo"
+              href="/zh/seo"
               className="p-1 w-1/5 flex flex-col items-center justify-center hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full"
             >
               <svg
@@ -208,7 +210,7 @@ const MobileNavigation = () => {
               <span className={styles.menuItemLabel}>SEO</span>
             </Link>
             <Link
-              to="/backlinks"
+              href="/zh/backlinks"
               className="p-1 w-1/5 flex flex-col items-center justify-center hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full"
             >
               <svg
@@ -248,7 +250,7 @@ const MobileNavigation = () => {
               <span className={styles.menuItemLabel}>Backlinks</span>
             </Link>
             <Link
-              to="/web-design"
+              href="/zh/web-design"
               className="p-1 w-1/5 flex flex-col items-center justify-center hover:bg-amber-400 hover:rounded-full hover:transition hover:duration-700 hover:ease-in-out focus:bg-amber-400 focus:rounded-full"
             >
               <svg

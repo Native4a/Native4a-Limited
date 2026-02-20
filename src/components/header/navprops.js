@@ -1,5 +1,7 @@
+'use client'
+
 import React, { useState, useEffect } from 'react'
-import { Link } from 'gatsby'
+import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import { TbShoppingCart } from 'react-icons/tb'
 import Button from '../baseTools/button'
@@ -88,14 +90,7 @@ const Navprops = () => {
             return (
               <li className={clsx('relative group', styles.container)} key={index}>
                 <Link
-                  to={localizedSlug}
-                  activeStyle={{
-                    color: 'white',
-                    backgroundColor: '#faab00',
-                    fontWeight: 'bold',
-                    borderRadius: '3px',
-                  }}
-                  partiallyActive={true}
+                  href={localizedSlug}
                 >
                   {displayTitle}
                 </Link>
@@ -121,18 +116,12 @@ const Navprops = () => {
                       return (
                         <Link
                           key={subIndex}
-                          to={getLocalizedPath(subItem.slug)}
+                          href={getLocalizedPath(subItem.slug)}
                           className="block px-5 py-2.5 text-sm text-gray-700 whitespace-nowrap transition-all duration-200 hover:text-yellow-600 hover:bg-yellow-50"
                           style={{
                             borderRadius: '8px',
                             margin: '0 6px',
                           }}
-                          activeStyle={{
-                            color: '#ca8a04',
-                            backgroundColor: '#fef9c3',
-                            fontWeight: '600',
-                          }}
-                          partiallyActive={true}
                         >
                           {subDisplayTitle}
                         </Link>
