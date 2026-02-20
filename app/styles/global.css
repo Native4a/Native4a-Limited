@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url('/fonts/Inter-roman.var.woff2?v=3.19') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: 'Italic';
+  src: url('/fonts/Inter-italic.var.woff2?v=3.19') format('woff2');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html * {
+  box-sizing: border-box;
+}
+
+h1 span,
+h2 span,
+h3 span,
+h4 span {
+  color: #FAAB00;
+  font-size: 2rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+button:focus {
+  outline: none;
+}
+
+body {
+  background: var(--background);
+  color: var(--native-color);
+  font-family: var(--font-serif);
+  font-size: var(--text-md);
+  font-weight: var(--body);
+  line-height: var(--default);
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--semibold);
+  line-height: var(--dense);
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+a.active {
+  font-weight: var(--bold);
+}
+
+tt,
+code,
+kbd {
+  background: var(--black-fade-5);
+  padding-bottom: 0.2em;
+  padding-top: 0.2em;
+}
+
+tt,
+code,
+kbd {
+  font-family: var(--font-monospace);
+  font-size: 90%;
+}
+
+tt,
+code {
+  background-color: var(--black-fade-5);
+  border-radius: var(--radius-sm);
+  font-weight: var(--medium);
+  padding: 0.2em 0;
+}
+
+code:before,
+code:after,
+tt:before,
+tt:after {
+  content: ' ';
+  letter-spacing: -0.2em;
+}
+
+pre,
+code {
+  font-family: var(--font-monospace);
+}
+
+.title {
+  letter-spacing: -0.012em;
+  font-size: var(--text-title);
+  font-weight: var(--extrabold);
+  line-height: var(--solid);
+  margin: 0 0 var(--space-xl);
+}
+
+.textIndent {
+  text-indent: -30px;
+}
+
+.subTitle {
+  letter-spacing: -0.012em;
+  font-size: var(--text-subtitle);
+  font-weight: var(--extrabold);
+  line-height: var(--solid);
+  margin: 0 0 var(--space-xl);
+}
+
+/* Popup video */
+html #popup-root .popup-content {
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  /* Popup video */
+  html #popup-root .popup-content {
+    width: 90%;
+  }
+}
