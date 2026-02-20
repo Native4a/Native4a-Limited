@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import Link from 'next/link'
 
 interface ButtonProps {
   children?: ReactNode
@@ -25,11 +25,11 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <div className={customBtn ? customBtn : btnCustom}>
-      <AnchorLink to={linkto ? linkto : link}>
+      <Link href={linkto ? linkto : link}>
         <p className={className ? className : btn}>
           {children ? children : buttonName}
         </p>
-      </AnchorLink>
+      </Link>
     </div>
   )
 }

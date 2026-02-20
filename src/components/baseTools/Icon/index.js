@@ -1,5 +1,5 @@
 import React from 'react'
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import Link from 'next/link'
 import def_icon from './img/instagram.svg'
 
 const Icon = ({
@@ -28,7 +28,7 @@ const Icon = ({
   return (
     <div className="container mx-auto">
       <div className="grid">
-        <AnchorLink to={linkto ? linkto : link}>
+        <Link href={linkto ? linkto : link}>
           <div className={Top_class ? Top_class : top_class}>
             <img
               className={`${Desktop ? Desktop : desktop_style} ${
@@ -44,7 +44,7 @@ const Icon = ({
               {children ? children : content}
             </h3>
           </div>
-        </AnchorLink>
+        </Link>
       </div>
     </div>
   )

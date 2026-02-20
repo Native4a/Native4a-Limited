@@ -1,5 +1,5 @@
 import React from 'react'
-import { AnchorLink } from "gatsby-plugin-anchor-links"
+import Link from 'next/link'
 
 const Whatsapp = ({ children, className, linkto, customBtn }) => {
     //set default whatsapp button name
@@ -13,11 +13,11 @@ const Whatsapp = ({ children, className, linkto, customBtn }) => {
 
     return (
         <div className={customBtn ? customBtn : btnCustom}>
-            <AnchorLink to={linkto ? linkto : link}>
+            <Link href={linkto ? linkto : link}>
                 <button className={className ? className : btn}>
                     {children ? children : whatsAppButton}
                 </button>
-            </AnchorLink>
+            </Link>
         </div>
     );
 }
