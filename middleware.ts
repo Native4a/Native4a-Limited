@@ -4,7 +4,17 @@ const DEFAULT_LOCALE = 'zh'
 const SUPPORTED_LOCALES = ['zh', 'en', 'ja']
 
 export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname
+  const { pathname } = request.nextUrl
+
+  // Skip static files and Next.js internals
+  if (
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/_vercel') ||
+    pathname.startsWith('/api') ||
+    pathname.includes('.') // skip files with extensions (.ico, .png, .css, .js, etc.)
+  ) {
+    return NextResponse.next()
+  }
 
   // Check if pathname already has a locale
   const hasLocale = SUPPORTED_LOCALES.some(
@@ -15,15 +25,11 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // If no locale, redirect to default locale
-  return NextResponse.redirect(
-    new URL(`/${DEFAULT_LOCALE}${pathname === '/' ? '' : pathname}`, request.url)
-  )
+  // Redirect to default locale
+  const newPath = pathname === '/' ? `/${DEFAULT_LOCALE}` : `/${DEFAULT_LOCALE}${pathname}`
+  return NextResponse.redirect(new URL(newPath, request.url))
 }
 
 export const config = {
-  matcher: [
-    // Skip Next.js internals and all static files
-    '/((?!_next|_vercel|favicon.ico|robots.txt|sitemap.xml|public|.well-known).*)',
-  ],
+  matcher: ['/((?!_next/static|_next/image|favicon\\.ico|robots\\.txt|sitemap\\.xml).*)'],
 }
