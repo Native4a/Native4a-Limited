@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = ({ children, SectionClass, ContainerClass }) => {
+const Button = ({ children, SectionClass = '', ContainerClass = '' }) => {
   //使用 TailwindCss 預設 class style
   const section = 'bg-cover'
   const container =
