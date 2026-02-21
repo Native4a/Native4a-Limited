@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import Link from 'next/link'
 import useAddCases from '../../hook/useAddCases'
 
 interface CaseItem {
@@ -25,7 +25,7 @@ const AddCases: React.FC = () => {
           } = item
           return (
             <div role="navigation" className="p-2 my-4" aria-label="Main" key={index}>
-                <Link to={url}>
+                <Link href={url}>
                     <img src={image.url} alt="" width={500} height={600} className="rounded-sm py-4 drop-shadow-md" />
                 </Link>
                 <h4 className='text-amber-500 text-xl text-center p-2'>{title}</h4>

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
+import Link from 'next/link'
+import Image from 'next/image'
 
 import Section from './baseTools/Section'
 
@@ -11,7 +11,7 @@ interface Post {
   slug: string
   title: string
   heroImage?: {
-    gatsbyImageData: IGatsbyImageData
+    url: string
   }
   author?: {
     name: string
@@ -46,12 +46,14 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({ posts, language = 'zh' 
           {posts.map((post) => {
             return (
               <li key={post.slug}>
-                <Link to={getLocalizedPath(`/blog/${post.slug}`)} className={styles.link}>
-                  <GatsbyImage
-                    alt="gatsbyImageData"
-                    image={post.heroImage?.gatsbyImageData}
-                    className="w-full aspect-video"
-                  />
+                <Link href={getLocalizedPath(`/blog/${post.slug}`)} className={styles.link}>
+                  {post.heroImage?.url && (
+                    <img
+                      alt={post.title}
+                      src={post.heroImage.url}
+                      className="w-full aspect-video object-cover"
+                    />
+                  )}
                   <h2 className={styles.title}>{post.title}</h2>
                 </Link>
                 <div className={styles.meta}>

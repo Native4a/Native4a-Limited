@@ -1,5 +1,7 @@
+'use client'
+
 import React, { useState, useEffect } from 'react'
-import { Link } from 'gatsby'
+import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import { TbShoppingCart } from 'react-icons/tb'
 import Button from '../baseTools/button'
@@ -88,14 +90,7 @@ const Navprops = () => {
             return (
               <li className={clsx('relative group', styles.container)} key={index}>
                 <Link
-                  to={localizedSlug}
-                  activeStyle={{
-                    color: 'white',
-                    backgroundColor: '#faab00',
-                    fontWeight: 'bold',
-                    borderRadius: '3px',
-                  }}
-                  partiallyActive={true}
+                  href={localizedSlug}
                 >
                   {displayTitle}
                 </Link>
@@ -121,18 +116,12 @@ const Navprops = () => {
                       return (
                         <Link
                           key={subIndex}
-                          to={getLocalizedPath(subItem.slug)}
+                          href={getLocalizedPath(subItem.slug)}
                           className="block px-5 py-2.5 text-sm text-gray-700 whitespace-nowrap transition-all duration-200 hover:text-yellow-600 hover:bg-yellow-50"
                           style={{
                             borderRadius: '8px',
                             margin: '0 6px',
                           }}
-                          activeStyle={{
-                            color: '#ca8a04',
-                            backgroundColor: '#fef9c3',
-                            fontWeight: '600',
-                          }}
-                          partiallyActive={true}
                         >
                           {subDisplayTitle}
                         </Link>
@@ -194,59 +183,4 @@ const Navprops = () => {
 
 export default Navprops
 
-/*import React from 'react'
-import { Link, graphql } from 'gatsby'
-import get from 'lodash/get'
-import * as styles from '../styles/navprops.module.css'
-const Navprops = () => {
-  const [navdata] = get(this, 'props.data.allContentfulNavMenu.nodes')
-  return (
-    <nav role="Navprops" className={styles.container} aria-label="Main">
-    <ul className={styles.Navprops}>
-      <li className={styles.NavpropsItem}>
-        <Link to="/video/">
-        {navdata.menuName}
-        </Link>
-      </li>
-      <li className={styles.NavpropsItem}>
-        <Link to="/web-design/">
-          網站設計
-        </Link>
-      </li>
-      <li className={styles.NavpropsItem}>
-        <Link to="/seo/">
-          SEO
-        </Link>
-      </li>
-      <li className={styles.NavpropsItem}>
-        <Link to="/backlinks/">
-          Backlink
-        </Link>
-      </li>
-      <li className={styles.NavpropsItem}>
-        <Link to="/googleAds/">
-          Google廣告
-        </Link>
-      </li>
-      <li className={styles.NavpropsItem}>
-        <Link to="/smm-ads/" >
-          社交媒體廣告
-        </Link>
-      </li>
-    </ul>
-  </nav>
-  );
-};
-export default Navprops;
-export const NavQuery = graphql`
-  query NavQuery {
-    allContentfulNavMenu(filter: {menuName: {eq: ""}}) {
-      nodes {
-        menuName
-        url
-        id
-      }
-    }
-  }
-`
-*/
+

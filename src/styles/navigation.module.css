@@ -29,7 +29,7 @@
   flex-direction: row;
 }
 
-ul {
+.navList {
   flex-direction: column;
 }
 

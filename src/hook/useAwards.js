@@ -1,33 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby';
-
+// Replaced Gatsby useStaticQuery with static fallback
 const useAwards = () => {
-    const {
-      allContentfulAwards: { nodes }
-      } = useStaticQuery(graphql`
-      query AwardsQuery{
-        allContentfulAwards {
-          nodes {
-            title {
-              title
-            }
-            subTitle_field01
-            awardImage_field01 {
-              title
-              url
-            }
-            subTitle_field02
-            awardImage_field02 {
-              title
-              url
-            }
-            title_field {
-              raw
-            }
-          }
-        }
-      }
-    `);
-    return nodes;
-};
-
+  return []
+}
 export default useAwards

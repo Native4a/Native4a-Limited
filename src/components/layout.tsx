@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import i18n from '../i18n/config'
 
-import './variables.css'
-import '../styles/global.css'
 import Seo from './seo'
-import TwitterPixel from '../components/TwitterPixel'
+import TwitterPixel from './TwitterPixel'
 import Navigation from './header/navigation'
 import MobileNavigation from './header/mobileNavigation'
 import Footer from './footer/footer'
@@ -31,12 +29,12 @@ const Layout: React.FC<LayoutProps> = ({ children, location, pageContext }) => {
       if (!languageToUse) {
         const currentPath = window.location.pathname
         const langMatch = currentPath.match(/^\/(en|ja|zh)(\/|$)/)
-        languageToUse = langMatch ? langMatch[1] : null
+        languageToUse = langMatch ? langMatch[1] : undefined
       }
       
       // Priority 3: Use saved language from localStorage
       if (!languageToUse) {
-        languageToUse = localStorage.getItem('language') || null
+        languageToUse = localStorage.getItem('language') || undefined
       }
       
       // Priority 4: Default to Chinese

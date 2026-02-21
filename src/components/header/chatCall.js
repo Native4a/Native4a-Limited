@@ -1,5 +1,7 @@
+'use client'
+
 import React, { useState, useEffect } from 'react'
-import { Link } from 'gatsby'
+import Link from 'next/link'
 
 const ChatCall = () => {
   const [BottomNav, setBottomNav] = useState('0')
@@ -39,7 +41,7 @@ const ChatCall = () => {
         >
           <nav className="flex gap-2 justify-around bg-[#1d1d1d]/90 rounded-full p-2 content-center justify-items-center backdrop-blur-[10px]">
             <Link
-              to="https://line.me/ti/p/ZqH9CPaYkE"
+              href="https://line.me/ti/p/ZqH9CPaYkE"
               className="p-1 w-full flex gap-2 bg-[#FFFFFF] px-5 py-2 rounded-full items-center justify-center"
             >
               <svg

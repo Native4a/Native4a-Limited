@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnchorLink } from "gatsby-plugin-anchor-links"
+import Link from 'next/link'
 
 const AnchorBtn = ({ children, className, to }) => {
 
@@ -9,11 +9,11 @@ const AnchorBtn = ({ children, className, to }) => {
     const link = "#"
 
     return (
-        <AnchorLink to={to ? to : link}>
+        <Link href={to ? to : link}>
             <div className={className ? className : btn}>
                 {children}
             </div>
-        </AnchorLink>
+        </Link>
     );
 }
 

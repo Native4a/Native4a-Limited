@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import Link from 'next/link'
 import useSocialMedia from '../../../hook/useSocialMedia'
 
 const SocialMediaBtn = ({ showPartialItems }) => {
@@ -29,7 +29,7 @@ const SocialMediaBtn = ({ showPartialItems }) => {
               }
             >
               <Link
-                to={url}
+                href={url}
                 className="flex items-center text-white font-medium text-lg"
               >
                 <img

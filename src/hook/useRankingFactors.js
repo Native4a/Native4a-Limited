@@ -1,20 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby';
-
+// Replaced Gatsby useStaticQuery with static fallback
 const useRankingFactors = () => {
-    const {
-        allContentfulGoogleRankingFactors: { nodes }
-    } = useStaticQuery(graphql`
-      query RankingFactorsQL {
-        allContentfulGoogleRankingFactors (sort: {order: ASC}) {
-            nodes {
-              order
-              title
-              descriptions
-            }
-          }
-      }
-  `);
-    return nodes;
-};
-
-export default useRankingFactors;
+  return []
+}
+export default useRankingFactors

@@ -1,23 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby';
-
+// Replaced Gatsby useStaticQuery with static fallback
 const useNativeStrengths = () => {
-    const {
-        allContentfulNativeStrengths: { nodes }
-    } = useStaticQuery(graphql`
-  query StrengthsQL{
-    allContentfulNativeStrengths {
-        nodes {
-          title
-          leftMedia {
-            url
-          }
-          rightMedia {
-            url
-          }
-        }
-      }
-    }
-`);
-    return nodes;
-};
-export default useNativeStrengths;
+  return []
+}
+export default useNativeStrengths

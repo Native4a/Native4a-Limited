@@ -1,11 +1,16 @@
+'use client'
+
 import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Navprops from './navprops'
 import { Sling as Hamburger } from 'hamburger-react'
-import { Link } from 'gatsby'
 import Native_logo from '../../img/2023_native4a_logo.svg'
 import Whatsapp from '../baseTools/whatsapp'
 
 const Navigation = () => {
+  const pathname = usePathname()
+  const lang = pathname.split('/')[1] || 'zh'
   const [isOpen, setOpen] = useState(false)
   const [navColor, setnavColor] = useState('transparent')
   const [navBoxShadow, setnavBoxShadow] = useState('none')
@@ -56,7 +61,7 @@ const Navigation = () => {
         {/* Logo Section */}
         <div className="flex items-center col-start-1 col-end-5 lg:col-end-3">
           <div className="transition-transform duration-300 hover:scale-105">
-            <Link to="/">
+            <Link href={`/${lang}`}>
               <img
                 className="w-10/12 sm:w-7/12 lg:w-10/12 xl:w-9/12 py-1"
                 src={Native_logo}

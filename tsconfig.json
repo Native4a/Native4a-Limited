@@ -6,7 +6,7 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "outDir": "./dist",
+    "outDir": "./.next",
     "strict": true,
     "noImplicitAny": false,
     "strictNullChecks": true,
@@ -21,14 +21,28 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node"
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
-    "src/**/*",
-    "bin/**/*",
-    "gatsby-config.ts",
-    "gatsby-node.ts",
-    "postcss.config.ts"
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "dist", ".cache", "public"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    "dist",
+    ".cache",
+    "public"
+  ]
 }

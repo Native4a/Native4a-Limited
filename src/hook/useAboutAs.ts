@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby'
+// Replaced Gatsby useStaticQuery with static fallback
 
 interface AboutAsNode {
   title: string
@@ -11,28 +11,8 @@ interface AboutAsNode {
   }
 }
 
-interface UseAboutAsResult extends Array<AboutAsNode> {}
-
-const useAboutAs = (): UseAboutAsResult => {
-  const {
-    allContentfulAboutAs: { nodes }
-  } = useStaticQuery(graphql`
-  query BioQL{
-    allContentfulAboutAs {
-      nodes {
-        title
-        SubTitle
-        description {
-          raw
-        }
-        logo {
-          url
-        }
-      }
-    }
-  }
-`)
-  return nodes
+const useAboutAs = (): AboutAsNode[] => {
+  return []
 }
 
 export default useAboutAs

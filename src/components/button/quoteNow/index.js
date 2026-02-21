@@ -1,6 +1,7 @@
+'use client'
+
 import React, { useState, useEffect } from "react"
 import { useTranslation } from 'react-i18next'
-import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 
 const QuoteNow = () => {
@@ -18,7 +19,7 @@ const QuoteNow = () => {
         };
     }, []);
     return (
-        <AnchorLink to="#contactAs">
+        <a href="#contactAs">
             <button className="xl:inline hidden rounded-full bg-white text-black px-7 py-1.5 font-black text-base md:text-md xl:text-xl" style={{
                 border: quoteBorder
             }}>
@@ -29,7 +30,7 @@ const QuoteNow = () => {
             }}>
                 {t('buttons.quoteNow')}
             </button>
-        </AnchorLink>
+        </a>
     )
 }
 

@@ -1,4 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby'
+// Replaced Gatsby useStaticQuery with static fallback
+// TODO: Connect to Contentful API when environment variables are available
 
 interface CaseNode {
   order: number
@@ -11,28 +12,8 @@ interface CaseNode {
   }
 }
 
-interface UseAddCasesResult extends Array<CaseNode> {}
-
-const useAddCases = (): UseAddCasesResult => {
-  const {
-    allContentfulCases: { nodes }
-  } = useStaticQuery(graphql`
-      query AddCasesQL {
-        allContentfulCases(sort: {order: ASC}) {
-          nodes {
-            order
-            title
-            description
-            slug
-            url
-            image {
-              url
-            }
-          }
-        }
-      }
-  `)
-  return nodes
+const useAddCases = (): CaseNode[] => {
+  return []
 }
 
 export default useAddCases

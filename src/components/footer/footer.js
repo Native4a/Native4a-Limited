@@ -1,6 +1,8 @@
+'use client'
+
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { useLocation } from '@reach/router'
+import { usePathname } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 import Container from '../container'
 import * as styles from '../../styles/footer.module.css'
@@ -12,8 +14,7 @@ import line_icon from '../baseTools/Icon/img/line_Icon.svg'
 
 const Footer = () => {
   const footer = useFooter()
-  const location = useLocation()
-  const pathname = location.pathname
+  const pathname = usePathname()
   const { t } = useTranslation()
 
   // ❗在這裡設定你不想顯示 Icon 的路徑
