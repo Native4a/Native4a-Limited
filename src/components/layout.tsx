@@ -29,12 +29,12 @@ const Layout: React.FC<LayoutProps> = ({ children, location, pageContext }) => {
       if (!languageToUse) {
         const currentPath = window.location.pathname
         const langMatch = currentPath.match(/^\/(en|ja|zh)(\/|$)/)
-        languageToUse = langMatch ? langMatch[1] : null
+        languageToUse = langMatch ? langMatch[1] : undefined
       }
       
       // Priority 3: Use saved language from localStorage
       if (!languageToUse) {
-        languageToUse = localStorage.getItem('language') || null
+        languageToUse = localStorage.getItem('language') || undefined
       }
       
       // Priority 4: Default to Chinese
