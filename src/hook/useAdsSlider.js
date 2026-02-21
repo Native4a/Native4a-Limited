@@ -1,34 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby';
-
+// Replaced Gatsby useStaticQuery with static fallback
 const useAdsSlider = () => {
-  const { allContentfulSocialMediaPage: { nodes }} = useStaticQuery(graphql`
-  query AdsSlider{
-    allContentfulSocialMediaPage {
-      nodes {
-        step1Image {
-          title
-          url
-          description
-        }
-        step2Image {
-          title
-          url
-          description
-        }
-        step3Image {
-          title
-          url
-          description
-        }
-        step4Image {
-          title
-          url
-          description
-        }
-      }
-    }
-  }
-`);
-  return nodes;
-};
-export default useAdsSlider;
+  return []
+}
+export default useAdsSlider

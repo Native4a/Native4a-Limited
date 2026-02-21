@@ -1,34 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby';
-
+// Replaced Gatsby useStaticQuery with static fallback
 const useClients = () => {
-    const {
-        allContentfulClients: { nodes }
-    } = useStaticQuery(graphql`
-    query ClientsQL {
-      allContentfulClients(sort: {order: ASC}) {
-        nodes {
-          order
-          mainVisual {
-            url
-          }
-          companyLogo {
-            url
-          }
-          companyName
-          clientsName
-          clientsPosition
-          clientFeedback {
-            internal {
-              content
-            }
-          }
-          ranking
-          url
-        }
-      }
-    }
-  `);
-    return nodes;
-};
-
-export default useClients;
+  return []
+}
+export default useClients

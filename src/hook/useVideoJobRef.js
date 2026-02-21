@@ -1,25 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby';
-
+// Replaced Gatsby useStaticQuery with static fallback
 const VideoJobRef = () => {
-  const {
-    allContentfulVideoJobRef: { nodes }
-  } = useStaticQuery(graphql`
-      query VideoJobRefQL {
-        allContentfulVideoJobRef(sort: {order: ASC}) {
-            nodes {
-              order
-              image {
-                url
-              }
-              companyName
-              videoTitle
-              youtubeUrl
-              videoAlt
-            }
-        }
-      }
-  `);
-  return nodes;
-};
-
-export default VideoJobRef;
+  return []
+}
+export default VideoJobRef

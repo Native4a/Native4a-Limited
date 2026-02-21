@@ -1,19 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby';
-
+// Replaced Gatsby useStaticQuery with static fallback
 const useEngBacklinksEvaluation = () => {
-    const {
-        allContentfulEngBacklinksEvaluation: { nodes }
-    } = useStaticQuery(graphql`
-    query EngBacklinkEvaluationQL {
-        allContentfulEngBacklinksEvaluation(sort: {order: ASC}) {
-            nodes {
-              order
-              descriptions
-            }
-          }
-      }
-  `);
-    return nodes;
-};
-
-export default useEngBacklinksEvaluation;
+  return []
+}
+export default useEngBacklinksEvaluation

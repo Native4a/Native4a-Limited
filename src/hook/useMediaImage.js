@@ -1,20 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby';
-
+// Replaced Gatsby useStaticQuery with static fallback
 const useMediaImage = () => {
-    const {
-        allContentfulSocialMediaPage: { nodes }
-      } = useStaticQuery(graphql`
-      query MediaImageQuery {
-        allContentfulSocialMediaPage {
-          nodes {
-            mediaImage {
-              url
-            }
-          }
-        }
-      }
-    `);
-    return nodes;
-};
-
+  return []
+}
 export default useMediaImage

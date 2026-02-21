@@ -1,12 +1,8 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+// Replaced Gatsby Helmet + useStaticQuery with a simple metadata helper
+// In Next.js, SEO is handled via generateMetadata in page files
+// This component is kept for backward compatibility but rendered as null
 
-interface StructuredData {
-  '@context': string
-  '@type': string
-  [key: string]: unknown
-}
+import React from 'react'
 
 interface SeoProps {
   description?: string
@@ -17,157 +13,13 @@ interface SeoProps {
   ogUrl?: string
   keywords?: string
   noindex?: boolean
-  structuredData?: StructuredData
+  structuredData?: any
 }
 
-interface SiteMetadata {
-  title: string
-  description: string
-  keywords?: string
-  author?: string
-  social?: {
-    twitter?: string
-  }
-}
-
-interface SiteData {
-  site: {
-    siteMetadata: SiteMetadata
-  }
-}
-
-const Seo: React.FC<SeoProps> = ({
-  description = '',
-  lang = 'zh-HK',
-  meta = [],
-  title,
-  image,
-  ogUrl,
-  keywords,
-  noindex = false,
-  structuredData,
-}) => {
-  const { site } = useStaticQuery<SiteData>(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            keywords
-            author
-          }
-        }
-      }
-    `
-  )
-
-  const metaDescription = description || site.siteMetadata.description
-  const metaKeywords = keywords || site.siteMetadata.keywords
-  const defaultTitle = site.siteMetadata?.title
-  const defaultImage = image || 'https://nativeaaaa.com.hk/og-image.png'
-
-  const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow'
-
-  return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      defaultTitle={defaultTitle}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
-      meta={[
-        {
-          name: 'robots',
-          content: robotsContent,
-        },
-        {
-          name: 'googlebot',
-          content: robotsContent,
-        },
-        {
-          name: 'description',
-          content: metaDescription,
-        },
-        {
-          name: 'keywords',
-          content: metaKeywords,
-        },
-        {
-          name: 'author',
-          content: site.siteMetadata?.author || 'Native4a',
-        },
-        {
-          name: 'viewport',
-          content: 'width=device-width, initial-scale=1, maximum-scale=5',
-        },
-        {
-          name: 'theme-color',
-          content: '#FAAB00',
-        },
-        {
-          name: 'image',
-          content: defaultImage,
-        },
-        {
-          property: 'og:url',
-          content: ogUrl,
-        },
-        {
-          property: 'og:title',
-          content: title,
-        },
-        {
-          property: 'og:description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:type',
-          content: 'website',
-        },
-        {
-          property: 'og:image',
-          content: defaultImage,
-        },
-        {
-          property: 'og:locale',
-          content: 'zh_HK',
-        },
-        {
-          property: 'og:site_name',
-          content: 'Native4a',
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary_large_image',
-        },
-        {
-          name: 'twitter:creator',
-          content: site.siteMetadata?.social?.twitter || '@Native4a',
-        },
-        {
-          name: 'twitter:title',
-          content: title,
-        },
-        {
-          name: 'twitter:description',
-          content: metaDescription,
-        },
-        {
-          name: 'twitter:image',
-          content: defaultImage,
-        },
-      ].concat(meta)}
-    >
-      <link rel="canonical" href={ogUrl} />
-      {structuredData && (
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-      )}
-    </Helmet>
-  )
+const Seo: React.FC<SeoProps> = () => {
+  // In Next.js, SEO metadata is handled via generateMetadata in page.tsx files
+  // This component is kept as a no-op for backward compatibility
+  return null
 }
 
 export default Seo

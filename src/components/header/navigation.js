@@ -11,6 +11,7 @@ import Whatsapp from '../baseTools/whatsapp'
 const Navigation = () => {
   const pathname = usePathname()
   const lang = pathname.split('/')[1] || 'zh'
+  const [isOpen, setOpen] = useState(false)
   const [navColor, setnavColor] = useState('transparent')
   const [navBoxShadow, setnavBoxShadow] = useState('none')
   const [navBorderRadius, setnavBorderRadius] = useState('none')

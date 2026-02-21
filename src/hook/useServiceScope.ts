@@ -1,32 +1,14 @@
-import { graphql, useStaticQuery } from 'gatsby';
+// Replaced Gatsby useStaticQuery with static fallback
 
 interface ServiceScopeNode {
-  icon: { url: string };
-  title: string;
-  descriptions: { raw: string };
-  order: number;
+  icon: { url: string }
+  title: string
+  descriptions: { raw: string }
+  order: number
 }
 
 const useServiceScope = (): ServiceScopeNode[] => {
-    const {
-        allContentfulServiceScope: { nodes }
-    } = useStaticQuery(graphql`
-      query ServiceScope_QL {
-        allContentfulServiceScope(sort: {order: ASC}) {
-            nodes {
-              icon {
-                url
-              }
-              title
-              descriptions {
-                raw
-              }
-              order
-            }
-        }
-      }
-  `);
-    return nodes;
-};
+  return []
+}
 
-export default useServiceScope;
+export default useServiceScope

@@ -1,21 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby'
-
+// Replaced Gatsby useStaticQuery with static fallback
 const useChiBacklinksEvaluation = () => {
-  const {
-    allContentfulBacklinksPage: { nodes },
-  } = useStaticQuery(graphql`
-    query ChiBacklinkEvaluationQL {
-      allContentfulBacklinksPage {
-        nodes {
-          chiEvaluationDescription {
-            order
-            title
-          }
-        }
-      }
-    }
-  `)
-  return nodes
+  return []
 }
-
 export default useChiBacklinksEvaluation
