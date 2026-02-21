@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, ElementType } from 'react'
 
 interface ContainerProps {
   children: ReactNode
-  as?: keyof JSX.IntrinsicElements
+  as?: ElementType
 }
 
 const Container: React.FC<ContainerProps> = ({ children, as = 'div' }) => {
