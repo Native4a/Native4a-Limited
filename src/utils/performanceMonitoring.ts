@@ -28,10 +28,11 @@ export const initializeWebVitalsMonitoring = (callback?: (metrics: PerformanceMe
   // Large Contentful Paint
   const observer = new PerformanceObserver((list) => {
     for (const entry of list.getEntries()) {
+      const lcpEntry = entry as PerformanceEntry & { renderTime?: number; loadTime?: number }
       if (callback) {
         callback({
           name: 'LCP',
-          value: entry.renderTime || entry.loadTime,
+          value: lcpEntry.renderTime || lcpEntry.loadTime || entry.startTime,
           unit: 'ms',
           timestamp: Date.now(),
         })
