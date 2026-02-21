@@ -1,9 +1,9 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, ElementType } from 'react'
 
 interface TextProps {
   children: ReactNode
   className?: string
-  tag?: keyof JSX.IntrinsicElements
+  tag?: ElementType
 }
 
 const Text: React.FC<TextProps> = ({
