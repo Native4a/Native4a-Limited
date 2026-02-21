@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import i18n from '@/src/i18n/config'
 import Navigation from '@/src/components/header/navigation'
@@ -19,11 +19,27 @@ export default function I18nProvider({
 }) {
   const validLang = SUPPORTED_LOCALES.includes(lang) ? lang : 'zh'
 
+  // Set language synchronously before first render to avoid hydration mismatch
+  if (i18n.language !== validLang) {
+    i18n.changeLanguage(validLang)
+  }
+
+  const [mounted, setMounted] = useState(false)
+
   useEffect(() => {
-    if (i18n.language !== validLang) {
-      i18n.changeLanguage(validLang)
-    }
-  }, [validLang])
+    setMounted(true)
+  }, [])
+
+  // Suppress hydration mismatch by only rendering after mount
+  if (!mounted) {
+    return (
+      <I18nextProvider i18n={i18n}>
+        <div suppressHydrationWarning>
+          <main>{children}</main>
+        </div>
+      </I18nextProvider>
+    )
+  }
 
   return (
     <I18nextProvider i18n={i18n}>
