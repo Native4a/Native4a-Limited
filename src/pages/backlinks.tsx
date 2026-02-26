@@ -162,21 +162,21 @@ const BacklinksIndex = ({ location }: { location: any }) => {
             </div>
             <div className="row-span-4 flex justify-center order-2 lg:order-3">
               <div className="grid grid-rows-6 grid-flow-col gap-4 m-10 md:m-0">
-                <div className="flex justify-center rounded-xl items-center text-white m-6 p-6 relative top-14 z-10 bg-[#3A7DFF]">來自英文外部連結網站</div>
+                <div className="flex justify-center rounded-xl items-center text-white m-6 p-6 relative top-14 z-10 bg-[#3A7DFF]">{t('backlinks.section4EnglishBacklinks')}</div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>外部連結 Spam Score 高企。DA，DR 權重低下</p>
+                  <p>{t('backlinks.section4EnglishFeature1')}</p>
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>每條外部連結文章的內容與客戶的行業和關鍵字並不相關</p>
+                  <p>{t('backlinks.section4EnglishFeature2')}</p>
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>每條外部連結的URL和關鐽字數量有限制</p>
+                  <p>{t('backlinks.section4EnglishFeature3')}</p>
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>每條外部連結袛有一個 Anchor Text 錨點</p>
+                  <p>{t('backlinks.section4EnglishFeature4')}</p>
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>同一篇網站連結文章內放了大量其他客戶網站的關鐽字和連結</p>
+                  <p>{t('backlinks.section4EnglishFeature5')}</p>
                 </div>
               </div>
             </div>
@@ -188,19 +188,19 @@ const BacklinksIndex = ({ location }: { location: any }) => {
             <div className="row-span-4 flex justify-center order-4 lg:order-5">
               <div className="grid grid-rows-6 grid-flow-col gap-4 m-10 md:m-0">
                 <div className="flex justify-center rounded-xl items-center text-white m-6 p-6 relative top-14 z-10 bg-[#FAAB00]">
-                  來自中文外部連結網站
+                  {t('backlinks.section4ChineseBacklinks')}
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>外部連結 Spam FREE, DA，DR 權重分別達 50+ 或 30+1</p>
+                  <p>{t('backlinks.section4ChineseFeature1')}</p>
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>每篇反向連結文章內容都是與客戶的行業和關鍵字相關的</p>
+                  <p>{t('backlinks.section4ChineseFeature2')}</p>
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>沒有限制每條外部連結的 URL和關鐽字數量</p>
+                  <p>{t('backlinks.section4ChineseFeature3')}</p>
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>每一篇文章只屬於一個客戶內裡袛有該客戶的關鐽字和連結</p>
+                  <p>{t('backlinks.section4ChineseFeature4')}</p>
                 </div>
               </div>
             </div>
