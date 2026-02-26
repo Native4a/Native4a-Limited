@@ -191,7 +191,7 @@ const BacklinksIndex = ({ location }: { location: any }) => {
                   {t('backlinks.section4ChineseBacklinks')}
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>{t('backlinks.section4ChineseFeature1')}</p>
+                  <p>{t('backlinks.section4ChineseFeature1')}1</p>
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
                   <p>{t('backlinks.section4ChineseFeature2')}</p>
