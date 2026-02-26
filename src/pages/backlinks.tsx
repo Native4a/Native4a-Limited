@@ -164,7 +164,7 @@ const BacklinksIndex = ({ location }: { location: any }) => {
               <div className="grid grid-rows-6 grid-flow-col gap-4 m-10 md:m-0">
                 <div className="flex justify-center rounded-xl items-center text-white m-6 p-6 relative top-14 z-10 bg-[#3A7DFF]">{t('backlinks.section4EnglishBacklinks')}</div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>{t('backlinks.section4EnglishFeature1')}</p>
+                  <p>{t('backlinks.section4EnglishFeature1')}1</p>
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
                   <p>{t('backlinks.section4EnglishFeature2')}</p>
@@ -191,7 +191,7 @@ const BacklinksIndex = ({ location }: { location: any }) => {
                   {t('backlinks.section4ChineseBacklinks')}
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>{t('backlinks.section4ChineseFeature1')}1</p>
+                  <p>{t('backlinks.section4ChineseFeature1')}</p>
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
                   <p>{t('backlinks.section4ChineseFeature2')}</p>
