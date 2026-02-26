@@ -160,7 +160,14 @@ const BacklinksIndex = ({ location }: { location: any }) => {
             <div className="row-span-8 lg:row-span-2 col-span-2 flex justify-center items-center text-white text-3xl font-semibold p-14 leading-10 order-5 lg:order-2">
               {t('backlinks.section4BottomTitle')}
             </div>
-            <EngBacklinksEvaluation />
+            <div className="row-span-4 flex justify-center order-2 lg:order-3">
+              <div className="grid grid-rows-6 grid-flow-col gap-4 m-10 md:m-0">
+                <div className="flex justify-center rounded-xl items-center text-white m-6 p-6 relative top-14 z-10 bg-[#3A7DFF]">來自英文外部連結網站</div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>外部連結 Spam Score 高企。DA，DR 權重低下</p>
+                </div>
+              </div>
+            </div>
             <div className="row-span-4 flex bg-[#70a665] px-10 rounded-xl items-center text-white h-1/6 order-3 lg:order-4">
               <div className="flex rounded-xl items-center text-4xl font-semibold">
                 VS
