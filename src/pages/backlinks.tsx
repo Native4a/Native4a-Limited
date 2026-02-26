@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CountUp from 'react-countup'
 import { useTranslation } from 'react-i18next'
 
@@ -11,6 +11,7 @@ import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 import Anchor from '../components/baseTools/Anchor/index.js'
 import EngBacklinksEvaluation from '../components/backlinksEvaluation/eng'
 import ChiBacklinksEvaluation from '../components/backlinksEvaluation/chi'
+import JpBacklinksEvaluation from '../components/backlinksEvaluation/jp'
 import TwelveDifferent from '../components/TwelveDifferent'
 import Section from '../components/baseTools/Section'
 import Img from '../components/baseTools/Image'
@@ -22,6 +23,7 @@ import * as styles from '../styles/backlinks.module.css'
 
 const BacklinksIndex = ({ location }: { location: any }) => {
   const { t } = useTranslation()
+  const [evalLang, setEvalLang] = useState('eng')
 
   return (
     <BacklinkLayout location={location}>
@@ -191,7 +193,7 @@ const BacklinksIndex = ({ location }: { location: any }) => {
                   來自中文外部連結網站
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>外部連結 Spam FREE, DA，DR 權重分別達 50+ 或 30+1</p>
+                  <p>外部連結 Spam FREE, DA，DR 權重分別達 50+ 或 30+</p>
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
                   <p>每篇反向連結文章內容都是與客戶的行業和關鍵字相關的</p>
@@ -209,6 +211,40 @@ const BacklinksIndex = ({ location }: { location: any }) => {
         {/* Mobile version */}
         <div className="block lg:hidden">
           <div className="grid grid-cols-1 text-xl items-center">
+            {/* Language Switcher for Mobile */}
+            <div className="flex justify-center gap-2 pt-8 pb-4">
+              <button
+                onClick={() => setEvalLang('eng')}
+                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+                  evalLang === 'eng'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
+                }`}
+              >
+                English
+              </button>
+              <button
+                onClick={() => setEvalLang('jp')}
+                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+                  evalLang === 'jp'
+                    ? 'bg-red-500 text-white'
+                    : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
+                }`}
+              >
+                日本語
+              </button>
+              <button
+                onClick={() => setEvalLang('chi')}
+                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+                  evalLang === 'chi'
+                    ? 'bg-amber-500 text-white'
+                    : 'bg-gray-300 text-gray-700 hover:bg-gray-400'
+                }`}
+              >
+                中文
+              </button>
+            </div>
+            
             <div className="px-10 pt-11 order-1">
               <div className="row-span-4 md:row-span-2 flex justify-center items-center text-white text-2xl md:text-3xl font-semibold p-6 md:p-14 leading-8 md:leading-10 border-[#70A665] border-l-[20px]">
                 {t('backlinks.section7TopTitle')}
@@ -219,10 +255,26 @@ const BacklinksIndex = ({ location }: { location: any }) => {
                 {t('backlinks.section4BottomTitle')}
               </div>
             </div>
-            <EngBacklinksEvaluation
-              className1="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#3A7DFF] p-5"
-              className2="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/70 text-center"
-            />
+            
+            {evalLang === 'eng' && (
+              <EngBacklinksEvaluation
+                className1="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#3A7DFF] p-5"
+                className2="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/70 text-center"
+              />
+            )}
+            {evalLang === 'jp' && (
+              <JpBacklinksEvaluation
+                className1="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#FF6B35] p-5"
+                className2="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/70 text-center"
+              />
+            )}
+            {evalLang === 'chi' && (
+              <ChiBacklinksEvaluation
+                className1="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#FAAB00] p-5"
+                className2="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center"
+              />
+            )}
+            
             <div className="flex justify-center row-span-2 bg-[#70a665] pt-16 md:px-10 items-center text-white h-1/6 order-3 lg:order-4">
               <div className="flex rounded-xl items-center text-6xl font-semibold">
                 VS
