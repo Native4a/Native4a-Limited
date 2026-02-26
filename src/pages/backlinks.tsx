@@ -151,70 +151,113 @@ const BacklinksIndex = ({ location }: { location: any }) => {
 
       {/* Backlinks Evaluation Section */}
       <section className={`${styles.sec7} lg:p-20 mx-auto bg-bottom lg:bg-center`}>
-        <div className="px-4 md:px-6 lg:p-10 py-8 md:py-12 lg:py-0">
-          <div className="flex flex-col lg:grid lg:grid-flow-col lg:gap-4 items-center lg:items-stretch gap-8 lg:gap-4 lg:grid-rows-4">
-            {/* English Backlinks - Left Column */}
-            <div className="lg:row-span-4 flex justify-center">
-              <div className="w-full lg:w-auto">
-                <div className="flex justify-center rounded-xl items-center text-white p-4 md:p-6 lg:p-6 bg-[#3A7DFF] mb-4 lg:m-6 lg:relative lg:top-14 lg:z-10">
-                  <p className="text-base md:text-lg lg:text-base font-semibold text-center">{t('backlinks.section4EnglishBacklinks')}</p>
+        {/* Mobile/Tablet version */}
+        <div className="lg:hidden px-4 py-8 md:px-6 md:py-12">
+          <div className="space-y-8">
+            {/* English Backlinks Section */}
+            <div>
+              <div className="flex justify-center rounded-xl items-center text-white p-4 md:p-6 bg-[#3A7DFF] mb-4">
+                <p className="text-lg md:text-xl font-semibold text-center">{t('backlinks.section4EnglishBacklinks')}</p>
+              </div>
+              <div className="space-y-3 md:space-y-4">
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature1')}1</p>
                 </div>
-                <div className="space-y-3 md:space-y-4 lg:space-y-0 lg:grid lg:grid-rows-5 lg:gap-4 lg:m-10">
-                  <div className="flex justify-center rounded-3xl p-4 md:p-6 lg:p-6 items-center backdrop-blur-md bg-white/80 text-center text-xs md:text-sm lg:text-xs">
-                    <p>{t('backlinks.section4EnglishFeature1')}1</p>
-                  </div>
-                  <div className="flex justify-center rounded-3xl p-4 md:p-6 lg:p-6 items-center backdrop-blur-md bg-white/80 text-center text-xs md:text-sm lg:text-xs">
-                    <p>{t('backlinks.section4EnglishFeature2')}</p>
-                  </div>
-                  <div className="flex justify-center rounded-3xl p-4 md:p-6 lg:p-6 items-center backdrop-blur-md bg-white/80 text-center text-xs md:text-sm lg:text-xs">
-                    <p>{t('backlinks.section4EnglishFeature3')}</p>
-                  </div>
-                  <div className="flex justify-center rounded-3xl p-4 md:p-6 lg:p-6 items-center backdrop-blur-md bg-white/80 text-center text-xs md:text-sm lg:text-xs">
-                    <p>{t('backlinks.section4EnglishFeature4')}</p>
-                  </div>
-                  <div className="flex justify-center rounded-3xl p-4 md:p-6 lg:p-6 items-center backdrop-blur-md bg-white/80 text-center text-xs md:text-sm lg:text-xs">
-                    <p>{t('backlinks.section4EnglishFeature5')}</p>
-                  </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature2')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature3')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature4')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature5')}</p>
                 </div>
               </div>
-            </div>
-
-            {/* Top Title - Hidden on mobile */}
-            <div className="hidden lg:flex lg:row-span-2 lg:col-span-2 justify-center items-center text-white text-3xl font-semibold p-14 leading-10">
-              {t('backlinks.section4TopTitle')}
             </div>
 
             {/* VS Divider */}
-            <div className="lg:row-span-4 flex justify-center items-center">
-              <div className="bg-[#70a665] rounded-xl px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-0 flex items-center h-auto lg:h-1/6 lg:relative lg:z-10">
-                <p className="text-white text-2xl md:text-3xl lg:text-4xl font-semibold">VS</p>
+            <div className="flex justify-center">
+              <div className="bg-[#70a665] rounded-xl px-6 md:px-8 py-3 md:py-4 flex items-center">
+                <p className="text-white text-2xl md:text-3xl font-semibold">VS</p>
               </div>
             </div>
 
-            {/* Bottom Title - Hidden on mobile */}
-            <div className="hidden lg:flex lg:row-span-2 lg:col-span-2 justify-center items-center text-white text-3xl font-semibold p-14 leading-10">
+            {/* Chinese Backlinks Section */}
+            <div>
+              <div className="flex justify-center rounded-xl items-center text-white p-4 md:p-6 bg-[#FAAB00] mb-4">
+                <p className="text-lg md:text-xl font-semibold text-center">{t('backlinks.section4ChineseBacklinks')}</p>
+              </div>
+              <div className="space-y-3 md:space-y-4">
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4ChineseFeature1')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4ChineseFeature2')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4ChineseFeature3')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4ChineseFeature4')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop version */}
+        <div className="hidden lg:block grid-cols-1 grid-rows-8 gap-4 text-xl items-center p-10">
+          <div className="grid grid-rows-8 lg:grid-rows-4 grid-flow-col gap-4 text-xl items-center">
+            <div className="row-span-8 lg:row-span-2 col-span-2 flex justify-center items-center text-white text-3xl font-semibold p-14 leading-10 order-1 lg:order-1">
+              {t('backlinks.section4TopTitle')}
+            </div>
+            <div className="row-span-8 lg:row-span-2 col-span-2 flex justify-center items-center text-white text-3xl font-semibold p-14 leading-10 order-5 lg:order-2">
               {t('backlinks.section4BottomTitle')}
             </div>
-
-            {/* Chinese Backlinks - Right Column */}
-            <div className="lg:row-span-4 flex justify-center">
-              <div className="w-full lg:w-auto">
-                <div className="flex justify-center rounded-xl items-center text-white p-4 md:p-6 lg:p-6 bg-[#FAAB00] mb-4 lg:m-6 lg:relative lg:top-14 lg:z-10">
-                  <p className="text-base md:text-lg lg:text-base font-semibold text-center">{t('backlinks.section4ChineseBacklinks')}</p>
+            <div className="row-span-4 flex justify-center order-2 lg:order-3">
+              <div className="grid grid-rows-6 grid-flow-col gap-4 m-10 md:m-0">
+                <div className="flex justify-center rounded-xl items-center text-white m-6 p-6 relative top-14 z-10 bg-[#3A7DFF]">{t('backlinks.section4EnglishBacklinks')}</div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>{t('backlinks.section4EnglishFeature1')}1</p>
                 </div>
-                <div className="space-y-3 md:space-y-4 lg:space-y-0 lg:grid lg:grid-rows-4 lg:gap-4 lg:m-10">
-                  <div className="flex justify-center rounded-3xl p-4 md:p-6 lg:p-6 items-center backdrop-blur-md bg-white/80 text-center text-xs md:text-sm lg:text-xs">
-                    <p>{t('backlinks.section4ChineseFeature1')}</p>
-                  </div>
-                  <div className="flex justify-center rounded-3xl p-4 md:p-6 lg:p-6 items-center backdrop-blur-md bg-white/80 text-center text-xs md:text-sm lg:text-xs">
-                    <p>{t('backlinks.section4ChineseFeature2')}</p>
-                  </div>
-                  <div className="flex justify-center rounded-3xl p-4 md:p-6 lg:p-6 items-center backdrop-blur-md bg-white/80 text-center text-xs md:text-sm lg:text-xs">
-                    <p>{t('backlinks.section4ChineseFeature3')}</p>
-                  </div>
-                  <div className="flex justify-center rounded-3xl p-4 md:p-6 lg:p-6 items-center backdrop-blur-md bg-white/80 text-center text-xs md:text-sm lg:text-xs">
-                    <p>{t('backlinks.section4ChineseFeature4')}</p>
-                  </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>{t('backlinks.section4EnglishFeature2')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>{t('backlinks.section4EnglishFeature3')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>{t('backlinks.section4EnglishFeature4')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>{t('backlinks.section4EnglishFeature5')}</p>
+                </div>
+              </div>
+            </div>
+            <div className="row-span-4 flex bg-[#70a665] px-10 rounded-xl items-center text-white h-1/6 order-3 lg:order-4">
+              <div className="flex rounded-xl items-center text-4xl font-semibold">
+                VS
+              </div>
+            </div>
+            <div className="row-span-4 flex justify-center order-4 lg:order-5">
+              <div className="grid grid-rows-6 grid-flow-col gap-4 m-10 md:m-0">
+                <div className="flex justify-center rounded-xl items-center text-white m-6 p-6 relative top-14 z-10 bg-[#FAAB00]">
+                  {t('backlinks.section4ChineseBacklinks')}
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>{t('backlinks.section4ChineseFeature1')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>{t('backlinks.section4ChineseFeature2')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>{t('backlinks.section4ChineseFeature3')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>{t('backlinks.section4ChineseFeature4')}</p>
                 </div>
               </div>
             </div>
