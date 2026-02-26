@@ -9,9 +9,6 @@ import Button from '../components/baseTools/button'
 import BacklinksSlick from '../components/slickSlider/greenSlider/backlinksSlider'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 import Anchor from '../components/baseTools/Anchor/index.js'
-import EngBacklinksEvaluation from '../components/backlinksEvaluation/eng'
-import ChiBacklinksEvaluation from '../components/backlinksEvaluation/chi'
-import TwelveDifferent from '../components/TwelveDifferent'
 import Section from '../components/baseTools/Section'
 import Img from '../components/baseTools/Image'
 import Text from '../components/baseTools/text'
@@ -422,30 +419,89 @@ const BacklinksIndex = ({ location }: { location: any }) => {
                 {t('backlinks.section8Subtitle')}
               </h3>
             </div>
-            <TwelveDifferent />
+
+            {/* 統一的 grid 容器 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+              {[
+                {
+                  num: "01",
+                  titleKey: "section8Item01Title",
+                  descKey: "section8Item01Desc"
+                },
+                {
+                  num: "02",
+                  titleKey: "section8Item02Title",
+                  descKey: "section8Item02Desc"
+                },
+                {
+                  num: "03",
+                  titleKey: "section8Item03Title",
+                  descKey: "section8Item03Desc"
+                },
+                {
+                  num: "04",
+                  titleKey: "section8Item04Title",
+                  descKey: "section8Item04Desc"
+                },
+                {
+                  num: "05",
+                  titleKey: "section8Item05Title",
+                  descKey: "section8Item05Desc"
+                },
+                {
+                  num: "06",
+                  titleKey: "section8Item06Title",
+                  descKey: "section8Item06Desc"
+                },
+                {
+                  num: "07",
+                  titleKey: "section8Item07Title",
+                  descKey: "section8Item07Desc"
+                },
+                {
+                  num: "08",
+                  titleKey: "section8Item08Title",
+                  descKey: "section8Item08Desc"
+                },
+                {
+                  num: "09",
+                  titleKey: "section8Item09Title",
+                  descKey: "section8Item09Desc"
+                },
+                {
+                  num: "10",
+                  titleKey: "section8Item10Title",
+                  descKey: "section8Item10Desc"
+                },
+                {
+                  num: "11",
+                  titleKey: "section8Item11Title",
+                  descKey: "section8Item11Desc"
+                },
+                {
+                  num: "12",
+                  titleKey: "section8Item12Title",
+                  descKey: "section8Item12Desc"
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="grid grid-cols-4 items-center rounded-xl p-6 shadow-[1px_1px_10px_#ccc] backdrop-blur-3xl bg-white/70 min-h-[180px] lg:min-h-[220px]"
+                >
+                  <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-4 md:pr-5">
+                    {item.num}
+                  </div>
+                  <div className="col-span-3 space-y-2">
+                    <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold leading-tight">
+                      {t(`backlinks.${item.titleKey}`)}
+                    </h3>
+                    <p className="text-sm lg:text-base text-gray-700 leading-relaxed">
+                      {t(`backlinks.${item.descKey}`)}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Sample Button */}
-      <Section ContainerClass="flex justify-center mb-20">
-        <Button
-          linkto="https://nativeaaaa.com.hk/blog/native4a_backlinks_reference/"
-          className="bg-emerald-500 text-white rounded-full px-16 py-6 font-medium text-2xl md:text-md xl:text-6xl"
-        >
-          {t('backlinks.btnChineseBacklinksSample')}
-        </Button>
-      </Section>
-
-      {/* Slider & Contact */}
-      <section className={styles.backlinksSpanSquare}>
-        <BacklinksSlick />
-      </section>
-      <section className={styles.backlinksSpanSquare}>
-        <ContactForm />
-      </section>
-    </BacklinkLayout>
-  )
-}
-
-export default BacklinksIndex
