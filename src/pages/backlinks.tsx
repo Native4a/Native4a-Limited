@@ -151,6 +151,63 @@ const BacklinksIndex = ({ location }: { location: any }) => {
 
       {/* Backlinks Evaluation Section */}
       <section className={`${styles.sec7} lg:p-20 mx-auto bg-bottom lg:bg-center`}>
+        {/* Mobile/Tablet version */}
+        <div className="lg:hidden px-4 py-8 md:px-6 md:py-12">
+          <div className="space-y-8">
+            {/* English Backlinks Section */}
+            <div>
+              <div className="flex justify-center rounded-xl items-center text-white p-4 md:p-6 bg-[#3A7DFF] mb-4">
+                <p className="text-lg md:text-xl font-semibold text-center">{t('backlinks.section4EnglishBacklinks')}</p>
+              </div>
+              <div className="space-y-3 md:space-y-4">
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature1')}1</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature2')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature3')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature4')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature5')}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* VS Divider */}
+            <div className="flex justify-center">
+              <div className="bg-[#70a665] rounded-xl px-6 md:px-8 py-3 md:py-4 flex items-center">
+                <p className="text-white text-2xl md:text-3xl font-semibold">VS</p>
+              </div>
+            </div>
+
+            {/* Chinese Backlinks Section */}
+            <div>
+              <div className="flex justify-center rounded-xl items-center text-white p-4 md:p-6 bg-[#FAAB00] mb-4">
+                <p className="text-lg md:text-xl font-semibold text-center">{t('backlinks.section4ChineseBacklinks')}</p>
+              </div>
+              <div className="space-y-3 md:space-y-4">
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4ChineseFeature1')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4ChineseFeature2')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4ChineseFeature3')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4ChineseFeature4')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Desktop version */}
         <div className="hidden lg:block grid-cols-1 grid-rows-8 gap-4 text-xl items-center p-10">
           <div className="grid grid-rows-8 lg:grid-rows-4 grid-flow-col gap-4 text-xl items-center">
