@@ -9,9 +9,6 @@ import Button from '../components/baseTools/button'
 import BacklinksSlick from '../components/slickSlider/greenSlider/backlinksSlider'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 import Anchor from '../components/baseTools/Anchor/index.js'
-import EngBacklinksEvaluation from '../components/backlinksEvaluation/eng'
-import ChiBacklinksEvaluation from '../components/backlinksEvaluation/chi'
-import TwelveDifferent from '../components/TwelveDifferent'
 import Section from '../components/baseTools/Section'
 import Img from '../components/baseTools/Image'
 import Text from '../components/baseTools/text'
@@ -151,6 +148,63 @@ const BacklinksIndex = ({ location }: { location: any }) => {
 
       {/* Backlinks Evaluation Section */}
       <section className={`${styles.sec7} lg:p-20 mx-auto bg-bottom lg:bg-center`}>
+        {/* Mobile/Tablet version */}
+        <div className="lg:hidden px-4 py-8 md:px-6 md:py-12">
+          <div className="space-y-8">
+            {/* English Backlinks Section */}
+            <div>
+              <div className="flex justify-center rounded-xl items-center text-white p-4 md:p-6 bg-[#3A7DFF] mb-4">
+                <p className="text-lg md:text-xl font-semibold text-center">{t('backlinks.section4EnglishBacklinks')}</p>
+              </div>
+              <div className="space-y-3 md:space-y-4">
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature1')}1</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature2')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature3')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature4')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4EnglishFeature5')}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* VS Divider */}
+            <div className="flex justify-center">
+              <div className="bg-[#70a665] rounded-xl px-6 md:px-8 py-3 md:py-4 flex items-center">
+                <p className="text-white text-2xl md:text-3xl font-semibold">VS</p>
+              </div>
+            </div>
+
+            {/* Chinese Backlinks Section */}
+            <div>
+              <div className="flex justify-center rounded-xl items-center text-white p-4 md:p-6 bg-[#FAAB00] mb-4">
+                <p className="text-lg md:text-xl font-semibold text-center">{t('backlinks.section4ChineseBacklinks')}</p>
+              </div>
+              <div className="space-y-3 md:space-y-4">
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4ChineseFeature1')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4ChineseFeature2')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4ChineseFeature3')}</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center text-sm md:text-base">
+                  <p>{t('backlinks.section4ChineseFeature4')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Desktop version */}
         <div className="hidden lg:block grid-cols-1 grid-rows-8 gap-4 text-xl items-center p-10">
           <div className="grid grid-rows-8 lg:grid-rows-4 grid-flow-col gap-4 text-xl items-center">
@@ -204,34 +258,6 @@ const BacklinksIndex = ({ location }: { location: any }) => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        {/* Mobile version */}
-        <div className="block lg:hidden">
-          <div className="grid grid-cols-1 text-xl items-center">
-            <div className="px-10 pt-11 order-1">
-              <div className="row-span-4 md:row-span-2 flex justify-center items-center text-white text-2xl md:text-3xl font-semibold p-6 md:p-14 leading-8 md:leading-10 border-[#70A665] border-l-[20px]">
-                {t('backlinks.section7TopTitle')}
-              </div>
-            </div>
-            <div className="p-5 order-5 lg:order-2">
-              <div className="row-span-4 md:row-span-2 flex justify-center items-center text-white text-2xl md:text-3xl font-semibold p-6 md:p-14 leading-8 md:leading-10">
-                {t('backlinks.section4BottomTitle')}
-              </div>
-            </div>
-            <EngBacklinksEvaluation
-              className1="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#3A7DFF] p-5"
-              className2="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/70 text-center"
-            />
-            <div className="flex justify-center row-span-2 bg-[#70a665] pt-16 md:px-10 items-center text-white h-1/6 order-3 lg:order-4">
-              <div className="flex rounded-xl items-center text-6xl font-semibold">
-                VS
-              </div>
-            </div>
-            <ChiBacklinksEvaluation
-              className1="flex justify-center rounded-xl items-center text-white m-4 md:m-6 relative top-10 md:top-14 z-10 bg-[#FAAB00] p-5"
-              className2="flex justify-center rounded-2xl p-4 md:p-6 items-center backdrop-blur-md bg-white/80 text-center"
-            />
           </div>
         </div>
       </section>
@@ -393,7 +419,41 @@ const BacklinksIndex = ({ location }: { location: any }) => {
                 {t('backlinks.section8Subtitle')}
               </h3>
             </div>
-            <TwelveDifferent />
+
+            {/* 統一的 grid 容器 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+              {[
+                { num: "01", titleKey: "section8Item01Title", descKey: "section8Item01Desc" },
+                { num: "02", titleKey: "section8Item02Title", descKey: "section8Item02Desc" },
+                { num: "03", titleKey: "section8Item03Title", descKey: "section8Item03Desc" },
+                { num: "04", titleKey: "section8Item04Title", descKey: "section8Item04Desc" },
+                { num: "05", titleKey: "section8Item05Title", descKey: "section8Item05Desc" },
+                { num: "06", titleKey: "section8Item06Title", descKey: "section8Item06Desc" },
+                { num: "07", titleKey: "section8Item07Title", descKey: "section8Item07Desc" },
+                { num: "08", titleKey: "section8Item08Title", descKey: "section8Item08Desc" },
+                { num: "09", titleKey: "section8Item09Title", descKey: "section8Item09Desc" },
+                { num: "10", titleKey: "section8Item10Title", descKey: "section8Item10Desc" },
+                { num: "11", titleKey: "section8Item11Title", descKey: "section8Item11Desc" },
+                { num: "12", titleKey: "section8Item12Title", descKey: "section8Item12Desc" },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="grid grid-cols-4 items-center rounded-xl p-6 shadow-[1px_1px_10px_#ccc] backdrop-blur-3xl bg-white/70 min-h-[180px] lg:min-h-[220px]"
+                >
+                  <div className="text-5xl lg:text-6xl text-[#608A51] font-bold pr-4 md:pr-5">
+                    {item.num}
+                  </div>
+                  <div className="col-span-3 space-y-2">
+                    <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold leading-tight">
+                      {t(`backlinks.${item.titleKey}`)}
+                    </h3>
+                    <p className="text-sm lg:text-base text-gray-700 leading-relaxed">
+                      {t(`backlinks.${item.descKey}`)}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

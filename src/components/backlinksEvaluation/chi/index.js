@@ -1,29 +1,23 @@
 import React from 'react'
-import useChiBacklinksEvaluation from '../../../hook/useChiBacklinksEvaluation'
+import { useTranslation } from 'react-i18next'
 
+// Chinese backlinks evaluation feature list component
 const ChiBacklinksEvaluation = ({ className1, className2 }) => {
-  const beql = useChiBacklinksEvaluation()
-  const cn1 =
-    'flex justify-center rounded-xl items-center text-white m-6 p-6 relative top-14 z-10 bg-[#FAAB00]'
-  const cn2 =
-    'flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center'
-
-  // Flatten descriptions from all pages and sort by order
-  const descriptions = beql
-    .flatMap((item) => item.chiEvaluationDescription || [])
-    .sort((a, b) => a.order - b.order)
+  const { t } = useTranslation()
 
   return (
-    <div className="row-span-4 flex justify-center order-4 lg:order-5">
-      <div className="grid grid-rows-6 grid-flow-col gap-4 m-10 md:m-0">
-        <div className={className1 ? className1 : cn1}>
-          來自中文外部連結網站
-        </div>
-        {descriptions.map((desc, index) => (
-          <div className={className2 ? className2 : cn2} key={index}>
-            <p>{desc.title}</p>
-          </div>
-        ))}
+    <div className="space-y-3 md:space-y-4 lg:space-y-0 lg:grid lg:grid-rows-4 lg:gap-4 lg:m-10">
+      <div className={`${className1 || 'flex justify-center rounded-3xl p-4 md:p-6 lg:p-6 items-center backdrop-blur-md bg-white/80 text-center text-xs md:text-sm lg:text-xs'}`}>
+        <p>{t('backlinks.section4ChineseFeature1')}</p>
+      </div>
+      <div className={`${className1 || 'flex justify-center rounded-3xl p-4 md:p-6 lg:p-6 items-center backdrop-blur-md bg-white/80 text-center text-xs md:text-sm lg:text-xs'}`}>
+        <p>{t('backlinks.section4ChineseFeature2')}</p>
+      </div>
+      <div className={`${className1 || 'flex justify-center rounded-3xl p-4 md:p-6 lg:p-6 items-center backdrop-blur-md bg-white/80 text-center text-xs md:text-sm lg:text-xs'}`}>
+        <p>{t('backlinks.section4ChineseFeature3')}</p>
+      </div>
+      <div className={`${className1 || 'flex justify-center rounded-3xl p-4 md:p-6 lg:p-6 items-center backdrop-blur-md bg-white/80 text-center text-xs md:text-sm lg:text-xs'}`}>
+        <p>{t('backlinks.section4ChineseFeature4')}</p>
       </div>
     </div>
   )
