@@ -191,7 +191,7 @@ const BacklinksIndex = ({ location }: { location: any }) => {
                   來自中文外部連結網站
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
-                  <p>外部連結 Spam FREE, DA，DR 權重分別達 50+ 或 30+</p>
+                  <p>外部連結 Spam FREE, DA，DR 權重分別達 50+ 或 30+1</p>
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
                   <p>每篇反向連結文章內容都是與客戶的行業和關鍵字相關的</p>
