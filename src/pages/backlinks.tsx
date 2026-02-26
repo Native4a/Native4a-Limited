@@ -425,63 +425,63 @@ const BacklinksIndex = ({ location }: { location: any }) => {
               {[
                 {
                   num: "01",
-                  titleKey: "section8Item01Title",
-                  descKey: "section8Item01Desc"
+                  title: "100個頂層反向連結至您的網站",
+                  desc: "頂層 (即第一層)反向連結是直接建立到您網站的 Backlink。Tier 1 Backlink 一級反向鏈接被認為是您網站最權威的站外連結，因為它們為 SEO 傳遞了最高權重的外部連結。"
                 },
                 {
                   num: "02",
-                  titleKey: "section8Item02Title",
-                  descKey: "section8Item02Desc"
+                  title: "繁中PBN/高流量Guest Post",
+                  desc: "以PBN/ 高流量Guest Post，因應網站排名階段製作不同類型Backlinks，協助排名提升。"
                 },
                 {
                   num: "03",
-                  titleKey: "section8Item03Title",
-                  descKey: "section8Item03Desc"
+                  title: "全繁體中文 WordPress博客文章",
+                  desc: "所有 反向連結 皆來自以公認為 SEO Friendly 的 WordPress 編寫的繁體中文博客文章。"
                 },
                 {
                   num: "04",
-                  titleKey: "section8Item04Title",
-                  descKey: "section8Item04Desc"
+                  title: "客戶行業相關內容文章",
+                  desc: "所有 反向連結 的文章內容都是為不同客戶而度身訂做。 確保每篇文章內容都是與客戶的行業和關鍵字相關的 (Niche Relevant or contextual backlinks)。"
                 },
                 {
                   num: "05",
-                  titleKey: "section8Item05Title",
-                  descKey: "section8Item05Desc"
+                  title: "可做多個關鍵字和 反向連結",
+                  desc: "每篇 反向連結 的繁體中文博客文章都是為不同客戶度身訂做。可按不同客戶的需求而建立多個不同的關鍵字和 外部連結。"
                 },
                 {
                   num: "06",
-                  titleKey: "section8Item06Title",
-                  descKey: "section8Item06Desc"
+                  title: "每篇文章及連結祗屬一個客戶",
+                  desc: "為確保每篇中文博客文章內的 外部連結的權威性，我們每篇文章內的所有 Backlinks祗專屬一個客戶，不會出現一篇文章放了大量其他客戶連結的情況。"
                 },
                 {
                   num: "07",
-                  titleKey: "section8Item07Title",
-                  descKey: "section8Item07Desc"
+                  title: "自家網站，不會消失，長期有效",
+                  desc: "在淘寶， Fiverr 或其他地方買的廉價 backlinks，可以在一夜間消失。我們的 反向連結 網站全是獨立經營，百份百自主，不會消失，長期有效。"
                 },
                 {
                   num: "08",
-                  titleKey: "section8Item08Title",
-                  descKey: "section8Item08Desc"
+                  title: "金字塔式 反向連結 結構",
+                  desc: "我們的 反向連結 是金字塔式的鏈接結構，有多層與其相關聯的多個層級 Backlinks，以形成金字塔，也稱為 Link Juice"
                 },
                 {
                   num: "09",
-                  titleKey: "section8Item09Title",
-                  descKey: "section8Item09Desc"
+                  title: "反向連結權重達 DA50+ 或 DR 30+",
+                  desc: "DA 和 DR 分別是 MOZ 和 Ahrefs 自行創建的網站權重指標。 雖則這等指標並不是 Google排名的準則，但也代表了網站的權重。我們的 反向連結 都在DA 50+ 或 DR 30＋ 的權重。"
                 },
                 {
                   num: "10",
-                  titleKey: "section8Item10Title",
-                  descKey: "section8Item10Desc"
+                  title: "自選 反向連結 目標頁面",
+                  desc: "因為我們的 反向連結 網站全是獨立經營，百份百自主，所以可以因應客戶需求而建立客戶所要求的多個目標頁面。沒有掣肘，全客制化。"
                 },
                 {
                   num: "11",
-                  titleKey: "section8Item11Title",
-                  descKey: "section8Item11Desc"
+                  title: "90% DoFollow, 10% NoFollow",
+                  desc: "我們知道 nofollow 反向連結 是沒有 SEO 價值的。但若所有 Backlinks 都是 Dofollow，在Google 眼中會覺得有做馬之嫌。所以我們的 反向連結 結構是 90% DoFollow, 10% NoFollow"
                 },
                 {
                   num: "12",
-                  titleKey: "section8Item12Title",
-                  descKey: "section8Item12Desc"
+                  title: "每篇文章及 反向連結 的完整報告",
+                  desc: "每篇文章及 反向連結 的完整報告 所有 反向連結 項目完成後，我們會提供詳盡的完整報告。詳列每條 反向連結 的網址。整個 backlink Profile 百份百透明，杜絕偷工減料。"
                 },
               ].map((item, index) => (
                 <div
@@ -493,10 +493,10 @@ const BacklinksIndex = ({ location }: { location: any }) => {
                   </div>
                   <div className="col-span-3 space-y-2">
                     <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold leading-tight">
-                      {t(`backlinks.${item.titleKey}`)}
+                      {item.title}
                     </h3>
                     <p className="text-sm lg:text-base text-gray-700 leading-relaxed">
-                      {t(`backlinks.${item.descKey}`)}
+                      {item.desc}
                     </p>
                   </div>
                 </div>
@@ -505,3 +505,26 @@ const BacklinksIndex = ({ location }: { location: any }) => {
           </div>
         </div>
       </section>
+
+      {/* Sample Button */}
+      <Section ContainerClass="flex justify-center mb-20">
+        <Button
+          linkto="https://nativeaaaa.com.hk/blog/native4a_backlinks_reference/"
+          className="bg-emerald-500 text-white rounded-full px-16 py-6 font-medium text-2xl md:text-md xl:text-6xl"
+        >
+          {t('backlinks.btnChineseBacklinksSample')}
+        </Button>
+      </Section>
+
+      {/* Slider & Contact */}
+      <section className={styles.backlinksSpanSquare}>
+        <BacklinksSlick />
+      </section>
+      <section className={styles.backlinksSpanSquare}>
+        <ContactForm />
+      </section>
+    </BacklinkLayout>
+  )
+}
+
+export default BacklinksIndex
