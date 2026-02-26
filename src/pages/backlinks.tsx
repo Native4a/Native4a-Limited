@@ -188,7 +188,7 @@ const BacklinksIndex = ({ location }: { location: any }) => {
             <div className="row-span-4 flex justify-center order-4 lg:order-5">
               <div className="grid grid-rows-6 grid-flow-col gap-4 m-10 md:m-0">
                 <div className="flex justify-center rounded-xl items-center text-white m-6 p-6 relative top-14 z-10 bg-[#FAAB00]">
-                  {t('backlinks.section4ChineseBacklinks')}1
+                  {t('backlinks.section4ChineseBacklinks')}
                 </div>
                 <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
                   <p>{t('backlinks.section4ChineseFeature1')}</p>
