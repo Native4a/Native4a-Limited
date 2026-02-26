@@ -160,13 +160,50 @@ const BacklinksIndex = ({ location }: { location: any }) => {
             <div className="row-span-8 lg:row-span-2 col-span-2 flex justify-center items-center text-white text-3xl font-semibold p-14 leading-10 order-5 lg:order-2">
               {t('backlinks.section4BottomTitle')}
             </div>
-            <EngBacklinksEvaluation />
+            <div className="row-span-4 flex justify-center order-2 lg:order-3">
+              <div className="grid grid-rows-6 grid-flow-col gap-4 m-10 md:m-0">
+                <div className="flex justify-center rounded-xl items-center text-white m-6 p-6 relative top-14 z-10 bg-[#3A7DFF]">來自英文外部連結網站</div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>外部連結 Spam Score 高企。DA，DR 權重低下</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>每條外部連結文章的內容與客戶的行業和關鍵字並不相關</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>每條外部連結的URL和關鐽字數量有限制</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>每條外部連結袛有一個 Anchor Text 錨點</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>同一篇網站連結文章內放了大量其他客戶網站的關鐽字和連結</p>
+                </div>
+              </div>
+            </div>
             <div className="row-span-4 flex bg-[#70a665] px-10 rounded-xl items-center text-white h-1/6 order-3 lg:order-4">
               <div className="flex rounded-xl items-center text-4xl font-semibold">
                 VS
               </div>
             </div>
-            <ChiBacklinksEvaluation />
+            <div className="row-span-4 flex justify-center order-4 lg:order-5">
+              <div className="grid grid-rows-6 grid-flow-col gap-4 m-10 md:m-0">
+                <div className="flex justify-center rounded-xl items-center text-white m-6 p-6 relative top-14 z-10 bg-[#FAAB00]">
+                  來自中文外部連結網站
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>外部連結 Spam FREE, DA，DR 權重分別達 50+ 或 30+1</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>每篇反向連結文章內容都是與客戶的行業和關鍵字相關的</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>沒有限制每條外部連結的 URL和關鐽字數量</p>
+                </div>
+                <div className="flex justify-center rounded-3xl p-6 items-center backdrop-blur-md bg-white/80 text-center">
+                  <p>每一篇文章只屬於一個客戶內裡袛有該客戶的關鐽字和連結</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         {/* Mobile version */}
