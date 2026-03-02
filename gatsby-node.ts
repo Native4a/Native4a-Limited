@@ -97,12 +97,17 @@ export const onCreatePage: GatsbyNode['onCreatePage'] = ({ page, actions }) => {
     return
   }
 
+  // Skip if this page already has a language context (prevents infinite loop)
+  if (page.context && (page.context as Record<string, unknown>).language) {
+    return
+  }
+
   const originalPath = page.path
 
   // Delete the original page first
   deletePage(page)
 
-  // Create the default language version at the original path
+  // Create the default language version at the original path (with language context to prevent re-triggering)
   createPage({
     ...page,
     path: originalPath,
