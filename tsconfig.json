@@ -27,8 +27,7 @@
     "src/**/*",
     "bin/**/*",
     "gatsby-config.ts",
-    "gatsby-node.ts",
-    "postcss.config.ts"
+    "gatsby-node.ts"
   ],
   "exclude": ["node_modules", "dist", ".cache", "public"]
 }

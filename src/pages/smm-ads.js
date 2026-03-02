@@ -22,7 +22,7 @@ import * as styles from '../styles/smm-ads.module.css'
 
 import GOAL_image from '../img/完整廣告策略圖.png'
 import SSads_image from '../img/波衫圖.png'
-import conputer$$Ads from '../img/電腦$$Ads.png'
+import conputerAds from '../img/電腦$$Ads.png'
 import conputerSet from '../img/conputer setting.png'
 
 class smmAdsIndex extends React.Component {
@@ -165,7 +165,7 @@ class smmAdsIndex extends React.Component {
             <div className="grid content-center z-0">
               <img
                 className="w-1/2"
-                src={conputer$$Ads}
+                src={conputerAds}
                 alt="video Graphic01"
               />
             </div>
