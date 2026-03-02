@@ -83,8 +83,16 @@ export const createPages: GatsbyNode['createPages'] = async ({
   }
 }
 
+// Track pages we've already processed to prevent infinite re-triggering
+const processedPages = new Set<string>()
+
 export const onCreatePage: GatsbyNode['onCreatePage'] = ({ page, actions }) => {
   const { createPage, deletePage } = actions
+
+  // Skip if we already processed this page path (prevents infinite loop)
+  if (processedPages.has(page.path)) {
+    return
+  }
 
   // Skip if page already has language prefix
   if (page.path.match(/^\/(en|ja|zh)(\/|$)/)) {
@@ -97,17 +105,21 @@ export const onCreatePage: GatsbyNode['onCreatePage'] = ({ page, actions }) => {
     return
   }
 
-  // Skip if this page already has a language context (prevents infinite loop)
-  if (page.context && (page.context as Record<string, unknown>).language) {
-    return
-  }
-
   const originalPath = page.path
 
-  // Delete the original page first
+  // Mark ALL paths we're about to create as processed BEFORE creating them
+  processedPages.add(originalPath)
+  LANGUAGES.forEach((language) => {
+    const newPath = originalPath === '/'
+      ? `/${language}/`
+      : `/${language}${originalPath}`
+    processedPages.add(newPath)
+  })
+
+  // Delete the original page
   deletePage(page)
 
-  // Create the default language version at the original path (with language context to prevent re-triggering)
+  // Create the default language version at the original path
   createPage({
     ...page,
     path: originalPath,
