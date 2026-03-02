@@ -84,7 +84,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
 }
 
 export const onCreatePage: GatsbyNode['onCreatePage'] = ({ page, actions }) => {
-  const { createPage, createRedirect } = actions
+  const { createPage, deletePage } = actions
 
   // Skip if page already has language prefix
   if (page.path.match(/^\/(en|ja|zh)(\/|$)/)) {
@@ -97,17 +97,26 @@ export const onCreatePage: GatsbyNode['onCreatePage'] = ({ page, actions }) => {
     return
   }
 
-  // Create language-specific versions for all other pages
   const originalPath = page.path
 
-  LANGUAGES.forEach((language) => {
-    let newPath: string
+  // Delete the original page first
+  deletePage(page)
 
-    if (originalPath === '/') {
-      newPath = `/${language}/`
-    } else {
-      newPath = `/${language}${originalPath}`
-    }
+  // Create the default language version at the original path
+  createPage({
+    ...page,
+    path: originalPath,
+    context: {
+      ...page.context,
+      language: DEFAULT_LANGUAGE,
+    },
+  })
+
+  // Create language-prefixed versions for all languages
+  LANGUAGES.forEach((language) => {
+    const newPath = originalPath === '/'
+      ? `/${language}/`
+      : `/${language}${originalPath}`
 
     createPage({
       ...page,
@@ -118,22 +127,6 @@ export const onCreatePage: GatsbyNode['onCreatePage'] = ({ page, actions }) => {
       },
     })
   })
-
-  // For original non-prefixed path, only keep it if it's the Chinese version
-  // and redirect other requests to Chinese version
-  if (originalPath === '/') {
-    createRedirect({
-      fromPath: '/',
-      toPath: `/${DEFAULT_LANGUAGE}/`,
-      isPermanent: false,
-    })
-  } else {
-    createRedirect({
-      fromPath: originalPath,
-      toPath: `/${DEFAULT_LANGUAGE}${originalPath}`,
-      isPermanent: false,
-    })
-  }
 }
 
 
