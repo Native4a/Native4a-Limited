@@ -1,9 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
 const useFooter = () => {
-  const {
-    allContentfulFooter: { nodes },
-  } = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query FooterQuery {
       allContentfulFooter {
         nodes {
@@ -25,6 +23,6 @@ const useFooter = () => {
       }
     }
   `)
-  return nodes
+  return data?.allContentfulFooter?.nodes || []
 }
 export default useFooter

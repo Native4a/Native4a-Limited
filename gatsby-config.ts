@@ -4,6 +4,9 @@ dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+// Also load .env as fallback
+dotenv.config()
+
 interface Plugin {
   resolve: string
   options?: Record<string, unknown>
@@ -89,19 +92,13 @@ if (process.env.CONTENTFUL_SPACE_ID && process.env.CONTENTFUL_ACCESS_TOKEN) {
   })
 }
 
-export const siteMetadata = {
+const siteMetadata = {
   title: 'Native4a - SEO Agency Hong Kong | Digital Marketing Services',
   description: 'Native4a is a leading SEO agency in Hong Kong offering professional SEO, digital marketing, web design, and video production services to help your business grow online.',
   siteUrl: 'https://nativeaaaa.com.hk',
   author: 'Native4a Limited',
   keywords: 'SEO, digital marketing, Hong Kong, web design, video production, backlinks, social media marketing',
 }
-
-export const __experimentalThemes = [
-  {
-    resolve: 'gatsby-theme-blog-core',
-  },
-]
 
 module.exports = {
   siteMetadata,
