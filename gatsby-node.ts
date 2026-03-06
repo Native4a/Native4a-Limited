@@ -83,68 +83,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   }
 }
 
-// Track pages we've already processed to prevent infinite re-triggering
-const processedPages = new Set<string>()
 
-export const onCreatePage: GatsbyNode['onCreatePage'] = ({ page, actions }) => {
-  const { createPage, deletePage } = actions
-
-  // Skip if we already processed this page path (prevents infinite loop)
-  if (processedPages.has(page.path)) {
-    return
-  }
-
-  // Skip if page already has language prefix
-  if (page.path.match(/^\/(en|ja|zh)(\/|$)/)) {
-    return
-  }
-
-  // Skip special pages that shouldn't be duplicated
-  const skipPages = ['/404/', '/404.html', '/dev-404-page/']
-  if (skipPages.some(skipPage => page.path === skipPage)) {
-    return
-  }
-
-  const originalPath = page.path
-
-  // Mark ALL paths we're about to create as processed BEFORE creating them
-  processedPages.add(originalPath)
-  LANGUAGES.forEach((language) => {
-    const newPath = originalPath === '/'
-      ? `/${language}/`
-      : `/${language}${originalPath}`
-    processedPages.add(newPath)
-  })
-
-  // Delete the original page
-  deletePage(page)
-
-  // Create the default language version at the original path
-  createPage({
-    ...page,
-    path: originalPath,
-    context: {
-      ...page.context,
-      language: DEFAULT_LANGUAGE,
-    },
-  })
-
-  // Create language-prefixed versions for all languages
-  LANGUAGES.forEach((language) => {
-    const newPath = originalPath === '/'
-      ? `/${language}/`
-      : `/${language}${originalPath}`
-
-    createPage({
-      ...page,
-      path: newPath,
-      context: {
-        ...page.context,
-        language,
-      },
-    })
-  })
-}
 
 
 
