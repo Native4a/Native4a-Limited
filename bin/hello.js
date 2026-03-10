@@ -12,7 +12,7 @@ ${green("Hey there! 👋")}
 Thanks for giving the ${pkg.name} a try. 🎉
 To get you going really quickly this project includes a setup step.
 
-${yellowBold("npm run setup")} automates the following steps for you:1
+${yellowBold("npm run setup")} automates the following steps for you:
   - creates a config file ${yellow("./.contentful.json")}
   - imports ${green("a predefined content model")}
 
