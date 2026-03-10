@@ -286,7 +286,7 @@ function RootIndexContent(props: PageDataProps) {
                     <iframe
                       className={styles.responsiveIframe}
                       width="100%"
-                      src="https://www.youtube.com/embed/MVoiiO4l4Kg"
+                      src="https://www.youtube.com/embed/saGJix_uz40"
                       title="YouTube video player"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
