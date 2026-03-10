@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link, PageProps } from 'gatsby'
-import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import readingTime from 'reading-time'
 
 import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 import Tags from '../components/tags'
-import { getNotionBlogPostBySlug } from '../services/notionBlog'
 import * as styles from './blog-post.module.css'
 
 interface NotionBlogPost {
@@ -45,8 +43,10 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
   useEffect(() => {
     const loadPost = async () => {
       try {
-        const fetchedPost = await getNotionBlogPostBySlug(slug, language)
-        setPost(fetchedPost)
+        const res = await fetch(`/api/notion-post?slug=${slug}&language=${language}`)
+        if (!res.ok) throw new Error(`API error: ${res.status}`)
+        const data = await res.json()
+        setPost(data.post || null)
       } catch (error) {
         console.error('Error loading blog post:', error)
       } finally {

@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'gatsby'
 
 import '../components/variables.css'
 import '../styles/global.css'
 import Seo from '../components/seo'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
-import { getNotionBlogPosts } from '../services/notionBlog'
 
 const BlogIndex = ({ location, pageContext }) => {
   const [posts, setPosts] = useState([])
@@ -16,10 +14,12 @@ const BlogIndex = ({ location, pageContext }) => {
   useEffect(() => {
     const loadPosts = async () => {
       try {
-        const fetchedPosts = await getNotionBlogPosts(language)
-        setPosts(fetchedPosts)
+        const res = await fetch(`/api/notion-posts?language=${language}`)
+        if (!res.ok) throw new Error(`API error: ${res.status}`)
+        const data = await res.json()
+        setPosts(data.posts || [])
       } catch (error) {
-        console.error('[v0] Error loading Notion blog posts:', error)
+        console.error('Error loading blog posts:', error)
       } finally {
         setLoading(false)
       }
