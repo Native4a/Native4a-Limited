@@ -532,7 +532,7 @@ function RootIndexContent(props: PageDataProps) {
               )}
             </Popup>
             <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">
-              "native的SEO技術領先。"
+              "{t('homepage.testimonials.client5.quote')}"
             </p>
             <div className="w-10/12 m-5">
               <div className="grid grid-cols-3 gap-4 items-center">
@@ -548,10 +548,10 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="col-span-2">
                   <div className="pl-4 col-start-3 col-end-9">
                     <p>
-                      <b>Rick Woo</b>
+                      <b>{t('homepage.testimonials.client5.name')}</b>
                     </p>
                     <p className="text-sm">
-                      Lost CEO
+                      {t('homepage.testimonials.client5.title')}
                     </p>
                     <StarRatings
                       rating={ranking}

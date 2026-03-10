@@ -68,6 +68,11 @@
         "quote": "native協助我們Google廣告多年。",
         "name": "Paul Lu",
         "title": "Accolade COO"
+      },
+      "client5": {
+        "quote": "native的SEO技術領先。",
+        "name": "Rick Woo",
+        "title": "Lost CEO"
       }
     }
   },
@@ -279,7 +284,7 @@
     "section8Item11Title": "90% DoFollow, 10% NoFollow",
     "section8Item11Desc": "我們知道 nofollow 反向連結 是沒有 SEO 價值的。但若所有 Backlinks 都是 Dofollow，在Google 眼中會覺得有做馬之嫌。所以我們的 反向連結 結構是 90% DoFollow, 10% NoFollow",
     "section8Item12Title": "每篇文章及 反向連結 的完整報告",
-    "section8Item12Desc": "每篇文章及 反向連結 的完整報告 所有 反向連結 項目完成後，我們會提供詳盡的完整報告。詳列每條 反向連結 的網址。整個 backlink Profile 百份百透明，杜絕偷工減料。",
+    "section8Item12Desc": "每篇文章及 反向連結 ���完整報告 所有 反向連結 項目完成後，我們會提供詳盡的完整報告。詳列每條 反向連結 的網址。整個 backlink Profile 百份百透明，杜絕偷工減料。",
     "contactWhatsApp": "歡迎直接Whatsapp查詢"
   },
   "offpage": {
@@ -503,7 +508,7 @@
     "faq1A": "SEO懶人包是一套工具，適合任何想提升排名的人，當然包括全新手。",
     "faq2Q": "我具體要做什麼？",
     "faq2A": "按照SEO懶人包步驟表，每日大約1-2小時管理你的網站，將越來越多的關鍵字做上首頁，甚至複製至多個行業。",
-    "faq3Q": "如何快速提升網站排名？",
+    "faq3Q": "如何快速提升網��排名？",
     "faq3A": "解決以下3個問題，排名立即原地上升：",
     "faq3Item1Title": "關鍵字篩選",
     "faq3Item1Desc": "先用Google ads選擇大量相關關鍵字，再放入肥仔計算機篩選高回報關鍵字。",
