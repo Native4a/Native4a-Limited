@@ -47,7 +47,29 @@
   "homepage": {
     "serviceScope": "サービス範囲",
     "popularMethods": "デジタルマーケティングの6つの人気的な方法",
-    "customerTestimonial": "お客様が私たちの成長を証言"
+    "customerTestimonial": "お客様が私たちの成長を証言",
+    "testimonials": {
+      "client1": {
+        "quote": "NATIVE4Aは低コストで高いリターンを達成するのに役立ちました。",
+        "name": "兆哥",
+        "title": "搬屋易 創業者"
+      },
+      "client2": {
+        "quote": "NATIVE4Aは当社の毎月の販売目標の達成をアクティブにサポートしました。",
+        "name": "Max Hung",
+        "title": "Century 21 営業マネージャー"
+      },
+      "client3": {
+        "quote": "NATIVE4Aは当社がビジネスを香港全域に拡大するのに役立ちました。",
+        "name": "Tony",
+        "title": "RH Curtain CEO"
+      },
+      "client4": {
+        "quote": "Nativeは長年にわたってGoogle広告でサポートしてくれています。",
+        "name": "Paul Lu",
+        "title": "Accolade COO"
+      }
+    }
   },
   "footer": {
     "title": "Native は巨人の肩に立つお手伝いをします。",

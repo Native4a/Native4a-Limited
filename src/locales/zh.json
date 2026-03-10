@@ -47,7 +47,29 @@
   "homepage": {
     "serviceScope": "服務範圍",
     "popularMethods": "數碼營銷6種熱門方法",
-    "customerTestimonial": "客戶見證我們成長"
+    "customerTestimonial": "客戶見證我們成長",
+    "testimonials": {
+      "client1": {
+        "quote": "NATIVE4A協助我們用了低成本，達成高回報。",
+        "name": "兆哥",
+        "title": "搬屋易 Founder"
+      },
+      "client2": {
+        "quote": "NATIVE4A積極協助我們達成每月銷售目標。",
+        "name": "Max Hung",
+        "title": "世紀21 業務經理"
+      },
+      "client3": {
+        "quote": "NATIVE4A協助我們將業務拓展至全港。",
+        "name": "Tony",
+        "title": "RH Curtain CEO"
+      },
+      "client4": {
+        "quote": "native協助我們Google廣告多年。",
+        "name": "Paul Lu",
+        "title": "Accolade COO"
+      }
+    }
   },
   "footer": {
     "title": "Native 讓你站在巨人肩上。",
@@ -266,7 +288,7 @@
     "heroTitle": "「什麼是站外優化？」",
     "heroSubtitleHighlight": "無咗佢",
     "heroSubtitle": "，你可能都會有排名，但Top 10？No Way",
-    "heroDescription": "中文網站 買站外優化，實證對改善網站權重和SEO排名有顯著正面效果。歡迎索取站外優化HK樣本和查詢",
+    "heroDescription": "中文��站 買站外優化，實證對改善網站權重和SEO排名有顯著正面效果。歡迎索取站外優化HK樣本和查詢",
     "annualAwards": "年度獎項",
     "mediaFeatures": "媒體報導",
     "section2Title": "「SEO+站外優化懶人包」",
@@ -490,7 +512,7 @@
     "faq3Item3Title": "backlinks",
     "faq3Item3Desc": "高質Backlinks源頭集合中有很多可靠的backlinks來源，任何行業都搵到，白帽黑帽都有。",
     "faq4Q": "肥壯關鍵字計算器是如何工作的？",
-    "faq4A": "收集關鍵字的過去表現，套用公式，能幫助計算出低成本+高回報的關鍵字。短尾關鍵字：「瑜伽墊」肥壯關鍵字：「防滑瑜伽墊」長尾關鍵字：「初學者用的加厚防滑瑜伽墊」",
+    "faq4A": "收集關鍵字的過去表現，套用公式，能幫助計算出��成本+高回報的關鍵字。短尾關鍵字：「瑜伽墊」肥壯關鍵字：「防滑瑜伽墊」長尾關鍵字：「初學者用的加厚防滑瑜伽墊」",
     "faq5Q": "我可以在短時間內看到效果嗎？",
     "faq5A": "當然可以，以下幾個例子都是幾日內上升，並且穩定。",
     "faq6Q": "這個工具如何幫助我創作高質內容？",

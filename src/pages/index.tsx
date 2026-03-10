@@ -228,7 +228,7 @@ function RootIndexContent(props: PageDataProps) {
               )}
             </Popup>
             <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">
-              "NATIVE4A協助我們用了低成本，達成高回報。"
+              "{t('homepage.testimonials.client1.quote')}"
             </p>
             <div className="w-10/12 m-5">
               <div className="grid grid-cols-3 gap-4 items-center">
@@ -244,10 +244,10 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="col-span-2">
                   <div className="pl-4 col-start-3 col-end-9">
                     <p>
-                      <b>兆哥</b>
+                      <b>{t('homepage.testimonials.client1.name')}</b>
                     </p>
                     <p className="text-sm">
-                      搬屋易 Founder
+                      {t('homepage.testimonials.client1.title')}
                     </p>
                     <StarRatings
                       rating={ranking}
@@ -304,7 +304,7 @@ function RootIndexContent(props: PageDataProps) {
               )}
             </Popup>
             <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">
-              "NATIVE4A積極協助我們達成每月銷售目標。"
+              "{t('homepage.testimonials.client2.quote')}"
             </p>
             <div className="w-10/12 m-5">
               <div className="grid grid-cols-3 gap-4 items-center">
@@ -320,10 +320,10 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="col-span-2">
                   <div className="pl-4 col-start-3 col-end-9">
                     <p>
-                      <b>Max Hung</b>
+                      <b>{t('homepage.testimonials.client2.name')}</b>
                     </p>
                     <p className="text-sm">
-                      世紀21 業務經理
+                      {t('homepage.testimonials.client2.title')}
                     </p>
                     <StarRatings
                       rating={ranking}
@@ -380,7 +380,7 @@ function RootIndexContent(props: PageDataProps) {
               )}
             </Popup>
             <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">
-              "NATIVE4A協助我們將業務拓展至全港。"
+              "{t('homepage.testimonials.client3.quote')}"
             </p>
             <div className="w-10/12 m-5">
               <div className="grid grid-cols-3 gap-4 items-center">
@@ -396,10 +396,10 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="col-span-2">
                   <div className="pl-4 col-start-3 col-end-9">
                     <p>
-                      <b>Tony</b>
+                      <b>{t('homepage.testimonials.client3.name')}</b>
                     </p>
                     <p className="text-sm">
-                      RH Curtain CEO
+                      {t('homepage.testimonials.client3.title')}
                     </p>
                     <StarRatings
                       rating={ranking}
@@ -456,7 +456,7 @@ function RootIndexContent(props: PageDataProps) {
               )}
             </Popup>
             <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">
-              "native協助我們Google廣告多年。"
+              "{t('homepage.testimonials.client4.quote')}"
             </p>
             <div className="w-10/12 m-5">
               <div className="grid grid-cols-3 gap-4 items-center">
@@ -472,10 +472,10 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="col-span-2">
                   <div className="pl-4 col-start-3 col-end-9">
                     <p>
-                      <b>Paul Lu</b>
+                      <b>{t('homepage.testimonials.client4.name')}</b>
                     </p>
                     <p className="text-sm">
-                      Accolade COO
+                      {t('homepage.testimonials.client4.title')}
                     </p>
                     <StarRatings
                       rating={ranking}
