@@ -73,7 +73,7 @@ class seoIndex extends React.Component {
               <div className="flex justify-center items-center">
                 <div className="container mx-auto">
                   <div className="grid grid-cols-1 gap-6">
-                    <div className="hidden md:flex justify-center items-center bg-white p-8 md:p-0 md:bg-inherit shadow-md rounded-3xl mt-2 pt-12">
+                    <div className="hidden md:flex justify-center items-center bg-white p-8 md:p-0 sm:bg-inherit shadow-md rounded-3xl mt-2 pt-12">
                       <div>
                         <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
                           <b>{t('seo.annualAwards')}</b>
