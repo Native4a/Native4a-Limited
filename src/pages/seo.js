@@ -70,7 +70,65 @@ class seoIndex extends React.Component {
                   </div>
                 </div>
               </div>
-
+              <div className="flex justify-center items-center">
+                <div className="container mx-auto">
+                  <div className="grid grid-cols-1 gap-6">
+                    <div className="hidden md:flex justify-center items-center bg-white p-8 md:p-0 md:bg-inherit shadow-md rounded-3xl mt-2 pt-12">
+                      <div>
+                        <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
+                          <b>{t('seo.annualAwards')}</b>
+                        </p>
+                        <div className="container mx-auto pt-5">
+                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <Img
+                              Desktop="rounded-sm"
+                              Size=""
+                              URL="https://images.ctfassets.net/rpza41pe9ev5/2jWem3YqlEdNaaoxpYQa7h/7b9e824531232e1da44d84d2defd0164/IMG_8643.webp"
+                              Alt="Award01"
+                              Mobile=""
+                            />
+                            <Img
+                              Desktop="rounded-sm"
+                              Size=""
+                              URL="https://images.ctfassets.net/rpza41pe9ev5/3ft9YcqxLo39PuYuOfatDs/63a81358563fa484739ce0383fc9d821/native4aAward02.webp"
+                              Alt="Award02"
+                              Mobile=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="hidden md:flex justify-center items-center">
+                      <div className="grid gap-6">
+                        <div className="">
+                          <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
+                            <b>{t('seo.mediaFeatures')}</b>
+                          </p>
+                        </div>
+                        <div className="container mx-auto">
+                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <Img
+                              Desktop="rounded-sm"
+                              Size="w-2/4"
+                              URL="https://images.ctfassets.net/rpza41pe9ev5/1Z9kABymRLNig6bmCDInfA/531d55423f66acf4585737dde8852224/logo_hket-0802f63cfd8456776825bba969fdb6f0.png"
+                              Alt="HKET"
+                              Mobile=""
+                            />
+                            <Img
+                              Desktop="rounded-sm"
+                              Size="w-2/3"
+                              URL="https://images.ctfassets.net/rpza41pe9ev5/6lzmfxu8TRwbdcAIUuHDmC/7251b6e1b6c8b22aca23fdc6b8caba63/The_Standard_Logo-a81712920c34ac9bdcc256254e8599a9.png"
+                              Alt="Standrad"
+                              Mobile=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <Awards />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </Section>
