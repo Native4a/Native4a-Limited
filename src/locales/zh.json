@@ -430,7 +430,6 @@
   },
   "notFound": {
     "title": "404: Not Found the page!!",
-    "description": "你剛剛到了一個不存在的路由... 真令人傷心。"
   },
   "catalog": {
     "seoTemplate": "SEO結構Template",
