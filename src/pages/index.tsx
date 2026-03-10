@@ -16,6 +16,9 @@ import SocialMediaBtn from '../components/button/socialMedia'
 import ServiceScope from '../components/serviceScope'
 import Section from '../components/baseTools/Section'
 import EseyTransportationCoImg from '../img/Client-s02.png'
+import EseyTransportationCoLogo form '../img/easy_transportation_logo.jpg'
+import Popup from 'reactjs-popup'
+import StarRatings from 'react-star-ratings'
 import { buildOrganizationStructuredData } from '../utils/structuredData'
 
 //image here//
@@ -222,7 +225,7 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="">
                   <img
                     className="col-end-3 rounded-full"
-                    src={companyLogo.url}
+                    src={EseyTransportationCoLogo}
                     alt="service_Video_Production"
                     loading="lazy"
                     decoding="async"
@@ -231,10 +234,10 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="col-span-2">
                   <div className="pl-4 col-start-3 col-end-9">
                     <p>
-                      <b>{clientsName}</b>
+                      <b>兆哥</b>
                     </p>
                     <p className="text-sm">
-                      {companyName} {clientsPosition}
+                      搬屋易 Founder
                     </p>
                     <StarRatings
                       rating={ranking}
