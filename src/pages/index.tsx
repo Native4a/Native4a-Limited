@@ -16,6 +16,7 @@ import SocialMediaBtn from '../components/button/socialMedia'
 import ServiceScope from '../components/serviceScope'
 import Section from '../components/baseTools/Section'
 import EseyTransportationCoImg from '../img/Client-s02.png'
+import CENTURY21Img from '../img/CENTURY21.png'
 import EseyTransportationCoLogo from '../img/easy_transportation_logo.jpg'
 import Popup from 'reactjs-popup'
 import StarRatings from 'react-star-ratings'
@@ -262,7 +263,7 @@ function RootIndexContent(props: PageDataProps) {
               trigger={
                 <div className={styles.overlay_container}>
                   <img
-                    src={EseyTransportationCoImg}
+                    src={CENTURY21Img}
                     alt="YouTube video"
                     width="500"
                     height="600"
