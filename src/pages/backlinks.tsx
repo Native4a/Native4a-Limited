@@ -31,7 +31,7 @@ const BacklinksIndex = ({ location }: { location: any }) => {
       {/* Hero Section */}
       <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
             <div className="flex justify-center items-center p-6">
               <div className="pt-2 md:pt-3 2xl:pt-0">
                 <Grid>
