@@ -152,9 +152,13 @@ export async function getNotionBlogPosts(
 
     const response = await notion.databases.query(query);
 
+    console.log(`[v0] Notion API response: ${response.results.length} total results`);
+    console.log(`[v0] Query filter:`, JSON.stringify(query.filter, null, 2));
+
     const posts: NotionBlogPost[] = response.results
       .map((page: any) => {
         const props = page.properties;
+        console.log(`[v0] Processing post: ${props.Title?.title?.[0]?.plain_text || 'Unknown'}, Published: ${props.Published?.checkbox}, Language: ${props.Language?.select?.name}`);
 
         return {
           id: page.id,

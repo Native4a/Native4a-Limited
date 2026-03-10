@@ -47,7 +47,19 @@ export const createPages: GatsbyNode['createPages'] = async ({
       postsByLanguage[lang] = allPosts.filter((p) => p.language === lang)
     })
 
-    // Create pages for each language
+    // Create blog list pages for each language
+    LANGUAGES.forEach((language) => {
+      const blogListComponent = path.resolve('./src/pages/blog.js')
+      createPage({
+        path: `/${language}/blog/`,
+        component: blogListComponent,
+        context: {
+          language,
+        },
+      })
+    })
+
+    // Create individual blog posts pages with language prefixes
     LANGUAGES.forEach((language) => {
       const posts = postsByLanguage[language]
       posts.forEach((post, index) => {
@@ -76,6 +88,13 @@ export const createPages: GatsbyNode['createPages'] = async ({
         toPath: `/${DEFAULT_LANGUAGE}/blog/${post.slug}/`,
         isPermanent: false,
       })
+    })
+    
+    // Create redirect from root /blog/ to Chinese blog list
+    createRedirect({
+      fromPath: '/blog/',
+      toPath: '/zh/blog/',
+      isPermanent: false,
     })
   }
 
