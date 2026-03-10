@@ -69,7 +69,6 @@
     "autoprefixer": "^10.4.14",
     "contentful-import": "^8.5.57",
     "gatsby-plugin-mdx": "^5.15.0",
-    "gatsby-plugin-postcss": "^6.10.0",
     "gatsby-provision-contentful": "^0.0.5",
     "gatsby-source-notion": "^1.2.0",
     "netlify-cli": "^10.18.0",
@@ -91,7 +90,7 @@
     "url": "git+https://github.com/contentful/starter-gatsby-blog.git"
   },
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "NODE_OPTIONS='--max-old-space-size=3072' gatsby build --no-color && gatsby serve -p 3000 -H 0.0.0.0",
     "build": "gatsby build",
     "heroku-postbuild": "gatsby build",
     "serve": "gatsby serve",
