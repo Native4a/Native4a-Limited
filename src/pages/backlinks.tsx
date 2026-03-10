@@ -57,11 +57,29 @@ const BacklinksIndex = ({ location }: { location: any }) => {
             <div className="flex justify-center items-center">
               <div className="container mx-auto">
                 <div className="grid grid-cols-1 gap-6">
-                  <div className="hidden md:flex justify-center items-center bg-white p-8 md:p-0 sm:bg-inherit shadow-md rounded-3xl mt-2 pt-12">
+                  <div className="hidden md:flex justify-center items-center sm:bg-white p-8 md:p-0 \ shadow-md rounded-3xl mt-2 pt-12">
                     <div>
                       <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
                         <b>{t('backlinks.annualAwards')}</b>
                       </p>
+                      <div className="container mx-auto pt-5">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                          <Img
+                            Desktop="rounded-sm"
+                            Size=""
+                            URL="https://images.ctfassets.net/rpza41pe9ev5/2jWem3YqlEdNaaoxpYQa7h/7b9e824531232e1da44d84d2defd0164/IMG_8643.webp"
+                            Alt="Award01"
+                            Mobile=""
+                          />
+                          <Img
+                            Desktop="rounded-sm"
+                            Size=""
+                            URL="https://images.ctfassets.net/rpza41pe9ev5/3ft9YcqxLo39PuYuOfatDs/63a81358563fa484739ce0383fc9d821/native4aAward02.webp"
+                            Alt="Award02"
+                            Mobile=""
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="hidden md:flex justify-center items-center">
