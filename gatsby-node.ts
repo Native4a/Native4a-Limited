@@ -1,6 +1,5 @@
 import * as path from 'path'
 import { GatsbyNode } from 'gatsby'
-import { getNotionBlogPosts } from './src/services/notionBlog'
 
 interface BlogPost {
   title: string
@@ -10,6 +9,16 @@ interface BlogPost {
 
 const LANGUAGES = ['en', 'ja', 'zh']
 const DEFAULT_LANGUAGE = 'zh'
+
+// Safely try to import Notion service
+let getNotionBlogPosts: any = null
+try {
+  const notionService = require('./src/services/notionBlog')
+  getNotionBlogPosts = notionService.getNotionBlogPosts
+  console.log('[v0] Successfully loaded Notion service')
+} catch (error) {
+  console.warn('[v0] Could not import Notion service, blog posts will not be fetched:', error.message)
+}
 
 export const createPages: GatsbyNode['createPages'] = async ({
   graphql,
@@ -24,19 +33,25 @@ export const createPages: GatsbyNode['createPages'] = async ({
   // Fetch blog posts from Notion for all languages
   const allPosts: BlogPost[] = []
 
-  for (const language of LANGUAGES) {
-    try {
-      const posts = await getNotionBlogPosts(language)
-      allPosts.push(
-        ...posts.map((post) => ({
-          title: post.title,
-          slug: post.slug,
-          language: post.language,
-        }))
-      )
-    } catch (error) {
-      reporter.warn(`Could not fetch Notion posts for language ${language}: ${error}`)
+  if (getNotionBlogPosts) {
+    for (const language of LANGUAGES) {
+      try {
+        console.log(`[v0] Fetching Notion posts for language: ${language}`)
+        const posts = await getNotionBlogPosts(language)
+        console.log(`[v0] Fetched ${posts.length} posts for ${language}`)
+        allPosts.push(
+          ...posts.map((post: any) => ({
+            title: post.title,
+            slug: post.slug,
+            language: post.language,
+          }))
+        )
+      } catch (error) {
+        console.warn(`[v0] Could not fetch Notion posts for language ${language}:`, error.message)
+      }
     }
+  } else {
+    console.log('[v0] Notion service not available, blog pages will have no posts loaded at build time')
   }
 
   // Create blog posts pages with language prefixes
@@ -87,6 +102,26 @@ export const createPages: GatsbyNode['createPages'] = async ({
         fromPath: `/blog/${post.slug}/`,
         toPath: `/${DEFAULT_LANGUAGE}/blog/${post.slug}/`,
         isPermanent: false,
+      })
+    })
+    
+    // Create redirect from root /blog/ to Chinese blog list
+    createRedirect({
+      fromPath: '/blog/',
+      toPath: '/zh/blog/',
+      isPermanent: false,
+    })
+  } else {
+    console.log('[v0] No blog posts found, creating empty blog pages')
+    // Still create blog pages even if no posts yet - they will load posts on client side
+    LANGUAGES.forEach((language) => {
+      const blogListComponent = path.resolve('./src/pages/blog.js')
+      createPage({
+        path: `/${language}/blog/`,
+        component: blogListComponent,
+        context: {
+          language,
+        },
       })
     })
     
