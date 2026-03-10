@@ -124,6 +124,12 @@ export default async function handler(
     return res.status(400).json({ error: "slug is required" })
   }
 
+  // Normalize language to match Notion database format (first letter uppercase)
+  let normalizedLanguage = language
+  if (language) {
+    normalizedLanguage = language.charAt(0).toUpperCase() + language.slice(1).toLowerCase()
+  }
+
   try {
     const query: any = {
       database_id: NOTION_DATABASE_ID,
@@ -133,9 +139,9 @@ export default async function handler(
       },
     }
 
-    if (language) {
+    if (normalizedLanguage) {
       query.filter = {
-        and: [query.filter, { property: "Language", select: { equals: language } }],
+        and: [query.filter, { property: "Language", select: { equals: normalizedLanguage } }],
       }
     }
 
