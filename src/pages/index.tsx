@@ -16,7 +16,7 @@ import SocialMediaBtn from '../components/button/socialMedia'
 import ServiceScope from '../components/serviceScope'
 import Section from '../components/baseTools/Section'
 import EseyTransportationCoImg from '../img/Client-s02.png'
-import EseyTransportationCoLogo form '../img/easy_transportation_logo.jpg'
+import EseyTransportationCoLogo from '../img/easy_transportation_logo.jpg'
 import Popup from 'reactjs-popup'
 import StarRatings from 'react-star-ratings'
 import { buildOrganizationStructuredData } from '../utils/structuredData'
@@ -59,6 +59,8 @@ interface PageDataProps extends PageProps {
     }
   }
 }
+
+const ranking = 5
 
 function RootIndexContent(props: PageDataProps) {
   const { t } = useTranslation()
@@ -209,9 +211,9 @@ function RootIndexContent(props: PageDataProps) {
                       width="100%"
                       src="https://www.youtube.com/embed/MVoiiO4l4Kg"
                       title="YouTube video player"
-                      frameborder="0"
+                      frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
+                      allowFullScreen
                     ></iframe>
                   </div>
                 </div>
