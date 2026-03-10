@@ -12,73 +12,74 @@ interface Plugin {
   options?: Record<string, unknown>
 }
 
-// Build plugins array conditionally
-const plugins: Plugin[] = [
-  {
-    resolve: `gatsby-plugin-google-gtag`,
-    options: {
-      trackingIds: [
-        'G-M3STTWTYEV',
-        'G-6CHTNN943F',
-        'Aw-839705167',
-      ],
-      pluginConfig: {
-        head: true,
-      },
-    },
-  },
-  {
-    resolve: `gatsby-plugin-canonical-urls`,
-    options: {
-      siteUrl: `https://nativeaaaa.com.hk`,
-      stripQueryString: true,
-    },
-  },
-  {
-    resolve: 'gatsby-plugin-image',
-    options: {
-      quality: 75,
-      webp: {
-        quality: 75,
-      },
-      blurred: true,
-      placeholder: 'blurred',
-    },
-  },
+const isDev = process.env.NODE_ENV === 'development'
+
+// Build plugins array conditionally - keep minimal in dev for faster builds
+const plugins: (string | Plugin)[] = [
+  'gatsby-plugin-image',
   {
     resolve: 'gatsby-plugin-sharp',
     options: {
-      quality: 75,
+      defaults: {
+        placeholder: 'none',
+        quality: 50,
+      },
+      failOn: 'none',
       stripMetadata: true,
-      defaultQuality: 75,
     },
   },
   'gatsby-transformer-sharp',
   'gatsby-plugin-react-helmet',
-  'gatsby-plugin-sitemap',
-  {
-    resolve: 'gatsby-plugin-robots-txt',
-    options: {
-      host: 'https://nativeaaaa.com.hk',
-      sitemap: 'https://nativeaaaa.com.hk/sitemap.xml',
-      policy: [{ userAgent: '*', allow: '/' }],
-    },
-  },
-  {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      name: 'Native4a - SEO Agency Hong Kong',
-      short_name: 'Native4a',
-      start_url: '/',
-      background_color: '#ffffff',
-      theme_color: '#FAAB00',
-      display: 'standalone',
-      icon: 'src/img/4afavicon.png',
-      cache_busting_mode: 'none',
-    },
-  },
   'gatsby-plugin-postcss',
 ]
+
+// Add non-essential plugins only in production
+if (!isDev) {
+  plugins.push(
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          'G-M3STTWTYEV',
+          'G-6CHTNN943F',
+          'Aw-839705167',
+        ],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://nativeaaaa.com.hk`,
+        stripQueryString: true,
+      },
+    },
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://nativeaaaa.com.hk',
+        sitemap: 'https://nativeaaaa.com.hk/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Native4a - SEO Agency Hong Kong',
+        short_name: 'Native4a',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: '#FAAB00',
+        display: 'standalone',
+        icon: 'src/img/4afavicon.png',
+        cache_busting_mode: 'none',
+      },
+    },
+  )
+}
 
 // Only add Contentful plugin if credentials are available
 if (process.env.CONTENTFUL_SPACE_ID && process.env.CONTENTFUL_ACCESS_TOKEN) {
