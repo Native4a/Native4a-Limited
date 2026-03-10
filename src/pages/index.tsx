@@ -17,6 +17,8 @@ import ServiceScope from '../components/serviceScope'
 import Section from '../components/baseTools/Section'
 import EseyTransportationCoImg from '../img/Client-s02.png'
 import CENTURY21Img from '../img/CENTURY21.png'
+import CENTURY21LOGO from '../img/21LOGO.png'
+
 import EseyTransportationCoLogo from '../img/easy_transportation_logo.jpg'
 import Popup from 'reactjs-popup'
 import StarRatings from 'react-star-ratings'
@@ -304,7 +306,7 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="">
                   <img
                     className="col-end-3 rounded-full"
-                    src={EseyTransportationCoLogo}
+                    src={CENTURY21LOGO}
                     alt="service_Video_Production"
                     loading="lazy"
                     decoding="async"
