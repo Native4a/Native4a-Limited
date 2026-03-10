@@ -18,7 +18,12 @@ import Section from '../components/baseTools/Section'
 import EseyTransportationCoImg from '../img/Client-s02.png'
 import CENTURY21Img from '../img/CENTURY21.png'
 import CENTURY21LOGO from '../img/21LOGO.png'
-
+import RHCurtainImg from '../img/RHCurtain.png'
+import RHCurtainLogo from '../img/RHCurtainLogo.jpg'
+import AccoladeImg from '../img/AccoladeImg.png'
+import accoladeLogo from '../img/accoladeLogo.png'
+import LostHKLogo from '../img/LostHKLogo.png'
+import LostHKImg from '../img/LostHKImg.png'
 import EseyTransportationCoLogo from '../img/easy_transportation_logo.jpg'
 import Popup from 'reactjs-popup'
 import StarRatings from 'react-star-ratings'
@@ -341,7 +346,7 @@ function RootIndexContent(props: PageDataProps) {
               trigger={
                 <div className={styles.overlay_container}>
                   <img
-                    src={EseyTransportationCoImg}
+                    src={RHCurtainImg}
                     alt="YouTube video"
                     width="500"
                     height="600"
@@ -364,7 +369,7 @@ function RootIndexContent(props: PageDataProps) {
                     <iframe
                       className={styles.responsiveIframe}
                       width="100%"
-                      src="https://www.youtube.com/embed/MVoiiO4l4Kg"
+                      src="https://www.youtube.com/embed/royT3SSLSbw"
                       title="YouTube video player"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -382,7 +387,7 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="">
                   <img
                     className="col-end-3 rounded-full"
-                    src={EseyTransportationCoLogo}
+                    src={RHCurtainLogo}
                     alt="service_Video_Production"
                     loading="lazy"
                     decoding="async"
@@ -417,7 +422,7 @@ function RootIndexContent(props: PageDataProps) {
               trigger={
                 <div className={styles.overlay_container}>
                   <img
-                    src={EseyTransportationCoImg}
+                    src={AccoladeImg}
                     alt="YouTube video"
                     width="500"
                     height="600"
@@ -440,7 +445,7 @@ function RootIndexContent(props: PageDataProps) {
                     <iframe
                       className={styles.responsiveIframe}
                       width="100%"
-                      src="https://www.youtube.com/embed/MVoiiO4l4Kg"
+                      src="https://www.youtube.com/embed/IrD1A4GWMtQ"
                       title="YouTube video player"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -458,7 +463,7 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="">
                   <img
                     className="col-end-3 rounded-full"
-                    src={EseyTransportationCoLogo}
+                    src={accoladeLogo}
                     alt="service_Video_Production"
                     loading="lazy"
                     decoding="async"
@@ -493,7 +498,7 @@ function RootIndexContent(props: PageDataProps) {
               trigger={
                 <div className={styles.overlay_container}>
                   <img
-                    src={EseyTransportationCoImg}
+                    src={LostHKImg}
                     alt="YouTube video"
                     width="500"
                     height="600"
@@ -516,7 +521,7 @@ function RootIndexContent(props: PageDataProps) {
                     <iframe
                       className={styles.responsiveIframe}
                       width="100%"
-                      src="https://www.youtube.com/embed/MVoiiO4l4Kg"
+                      src="https://www.youtube.com/embed/UFR08iF82L4"
                       title="YouTube video player"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -534,7 +539,7 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="">
                   <img
                     className="col-end-3 rounded-full"
-                    src={EseyTransportationCoLogo}
+                    src={LostHKLogo}
                     alt="service_Video_Production"
                     loading="lazy"
                     decoding="async"
