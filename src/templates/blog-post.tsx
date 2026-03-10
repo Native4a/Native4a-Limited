@@ -1,9 +1,5 @@
-import React from 'react'
-import { Link, graphql, PageProps } from 'gatsby'
-import get from 'lodash/get'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
-import { BLOCKS } from '@contentful/rich-text-types'
+import React, { useEffect, useState } from 'react'
+import { Link, PageProps } from 'gatsby'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import readingTime from 'reading-time'
 
@@ -11,175 +7,150 @@ import Seo from '../components/seo'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 import Tags from '../components/tags'
+import { getNotionBlogPostBySlug } from '../services/notionBlog'
 import * as styles from './blog-post.module.css'
 
-interface BlogPostNode {
-  slug: string
+interface NotionBlogPost {
+  id: string
   title: string
-  publishDate: string
-  rawDate: string
-  heroImage?: {
-    gatsbyImage: IGatsbyImageData
-    resize: {
-      src: string
-    }
-  }
-  body?: {
-    raw: string
-    references?: any[]
-  }
+  slug: string
+  content: string
+  excerpt?: string
+  author?: string
   tags?: string[]
-  description?: {
-    raw: string
-  }
-  author?: {
-    name: string
-  }
+  featuredImage?: string
+  publishedDate: string
+  language: string
 }
 
 interface BlogPostTemplateProps extends PageProps {
-  data: {
-    contentfulBlogPost: BlogPostNode
-    previous?: { slug: string; title: string }
-    next?: { slug: string; title: string }
-  }
   pageContext?: {
-    language?: string
+    slug: string
+    language: string
     previousPostSlug?: string
     nextPostSlug?: string
   }
 }
 
-class BlogPostTemplate extends React.Component<BlogPostTemplateProps> {
-  render() {
-    const post = get(this.props, 'data.contentfulBlogPost')
-    const previous = get(this.props, 'data.previous')
-    const next = get(this.props, 'data.next')
-    const language = this.props.pageContext?.language || 'zh'
-    const plainTextDescription = documentToPlainTextString(
-      JSON.parse(post.description?.raw || '{}')
-    )
-    const plainTextBody = documentToPlainTextString(JSON.parse(post.body?.raw || '{}'))
-    const { minutes: timeToRead } = readingTime(plainTextBody)
+const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
+  location,
+  pageContext,
+}) => {
+  const [post, setPost] = useState<NotionBlogPost | null>(null)
+  const [loading, setLoading] = useState(true)
 
-    // Helper function to get language-prefixed path
-    const getLocalizedPath = (path: string) => {
-      if (language === 'zh') {
-        return path
+  const slug = pageContext?.slug || ''
+  const language = pageContext?.language || 'zh'
+
+  useEffect(() => {
+    const loadPost = async () => {
+      try {
+        const fetchedPost = await getNotionBlogPostBySlug(slug, language)
+        setPost(fetchedPost)
+      } catch (error) {
+        console.error('Error loading blog post:', error)
+      } finally {
+        setLoading(false)
       }
-      return `/${language}${path}`
     }
 
-    const options = {
-      renderNode: {
-        [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
-          const { gatsbyImage, description } = node.data.target
-          return <GatsbyImage image={getImage(gatsbyImage)} alt={description} />
-        },
-        'embedded-asset-block': (node: any) => {
-          const { gatsbyImageData } = node.data.target
-          if (!gatsbyImageData) {
-            return null
-          }
-          return <GatsbyImage image={gatsbyImageData} alt="embedded-asset" />
-        },
-      },
-    }
+    loadPost()
+  }, [slug, language])
 
+  if (loading) {
     return (
-      <Layout location={this.props.location}>
-        <Seo
-          title={post.title}
-          description={plainTextDescription}
-          image={`http:${post.heroImage?.resize.src}`}
-        />
-        <section>
-          <div className={styles.container}>
-            <Hero image={post.heroImage?.gatsbyImage} title={post.title} />
-          </div>
-        </section>
+      <Layout location={location} pageContext={pageContext}>
         <div className={styles.container}>
-          <div className={styles.article}>
-            <div className={styles.body}>
-              <span className={styles.meta}>
-                {post.author?.name} &middot;{' '}
-                <time dateTime={post.rawDate}>{post.publishDate}</time> –{' '}
-                {timeToRead} minute read
-              </span>
-              {post.body?.raw && renderRichText(post.body, options)}
-              <Tags tags={post.tags} />
-              {(previous || next) && (
-                <nav>
-                  <ul className={styles.articleNavigation}>
-                    {previous && (
-                      <li>
-                        <Link to={getLocalizedPath(`/blog/${previous.slug}`)} rel="prev">
-                          ← {previous.title}
-                        </Link>
-                      </li>
-                    )}
-                    {next && (
-                      <li>
-                        <Link to={getLocalizedPath(`/blog/${next.slug}`)} rel="next">
-                          {next.title} →
-                        </Link>
-                      </li>
-                    )}
-                  </ul>
-                </nav>
-              )}
-            </div>
-          </div>
+          <p>Loading...</p>
         </div>
       </Layout>
     )
   }
+
+  if (!post) {
+    return (
+      <Layout location={location} pageContext={pageContext}>
+        <div className={styles.container}>
+          <p>Post not found</p>
+        </div>
+      </Layout>
+    )
+  }
+
+  const publishDate = new Date(post.publishedDate).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+
+  const { minutes: timeToRead } = readingTime(post.content)
+
+  const getLocalizedPath = (path: string) => {
+    if (language === 'zh') {
+      return path
+    }
+    return `/${language}${path}`
+  }
+
+  return (
+    <Layout location={location} pageContext={pageContext}>
+      <Seo
+        title={post.title}
+        description={post.excerpt || post.content.substring(0, 160)}
+        image={post.featuredImage}
+      />
+      <section>
+        <div className={styles.container}>
+          <Hero title={post.title} />
+        </div>
+      </section>
+      <div className={styles.container}>
+        <div className={styles.article}>
+          <div className={styles.body}>
+            <span className={styles.meta}>
+              {post.author || 'Native4A'} &middot;{' '}
+              <time dateTime={post.publishedDate}>{publishDate}</time> –{' '}
+              {timeToRead} minute read
+            </span>
+            <div
+              dangerouslySetInnerHTML={{ __html: post.content }}
+              className={styles.content}
+            />
+            {post.tags && post.tags.length > 0 && <Tags tags={post.tags} />}
+            {(pageContext?.previousPostSlug || pageContext?.nextPostSlug) && (
+              <nav>
+                <ul className={styles.articleNavigation}>
+                  {pageContext?.previousPostSlug && (
+                    <li>
+                      <Link
+                        to={getLocalizedPath(
+                          `/blog/${pageContext.previousPostSlug}`
+                        )}
+                        rel="prev"
+                      >
+                        ← Previous
+                      </Link>
+                    </li>
+                  )}
+                  {pageContext?.nextPostSlug && (
+                    <li>
+                      <Link
+                        to={getLocalizedPath(`/blog/${pageContext.nextPostSlug}`)}
+                        rel="next"
+                      >
+                        Next →
+                      </Link>
+                    </li>
+                  )}
+                </ul>
+              </nav>
+            )}
+          </div>
+        </div>
+      </div>
+    </Layout>
+  )
 }
 
 export default BlogPostTemplate
 
-export const pageQuery = graphql`
-  query BlogPostBySlug(
-    $slug: String!
-    $previousPostSlug: String
-    $nextPostSlug: String
-  ) {
-    contentfulBlogPost(slug: { eq: $slug }) {
-      slug
-      title
-      publishDate(formatString: "MMMM Do, YYYY")
-      rawDate: publishDate
-      heroImage {
-        gatsbyImage(layout: FULL_WIDTH, placeholder: BLURRED, width: 1280)
-        resize(height: 630, width: 1200) {
-          src
-        }
-      }
-      body {
-        raw
-        references {
-          ... on ContentfulAsset {
-            contentful_id
-            __typename
-            gatsbyImageData
-          }
-        }
-      }
-      tags
-      description {
-        raw
-      }
-      author {
-        name
-      }
-    }
-    previous: contentfulBlogPost(slug: { eq: $previousPostSlug }) {
-      slug
-      title
-    }
-    next: contentfulBlogPost(slug: { eq: $nextPostSlug }) {
-      slug
-      title
-    }
-  }
-`

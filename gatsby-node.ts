@@ -1,18 +1,11 @@
 import * as path from 'path'
 import { GatsbyNode } from 'gatsby'
+import { getNotionBlogPosts } from './src/services/notionBlog'
 
 interface BlogPost {
   title: string
   slug: string
-}
-
-interface GraphQLResult {
-  errors?: unknown[]
-  data?: {
-    allContentfulBlogPost: {
-      nodes: BlogPost[]
-    }
-  }
+  language: string
 }
 
 const LANGUAGES = ['en', 'ja', 'zh']
@@ -28,32 +21,35 @@ export const createPages: GatsbyNode['createPages'] = async ({
   // Define templates
   const blogPost = path.resolve('./src/templates/blog-post.tsx')
 
-  const result = (await graphql(
-    `
-      {
-        allContentfulBlogPost {
-          nodes {
-            title
-            slug
-          }
-        }
-      }
-    `
-  )) as GraphQLResult
+  // Fetch blog posts from Notion for all languages
+  const allPosts: BlogPost[] = []
 
-  if (result.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your Contentful posts`,
-      result.errors
-    )
-    return
+  for (const language of LANGUAGES) {
+    try {
+      const posts = await getNotionBlogPosts(language)
+      allPosts.push(
+        ...posts.map((post) => ({
+          title: post.title,
+          slug: post.slug,
+          language: post.language,
+        }))
+      )
+    } catch (error) {
+      reporter.warn(`Could not fetch Notion posts for language ${language}: ${error}`)
+    }
   }
 
-  const posts = result.data?.allContentfulBlogPost.nodes || []
-
   // Create blog posts pages with language prefixes
-  if (posts.length > 0) {
+  if (allPosts.length > 0) {
+    // Group posts by language
+    const postsByLanguage: Record<string, BlogPost[]> = {}
+    LANGUAGES.forEach((lang) => {
+      postsByLanguage[lang] = allPosts.filter((p) => p.language === lang)
+    })
+
+    // Create pages for each language
     LANGUAGES.forEach((language) => {
+      const posts = postsByLanguage[language]
       posts.forEach((post, index) => {
         const previousPostSlug = index === 0 ? null : posts[index - 1].slug
         const nextPostSlug =
@@ -73,10 +69,11 @@ export const createPages: GatsbyNode['createPages'] = async ({
     })
 
     // Create redirect from old blog URLs to language-specific ones (Chinese default)
-    posts.forEach((post) => {
+    const chinesePosts = postsByLanguage[DEFAULT_LANGUAGE] || []
+    chinesePosts.forEach((post) => {
       createRedirect({
         fromPath: `/blog/${post.slug}/`,
-        toPath: `/zh/blog/${post.slug}/`,
+        toPath: `/${DEFAULT_LANGUAGE}/blog/${post.slug}/`,
         isPermanent: false,
       })
     })
