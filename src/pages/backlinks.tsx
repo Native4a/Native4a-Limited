@@ -31,7 +31,7 @@ const BacklinksIndex = ({ location }: { location: any }) => {
       {/* Hero Section */}
       <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
             <div className="flex justify-center items-center p-6">
               <div className="pt-2 md:pt-3 2xl:pt-0">
                 <Grid>
@@ -57,7 +57,7 @@ const BacklinksIndex = ({ location }: { location: any }) => {
             <div className="flex justify-center items-center">
               <div className="container mx-auto">
                 <div className="grid grid-cols-1 gap-6">
-                  <div className="hidden md:flex justify-center items-center bg-white p-8 md:p-0 md:bg-inherit shadow-md rounded-3xl mt-2 pt-12">
+                  <div className="hidden md:flex justify-center items-center sm:bg-white p-8 md:p-0 \ shadow-md rounded-3xl mt-2 pt-12">
                     <div>
                       <p className="underline text-2xl decoration-yellow-400 underline-offset-4 decoration-2">
                         <b>{t('backlinks.annualAwards')}</b>

@@ -1,6 +1,4 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import get from 'lodash/get'
+import React, { useEffect, useState } from 'react'
 
 import '../components/variables.css'
 import '../styles/global.css'
@@ -8,48 +6,46 @@ import Seo from '../components/seo'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 
-class BlogIndex extends React.Component {
-  render() {
-    const posts = get(this, 'props.data.allContentfulBlogPost.nodes')
+const BlogIndex = ({ location, pageContext }) => {
+  const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const language = pageContext?.language || 'zh'
 
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        const res = await fetch(`/api/notion-posts?language=${language}`)
+        if (!res.ok) throw new Error(`API error: ${res.status}`)
+        const data = await res.json()
+        setPosts(data.posts || [])
+      } catch (error) {
+        console.error('Error loading blog posts:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadPosts()
+  }, [language])
+
+  if (loading) {
     return (
-      <Layout location={this.props.location}>
+      <Layout location={location} pageContext={pageContext}>
         <Seo title="Blog" />
-        <ArticlePreview posts={posts} />
+        <div style={{ padding: '2rem', textAlign: 'center' }}>
+          <p>Loading posts...</p>
+        </div>
       </Layout>
     )
   }
-}
 
-/*=======front end page blog========
-  <ArticlePreview posts={posts} />
-*/
+  return (
+    <Layout location={location} pageContext={pageContext}>
+      <Seo title="Blog" />
+      <ArticlePreview posts={posts} />
+    </Layout>
+  )
+}
 
 export default BlogIndex
 
-export const pageQuery = graphql`
-  query BlogIndexQuery {
-    allContentfulBlogPost(sort: { publishDate: DESC }) {
-      nodes {
-        title
-        slug
-        publishDate(formatString: "MMMM Do, YYYY")
-        tags
-        heroImage {
-          gatsbyImageData(
-            layout: FULL_WIDTH
-            placeholder: BLURRED
-            width: 424
-            height: 212
-          )
-        }
-        description {
-          raw
-        }
-        author {
-          name
-        }
-      }
-    }
-  }
-`

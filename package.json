@@ -24,6 +24,7 @@
     "babel-eslint": "^10.0.0",
     "clsx": "^2.1.1",
     "contentful": "^9.1.33",
+    "@notionhq/client": "^2.2.10",
     "dotenv": "^17.2.3",
     "flowbite": "^2.5.1",
     "flowbite-react": "^0.10.1",

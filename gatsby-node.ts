@@ -4,19 +4,21 @@ import { GatsbyNode } from 'gatsby'
 interface BlogPost {
   title: string
   slug: string
-}
-
-interface GraphQLResult {
-  errors?: unknown[]
-  data?: {
-    allContentfulBlogPost: {
-      nodes: BlogPost[]
-    }
-  }
+  language: string
 }
 
 const LANGUAGES = ['en', 'ja', 'zh']
 const DEFAULT_LANGUAGE = 'zh'
+
+// Safely try to import Notion service
+let getNotionBlogPosts: any = null
+try {
+  const notionService = require('./src/services/notionBlog')
+  getNotionBlogPosts = notionService.getNotionBlogPosts
+  console.log('[v0] Successfully loaded Notion service')
+} catch (error) {
+  console.warn('[v0] Could not import Notion service, blog posts will not be fetched:', error.message)
+}
 
 export const createPages: GatsbyNode['createPages'] = async ({
   graphql,
@@ -28,32 +30,53 @@ export const createPages: GatsbyNode['createPages'] = async ({
   // Define templates
   const blogPost = path.resolve('./src/templates/blog-post.tsx')
 
-  const result = (await graphql(
-    `
-      {
-        allContentfulBlogPost {
-          nodes {
-            title
-            slug
-          }
-        }
-      }
-    `
-  )) as GraphQLResult
+  // Fetch blog posts from Notion for all languages
+  const allPosts: BlogPost[] = []
 
-  if (result.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your Contentful posts`,
-      result.errors
-    )
-    return
+  if (getNotionBlogPosts) {
+    for (const language of LANGUAGES) {
+      try {
+        console.log(`[v0] Fetching Notion posts for language: ${language}`)
+        const posts = await getNotionBlogPosts(language)
+        console.log(`[v0] Fetched ${posts.length} posts for ${language}`)
+        allPosts.push(
+          ...posts.map((post: any) => ({
+            title: post.title,
+            slug: post.slug,
+            language: post.language,
+          }))
+        )
+      } catch (error) {
+        console.warn(`[v0] Could not fetch Notion posts for language ${language}:`, error.message)
+      }
+    }
+  } else {
+    console.log('[v0] Notion service not available, blog pages will have no posts loaded at build time')
   }
 
-  const posts = result.data?.allContentfulBlogPost.nodes || []
-
   // Create blog posts pages with language prefixes
-  if (posts.length > 0) {
+  if (allPosts.length > 0) {
+    // Group posts by language
+    const postsByLanguage: Record<string, BlogPost[]> = {}
+    LANGUAGES.forEach((lang) => {
+      postsByLanguage[lang] = allPosts.filter((p) => p.language === lang)
+    })
+
+    // Create blog list pages for each language
     LANGUAGES.forEach((language) => {
+      const blogListComponent = path.resolve('./src/pages/blog.js')
+      createPage({
+        path: `/${language}/blog/`,
+        component: blogListComponent,
+        context: {
+          language,
+        },
+      })
+    })
+
+    // Create individual blog posts pages with language prefixes
+    LANGUAGES.forEach((language) => {
+      const posts = postsByLanguage[language]
       posts.forEach((post, index) => {
         const previousPostSlug = index === 0 ? null : posts[index - 1].slug
         const nextPostSlug =
@@ -73,12 +96,40 @@ export const createPages: GatsbyNode['createPages'] = async ({
     })
 
     // Create redirect from old blog URLs to language-specific ones (Chinese default)
-    posts.forEach((post) => {
+    const chinesePosts = postsByLanguage[DEFAULT_LANGUAGE] || []
+    chinesePosts.forEach((post) => {
       createRedirect({
         fromPath: `/blog/${post.slug}/`,
-        toPath: `/zh/blog/${post.slug}/`,
+        toPath: `/${DEFAULT_LANGUAGE}/blog/${post.slug}/`,
         isPermanent: false,
       })
+    })
+    
+    // Create redirect from root /blog/ to Chinese blog list
+    createRedirect({
+      fromPath: '/blog/',
+      toPath: '/zh/blog/',
+      isPermanent: false,
+    })
+  } else {
+    console.log('[v0] No blog posts found, creating empty blog pages')
+    // Still create blog pages even if no posts yet - they will load posts on client side
+    LANGUAGES.forEach((language) => {
+      const blogListComponent = path.resolve('./src/pages/blog.js')
+      createPage({
+        path: `/${language}/blog/`,
+        component: blogListComponent,
+        context: {
+          language,
+        },
+      })
+    })
+    
+    // Create redirect from root /blog/ to Chinese blog list
+    createRedirect({
+      fromPath: '/blog/',
+      toPath: '/zh/blog/',
+      isPermanent: false,
     })
   }
 
