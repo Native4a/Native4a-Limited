@@ -25,7 +25,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
 }) => {
   const { createPage, createRedirect } = actions
 
-  // Define a template for blog post
+  // Define templates
   const blogPost = path.resolve('./src/templates/blog-post.tsx')
 
   const result = (await graphql(
@@ -81,7 +81,57 @@ export const createPages: GatsbyNode['createPages'] = async ({
       })
     })
   }
+
+  // Create language-prefixed routes for main pages
+  const mainPages = [
+    { path: '/', component: path.resolve('./src/pages/index.tsx') },
+    { path: '/contact-us', component: path.resolve('./src/pages/contact-us.tsx') },
+    { path: '/about-us-2', component: path.resolve('./src/pages/about-us-2.tsx') },
+    { path: '/seo', component: path.resolve('./src/pages/seo.js') },
+    { path: '/video', component: path.resolve('./src/pages/video.js') },
+    { path: '/web-design', component: path.resolve('./src/pages/web-design.js') },
+    { path: '/xiaohongshu', component: path.resolve('./src/pages/xiaohongshu.js') },
+    { path: '/backlinks', component: path.resolve('./src/pages/backlinks.tsx') },
+    { path: '/smm-ads', component: path.resolve('./src/pages/smm-ads.js') },
+    { path: '/seo-smart-kit', component: path.resolve('./src/pages/seo-smart-kit.js') },
+    { path: '/seo_keywords', component: path.resolve('./src/pages/seo_keywords.js') },
+    { path: '/off-page', component: path.resolve('./src/pages/off-page.tsx') },
+    { path: '/catalog', component: path.resolve('./src/pages/catalog.js') },
+  ]
+
+  mainPages.forEach(({ path: pagePath, component }) => {
+    LANGUAGES.forEach((language) => {
+      // Create pages with language prefix
+      const finalPath = pagePath === '/' ? `/${language}/` : `/${language}${pagePath}/`
+      createPage({
+        path: finalPath,
+        component,
+        context: {
+          language,
+        },
+      })
+    })
+  })
+
+  // Create redirects from non-prefixed paths to Chinese default
+  mainPages.forEach(({ path: pagePath }) => {
+    if (pagePath === '/') {
+      // Main index redirect
+      createRedirect({
+        fromPath: '/',
+        toPath: '/zh/',
+        isPermanent: false,
+      })
+    } else {
+      createRedirect({
+        fromPath: `${pagePath}/`,
+        toPath: `/zh${pagePath}/`,
+        isPermanent: false,
+      })
+    }
+  })
 }
+
 
 
 

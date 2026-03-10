@@ -47,7 +47,34 @@
   "homepage": {
     "serviceScope": "Service Scope",
     "popularMethods": "6 Popular Digital Marketing Methods",
-    "customerTestimonial": "Customers Witness Our Growth"
+    "customerTestimonial": "Customers Witness Our Growth",
+    "testimonials": {
+      "client1": {
+        "quote": "NATIVE4A helped us achieve high returns with low costs.",
+        "name": "Zhao",
+        "title": "Founder of Easy Move"
+      },
+      "client2": {
+        "quote": "NATIVE4A actively helped us achieve our monthly sales targets.",
+        "name": "Max Hung",
+        "title": "Sales Manager, Century 21"
+      },
+      "client3": {
+        "quote": "NATIVE4A helped us expand our business across Hong Kong.",
+        "name": "Tony",
+        "title": "CEO, RH Curtain"
+      },
+      "client4": {
+        "quote": "Native has assisted us with Google advertising for many years.",
+        "name": "Paul Lu",
+        "title": "COO, Accolade"
+      },
+      "client5": {
+        "quote": "Native's SEO technology is leading.",
+        "name": "Rick Woo",
+        "title": "CEO, Lost"
+      }
+    }
   },
   "footer": {
     "title": "Native puts you on the shoulders of giants.",

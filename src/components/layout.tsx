@@ -30,7 +30,7 @@ const Layout: React.FC<LayoutProps> = ({ children, location, pageContext }) => {
       // Priority 2: Detect from URL pathname
       if (!languageToUse) {
         const currentPath = window.location.pathname
-        const langMatch = currentPath.match(/^\/(en|ja|zh)(\/|$)/)
+        const langMatch = currentPath.match(/^\/(en|ja|zh)/)
         languageToUse = langMatch ? langMatch[1] : null
       }
       
