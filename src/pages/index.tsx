@@ -296,7 +296,7 @@ function RootIndexContent(props: PageDataProps) {
               )}
             </Popup>
             <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">
-              "NATIVE4A協助我們用了低成本，達成高回報。"
+              "NATIVE4A積極協助我們達成每月銷售目標。"
             </p>
             <div className="w-10/12 m-5">
               <div className="grid grid-cols-3 gap-4 items-center">
@@ -312,10 +312,10 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="col-span-2">
                   <div className="pl-4 col-start-3 col-end-9">
                     <p>
-                      <b>兆哥</b>
+                      <b>Max Hung</b>
                     </p>
                     <p className="text-sm">
-                      搬屋易 Founder
+                      世紀21 業務經理
                     </p>
                     <StarRatings
                       rating={ranking}
@@ -372,7 +372,7 @@ function RootIndexContent(props: PageDataProps) {
               )}
             </Popup>
             <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">
-              "NATIVE4A協助我們用了低成本，達成高回報。"
+              "NATIVE4A協助我們將業務拓展至全港。"
             </p>
             <div className="w-10/12 m-5">
               <div className="grid grid-cols-3 gap-4 items-center">
@@ -388,10 +388,10 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="col-span-2">
                   <div className="pl-4 col-start-3 col-end-9">
                     <p>
-                      <b>兆哥</b>
+                      <b>Tony</b>
                     </p>
                     <p className="text-sm">
-                      搬屋易 Founder
+                      RH Curtain CEO
                     </p>
                     <StarRatings
                       rating={ranking}
@@ -448,7 +448,7 @@ function RootIndexContent(props: PageDataProps) {
               )}
             </Popup>
             <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">
-              "NATIVE4A協助我們用了低成本，達成高回報。"
+              "native協助我們Google廣告多年。"
             </p>
             <div className="w-10/12 m-5">
               <div className="grid grid-cols-3 gap-4 items-center">
@@ -464,10 +464,10 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="col-span-2">
                   <div className="pl-4 col-start-3 col-end-9">
                     <p>
-                      <b>兆哥</b>
+                      <b>Paul Lu</b>
                     </p>
                     <p className="text-sm">
-                      搬屋易 Founder
+                      Accolade COO
                     </p>
                     <StarRatings
                       rating={ranking}
@@ -524,7 +524,7 @@ function RootIndexContent(props: PageDataProps) {
               )}
             </Popup>
             <p className="text-md mt-4 text-center px-6 py-1 bg-amber-500 rounded-full font-bold">
-              "NATIVE4A協助我們用了低成本，達成高回報。"
+              "native的SEO技術領先。"
             </p>
             <div className="w-10/12 m-5">
               <div className="grid grid-cols-3 gap-4 items-center">
@@ -540,10 +540,10 @@ function RootIndexContent(props: PageDataProps) {
                 <div className="col-span-2">
                   <div className="pl-4 col-start-3 col-end-9">
                     <p>
-                      <b>兆哥</b>
+                      <b>Rick Woo</b>
                     </p>
                     <p className="text-sm">
-                      搬屋易 Founder
+                      Lost CEO
                     </p>
                     <StarRatings
                       rating={ranking}
