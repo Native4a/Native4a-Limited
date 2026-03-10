@@ -33,24 +33,17 @@ export default async function handler(
   }
 
   try {
+    // Query with language filter only - handle Published check manually
+    // since Notion property type may vary (checkbox vs select)
     const query: any = {
       database_id: NOTION_DATABASE_ID,
-      filter: {
-        property: "Published",
-        checkbox: { equals: true },
-      },
       sorts: [{ property: "PublishedDate", direction: "descending" }],
     }
 
     if (normalizedLanguage) {
       query.filter = {
-        and: [
-          query.filter,
-          {
-            property: "Language",
-            select: { equals: normalizedLanguage },
-          },
-        ],
+        property: "Language",
+        select: { equals: normalizedLanguage },
       }
     }
 
@@ -59,6 +52,23 @@ export default async function handler(
     const posts = response.results
       .map((page: any) => {
         const props = page.properties
+
+        // Handle Published field regardless of type (checkbox boolean or select string)
+        const publishedProp = props.Published
+        let isPublished = false
+        if (publishedProp?.type === "checkbox") {
+          isPublished = publishedProp.checkbox === true
+        } else if (publishedProp?.type === "select") {
+          const val = publishedProp.select?.name?.toLowerCase()
+          isPublished = val === "yes" || val === "true" || val === "published"
+        } else if (publishedProp?.type === "status") {
+          const val = publishedProp.status?.name?.toLowerCase()
+          isPublished = val === "published" || val === "done" || val === "yes"
+        } else {
+          // If unknown type, include the post anyway
+          isPublished = true
+        }
+
         return {
           id: page.id,
           title: notionRichTextToPlain(props.Title?.title || []),
@@ -72,10 +82,11 @@ export default async function handler(
             "",
           publishedDate:
             props.PublishedDate?.date?.start || new Date().toISOString(),
-          language: props.Language?.select?.name || "zh",
+          language: props.Language?.select?.name || "Zh",
+          isPublished,
         }
       })
-      .filter((post: any) => post.slug)
+      .filter((post: any) => post.slug && post.isPublished)
 
     return res.status(200).json({ posts })
   } catch (error: any) {

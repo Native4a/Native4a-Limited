@@ -9,7 +9,7 @@ import ArticlePreview from '../components/article-preview'
 const BlogIndex = ({ location, pageContext }) => {
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
-  const language = pageContext?.language || 'Zh'
+  const language = pageContext?.language || 'zh'
 
   useEffect(() => {
     const loadPosts = async () => {

@@ -131,18 +131,13 @@ export default async function handler(
   }
 
   try {
+    // Filter by slug only - don't filter by Published (type may not be checkbox)
     const query: any = {
       database_id: NOTION_DATABASE_ID,
       filter: {
         property: "Slug",
         rich_text: { equals: slug },
       },
-    }
-
-    if (normalizedLanguage) {
-      query.filter = {
-        and: [query.filter, { property: "Language", select: { equals: normalizedLanguage } }],
-      }
     }
 
     const response = await notion.databases.query(query)
@@ -154,22 +149,28 @@ export default async function handler(
     const page = response.results[0] as any
     const props = page.properties
 
-    // Fetch blocks
-    let blocks: any[] = []
-    let hasMore = true
-    let cursor: string | undefined
+    // First try to get content from the Content property (rich_text)
+    // This is where the content is stored in this Notion database
+    let content = notionRichTextToPlain(props.Content?.rich_text || [])
 
-    while (hasMore) {
-      const blockResponse = await notion.blocks.children.list({
-        block_id: page.id,
-        start_cursor: cursor,
-      })
-      blocks = [...blocks, ...blockResponse.results]
-      hasMore = blockResponse.has_more
-      cursor = blockResponse.next_cursor || undefined
+    // If Content property is empty, fall back to page blocks
+    if (!content) {
+      let blocks: any[] = []
+      let hasMore = true
+      let cursor: string | undefined
+
+      while (hasMore) {
+        const blockResponse = await notion.blocks.children.list({
+          block_id: page.id,
+          start_cursor: cursor,
+        })
+        blocks = [...blocks, ...blockResponse.results]
+        hasMore = blockResponse.has_more
+        cursor = blockResponse.next_cursor || undefined
+      }
+
+      content = await blocksToHtml(blocks)
     }
-
-    const content = await blocksToHtml(blocks)
 
     const post = {
       id: page.id,
@@ -184,7 +185,7 @@ export default async function handler(
         "",
       publishedDate:
         props.PublishedDate?.date?.start || new Date().toISOString(),
-      language: props.Language?.select?.name || "zh",
+      language: props.Language?.select?.name || "Zh",
       content,
     }
 
