@@ -23,7 +23,8 @@ const notion = new Client({
   auth: process.env.NOTION_API_KEY,
 });
 
-const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
+// Use the database ID from environment or default to the Native4a Blog database
+const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID || "f159575e-3494-4ba7-8727-3d9b7d2e439d";
 
 // Convert Notion rich text to plain text
 function notionRichTextToPlain(richTextArray: any[]): string {
@@ -170,9 +171,10 @@ export async function getNotionBlogPosts(
       })
       .filter((post) => post.slug); // Only include posts with slugs
 
+    console.log(`[v0] Fetched ${posts.length} blog posts from Notion for language: ${language || 'all'}`);
     return posts;
   } catch (error) {
-    console.error("Error fetching Notion blog posts:", error);
+    console.error("[v0] Error fetching Notion blog posts:", error);
     return [];
   }
 }
