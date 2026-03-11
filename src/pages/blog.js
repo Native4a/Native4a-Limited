@@ -19,7 +19,8 @@ const BlogIndex = ({ location, pageContext }) => {
         const data = await res.json()
         setPosts(data.posts || [])
       } catch (error) {
-        console.error('Error loading blog posts:', error)
+        console.error('[v0] Error loading blog posts:', error)
+        setPosts([])
       } finally {
         setLoading(false)
       }
@@ -48,4 +49,3 @@ const BlogIndex = ({ location, pageContext }) => {
 }
 
 export default BlogIndex
-

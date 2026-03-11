@@ -16,7 +16,6 @@ export default async function handler(
   req: GatsbyFunctionRequest,
   res: GatsbyFunctionResponse
 ) {
-  // Allow CORS
   res.setHeader("Access-Control-Allow-Origin", "*")
   res.setHeader("Access-Control-Allow-Methods", "GET")
 
@@ -24,31 +23,14 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" })
   }
 
-  const language = req.query.language as string | undefined
-
   try {
-    const query: any = {
+    const language = (req.query.language as string)?.toLowerCase() || "zh"
+    const normalizedLanguage = language.charAt(0).toUpperCase() + language.slice(1)
+
+    const response = await notion.databases.query({
       database_id: NOTION_DATABASE_ID,
-      filter: {
-        property: "Published",
-        checkbox: { equals: true },
-      },
       sorts: [{ property: "PublishedDate", direction: "descending" }],
-    }
-
-    if (language) {
-      query.filter = {
-        and: [
-          query.filter,
-          {
-            property: "Language",
-            select: { equals: language },
-          },
-        ],
-      }
-    }
-
-    const response = await notion.databases.query(query)
+    })
 
     const posts = response.results
       .map((page: any) => {
@@ -66,14 +48,14 @@ export default async function handler(
             "",
           publishedDate:
             props.PublishedDate?.date?.start || new Date().toISOString(),
-          language: props.Language?.select?.name || "zh",
+          language: props.Language?.select?.name || "Zh",
         }
       })
-      .filter((post: any) => post.slug)
+      .filter((post: any) => post.slug && post.language === normalizedLanguage)
 
     return res.status(200).json({ posts })
   } catch (error: any) {
-    console.error("Error fetching Notion posts:", error)
-    return res.status(500).json({ error: error.message || "Failed to fetch posts" })
+    console.error("[v0] Notion API error:", error.message)
+    return res.status(500).json({ error: error.message, posts: [] })
   }
 }
