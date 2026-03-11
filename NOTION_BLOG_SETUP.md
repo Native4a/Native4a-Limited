@@ -6,7 +6,7 @@ This guide walks you through setting up Notion as your blog CMS and configuring 
 ## Prerequisites
 - A Notion account
 - Access to Notion's API (beta features enabled)
-- Vercel project with the website deployed
+- Vercel project with the website deployed1
 
 ## Step 1: Create a Notion Integration
 
