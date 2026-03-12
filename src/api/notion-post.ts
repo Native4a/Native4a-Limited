@@ -151,10 +151,10 @@ export default async function handler(
 
     // First try to get content from the Content property (rich_text)
     // This is where the content is stored in this Notion database
-    let content = notionRichTextToPlain(props.Content?.rich_text || [])
+    let content = notionRichTextToHtml(props.Content?.rich_text || [])
 
     // If Content property is empty, fall back to page blocks
-    if (!content) {
+    if (!content || content.length === 0) {
       let blocks: any[] = []
       let hasMore = true
       let cursor: string | undefined
