@@ -39,6 +39,15 @@ export const createPages: GatsbyNode['createPages'] = async ({
         console.log(`[v0] Fetching Notion posts for language: ${language}`)
         const posts = await getNotionBlogPosts(language)
         console.log(`[v0] Fetched ${posts.length} posts for ${language}`)
+        
+        if (posts.length === 0) {
+          console.warn(`[v0] ⚠️  No posts found for language: ${language}. Make sure you have:`)
+          console.warn(`[v0]   1. Created blog posts in Notion database`)
+          console.warn(`[v0]   2. Set Language to "${language}"`)
+          console.warn(`[v0]   3. Checked the "Published" checkbox`)
+          console.warn(`[v0]   4. Filled in the Slug field`)
+        }
+        
         allPosts.push(
           ...posts.map((post: any) => ({
             title: post.title,
