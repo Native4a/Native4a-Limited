@@ -27,15 +27,44 @@ export default async function handler(
     const language = (req.query.language as string)?.toLowerCase() || "zh"
     const normalizedLanguage = language.charAt(0).toUpperCase() + language.slice(1)
 
-    const response = await notion.databases.query({
+    console.log("[v0] Fetching Notion posts for language:", language, "normalized:", normalizedLanguage)
+
+    const query: any = {
       database_id: NOTION_DATABASE_ID,
+      filter: {
+        property: "Published",
+        checkbox: {
+          equals: true,
+        },
+      },
       sorts: [{ property: "PublishedDate", direction: "descending" }],
-    })
+    }
+
+    // Add language filter if specified
+    if (language !== "all") {
+      query.filter = {
+        and: [
+          query.filter,
+          {
+            property: "Language",
+            select: {
+              equals: normalizedLanguage,
+            },
+          },
+        ],
+      }
+    }
+
+    console.log("[v0] Query filter:", JSON.stringify(query.filter, null, 2))
+
+    const response = await notion.databases.query(query)
+
+    console.log("[v0] Notion API returned:", response.results.length, "posts")
 
     const posts = response.results
       .map((page: any) => {
         const props = page.properties
-        return {
+        const post = {
           id: page.id,
           title: notionRichTextToPlain(props.Title?.title || []),
           slug: props.Slug?.rich_text?.[0]?.plain_text || "",
@@ -50,12 +79,17 @@ export default async function handler(
             props.PublishedDate?.date?.start || new Date().toISOString(),
           language: props.Language?.select?.name || "Zh",
         }
+        console.log("[v0] Processed post:", post.title, "language:", post.language)
+        return post
       })
-      .filter((post: any) => post.slug && post.language === normalizedLanguage)
+      .filter((post: any) => post.slug)
+
+    console.log("[v0] Returning", posts.length, "posts after filtering")
 
     return res.status(200).json({ posts })
   } catch (error: any) {
     console.error("[v0] Notion API error:", error.message)
+    console.error("[v0] Error details:", error)
     return res.status(500).json({ error: error.message, posts: [] })
   }
 }
