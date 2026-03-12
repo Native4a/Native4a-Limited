@@ -1,5 +1,21 @@
 import * as path from 'path'
-import { GatsbyNode } from 'gatsby'
+import { GatsbyNode, CreatePagesArgs } from 'gatsby'
+
+// Enable client-only routes for dynamic blog post pages
+export const onCreatePage: GatsbyNode['onCreatePage'] = async ({
+  page,
+  actions,
+}) => {
+  const { createPage } = actions
+
+  // Match client-only routes for blog posts
+  if (page.path.match(/^\/blog\/\[slug\]/)) {
+    createPage({
+      ...page,
+      matchPath: '/blog/*',
+    })
+  }
+}
 
 interface BlogPost {
   title: string

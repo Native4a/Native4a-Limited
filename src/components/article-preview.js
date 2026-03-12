@@ -11,9 +11,10 @@ const ArticlePreview = ({ posts, language = 'zh' }) => {
     )
   }
 
-  // Helper function to generate localized blog post path
+  // Helper function to generate blog post path
+  // Uses client-side route at /blog/[slug] which handles dynamic posts
   const getBlogPostPath = (slug) => {
-    return `/${language}/blog/${slug}/`
+    return `/blog/${slug}`
   }
 
   return (
