@@ -48,10 +48,14 @@ export default async function handler(
             "",
           publishedDate:
             props.PublishedDate?.date?.start || new Date().toISOString(),
-          language: props.Language?.select?.name || "Zh",
+          language: props.Language?.select?.name || "zh",
         }
       })
-      .filter((post: any) => post.slug && post.language === normalizedLanguage)
+      .filter(
+        (post: any) =>
+          post.slug &&
+          post.language.toLowerCase() === normalizedLanguage.toLowerCase()
+      )
 
     return res.status(200).json({ posts })
   } catch (error: any) {
