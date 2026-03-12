@@ -182,8 +182,10 @@ export async function getNotionBlogPosts(
 
     console.log(`[v0] Fetched ${posts.length} blog posts from Notion for language: ${language || 'all'}`);
     return posts;
-  } catch (error) {
-    console.error("[v0] Error fetching Notion blog posts:", error);
+  } catch (error: any) {
+    console.error("[v0] Error fetching Notion blog posts:", error?.message || error);
+    console.error("[v0] NOTION_API_KEY present:", !!process.env.NOTION_API_KEY);
+    console.error("[v0] NOTION_DATABASE_ID:", process.env.NOTION_DATABASE_ID || NOTION_DATABASE_ID);
     return [];
   }
 }

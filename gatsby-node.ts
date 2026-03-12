@@ -1,5 +1,10 @@
 import * as path from 'path'
 import { GatsbyNode } from 'gatsby'
+import * as dotenv from 'dotenv'
+
+// Load environment variables so NOTION_API_KEY etc. are available in gatsby-node
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` })
+dotenv.config()
 
 interface BlogPost {
   title: string
@@ -46,8 +51,9 @@ export const createPages: GatsbyNode['createPages'] = async ({
             language: post.language,
           }))
         )
-      } catch (error) {
-        console.warn(`[v0] Could not fetch Notion posts for language ${language}:`, error.message)
+      } catch (error: any) {
+        console.warn(`[v0] Could not fetch Notion posts for language ${language}:`, error?.message || error)
+        console.warn(`[v0] NOTION_API_KEY present at build:`, !!process.env.NOTION_API_KEY)
       }
     }
   } else {
