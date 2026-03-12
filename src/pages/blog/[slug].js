@@ -15,10 +15,22 @@ const BlogPostPage = ({ location, params }) => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  // Get slug from params (Gatsby client-only route)
-  const slug = params?.slug || ''
+  // Extract slug from location.pathname since params may not be available in Gatsby client routes
+  // URL pattern: /blog/{slug} or /blog/{slug}/
+  const extractSlugFromPath = (pathname) => {
+    const pathParts = pathname.replace(/^\/+|\/+$/g, '').split('/')
+    // Expected format: ['blog', 'slug-name']
+    if (pathParts.length >= 2 && pathParts[0] === 'blog') {
+      return pathParts[1]
+    }
+    return ''
+  }
+
+  const slug = params?.slug || extractSlugFromPath(location?.pathname || '')
   // Default language - could be enhanced to detect from URL or localStorage
   const language = 'zh'
+
+  console.log('[v0] BlogPostPage - pathname:', location?.pathname, 'extracted slug:', slug)
 
   useEffect(() => {
     if (!slug) {
