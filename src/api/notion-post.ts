@@ -124,14 +124,9 @@ export default async function handler(
     return res.status(400).json({ error: "slug is required" })
   }
 
-  // Normalize language to match Notion database format (first letter uppercase)
-  let normalizedLanguage = language
-  if (language) {
-    normalizedLanguage = language.charAt(0).toUpperCase() + language.slice(1).toLowerCase()
-  }
-
   try {
-    // Filter by slug only - don't filter by Published (type may not be checkbox)
+    // Query by slug - don't normalize language in the query
+    // We'll filter after getting results
     const query: any = {
       database_id: NOTION_DATABASE_ID,
       filter: {
@@ -140,18 +135,39 @@ export default async function handler(
       },
     }
 
+    console.log(`[v0] Querying Notion for slug: "${slug}" with language: "${language || 'any'}"`)
+
     const response = await notion.databases.query(query)
+
+    console.log(`[v0] Notion API returned ${response.results.length} results`)
 
     if (response.results.length === 0) {
       return res.status(404).json({ error: "Post not found" })
     }
 
-    const page = response.results[0] as any
+    let page = response.results[0] as any
+    
+    // If language is specified, try to find the matching language version
+    if (language && response.results.length > 1) {
+      const langLower = language.toLowerCase();
+      const matchedPage = response.results.find((p: any) => {
+        const pageLanguage = p.properties.Language?.select?.name || "";
+        return pageLanguage.toLowerCase().includes(langLower) || 
+               pageLanguage.toLowerCase() === langLower ||
+               pageLanguage.toLowerCase().startsWith(langLower);
+      });
+      if (matchedPage) {
+        page = matchedPage;
+      }
+    }
+
     const props = page.properties
+
+    console.log(`[v0] Found post - Title: "${props.Title?.title?.[0]?.plain_text || 'Unknown'}", Language: "${props.Language?.select?.name || 'unknown'}"`);
 
     // First try to get content from the Content property (rich_text)
     // This is where the content is stored in this Notion database
-    let content = notionRichTextToPlain(props.Content?.rich_text || [])
+    let content = notionRichTextToHtml(props.Content?.rich_text || [])
 
     // If Content property is empty, fall back to page blocks
     if (!content) {
@@ -185,13 +201,13 @@ export default async function handler(
         "",
       publishedDate:
         props.PublishedDate?.date?.start || new Date().toISOString(),
-      language: props.Language?.select?.name || "Zh",
+      language: props.Language?.select?.name || "unknown",
       content,
     }
 
     return res.status(200).json({ post })
   } catch (error: any) {
-    console.error("Error fetching Notion post:", error)
+    console.error("[v0] Error fetching Notion post:", error)
     return res.status(500).json({ error: error.message || "Failed to fetch post" })
   }
 }

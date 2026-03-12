@@ -136,46 +136,61 @@ export async function getNotionBlogPosts(
       ],
     };
 
+    // If language is specified, add language filter
+    // Support both short codes (ja, en, zh) and full names (Japanese, English, Chinese)
     if (language) {
-      query.filter = {
-        and: [
-          query.filter,
-          {
-            property: "Language",
-            select: {
-              equals: language,
-            },
-          },
-        ],
+      const languageMap: Record<string, string[]> = {
+        'ja': ['ja', 'japanese', 'ja-jp'],
+        'en': ['en', 'english', 'en-us', 'en-gb'],
+        'zh': ['zh', 'chinese', 'zh-cn', 'zh-tw'],
       };
+
+      const possibleLanguageValues = languageMap[language.toLowerCase()] || [language];
+      
+      // Since we don't know which exact value is in Notion, fetch all published posts
+      // and filter on the client side
+      console.log(`[v0] Querying posts - will filter by language: ${language} (possible values: ${possibleLanguageValues.join(', ')})`);
     }
 
     const response = await notion.databases.query(query);
 
-    console.log(`[v0] Notion API response: ${response.results.length} total results`);
-    console.log(`[v0] Query filter:`, JSON.stringify(query.filter, null, 2));
+    console.log(`[v0] Notion API returned: ${response.results.length} published posts`);
 
-    const posts: NotionBlogPost[] = response.results
+    let posts: NotionBlogPost[] = response.results
       .map((page: any) => {
         const props = page.properties;
-        console.log(`[v0] Processing post: ${props.Title?.title?.[0]?.plain_text || 'Unknown'}, Published: ${props.Published?.checkbox}, Language: ${props.Language?.select?.name}`);
+        const actualLanguage = props.Language?.select?.name || "unknown";
+        const title = notionRichTextToPlain(props.Title?.title || []);
+        
+        console.log(`[v0] Post: "${title}" - Language field: "${actualLanguage}"`);
 
         return {
           id: page.id,
-          title: notionRichTextToPlain(props.Title?.title || []),
+          title: title,
           slug: props.Slug?.rich_text?.[0]?.plain_text || "",
           excerpt: notionRichTextToPlain(props.Excerpt?.rich_text || []),
           author: props.Author?.rich_text?.[0]?.plain_text || "Native4A",
           tags: props.Tags?.multi_select?.map((tag: any) => tag.name) || [],
           featuredImage: props.FeaturedImage?.files?.[0]?.file?.url || "",
           publishedDate: props.PublishedDate?.date?.start || new Date().toISOString(),
-          language: props.Language?.select?.name || "zh",
+          language: actualLanguage,
           content: "", // Will be populated separately
         };
       })
       .filter((post) => post.slug); // Only include posts with slugs
 
-    console.log(`[v0] Fetched ${posts.length} blog posts from Notion for language: ${language || 'all'}`);
+    // Filter by language if specified
+    if (language) {
+      const langLower = language.toLowerCase();
+      posts = posts.filter((post) => 
+        post.language.toLowerCase().includes(langLower) ||
+        post.language.toLowerCase() === langLower ||
+        post.language.toLowerCase().startsWith(langLower)
+      );
+      console.log(`[v0] After language filter "${language}": ${posts.length} posts`);
+    }
+
+    console.log(`[v0] Fetched ${posts.length} blog posts for language: ${language || 'all'}`);
     return posts;
   } catch (error) {
     console.error("[v0] Error fetching Notion blog posts:", error);
