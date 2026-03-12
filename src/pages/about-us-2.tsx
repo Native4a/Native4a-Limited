@@ -64,7 +64,7 @@ class aboutUs extends React.Component<AboutUsPageProps> {
                 <h1 className={styles.title}>{AboutUsPage.title}</h1>
                 <div className={styles.border}></div>
                 <p className="py-5 lg:py-3 text-lg lg:text-lg 2xl:text-2xl">
-                  {AboutUsPage.titleDescription.titleDescription}
+                  {AboutUsPage.titleDescription.titleDescription}1
                 </p>
                 <div className="hidden md:grid grid-cols-2 gap-6 py-6">
                   <div className="flex gap-6 w-full items-center">
