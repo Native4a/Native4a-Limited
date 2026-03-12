@@ -24,10 +24,11 @@ export default async function handler(
   }
 
   try {
-    const language = (req.query.language as string)?.toLowerCase() || "zh"
-    const normalizedLanguage = language.charAt(0).toUpperCase() + language.slice(1)
-
-    console.log("[v0] Fetching Notion posts for language:", language, "normalized:", normalizedLanguage)
+    const language = (req.query.language as string) || "zh"
+    
+    console.log("[v0] API Request - language param:", language)
+    console.log("[v0] NOTION_DATABASE_ID:", NOTION_DATABASE_ID)
+    console.log("[v0] NOTION_API_KEY set:", !!process.env.NOTION_API_KEY)
 
     const query: any = {
       database_id: NOTION_DATABASE_ID,
@@ -37,34 +38,41 @@ export default async function handler(
           equals: true,
         },
       },
-      sorts: [{ property: "PublishedDate", direction: "descending" }],
+      sorts: [
+        {
+          property: "PublishedDate",
+          direction: "descending",
+        },
+      ],
     }
 
-    // Add language filter if specified
-    if (language !== "all") {
+    // Add language filter if language is specified
+    if (language && language !== "all") {
       query.filter = {
         and: [
           query.filter,
           {
             property: "Language",
             select: {
-              equals: normalizedLanguage,
+              equals: language,
             },
           },
         ],
       }
     }
 
-    console.log("[v0] Query filter:", JSON.stringify(query.filter, null, 2))
+    console.log("[v0] Notion query filter:", JSON.stringify(query.filter, null, 2))
 
     const response = await notion.databases.query(query)
 
-    console.log("[v0] Notion API returned:", response.results.length, "posts")
+    console.log("[v0] Notion API response:", response.results.length, "total results")
 
     const posts = response.results
       .map((page: any) => {
         const props = page.properties
-        const post = {
+        console.log("[v0] Processing page - Title:", props.Title?.title?.[0]?.plain_text, "Language:", props.Language?.select?.name, "Published:", props.Published?.checkbox)
+        
+        return {
           id: page.id,
           title: notionRichTextToPlain(props.Title?.title || []),
           slug: props.Slug?.rich_text?.[0]?.plain_text || "",
@@ -77,10 +85,8 @@ export default async function handler(
             "",
           publishedDate:
             props.PublishedDate?.date?.start || new Date().toISOString(),
-          language: props.Language?.select?.name || "Zh",
+          language: props.Language?.select?.name || "zh",
         }
-        console.log("[v0] Processed post:", post.title, "language:", post.language)
-        return post
       })
       .filter((post: any) => post.slug)
 
@@ -89,7 +95,7 @@ export default async function handler(
     return res.status(200).json({ posts })
   } catch (error: any) {
     console.error("[v0] Notion API error:", error.message)
-    console.error("[v0] Error details:", error)
+    console.error("[v0] Full error:", error)
     return res.status(500).json({ error: error.message, posts: [] })
   }
 }
