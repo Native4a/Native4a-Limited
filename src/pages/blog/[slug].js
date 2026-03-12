@@ -10,6 +10,15 @@ import Hero from '../../components/hero'
 import Tags from '../../components/tags'
 import * as styles from '../../templates/blog-post.module.css'
 
+// Skeleton loader component for better perceived performance
+const SkeletonLoader = () => (
+  <div className={styles.skeletonContainer}>
+    <div className={styles.skeletonHero} />
+    <div className={styles.skeletonMeta} />
+    <div className={styles.skeletonContent} />
+  </div>
+)
+
 const BlogPostPage = ({ location, params }) => {
   const [post, setPost] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -30,8 +39,6 @@ const BlogPostPage = ({ location, params }) => {
   // Default language - could be enhanced to detect from URL or localStorage
   const language = 'zh'
 
-  console.log('[v0] BlogPostPage - pathname:', location?.pathname, 'extracted slug:', slug)
-
   useEffect(() => {
     if (!slug) {
       setError('No slug provided')
@@ -39,29 +46,35 @@ const BlogPostPage = ({ location, params }) => {
       return
     }
 
+    const controller = new AbortController()
     const loadPost = async () => {
       try {
-        console.log('[v0] Loading post with slug:', slug, 'language:', language)
-        const res = await fetch(`/api/notion-post?slug=${slug}&language=${language}`)
+        const res = await fetch(`/api/notion-post?slug=${slug}&language=${language}`, {
+          signal: controller.signal,
+        })
         if (!res.ok) {
           throw new Error(`API error: ${res.status}`)
         }
         const data = await res.json()
-        console.log('[v0] Received post data:', data)
         if (data.post) {
           setPost(data.post)
         } else {
           setError('Post not found')
         }
       } catch (err) {
-        console.error('[v0] Error loading blog post:', err)
-        setError(err.message)
+        if (err.name !== 'AbortError') {
+          console.error('[v0] Error loading blog post:', err)
+          setError(err.message)
+        }
       } finally {
         setLoading(false)
       }
     }
 
     loadPost()
+
+    // Cleanup function to abort fetch if component unmounts
+    return () => controller.abort()
   }, [slug, language])
 
   const pageContext = { language }
@@ -70,9 +83,7 @@ const BlogPostPage = ({ location, params }) => {
     return (
       <Layout location={location} pageContext={pageContext}>
         <Seo title="Loading..." />
-        <div className={styles.container}>
-          <p style={{ padding: '2rem', textAlign: 'center' }}>Loading post...</p>
-        </div>
+        <SkeletonLoader />
       </Layout>
     )
   }
@@ -82,10 +93,10 @@ const BlogPostPage = ({ location, params }) => {
       <Layout location={location} pageContext={pageContext}>
         <Seo title="Post Not Found" />
         <div className={styles.container}>
-          <div style={{ padding: '2rem', textAlign: 'center' }}>
+          <div className={styles.errorContainer}>
             <h1>Post Not Found</h1>
             <p>{error || 'The requested blog post could not be found.'}</p>
-            <Link to={`/${language}/blog/`} style={{ color: '#0066cc' }}>
+            <Link to={`/${language}/blog/`} className={styles.backLink}>
               ← Back to Blog
             </Link>
           </div>
@@ -109,26 +120,51 @@ const BlogPostPage = ({ location, params }) => {
         description={post.excerpt || (post.content ? post.content.substring(0, 160) : '')}
         image={post.featuredImage}
       />
-      <section>
+      
+      {/* Featured Image Section */}
+      {post.featuredImage && (
+        <section className={styles.heroImageSection}>
+          <img
+            src={post.featuredImage}
+            alt={post.title}
+            className={styles.heroImage}
+            loading="lazy"
+            decoding="async"
+          />
+        </section>
+      )}
+
+      {/* Article Header */}
+      <section className={styles.articleHeader}>
         <div className={styles.container}>
-          <Hero title={post.title} />
+          <h1 className={styles.title}>{post.title}</h1>
+          <div className={styles.metaInfo}>
+            <span className={styles.author}>{post.author || 'Native4A'}</span>
+            <span className={styles.separator}>•</span>
+            <time dateTime={post.publishedDate} className={styles.date}>
+              {publishDate}
+            </time>
+            <span className={styles.separator}>•</span>
+            <span className={styles.readTime}>{Math.ceil(timeToRead)} min read</span>
+          </div>
         </div>
       </section>
+
+      {/* Article Content */}
       <div className={styles.container}>
-        <div className={styles.article}>
+        <article className={styles.article}>
           <div className={styles.body}>
-            <span className={styles.meta}>
-              {post.author || 'Native4A'} &middot;{' '}
-              <time dateTime={post.publishedDate}>{publishDate}</time> –{' '}
-              {Math.ceil(timeToRead)} minute read
-            </span>
             <div
               dangerouslySetInnerHTML={{ __html: post.content }}
               className={styles.content}
             />
-            {post.tags && post.tags.length > 0 && <Tags tags={post.tags} />}
+            {post.tags && post.tags.length > 0 && (
+              <div className={styles.tagsSection}>
+                <Tags tags={post.tags} />
+              </div>
+            )}
           </div>
-        </div>
+        </article>
       </div>
     </Layout>
   )
