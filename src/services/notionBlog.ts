@@ -120,6 +120,11 @@ export async function getNotionBlogPosts(
   language?: string
 ): Promise<NotionBlogPost[]> {
   try {
+    // Notion stores Language select values with capital first letter (e.g. "Zh", "En", "Ja")
+    const normalizedLanguage = language
+      ? language.charAt(0).toUpperCase() + language.slice(1).toLowerCase()
+      : undefined;
+
     const query: any = {
       database_id: NOTION_DATABASE_ID,
       filter: {
@@ -136,14 +141,14 @@ export async function getNotionBlogPosts(
       ],
     };
 
-    if (language) {
+    if (normalizedLanguage) {
       query.filter = {
         and: [
           query.filter,
           {
             property: "Language",
             select: {
-              equals: language,
+              equals: normalizedLanguage,
             },
           },
         ],
@@ -234,6 +239,10 @@ export async function getNotionBlogPostBySlug(
   language?: string
 ): Promise<NotionBlogPost | null> {
   try {
+    const normalizedLanguage = language
+      ? language.charAt(0).toUpperCase() + language.slice(1).toLowerCase()
+      : undefined;
+
     const query: any = {
       database_id: NOTION_DATABASE_ID,
       filter: {
@@ -244,14 +253,14 @@ export async function getNotionBlogPostBySlug(
       },
     };
 
-    if (language) {
+    if (normalizedLanguage) {
       query.filter = {
         and: [
           query.filter,
           {
             property: "Language",
             select: {
-              equals: language,
+              equals: normalizedLanguage,
             },
           },
         ],
