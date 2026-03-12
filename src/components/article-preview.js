@@ -2,13 +2,18 @@ import React from 'react'
 import { Link } from 'gatsby'
 import * as styles from './article-preview.module.css'
 
-const ArticlePreview = ({ posts }) => {
+const ArticlePreview = ({ posts, language = 'zh' }) => {
   if (!posts || posts.length === 0) {
     return (
       <div className={styles.container}>
         <p>No blog posts found.</p>
       </div>
     )
+  }
+
+  // Helper function to generate localized blog post path
+  const getBlogPostPath = (slug) => {
+    return `/${language}/blog/${slug}/`
   }
 
   return (
@@ -26,7 +31,7 @@ const ArticlePreview = ({ posts }) => {
                 />
               </div>
             )}
-            <Link to={`/blog/${post.slug}`} className={styles.articleLink}>
+            <Link to={getBlogPostPath(post.slug)} className={styles.articleLink}>
               <h3>{post.title}</h3>
               {post.excerpt && <p className={styles.excerpt}>{post.excerpt}</p>}
               <div className={styles.meta}>
