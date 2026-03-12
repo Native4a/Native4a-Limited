@@ -120,6 +120,20 @@ export async function getNotionBlogPosts(
   language?: string
 ): Promise<NotionBlogPost[]> {
   try {
+    console.log(`[v0] getNotionBlogPosts called with language: ${language}`);
+    
+    if (!process.env.NOTION_API_KEY) {
+      console.error('[v0] NOTION_API_KEY is not set!');
+      return [];
+    }
+    
+    if (!NOTION_DATABASE_ID) {
+      console.error('[v0] NOTION_DATABASE_ID is not set!');
+      return [];
+    }
+
+    console.log(`[v0] Using NOTION_DATABASE_ID: ${NOTION_DATABASE_ID}`);
+
     const query: any = {
       database_id: NOTION_DATABASE_ID,
       filter: {
@@ -136,24 +150,8 @@ export async function getNotionBlogPosts(
       ],
     };
 
-    // If language is specified, add language filter
-    // Support both short codes (ja, en, zh) and full names (Japanese, English, Chinese)
-    if (language) {
-      const languageMap: Record<string, string[]> = {
-        'ja': ['ja', 'japanese', 'ja-jp'],
-        'en': ['en', 'english', 'en-us', 'en-gb'],
-        'zh': ['zh', 'chinese', 'zh-cn', 'zh-tw'],
-      };
-
-      const possibleLanguageValues = languageMap[language.toLowerCase()] || [language];
-      
-      // Since we don't know which exact value is in Notion, fetch all published posts
-      // and filter on the client side
-      console.log(`[v0] Querying posts - will filter by language: ${language} (possible values: ${possibleLanguageValues.join(', ')})`);
-    }
-
+    console.log('[v0] Starting Notion query...');
     const response = await notion.databases.query(query);
-
     console.log(`[v0] Notion API returned: ${response.results.length} published posts`);
 
     let posts: NotionBlogPost[] = response.results
@@ -179,6 +177,8 @@ export async function getNotionBlogPosts(
       })
       .filter((post) => post.slug); // Only include posts with slugs
 
+    console.log(`[v0] After slug filter: ${posts.length} posts`);
+
     // Filter by language if specified
     if (language) {
       const langLower = language.toLowerCase();
@@ -190,10 +190,11 @@ export async function getNotionBlogPosts(
       console.log(`[v0] After language filter "${language}": ${posts.length} posts`);
     }
 
-    console.log(`[v0] Fetched ${posts.length} blog posts for language: ${language || 'all'}`);
+    console.log(`[v0] Returning ${posts.length} blog posts for language: ${language || 'all'}`);
     return posts;
-  } catch (error) {
-    console.error("[v0] Error fetching Notion blog posts:", error);
+  } catch (error: any) {
+    console.error("[v0] Error fetching Notion blog posts:", error.message);
+    console.error("[v0] Full error:", error);
     return [];
   }
 }
