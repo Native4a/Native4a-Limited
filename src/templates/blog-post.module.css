@@ -50,9 +50,9 @@
 
 .heroImage {
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   height: auto;
-  max-height: 500px;
+  max-height: 350px;
   object-fit: contain;
   display: block;
   border-radius: 8px;
@@ -281,7 +281,7 @@
 @media screen and (max-width: 768px) {
   .container {
     padding: 0 var(--space-lg);
-    max-width: 100%;
+    max-width: 48rem;
   }
 
   .articleHeader {
@@ -321,13 +321,14 @@
   }
 
   .heroImage {
-    max-height: 300px;
+    max-height: 250px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .container {
     padding: 0 var(--space-md);
+    max-width: 48rem;
   }
 
   .title {
