@@ -102,6 +102,7 @@
   margin: 0 auto;
   max-width: 48rem;
   padding: 0 var(--size-gutter);
+  width: 100%;
 }
 
 /* Article Layout */
@@ -112,10 +113,12 @@
   letter-spacing: var(--text-prose-tracking);
   line-height: var(--loose);
   padding: var(--space-3xl) 0;
+  max-width: 100%;
 }
 
 .body {
   width: 100%;
+  max-width: 100%;
 }
 
 /* Content Styling */
