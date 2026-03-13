@@ -260,7 +260,7 @@
 /* Responsive Design */
 @media screen and (max-width: 1536px) {
   .container {
-    max-width: 90%;
+    max-width: 48rem;
   }
 
   .title {
@@ -270,7 +270,7 @@
 
 @media screen and (max-width: 1280px) {
   .container {
-    max-width: 95%;
+    max-width: 48rem;
   }
 
   .title {
