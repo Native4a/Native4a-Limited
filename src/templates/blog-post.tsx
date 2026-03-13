@@ -77,13 +77,23 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
     )
   }
 
-  const publishDate = new Date(post.publishedDate).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
+  const localeMap: Record<string, string> = {
+    zh: 'zh-HK',
+    en: 'en-US',
+    ja: 'ja-JP',
+  }
+  const publishDate = new Date(post.publishedDate).toLocaleDateString(
+    localeMap[language] || 'zh-HK',
+    { year: 'numeric', month: 'long', day: 'numeric' }
+  )
 
   const { minutes: timeToRead } = readingTime(post.content)
+  const readTimeLabel =
+    language === 'zh'
+      ? `${Math.ceil(timeToRead)} 分鐘閱讀`
+      : language === 'ja'
+      ? `${Math.ceil(timeToRead)} 分で読めます`
+      : `${Math.ceil(timeToRead)} min read`
 
   const getLocalizedPath = (path: string) => {
     if (language === 'zh') {
@@ -109,8 +119,8 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
           <div className={styles.body}>
             <span className={styles.meta}>
               {post.author || 'Native4A'} &middot;{' '}
-              <time dateTime={post.publishedDate}>{publishDate}</time> –{' '}
-              {timeToRead} minute read
+              <time dateTime={post.publishedDate}>{publishDate}</time> &ndash;{' '}
+              {readTimeLabel}
             </span>
             <div
               dangerouslySetInnerHTML={{ __html: post.content }}
