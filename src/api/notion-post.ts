@@ -149,27 +149,26 @@ export default async function handler(
     const page = response.results[0] as any
     const props = page.properties
 
-    // First try to get content from the Content property (rich_text)
-    // This is where the content is stored in this Notion database
-    let content = notionRichTextToPlain(props.Content?.rich_text || [])
+    // Fetch content from page blocks first (prioritize block content over Content property)
+    let blocks: any[] = []
+    let hasMore = true
+    let cursor: string | undefined
 
-    // If Content property is empty, fall back to page blocks
-    if (!content) {
-      let blocks: any[] = []
-      let hasMore = true
-      let cursor: string | undefined
+    while (hasMore) {
+      const blockResponse = await notion.blocks.children.list({
+        block_id: page.id,
+        start_cursor: cursor,
+      })
+      blocks = [...blocks, ...blockResponse.results]
+      hasMore = blockResponse.has_more
+      cursor = blockResponse.next_cursor || undefined
+    }
 
-      while (hasMore) {
-        const blockResponse = await notion.blocks.children.list({
-          block_id: page.id,
-          start_cursor: cursor,
-        })
-        blocks = [...blocks, ...blockResponse.results]
-        hasMore = blockResponse.has_more
-        cursor = blockResponse.next_cursor || undefined
-      }
+    let content = await blocksToHtml(blocks)
 
-      content = await blocksToHtml(blocks)
+    // If blocks are empty, fall back to Content property (rich_text)
+    if (!content || content.trim() === "") {
+      content = notionRichTextToPlain(props.Content?.rich_text || [])
     }
 
     const post = {
