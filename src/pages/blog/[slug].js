@@ -122,7 +122,7 @@ const BlogPostPage = ({ location, params }) => {
 
       {/* Featured Image Section */}
       {post.featuredImage && (
-        <section className="flex justify-center items-center py-12 md:py-16 px-4 md:px-8 bg-gray-50">
+        <section className="flex justify-center items-center py-12 md:py-16 px-4 md:px-8 bg-gray-50 mt-10">
           <img
             src={post.featuredImage}
             alt={post.title}
