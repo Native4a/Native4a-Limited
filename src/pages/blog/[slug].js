@@ -120,7 +120,7 @@ const BlogPostPage = ({ location, params }) => {
         description={post.excerpt || (post.content ? post.content.substring(0, 160) : '')}
         image={post.featuredImage}
       />
-      
+
       {/* Featured Image Section */}
       {post.featuredImage && (
         <section className={styles.heroImageSection}>
@@ -140,7 +140,7 @@ const BlogPostPage = ({ location, params }) => {
           <h1 className={styles.title}>{post.title}</h1>
           <div className={styles.metaInfo}>
             <span className={styles.author}>{post.author || 'Native4A'}</span>
-            <span className={styles.separator}>•</span>
+            <span className={styles.separator}>•1</span>
             <time dateTime={post.publishedDate} className={styles.date}>
               {publishDate}
             </time>
