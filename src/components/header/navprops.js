@@ -185,6 +185,26 @@ const Navprops = () => {
             <LanguageSwitcher isInMenu={true} />
           </div>
         </ul>
+        <div className="hidden xl:flex col-start-4 col-end-7 items-center justify-end gap-3">
+          <Button
+            linkto="https://shop.nativeaaaa.com.hk/"
+            className="text-white bg-yellow-400 hover:bg-yellow-500 transition-colors rounded-full px-6 py-2 font-semibold text-base md:text-md xl:text-lg shadow-md hover:shadow-lg flex items-center gap-2"
+          >
+            <TbShoppingCart className="text-xl" />
+            <span>{t('buttons.shopping')}</span>
+          </Button>
+
+          {/* 語言切換器 - 桌面版 (XL以上) */}
+          <div
+            style={{
+              marginLeft: '20px',
+              paddingLeft: '20px',
+              borderLeft: '1px solid #e5e7eb'
+            }}
+          >
+            <LanguageSwitcher />
+          </div>
+        </div>
 
 
       </div>
