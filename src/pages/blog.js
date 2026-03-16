@@ -43,7 +43,7 @@ const BlogIndex = ({ location, pageContext }) => {
   return (
     <Layout location={location} pageContext={pageContext}>
       <Seo title="Blog" />
-      <ArticlePreview posts={posts} language={language} className="mt-10" />
+      <ArticlePreview posts={posts} language={language} />
     </Layout>
   )
 }
