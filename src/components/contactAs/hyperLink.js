@@ -11,7 +11,7 @@ const HyperLink = () => {
       const currentPath = window.location.pathname
       const langMatch = currentPath.match(/^\/(en|ja)(\/|$)/)
       const currentLang = langMatch ? langMatch[1] : 'zh'
-      
+
       if (currentLang === 'zh') {
         return path === '/' ? '/' : `/${path}`
       }
@@ -24,18 +24,18 @@ const HyperLink = () => {
     <div className="m-5 md:m-12 text-md leading-loose underline underline-offset-8 decoration-1 text-slate-700">
       <ul className="space-y-4 list-disc pl-6">
         <li>
-          <Link to={getLocalizedPath('/aboutAs')} className="hover:text-blue-600">
+          <Link to={getLocalizedPath('#aboutAs')} className="hover:text-blue-600">
             {t('contactAs.aboutNative')}
           </Link>
         </li>
         <li>
-          <Link to={getLocalizedPath('/backlinks')} className="hover:text-blue-600">
+          <Link to={getLocalizedPath('backlinks')} className="hover:text-blue-600">
             {t('contactAs.exclusiveBacklink')}
           </Link>
         </li>
         <li>
           <Link
-            to={getLocalizedPath('/web-design')}
+            to={getLocalizedPath('web-design')}
             className="hover:text-blue-600"
           >
             {t('contactAs.webDesignDevelopment')}
@@ -43,7 +43,7 @@ const HyperLink = () => {
         </li>
         <li>
           <Link
-            to={getLocalizedPath('/seo')}
+            to={getLocalizedPath('seo')}
             className="hover:text-blue-600"
           >
             {t('nav.seo')}
@@ -51,7 +51,7 @@ const HyperLink = () => {
         </li>
         <li>
           <Link
-            to={getLocalizedPath('/smm-ads')}
+            to={getLocalizedPath('smm-ads')}
             className="hover:text-blue-600"
           >
             {t('contactAs.socialMediaAds')}
