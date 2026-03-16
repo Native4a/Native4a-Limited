@@ -11,7 +11,7 @@ const HyperLink = () => {
       const currentPath = window.location.pathname
       const langMatch = currentPath.match(/^\/(en|ja)(\/|$)/)
       const currentLang = langMatch ? langMatch[1] : 'zh'
-      
+
       if (currentLang === 'zh') {
         return path === '/' ? '/' : `/${path}`
       }
@@ -24,7 +24,7 @@ const HyperLink = () => {
     <div className="m-5 md:m-12 text-md leading-loose underline underline-offset-8 decoration-1 text-slate-700">
       <ul className="space-y-4 list-disc pl-6">
         <li>
-          <Link to={getLocalizedPath('/aboutAs')} className="hover:text-blue-600">
+          <Link to={getLocalizedPath('/#aboutAs')} className="hover:text-blue-600">
             {t('contactAs.aboutNative')}
           </Link>
         </li>
