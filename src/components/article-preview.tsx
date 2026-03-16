@@ -41,7 +41,7 @@ const ArticlePreview: React.FC<ArticlePreviewProps> = ({ posts, language = 'zh' 
 
   return (
     <Section>
-      <div className="my-28 p-5">
+      <div className="my-28 p-5 mt-10">
         <ul className={styles.articleList}>
           {posts.map((post) => {
             return (

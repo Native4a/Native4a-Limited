@@ -37,7 +37,7 @@ const ArticlePreview = ({ posts, language = 'zh' }) => {
               {post.excerpt && <p className={styles.excerpt}>{post.excerpt}</p>}
               <div className={styles.meta}>
                 <span className={styles.author}>
-                  {post.author || 'Native4A'}1
+                  {post.author || 'Native4A'}
                 </span>
                 <span className={styles.date}>
                   {new Date(post.publishedDate).toLocaleDateString('en-US', {
