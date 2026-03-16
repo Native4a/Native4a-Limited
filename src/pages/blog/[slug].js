@@ -91,7 +91,7 @@ const BlogPostPage = ({ location, params }) => {
     return (
       <Layout location={location} pageContext={pageContext}>
         <Seo title="Post Not Found" />
-        <div className="max-w-3xl mx-auto px-4 md:px-8">
+        <div className="max-w-5xl mx-auto px-4 md:px-8">
           <div className="text-center py-12 md:py-20">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">Post Not Found</h1>
             <p className="text-gray-600 mb-6">{error || 'The requested blog post could not be found.'}</p>
@@ -135,7 +135,7 @@ const BlogPostPage = ({ location, params }) => {
 
       {/* Article Header */}
       <section className="py-12 md:py-16 border-b border-gray-200">
-        <div className="max-w-3xl mx-auto px-4 md:px-8">
+        <div className="max-w-5xl mx-auto px-4 md:px-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight tracking-tighter">
             {post.title}
           </h1>
@@ -152,7 +152,7 @@ const BlogPostPage = ({ location, params }) => {
       </section>
 
       {/* Article Content */}
-      <div className="max-w-3xl mx-auto px-4 md:px-8">
+      <div className="max-w-5xl mx-auto px-4 md:px-8">
         <article className="py-12 md:py-16">
           <div className="w-full">
             <div
