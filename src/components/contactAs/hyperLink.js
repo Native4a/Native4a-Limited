@@ -9,7 +9,7 @@ const HyperLink = () => {
     // Get current language from window.location if available
     if (typeof window !== 'undefined') {
       const currentPath = window.location.pathname
-      const langMatch = currentPath.match(/^\/(en|ja)(\/|$)/)
+      const langMatch = currentPath.match(/^\/(en|ja|zh-CN|zh(?!-CN))(\/|$)/)
       const currentLang = langMatch ? langMatch[1] : 'zh'
 
       if (currentLang === 'zh') {

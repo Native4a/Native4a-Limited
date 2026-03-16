@@ -8,14 +8,13 @@ import Seo from '../../components/seo'
 import Layout from '../../components/layout'
 import Hero from '../../components/hero'
 import Tags from '../../components/tags'
-import * as styles from '../../templates/blog-post.module.css'
 
 // Skeleton loader component for better perceived performance
 const SkeletonLoader = () => (
-  <div className={styles.skeletonContainer}>
-    <div className={styles.skeletonHero} />
-    <div className={styles.skeletonMeta} />
-    <div className={styles.skeletonContent} />
+  <div className="px-4 md:px-8 py-6">
+    <div className="h-96 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded-lg mb-12" />
+    <div className="h-6 w-2/5 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse mb-4 rounded" />
+    <div className="h-72 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-pulse rounded" />
   </div>
 )
 
@@ -92,11 +91,11 @@ const BlogPostPage = ({ location, params }) => {
     return (
       <Layout location={location} pageContext={pageContext}>
         <Seo title="Post Not Found" />
-        <div className={styles.container}>
-          <div className={styles.errorContainer}>
-            <h1>Post Not Found</h1>
-            <p>{error || 'The requested blog post could not be found.'}</p>
-            <Link to={`/${language}/blog/`} className={styles.backLink}>
+        <div className="max-w-5xl mx-auto px-4 md:px-8">
+          <div className="text-center py-12 md:py-20">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">Post Not Found</h1>
+            <p className="text-gray-600 mb-6">{error || 'The requested blog post could not be found.'}</p>
+            <Link to={`/${language}/blog/`} className="inline-block text-blue-600 font-medium border-b-[1.5px] border-blue-600 hover:border-transparent transition-colors">
               ← Back to Blog
             </Link>
           </div>
@@ -120,14 +119,14 @@ const BlogPostPage = ({ location, params }) => {
         description={post.excerpt || (post.content ? post.content.substring(0, 160) : '')}
         image={post.featuredImage}
       />
-      
+
       {/* Featured Image Section */}
       {post.featuredImage && (
-        <section className={styles.heroImageSection}>
+        <section className="flex justify-center items-center py-12 md:py-16 px-4 md:px-8 bg-gray-50 mt-10">
           <img
             src={post.featuredImage}
             alt={post.title}
-            className={styles.heroImage}
+            className="w-full max-w-2xl h-auto max-h-96 object-contain rounded-lg"
             loading="lazy"
             decoding="async"
           />
@@ -135,31 +134,33 @@ const BlogPostPage = ({ location, params }) => {
       )}
 
       {/* Article Header */}
-      <section className={styles.articleHeader}>
-        <div className={styles.container}>
-          <h1 className={styles.title}>{post.title}</h1>
-          <div className={styles.metaInfo}>
-            <span className={styles.author}>{post.author || 'Native4A'}</span>
-            <span className={styles.separator}>•</span>
-            <time dateTime={post.publishedDate} className={styles.date}>
+      <section className="py-12 md:py-16 border-b border-gray-200">
+        <div className="max-w-5xl mx-auto px-4 md:px-8">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight tracking-tighter">
+            {post.title}
+          </h1>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600">
+            <span className="font-semibold text-gray-900">{post.author || 'Native4A'}</span>
+            <span className="opacity-40">•</span>
+            <time dateTime={post.publishedDate}>
               {publishDate}
             </time>
-            <span className={styles.separator}>•</span>
-            <span className={styles.readTime}>{Math.ceil(timeToRead)} min read</span>
+            <span className="opacity-40">•</span>
+            <span>{Math.ceil(timeToRead)} min read</span>
           </div>
         </div>
       </section>
 
       {/* Article Content */}
-      <div className={styles.container}>
-        <article className={styles.article}>
-          <div className={styles.body}>
+      <div className="max-w-5xl mx-auto px-4 md:px-8">
+        <article className="py-12 md:py-16">
+          <div className="w-full">
             <div
               dangerouslySetInnerHTML={{ __html: post.content }}
-              className={styles.content}
+              className="prose prose-sm md:prose-base max-w-none leading-relaxed text-gray-900 [&_p]:mb-6 [&_p]:mt-0 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:pt-4 [&_h2]:border-t [&_h2]:border-gray-200 [&_h2]:leading-snug [&_h3]:text-lg [&_h3]:font-bold [&_h3]:mt-7 [&_h3]:mb-3 [&_h3]:leading-snug [&_h4]:text-lg [&_h4]:font-bold [&_h4]:mt-7 [&_h4]:mb-3 [&_h4]:leading-snug [&_h5]:text-base [&_h5]:font-bold [&_h5]:mt-6 [&_h5]:mb-2 [&_h6]:text-base [&_h6]:font-bold [&_h6]:mt-6 [&_h6]:mb-2 [&_a]:text-blue-600 [&_a]:border-b-[1.5px] [&_a]:border-blue-600 [&_a]:font-medium [&_a]:no-underline [&_a:hover]:border-transparent [&_a:hover]:text-blue-700 [&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-lg [&_img]:my-8 [&_ul]:my-6 [&_ul]:pl-8 [&_ol]:my-6 [&_ol]:pl-8 [&_li]:mb-3 [&_li]:leading-relaxed [&_blockquote]:border-l-4 [&_blockquote]:border-blue-600 [&_blockquote]:pl-6 [&_blockquote]:my-8 [&_blockquote]:italic [&_blockquote]:text-gray-700 [&_code]:bg-gray-100 [&_code]:px-1 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_pre]:bg-gray-900 [&_pre]:text-gray-100 [&_pre]:p-6 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:my-6 [&_pre]:text-sm [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:text-inherit"
             />
             {post.tags && post.tags.length > 0 && (
-              <div className={styles.tagsSection}>
+              <div className="mt-12 md:mt-16 pt-8 md:pt-12 border-t border-gray-200">
                 <Tags tags={post.tags} />
               </div>
             )}

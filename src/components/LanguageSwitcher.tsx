@@ -31,7 +31,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     
     const currentPath = window.location.pathname
     // Remove existing language prefix if present
-    const pathWithoutLang = currentPath.replace(/^\/(en|ja|zh-CN|zh)(\/|$)/, '/')
+    const pathWithoutLang = currentPath.replace(/^\/(en|ja|zh-CN|zh(?!-CN))(\/|$)/, '/')
     
     // Construct new path with language prefix
     const newPath = `/${langCode}${pathWithoutLang === '/' ? '' : pathWithoutLang}`
