@@ -200,6 +200,15 @@
     "webDesignDevelopment": "ウェブデザイン・開発",
     "socialMediaAds": "SNS広告"
   },
+  "contactPage": {
+    "section1Title": "お問い合わせ",
+    "section1Description": "ビジネスニーズについてチームにお問い合わせください",
+    "section2Title": "私たちのオフィス",
+    "section2Description": "弊社のサービス内容についてさらに詳しくお知りになりたい場合は、オフィスへお越しください",
+    "section2Text": "皆様とお仕事できることを楽しみにしています",
+    "whatsappButton": "WhatsAppでお問い合わせ",
+    "lineButton": "Line"
+  },
   "xiaohongshu": {
     "title": "サービス範囲",
     "step1Title": "小紅書 新規アカウント運営",
@@ -263,7 +272,7 @@
     "section8Title": "Native4a 香港中国語バックリンク — 12の違い",
     "section8Subtitle": "バックリンクはすべて同じではありません",
     "section8Item01Title": "あなたのサイトへTier-1バックリンク100本",
-    "section8Item01Desc": "Tier-1（第1階層）バックリンクとは、��なたのウェブサイトに直接構築されるバックリンクです。SEOにおける最高の外部リンク価値を伝える、最も権威のあるオフサイトリンクとされています。",
+    "section8Item01Desc": "Tier-1（第1階層）バックリンクとは、���なたのウェブサイトに直接構築されるバックリンクです。SEOにおける最高の外部リンク価値を伝える、最も権威のあるオフサイトリンクとされています。",
     "section8Item02Title": "繁体字中国語PBN・高トラフィックゲストポスト",
     "section8Item02Desc": "PBNおよび高トラフィックゲストポストを活用し、サイトのランキング段階に応じて最適なバックリンクタイプを構築してランキング向上を支援します。",
     "section8Item03Title": "全文繁体字中国語WordPressブログ記事",
@@ -400,7 +409,7 @@
     "adDesignDesc2": "プロフェッショナルからカジュアルまで、あらゆるスタイルに対応。",
     "adDesignDesc3": "下にスクロールして過去の制作事例をご覧ください",
     "adSetting": "広告設定＆パフォーマンス最適化",
-    "adSettingDesc": "入札戦略・ターゲット設定・配信面設定など、予算内で最大限の問い合わせを獲得。",
+    "adSettingDesc": "入札戦略・ターゲット設定・配信面設定など、予算内���最大限の問い合わせを獲得。",
     "adSettingConclusion": "同じ予算で、より多くの問い合わせへ",
     "adMonitor": "広告パフォ��マンス監視",
     "adMonitorDesc": "広告データは常に変動するため、継続的な監視が不可欠です。競合他社の広告チェックも行います。",

@@ -199,6 +199,15 @@
     "webDesignDevelopment": "網站設計及開發",
     "socialMediaAds": "社交媒體廣告"
   },
+  "contactPage": {
+    "section1Title": "聯絡我們",
+    "section1Description": "與我們的團隊聯繫，討論您的業務需求",
+    "section2Title": "我們的辦公室",
+    "section2Description": "歡迎蒞臨我們的辦公室，深入了解我們如何為您服務",
+    "section2Text": "我們期待與您合作",
+    "whatsappButton": "WhatsApp查詢",
+    "lineButton": "Line"
+  },
   "xiaohongshu": {
     "title": "服務範圍",
     "step1Title": "小紅書新帳號營運",
@@ -498,13 +507,13 @@
     "case2Keyword": "內衣",
     "case2Industry": "行業：功能內衣",
     "case2Time": "用時：4 days",
-    "case3Keyword": "青年創業補助不用還",
+    "case3Keyword": "青年創���補助不用還",
     "case3Industry": "行業：青年創業補助",
     "case3Time": "用時：2 days",
     "ctaExperience": "8年SEO經驗結晶，7日提升關鍵字排��的方法",
     "ctaTitle": "SEO懶人包",
     "faq1Q": "SEO懶人包適合新手嗎？",
-    "faq1A": "SEO懶人包是一套工具，適合任何想提升排名的人，當然包括全新手。",
+    "faq1A": "SEO懶人包是一套工具，適合任何想提升排名的人，當然包括全新手��",
     "faq2Q": "我具體要做什麼？",
     "faq2A": "按照SEO懶人包���驟表，每日大約1-2小時管理你的網站，將越來越多的關鍵字做上首頁，甚至複製至多���行業。",
     "faq3Q": "如何快速提升網��排名？",

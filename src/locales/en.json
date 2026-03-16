@@ -200,6 +200,15 @@
     "webDesignDevelopment": "Web Design & Development",
     "socialMediaAds": "Social Media Advertising"
   },
+  "contactPage": {
+    "section1Title": "Contact Us",
+    "section1Description": "Get in touch with our team to discuss your business needs",
+    "section2Title": "Our Office",
+    "section2Description": "We welcome you to visit our office to learn more about how we can serve you",
+    "section2Text": "We look forward to working with you",
+    "whatsappButton": "WhatsApp Inquiry",
+    "lineButton": "Line"
+  },
   "xiaohongshu": {
     "title": "Service Scope",
     "step1Title": "Xiaohongshu New Account Management",
