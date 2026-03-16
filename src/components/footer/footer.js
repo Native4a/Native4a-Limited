@@ -7,7 +7,6 @@ import * as styles from '../../styles/footer.module.css'
 import useFooter from '../../hook/useFooter'
 import Whatsapp from '../baseTools/whatsapp'
 import Icon from '../baseTools/Icon'
-import LanguageSwitcher from '../LanguageSwitcher'
 import Whatsapp_sticky from '../baseTools/Icon/img/whatsappContact_text.svg'
 import line_icon from '../baseTools/Icon/img/line_Icon.svg'
 
@@ -88,7 +87,6 @@ const Footer = () => {
             </section>
             {shouldShowIcon && (
               <section>
-                <LanguageSwitcher />
                 <Icon
                   URL={Whatsapp_sticky}
                   linkto="https://api.whatsapp.com/send/?phone=85264602996"

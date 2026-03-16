@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import { useTranslation } from 'react-i18next'
 import { TbShoppingCart } from 'react-icons/tb'
 import Button from '../baseTools/button'
+import LanguageSwitcher from '../LanguageSwitcher'
 import * as styles from '../../styles/navprops.module.css'
 import clsx from 'clsx'
 
@@ -152,9 +153,20 @@ const Navprops = () => {
               <TbShoppingCart className="text-xl" />
               <span>{t('buttons.shopping')}</span>
             </Button>
+
+            {/* 語言切換器 - 桌面版 (XL以上) */}
+            <div
+              style={{
+                marginLeft: '20px',
+                paddingLeft: '20px',
+                borderLeft: '1px solid #e5e7eb'
+              }}
+            >
+              <LanguageSwitcher />
+            </div>
           </div>
 
-          {/* 購物按鈕 - 平板版 (md到lg) */}
+          {/* 購物按鈕和語言切換 - 平板版 (md到lg) */}
           <div className="hidden md:flex lg:hidden items-center justify-between w-full border-t border-gray-100 mt-3 pt-3 gap-3">
             <Button
               linkto="https://shop.nativeaaaa.com.hk/"
@@ -163,6 +175,14 @@ const Navprops = () => {
               <TbShoppingCart className="text-lg" />
               <span>{t('buttons.shopping')}</span>
             </Button>
+            <div style={{ paddingLeft: '20px' }}>
+              <LanguageSwitcher />
+            </div>
+          </div>
+
+          {/* 手機版語言切換 */}
+          <div className="md:hidden w-full border-t border-gray-100 mt-2 pt-2">
+            <LanguageSwitcher isInMenu={true} />
           </div>
         </ul>
 
