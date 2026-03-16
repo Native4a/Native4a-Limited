@@ -199,6 +199,15 @@
     "webDesignDevelopment": "网站设计及开发",
     "socialMediaAds": "社交媒体广告"
   },
+  "contactPage": {
+    "section1Title": "联系我们",
+    "section1Description": "与我们的团队联系，讨论您的业务需求",
+    "section2Title": "我们的办公室",
+    "section2Description": "欢迎莅临我们的办公室，深入了解我们如何为您服务",
+    "section2Text": "我们期待与您合作",
+    "whatsappButton": "WhatsApp查询",
+    "lineButton": "Line"
+  },
   "xiaohongshu": {
     "title": "服务范围",
     "step1Title": "小红书新账号营运",
@@ -413,7 +422,7 @@
     "idealStateList": "1.节省大量SEM支出 2.高排名 3.高引流 4.高品牌价值 5.而且不断扩张",
     "idealStateConclusion": "这就是一家称职的SEO公司会为你带来的。",
     "nativeIntro": "native作为一家香港主流的SEO公司，营运经营已近7年，在SEO方面积累了大量经验和实验成果。",
-    "nativeExperience": "曾优化过不少难度极高的领域，包括：补习、医疗用品、搬家公司等高竞争行业。想了解更多可以到我们的IG看详细案例",
+    "nativeExperience": "曾优化过不���难度极高的领域，包括：补习、医疗用品、搬家公司等高竞争行业。想了解更多可以到我们的IG看详细案例",
     "howWeDoSeo": "我们实际如何为客户操作SEO呢？",
     "keywordResearch": "关键字研究",
     "keywordResearchDesc": "在开始SEO之前，我们会从客户的网站、行业、对手等数据研究关键字。",
@@ -506,7 +515,7 @@
     "faq1Q": "SEO懒人包适合新手吗？",
     "faq1A": "SEO懒人包是一套工具，适合任何想提升排名的人，当然包括全新手。",
     "faq2Q": "我具体要做什么？",
-    "faq2A": "按照SEO懒人包步骤表，每日大约1-2小时管理你的网站，将越来越多的关��字做上首页，甚至复制至多个行业。",
+    "faq2A": "按照SEO懒���包步骤表，每日大约1-2小时管理你的网站，将越来越多的关��字做上首页，甚至复制至多个行业。",
     "faq3Q": "如何快速提升网站排名？",
     "faq3A": "解决以下3个问题，排名立即原地上升：",
     "faq3Item1Title": "关键字筛选",
