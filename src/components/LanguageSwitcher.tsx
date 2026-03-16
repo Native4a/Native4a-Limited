@@ -17,7 +17,8 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   const [isOpen, setIsOpen] = React.useState(false)
 
   const languages = [
-    { code: 'zh', name: '中文', label: '中', labelEn: 'Chinese', labelJa: '中国語' },
+    { code: 'zh', name: '繁體中文', label: '繁', labelEn: 'Traditional Chinese', labelJa: '繁体中国語' },
+    { code: 'zh-CN', name: '简体中文', label: '简', labelEn: 'Simplified Chinese', labelJa: '簡体中国語' },
     { code: 'en', name: 'English', label: 'EN', labelEn: 'English', labelJa: '英語' },
     { code: 'ja', name: '日本語', label: 'JA', labelEn: 'Japanese', labelJa: '日本語' },
   ]
@@ -30,7 +31,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     
     const currentPath = window.location.pathname
     // Remove existing language prefix if present
-    const pathWithoutLang = currentPath.replace(/^\/(en|ja|zh)(\/|$)/, '/')
+    const pathWithoutLang = currentPath.replace(/^\/(en|ja|zh-CN|zh)(\/|$)/, '/')
     
     // Construct new path with language prefix
     const newPath = `/${langCode}${pathWithoutLang === '/' ? '' : pathWithoutLang}`
@@ -91,18 +92,19 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   }
 
   // 桌面版的液态效果切换器
-  // 当前语言始终显示在顶部，其他两个语言悬停时向下展开
+  // 当前语言始终显示在顶部，其他三个语言悬停时向下展开
   const otherLanguages = languages.filter(lang => lang.code !== i18n.language)
 
   const W = 60
   const R = 25
   const CX = W / 2
-  const CY_TOP = R + 4         // 顶部（当前语言）圆心
+  const CY_TOP = R + 4
   const GAP = R * 2 + 14
-  const CY_MID = CY_TOP + GAP  // 第二个选项圆心
-  const CY_BOT = CY_TOP + GAP * 2 // 第三个选项圆心
+  const CY_2 = CY_TOP + GAP
+  const CY_3 = CY_TOP + GAP * 2
+  const CY_4 = CY_TOP + GAP * 3
   const H_COLLAPSED = CY_TOP + R + 6
-  const H_EXPANDED = CY_BOT + R + 8
+  const H_EXPANDED = CY_4 + R + 8
 
   return (
     <div 
@@ -126,7 +128,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
         style={{ position: 'absolute', top: 0, left: 0, display: 'block', overflow: 'visible' }}
       >
         <defs>
-          <filter id="goo-effect" x="-50%" y="-30%" width="200%" height="260%">
+          <filter id="goo-effect" x="-50%" y="-30%" width="200%" height="300%">
             <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
             <feColorMatrix 
               in="blur" 
@@ -139,19 +141,28 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
         </defs>
 
         <g filter="url(#goo-effect)">
-          {/* 第三个选项圆 - 悬停时展开到底部 */}
+          {/* 第四个选项圆 */}
           <circle 
             cx={CX} 
-            cy={isHovered ? CY_BOT : CY_TOP}
+            cy={isHovered ? CY_4 : CY_TOP}
+            r={R} 
+            fill="#d1d5db"
+            style={{ transition: 'cy 0.8s ease-out', cursor: 'pointer' }}
+            onClick={() => handleLanguageChange(otherLanguages[2].code)}
+          />
+          {/* 第三个选项圆 */}
+          <circle 
+            cx={CX} 
+            cy={isHovered ? CY_3 : CY_TOP}
             r={R} 
             fill="#d1d5db"
             style={{ transition: 'cy 0.8s ease-out', cursor: 'pointer' }}
             onClick={() => handleLanguageChange(otherLanguages[1].code)}
           />
-          {/* 第二个选项圆 - 悬停时展开到中间 */}
+          {/* 第二个选项圆 */}
           <circle 
             cx={CX} 
-            cy={isHovered ? CY_MID : CY_TOP}
+            cy={isHovered ? CY_2 : CY_TOP}
             r={R} 
             fill="#d1d5db"
             style={{ transition: 'cy 0.8s ease-out', cursor: 'pointer' }}
@@ -176,12 +187,12 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           style={{ cursor: 'pointer' }}
         />
 
-        {/* 当前语言文字 - 始终显示在顶部 */}
+        {/* 当前语言文字 */}
         <text 
           x={CX} y={CY_TOP} 
           textAnchor="middle" dominantBaseline="central"
           fill="white"
-          fontWeight="bold" fontSize="16"
+          fontWeight="bold" fontSize="14"
           fontFamily="sans-serif"
           style={{ cursor: 'pointer', pointerEvents: 'auto' }}
         >
@@ -190,16 +201,16 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
 
         {/* 第二个选项文字 */}
         <text 
-          x={CX} y={CY_MID} 
+          x={CX} y={CY_2} 
           textAnchor="middle" dominantBaseline="central"
           fill="#6b7280"
-          fontWeight="bold" fontSize="14"
+          fontWeight="bold" fontSize="13"
           fontFamily="sans-serif"
           style={{ 
             cursor: 'pointer', 
             pointerEvents: isHovered ? 'auto' : 'none',
             opacity: isHovered ? 1 : 0,
-            transition: 'opacity 0.2s ease 0.6s'
+            transition: 'opacity 0.2s ease 0.5s'
           }}
           onClick={() => handleLanguageChange(otherLanguages[0].code)}
         >
@@ -208,20 +219,38 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
 
         {/* 第三个选项文字 */}
         <text 
-          x={CX} y={CY_BOT} 
+          x={CX} y={CY_3} 
           textAnchor="middle" dominantBaseline="central"
           fill="#6b7280"
-          fontWeight="bold" fontSize="14"
+          fontWeight="bold" fontSize="13"
           fontFamily="sans-serif"
           style={{ 
             cursor: 'pointer', 
             pointerEvents: isHovered ? 'auto' : 'none',
             opacity: isHovered ? 1 : 0,
-            transition: 'opacity 0.2s ease 0.6s'
+            transition: 'opacity 0.2s ease 0.5s'
           }}
           onClick={() => handleLanguageChange(otherLanguages[1].code)}
         >
           {otherLanguages[1].label}
+        </text>
+
+        {/* 第四个选项文字 */}
+        <text 
+          x={CX} y={CY_4} 
+          textAnchor="middle" dominantBaseline="central"
+          fill="#6b7280"
+          fontWeight="bold" fontSize="13"
+          fontFamily="sans-serif"
+          style={{ 
+            cursor: 'pointer', 
+            pointerEvents: isHovered ? 'auto' : 'none',
+            opacity: isHovered ? 1 : 0,
+            transition: 'opacity 0.2s ease 0.5s'
+          }}
+          onClick={() => handleLanguageChange(otherLanguages[2].code)}
+        >
+          {otherLanguages[2].label}
         </text>
       </svg>
     </div>

@@ -9,7 +9,7 @@ export const useLanguage = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const currentPath = window.location.pathname
-      const langMatch = currentPath.match(/^\/(en|ja|zh)(\/|$)/)
+      const langMatch = currentPath.match(/^\/(en|ja|zh-CN|zh)(\/|$)/)
       const urlLanguage = langMatch ? langMatch[1] : null
       const storedLanguage = localStorage.getItem('language')
       const languageToUse = urlLanguage || storedLanguage || 'zh'
@@ -24,7 +24,7 @@ export const useLanguage = () => {
   const navigateToLanguage = (langCode: string, path: string = '/') => {
     const cleanPath = path.startsWith('/') ? path : `/${path}`
     // Remove language prefix from path if it exists
-    const pathWithoutLang = cleanPath.replace(/^\/(en|ja|zh)(\/|$)/, '/')
+    const pathWithoutLang = cleanPath.replace(/^\/(en|ja|zh-CN|zh)(\/|$)/, '/')
     // Add new language prefix
     const newPath = `/${langCode}${pathWithoutLang === '/' ? '' : pathWithoutLang}`
     
@@ -43,6 +43,7 @@ export const useLanguage = () => {
     isEnglish: i18n.language === 'en',
     isJapanese: i18n.language === 'ja',
     isChinese: i18n.language === 'zh',
+    isSimplifiedChinese: i18n.language === 'zh-CN',
   }
 }
 
