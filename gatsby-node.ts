@@ -8,11 +8,19 @@ export const onCreatePage: GatsbyNode['onCreatePage'] = async ({
 }) => {
   const { createPage } = actions
 
-  // Match client-only routes for blog posts
+  // Match client-only routes for blog posts (all language prefixes including zh-CN)
   if (page.path.match(/^\/blog\/\[slug\]/)) {
     createPage({
       ...page,
       matchPath: '/blog/*',
+    })
+  }
+
+  // Also handle zh-CN prefixed blog routes
+  if (page.path.match(/^\/zh-CN\/blog\//)) {
+    createPage({
+      ...page,
+      matchPath: '/zh-CN/blog/*',
     })
   }
 }
@@ -23,7 +31,7 @@ interface BlogPost {
   language: string
 }
 
-const LANGUAGES = ['en', 'ja', 'zh']
+const LANGUAGES = ['en', 'ja', 'zh', 'zh-CN']
 const DEFAULT_LANGUAGE = 'zh'
 
 // Safely try to import Notion service
