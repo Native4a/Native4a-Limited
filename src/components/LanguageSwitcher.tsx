@@ -42,9 +42,9 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     i18n.changeLanguage(langCode)
     if (typeof window !== 'undefined') {
       localStorage.setItem('language', langCode)
-      // Navigate to the localized path
+      // Navigate to the localized path without scrolling to top
       const newPath = getLocalizedPath(langCode)
-      navigate(newPath)
+      navigate(newPath, { skipScrollToTop: true })
     }
     setIsHovered(false)
     setIsOpen(false)
