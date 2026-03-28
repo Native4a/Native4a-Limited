@@ -219,6 +219,17 @@
     "step4Title": "稳定排名",
     "step4Description": "SEO是一个长远而极具效益的武器，我们为您长远稳定最佳的排名位置。"
   },
+  "backlinksSlider": {
+    "title": "服务范围",
+    "step1Title": "准备目标Keywords",
+    "step1Description": "给我们你想做的目标关键字，我们为你分析潜力。",
+    "step2Title": "分配需要页面",
+    "step2Description": "一个网站并非每页都要做backlinks，你必须分配好需要做的目标页面。或让我们帮帮您。",
+    "step3Title": "建立Backlinks",
+    "step3Description": "我们会在7-28天内完成连结工作。",
+    "step4Title": "详细的完成报告",
+    "step4Description": "每一条外链您都会看到它的出处，目的地，DA & PA。"
+  },
   "xiaohongshu": {
     "title": "服务范围",
     "step1Title": "小红书新账号营运",
@@ -294,7 +305,7 @@
     "section8Item06Title": "每篇文章及链接只属于一个客户（独家专属）",
     "section8Item06Desc": "为确保每篇中文博客文章内的外部链接的权威性，我们每篇文章内的所有 Backlinks 只专属一个客户，不会出现一篇文章放了大量其他客户链接的情况。",
     "section8Item07Title": "自家网站，不会消失，长期有效",
-    "section8Item07Desc": "在淘宝、Fiverr 或其他地方买的廉价 backlinks，可以在一夜间消失。我们的 反向链接 网站全是独立经营，百分百自主，不会消失，长期有效。",
+    "section8Item07Desc": "在淘宝、Fiverr 或其他地方买的廉价 backlinks，可以在���夜间消失。我们的 反向链接 网站全是独立经营，百分百自主，不会消失，长期有效。",
     "section8Item08Title": "金字塔式 反向链接 结构",
     "section8Item08Desc": "我们的 反向链接 是金字塔式的链接结构，有多层与其相关联的多个层级 Backlinks，以形成金字塔，也称为 Link Juice",
     "section8Item09Title": "反向链接权重达 DA50+ 或 DR 30+",
@@ -392,7 +403,7 @@
     "adStrategyConclusion": "所以，FB/IG广告是有不同职责的",
     "adDesign": "广告稿设计",
     "adDesignDesc": "以时下传播力最快的广告形式包装你的产品或服务。",
-    "adDesignDesc2": "无论专业风、轻松趣品风格全都做到。",
+    "adDesignDesc2": "无论专业风、轻松��品风格全都做到。",
     "adDesignDesc3": "往下滑会有过往作品",
     "adSetting": "广告Setting成效提升",
     "adSettingDesc": "竞价策略、受众设定、版位设定等，在预算控制范围内，提升更多查询。",
