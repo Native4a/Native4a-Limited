@@ -39,12 +39,25 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   }
 
   const handleLanguageChange = (langCode: string) => {
-    i18n.changeLanguage(langCode)
     if (typeof window !== 'undefined') {
+      // Save current scroll position
+      const scrollPosition = window.scrollY || window.pageYOffset
+      
+      // Change language immediately
+      i18n.changeLanguage(langCode)
       localStorage.setItem('language', langCode)
-      // Navigate to the localized path without scrolling to top
+      
+      // Navigate to the localized path
       const newPath = getLocalizedPath(langCode)
-      navigate(newPath, { skipScrollToTop: true })
+      
+      // Use requestAnimationFrame to ensure navigation completes before restoring scroll
+      setTimeout(() => {
+        navigate(newPath, { skipScrollToTop: true })
+        // Restore scroll position after navigation
+        setTimeout(() => {
+          window.scrollTo(0, scrollPosition)
+        }, 100)
+      }, 0)
     }
     setIsHovered(false)
     setIsOpen(false)
