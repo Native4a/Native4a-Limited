@@ -208,6 +208,17 @@
     "whatsappButton": "WhatsApp查询",
     "lineButton": "Line"
   },
+  "seoSlider": {
+    "title": "服务范围",
+    "step1Title": "关键字选取",
+    "step1Description": "SEO工程最重要的一步是关键字选择，我们会协助您选取最合适关键字。",
+    "step2Title": "On-Page SEO",
+    "step2Description": "On-Page SEO包括内文撰写，修正编码错误，Google数据调整等工序。",
+    "step3Title": "Off-Page SEO",
+    "step3Description": "我们除了为您建立高质而稳定的外部连结外，还为您分析对手的外部连结种类，数/质量等。",
+    "step4Title": "稳定排名",
+    "step4Description": "SEO是一个长远而极具效益的武器，我们为您长远稳定最佳的排名位置。"
+  },
   "xiaohongshu": {
     "title": "服务范围",
     "step1Title": "小红书新账号营运",
@@ -390,7 +401,7 @@
     "adMonitorDesc": "广告数据随时变化，需要有人长期盯住。还可以Check竞争对手广告。",
     "nativeDiff": "NATIVE的与众不同",
     "nativeDiffDesc": "一站式构思、设计、数据分析广告服务。",
-    "nativeDiffParagraph": "NATIVE有别于其他Google广告公司，我们不单只为你设定广告出街。还会为您提供由构思、设计、关键字数据分析、广告设定，一站式服务。",
+    "nativeDiffParagraph": "NATIVE有别于其他Google广告公司，我们不单只为你设定广告出���。还会为您提供由构思、设计、关键字数据分析、广告设定，一站式服务。",
     "serviceFbIg": "FB&IG 广告",
     "serviceYoutube": "Youtube Shorts营销",
     "serviceWhatsapp": "Whatsapp营销",

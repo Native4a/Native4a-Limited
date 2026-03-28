@@ -208,6 +208,17 @@
     "whatsappButton": "WhatsApp查詢",
     "lineButton": "Line"
   },
+  "seoSlider": {
+    "title": "服務範圍",
+    "step1Title": "關鍵字選取",
+    "step1Description": "SEO工程最重要的一步是關鍵字選擇，我們會協助您選取最合適關鍵字。",
+    "step2Title": "On-Page SEO",
+    "step2Description": "On-Page SEO包括內文撰寫，修正編碼錯誤，Google數據調整等工序。",
+    "step3Title": "Off-Page SEO",
+    "step3Description": "我們除了為您建立高質而穩定的外部連結外，還為您分析對手的外部連結種類，數/質量等。",
+    "step4Title": "穩定排名",
+    "step4Description": "SEO是一個長遠而極具效益的武器，我們為您長遠穩定最佳的排名位置。"
+  },
   "xiaohongshu": {
     "title": "服務範圍",
     "step1Title": "小紅書新帳號營運",
@@ -288,7 +299,7 @@
     "section8Item08Desc": "我們的 反向連結 是金字塔式的鏈接結構，有多層與其相關聯的多個層級 Backlinks，以形成金字塔，也稱為 Link Juice",
     "section8Item09Title": "反向連結權重達 DA50+ 或 DR 30+",
     "section8Item09Desc": "DA 和 DR 分別是 MOZ 和 Ahrefs 自行創建的網站權重指標。 雖則這等指標並不是 Google排名的準則，但也代表了網站的權重。我們的 反向連結 都在DA 50+ 或 DR 30＋ 的權重。",
-    "section8Item10Title": "自選 反向連結 目標頁面",
+    "section8Item10Title": "���選 反向連結 目標頁面",
     "section8Item10Desc": "因為我們的 反向連結 網站全是獨立經營，百份百自主，所以可以因應客戶需求而建立客戶所要求的多個目標頁面。沒有掣肘，全客制化。",
     "section8Item11Title": "90% DoFollow, 10% NoFollow",
     "section8Item11Desc": "我們知道 nofollow 反向連結 是沒有 SEO 價值的。但若所有 Backlinks 都是 Dofollow，在Google 眼中會覺得有做馬之嫌。所以我們的 反向連結 結構是 90% DoFollow, 10% NoFollow",
