@@ -48,8 +48,8 @@ const SeoSlider = () => {
                                                             <span className={styles.strengths}>1</span>
                                                         </div>
                                                         <div className='col-span-5 relative lg:top-[48px]'>
-                                                            <h4 className={styles.step1Title}>{step1Image.title}</h4>
-                                                            <p className={styles.step1Description}>{step1Image.description}</p>
+                                                            <h4 className={styles.step1Title}>關𨫡字選取</h4>
+                                                            <p className={styles.step1Description}>SEO工程最重要的一步是關鍵字選擇，我1們會協助您選取最合適關鍵字。</p>
                                                         </div>
                                                     </div>
                                                     <div>
