@@ -13,6 +13,7 @@ import SEO_svg04 from "../../../../img/SEO_04.svg";
 
 const SeoSlider = () => {
     const { t } = useTranslation();
+
     const settings = {
         dots: true,
         autoplay: true,
@@ -25,10 +26,40 @@ const SeoSlider = () => {
         arrows: false,
         adaptiveHeight: true,
         appendDots: (dots) => <ul>{dots}</ul>,
-        customPaging: (i) => (
-            <div className="ft-slick__dots--custom"></div>
-        )
+        customPaging: (i) => <div className="ft-slick__dots--custom"></div>
     };
+
+    // 統一管理四個 slide 的資料（推薦做法）
+    const slides = [
+        {
+            id: 1,
+            img: SEO_svg01,
+            titleKey: 'seoSlider.step1Title',
+            descKey: 'seoSlider.step1Description',
+            reverse: true,        // 文字在左邊（圖片在右）
+        },
+        {
+            id: 2,
+            img: SEO_svg02,
+            titleKey: 'seoSlider.step2Title',
+            descKey: 'seoSlider.step2Description',
+            reverse: false,       // 文字在右邊（圖片在左）
+        },
+        {
+            id: 3,
+            img: SEO_svg03,
+            titleKey: 'seoSlider.step3Title',
+            descKey: 'seoSlider.step3Description',
+            reverse: true,
+        },
+        {
+            id: 4,
+            img: SEO_svg04,
+            titleKey: 'seoSlider.step4Title',
+            descKey: 'seoSlider.step4Description',
+            reverse: false,
+        },
+    ];
 
     return (
         <section className={styles.section}>
@@ -43,93 +74,40 @@ const SeoSlider = () => {
 
                 <SliderWrapper>
                     <Slider {...settings}>
-                        {/* Slide 1 */}
-                        <section>
-                            <div className="mx-auto">
-                                <div className={styles.container}>
-                                    <div className='grid grid-cols-1 md:grid-cols-2 2xl:gap-20 items-center pb-10 md:pb-0'>
-                                        <div className="grid grid-cols-6 order-last md:order-first items-center p-3">
-                                            <div>
-                                                <span className={styles.strengths}>1</span>
-                                            </div>
-                                            <div className='col-span-5 relative lg:top-[48px]'>
-                                                <h4 className={styles.step1Title}>{t('seoSlider.step1Title')}</h4>
-                                                <p className={styles.step1Description}>{t('seoSlider.step1Description')}</p>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <img className="w-3/4 md:w-full" src={SEO_svg01} alt={t('seoSlider.step1Title')} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                        {slides.map((slide) => (
+                            <section key={slide.id}>
+                                <div className="mx-auto">
+                                    <div className={styles.container}>
+                                        <div className={`grid grid-cols-1 md:grid-cols-2 2xl:gap-20 items-center pb-10 md:pb-0 ${slide.reverse ? 'md:flex-row-reverse' : ''}`}>
 
-                        {/* Slide 2 */}
-                        <section>
-                            <div className="mx-auto">
-                                <div className={styles.container}>
-                                    <div className='grid grid-cols-1 md:grid-cols-2 2xl:gap-20 items-center pb-10 md:pb-0'>
-                                        <div>
-                                            <img className="w-3/4 md:w-full" src={SEO_svg02} alt={t('seoSlider.step2Title')} />
-                                        </div>
-                                        <div className="grid grid-cols-5 items-center p-3">
-                                            <div>
-                                                <span className={styles.strengths}>2</span>
+                                            {/* 文字區塊 */}
+                                            <div className={`grid ${slide.reverse ? 'grid-cols-6 order-last md:order-first' : 'grid-cols-5'} items-center p-3`}>
+                                                <div>
+                                                    <span className={styles.strengths}>{slide.id}</span>
+                                                </div>
+                                                <div className={`col-span-${slide.reverse ? '5' : '4'} relative md:top-16 lg:top-[38px] xl:top-[38px]`}>
+                                                    <h4 className={styles[`step${slide.id}Title`]}>
+                                                        {t(slide.titleKey)}
+                                                    </h4>
+                                                    <p className={styles[`step${slide.id}Description`] || styles.step1Description}>
+                                                        {t(slide.descKey)}
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <div className='col-span-4 relative md:top-16 lg:top-[38px] xl:top-[38px]'>
-                                                <h4 className={styles.step2Title}>{t('seoSlider.step2Title')}</h4>
-                                                <p className={styles.step2Description}>{t('seoSlider.step2Description')}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
 
-                        {/* Slide 3 */}
-                        <section>
-                            <div className="mx-auto">
-                                <div className={styles.container}>
-                                    <div className='grid grid-cols-1 md:grid-cols-2 2xl:gap-20 items-center pb-10 md:pb-0'>
-                                        <div className="grid grid-cols-5 order-last md:order-first items-center p-3">
+                                            {/* 圖片區塊 */}
                                             <div>
-                                                <span className={styles.strengths}>3</span>
-                                            </div>
-                                            <div className='col-span-4 relative md:top-16 lg:top-[38px] xl:top-[38px]'>
-                                                <h4 className={styles.step3Title}>{t('seoSlider.step3Title')}</h4>
-                                                <p className={styles.step3Description}>{t('seoSlider.step3Description')}</p>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <img className="w-3/4 md:w-full" src={SEO_svg03} alt={t('seoSlider.step3Title')} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        {/* Slide 4 */}
-                        <section>
-                            <div className="mx-auto">
-                                <div className={styles.container}>
-                                    <div className='grid grid-cols-1 md:grid-cols-2 2xl:gap-20 items-center pb-10 md:pb-0'>
-                                        <div>
-                                            <img className="w-3/4 md:w-full" src={SEO_svg04} alt={t('seoSlider.step4Title')} />
-                                        </div>
-                                        <div className="grid grid-cols-5 items-center p-2">
-                                            <div>
-                                                <span className={styles.strengths}>4</span>
-                                            </div>
-                                            <div className='col-span-4 relative md:top-16 lg:top-[38px] xl:top-[38px]'>
-                                                <h4 className={styles.step4Title}>{t('seoSlider.step4Title')}</h4>
-                                                <p className={styles.step1Description}>{t('seoSlider.step4Description')}</p>
+                                                <img
+                                                    className="w-3/4 md:w-full"
+                                                    src={slide.img}
+                                                    alt={t(slide.titleKey)}
+                                                />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
+                        ))}
                     </Slider>
                 </SliderWrapper>
             </div>
