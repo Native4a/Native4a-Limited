@@ -209,6 +209,17 @@
     "whatsappButton": "WhatsApp Inquiry",
     "lineButton": "Line"
   },
+  "seoSlider": {
+    "title": "Service Scope",
+    "step1Title": "Keyword Selection",
+    "step1Description": "Keyword selection is the most crucial step in SEO strategy. We help you identify the most appropriate keywords for your business.",
+    "step2Title": "On-Page SEO",
+    "step2Description": "On-Page SEO includes content optimization, code correction, and Google data adjustments to improve your site structure.",
+    "step3Title": "Off-Page SEO",
+    "step3Description": "We build high-quality and stable external links for your site while analyzing competitor backlink strategies, quantity and quality.",
+    "step4Title": "Stable Rankings",
+    "step4Description": "SEO is a long-term and highly effective strategy. We maintain your best ranking position sustainably over time."
+  },
   "xiaohongshu": {
     "title": "Service Scope",
     "step1Title": "Xiaohongshu New Account Management",

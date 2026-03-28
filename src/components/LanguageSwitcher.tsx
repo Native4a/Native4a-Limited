@@ -42,7 +42,6 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     i18n.changeLanguage(langCode)
     if (typeof window !== 'undefined') {
       localStorage.setItem('language', langCode)
-      // Navigate to the localized path
       const newPath = getLocalizedPath(langCode)
       navigate(newPath)
     }
