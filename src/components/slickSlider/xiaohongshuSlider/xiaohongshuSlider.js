@@ -8,6 +8,13 @@ import SliderWrapper from "../greenSlider/_SlickSliderStyle";
 import * as styles from './style.module.css';
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare";
 
+// 導入 xiaohongshu slider SVG 圖片
+import XHS_svg01 from "../../../img/1小紅書新帳號營運.svg";
+import XHS_svg02 from "../../../img/2内容營運.svg";
+import XHS_svg03 from "../../../img/3關鍵字&搜索優化.svg";
+import XHS_svg04 from "../../../img/4種草達人&筆記合作.svg";
+import XHS_svg05 from "../../../img/5小紅書最新商家資訊同步.svg";
+
 const XiaohongshuSlider = () => {
     const { t } = useTranslation();
     const settings = {
@@ -31,6 +38,7 @@ const XiaohongshuSlider = () => {
             number: "1",
             titleKey: "xiaohongshuSlider.step1Title",
             descKey: "xiaohongshuSlider.step1Description",
+            image: XHS_svg01,
             reverse: false,
         },
         {
@@ -38,6 +46,7 @@ const XiaohongshuSlider = () => {
             number: "2",
             titleKey: "xiaohongshuSlider.step2Title",
             descKey: "xiaohongshuSlider.step2Description",
+            image: XHS_svg02,
             reverse: true,
         },
         {
@@ -45,6 +54,7 @@ const XiaohongshuSlider = () => {
             number: "3",
             titleKey: "xiaohongshuSlider.step3Title",
             descKey: "xiaohongshuSlider.step3Description",
+            image: XHS_svg03,
             reverse: false,
         },
         {
@@ -52,6 +62,7 @@ const XiaohongshuSlider = () => {
             number: "4",
             titleKey: "xiaohongshuSlider.step4Title",
             descKey: "xiaohongshuSlider.step4Description",
+            image: XHS_svg04,
             reverse: true,
         },
         {
@@ -59,6 +70,7 @@ const XiaohongshuSlider = () => {
             number: "5",
             titleKey: "xiaohongshuSlider.step5Title",
             descKey: "xiaohongshuSlider.step5Description",
+            image: XHS_svg05,
             reverse: false,
         },
     ];
@@ -80,7 +92,7 @@ const XiaohongshuSlider = () => {
                             <section key={slide.id}>
                                 <div className="mx-auto">
                                     <div className={styles.container}>
-                                        <div className={`grid grid-cols-1 md:grid-cols-2 2xl:gap-20 items-center pb-10 md:pb-0 ${slide.reverse ? 'md:flex-row-reverse' : ''}`}>
+                                        <div className={`grid grid-cols-1 md:grid-cols-2 2xl:gap-20 items-center pb-10 md:pb-0`}>
 
                                             {/* 文字區塊 */}
                                             <div className={`grid ${slide.reverse ? 'grid-cols-5' : 'grid-cols-6'} 
@@ -100,12 +112,13 @@ const XiaohongshuSlider = () => {
                                                 </div>
                                             </div>
 
-                                            {/* 圖片佔位符 */}
-                                            <div className="flex items-center justify-center bg-gradient-to-br from-red-100 to-pink-100 rounded-lg p-8">
-                                                <div className="text-center text-gray-400">
-                                                    <div className="text-4xl mb-2">🎀</div>
-                                                    <p className="text-sm">{t(slide.titleKey)}</p>
-                                                </div>
+                                            {/* 圖片區塊 */}
+                                            <div>
+                                                <img
+                                                    className="w-3/4 md:w-full"
+                                                    src={slide.image}
+                                                    alt={t(slide.titleKey)}
+                                                />
                                             </div>
                                         </div>
                                     </div>
