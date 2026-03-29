@@ -256,6 +256,39 @@
     "step5Title": "小紅書最新商家資訊同步",
     "step5Description": "分享最新小紅書熱點和案例挖掘內容廣告新賣點"
   },
+  "smmSlider": {
+    "title": "服務範圍",
+    "step1Title": "了解您的產品服務及每月目標",
+    "step1Description": "請讓我們掌握您的產品的特性，我們會當成自家品牌一樣看待，準備為你橋思出精彩的廣告Campaign。",
+    "step2Title": "提出有用的建議",
+    "step2Description": "同一種推廣手段，並不是每家公司都適合，我們會為你提出有用的建議。",
+    "step3Title": "製作並執行廣告",
+    "step3Description": "配合你的產品，設計吸引購買的廣告，並為你執行廣告設定。",
+    "step4Title": "完整的匯報報告",
+    "step4Description": "完整的引流報告，分析用戶行為。"
+  },
+  "webSlider": {
+    "title": "服務範圍",
+    "step1Title": "聆聽你的需要",
+    "step1Description": "做網站並非一味倒內容入去。我們更想抓準你公司的最強優勢，並嘗試在網站中設計出來。",
+    "step2Title": "精心設計佈局",
+    "step2Description": "一個出彩的網站會考慮用戶的行動，除了美觀外，佈局亦非常重要。排版是否看得適服。字數多寡大小，什麼時候出現購買呼籲，拼色等，我們都替你考慮周到。",
+    "step3Title": "落實製作階段",
+    "step3Description": "當你滿意我們的設計後，技術同事會展開網站製作階段，按照設計草圖將網站實現。",
+    "step4Title": "最後部份修改",
+    "step4Description": "當然，我們會作最後的調整修改，務求你的網站完美呈現。"
+  },
+  "videoSlider": {
+    "title": "服務範圍",
+    "step1Title": "寫稿「度橋」",
+    "step1Description": "創意構思，令你的產品形象跳出框框，不想被資訊洪流衝走你條廣告，變成即溶奶粉一沖就散。我們一於在前期落足功夫「度條好橋」吧！",
+    "step2Title": "拍攝前期",
+    "step2Description": "做好前期，拍攝順利。場地、演員、器材，勻需準備充足，盡顯專業實力。",
+    "step3Title": "正式拍攝",
+    "step3Description": "正式拍攝當日，按照劇本及Storyboard，加上導演即場發揮指導，拍攝萬無一失。",
+    "step4Title": "後期製作",
+    "step4Description": "拍得好，加上後期執得到。完美呈現產品與創意的結合。"
+  },
   "backlinks": {
     "metaTitle": "買中文反向連結 香港 | 高質量 Backlinks 用於 HK SEO",
     "metaDescription": "中文網站 買中文反向連結，實證對改善網站權重和SEO排名有顯著正面效果。歡迎索取外部連結Backlink HK樣本和查詢",
@@ -394,7 +427,7 @@
   },
   "thankYou": {
     "title": "感謝您的查詢 | Native4a 香港",
-    "description": "感謝您準備向我們查詢，預祝您的業務蒸蒸日上。",
+    "description": "感謝您準��向我們查詢，預祝您的業務蒸蒸日上。",
     "heading": "感謝您準備向我們查詢，預祝您的業務蒸蒸日上。"
   },
   "smmAds": {
@@ -425,7 +458,7 @@
     "adMonitorDesc": "廣告數據隨時變化，需要有人長期𥄫住。仲可以Check埋競爭對手廣告。",
     "nativeDiff": "NATIVE的與眾不同",
     "nativeDiffDesc": "一站式構思、設計、數據分析廣告服務。",
-    "nativeDiffParagraph": "NATIVE有別於其他Google廣告公司，我們不單只為你設定廣告出街。還會為您提供由構思、設計、關鍵字數據分析、廣告設定，一站式服務。",
+    "nativeDiffParagraph": "NATIVE有別��其他Google廣告公司，我們不單只為你設定廣告出街。還會為您提供由構思、設計、關鍵字數據分析、廣告設定，一站式服務。",
     "serviceFbIg": "FB&IG 廣告",
     "serviceYoutube": "Youtube Shorts營銷",
     "serviceWhatsapp": "Whatsapp營銷",

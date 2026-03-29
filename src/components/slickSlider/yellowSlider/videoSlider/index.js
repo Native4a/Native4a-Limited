@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import SlickSlider from "react-slick";
 import SliderWrapper from "../_SlickSliderStyle";
 
@@ -12,6 +13,7 @@ import Video_svg03 from "../../../../img/Video_03.svg";
 import Video_svg04 from "../../../../img/Video_04.svg";
 
 const VideoSlider = () => {
+    const { t } = useTranslation();
     const settings = {
         dots: true,
         autoplay: true,
@@ -32,10 +34,9 @@ const VideoSlider = () => {
         {
             id: 1,
             number: "1",
-            title: "寫稿「度橋」",
-            description: "創意構思，令你的產品形象跳出框框，不想被資訊洪流衝走你條廣告，變成即溶奶粉一沖就散。我們一於在前期落足功夫「度條好橋」吧！",
+            titleKey: "videoSlider.step1Title",
+            descKey: "videoSlider.step1Description",
             image: Video_svg01,
-            imageAlt: "寫稿度橋",
             reverse: true,           // 文字在左、圖片在右
             titleClass: styles.step1Title,
             descClass: styles.step1Description
@@ -43,10 +44,9 @@ const VideoSlider = () => {
         {
             id: 2,
             number: "2",
-            title: "拍攝前期",
-            description: "做好前期，拍攝順利。場地、演員、器材，勻需準備充足，盡顯專業實力。",
+            titleKey: "videoSlider.step2Title",
+            descKey: "videoSlider.step2Description",
             image: Video_svg02,
-            imageAlt: "拍攝前期",
             reverse: false,          // 圖片在左、文字在右
             titleClass: styles.step2Title,
             descClass: styles.step2Description
@@ -54,10 +54,9 @@ const VideoSlider = () => {
         {
             id: 3,
             number: "3",
-            title: "正式拍攝",
-            description: "正式拍攝當日，按照劇本及Storyboard，加上導演即場發揮指導，拍攝萬無一失。",
+            titleKey: "videoSlider.step3Title",
+            descKey: "videoSlider.step3Description",
             image: Video_svg03,
-            imageAlt: "正式拍攝",
             reverse: true,
             titleClass: styles.step3Title,
             descClass: styles.step3Description
@@ -65,10 +64,9 @@ const VideoSlider = () => {
         {
             id: 4,
             number: "4",
-            title: "後期製作",
-            description: "拍得好，加上後期執得到。完美呈現產品與創意的結合。",
+            titleKey: "videoSlider.step4Title",
+            descKey: "videoSlider.step4Description",
             image: Video_svg04,
-            imageAlt: "後期製作",
             reverse: false,
             titleClass: styles.step4Title,
             descClass: styles.step4Description
@@ -82,7 +80,7 @@ const VideoSlider = () => {
                 <div>
                     <h2 className="flex items-center text-3xl pt-12 ml-2 font-bold">
                         <span><FaSquare /></span>
-                        <b className="ml-3">服務範圍</b>
+                        <b className="ml-3">{t('videoSlider.title')}</b>
                     </h2>
                 </div>
 
@@ -100,8 +98,8 @@ const VideoSlider = () => {
                                                     <span className={styles.strengths}>{slide.number}</span>
                                                 </div>
                                                 <div className={`${slide.reverse ? 'col-span-5' : 'col-span-4'} relative ${slide.reverse ? 'lg:top-[48px]' : 'md:top-16 lg:top-[38px] xl:top-[38px]'}`}>
-                                                    <h4 className={slide.titleClass}>{slide.title}</h4>
-                                                    <p className={slide.descClass}>{slide.description}</p>
+                                                    <h4 className={slide.titleClass}>{t(slide.titleKey)}</h4>
+                                                    <p className={slide.descClass}>{t(slide.descKey)}</p>
                                                 </div>
                                             </div>
 
@@ -110,7 +108,7 @@ const VideoSlider = () => {
                                                 <img
                                                     className="w-3/4 md:w-full"
                                                     src={slide.image}
-                                                    alt={slide.imageAlt}
+                                                    alt={t(slide.titleKey)}
                                                 />
                                             </div>
                                         </div>

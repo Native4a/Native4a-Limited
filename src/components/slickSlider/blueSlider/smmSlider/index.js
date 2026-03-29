@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Slider from "react-slick";
 import SliderWrapper from "../_SlickSliderStyle";
 
@@ -11,6 +12,7 @@ import SocialM_svg03 from "../../../../img/SocialM_03.svg";
 import SocialM_svg04 from "../../../../img/SocialM_04.svg";
 
 const SmmSlider = () => {
+    const { t } = useTranslation();
     const settings = {
         dots: true,
         autoplay: true,
@@ -31,29 +33,29 @@ const SmmSlider = () => {
         {
             id: 1,
             image: SocialM_svg01,
-            title: "了解您的產品服務及每月目標",
-            description: "請讓我們掌握您的產品的特性，我們會當成自家品牌一樣看待，準備為你橋思出精彩的廣告Campaign。",
+            titleKey: "smmSlider.step1Title",
+            descKey: "smmSlider.step1Description",
             imageFirst: false,   // 圖在右邊，文字在左邊
         },
         {
             id: 2,
             image: SocialM_svg02,
-            title: "提出有用的建議",
-            description: "同一種推廣手段，並不是每家公司都適合，我們會為你提出有用的建議。",
+            titleKey: "smmSlider.step2Title",
+            descKey: "smmSlider.step2Description",
             imageFirst: true,    // 圖在左邊，文字在右邊
         },
         {
             id: 3,
             image: SocialM_svg03,
-            title: "製作並執行廣告",
-            description: "配合你的產品，設計吸引購買的廣告，並為你執行廣告設定。",
+            titleKey: "smmSlider.step3Title",
+            descKey: "smmSlider.step3Description",
             imageFirst: false,
         },
         {
             id: 4,
             image: SocialM_svg04,
-            title: "完整的匯報報告",
-            description: "完整的引流報告，分析用戶行為。",
+            titleKey: "smmSlider.step4Title",
+            descKey: "smmSlider.step4Description",
             imageFirst: true,
         },
     ];
@@ -65,7 +67,7 @@ const SmmSlider = () => {
                 <div>
                     <h2 className="flex items-center text-3xl pt-12 ml-2 font-bold">
                         <span><FaSquare /></span>
-                        <b className="ml-3">服務範圍</b>
+                        <b className="ml-3">{t('smmSlider.title')}</b>
                     </h2>
                 </div>
 
@@ -82,7 +84,7 @@ const SmmSlider = () => {
                                                 <img
                                                     className="w-3/4 md:w-full mx-auto"
                                                     src={slide.image}
-                                                    alt={`服務步驟 ${slide.id}`}
+                                                    alt={t(slide.titleKey)}
                                                 />
                                             </div>
 
@@ -93,10 +95,10 @@ const SmmSlider = () => {
                                                 </div>
                                                 <div className={`col-span-4 md:col-span-5 relative md:top-16 lg:top-[38px] xl:top-[38px]`}>
                                                     <h4 className={styles[`step${slide.id}Title`] || styles.stepTitle}>
-                                                        {slide.title}
+                                                        {t(slide.titleKey)}
                                                     </h4>
                                                     <p className={styles[`step${slide.id}Description`] || styles.stepDescription}>
-                                                        {slide.description}
+                                                        {t(slide.descKey)}
                                                     </p>
                                                 </div>
                                             </div>

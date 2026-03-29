@@ -256,6 +256,39 @@
     "step5Title": "小红书最新商家资讯同步",
     "step5Description": "分享最新小红书热点和案例挖掘内容广告新卖点"
   },
+  "smmSlider": {
+    "title": "服务范围",
+    "step1Title": "了解您的产品服务及每月目标",
+    "step1Description": "请让我们掌握您的产品的特性，我们会当成自家品牌一样看待，准备为你桥思出精彩的广告Campaign。",
+    "step2Title": "提出有用的建议",
+    "step2Description": "同一种推广手段，并不是每家公司都适合，我们会为你提出有用的建议。",
+    "step3Title": "制作并执行广告",
+    "step3Description": "配合你的产品，设计吸引购买的广告，并为你执行广告设定。",
+    "step4Title": "完整的汇报报告",
+    "step4Description": "完整的引流报告，分析用户行为。"
+  },
+  "webSlider": {
+    "title": "服务范围",
+    "step1Title": "聆听你的需要",
+    "step1Description": "做网站并非一味倒内容入去。我们更想抓准你公司的最强优势，并尝试在网站中设计出来。",
+    "step2Title": "精心设计布局",
+    "step2Description": "一个出彩的网站会考虑用户的行动，除了美观外，布局亦非常重要。排版是否看得适服。字数多寡大小，什么时候出现购买呼吁，拼色等，我们都替你考虑周到。",
+    "step3Title": "落实制作阶段",
+    "step3Description": "当你满意我们的设计后，技术同事会展开网站制作阶段，按照设计草图将网站实现。",
+    "step4Title": "最后部份修改",
+    "step4Description": "当然，我们会作最后的调整修改，务求你的网站完美呈现。"
+  },
+  "videoSlider": {
+    "title": "服务范围",
+    "step1Title": "写稿「度桥」",
+    "step1Description": "创意构思，令你的产品形象跳出框框，不想被资讯洪流冲走你条广告，变成即溶奶粉一冲就散。我们一于在前期落足功夫「度条好桥」吧！",
+    "step2Title": "拍摄前期",
+    "step2Description": "做好前期，拍摄顺利。场地、演员、器材，勻需准备充足，尽显专业实力。",
+    "step3Title": "正式拍摄",
+    "step3Description": "正式拍摄当日，按照剧本及Storyboard，加上导演即场发挥指导，拍摄万无一失。",
+    "step4Title": "后期制作",
+    "step4Description": "拍得好，加上后期执得到。完美呈现产品与创意的结合。"
+  },
   "backlinks": {
     "metaTitle": "买中文反向链接 香港 | 高质量 Backlinks 用于 HK SEO",
     "metaDescription": "中文网站 买中文反向链接，实证对改善网站权重和SEO排名有显著正面效果。欢迎索取外部链接Backlink HK样本和查询",
@@ -498,7 +531,7 @@
     "metaTitle": "肥仔关键字计算机",
     "metaDescription": "肥仔关键字计算机是一款强大的SEO工具，帮助您轻松计算和分析关键字的效果，提升网站的搜索引擎排名。立即使用，让您的网站脱颖而出！",
     "title": "肥仔关键字计算机",
-    "subtitle": "SEO & SEM 适用，帮你找出超潜力黄金关键字的工具",
+    "subtitle": "SEO & SEM 适用，帮你找出超潜力黄金���键字的工具",
     "watchVideo": "查看计算机教学影片",
     "keywordLabel": "Keyword：",
     "keywordPlaceholder": "请输入你要查询的Keyword",

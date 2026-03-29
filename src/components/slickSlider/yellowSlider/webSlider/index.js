@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Slider from "react-slick";
 import SliderWrapper from "../_SlickSliderStyle";
 
@@ -14,35 +15,36 @@ import website_svg04 from "../../../../img/website_04.svg";
 const sliderSteps = [
     {
         id: 1,
-        title: "聆聽你的需要",
-        description: "做網站並非一味倒內容入去。我們更想抓準你公司的最強優勢，並嘗試在網站中設計出來。",
+        titleKey: "webSlider.step1Title",
+        descKey: "webSlider.step1Description",
         image: website_svg01,
         imageFirst: false,        // 文字在左，圖片在右
     },
     {
         id: 2,
-        title: "精心設計佈局",
-        description: "一個出彩的網站會考慮用戶的行動，除了美觀外，佈局亦非常重要。排版是否看得適服。字數多寡大小，什麼時候出現購買呼籲，拼色等，我們都替你考慮周到。",
+        titleKey: "webSlider.step2Title",
+        descKey: "webSlider.step2Description",
         image: website_svg02,
         imageFirst: true,         // 圖片在左，文字在右
     },
     {
         id: 3,
-        title: "落實製作階段",
-        description: "當你滿意我們的設計後，技術同事會展開網站製作階段，按照設計草圖將網站實現。",
+        titleKey: "webSlider.step3Title",
+        descKey: "webSlider.step3Description",
         image: website_svg03,
         imageFirst: false,
     },
     {
         id: 4,
-        title: "最後部份修改",
-        description: "當然，我們會作最後的調整修改，務求你的網站完美呈現。",
+        titleKey: "webSlider.step4Title",
+        descKey: "webSlider.step4Description",
         image: website_svg04,
         imageFirst: true,
     },
 ];
 
 const WebSlider = () => {
+    const { t } = useTranslation();
     const settings = {
         dots: true,
         autoplay: true,
@@ -65,7 +67,7 @@ const WebSlider = () => {
                 <div>
                     <h2 className="flex items-center text-3xl pt-12 ml-2 font-bold">
                         <span><FaSquare /></span>
-                        <b className="ml-3">服務範圍</b>
+                        <b className="ml-3">{t('webSlider.title')}</b>
                     </h2>
                 </div>
 
@@ -81,7 +83,7 @@ const WebSlider = () => {
                                                 <img
                                                     className="w-3/4 md:w-full"
                                                     src={step.image}
-                                                    alt={`步驟 ${step.id}`}
+                                                    alt={t(step.titleKey)}
                                                 />
                                             </div>
 
@@ -93,10 +95,10 @@ const WebSlider = () => {
                                                 <div className={`col-span-4 md:col-span-5 relative 
                           ${step.id === 1 ? 'lg:top-[48px]' : 'md:top-16 lg:top-[38px] xl:top-[38px]'}`}>
                                                     <h4 className={styles[`step${step.id}Title`] || styles.stepTitle}>
-                                                        {step.title}
+                                                        {t(step.titleKey)}
                                                     </h4>
                                                     <p className={styles[`step${step.id}Description`] || styles.stepDescription}>
-                                                        {step.description}
+                                                        {t(step.descKey)}
                                                     </p>
                                                 </div>
                                             </div>
