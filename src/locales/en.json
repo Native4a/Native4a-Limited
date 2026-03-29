@@ -244,6 +244,52 @@
     "step5Title": "Latest Xiaohongshu Merchant News",
     "step5Description": "Share the latest Xiaohongshu trends and cases to discover new advertising angles"
   },
+  "xiaohongshuSlider": {
+    "title": "Service Scope",
+    "step1Title": "Xiaohongshu New Account Management",
+    "step1Description": "Account branding + maintenance to deepen brand identity and establish a unique selling point",
+    "step2Title": "Content Operations",
+    "step2Description": "Design and produce note content to drive user engagement through quality storytelling",
+    "step3Title": "Keywords & Search Optimisation",
+    "step3Description": "Industry and long-tail keyword management to gain organic traffic and expand brand reach",
+    "step4Title": "KOL & Note Collaboration",
+    "step4Description": "Analyse user personas for precision marketing that directly converts more customers",
+    "step5Title": "Latest Xiaohongshu Merchant News",
+    "step5Description": "Share the latest Xiaohongshu trends and cases to discover new advertising angles"
+  },
+  "smmSlider": {
+    "title": "Service Scope",
+    "step1Title": "Understanding Your Product & Monthly Goals",
+    "step1Description": "Let us understand your product's characteristics. We treat it like our own brand and prepare compelling advertising campaigns for you.",
+    "step2Title": "Providing Useful Recommendations",
+    "step2Description": "The same promotional method doesn't suit every company. We provide tailored recommendations specifically for your business.",
+    "step3Title": "Creating & Executing Ads",
+    "step3Description": "We design compelling ads matching your product and handle all ad settings for optimal performance.",
+    "step4Title": "Complete Performance Reports",
+    "step4Description": "Comprehensive traffic reports with detailed user behaviour analysis."
+  },
+  "webSlider": {
+    "title": "Service Scope",
+    "step1Title": "Listening to Your Needs",
+    "step1Description": "Web design is not just about dumping content. We want to identify your company's strongest advantages and design them into your website.",
+    "step2Title": "Thoughtful Layout Design",
+    "step2Description": "A standout website considers user behaviour. Beyond aesthetics, layout is crucial. Typography, content volume, call-to-action placement — we carefully consider every detail.",
+    "step3Title": "Implementing the Production Phase",
+    "step3Description": "Once you approve our design, our technical team begins development, turning design concepts into a working website.",
+    "step4Title": "Final Adjustments",
+    "step4Description": "We make final refinements and adjustments to ensure your website is presented perfectly."
+  },
+  "videoSlider": {
+    "title": "Service Scope",
+    "step1Title": "Writing the \"Bridge\" Concept",
+    "step1Description": "Creative ideation to make your product stand out. We put in the hard work upfront to develop a compelling concept that won't be lost in the information flood.",
+    "step2Title": "Pre-Production Phase",
+    "step2Description": "Thorough preparation ensures smooth shooting. Locations, actors, equipment — everything is meticulously prepared to demonstrate our professionalism.",
+    "step3Title": "Actual Filming",
+    "step3Description": "On shoot day, we follow the script and storyboard precisely. The director provides on-set direction to ensure flawless filming.",
+    "step4Title": "Post-Production",
+    "step4Description": "Great filming combined with expert post-production creates the perfect blend of product and creativity."
+  },
   "backlinks": {
     "metaTitle": "Buy Chinese Backlinks Hong Kong | High-Quality Backlinks for HK SEO",
     "metaDescription": "Buying Chinese backlinks for your Chinese website has been proven to significantly improve site authority and SEO rankings. Request backlink HK samples and inquiries.",
