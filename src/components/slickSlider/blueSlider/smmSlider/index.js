@@ -5,6 +5,11 @@ import SliderWrapper from "../_SlickSliderStyle"
 import * as styles from './style.module.css'
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
 
+import SocialM_svg01 from "../../../../img/SocialM_01.svg"
+import SocialM_svg02 from "../../../../img/SocialM_02.svg"
+import SocialM_svg03 from "../../../../img/SocialM_03.svg"
+import SocialM_svg04 from "../../../../img/SocialM_04.svg"
+
 import useAdsSlider from '../../../../hook/useAdsSlider'
 
 const SmmSlider = () => {
@@ -48,12 +53,12 @@ const SmmSlider = () => {
                                                             <span className={styles.strengths}>1</span>
                                                         </div>
                                                         <div className='col-span-5 relative lg:top-[48px]'>
-                                                            <h4 className={styles.step1Title}>{step1Image.title}</h4>
-                                                            <p className={styles.step1Description}>{step1Image.description}</p>
+                                                            <h4 className={styles.step1Title}>了解您的產品服務及每月目標</h4>
+                                                            <p className={styles.step1Description}>請讓我們掌握您的產品的特性，我們會當成日自家品牌一樣看待，準備為你橋思出精彩的廣告Campaign。</p>
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <img className="w-3/4 md:w-full " src={step1Image.url} alt="video Graphic01" />
+                                                        <img className="w-3/4 md:w-full " src={SocialM_svg01} alt="video Graphic01" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -64,15 +69,15 @@ const SmmSlider = () => {
                                             <div className={styles.container}>
                                                 <div className='grid grid-cols-1 md:grid-cols-2 2xl:gap-20 items-center pb-10 md:pb-0'>
                                                     <div>
-                                                        <img className="w-3/4 md:w-full" src={step2Image.url} alt="video Graphic01" />
+                                                        <img className="w-3/4 md:w-full" src={SocialM_svg02} alt="video Graphic01" />
                                                     </div>
                                                     <div className="grid grid-cols-5 items-center p-3">
                                                         <div>
                                                             <span className={styles.strengths}>2</span>
                                                         </div>
                                                         <div className='col-span-4 relative md:top-16 lg:top-[38px] xl:top-[38px]'>
-                                                            <h4 className={styles.step2Title}>{step2Image.title}</h4>
-                                                            <p className={styles.step2Description}>{step2Image.description}</p>
+                                                            <h4 className={styles.step2Title}>提出有用的建議</h4>
+                                                            <p className={styles.step2Description}>同一種推廣手段，並不是每家公司都適合，我們會為你提出有用的建議。</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -88,12 +93,12 @@ const SmmSlider = () => {
                                                             <span className={styles.strengths}>3</span>
                                                         </div>
                                                         <div className='col-span-4 relative md:top-16 lg:top-[38px] xl:top-[38px]'>
-                                                            <h4 className={styles.step3Title}>{step3Image.title}</h4>
-                                                            <p className={styles.step3Description}>{step3Image.description}</p>
+                                                            <h4 className={styles.step3Title}>製作並執行廣告</h4>
+                                                            <p className={styles.step3Description}>配合你的產品，設計吸引購買的廣告，並為你執行廣告設定。</p>
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <img className="w-3/4 md:w-full" src={step3Image.url} alt="video Graphic01" />
+                                                        <img className="w-3/4 md:w-full" src={SocialM_svg03} alt="video Graphic01" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -104,15 +109,15 @@ const SmmSlider = () => {
                                             <div className={styles.container}>
                                                 <div className='grid grid-cols-1 md:grid-cols-2 2xl:gap-20 items-center pb-10 md:pb-0'>
                                                     <div>
-                                                        <img className="w-3/4 md:w-full" src={step4Image.url} alt="video Graphic01" />
+                                                        <img className="w-3/4 md:w-full" src={SocialM_svg04} alt="video Graphic01" />
                                                     </div>
                                                     <div className="grid grid-cols-5 items-center p-2">
                                                         <div>
                                                             <span className={styles.strengths}>4</span>
                                                         </div>
                                                         <div className='col-span-4 relative md:top-16 lg:top-[38px] xl:top-[38px]'>
-                                                            <h4 className={styles.step4Title}>{step4Image.title}</h4>
-                                                            <p className={styles.step1Description}>{step4Image.description}</p>
+                                                            <h4 className={styles.step4Title}>完整的匯報報告</h4>
+                                                            <p className={styles.step1Description}>完整的引流報告，分析用戶行為。</p>
                                                         </div>
                                                     </div>
                                                 </div>
