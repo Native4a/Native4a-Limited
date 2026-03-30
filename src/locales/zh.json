@@ -17,7 +17,8 @@
     "socialMediaAds": "社交媒體廣告",
     "webDesign": "網站設計",
     "xiaohongshu": "小紅書",
-    "blog": "Blog"
+    "blog": "Blog",
+    "shop": "商店"
   },
   "hero": {
     "title": "香港數碼營銷公司",
@@ -272,7 +273,7 @@
     "step1Title": "聆聽你的需要",
     "step1Description": "做網站並非一味倒內容入去。我們更想抓準你公司的最強優勢，並嘗試在網站中設計出來。",
     "step2Title": "精心設計佈局",
-    "step2Description": "一個出彩的網站會考慮用戶的行動，除了美觀外，佈局亦非常重要。排版是否看得適服。字數多寡大小，什麼時候出現購買呼籲，拼色等，我們都替你考慮周到。",
+    "step2Description": "一個出彩的網站會考慮用戶的行動，除了美觀外，佈局亦非常重要。排版是否看得適服。字數多寡大小，什麼時候出現購買��籲，拼色等，我們都替你考慮周到。",
     "step3Title": "落實製作階段",
     "step3Description": "當你滿意我們的設計後，技術同事會展開網站製作階段，按照設計草圖將網站實現。",
     "step4Title": "最後部份修改",
@@ -316,7 +317,7 @@
     "section4ChineseFeature1": "外部連結 Spam FREE, DA，DR 權重分別達 50+ 或 30+",
     "section4ChineseFeature2": "每篇反向連結文章內容都是與客戶的行業和關鍵字相關的",
     "section4ChineseFeature3": "沒有限制每條外部連結的 URL和關鐽字數量",
-    "section4ChineseFeature4": "每一篇文章只屬於一個客戶內裡祛有該客戶的關鐽字和連結",
+    "section4ChineseFeature4": "每一篇文章只屬於一個客戶內裡祛有該客戶的關鐽字和連��",
     "johnMuellerQuote": "SEO 業界無人不識的 Google 搜索倡導者 John Mueller 在Youtube 谷歌網站管理員中心辦公時間視頻群聊中公開說：",
     "johnMuellerText": "\"有時候頁面上的連結可以提高頁面的質量，但我認為這是一種你不希望看到的人為因素，只因為頁面上有連結並不意味著它一定是好的。\"",
     "btnChineseBacklinksSample": "中文backlinks樣本",
