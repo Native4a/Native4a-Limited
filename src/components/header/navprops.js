@@ -48,6 +48,11 @@ const Navprops = () => {
       slug: 'Blog',
       translationKey: 'nav.blog',
       submenu: null,
+    },
+    {
+      slug: 'shop',
+      translationKey: 'nav.shop',
+      submenu: null,
     }
   ])
 
