@@ -63,6 +63,7 @@
     "reading-time": "^2.0.0-1",
     "sharp": "^0.33.5",
     "slick-carousel": "^1.8.1",
+    "stripe": "^14.10.0",
     "yargs-parser": "^22.0.0"
   },
   "devDependencies": {

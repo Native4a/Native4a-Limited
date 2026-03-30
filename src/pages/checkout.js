@@ -22,10 +22,9 @@ class CheckoutPage extends React.Component {
         city: '',
         postalCode: '',
         country: 'Hong Kong',
-        paymentMethod: 'credit_card'
       },
       isProcessing: false,
-      orderPlaced: false
+      error: null
     }
   }
 
@@ -39,33 +38,291 @@ class CheckoutPage extends React.Component {
     }))
   }
 
-  handleSubmitOrder = (e) => {
+  handleSubmitOrder = async (e) => {
     e.preventDefault()
     
     if (this.state.cart.length === 0) {
-      alert('Your cart is empty')
+      this.setState({ error: 'Your cart is empty' })
       return
     }
 
     const { firstName, lastName, email, phone, address, city, postalCode } = this.state.formData
     
     if (!firstName || !lastName || !email || !phone || !address || !city || !postalCode) {
-      alert('Please fill in all required fields')
+      this.setState({ error: 'Please fill in all required fields' })
       return
     }
 
-    this.setState({ isProcessing: true })
+    this.setState({ isProcessing: true, error: null })
 
-    // Simulate payment processing
-    setTimeout(() => {
-      this.setState({ isProcessing: false, orderPlaced: true })
-      
-      // Clear cart after successful order
-      if (typeof window !== 'undefined') {
-        localStorage.removeItem('shop_cart')
+    try {
+      // Call the Stripe checkout API
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items: this.state.cart,
+          metadata: {
+            name: `${firstName} ${lastName}`,
+            email,
+            phone,
+            address: `${address}, ${city}, ${postalCode}`,
+          },
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to create checkout session')
       }
-    }, 2000)
+
+      const { sessionId } = await response.json()
+
+      // Redirect to Stripe Checkout
+      if (typeof window !== 'undefined' && window.location) {
+        // Use Stripe's redirect (requires Stripe.js)
+        window.location.href = `https://checkout.stripe.com/pay/${sessionId}`
+      }
+    } catch (error) {
+      console.error('Checkout error:', error)
+      this.setState({
+        isProcessing: false,
+        error: error.message || 'Failed to process checkout. Please try again.'
+      })
+    }
   }
+
+  render() {
+    const { cart, formData, isProcessing, error } = this.state
+    const { t } = this.props
+    
+    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
+
+    if (cart.length === 0) {
+      return (
+        <Layout location={this.props.location}>
+          <Seo title="Checkout" description="Complete your purchase" />
+          <section className="min-h-screen bg-gray-50 py-12 px-4">
+            <div className="max-w-7xl mx-auto text-center">
+              <h1 className="text-3xl font-bold text-gray-900 mb-4">Your Cart is Empty</h1>
+              <p className="text-gray-600 mb-8">Add some products before checking out</p>
+              <a
+                href="/shop"
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold"
+              >
+                Continue Shopping
+              </a>
+            </div>
+          </section>
+        </Layout>
+      )
+    }
+
+    return (
+      <Layout location={this.props.location}>
+        <Seo title="Checkout" description="Complete your purchase" />
+        
+        <section className="bg-gray-50 py-12 px-4">
+          <div className="max-w-7xl mx-auto">
+            <h1 className="text-3xl font-bold text-gray-900 mb-8">Checkout</h1>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Checkout Form */}
+              <div className="lg:col-span-2">
+                <form onSubmit={this.handleSubmitOrder} className="bg-white rounded-lg shadow-md p-8">
+                  {error && (
+                    <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                      <p className="text-red-700">{error}</p>
+                    </div>
+                  )}
+
+                  {/* Personal Information */}
+                  <div className="mb-8">
+                    <h2 className="text-xl font-semibold text-gray-900 mb-4">Personal Information</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          First Name *
+                        </label>
+                        <input
+                          type="text"
+                          name="firstName"
+                          value={formData.firstName}
+                          onChange={this.handleInputChange}
+                          required
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="John"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Last Name *
+                        </label>
+                        <input
+                          type="text"
+                          name="lastName"
+                          value={formData.lastName}
+                          onChange={this.handleInputChange}
+                          required
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="Doe"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Contact Information */}
+                  <div className="mb-8">
+                    <h2 className="text-xl font-semibold text-gray-900 mb-4">Contact Information</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Email *
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={this.handleInputChange}
+                          required
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="john@example.com"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Phone *
+                        </label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={this.handleInputChange}
+                          required
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="+852 XXXX XXXX"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Shipping Address */}
+                  <div className="mb-8">
+                    <h2 className="text-xl font-semibold text-gray-900 mb-4">Shipping Address</h2>
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Address *
+                        </label>
+                        <input
+                          type="text"
+                          name="address"
+                          value={formData.address}
+                          onChange={this.handleInputChange}
+                          required
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="Street address"
+                        />
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            City *
+                          </label>
+                          <input
+                            type="text"
+                            name="city"
+                            value={formData.city}
+                            onChange={this.handleInputChange}
+                            required
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Hong Kong"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Postal Code *
+                          </label>
+                          <input
+                            type="text"
+                            name="postalCode"
+                            value={formData.postalCode}
+                            onChange={this.handleInputChange}
+                            required
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Postal code"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    disabled={isProcessing}
+                    className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold rounded-lg transition-colors"
+                  >
+                    {isProcessing ? 'Processing...' : 'Proceed to Payment'}
+                  </button>
+                </form>
+              </div>
+
+              {/* Order Summary */}
+              <div className="lg:col-span-1">
+                <div className="bg-white rounded-lg shadow-md p-8 sticky top-20">
+                  <h2 className="text-xl font-semibold text-gray-900 mb-6">Order Summary</h2>
+
+                  <div className="space-y-4 mb-6 pb-6 border-b">
+                    {cart.map((item) => (
+                      <div key={item.id} className="flex justify-between items-start">
+                        <div className="flex-1">
+                          <p className="font-medium text-gray-900">{item.name}</p>
+                          <p className="text-sm text-gray-600">Qty: {item.quantity}</p>
+                        </div>
+                        <p className="font-semibold text-gray-900">
+                          HK${(item.price * item.quantity).toFixed(2)}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Subtotal</span>
+                      <span className="text-gray-900">HK${totalPrice.toFixed(2)}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Shipping</span>
+                      <span className="text-gray-900">Free</span>
+                    </div>
+                    <div className="border-t pt-3 flex justify-between">
+                      <span className="font-semibold text-gray-900">Total</span>
+                      <span className="text-2xl font-bold text-blue-600">
+                        HK${totalPrice.toFixed(2)}
+                      </span>
+                    </div>
+                  </div>
+
+                  <a
+                    href="/cart"
+                    className="mt-6 block text-center text-blue-600 hover:text-blue-700 text-sm font-medium"
+                  >
+                    Edit Cart
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </Layout>
+    )
+  }
+}
+
+export default withTranslation()(CheckoutPage)
 
   render() {
     const { cart, formData, isProcessing, orderPlaced } = this.state
