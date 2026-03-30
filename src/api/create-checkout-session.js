@@ -1,14 +1,10 @@
-import type { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
 import Stripe from "stripe"
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
   apiVersion: "2024-04-10",
 })
 
-export default async function handler(
-  req: GatsbyFunctionRequest,
-  res: GatsbyFunctionResponse
-) {
+export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*")
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS")
   res.setHeader("Access-Control-Allow-Headers", "Content-Type")
@@ -29,7 +25,7 @@ export default async function handler(
     }
 
     // Convert cart items to Stripe line items
-    const lineItems = items.map((item: any) => ({
+    const lineItems = items.map((item) => ({
       price_data: {
         currency: "hkd",
         product_data: {
@@ -47,8 +43,8 @@ export default async function handler(
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: `${process.env.SITE_URL || "http://localhost:3000"}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.SITE_URL || "http://localhost:3000"}/cart`,
+      success_url: `${process.env.SITE_URL || "http://localhost:8000"}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.SITE_URL || "http://localhost:8000"}/cart`,
       customer_email: metadata?.email,
       metadata: {
         customerName: metadata?.name || "",
@@ -58,8 +54,8 @@ export default async function handler(
     })
 
     res.status(200).json({ sessionId: session.id, clientSecret: session.client_secret })
-  } catch (error: any) {
-    console.error("Stripe error:", error)
+  } catch (error) {
+    console.error("[v0] Stripe error:", error)
     res.status(500).json({
       error: error.message || "Failed to create checkout session",
     })

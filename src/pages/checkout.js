@@ -324,6 +324,8 @@ class CheckoutPage extends React.Component {
 
 export default withTranslation()(CheckoutPage)
 
+export default withTranslation()(CheckoutPage)
+
   render() {
     const { cart, formData, isProcessing, orderPlaced } = this.state
     
