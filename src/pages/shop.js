@@ -73,21 +73,8 @@ const SAMPLE_PRODUCTS = [
   }
 ]
 
-interface CartItem extends Product {
-  quantity: number
-}
-
-interface Product {
-  id: string
-  name: string
-  price: number
-  image: string
-  category: string
-  description?: string
-}
-
-class Shop extends React.Component<any> {
-  constructor(props: any) {
+class Shop extends React.Component {
+  constructor(props) {
     super(props)
     this.state = {
       cart: [],
@@ -95,12 +82,12 @@ class Shop extends React.Component<any> {
     }
   }
 
-  handleAddToCart = (product: Product) => {
+  handleAddToCart = (product) => {
     const { cart } = this.state
-    const existingItem = cart.find((item: CartItem) => item.id === product.id)
+    const existingItem = cart.find((item) => item.id === product.id)
 
     if (existingItem) {
-      const updatedCart = cart.map((item: CartItem) =>
+      const updatedCart = cart.map((item) =>
         item.id === product.id
           ? { ...item, quantity: item.quantity + 1 }
           : item
@@ -117,8 +104,8 @@ class Shop extends React.Component<any> {
     const { t } = this.props
     const { cart, showCart } = this.state
 
-    const totalItems = cart.reduce((sum: number, item: CartItem) => sum + item.quantity, 0)
-    const totalPrice = cart.reduce((sum: number, item: CartItem) => sum + item.price * item.quantity, 0)
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
+    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
     return (
       <Layout location={this.props.location}>
