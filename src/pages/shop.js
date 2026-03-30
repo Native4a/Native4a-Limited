@@ -73,52 +73,53 @@ const SAMPLE_PRODUCTS = [
   }
 ]
 
-interface CartItem extends Product {
-  quantity: number
-}
-
-interface Product {
-  id: string
-  name: string
-  price: number
-  image: string
-  category: string
-  description?: string
-}
-
-class Shop extends React.Component<any> {
-  constructor(props: any) {
+class Shop extends React.Component {
+  constructor(props) {
     super(props)
+    // Initialize cart from localStorage
+    const savedCart = typeof window !== 'undefined' ? localStorage.getItem('shop_cart') : null
+    const cart = savedCart ? JSON.parse(savedCart) : []
+    
     this.state = {
-      cart: [],
+      cart: cart,
       showCart: false
     }
   }
 
-  handleAddToCart = (product: Product) => {
+  handleAddToCart = (product) => {
     const { cart } = this.state
-    const existingItem = cart.find((item: CartItem) => item.id === product.id)
+    const existingItem = cart.find((item) => item.id === product.id)
 
+    let updatedCart
     if (existingItem) {
-      const updatedCart = cart.map((item: CartItem) =>
+      updatedCart = cart.map((item) =>
         item.id === product.id
           ? { ...item, quantity: item.quantity + 1 }
           : item
       )
-      this.setState({ cart: updatedCart })
     } else {
-      this.setState({
-        cart: [...cart, { ...product, quantity: 1 }]
-      })
+      updatedCart = [...cart, { ...product, quantity: 1 }]
     }
+    
+    this.setState({ cart: updatedCart }, () => this.saveCart())
+  }
+
+  saveCart = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('shop_cart', JSON.stringify(this.state.cart))
+    }
+  }
+
+  handleNavigateToCart = () => {
+    window.location.href = '/cart'
   }
 
   render() {
     const { t } = this.props
-    const { cart, showCart } = this.state
+    const { cart } = this.state
 
-    const totalItems = cart.reduce((sum: number, item: CartItem) => sum + item.quantity, 0)
-    const totalPrice = cart.reduce((sum: number, item: CartItem) => sum + item.price * item.quantity, 0)
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
+    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
     return (
       <Layout location={this.props.location}>
@@ -145,7 +146,7 @@ class Shop extends React.Component<any> {
 
         {/* Shopping Cart Preview */}
         {totalItems > 0 && (
-          <section className="bg-white border-t border-gray-200 py-8 px-4 sticky bottom-0">
+          <section className="bg-white border-t border-gray-200 py-8 px-4 sticky bottom-0 shadow-lg">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
               <div>
                 <p className="text-lg font-semibold text-gray-900">
@@ -153,9 +154,20 @@ class Shop extends React.Component<any> {
                 </p>
                 <p className="text-2xl font-bold text-blue-600">HK${totalPrice.toFixed(2)}</p>
               </div>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                Proceed to Checkout
-              </button>
+              <div className="flex gap-3">
+                <button
+                  onClick={this.handleNavigateToCart}
+                  className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                >
+                  View Cart
+                </button>
+                <button
+                  onClick={this.handleNavigateToCart}
+                  className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-colors"
+                >
+                  Checkout
+                </button>
+              </div>
             </div>
           </section>
         )}
