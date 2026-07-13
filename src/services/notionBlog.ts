@@ -115,6 +115,17 @@ async function notionBlocksToHtml(blocks: any[]): Promise<string> {
   return html;
 }
 
+// Map language codes to Notion's capitalized format
+function normalizeLanguageCode(language: string): string {
+  const languageMap: Record<string, string> = {
+    en: "En",
+    ja: "Ja",
+    zh: "Zh",
+    "zh-cn": "Zh",
+  };
+  return languageMap[language.toLowerCase()] || "Zh";
+}
+
 // Get all blog posts from Notion database
 export async function getNotionBlogPosts(
   language?: string
@@ -137,13 +148,14 @@ export async function getNotionBlogPosts(
     };
 
     if (language) {
+      const normalizedLang = normalizeLanguageCode(language);
       query.filter = {
         and: [
           query.filter,
           {
             property: "Language",
             select: {
-              equals: language,
+              equals: normalizedLang,
             },
           },
         ],
@@ -245,13 +257,14 @@ export async function getNotionBlogPostBySlug(
     };
 
     if (language) {
+      const normalizedLang = normalizeLanguageCode(language);
       query.filter = {
         and: [
           query.filter,
           {
             property: "Language",
             select: {
-              equals: language,
+              equals: normalizedLang,
             },
           },
         ],
