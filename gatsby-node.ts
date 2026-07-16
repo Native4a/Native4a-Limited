@@ -1,6 +1,19 @@
 import * as path from 'path'
 import { GatsbyNode, CreatePagesArgs } from 'gatsby'
 
+// Resolve @/ alias to src/ so components can use `import { cn } from '@/lib/utils'`
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+      },
+    },
+  })
+}
+
 // Enable client-only routes for dynamic blog post pages
 export const onCreatePage: GatsbyNode['onCreatePage'] = async ({
   page,
