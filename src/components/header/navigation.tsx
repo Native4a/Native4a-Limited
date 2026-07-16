@@ -1,58 +1,44 @@
+'use client'
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Menu, X, ShoppingCart, MessageCircle } from "lucide-react";
+import { ChevronDown, Menu, X, ShoppingCart, MessageCircle, Globe, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Link } from "gatsby";
-import { useTranslation } from "react-i18next";
-import i18n from "../../i18n/config";
 
 /**
  * NAV_ITEMS: Data structure for the navigation menu.
  */
-const getNavItems = (t: any) => [
-  {
-    label: t('nav.seo') || 'SEO',
-    href: '/seo/',
-    children: [
-      {
-        label: t('nav.backlinks') || '反向連結',
-        href: '/backlinks/',
-      },
-      {
-        label: t('nav.seo') || 'SEO 優化',
-        href: '/seo/',
-      },
-      {
-        label: i18n.language === 'en' ? 'Smart SEO Calculator' : i18n.language === 'ja' ? 'SEO計算機' : '肥仔計算機',
-        href: '/seo-smart-kit/',
-      },
-    ],
-  },
-  {
-    label: t('nav.videoProduction') || '影片製作',
-    href: '/video-production/',
-  },
-  {
-    label: t('nav.socialMediaAds') || '社交媒體廣告',
-    href: '/smm-ads/',
-  },
-  {
-    label: t('nav.webDesign') || '網站設計',
-    href: '/web-design/',
-  },
-  {
-    label: t('nav.xiaohongshu') || '小紅書',
-    href: '/xiaohongshu/',
-  },
-  {
-    label: t('nav.contactUs') || '聯絡我們',
-    href: '/contact/',
-  },
-  {
-    label: t('nav.blog') || 'Blog',
-    href: '/blog/',
-  },
-];
+const NAV_ITEMS = [{
+  label: "SEO",
+  href: "/seo",
+  children: [{
+    label: "反向連結",
+    href: "/backlinks"
+  }, {
+    label: "SEO 優化",
+    href: "/seo"
+  }, {
+    label: "肥仔計算機",
+    href: "/seo-smart-kit"
+  }]
+}, {
+  label: "影片製作",
+  href: "/video-production"
+}, {
+  label: "社交媒體廣告",
+  href: "/smm-ads"
+}, {
+  label: "網站設計",
+  href: "/web-design"
+}, {
+  label: "小紅書",
+  href: "/xiaohongshu"
+}, {
+  label: "聯絡我們",
+  href: "/contact"
+}, {
+  label: "Blog",
+  href: "/blog"
+}];
 
 /**
  * LANGUAGES: Data structure for the language switcher.
@@ -72,7 +58,7 @@ const LANGUAGES = [{
 }];
 
 /**
- * Native4aLogo: SVG Logo component
+ * Native4aLogo: Re-creating the logo from the provided SVG path/base64.
  */
 const Native4aLogo = ({
   className
@@ -103,8 +89,8 @@ const Native4aLogo = ({
 const GooeyLanguageSwitcher = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState(LANGUAGES[0]);
-
   return <div className="relative flex flex-col items-center">
+    {/* SVG Filter for the Gooey Effect */}
     <svg className="hidden">
       <defs>
         <filter id="goo">
@@ -156,159 +142,116 @@ const GooeyLanguageSwitcher = () => {
 };
 
 /**
- * MobileMenu: Fullscreen mobile navigation.
+ * MobileMenu: Fullscreen/Overlay mobile navigation.
  */
 const MobileMenu = ({
   isOpen,
-  onClose,
-  navItems
+  onClose
 }: {
   isOpen: boolean;
   onClose: () => void;
-  navItems: any[];
 }) => {
-  const [expandedItems, setExpandedItems] = React.useState<string[]>([]);
-
-  const toggleExpanded = (label: string) => {
-    setExpandedItems(prev =>
-      prev.includes(label)
-        ? prev.filter(item => item !== label)
-        : [...prev, label]
-    );
-  };
-
   return <AnimatePresence>
-    {isOpen && (
-      <>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60]"
-        />
-        <motion.div
-          initial={{ x: "100%" }}
-          animate={{ x: 0 }}
-          exit={{ x: "100%" }}
-          transition={{ type: "spring", damping: 25, stiffness: 200 }}
-          className="fixed right-0 top-0 h-full w-[80%] max-w-[400px] bg-white z-[70] shadow-2xl p-8 overflow-y-auto"
-        >
-          <div className="flex justify-between items-center mb-10">
-            <Link to="/" onClick={onClose} className="block transition-transform hover:scale-105">
-              <Native4aLogo className="h-8" />
-            </Link>
-            <button onClick={onClose} className="p-2 rounded-full hover:bg-gray-100 transition-colors">
-              <X className="w-6 h-6 text-gray-700" />
-            </button>
-          </div>
+    {isOpen && <>
+      <motion.div initial={{
+        opacity: 0
+      }} animate={{
+        opacity: 1
+      }} exit={{
+        opacity: 0
+      }} onClick={onClose} className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60]" />
+      <motion.div initial={{
+        x: "100%"
+      }} animate={{
+        x: 0
+      }} exit={{
+        x: "100%"
+      }} transition={{
+        type: "spring",
+        damping: 25,
+        stiffness: 200
+      }} className="fixed right-0 top-0 h-full w-[80%] max-w-[400px] bg-white z-[70] shadow-2xl p-8 overflow-y-auto">
+        <div className="flex justify-between items-center mb-10">
+          <a href="/" onClick={onClose} className="block transition-transform hover:scale-105">
+            <Native4aLogo className="h-8" />
+          </a>
+          <button onClick={onClose} className="p-2 rounded-full hover:bg-gray-100 transition-colors">
+            <X className="w-6 h-6 text-gray-700" />
+          </button>
+        </div>
 
-          <nav className="space-y-2">
-            {navItems.map(item => (
-              <div key={item.label}>
-                <button
-                  onClick={() => item.children && toggleExpanded(item.label)}
-                  className="w-full flex items-center justify-between py-4 border-b border-gray-50 text-xl font-medium text-gray-800 hover:text-[#faab00] transition-colors"
-                >
-                  <span>{item.label}</span>
-                  {item.children && (
-                    <ChevronDown
-                      className={cn("w-5 h-5 transition-transform", expandedItems.includes(item.label) && "rotate-180")}
-                    />
-                  )}
-                </button>
-
-                <AnimatePresence>
-                  {item.children && expandedItems.includes(item.label) && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="overflow-hidden"
-                    >
-                      {item.children.map(child => (
-                        <Link
-                          key={child.label}
-                          to={child.href}
-                          className="block pl-4 py-2 text-gray-600 text-lg hover:text-[#faab00] transition-colors"
-                          onClick={onClose}
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </nav>
-
-          <div className="mt-12 space-y-4">
-            <a href="https://api.whatsapp.com/send/?phone=85264602996" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 w-full bg-[#10b981] text-white py-4 rounded-full font-semibold hover:bg-[#059669] transition-colors">
-              <MessageCircle className="w-6 h-6" />
-              <span>WhatsApp 查詢</span>
+        <nav className="space-y-2">
+          {NAV_ITEMS.map(item => <div key={item.label} className="group">
+            <a href={item.href} className="flex items-center justify-between py-4 border-b border-gray-50 text-xl font-medium text-gray-800">
+              <span>{item.label}</span>
+              {item.children && <ChevronDown className="w-5 h-5 text-gray-400" />}
             </a>
-            <Link to="/shop" className="flex items-center justify-center gap-3 w-full bg-[#e3a008] text-white py-4 rounded-full font-semibold hover:bg-[#faab00] transition-colors">
-              <ShoppingCart className="w-6 h-6" />
-              <span>立即購物</span>
-            </Link>
-          </div>
+            {item.children && <div className="pl-4 mt-2 space-y-2 hidden group-focus-within:block">
+              {item.children.map(child => <a key={child.label} href={child.href} className="block py-2 text-gray-600 text-lg">
+                {child.label}
+              </a>)}
+            </div>}
+          </div>)}
+        </nav>
 
-          <div className="mt-12 pt-6 border-t">
-            <GooeyLanguageSwitcher />
-          </div>
-        </motion.div>
-      </>
-    )}
+        <div className="mt-12 space-y-4">
+          <a href="https://api.whatsapp.com/send/?phone=85264602996" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 w-full bg-[#10b981] text-white py-4 rounded-full font-semibold">
+            <MessageCircle className="w-6 h-6" />
+            <span>WhatsApp 查詢</span>
+          </a>
+          <a href="/shop" className="flex items-center justify-center gap-3 w-full bg-[#e3a008] text-white py-4 rounded-full font-semibold">
+            <ShoppingCart className="w-6 h-6" />
+            <span>立即購物</span>
+          </a>
+        </div>
+
+        <div className="mt-12 grid grid-cols-2 gap-4">
+          {LANGUAGES.map(lang => <button key={lang.code} className="py-3 rounded-xl border border-gray-100 text-center font-medium hover:bg-gray-50">
+            {lang.label} ({lang.code})
+          </button>)}
+        </div>
+      </motion.div>
+    </>}
   </AnimatePresence>;
 };
 
 /**
- * Navigation: The main Navigation Bar component.
+ * NativeHeader: The main Navigation Bar component.
  */
-const Navigation = () => {
-  const { t } = useTranslation();
-  const navItems = getNavItems(t);
+export const NativeHeader = () => {
   const [scrolled, setScrolled] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-
   React.useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "py-2 bg-white/90 backdrop-blur-md shadow-sm" : "py-4 md:py-6 bg-white/50")}>
+  return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "py-2 backdrop-blur-md shadow-sm" : "py-4 md:py-6")}>
     <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 flex items-center justify-between">
-      {/* Logo Section */}
-      <div className="flex items-center">
-        <Link to="/" className="block transition-transform hover:scale-105">
-          <Native4aLogo className="h-10 md:h-12 text-[#1d1d1d]" />
-        </Link>
-      </div>
+
+  {/* Logo Section */}
+  <div className="flex items-center">
+  <a href="/" className="block transition-transform hover:scale-105">
+  <Native4aLogo className="h-10 md:h-12 text-[#1d1d1d]" />
+  </a>
+  </div>
 
       {/* Desktop Navigation */}
       <nav className="hidden xl:flex items-center bg-white/50 rounded-full px-6 py-1 mx-4">
         <ul className="flex items-center space-x-2">
-          {navItems.map(item => (
-            <li key={item.label} className="relative group py-2 px-1">
-              <Link to={item.href} className="px-4 py-2 text-[15px] font-medium text-[#1d1d1d] rounded-full transition-all duration-200 hover:bg-[#faab00] hover:text-white flex items-center gap-1">
-                {item.label}
-                {item.children && <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100" />}
-              </Link>
+          {NAV_ITEMS.map(item => <li key={item.label} className="relative group py-2 px-1">
+            <a href={item.href} className="px-4 py-2 text-[15px] font-medium text-[#1d1d1d] rounded-full transition-all duration-200 hover:bg-[#faab00] hover:text-white flex items-center gap-1">
+              {item.label}
+              {item.children && <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100" />}
+            </a>
 
-              {/* Desktop Dropdown */}
-              {item.children && (
-                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block w-48 bg-white shadow-xl rounded-2xl border border-gray-100 overflow-hidden transform-gpu origin-top animate-in fade-in slide-in-from-top-2">
-                  {item.children.map(child => (
-                    <Link key={child.label} to={child.href} className="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#faab00] transition-colors">
-                      {child.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </li>
-          ))}
+            {/* Desktop Dropdown */}
+            {item.children && <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block w-48 bg-white shadow-xl rounded-2xl border border-gray-100 overflow-hidden transform-gpu origin-top animate-in fade-in slide-in-from-top-2">
+              {item.children.map(child => <a key={child.label} href={child.href} className="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#faab00] transition-colors">
+                {child.label}
+              </a>)}
+            </div>}
+          </li>)}
         </ul>
       </nav>
 
@@ -316,10 +259,10 @@ const Navigation = () => {
       <div className="flex items-center gap-3 md:gap-6">
         {/* Shopping Button (Desktop/Tablet) */}
         <div className="hidden md:flex">
-          <Link to="/shop" className="flex items-center gap-2 bg-[#e3a008] hover:bg-[#faab00] text-white px-5 py-2.5 rounded-full transition-all shadow-sm hover:shadow-md active:scale-95">
+          <a href="/shop" className="flex items-center gap-2 bg-[#e3a008] hover:bg-[#faab00] text-white px-5 py-2.5 rounded-full transition-all shadow-sm hover:shadow-md active:scale-95">
             <ShoppingCart className="w-5 h-5" />
             <span className="font-semibold text-sm">購物</span>
-          </Link>
+          </a>
         </div>
 
         {/* WhatsApp (Tablet/Large Mobile) */}
@@ -345,8 +288,8 @@ const Navigation = () => {
     </div>
 
     {/* Mobile Drawer */}
-    <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} navItems={navItems} />
+    <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
   </header>;
 };
 
-export default Navigation;
+export default NativeHeader;
