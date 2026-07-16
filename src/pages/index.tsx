@@ -18,14 +18,14 @@ function HomePage({ location }: PageProps) {
         description="香港領先的數碼營銷公司，專業提供 SEO 優化、社交媒體行銷、SEM 廣告及影片製作等全方位營銷方案。"
         ogUrl="https://nativeaaaa.com.hk/"
       />
-      <main className="w-full min-h-screen">
+      <div className="w-full min-h-screen">
         <MarketingAgencyHero />
         <MarketingServices />
         <CombinedCustomerSuccess />
         <AboutUsSection />
         <PartnerSection />
         <ContactSection />
-      </main>
+      </div>
     </Layout>
   )
 }
