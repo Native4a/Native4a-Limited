@@ -4,42 +4,55 @@ import { ChevronDown, Menu, X, ShoppingCart, MessageCircle } from "lucide-react"
 import { cn } from "@/lib/utils";
 import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
+import i18n from "../../i18n/config";
 
 /**
  * NAV_ITEMS: Data structure for the navigation menu.
  */
-const NAV_ITEMS = [{
-  label: "SEO",
-  href: "/seo/",
-  children: [{
-    label: "反向連結",
-    href: "/backlinks/"
-  }, {
-    label: "SEO 優化",
-    href: "/seo/"
-  }, {
-    label: "肥仔計算機",
-    href: "/seo-smart-kit/"
-  }]
-}, {
-  label: "影片製作",
-  href: "/video-production/"
-}, {
-  label: "社交媒體廣告",
-  href: "/smm-ads/"
-}, {
-  label: "網站設計",
-  href: "/web-design/"
-}, {
-  label: "小紅書",
-  href: "/xiaohongshu/"
-}, {
-  label: "聯絡我們",
-  href: "/contact/"
-}, {
-  label: "Blog",
-  href: "/blog/"
-}];
+const getNavItems = (t: any) => [
+  {
+    label: t('nav.seo') || 'SEO',
+    href: '/seo/',
+    children: [
+      {
+        label: t('nav.backlinks') || '反向連結',
+        href: '/backlinks/',
+      },
+      {
+        label: t('nav.seo') || 'SEO 優化',
+        href: '/seo/',
+      },
+      {
+        label: i18n.language === 'en' ? 'Smart SEO Calculator' : i18n.language === 'ja' ? 'SEO計算機' : '肥仔計算機',
+        href: '/seo-smart-kit/',
+      },
+    ],
+  },
+  {
+    label: t('nav.videoProduction') || '影片製作',
+    href: '/video-production/',
+  },
+  {
+    label: t('nav.socialMediaAds') || '社交媒體廣告',
+    href: '/smm-ads/',
+  },
+  {
+    label: t('nav.webDesign') || '網站設計',
+    href: '/web-design/',
+  },
+  {
+    label: t('nav.xiaohongshu') || '小紅書',
+    href: '/xiaohongshu/',
+  },
+  {
+    label: t('nav.contactUs') || '聯絡我們',
+    href: '/contact/',
+  },
+  {
+    label: t('nav.blog') || 'Blog',
+    href: '/blog/',
+  },
+];
 
 /**
  * LANGUAGES: Data structure for the language switcher.
@@ -59,7 +72,7 @@ const LANGUAGES = [{
 }];
 
 /**
- * Native4aLogo: Re-creating the logo from the provided SVG path/base64.
+ * Native4aLogo: SVG Logo component
  */
 const Native4aLogo = ({
   className
@@ -90,6 +103,7 @@ const Native4aLogo = ({
 const GooeyLanguageSwitcher = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selected, setSelected] = React.useState(LANGUAGES[0]);
+
   return <div className="relative flex flex-col items-center">
     <svg className="hidden">
       <defs>
@@ -142,14 +156,16 @@ const GooeyLanguageSwitcher = () => {
 };
 
 /**
- * MobileMenu: Fullscreen/Overlay mobile navigation.
+ * MobileMenu: Fullscreen mobile navigation.
  */
 const MobileMenu = ({
   isOpen,
-  onClose
+  onClose,
+  navItems
 }: {
   isOpen: boolean;
   onClose: () => void;
+  navItems: any[];
 }) => {
   const [expandedItems, setExpandedItems] = React.useState<string[]>([]);
 
@@ -162,95 +178,97 @@ const MobileMenu = ({
   };
 
   return <AnimatePresence>
-    {isOpen && <>
-      <motion.div initial={{
-        opacity: 0
-      }} animate={{
-        opacity: 1
-      }} exit={{
-        opacity: 0
-      }} onClick={onClose} className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60]" />
-      <motion.div initial={{
-        x: "100%"
-      }} animate={{
-        x: 0
-      }} exit={{
-        x: "100%"
-      }} transition={{
-        type: "spring",
-        damping: 25,
-        stiffness: 200
-      }} className="fixed right-0 top-0 h-full w-[80%] max-w-[400px] bg-white z-[70] shadow-2xl p-8 overflow-y-auto">
-        <div className="flex justify-between items-center mb-10">
-          <Link to="/" onClick={onClose} className="block transition-transform hover:scale-105">
-            <Native4aLogo className="h-8" />
-          </Link>
-          <button onClick={onClose} className="p-2 rounded-full hover:bg-gray-100 transition-colors">
-            <X className="w-6 h-6 text-gray-700" />
-          </button>
-        </div>
-
-        <nav className="space-y-2">
-          {NAV_ITEMS.map(item => <div key={item.label}>
-            <button
-              onClick={() => item.children && toggleExpanded(item.label)}
-              className="w-full flex items-center justify-between py-4 border-b border-gray-50 text-xl font-medium text-gray-800 hover:text-[#faab00] transition-colors"
-            >
-              <span>{item.label}</span>
-              {item.children && (
-                <ChevronDown
-                  className={cn("w-5 h-5 transition-transform", expandedItems.includes(item.label) && "rotate-180")}
-                />
-              )}
+    {isOpen && (
+      <>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60]"
+        />
+        <motion.div
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "100%" }}
+          transition={{ type: "spring", damping: 25, stiffness: 200 }}
+          className="fixed right-0 top-0 h-full w-[80%] max-w-[400px] bg-white z-[70] shadow-2xl p-8 overflow-y-auto"
+        >
+          <div className="flex justify-between items-center mb-10">
+            <Link to="/" onClick={onClose} className="block transition-transform hover:scale-105">
+              <Native4aLogo className="h-8" />
+            </Link>
+            <button onClick={onClose} className="p-2 rounded-full hover:bg-gray-100 transition-colors">
+              <X className="w-6 h-6 text-gray-700" />
             </button>
+          </div>
 
-            <AnimatePresence>
-              {item.children && expandedItems.includes(item.label) && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="overflow-hidden"
+          <nav className="space-y-2">
+            {navItems.map(item => (
+              <div key={item.label}>
+                <button
+                  onClick={() => item.children && toggleExpanded(item.label)}
+                  className="w-full flex items-center justify-between py-4 border-b border-gray-50 text-xl font-medium text-gray-800 hover:text-[#faab00] transition-colors"
                 >
-                  {item.children.map(child => (
-                    <Link
-                      key={child.label}
-                      to={child.href}
-                      className="block pl-4 py-2 text-gray-600 text-lg hover:text-[#faab00] transition-colors"
-                      onClick={onClose}
+                  <span>{item.label}</span>
+                  {item.children && (
+                    <ChevronDown
+                      className={cn("w-5 h-5 transition-transform", expandedItems.includes(item.label) && "rotate-180")}
+                    />
+                  )}
+                </button>
+
+                <AnimatePresence>
+                  {item.children && expandedItems.includes(item.label) && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="overflow-hidden"
                     >
-                      {child.label}
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>)}
-        </nav>
+                      {item.children.map(child => (
+                        <Link
+                          key={child.label}
+                          to={child.href}
+                          className="block pl-4 py-2 text-gray-600 text-lg hover:text-[#faab00] transition-colors"
+                          onClick={onClose}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </nav>
 
-        <div className="mt-12 space-y-4">
-          <a href="https://api.whatsapp.com/send/?phone=85264602996" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 w-full bg-[#10b981] text-white py-4 rounded-full font-semibold hover:bg-[#059669] transition-colors">
-            <MessageCircle className="w-6 h-6" />
-            <span>WhatsApp 查詢</span>
-          </a>
-          <Link to="/shop" className="flex items-center justify-center gap-3 w-full bg-[#e3a008] text-white py-4 rounded-full font-semibold hover:bg-[#faab00] transition-colors">
-            <ShoppingCart className="w-6 h-6" />
-            <span>立即購物</span>
-          </Link>
-        </div>
+          <div className="mt-12 space-y-4">
+            <a href="https://api.whatsapp.com/send/?phone=85264602996" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 w-full bg-[#10b981] text-white py-4 rounded-full font-semibold hover:bg-[#059669] transition-colors">
+              <MessageCircle className="w-6 h-6" />
+              <span>WhatsApp 查詢</span>
+            </a>
+            <Link to="/shop" className="flex items-center justify-center gap-3 w-full bg-[#e3a008] text-white py-4 rounded-full font-semibold hover:bg-[#faab00] transition-colors">
+              <ShoppingCart className="w-6 h-6" />
+              <span>立即購物</span>
+            </Link>
+          </div>
 
-        <div className="mt-12 pt-6 border-t">
-          <GooeyLanguageSwitcher />
-        </div>
-      </motion.div>
-    </>}
+          <div className="mt-12 pt-6 border-t">
+            <GooeyLanguageSwitcher />
+          </div>
+        </motion.div>
+      </>
+    )}
   </AnimatePresence>;
 };
 
 /**
- * NativeHeader: The main Navigation Bar component.
+ * Navigation: The main Navigation Bar component.
  */
 const Navigation = () => {
+  const { t } = useTranslation();
+  const navItems = getNavItems(t);
   const [scrolled, setScrolled] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
@@ -272,19 +290,25 @@ const Navigation = () => {
       {/* Desktop Navigation */}
       <nav className="hidden xl:flex items-center bg-white/50 rounded-full px-6 py-1 mx-4">
         <ul className="flex items-center space-x-2">
-          {NAV_ITEMS.map(item => <li key={item.label} className="relative group py-2 px-1">
-            <Link to={item.href} className="px-4 py-2 text-[15px] font-medium text-[#1d1d1d] rounded-full transition-all duration-200 hover:bg-[#faab00] hover:text-white flex items-center gap-1">
-              {item.label}
-              {item.children && <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100" />}
-            </Link>
+          {navItems.map(item => (
+            <li key={item.label} className="relative group py-2 px-1">
+              <Link to={item.href} className="px-4 py-2 text-[15px] font-medium text-[#1d1d1d] rounded-full transition-all duration-200 hover:bg-[#faab00] hover:text-white flex items-center gap-1">
+                {item.label}
+                {item.children && <ChevronDown className="w-4 h-4 opacity-50 group-hover:opacity-100" />}
+              </Link>
 
-            {/* Desktop Dropdown */}
-            {item.children && <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block w-48 bg-white shadow-xl rounded-2xl border border-gray-100 overflow-hidden transform-gpu origin-top animate-in fade-in slide-in-from-top-2">
-              {item.children.map(child => <Link key={child.label} to={child.href} className="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#faab00] transition-colors">
-                {child.label}
-              </Link>)}
-            </div>}
-          </li>)}
+              {/* Desktop Dropdown */}
+              {item.children && (
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block w-48 bg-white shadow-xl rounded-2xl border border-gray-100 overflow-hidden transform-gpu origin-top animate-in fade-in slide-in-from-top-2">
+                  {item.children.map(child => (
+                    <Link key={child.label} to={child.href} className="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#faab00] transition-colors">
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </li>
+          ))}
         </ul>
       </nav>
 
@@ -321,7 +345,7 @@ const Navigation = () => {
     </div>
 
     {/* Mobile Drawer */}
-    <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+    <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} navItems={navItems} />
   </header>;
 };
 
