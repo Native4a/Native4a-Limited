@@ -1,10 +1,10 @@
 import * as dotenv from 'dotenv'
 
-dotenv.config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
-// Also load .env as fallback
+// Load the v0/Vercel project-local environment file first, then standard Gatsby files.
+// `override: false` preserves environment variables already provided by Vercel.
+dotenv.config({ path: '.env.development.local' })
+dotenv.config({ path: `.env.${process.env.NODE_ENV}.local` })
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` })
 dotenv.config()
 
 interface Plugin {

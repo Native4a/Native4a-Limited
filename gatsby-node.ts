@@ -1,6 +1,19 @@
 import * as path from 'path'
 import { GatsbyNode, CreatePagesArgs } from 'gatsby'
 
+// Resolve @/ alias to src/ so components can use `import { cn } from '@/lib/utils'`
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+      },
+    },
+  })
+}
+
 // Enable client-only routes for dynamic blog post pages
 export const onCreatePage: GatsbyNode['onCreatePage'] = async ({
   page,
@@ -170,13 +183,13 @@ export const createPages: GatsbyNode['createPages'] = async ({
     { path: '/', component: path.resolve('./src/pages/index.tsx') },
     { path: '/contact-us', component: path.resolve('./src/pages/contact-us.tsx') },
     { path: '/about-us-2', component: path.resolve('./src/pages/about-us-2.tsx') },
-    { path: '/seo', component: path.resolve('./src/pages/seo.js') },
+    { path: '/seo', component: path.resolve('./src/pages/seo.tsx') },
     { path: '/video', component: path.resolve('./src/pages/video.js') },
     { path: '/web-design', component: path.resolve('./src/pages/web-design.js') },
     { path: '/xiaohongshu', component: path.resolve('./src/pages/xiaohongshu.js') },
     { path: '/backlinks', component: path.resolve('./src/pages/backlinks.tsx') },
     { path: '/smm-ads', component: path.resolve('./src/pages/smm-ads.js') },
-    { path: '/seo-smart-kit', component: path.resolve('./src/pages/seo-smart-kit.js') },
+    { path: '/seo-smart-kit', component: path.resolve('./src/pages/seo-smart-kit.tsx') },
     { path: '/seo_keywords', component: path.resolve('./src/pages/seo_keywords.js') },
     { path: '/off-page', component: path.resolve('./src/pages/off-page.tsx') },
     { path: '/catalog', component: path.resolve('./src/pages/catalog.js') },
