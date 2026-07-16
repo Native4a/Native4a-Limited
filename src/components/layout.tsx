@@ -7,7 +7,6 @@ import '../styles/global.css'
 import Seo from './seo'
 import TwitterPixel from '../components/TwitterPixel'
 import Navigation from './header/navigation'
-import MobileNavigation from './header/mobileNavigation'
 import Footer from './footer/footer'
 
 interface LayoutProps {
@@ -60,7 +59,6 @@ const Layout: React.FC<LayoutProps> = ({ children, location, pageContext }) => {
         <Seo />
         <TwitterPixel pixelId="ozpmk" />
         <Navigation />
-        <MobileNavigation />
         <main>{children}</main>
         <Footer />
       </>
@@ -73,7 +71,6 @@ const Layout: React.FC<LayoutProps> = ({ children, location, pageContext }) => {
         <Seo />
         <TwitterPixel pixelId="ozpmk" />
         <Navigation />
-        <MobileNavigation />
         <main>{children}</main>
         <Footer />
       </>

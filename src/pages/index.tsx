@@ -1,153 +1,33 @@
 import React from 'react'
-import { graphql, PageProps } from 'gatsby'
-import get from 'lodash/get'
-import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
-import { useTranslation } from 'react-i18next'
+import { PageProps } from 'gatsby'
 
 //components here//
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import AboutAs from '../components/aboutAs'
-import ContactForm from '../components/contactAs'
-import ClientLogos from '../components/clientLogos'
-import Awards from '../components/awards'
-import AwardsWeb from '../components/awards/awards_website'
-import SocialMediaBtn from '../components/button/socialMedia'
-import ServiceScope from '../components/serviceScope'
-import Section from '../components/baseTools/Section'
-import EseyTransportationCoImg from '../img/Client-s02.png'
-import CENTURY21Img from '../img/CENTURY21.png'
-import CENTURY21LOGO from '../img/21LOGO.png'
-import RHCurtainImg from '../img/RHCurtain.png'
-import RHCurtainLogo from '../img/RHCurtainLogo.jpg'
-import AccoladeImg from '../img/AccoladeImg.png'
-import accoladeLogo from '../img/accoladeLogo.png'
-import LostHKLogo from '../img/LostHKLogo.png'
-import LostHKImg from '../img/LostHKImg.png'
-import EseyTransportationCoLogo from '../img/easy_transportation_logo.jpg'
-import Popup from 'reactjs-popup'
-import StarRatings from 'react-star-ratings'
-import { buildOrganizationStructuredData } from '../utils/structuredData'
+import { MarketingAgencyHero } from '../components/MarketingAgencyHero'
+import { MarketingServices } from '../components/MarketingServices'
+import { CombinedCustomerSuccess } from '../components/CombinedCustomerSuccess'
+import { AboutUsSection } from '../components/AboutUsSection'
+import { PartnerSection } from '../components/PartnerSection'
+import { ContactSection } from '../components/ContactSection'
 
-//image here//
-import heroBanner_Award from '../img/Award02_2.png'
-
-//CSS here//
-import * as styles from '../styles/index.module.css'
-import 'reactjs-popup/dist/index.css'
-
-interface HeadingItem {
-  content: {
-    content: string
-  }
-}
-
-interface ContactItem {
-  title: string
-  textContact?: Array<{
-    content: {
-      content: string
-    }
-  }>
-}
-
-interface PageDataProps extends PageProps {
-  data: {
-    allContentfulAddNewPage: {
-      nodes: Array<{
-        seo: {
-          metaTitle: string
-          metaDescription: {
-            metaDescription: string
-          }
-        }
-        heading: HeadingItem[]
-        contact: ContactItem[]
-      }>
-    }
-  }
-}
-
-const ranking = 5
-
-function RootIndexContent(props: PageDataProps) {
-  const { t } = useTranslation()
-  const [addNewPage] = get(props, 'data.allContentfulAddNewPage.nodes')
-  const contact = get(addNewPage, 'contact[0]')
-  const textContact = get(contact, 'textContact[0]')
-
-  const inContactBox1 = textContact ? textContact.content.content : ''
-
-  const headingContents = addNewPage.heading.map(
-    (item) => item.content.content
-  )
-  const contactBox = addNewPage.contact.map((item, index) => {
-    if (index === 0) {
-      return item.title
-    } else {
-      return null
-    }
-  })
-
-  const contactBox2 = addNewPage.contact.map((item, index) => {
-    if (index === 1) {
-      return item.title
-    } else {
-      return null
-    }
-  })
-
+function HomePage(props: PageProps) {
   return (
     <Layout location={props.location}>
       <Seo
-        title={addNewPage.seo.metaTitle}
-        description={addNewPage.seo.metaDescription}
-        ogUrl="https://nativeaaaa.com.hk/"
-        structuredData={buildOrganizationStructuredData()}
+        title="NATIVE4A | 香港數碼營銷專家"
+        description="香港領先的數碼營銷公司，專業提供SEO優化、社交媒體行銷、SEM廣告、影片製作等全方位營銷解決方案。"
       />
-      <Section SectionClass={styles.bgCustomGradient}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
-          <div className="px-6 xl:px-0 py-0 xl:py-6">
-            <div className="pt-2 md:pt-3 2xl:pt-0">
-              {headingContents.map((content, index) => {
-                if (index === 0) {
-                  return <h1 key={index} className={styles.title}>{t('hero.title')}</h1>
-                } else if (index === 1) {
-                  return (
-                    <div key={index}>
-                      <h2 className={styles.subTitle}>{t('hero.subtitle')}</h2>
-                      <div className={styles.border}></div>
-                    </div>
-                  )
-                } else if (index === 2) {
-                  return (
-                    <p key={index} className="py-5 md:py-3 text-lg md:text-lg 2xl:text-2xl">
-                      {t('hero.description')}
-                    </p>
-                  )
-                } else {
-                  return null
-                }
-              })}
-              <div className="hidden md:grid grid-cols-1 gap-6 py-6">
-                <div className="flex gap-6 w-full items-center">
-                  <SocialMediaBtn />
-                </div>
-              </div>
-              <div className="md:hidden">
-                <div className="flex gap-2 w-full items-center">
-                  <SocialMediaBtn />
-                </div>
-              </div>
-            </div>
-            <AwardsWeb />
-          </div>
-          <div className="hidden md:grid content-center z-0">
-            <img className="w-3/4" src={heroBanner_Award} alt="Award02" />
-          </div>
-          <Awards />
-        </div>
-      </Section>
+      <div className="w-full min-h-screen flex flex-col">
+        <main className="flex-1">
+          <MarketingAgencyHero />
+          <MarketingServices />
+          <CombinedCustomerSuccess />
+          <AboutUsSection />
+          <PartnerSection />
+          <ContactSection />
+        </main>
+      </div>
       <Section
         SectionClass={`${styles.sec2_wrap} ${'flex justify-evenly'}`}
         ContainerClass="flex flex-col items-center m-auto w-full"
@@ -582,88 +462,4 @@ function RootIndexContent(props: PageDataProps) {
   )
 }
 
-class RootIndex extends React.Component<PageDataProps> {
-  render() {
-    return <RootIndexContent {...this.props} />
-  }
-}
-
-export default RootIndex
-
-export const pageQuery = graphql`
-  query HomeQuery {
-    allContentfulBlogPost(sort: { publishDate: DESC }) {
-      nodes {
-        title
-        slug
-        publishDate(formatString: "MMMM Do, YYYY")
-        tags
-        heroImage {
-          gatsbyImageData(
-            layout: FULL_WIDTH
-            placeholder: BLURRED
-            width: 424
-            height: 212
-          )
-        }
-        description {
-          raw
-        }
-        author {
-          name
-        }
-      }
-    }
-    allContentfulPerson(
-      filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
-    ) {
-      nodes {
-        name
-        shortBio {
-          raw
-        }
-        title
-        company
-      }
-    }
-    allContentfulAddNewPage(
-      filter: { contentful_id: { eq: "2vVfX03PDoKVGEDgRJgMz3" } }
-    ) {
-      nodes {
-        contentful_id
-        id
-        order
-        pageName
-        seo {
-          metaDescription {
-            metaDescription
-          }
-          metaTitle
-        }
-        heading {
-          content {
-            content
-          }
-        }
-        contact {
-          ... on ContentfulToolsContactBox {
-            id
-            title
-            order
-            textContact {
-              ... on ContentfulToolsText {
-                id
-                content {
-                  content
-                }
-              }
-            }
-            icon {
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-`
+export default HomePage

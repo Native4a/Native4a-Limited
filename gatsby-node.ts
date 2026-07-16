@@ -54,6 +54,14 @@ export const createPages: GatsbyNode['createPages'] = async ({
   // Define templates
   const blogPost = path.resolve('./src/templates/blog-post.tsx')
 
+  // Language map for normalizing codes
+  const languageMap: Record<string, string> = {
+    'en': 'En',
+    'ja': 'Ja',
+    'zh': 'Zh',
+    'zh-CN': 'Zh',
+  }
+
   // Fetch blog posts from Notion for all languages
   const allPosts: BlogPost[] = []
 

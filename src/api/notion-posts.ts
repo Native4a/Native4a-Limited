@@ -25,10 +25,24 @@ export default async function handler(
 
   try {
     const language = (req.query.language as string)?.toLowerCase() || "zh"
-    const normalizedLanguage = language.charAt(0).toUpperCase() + language.slice(1)
+    
+    // Map language codes to Notion's capitalized format
+    const languageMap: Record<string, string> = {
+      en: "En",
+      ja: "Ja",
+      zh: "Zh",
+      "zh-cn": "Zh",
+    }
+    const normalizedLanguage = languageMap[language] || "Zh"
 
     const response = await notion.databases.query({
       database_id: NOTION_DATABASE_ID,
+      filter: {
+        property: "Language",
+        select: {
+          equals: normalizedLanguage,
+        },
+      },
       sorts: [{ property: "PublishedDate", direction: "descending" }],
     })
 
@@ -51,7 +65,7 @@ export default async function handler(
           language: props.Language?.select?.name || "Zh",
         }
       })
-      .filter((post: any) => post.slug && post.language === normalizedLanguage)
+      .filter((post: any) => post.slug)
 
     return res.status(200).json({ posts })
   } catch (error: any) {
