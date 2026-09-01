@@ -176,7 +176,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
     { path: '/xiaohongshu', component: path.resolve('./src/pages/xiaohongshu.js') },
     { path: '/backlinks', component: path.resolve('./src/pages/backlinks.tsx') },
     { path: '/smm-ads', component: path.resolve('./src/pages/smm-ads.js') },
-    { path: '/seo-smart-kit', component: path.resolve('./src/pages/seo-smart-kit.js') },
+    { path: '/seo-smart-kit', component: path.resolve('./src/pages/seo-smart-kit.tsx') },
     { path: '/seo_keywords', component: path.resolve('./src/pages/seo_keywords.js') },
     { path: '/off-page', component: path.resolve('./src/pages/off-page.tsx') },
     { path: '/catalog', component: path.resolve('./src/pages/catalog.js') },
