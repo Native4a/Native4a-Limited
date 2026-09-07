@@ -1,6 +1,17 @@
 import * as path from 'path'
 import { GatsbyNode, CreatePagesArgs } from 'gatsby'
 
+// Match the @/* imports used by shared React components in Gatsby's bundler.
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+      },
+    },
+  })
+}
+
 // Enable client-only routes for dynamic blog post pages
 export const onCreatePage: GatsbyNode['onCreatePage'] = async ({
   page,
