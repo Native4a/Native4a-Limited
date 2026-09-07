@@ -76,7 +76,7 @@ const ServiceCard = ({
       </svg> : <img className="w-20 h-20 object-contain" src={service.icon} alt={service.title} loading="lazy" />}
     </div>
     <div className="w-full">
-      <h3 className="text-xl font-bold mb-3 text-center text-gray-900">{service.title}</h3>
+      <h3 className="text-xl font-bold mb-3 text-center">{service.title}</h3>
       <div className="text-left inline-block">
         <ul className="list-disc list-outside pl-5 space-y-1 text-gray-700">
           {service.items.map((item, index) => <li key={`${service.id}-item-${index}`} className="text-base">
