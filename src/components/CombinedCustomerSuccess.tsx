@@ -1,6 +1,15 @@
 'use client'
 import * as React from 'react';
 import { Square, Star } from 'lucide-react';
+import clientImage from '../img/Client-s02.png';
+import centuryImage from '../img/CENTURY21.png';
+import rhCurtainImage from '../img/RHCurtain.png';
+import accoladeImage from '../img/AccoladeImg.png';
+import lostHkImage from '../img/LostHKImg.png';
+import easyTransportationLogo from '../img/easy_transportation_logo.jpg';
+import rhCurtainLogo from '../img/RHCurtainLogo.jpg';
+import accoladeLogo from '../img/accoladeLogo.png';
+import lostHkLogo from '../img/LostHKLogo.png';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 interface Testimonial {
@@ -14,43 +23,43 @@ interface Testimonial {
 }
 const TESTIMONIALS: Testimonial[] = [{
   id: '1',
-  thumbnail: 'https://nativeaaaa.com.hk/static/Client-s02-6454cd0a0637078ff31fa602545c15e8.png',
+  thumbnail: clientImage,
   quote: '"NATIVE4A協助我們用了低成本，達成高回報。"',
   authorName: '兆哥',
   authorTitle: '搬屋易 Founder',
-  authorLogo: 'https://nativeaaaa.com.hk/static/easy_transportation_logo-78656ba542196688609909f057b467be.jpg',
+  authorLogo: easyTransportationLogo,
   rating: 5
 }, {
   id: '2',
-  thumbnail: 'https://nativeaaaa.com.hk/static/CENTURY21-2ff8b8bb52d811a4db7abe6f4f5c9d5f.png',
+  thumbnail: centuryImage,
   quote: '"NATIVE4A積極協助我們達成每月銷售目標。"',
   authorName: 'Max Hung',
   authorTitle: '世紀21 業務經理',
-  authorLogo: 'https://nativeaaaa.com.hk/static/easy_transportation_logo-78656ba542196688609909f057b467be.jpg',
+  authorLogo: easyTransportationLogo,
   rating: 5
 }, {
   id: '3',
-  thumbnail: 'https://nativeaaaa.com.hk/static/RHCurtain-200db49c3c6925c15e38aa554449e9f0.png',
+  thumbnail: rhCurtainImage,
   quote: '"NATIVE4A協助我們將業務拓展至全港。"',
   authorName: 'Tony',
   authorTitle: 'RH Curtain CEO',
-  authorLogo: 'https://nativeaaaa.com.hk/static/RHCurtainLogo-f55e7f7a58a2f54b685a08ba6244ef40.jpg',
+  authorLogo: rhCurtainLogo,
   rating: 5
 }, {
   id: '4',
-  thumbnail: 'https://nativeaaaa.com.hk/static/AccoladeImg-30ef49e202456ce47ae8423d1ef66b56.png',
+  thumbnail: accoladeImage,
   quote: '"native協助我們Google廣告多年。"',
   authorName: 'Paul Lu',
   authorTitle: 'Accolade COO',
-  authorLogo: 'https://nativeaaaa.com.hk/static/accoladeLogo-a6905a9cef7e3307336e9110b9809b25.png',
+  authorLogo: accoladeLogo,
   rating: 5
 }, {
   id: '5',
-  thumbnail: 'https://nativeaaaa.com.hk/static/LostHKImg-90eb4f80f7300f5ed0e3ed681da69502.png',
+  thumbnail: lostHkImage,
   quote: '"native的SEO技術領先。"',
   authorName: 'Rick Woo',
   authorTitle: 'Lost CEO',
-  authorLogo: 'https://nativeaaaa.com.hk/static/LostHKLogo-c62130b7198f8860cc6eba3699127259.png',
+  authorLogo: lostHkLogo,
   rating: 5
 }];
 const StarRating = ({

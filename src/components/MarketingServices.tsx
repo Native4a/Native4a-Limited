@@ -1,6 +1,11 @@
 'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
+import socialMediaImage from '../img/IMG_0820.png';
+import googleAdsImage from '../img/IMG_0821.png';
+import whatsappIcon from './baseTools/Icon/img/whatsapp.svg';
+import videoProductionImage from '../img/IMG_0824.png';
+import servicesBackground from '../img/G01.png';
 import { cn } from '@/lib/utils';
 interface ServiceItem {
   id: string;
@@ -12,12 +17,12 @@ const SERVICES_DATA: ServiceItem[] = [{
   id: 'social-media',
   title: '社交媒體廣告',
   items: ['IG&FB廣告', '小紅書廣告', 'Linkedin廣告'],
-  icon: 'https://nativeaaaa.com.hk/static/IMG_0820-afd1c4dde81e5893243816a8abc26665.png'
+  icon: socialMediaImage
 }, {
   id: 'google-ads',
   title: 'Google廣告',
   items: ['Google關鍵字', 'Google GDN廣告', 'Google購物廣告'],
-  icon: 'https://nativeaaaa.com.hk/static/IMG_0821-aacc255ad35f6b2436f467bd22ebdaa1.png'
+  icon: googleAdsImage
 }, {
   id: 'seo',
   title: 'SEO',
@@ -32,12 +37,12 @@ const SERVICES_DATA: ServiceItem[] = [{
   id: 'whatsapp-marketing',
   title: '通訊營銷',
   items: ['WhatsApp營銷', 'Email營銷'],
-  icon: 'https://images.ctfassets.net/rpza41pe9ev5/6rlGUbeEXUlQT6WvxOyoMx/e84e348b59083b3e2937a66676898277/____________.svg'
+  icon: whatsappIcon
 }, {
   id: 'video-production',
   title: '短片製作',
   items: ['唔使露面，唔使錄音', '製作短影片在全平台吸客', 'IG Reels，Youtube Shorts', '小紅書等多平台曝光'],
-  icon: 'https://nativeaaaa.com.hk/static/IMG_0824-d55bd1c3f321afe9dff9b01370cc7201.png'
+  icon: videoProductionImage
 }];
 const ServiceCard = ({
   service
@@ -89,7 +94,7 @@ const ServiceCard = ({
 };
 export const MarketingServices: React.FC = () => {
   return <section className="relative w-full py-[108px] bg-[#F7F7F8] bg-cover bg-center overflow-hidden" style={{
-    backgroundImage: `url('https://nativeaaaa.com.hk/static/G01-da07b2d1917fae4901c1a68c442cffff.png')`
+    backgroundImage: `url(${servicesBackground})`
   }}>
     <div className="container mx-auto px-4 md:px-8 lg:px-16 max-w-[1536px]">
       <div className="mb-16">
