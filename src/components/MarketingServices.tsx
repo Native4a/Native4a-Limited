@@ -1,6 +1,12 @@
 'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
+import socialMediaImage from '../img/IMG_0820.png';
+import googleAdsImage from '../img/IMG_0821.png';
+import whatsappIcon from '../img/Whatsapp.svg';
+import webDesignImage from '../img/Web_design.svg';
+import videoProductionImage from '../img/IMG_0824.png';
+import servicesBackground from '../img/G01.png';
 import { cn } from '@/lib/utils';
 interface ServiceItem {
   id: string;
@@ -12,12 +18,12 @@ const SERVICES_DATA: ServiceItem[] = [{
   id: 'social-media',
   title: '社交媒體廣告',
   items: ['IG&FB廣告', '小紅書廣告', 'Linkedin廣告'],
-  icon: 'https://nativeaaaa.com.hk/static/IMG_0820-afd1c4dde81e5893243816a8abc26665.png'
+  icon: socialMediaImage
 }, {
   id: 'google-ads',
   title: 'Google廣告',
   items: ['Google關鍵字', 'Google GDN廣告', 'Google購物廣告'],
-  icon: 'https://nativeaaaa.com.hk/static/IMG_0821-aacc255ad35f6b2436f467bd22ebdaa1.png'
+  icon: googleAdsImage
 }, {
   id: 'seo',
   title: 'SEO',
@@ -27,17 +33,17 @@ const SERVICES_DATA: ServiceItem[] = [{
   id: 'web-design',
   title: '網站設計及開發',
   items: ['超強網店系統', '精美展示型網站'],
-  icon: 'web-design-svg'
-}, {
+  icon: webDesignImage
+  }, {
   id: 'whatsapp-marketing',
   title: '通訊營銷',
   items: ['WhatsApp營銷', 'Email營銷'],
-  icon: 'https://images.ctfassets.net/rpza41pe9ev5/6rlGUbeEXUlQT6WvxOyoMx/e84e348b59083b3e2937a66676898277/____________.svg'
+  icon: whatsappIcon
 }, {
   id: 'video-production',
   title: '短片製作',
   items: ['唔使露面，唔使錄音', '製作短影片在全平台吸客', 'IG Reels，Youtube Shorts', '小紅書等多平台曝光'],
-  icon: 'https://nativeaaaa.com.hk/static/IMG_0824-d55bd1c3f321afe9dff9b01370cc7201.png'
+  icon: videoProductionImage
 }];
 const ServiceCard = ({
   service
@@ -65,14 +71,6 @@ const ServiceCard = ({
         <rect x="43" y="66" width="14" height="28" rx="1.5" fill="#6aaa64" />
         <rect x="62" y="48" width="14" height="46" rx="1.5" fill="#6aaa64" />
         <rect x="81" y="35" width="14" height="59" rx="1.5" fill="#6aaa64" />
-      </svg> : service.icon === 'web-design-svg' ? <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-20 h-20" role="img" aria-label="Desktop tablet and mobile devices icon">
-        <path fill="#FAAB00" fillRule="evenodd" clipRule="evenodd" d="M6 15h51c4.42 0 8 3.58 8 8v26c0 4.42-3.58 8-8 8H6c-2.21 0-4-1.79-4-4V19c0-2.21 1.79-4 4-4Zm5 9v24h44V24H11Z" />
-        <path fill="#FAAB00" d="M29 57h15v8c0 2.76-2.24 5-5 5H22c0-2.76 2.24-5 5-5h2v-8Z" />
-        <ellipse cx="37" cy="73" rx="10" ry="3" fill="#FAAB00" />
-        <path fill="#FAAB00" fillRule="evenodd" clipRule="evenodd" d="M42 8h24c4.42 0 8 3.58 8 8v38c0 4.42-3.58 8-8 8H42c-4.42 0-8-3.58-8-8V16c0-4.42 3.58-8 8-8Zm4 10v34h16V18H46Z" />
-        <ellipse cx="54" cy="56" rx="4" ry="2" fill="#FAAB00" />
-        <path fill="#FAAB00" fillRule="evenodd" clipRule="evenodd" d="M68 22h14c4.42 0 8 3.58 8 8v32c0 4.42-3.58 8-8 8H68c-4.42 0-8-3.58-8-8V30c0-4.42 3.58-8 8-8Zm4 9v27h10V31H72Z" />
-        <ellipse cx="75" cy="64" rx="3.5" ry="1.8" fill="#FAAB00" />
       </svg> : <img className="w-20 h-20 object-contain" src={service.icon} alt={service.title} loading="lazy" />}
     </div>
     <div className="w-full">
@@ -89,7 +87,7 @@ const ServiceCard = ({
 };
 export const MarketingServices: React.FC = () => {
   return <section className="relative w-full py-[108px] bg-[#F7F7F8] bg-cover bg-center overflow-hidden" style={{
-    backgroundImage: `url('https://nativeaaaa.com.hk/static/G01-da07b2d1917fae4901c1a68c442cffff.png')`
+    backgroundImage: `url(${servicesBackground})`
   }}>
     <div className="container mx-auto px-4 md:px-8 lg:px-16 max-w-[1536px]">
       <div className="mb-16">

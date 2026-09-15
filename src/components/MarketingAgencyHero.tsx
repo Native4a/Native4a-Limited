@@ -1,8 +1,14 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Square } from 'lucide-react';
+import { MessageCircle, Square } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import instagramIcon from './baseTools/Icon/img/instagram.svg';
+import heroImage from '../img/Award02_2.png';
+import awardImage1 from '../img/native4aAward01.webp';
+import awardImage2 from '../img/native4aAward02.webp';
+import mediaImage1 from '../img/native4aMedia01.png';
+import mediaImage2 from '../img/native4aMedia02.png';
 interface AwardItem {
   id: string;
   type: 'award' | 'media';
@@ -14,45 +20,47 @@ const AWARDS_DATA: AwardItem[] = [{
   id: 'award-1',
   type: 'award',
   title: '年度獎項',
-  imageUrl: 'https://nativeaaaa.com.hk/static/native4aAward01-56a71d1e2759314b7e1a2b97fa9e7e35.webp',
+  imageUrl: awardImage1,
   alt: 'Native4A 獲獎證書 01'
 }, {
   id: 'award-2',
   type: 'award',
   title: '年度獎項',
-  imageUrl: 'https://nativeaaaa.com.hk/static/native4aAward02-029db044e0228d4c2d4393ab7b6e0cb4.webp',
+  imageUrl: awardImage2,
   alt: 'Native4A 獲獎證書 02'
 }, {
   id: 'media-1',
   type: 'media',
   title: '媒體報導',
-  imageUrl: 'https://nativeaaaa.com.hk/static/native4aMedia01-0802f63cfd8456776825bba969fdb6f0.png',
+  imageUrl: mediaImage1,
   alt: 'Native4A 媒體報導 01'
 }, {
   id: 'media-2',
   type: 'media',
   title: '媒體報導',
-  imageUrl: 'https://nativeaaaa.com.hk/static/native4aMedia02-a81712920c34ac9bdcc256254e8599a9.png',
+  imageUrl: mediaImage2,
   alt: 'Native4A 媒體報導 02'
 }];
 const SocialButton = ({
   href,
   icon: Icon,
   label,
+  ariaLabel = label,
   bgColor = 'bg-white',
   textColor = 'text-black',
   iconColor
 }: {
   href: string;
-  icon: any;
+  icon: string | React.ComponentType<React.SVGProps<SVGSVGElement>>;
   label?: string;
+  ariaLabel?: string;
   bgColor?: string;
   textColor?: string;
   iconColor?: string;
-}) => <a href={href} className={cn("flex items-center gap-3 px-6 py-3 rounded-full shadow-sm transition-all hover:scale-105 active:scale-95", bgColor, textColor, bgColor === 'bg-[#10B981]' ? 'hover:bg-[#059669]' : '')} style={{
+}) => <a href={href} aria-label={ariaLabel} className={cn("flex items-center gap-3 px-6 py-3 rounded-full shadow-sm transition-all hover:scale-105 active:scale-95", bgColor, textColor, bgColor === 'bg-[#10B981]' ? 'hover:bg-[#059669]' : '')} style={{
   boxShadow: "none"
 }}>
-    {Icon && typeof Icon === 'string' ? <img src={Icon} alt={label} className="w-8 h-8" /> : <Icon className={cn("w-6 h-6", iconColor)} />}
+    {typeof Icon === 'string' ? <img src={Icon} alt="" className="w-8 h-8" /> : <Icon aria-hidden="true" className={cn("w-6 h-6", iconColor)} />}
     {label && <span className="font-bold text-lg">{label}</span>}
   </a>;
 const TabButton = ({
@@ -170,8 +178,8 @@ export const MarketingAgencyHero = () => {
         }} transition={{
           delay: 0.3
         }} className="flex flex-wrap gap-4">
-          <SocialButton href="#" icon="https://images.ctfassets.net/rpza41pe9ev5/1v19Z4sFUHO0Oi0j0K3MXw/97da3effb0fb90b8fa1635405219625a/instagram.svg" label="" bgColor="bg-white" />
-          <SocialButton href="https://api.whatsapp.com/send/?phone=85264602996" icon="https://images.ctfassets.net/rpza41pe9ev5/6u2gdBEeR8m5SFBROWNQT0/759a810b5e03750ab19ce5fd6060a821/WhatsApp.svg" label="WhatsApp查詢" bgColor="bg-[#10B981]" textColor="text-white" />
+          <SocialButton href="#" icon={instagramIcon} ariaLabel="Instagram" bgColor="bg-white" />
+          <SocialButton href="https://api.whatsapp.com/send/?phone=85264602996" icon={MessageCircle} label="WhatsApp查詢" bgColor="bg-[#10B981]" textColor="text-white" />
         </motion.div>
         <motion.div initial={{
           opacity: 0,
@@ -244,7 +252,7 @@ export const MarketingAgencyHero = () => {
       }} className="hidden lg:flex justify-center items-center relative">
         <div className="relative w-full max-w-lg aspect-square">
           <div className="absolute inset-0 bg-white/20 rounded-full blur-3xl" />
-          <img src="https://nativeaaaa.com.hk/static/Award02_2-999a65693cdca077fd351dcb34d6970f.png" alt="Awards Trophy" className="relative w-full h-auto drop-shadow-2xl animate-float" />
+          <img src={heroImage} alt="Native4A 領取香港最有價值企業大獎" className="relative w-full h-auto drop-shadow-2xl animate-float" />
         </div>
       </motion.div>
     </div>
