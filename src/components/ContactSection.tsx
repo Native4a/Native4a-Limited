@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Square } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { cn } from '@/lib/utils';
 
 /**
@@ -64,6 +65,24 @@ const CONTACT_INFO = [{
   title: '深圳地址'
 }];
 export const ContactSection: React.FC = () => {
+  const { t } = useTranslation()
+  const navigationLinks: NavLink[] = [{
+    label: t('contactAs.aboutNative'),
+    href: '#'
+  }, {
+    label: t('contactAs.exclusiveBacklink'),
+    href: '#'
+  }, {
+    label: t('contactAs.webDesignDevelopment'),
+    href: '#'
+  }, {
+    label: 'SEO',
+    href: '#'
+  }, {
+    label: t('contactAs.socialMediaAds'),
+    href: '#'
+  }]
+
   return <section id="contactAs" className="w-full bg-[#F7F7F8] py-20 px-4 md:px-12 lg:px-24">
       <div className="max-w-[1520px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
@@ -74,7 +93,7 @@ export const ContactSection: React.FC = () => {
               <span className="mr-4 text-gray-800">
                 <Square className="w-8 h-8 fill-current" />
               </span>
-              <strong className="font-black">聯絡我們</strong>
+              <strong className="font-black">{t('contactAs.title')}</strong>
             </h2>
             
             <div className="mt-8 ml-0 md:ml-12">
@@ -88,7 +107,7 @@ export const ContactSection: React.FC = () => {
           <div className="lg:pt-12">
             <div className="m-5 md:m-12 text-lg leading-relaxed text-slate-700">
               <ul className="space-y-6 list-disc pl-6 marker:text-slate-400">
-                {NAVIGATION_LINKS.map((link, index) => <li key={`nav-link-${index}`} className="transition-all hover:translate-x-1">
+                {navigationLinks.map((link, index) => <li key={`nav-link-${index}`} className="transition-all hover:translate-x-1">
                     <a href={link.href} className={cn("text-slate-700 hover:text-blue-600 transition-colors", "underline underline-offset-[10px] decoration-1 decoration-slate-300 hover:decoration-blue-600")}>
                       <span>{link.label}</span>
                     </a>
