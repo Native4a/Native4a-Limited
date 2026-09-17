@@ -4,6 +4,12 @@ dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+// Load v0-managed local env files (credentials live here in the preview).
+// dotenv does not override already-set vars, so more specific files win.
+dotenv.config({ path: `.env.${process.env.NODE_ENV}.local` })
+dotenv.config({ path: `.env.local` })
+dotenv.config({ path: `.env.development.local` })
+
 // Also load .env as fallback
 dotenv.config()
 
