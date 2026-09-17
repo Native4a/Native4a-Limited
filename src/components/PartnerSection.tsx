@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Square } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -63,6 +64,7 @@ const PARTNERS = [{
   logo: 'https://images.ctfassets.net/rpza41pe9ev5/70WOLZM10xYmqVWXdsAKte/7d15b7336e79500125674e86edc49c21/Annetso_Shop_logo.png'
 }];
 export const PartnerSection: React.FC = () => {
+  const { t } = useTranslation()
   return <section className="bg-white py-12 md:py-24 w-full">
       <div className="max-w-[1520px] mx-auto px-6 md:px-9">
         {/* Mobile Title View */}
@@ -71,7 +73,7 @@ export const PartnerSection: React.FC = () => {
             <span className="text-[#faab00] text-3xl mr-3">
               <Square fill="currentColor" strokeWidth={0} size="1em" />
             </span>
-            <b className="font-black">更多合作客戶</b>
+            <b className="font-black">{t('clientLogos.title', { defaultValue: '更多合作客戶' })}</b>
           </h2>
         </div>
 
@@ -81,7 +83,7 @@ export const PartnerSection: React.FC = () => {
             <span className="text-[#faab00] text-3xl mr-3">
               <Square fill="currentColor" strokeWidth={0} size="1em" />
             </span>
-            <b className="font-black">更多合作客戶</b>
+            <b className="font-black">{t('clientLogos.title', { defaultValue: '更多合作客戶' })}</b>
           </h2>
         </div>
 
