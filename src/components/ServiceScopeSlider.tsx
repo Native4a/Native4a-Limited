@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Square } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -32,6 +33,7 @@ const SERVICE_STEPS: ServiceStep[] = [{
   image: 'https://nativeaaaa.com.hk/static/Backlink_04-b09a606142a230b3b9ec205d76bc9050.svg'
 }];
 export const ServiceScopeSlider: React.FC = () => {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const activeStep = SERVICE_STEPS[activeIndex];
   return <section className="relative w-full bg-white py-16 md:py-28 overflow-hidden font-sans">
