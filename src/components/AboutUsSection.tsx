@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Square } from 'lucide-react';
 
 /**
@@ -9,6 +10,7 @@ import { Square } from 'lucide-react';
  * Recreated from the provided HTML capture with a focus on editorial typography and clean layout.
  */
 export const AboutUsSection: React.FC = () => {
+  const { t } = useTranslation()
   return <section id="aboutAs" className="w-full bg-[#F7F7F8] py-12 md:py-24 lg:py-32 xl:py-48 flex items-center justify-center overflow-hidden">
       <div className="container max-w-7xl px-6 md:px-12 lg:px-20 mx-auto">
         <motion.div initial={{
@@ -31,12 +33,12 @@ export const AboutUsSection: React.FC = () => {
                   <Square size={32} fill="currentColor" />
                 </span>
                 <h2 className="text-3xl md:text-5xl font-black tracking-tight text-gray-900">
-                  關於NATIVE4A
+                  {t('about.title', { defaultValue: '關於NATIVE4A' })}
                 </h2>
               </div>
               
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight text-gray-800 pt-2">
-                Hello，我們是香港一家主流數碼營銷公司。
+                {t('about.description', { defaultValue: 'Hello，我們是香港一家主流數碼營銷公司。' })}
               </h3>
             </header>
 

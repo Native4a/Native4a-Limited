@@ -1,5 +1,6 @@
 'use client'
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import socialMediaImage from '../img/IMG_0820.png';
 import googleAdsImage from '../img/IMG_0821.png';
@@ -86,6 +87,13 @@ const ServiceCard = ({
   </motion.div>;
 };
 export const MarketingServices: React.FC = () => {
+  const { t } = useTranslation()
+  const services = SERVICES_DATA.map(service => ({
+    ...service,
+    title: t(`services.${service.id === 'web-design' ? 'webDesign' : service.id === 'video-production' ? 'videoProduction' : service.id === 'social-media' ? 'socialMediaAds' : service.id === 'google-ads' ? 'marketing' : service.id === 'seo' ? 'seo' : 'marketing'}`, { defaultValue: service.title }),
+    items: service.items,
+  }))
+
   return <section className="relative w-full py-[108px] bg-[#F7F7F8] bg-cover bg-center overflow-hidden" style={{
     backgroundImage: `url(${servicesBackground})`
   }}>
@@ -97,14 +105,14 @@ export const MarketingServices: React.FC = () => {
               <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z"></path>
             </svg>
           </span>
-          <h2 className="text-2xl font-bold leading-tight">服務範圍</h2>
+          <h2 className="text-2xl font-bold leading-tight">{t('homepage.serviceScope')}</h2>
         </div>
         <h1 className="text-4xl md:text-[50px] font-semibold leading-tight md:leading-[56px] text-gray-900">
-          數碼營銷6種熱門方法
+          {t('homepage.popularMethods', { defaultValue: '數碼營銷6種熱門方法' })}
         </h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-        {SERVICES_DATA.map(service => <ServiceCard key={service.id} service={service} />)}
+        {services.map(service => <ServiceCard key={service.id} service={service} />)}
       </div>
     </div>
     <div className="absolute inset-0 bg-white/50 -z-10" aria-hidden="true" />

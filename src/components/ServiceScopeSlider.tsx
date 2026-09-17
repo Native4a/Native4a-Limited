@@ -39,7 +39,7 @@ export const ServiceScopeSlider: React.FC = () => {
       <div className="mb-8 md:mb-16 flex items-center gap-6 ml-2">
         <h2 className="flex items-center text-3xl font-bold text-gray-900 gap-3">
           <span className="text-[#70A665]"><Square className="fill-current" size={32} aria-hidden="true" /></span>
-          <span className="font-black">服務範圍</span>
+          <span className="font-black">{t('homepage.serviceScope')}</span>
         </h2>
         <div className="flex items-center">
           <ul className="flex items-center gap-4 list-none" style={{

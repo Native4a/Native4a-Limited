@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, Square } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -75,6 +76,7 @@ const TabButton = ({
     {children}
   </button>;
 export const MarketingAgencyHero = () => {
+  const { t } = useTranslation()
   const [activeTab, setActiveTab] = useState<'award' | 'media'>('award');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slideDirection, setSlideDirection] = useState<1 | -1>(1);
@@ -139,7 +141,7 @@ export const MarketingAgencyHero = () => {
           }} animate={{
             opacity: 1,
             y: 0
-          }} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black leading-tight tracking-tight">香港數碼營銷公司</motion.h1>
+          }} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black leading-tight tracking-tight">{t('hero.title')}</motion.h1>
           <div className="relative inline-block group">
             <motion.h2 initial={{
               opacity: 0,
@@ -149,7 +151,7 @@ export const MarketingAgencyHero = () => {
               y: 0
             }} transition={{
               delay: 0.1
-            }} className="text-2xl md:text-3xl font-extrabold text-black tracking-tight">native讓你站在巨人肩上</motion.h2>
+            }} className="text-2xl md:text-3xl font-extrabold text-black tracking-tight">{t('hero.subtitle')}</motion.h2>
             <motion.div initial={{
               width: 0
             }} animate={{
@@ -168,7 +170,7 @@ export const MarketingAgencyHero = () => {
           y: 0
         }} transition={{
           delay: 0.2
-        }} className="text-lg md:text-xl lg:text-2xl text-gray-700 max-w-xl leading-relaxed">我們提供全面的數碼營銷解決方案，幫助你的業務在線上世界中成長和成功。</motion.p>
+        }} className="text-lg md:text-xl lg:text-2xl text-gray-700 max-w-xl leading-relaxed">{t('hero.description')}</motion.p>
         <motion.div initial={{
           opacity: 0,
           y: 20
@@ -199,11 +201,11 @@ export const MarketingAgencyHero = () => {
               <TabButton active={activeTab === 'award'} onClick={() => {
                 setActiveTab('award');
                 setCurrentIndex(0);
-              }}>年度獎項</TabButton>
+              }}>{t('awards.annualAwards')}</TabButton>
               <TabButton active={activeTab === 'media'} onClick={() => {
                 setActiveTab('media');
                 setCurrentIndex(0);
-              }}>媒體報導</TabButton>
+              }}>{t('awards.mediaFeatures')}</TabButton>
             </div>
             <div className="relative overflow-hidden">
               {/* Desktop: 2 items per slide */}
