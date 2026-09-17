@@ -14,27 +14,68 @@ interface StructuredData {
  */
 export const buildOrganizationStructuredData = (): StructuredData => ({
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Native4a',
-  description: 'Leading SEO Agency in Hong Kong offering professional SEO, digital marketing, web design, and video production services',
+  '@type': 'ProfessionalService',
+  name: 'Native Greater China',
+  alternateName: 'Native 4A',
   url: 'https://nativeaaaa.com.hk',
-  telephone: '+852-XXXX-XXXX', // Update with actual phone
-  email: 'info@native4a.com.hk',
+  logo: 'https://images.ctfassets.net/rpza41pe9ev5/6TeposIqKULWL1FRMsnXHJ/9468a014824df34ae106c27c85b940f8/2023_native4a_logo.svg',
+  image: 'https://images.ctfassets.net/rpza41pe9ev5/2jWem3YqlEdNaaoxpYQa7h/7b9e824531232e1da44d84d2defd0164/IMG_8643.webp',
+  description: '專業香港SEO公司與數位行銷服務商，專注於香港SEO優化、中文反向連結、外部連結建設及網站排名提升方案。',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Hong Kong',
-    addressLocality: 'Hong Kong',
     addressCountry: 'HK',
+    addressLocality: 'Hong Kong',
+    postalCode: '999077',
   },
-  sameAs: [
-    'https://www.facebook.com/native4a',
-    'https://www.linkedin.com/company/native4a',
-    'https://www.instagram.com/native4a',
-  ],
-  image: 'https://nativeaaaa.com.hk/og-image.png',
   priceRange: '$$',
-  areaServed: ['HK', 'China', 'Global'],
-  serviceType: ['SEO', 'Digital Marketing', 'Web Design', 'Video Production'],
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'Hong Kong',
+  },
+  keywords: [
+    '中文反向連結', '中文外部連結', '香港seo', 'seo香港', '香港seo公司',
+    'seo公司', 'seo hk', 'hk seo', 'seo優化公司', 'seo服務',
+    'Seo agency', 'seo agency hk', 'seo', 'Seo firm', 'Seo company',
+    'seo公司香港', 'seo optimization', '網頁seo', 'seo顧問', 'seo優化',
+    'seo公司推薦', 'seo優化服務', 'seo 方案',
+  ],
+  knowsAbout: [
+    '搜索引擎優化 (SEO)',
+    '中文反向連結建設',
+    '香港SEO顧問服務',
+    '網站排名提升',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'SEO 與數位行銷服務',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: '香港SEO優化服務',
+          description: '全方位網站SEO優化、關鍵字排名提升與香港地區搜尋引擎行銷。',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: '中文反向連結與外部連結建構',
+          description: '高品質中文反向連結（Backlinks）與外部連結策略，強化網站權重。',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'SEO顧問與方案規劃',
+          description: '量身打造的 SEO 顧問服務、技術性SEO審查與長期成長方案。',
+        },
+      },
+    ],
+  },
+  sameAs: ['https://nativeaaaa.com.hk'],
 })
 
 /**
