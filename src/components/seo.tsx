@@ -28,12 +28,6 @@ interface SiteMetadata {
   }
 }
 
-interface SiteData {
-  site: {
-    siteMetadata: SiteMetadata
-  }
-}
-
 const Seo: React.FC<SeoProps> = ({
   description = '',
   lang = 'zh-HK',
