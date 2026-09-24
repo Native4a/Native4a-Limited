@@ -1,25 +1,9 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { useStaticQuery } from 'gatsby'
 
 const useAddMenu = () => {
   const {
     allContentfulMenu: { nodes },
-  } = useStaticQuery(graphql`
-    query MenuQL {
-      allContentfulMenu(sort: { order: ASC }) {
-        nodes {
-          order
-          slug
-          urlTitle
-          url
-          submenu {
-            link
-            slug
-            title
-          }
-        }
-      }
-    }
-  `)
+  } = useStaticQuery({allContentfulMenu: { nodes: [] }})
   return nodes
 }
 

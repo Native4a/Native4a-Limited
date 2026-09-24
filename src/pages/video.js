@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { withTranslation } from 'react-i18next'
 
@@ -87,21 +86,3 @@ class videoIndex extends React.Component {
 
 export default withTranslation()(videoIndex)
 
-export const videoQuery = graphql`
-  query videoQuery {
-    allContentfulVideoPage {
-      nodes {
-        metaTitle
-        metaDescription
-        title
-        subTitle
-        titleDescription {
-          raw
-        }
-        nativeBanner {
-          url
-        }
-      }
-    }
-  }
-`

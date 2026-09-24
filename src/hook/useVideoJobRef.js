@@ -1,24 +1,9 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { useStaticQuery } from 'gatsby';
 
 const VideoJobRef = () => {
   const {
     allContentfulVideoJobRef: { nodes }
-  } = useStaticQuery(graphql`
-      query VideoJobRefQL {
-        allContentfulVideoJobRef(sort: {order: ASC}) {
-            nodes {
-              order
-              image {
-                url
-              }
-              companyName
-              videoTitle
-              youtubeUrl
-              videoAlt
-            }
-        }
-      }
-  `);
+  } = useStaticQuery({allContentfulVideoJobRef: { nodes: [] }});
   return nodes;
 };
 

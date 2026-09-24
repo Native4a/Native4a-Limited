@@ -81,18 +81,6 @@ if (!isDev) {
   )
 }
 
-// Only add Contentful plugin if credentials are available
-if (process.env.CONTENTFUL_SPACE_ID && process.env.CONTENTFUL_ACCESS_TOKEN) {
-  plugins.push({
-    resolve: 'gatsby-source-contentful',
-    options: {
-      spaceId: process.env.CONTENTFUL_SPACE_ID,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      host: process.env.CONTENTFUL_HOST || 'cdn.contentful.com',
-    },
-  })
-}
-
 const siteMetadata = {
   title: 'Native4a - SEO Agency Hong Kong | Digital Marketing Services',
   description: 'Native4a is a leading SEO agency in Hong Kong offering professional SEO, digital marketing, web design, and video production services to help your business grow online.',

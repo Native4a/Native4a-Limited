@@ -4,8 +4,6 @@ import Seo from '../components/seo'
 import AboutAs from '../components/aboutAs'
 import ClientLogos from '../components/clientLogos'
 import Text from '../components/baseTools/text'
-import { graphql } from 'gatsby'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import ReactMarkdown from 'react-markdown'
 import get from 'lodash/get'
 import Section from '../components/baseTools/Section'
@@ -28,7 +26,7 @@ class PrivacyPolicy extends React.Component {
             <Text tag="h1" className="text-4xl">
               <ReactMarkdown>{headingContent}</ReactMarkdown>
             </Text>
-            {longTextData && renderRichText(longTextData)}
+            {longTextData && <ReactMarkdown>{typeof longTextData === 'string' ? longTextData : ''}</ReactMarkdown>}
           </div>
         </Section>
         <section>
@@ -44,34 +42,3 @@ class PrivacyPolicy extends React.Component {
 
 export default PrivacyPolicy
 
-export const privacyPolicyQuery = graphql`
-  query privacyPolicyQuery {
-    allContentfulAddNewPage(
-      filter: { contentful_id: { eq: "4YFHkwSOOjgijcFN6Kht67" } }
-    ) {
-      nodes {
-        order
-        pageName
-        seo {
-          metaTitle
-          metaDescription {
-            metaDescription
-          }
-        }
-        contact {
-          ... on ContentfulToolsText {
-            id
-            longText {
-              raw
-            }
-          }
-        }
-        heading {
-          content {
-            content
-          }
-        }
-      }
-    }
-  }
-`

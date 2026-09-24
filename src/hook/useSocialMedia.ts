@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { useStaticQuery } from 'gatsby';
 
 interface SocialMediaNode {
   title: string;
@@ -12,24 +12,7 @@ interface SocialMediaNode {
 const useSocialMedia = (): SocialMediaNode[] => {
   const {
     allContentfulSocialMedia: { nodes },
-  } = useStaticQuery(graphql`
-    query SocialMediaQL {
-      allContentfulSocialMedia(sort: { order: ASC }) {
-        nodes {
-          title
-          description
-          socialMediaLogo {
-            url
-          }
-          backgroundColor {
-            value
-          }
-          url
-          order
-        }
-      }
-    }
-  `);
+  } = useStaticQuery({allContentfulSocialMedia: { nodes: [] }});
   return nodes;
 };
 

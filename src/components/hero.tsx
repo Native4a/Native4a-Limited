@@ -1,7 +1,5 @@
 import React from 'react'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
-
 import * as styles from '../styles/hero.module.css'
 
 interface HeroProps {
@@ -20,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({ title, content, image }) => (
         <div className="bg-white">
         <h1 className={styles.title}>{title}</h1>
         {content && (
-          <div className={styles.content}>{renderRichText(content)}</div>
+          <div className={styles.content}>{typeof content === 'string' ? content : ''}</div>
         )}
       </div></div>
     </div>

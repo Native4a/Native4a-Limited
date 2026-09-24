@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 import { withTranslation } from 'react-i18next'
@@ -380,28 +379,3 @@ class smmAdsIndex extends React.Component {
 
 export default withTranslation()(smmAdsIndex)
 
-export const SocialMediaQuery = graphql`
-  query SocialMediaQuery {
-    allContentfulSocialMediaPage {
-      nodes {
-        metaTitle
-        metaDescription
-        title
-        subTitle
-        titleDescription {
-          raw
-        }
-        nativeBanner {
-          url
-        }
-        servicesHeadingTitle
-        servicesTitle
-        servicesDescription
-        servicesImage {
-          title
-          url
-        }
-      }
-    }
-  }
-`

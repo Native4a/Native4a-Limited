@@ -1,20 +1,9 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { useStaticQuery } from 'gatsby'
 
 const useChiBacklinksEvaluation = () => {
   const {
     allContentfulBacklinksPage: { nodes },
-  } = useStaticQuery(graphql`
-    query ChiBacklinkEvaluationQL {
-      allContentfulBacklinksPage {
-        nodes {
-          chiEvaluationDescription {
-            order
-            title
-          }
-        }
-      }
-    }
-  `)
+  } = useStaticQuery({allContentfulBacklinksPage: { nodes: [] }})
   return nodes
 }
 

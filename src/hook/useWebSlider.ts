@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { useStaticQuery } from 'gatsby';
 
 interface WebSliderNode {
   step1Image: { title: string; url: string; description: string };
@@ -8,34 +8,7 @@ interface WebSliderNode {
 }
 
 const useWebSlider = (): WebSliderNode[] => {
-  const { allContentfulWebDesignPage: { nodes }} = useStaticQuery(graphql`
-  query WebSlider{
-    allContentfulWebDesignPage {
-      nodes {
-        step1Image {
-          title
-          url
-          description
-        }
-        step2Image {
-          title
-          url
-          description
-        }
-        step3Image {
-          title
-          url
-          description
-        }
-        step4Image {
-          title
-          url
-          description
-        }
-      }
-    }
-  }
-`);
+  const { allContentfulWebDesignPage: { nodes }} = useStaticQuery({allContentfulWebDesignPage: { nodes: [] }});
   return nodes;
 };
 export default useWebSlider;

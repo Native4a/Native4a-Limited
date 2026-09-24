@@ -1,21 +1,7 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { useStaticQuery } from 'gatsby';
 
 const useTwelveDifferent = () => {
-  const { allContentfulTwelveDifferent: { nodes }} = useStaticQuery(graphql`
-  query TwelveDifferentQL {
-    allContentfulTwelveDifferent(sort: {order: ASC}) {
-        nodes {
-          no
-          title
-          descriptions {
-            internal {
-              content
-            }
-          }
-        }
-      }
-  }
-`);
+  const { allContentfulTwelveDifferent: { nodes }} = useStaticQuery({allContentfulTwelveDifferent: { nodes: [] }});
   return nodes;
 };
 

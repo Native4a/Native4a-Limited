@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { withTranslation } from 'react-i18next'
 
@@ -85,21 +84,3 @@ class webIndex extends React.Component {
 
 export default withTranslation()(webIndex)
 
-export const webDesignQuery = graphql`
-  query webDesignQuery {
-    allContentfulWebDesignPage {
-      nodes {
-        metaTitle
-        metaDescription
-        title
-        subTitle
-        nativeBanner {
-          url
-        }
-        titleDescription {
-          raw
-        }
-      }
-    }
-  }
-`

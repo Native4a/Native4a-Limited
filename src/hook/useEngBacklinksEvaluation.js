@@ -1,18 +1,9 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { useStaticQuery } from 'gatsby';
 
 const useEngBacklinksEvaluation = () => {
     const {
         allContentfulEngBacklinksEvaluation: { nodes }
-    } = useStaticQuery(graphql`
-    query EngBacklinkEvaluationQL {
-        allContentfulEngBacklinksEvaluation(sort: {order: ASC}) {
-            nodes {
-              order
-              descriptions
-            }
-          }
-      }
-  `);
+    } = useStaticQuery({allContentfulEngBacklinksEvaluation: { nodes: [] }});
     return nodes;
 };
 

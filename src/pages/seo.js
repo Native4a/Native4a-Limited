@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 import { withTranslation } from 'react-i18next'
@@ -390,22 +389,3 @@ class seoIndex extends React.Component {
 
 export default withTranslation()(seoIndex)
 
-export const webDesignQuery = graphql`
-  query seoQuery {
-    allContentfulSeoPage {
-      nodes {
-        metaTitle
-        metaDescription
-        title
-        titleH2
-        subTitle
-        titleDescription {
-          raw
-        }
-        nativeBanner {
-          url
-        }
-      }
-    }
-  }
-`

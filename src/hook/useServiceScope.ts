@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { useStaticQuery } from 'gatsby';
 
 interface ServiceScopeNode {
   icon: { url: string };
@@ -10,22 +10,7 @@ interface ServiceScopeNode {
 const useServiceScope = (): ServiceScopeNode[] => {
     const {
         allContentfulServiceScope: { nodes }
-    } = useStaticQuery(graphql`
-      query ServiceScope_QL {
-        allContentfulServiceScope(sort: {order: ASC}) {
-            nodes {
-              icon {
-                url
-              }
-              title
-              descriptions {
-                raw
-              }
-              order
-            }
-        }
-      }
-  `);
+    } = useStaticQuery({allContentfulServiceScope: { nodes: [] }});
     return nodes;
 };
 

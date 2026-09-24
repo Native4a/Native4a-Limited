@@ -49,8 +49,13 @@ const DEFAULT_LANGUAGE = 'zh'
 let getNotionBlogPosts: any = null
 try {
   const notionService = require('./src/services/notionBlog')
-  getNotionBlogPosts = notionService.getNotionBlogPosts
-  console.log('[v0] Successfully loaded Notion service')
+  const notionApiKey = process.env.NOTION_API_KEY || ''
+  if (notionApiKey.startsWith('secret_') || notionApiKey.startsWith('ntn_')) {
+    getNotionBlogPosts = notionService.getNotionBlogPosts
+    console.log('[v0] Successfully loaded Notion service')
+  } else {
+    console.warn('[v0] Notion API key is unavailable or invalid; blog posts will not be fetched')
+  }
 } catch (error) {
   console.warn('[v0] Could not import Notion service, blog posts will not be fetched:', error.message)
 }

@@ -1,34 +1,7 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { useStaticQuery } from 'gatsby';
 
 const useBacklinkSlider = () => {
-  const { allContentfulBacklinksPage: { nodes }} = useStaticQuery(graphql`
-  query BacklinksPage{
-    allContentfulBacklinksPage {
-      nodes {
-        step1Image {
-          title
-          url
-          description
-        }
-        step2Image {
-          title
-          url
-          description
-        }
-        step3Image {
-          title
-          url
-          description
-        }
-        step4Image {
-          title
-          url
-          description
-        }
-      }
-    }
-  }
-`);
+  const { allContentfulBacklinksPage: { nodes }} = useStaticQuery({allContentfulBacklinksPage: { nodes: [] }});
   return nodes;
 };
 export default useBacklinkSlider;

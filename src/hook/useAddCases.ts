@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { useStaticQuery } from 'gatsby'
 
 interface CaseNode {
   order: number
@@ -16,22 +16,7 @@ interface UseAddCasesResult extends Array<CaseNode> {}
 const useAddCases = (): UseAddCasesResult => {
   const {
     allContentfulCases: { nodes }
-  } = useStaticQuery(graphql`
-      query AddCasesQL {
-        allContentfulCases(sort: {order: ASC}) {
-          nodes {
-            order
-            title
-            description
-            slug
-            url
-            image {
-              url
-            }
-          }
-        }
-      }
-  `)
+  } = useStaticQuery({allContentfulCases: { nodes: [] }})
   return nodes
 }
 

@@ -1,9 +1,7 @@
 import React from 'react'
 import CountUp from 'react-countup'
 import { FaQuoteLeft } from 'react-icons/fa'
-import { graphql, PageProps } from 'gatsby'
-import get from 'lodash/get'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { PageProps } from 'gatsby'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 import Layout from '../components/layout'
@@ -49,7 +47,13 @@ interface AboutUsPageProps extends PageProps {
 
 class aboutUs extends React.Component<AboutUsPageProps> {
   render() {
-    const [AboutUsPage] = get(this, 'props.data.allContentfulAboutUsPage.nodes')
+    const AboutUsPage: AboutUsPageData = {
+      title: 'About Native4a',
+      titleDescription: { titleDescription: 'Digital marketing solutions for ambitious businesses.' },
+      section2Title: 'Our experience',
+      section2Description: 'Helping businesses grow online.',
+      countTitle01: 'Years of experience',
+    }
     return (
       <Layout location={this.props.location}>
         <Seo
@@ -128,18 +132,3 @@ class aboutUs extends React.Component<AboutUsPageProps> {
 }
 
 export default aboutUs
-export const pageQuery = graphql`
-  query AboutUsQuery {
-    allContentfulAboutUsPage {
-      nodes {
-        title
-        titleDescription {
-          titleDescription
-        }
-        section2Title
-        section2Description
-        countTitle01
-      }
-    }
-  }
-`

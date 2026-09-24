@@ -1,7 +1,5 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
-
 interface StructuredData {
   '@context': string
   '@type': string
@@ -47,24 +45,16 @@ const Seo: React.FC<SeoProps> = ({
   noindex = false,
   structuredData,
 }) => {
-  const { site } = useStaticQuery<SiteData>(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            keywords
-            author
-          }
-        }
-      }
-    `
-  )
+  const siteMetadata: SiteMetadata = {
+    title: 'Native4a - SEO Agency Hong Kong | Digital Marketing Services',
+    description: 'Native4a is a leading SEO agency in Hong Kong offering professional SEO, digital marketing, web design, and video production services to help your business grow online.',
+    keywords: 'SEO, digital marketing, Hong Kong, web design, video production, backlinks, social media marketing',
+    author: 'Native4a Limited',
+  }
 
-  const metaDescription = description || site.siteMetadata.description
-  const metaKeywords = keywords || site.siteMetadata.keywords
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description || siteMetadata.description
+  const metaKeywords = keywords || siteMetadata.keywords
+  const defaultTitle = siteMetadata.title
   const defaultImage = image || 'https://nativeaaaa.com.hk/og-image.png'
 
   const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow'
