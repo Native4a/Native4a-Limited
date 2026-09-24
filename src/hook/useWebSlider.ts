@@ -1,5 +1,3 @@
-import { useStaticQuery } from 'gatsby';
-
 interface WebSliderNode {
   step1Image: { title: string; url: string; description: string };
   step2Image: { title: string; url: string; description: string };
@@ -8,7 +6,6 @@ interface WebSliderNode {
 }
 
 const useWebSlider = (): WebSliderNode[] => {
-  const { allContentfulWebDesignPage: { nodes }} = useStaticQuery({allContentfulWebDesignPage: { nodes: [] }});
-  return nodes;
+  return [];
 };
 export default useWebSlider;

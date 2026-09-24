@@ -1,5 +1,4 @@
 import React from 'react'
-import get from 'lodash/get'
 import { withTranslation } from 'react-i18next'
 
 import Layout from '../components/layout'
@@ -19,7 +18,6 @@ import * as styles from '../styles/video.module.css'
 
 class videoIndex extends React.Component {
   render() {
-    const [videoPage] = get(this, 'props.data.allContentfulVideoPage.nodes')
     const { t } = this.props
 
     return (

@@ -1,5 +1,3 @@
-import { useStaticQuery } from 'gatsby';
-
 interface VideoSliderNode {
   step1Image: { title: string; url: string; description: string };
   step2Image: { title: string; url: string; description: string };
@@ -8,7 +6,6 @@ interface VideoSliderNode {
 }
 
 const useSlider = (): VideoSliderNode[] => {
-  const { allContentfulVideoPage: { nodes }} = useStaticQuery({allContentfulVideoPage: { nodes: [] }});
-  return nodes;
+  return [];
 };
 export default useSlider;

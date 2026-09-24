@@ -1,10 +1,5 @@
-import { useStaticQuery } from 'gatsby'
-
 const useAddMenu = () => {
-  const {
-    allContentfulMenu: { nodes },
-  } = useStaticQuery({allContentfulMenu: { nodes: [] }})
-  return nodes
+  return []
 }
 
 export default useAddMenu

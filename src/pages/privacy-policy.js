@@ -10,7 +10,7 @@ import Section from '../components/baseTools/Section'
 
 class PrivacyPolicy extends React.Component {
   render() {
-    const [policy] = get(this, 'props.data.allContentfulAddNewPage.nodes')
+    const [policy] = get(this, 'props.data.allContentfulAddNewPage.nodes', [{}])
     const longTextData = get(policy, 'contact[0].longText')
     const headingContent = get(policy, 'heading[0].content.content')
 

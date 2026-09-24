@@ -80,7 +80,7 @@ const Seo: React.FC<SeoProps> = ({
         },
         {
           name: 'author',
-          content: site.siteMetadata?.author || 'Native4a',
+          content: siteMetadata.author || 'Native4a',
         },
         {
           name: 'viewport',
@@ -128,7 +128,7 @@ const Seo: React.FC<SeoProps> = ({
         },
         {
           name: 'twitter:creator',
-          content: site.siteMetadata?.social?.twitter || '@Native4a',
+          content: siteMetadata.social?.twitter || '@Native4a',
         },
         {
           name: 'twitter:title',

@@ -1,5 +1,4 @@
 import React from 'react'
-import get from 'lodash/get'
 import { withTranslation } from 'react-i18next'
 
 import Layout from '../components/layout'
@@ -19,7 +18,6 @@ import 'reactjs-popup/dist/index.css'
 
 class webIndex extends React.Component {
   render() {
-    const [webPage] = get(this, 'props.data.allContentfulWebDesignPage.nodes')
     const { t } = this.props
 
     return (

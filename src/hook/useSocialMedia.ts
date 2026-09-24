@@ -1,5 +1,3 @@
-import { useStaticQuery } from 'gatsby';
-
 interface SocialMediaNode {
   title: string;
   description: string;
@@ -10,10 +8,7 @@ interface SocialMediaNode {
 }
 
 const useSocialMedia = (): SocialMediaNode[] => {
-  const {
-    allContentfulSocialMedia: { nodes },
-  } = useStaticQuery({allContentfulSocialMedia: { nodes: [] }});
-  return nodes;
+  return [];
 };
 
 export default useSocialMedia;

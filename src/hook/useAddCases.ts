@@ -1,5 +1,3 @@
-import { useStaticQuery } from 'gatsby'
-
 interface CaseNode {
   order: number
   title: string
@@ -14,10 +12,7 @@ interface CaseNode {
 interface UseAddCasesResult extends Array<CaseNode> {}
 
 const useAddCases = (): UseAddCasesResult => {
-  const {
-    allContentfulCases: { nodes }
-  } = useStaticQuery({allContentfulCases: { nodes: [] }})
-  return nodes
+  return []
 }
 
 export default useAddCases

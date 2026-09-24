@@ -1,5 +1,3 @@
-import { useStaticQuery } from 'gatsby';
-
 interface ServiceScopeNode {
   icon: { url: string };
   title: string;
@@ -8,10 +6,7 @@ interface ServiceScopeNode {
 }
 
 const useServiceScope = (): ServiceScopeNode[] => {
-    const {
-        allContentfulServiceScope: { nodes }
-    } = useStaticQuery({allContentfulServiceScope: { nodes: [] }});
-    return nodes;
+    return [];
 };
 
 export default useServiceScope;

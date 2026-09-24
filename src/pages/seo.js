@@ -1,5 +1,4 @@
 import React from 'react'
-import get from 'lodash/get'
 import { FaSquare } from '@react-icons/all-files/fa/FaSquare'
 import { withTranslation } from 'react-i18next'
 
@@ -24,7 +23,6 @@ import * as styles from '../styles/seo.module.css'
 
 class seoIndex extends React.Component {
   render() {
-    const [seoPage] = get(this, 'props.data.allContentfulSeoPage.nodes')
     const { t } = this.props
 
     return (

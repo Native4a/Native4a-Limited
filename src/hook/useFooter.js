@@ -1,7 +1,4 @@
-import { useStaticQuery } from 'gatsby'
-
 const useFooter = () => {
-  const data = useStaticQuery({allContentfulFooter: { nodes: [] }})
-  return data?.allContentfulFooter?.nodes || []
+  return []
 }
 export default useFooter

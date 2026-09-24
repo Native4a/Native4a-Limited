@@ -26,7 +26,7 @@ import conputerSet from '../img/conputer setting.png'
 
 class smmAdsIndex extends React.Component {
   render() {
-    const [smmPage] = get(this, 'props.data.allContentfulSocialMediaPage.nodes')
+    const [smmPage] = get(this, 'props.data.allContentfulSocialMediaPage.nodes', [{ servicesImage: [] }])
     const { t } = this.props
 
     return (
@@ -215,7 +215,7 @@ class smmAdsIndex extends React.Component {
                         <div className="">
                           <img
                             className="w-32"
-                            src={smmPage.servicesImage[0].url}
+                            src={smmPage.servicesImage[0]?.url}
                             alt="service_Image[0]"
                             loading="lazy"
                             decoding="async"
@@ -231,7 +231,7 @@ class smmAdsIndex extends React.Component {
                         <div className="">
                           <img
                             className="w-20"
-                            src={smmPage.servicesImage[1].url}
+                            src={smmPage.servicesImage[1]?.url}
                             alt="service_Image[1]"
                             loading="lazy"
                             decoding="async"
@@ -247,7 +247,7 @@ class smmAdsIndex extends React.Component {
                         <div className="">
                           <img
                             className="w-20"
-                            src={smmPage.servicesImage[2].url}
+                            src={smmPage.servicesImage[2]?.url}
                             alt="service_Image[2]"
                             loading="lazy"
                             decoding="async"
@@ -263,7 +263,7 @@ class smmAdsIndex extends React.Component {
                         <div className="">
                           <img
                             className="w-20"
-                            src={smmPage.servicesImage[3].url}
+                            src={smmPage.servicesImage[3]?.url}
                             alt="service_Image[3]"
                             loading="lazy"
                             decoding="async"
@@ -279,7 +279,7 @@ class smmAdsIndex extends React.Component {
                         <div className="">
                           <img
                             className="w-20"
-                            src={smmPage.servicesImage[4].url}
+                            src={smmPage.servicesImage[4]?.url}
                             alt="service_Image[4]"
                             loading="lazy"
                             decoding="async"
@@ -295,7 +295,7 @@ class smmAdsIndex extends React.Component {
                         <div className="">
                           <img
                             className="w-20"
-                            src={smmPage.servicesImage[5].url}
+                            src={smmPage.servicesImage[5]?.url}
                             alt="service_Image[5]"
                             loading="lazy"
                             decoding="async"
@@ -311,7 +311,7 @@ class smmAdsIndex extends React.Component {
                         <div className="">
                           <img
                             className="w-20"
-                            src={smmPage.servicesImage[6].url}
+                            src={smmPage.servicesImage[6]?.url}
                             alt="service_Image[6]"
                             loading="lazy"
                             decoding="async"
@@ -327,7 +327,7 @@ class smmAdsIndex extends React.Component {
                         <div className="">
                           <img
                             className="w-20"
-                            src={smmPage.servicesImage[7].url}
+                            src={smmPage.servicesImage[7]?.url}
                             alt="service_Image[7]"
                             loading="lazy"
                             decoding="async"
@@ -343,7 +343,7 @@ class smmAdsIndex extends React.Component {
                         <div className="">
                           <img
                             className="w-20"
-                            src={smmPage.servicesImage[8].url}
+                            src={smmPage.servicesImage[8]?.url}
                             alt="service_Image[8]"
                             loading="lazy"
                             decoding="async"
