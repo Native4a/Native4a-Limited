@@ -1,7 +1,7 @@
 'use client'
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Menu, X, ShoppingCart, MessageCircle, Globe, Search } from "lucide-react";
+import { ChevronDown, Menu, X, MessageCircle, Globe, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -199,10 +199,7 @@ const MobileMenu = ({
             <MessageCircle className="w-6 h-6" />
             <span>WhatsApp 查詢</span>
           </a>
-          <a href="#" className="flex items-center justify-center gap-3 w-full bg-[#e3a008] text-white py-4 rounded-full font-semibold">
-            <ShoppingCart className="w-6 h-6" />
-            <span>立即購物</span>
-          </a>
+
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-4">
@@ -258,12 +255,7 @@ export const NativeHeader = () => {
       {/* Actions & Tools */}
       <div className="flex items-center gap-3 md:gap-6">
         {/* Shopping Button (Desktop/Tablet) */}
-        <div className="hidden md:flex">
-          <a href="#" className="flex items-center gap-2 bg-[#e3a008] hover:bg-[#faab00] text-white px-5 py-2.5 rounded-full transition-all shadow-sm hover:shadow-md active:scale-95">
-            <ShoppingCart className="w-5 h-5" />
-            <span className="font-semibold text-sm">購物</span>
-          </a>
-        </div>
+
 
         {/* WhatsApp (Tablet/Large Mobile) */}
         <div className="hidden sm:flex xl:hidden">
