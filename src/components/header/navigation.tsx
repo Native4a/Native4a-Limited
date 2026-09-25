@@ -309,7 +309,8 @@ const NativeHeader = () => {
           </div>
 
           {/* Language Switcher (Desktop Only) */}
-          <div className="hidden lg:block pl-6 border-l border-gray-100">
+          <div className="flex items-center gap-2 pl-6 border-l border-gray-100" aria-label="翻譯語言選擇">
+            <span className="text-sm font-medium text-[#1d1d1d]">翻譯</span>
             <GooeyLanguageSwitcher />
           </div>
 

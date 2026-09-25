@@ -143,9 +143,10 @@ const Navprops = () => {
             )
           })}
 
-          {/* 手機版語言切換 */}
-          <div className="md:hidden w-full border-t border-gray-100 mt-2 pt-2">
-            <LanguageSwitcher isInMenu={true} />
+          {/* 語言切換：桌面導覽及手機選單都顯示 */}
+          <div className="flex items-center gap-2 w-full border-t border-gray-100 mt-2 pt-2 md:w-auto md:border-t-0 md:mt-0 md:pt-0 md:ml-3 md:pl-3 md:border-l md:border-gray-200">
+            <span className="text-sm font-medium text-gray-700 whitespace-nowrap">翻譯</span>
+            <LanguageSwitcher />
           </div>
         </ul>
 
