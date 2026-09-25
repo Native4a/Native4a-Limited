@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import { useTranslation } from 'react-i18next'
-import { TbShoppingCart } from 'react-icons/tb'
 import Button from '../baseTools/button'
 import LanguageSwitcher from '../LanguageSwitcher'
 import * as styles from '../../styles/navprops.module.css'
@@ -143,42 +142,6 @@ const Navprops = () => {
               </li>
             )
           })}
-
-          {/* 購物按鈕 - 桌面版 */}
-          <div className="hidden xl:flex col-start-4 col-end-7 items-center justify-end gap-3">
-            <Button
-              linkto="https://shop.nativeaaaa.com.hk/"
-              className="text-white bg-yellow-400 hover:bg-yellow-500 transition-colors rounded-full px-6 py-2 font-semibold text-base md:text-md xl:text-lg shadow-md hover:shadow-lg flex items-center gap-2"
-            >
-              <TbShoppingCart className="text-xl" />
-              <span>{t('buttons.shopping')}</span>
-            </Button>
-
-            {/* 語言切換器 - 桌面版 (XL以上) */}
-            <div
-              style={{
-                marginLeft: '20px',
-                paddingLeft: '20px',
-                borderLeft: '1px solid #e5e7eb'
-              }}
-            >
-              <LanguageSwitcher />
-            </div>
-          </div>
-
-          {/* 購物按鈕和語言切換 - 平板版 (md到lg) */}
-          <div className="hidden md:flex lg:hidden items-center justify-between w-full border-t border-gray-100 mt-3 pt-3 gap-3">
-            <Button
-              linkto="https://shop.nativeaaaa.com.hk/"
-              className="flex-1 text-white bg-yellow-400 hover:bg-yellow-500 transition-colors rounded-full px-4 py-2 font-semibold text-sm shadow-md hover:shadow-lg flex items-center justify-center gap-2"
-            >
-              <TbShoppingCart className="text-lg" />
-              <span>{t('buttons.shopping')}</span>
-            </Button>
-            <div style={{ paddingLeft: '20px' }}>
-              <LanguageSwitcher />
-            </div>
-          </div>
 
           {/* 手機版語言切換 */}
           <div className="md:hidden w-full border-t border-gray-100 mt-2 pt-2">
