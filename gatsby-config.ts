@@ -4,6 +4,11 @@ dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+// The v0 preview runs `gatsby build` (NODE_ENV=production) but injects
+// credentials via .env.development.local, so load it as a fallback too.
+// dotenv never overrides variables that are already set.
+dotenv.config({ path: '.env.development.local' })
+
 // Also load .env as fallback
 dotenv.config()
 

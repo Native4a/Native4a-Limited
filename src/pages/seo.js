@@ -11,6 +11,7 @@ import ContactForm from '../components/contactAs'
 import ClientLogos from '../components/clientLogos'
 import SeoSlick from '../components/slickSlider/greenSlider/seoSlider'
 import Awards from '../components/awards'
+import { GeoCrossLink } from '../components/geo/GeoCrossLink'
 import Section from '../components/baseTools/Section'
 import Grid from '../components/baseTools/Grid'
 import Column from '../components/baseTools/Grid/Column'
@@ -371,6 +372,7 @@ class seoIndex extends React.Component {
             </Column>
           </Grid>
         </Section>
+        <GeoCrossLink />
         <section className={styles.seoSpanSquare}>
           <SeoSlick />
         </section>

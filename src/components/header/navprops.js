@@ -16,6 +16,7 @@ const Navprops = () => {
       submenu: [
         { slug: 'backlinks', translationKey: 'nav.backlinks' },
         { slug: 'seo', translationKey: 'nav.seo' },
+        { href: '/zh/geo/', titleZh: 'GEO AI 搜尋優化', titleEn: 'GEO AI Search Optimization', titleJa: 'GEO AI検索最適化' },
         { slug: 'seo-smart-kit', titleZh: '肥仔計算機', titleEn: 'Smart SEO Calculator', titleJa: 'SEO計算機' },
       ],
     },
@@ -121,7 +122,7 @@ const Navprops = () => {
                       return (
                         <Link
                           key={subIndex}
-                          to={getLocalizedPath(subItem.slug)}
+                          to={subItem.href || getLocalizedPath(subItem.slug)}
                           className="block px-5 py-2.5 text-sm text-gray-700 whitespace-nowrap transition-all duration-200 hover:text-yellow-600 hover:bg-yellow-50"
                           style={{
                             borderRadius: '8px',

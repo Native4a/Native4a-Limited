@@ -9,12 +9,10 @@ const useContactAs = () => {
       nodes {
         title
         email
-        phone
         list {
           raw
         }
         address_China
-        address_HongKong
       }
     }
   }

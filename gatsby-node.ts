@@ -207,6 +207,14 @@ export const createPages: GatsbyNode['createPages'] = async ({
     })
   })
 
+  // GEO content is Traditional Chinese only, so it exists solely at /zh/geo/.
+  createPage({
+    path: '/zh/geo/',
+    component: path.resolve('./src/templates/geo-page.tsx'),
+    context: { language: 'zh' },
+  })
+  createRedirect({ fromPath: '/geo/', toPath: '/zh/geo/', isPermanent: true })
+
   // Create redirects from non-prefixed paths to Chinese default
   mainPages.forEach(({ path: pagePath }) => {
     if (pagePath === '/') {

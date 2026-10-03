@@ -13,7 +13,16 @@ import Section from '../components/baseTools/Section'
 class PrivacyPolicy extends React.Component {
   render() {
     const [policy] = get(this, 'props.data.allContentfulAddNewPage.nodes')
-    const longTextData = get(policy, 'contact[0].longText')
+    const rawLongText = get(policy, 'contact[0].longText')
+    // Contentful entry still holds the old phone/address; normalise until the CMS entry is updated.
+    const longTextData = rawLongText?.raw
+      ? {
+          ...rawLongText,
+          raw: rawLongText.raw
+            .replace(/\+?852\s?6746\s?1301|6746\s?1301/g, '+852 6460 2996')
+            .replace(/(新界)?葵涌葵昌路26號6樓D室/g, '新界葵涌葵昌路26-38號 豪華工業大廈22樓'),
+        }
+      : rawLongText
     const headingContent = get(policy, 'heading[0].content.content')
 
     return (

@@ -17,6 +17,9 @@ const NAV_ITEMS = [{
     label: "SEO 優化",
     href: "/seo/"
   }, {
+    label: "GEO AI 搜尋優化",
+    href: "/zh/geo/"
+  }, {
     label: "肥仔計算機",
     href: "#"
   }]
