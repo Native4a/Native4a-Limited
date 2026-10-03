@@ -60,7 +60,7 @@ const IconList = () => {
                     <ContactItem
                         icon={iconPhone}
                         title={t('iconList.phone')}
-                        content="+852 6746 1301"
+                        content="+852 6460 2996"
                     />
                     <ContactItem
                         icon={iconMap}

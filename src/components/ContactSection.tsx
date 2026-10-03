@@ -53,7 +53,7 @@ const CONTACT_INFO = [{
   title: 'email'
 }, {
   icon: <Phone className="w-6 h-6" />,
-  content: '+852 6746 1301',
+  content: '+852 6460 2996',
   title: 'phone'
 }, {
   icon: <MapPin className="w-6 h-6" />,

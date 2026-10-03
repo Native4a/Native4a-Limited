@@ -6,8 +6,8 @@ const Whatsapp = ({ children, className, linkto, customBtn }) => {
     const whatsAppButton = "直接WhatsApp查詢"
     //set default class style with tailwindCSS
     const btn = "bg-emerald-500 text-white rounded-full px-7 py-1.5 font-medium text-[0.83rem] md:text-md xl:text-xl";
-    //set default link to 85267461301
-    const link = "https://api.whatsapp.com/send?phone=85267461301"
+    //set default link to 85264602996
+    const link = "https://wa.me/85264602996"
 
     const btnCustom = "flex justify-center"
 
