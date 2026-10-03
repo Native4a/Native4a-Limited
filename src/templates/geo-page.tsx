@@ -41,16 +41,20 @@ import {
 } from '../data/geoPage'
 
 const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
+  const language = (pageContext as { language?: string })?.language || 'zh'
+  const pageUrl = `https://nativeaaaa.com.hk/${language}/geo/`
+  const htmlLanguage = language === 'zh' ? 'zh-HK' : language
+
   return (
     <Layout location={location} pageContext={pageContext as { language?: string }}>
-      <Helmet htmlAttributes={{ lang: 'zh-HK' }} title={GEO_TITLE} titleTemplate="%s">
+      <Helmet htmlAttributes={{ lang: htmlLanguage }} title={GEO_TITLE} titleTemplate="%s">
         <meta name="description" content={GEO_DESCRIPTION} />
-        <meta property="og:url" content={GEO_URL} />
+        <meta property="og:url" content={pageUrl} />
         <meta property="og:title" content={GEO_TITLE} />
         <meta property="og:description" content={GEO_DESCRIPTION} />
         <meta name="twitter:title" content={GEO_TITLE} />
         <meta name="twitter:description" content={GEO_DESCRIPTION} />
-        <link rel="canonical" href={GEO_URL} />
+        <link rel="canonical" href={pageUrl} />
         <script type="application/ld+json">{JSON.stringify(geoSchema)}</script>
       </Helmet>
 
@@ -60,7 +64,7 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
             <nav aria-label="麵包屑" className="text-sm text-gray-500">
               <ol className="flex items-center gap-2">
                 <li>
-                  <a href="/zh/" className="hover:text-yellow-700">首頁</a>
+                  <a href={`/${language}/`} className="hover:text-yellow-700">首頁</a>
                 </li>
                 <li aria-hidden="true">/</li>
                 <li aria-current="page" className="text-gray-900 font-medium">GEO 服務</li>

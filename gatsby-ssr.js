@@ -1,6 +1,12 @@
 // gatsby-plugin-canonical-urls and react-helmet both emit a canonical link.
 // Pages listed here must ship exactly one canonical in the static HTML.
-const SINGLE_CANONICAL_PATHS = new Set(['/zh/geo/'])
+const SINGLE_CANONICAL_PATHS = new Set([
+  '/zh/',
+  '/zh/geo/',
+  '/zh-CN/geo/',
+  '/en/geo/',
+  '/ja/geo/',
+])
 
 const normalizePath = (pathname = '/') => (pathname.endsWith('/') ? pathname : `${pathname}/`)
 

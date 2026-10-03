@@ -42,6 +42,39 @@ const AWARDS_DATA: AwardItem[] = [{
   imageUrl: mediaImage2,
   alt: 'Native4A 媒體報導 02'
 }];
+export const AwardsMediaSection = () => {
+  const { t } = useTranslation()
+  const [activeTab, setActiveTab] = useState<'award' | 'media'>('award')
+  const visibleAwards = AWARDS_DATA.filter((item) => item.type === activeTab)
+
+  return (
+    <section className="w-full bg-white px-5 py-14 sm:px-8 sm:py-20" aria-labelledby="native4a-awards-heading">
+      <div className="mx-auto max-w-6xl">
+        <header className="mb-8 text-center">
+          <h2 id="native4a-awards-heading" className="text-balance text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            「native4a」品牌 - 獲獎的廣告公司
+          </h2>
+        </header>
+        <div className="mb-8 flex justify-center gap-3" role="tablist" aria-label="年度獎項及媒體報導">
+          <button type="button" role="tab" aria-selected={activeTab === 'award'} onClick={() => setActiveTab('award')} className={`rounded-full border px-5 py-2 font-semibold transition ${activeTab === 'award' ? 'border-amber-500 bg-amber-400 text-slate-950' : 'border-slate-300 bg-white text-slate-700 hover:border-amber-500'}`}>
+            {t('awards.annualAwards')}
+          </button>
+          <button type="button" role="tab" aria-selected={activeTab === 'media'} onClick={() => setActiveTab('media')} className={`rounded-full border px-5 py-2 font-semibold transition ${activeTab === 'media' ? 'border-amber-500 bg-amber-400 text-slate-950' : 'border-slate-300 bg-white text-slate-700 hover:border-amber-500'}`}>
+            {t('awards.mediaFeatures')}
+          </button>
+        </div>
+        <div role="tabpanel" className="grid gap-5 sm:grid-cols-2">
+          {visibleAwards.map((item) => (
+            <figure key={item.id} className="flex aspect-video items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+              <img src={item.imageUrl} alt={item.alt} loading="lazy" decoding="async" className="max-h-full max-w-full object-contain" />
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 const SocialButton = ({
   href,
   icon: Icon,

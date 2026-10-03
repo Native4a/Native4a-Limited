@@ -84,6 +84,16 @@ const Footer = () => {
                   />
                 </div>
               </div>
+              <div className="mx-auto mt-6 grid max-w-4xl gap-2 border-t border-neutral-300 pt-4 text-center text-xs leading-relaxed text-neutral-700 sm:grid-cols-2 md:text-sm">
+                <address className="not-italic">
+                  <span className="font-semibold">{t('iconList.hongKongAddress')}：</span>
+                  {t('iconList.hongKongAddressValue')}
+                </address>
+                <address className="not-italic">
+                  <span className="font-semibold">{t('iconList.shenzhenAddress')}：</span>
+                  {t('iconList.shenzhenAddressValue')}
+                </address>
+              </div>
             </section>
             {shouldShowIcon && (
               <section>

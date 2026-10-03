@@ -266,19 +266,18 @@ function ContactSection() {
   )
 }
 
-export default function HomeAutomationPage() {
+export default function HomeAutomationPage({ preservedSections }: { preservedSections?: React.ReactNode }) {
   return (
     <div className="w-full">
-      <main>
-        <AutomationHero />
-        <PainPointSection />
-        <PackagesSection />
-        <StepsSection />
-        <ProofSection />
-        <MarketingAutomationSection />
-        <FAQSection />
-        <ContactSection />
-      </main>
+      <AutomationHero />
+      <PainPointSection />
+      <PackagesSection />
+      <StepsSection />
+      <ProofSection />
+      <MarketingAutomationSection />
+      {preservedSections}
+      <FAQSection />
+      <ContactSection />
     </div>
   )
 }

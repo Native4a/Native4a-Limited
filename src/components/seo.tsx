@@ -4,20 +4,29 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 interface StructuredData {
   '@context': string
-  '@type': string
+  '@type'?: string
+  '@graph'?: unknown[]
   [key: string]: unknown
+}
+
+interface MetaTag {
+  name?: string
+  property?: string
+  content?: string
+  [key: string]: string | undefined
 }
 
 interface SeoProps {
   description?: string
   lang?: string
-  meta?: Array<Record<string, string>>
+  meta?: MetaTag[]
   title?: string
   image?: string
   ogUrl?: string
   keywords?: string
   noindex?: boolean
   structuredData?: StructuredData
+  disableTitleTemplate?: boolean
 }
 
 interface SiteMetadata {
@@ -46,6 +55,7 @@ const Seo: React.FC<SeoProps> = ({
   keywords,
   noindex = false,
   structuredData,
+  disableTitleTemplate = false,
 }) => {
   const { site } = useStaticQuery<SiteData>(
     graphql`
@@ -76,7 +86,7 @@ const Seo: React.FC<SeoProps> = ({
       }}
       title={title}
       defaultTitle={defaultTitle}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
+      titleTemplate={disableTitleTemplate ? false : defaultTitle ? `%s | ${defaultTitle}` : undefined}
       meta={[
         {
           name: 'robots',
@@ -158,7 +168,8 @@ const Seo: React.FC<SeoProps> = ({
           name: 'twitter:image',
           content: defaultImage,
         },
-      ].concat(meta)}
+        ...meta,
+      ]}
     >
       <link rel="canonical" href={ogUrl} />
       {structuredData && (

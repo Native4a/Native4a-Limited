@@ -100,19 +100,20 @@ const TestimonialCard = ({
       </div>
     </div>
   </div>;
-export const CombinedCustomerSuccess: React.FC = () => {
+export const CombinedCustomerSuccess: React.FC<{ title?: string }> = ({ title }) => {
   const { t } = useTranslation()
+  const sectionTitle = title || t('homepage.customerTestimonial')
   return <section className="w-full bg-white font-sans">
     <div className="w-full pt-[120px] pb-8 flex flex-col items-center">
       <div className="container mx-auto px-4 flex flex-col items-center">
         <div className="block md:hidden w-full max-w-4xl">
           <h2 className="flex items-center text-[24px] font-semibold text-gray-900">
             <span className="text-[#FAAB00] mr-3 flex items-center shrink-0"><Square className="w-8 h-8 fill-current" aria-hidden="true" /></span>
-            <span>{t('homepage.customerTestimonial')}</span>
+            <span>{sectionTitle}</span>
           </h2>
         </div>
         <div className="hidden md:block text-center">
-          <h2 className="text-[50px] font-semibold leading-tight text-gray-900 underline decoration-[#E3A008] decoration-4 underline-offset-[21px]"><span>{t('homepage.customerTestimonial')}</span></h2>
+          <h2 className="text-[50px] font-semibold leading-tight text-gray-900 underline decoration-[#E3A008] decoration-4 underline-offset-[21px]"><span>{sectionTitle}</span></h2>
         </div>
       </div>
     </div>
