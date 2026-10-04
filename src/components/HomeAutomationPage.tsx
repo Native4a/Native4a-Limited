@@ -125,7 +125,7 @@ function AutomationHero() {
         <figure className="mx-auto w-full max-w-md">
           <div className="relative h-[28rem] overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,50,35,0.16)] sm:h-[32rem]">
             <img
-              src="/images/wati-autoreply-real.png"
+              src="/images/wati-autoreply.png"
               alt="WhatsApp AI 自動回覆真實截圖"
               width="720"
               height="1600"
