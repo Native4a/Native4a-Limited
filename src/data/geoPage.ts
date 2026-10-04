@@ -1,25 +1,23 @@
-// Content for /zh/geo/. Strings support **bold**, [text](url) and 【待補：…】 placeholders
-// (rendered with a yellow highlight by GeoRichText). Keep FAQ text identical to geo-page-schema.json.
+// Content for /zh/geo/. Strings support **bold** and [text](url) links. Keep FAQ text identical to geo-page-schema.json.
 
 export const GEO_URL = 'https://nativeaaaa.com.hk/zh/geo/'
 export const GEO_TITLE =
   'GEO公司香港｜AI 搜尋優化服務（ChatGPT／Google AI Overview）｜Native4a'
 export const GEO_DESCRIPTION =
-  'Native4a 提供香港 GEO（生成式引擎優化）服務，令你的品牌出現在 Google AI Overview、AI Mode、Gemini、Perplexity 及 ChatGPT 的答案中。服務包括站內 SEO 文章、程式碼安裝及供應商 Backlinks，簽約設達標承諾。WhatsApp 6460 2996。'
+  'Native4a 提供香港 GEO（生成式引擎優化）服務，令你的品牌出現在 Google AI Overview、AI Mode、Gemini、Perplexity 及 ChatGPT 的答案中。服務包括站內 SEO 文章、程式碼安裝及供應商 Backlinks。WhatsApp 6460 2996 查詢。'
 
 export const WHATSAPP_GEO_URL =
   'https://wa.me/85264602996?text=' +
-  encodeURIComponent('你好，我想了解GEO服務及免費AI能見度檢查')
+  encodeURIComponent('你好，我想了解 GEO 服務')
 export const TEL_URL = 'tel:+85264602996'
 
 export const H1 = '香港 GEO 服務｜令你的品牌出現在 AI 答案之中'
 
 export const ANSWER =
-  '**GEO（生成式引擎優化）是令 ChatGPT、Google AI Overview、Gemini 及 Perplexity 在回答客戶問題時引用及推薦你品牌的優化工作。Native4a 以 SEO 文章、結構化資料及第三方 Backlinks 為你做 GEO，簽約設達標承諾。**'
+  '**GEO（生成式引擎優化）是令 ChatGPT、Google AI Overview、Gemini 及 Perplexity 在回答客戶問題時引用及推薦你品牌的優化工作。Native4a 以 SEO 文章、結構化資料及第三方 Backlinks 為你做 GEO。**'
 
 export const TRUST_ITEMS = [
-  { label: '作者', text: '【待補：MC 真實中英文全名】，Native4a 創辦人【待補：職銜】，從事香港 SEO【待補：年資，須與 LinkedIn 一致】' },
-  { label: '審閱', text: '【待補：審閱同事姓名／職銜，或刪除此行】' },
+  { label: '作者', text: 'MC（Marcus），Native4a 創辦人（2017 年創立），專注香港 SEO 9 年' },
   { label: '適用對象', text: '想在 AI 搜尋中被推薦的香港中小企、服務業及電商' },
   { label: '最後更新', text: '2026 年 10 月' },
 ] as const
@@ -99,46 +97,97 @@ export const CHECK = '✅'
 
 export const SERVICES = {
   intro: '按行業競爭程度及需要報價，WhatsApp 6460 2996 查詢。',
-  head: ['項目', '基本方案', '進階方案', '全面方案'],
+  head: ['服務項目', '服務內容'],
   rows: [
-    ['追蹤 AI 問題數量', '【待補：例如 20 條】', '【待補】', '【待補：例如 40 條】'],
-    ['每月站內 SEO 文章', '【待補：篇數／字數】', '【待補】', '【待補】'],
-    ['程式碼安裝（Schema、llms.txt 等）', CHECK, CHECK, CHECK],
-    ['供應商 Backlinks', '【待補：每月條數】', '【待補】', '【待補】'],
-    ['每月 AI 重測報告（附截圖及引用網址）', CHECK, CHECK, CHECK],
-    ['達標承諾', `${CHECK}【待補：承諾內容】`, CHECK, CHECK],
-    ['合約期', '【待補：例如 6／12 個月】', '【待補】', '【待補】'],
+    ['程式碼安裝（Schema、llms.txt 等）', '包括在 GEO 服務內'],
+    ['每月 AI 重測報告（附截圖及引用網址）', '以同一批問題重測，整理答案、引用及排名變化'],
   ],
   addonTitle: '附加：中文 Backlinks',
   addonHead: ['項目', '條款'],
   addonRows: [['中文 Backlinks 100 條', '毋須簽約，可單獨購買，詳情見[反向連結服務](/zh/backlinks/)']],
-  promise:
-    '**達標承諾說明**：【待補：清楚寫明承諾的量度指標（例如指定關鍵字排名或指定 AI 問題提及率）、量度方法、期限，以及未達標時的安排（例如免費延長服務／退款比例）】。承諾以合約條款為準。',
 }
 
 export const CASES = {
-  note: '以下案例只會寫入可驗證的真實數字。所有【待補】位置必須在上線前填好，否則請隱藏該數字欄。',
+  note: '以下案例展示可核實的工作內容與 Google 排名結果；排名數據來源會於各案例結果表中註明。',
   items: [
     {
       title: '案例一：hypnosis.hk（Hypnosis Academy）｜「催眠」「催眠課程」',
+      intro: '催眠課程行業競爭極激烈，客戶要求的都是極短尾關鍵字，仍在短時間內大幅上升。',
       rows: [
         ['客戶', 'Hypnosis Academy（hypnosis.hk），香港催眠治療師證書課程'],
         ['目標關鍵字', '催眠、催眠課程'],
-        ['基線（改版前，2026 年 4 月）', '課程頁 /hypnosis/ 約 4,500 字，沒有 H1、沒有結構化資料、只有約 4 個 H2 及 7 條 FAQ。排名：【待補：2026 年 4 月「催眠」「催眠課程」排名】'],
+        ['開始追蹤時排名', '催眠師第 15 位、催眠治療課程收費第 14 位、催眠治療證書第 16 位（排名數據來自 SERPROBOT 追蹤）'],
+        ['基線（改版前，2026 年 4 月）', '課程頁 /hypnosis/ 約 4,500 字，沒有 H1、沒有結構化資料、只有約 4 個 H2 及 7 條 FAQ。'],
         ['我們做了什麼', '保留原有課程內容，在下方加入約 4,600 字的「2026 香港催眠課程指南」，結構參考我們為 PAT CPA 驗證過的長文格式，包括答案先行速覽、作者及審閱資料、費用表、5 步流程、常見失誤、官方認證來源及 10 條 FAQ，並加入 Course 及 FAQPage 結構化資料。'],
-        ['結果', '改版後排名表現理想。【待補：改版後「催眠」「催眠課程」排名及日期】【待補：Google AI Overview／Gemini／Perplexity／ChatGPT 提及截圖及日期】'],
-        ['連結', '[https://www.hypnosis.hk/hypnosis/](https://www.hypnosis.hk/hypnosis/) 【待補：確認客戶同意公開名稱及連結】'],
+        ['連結', '[https://www.hypnosis.hk/hypnosis/](https://www.hypnosis.hk/hypnosis/)'],
+      ],
+      rankingResults: [
+        { keyword: '催眠治療課程收費', result: '第 1 位' },
+        { keyword: '催眠治療課程收費', result: '14 → 3' },
+        { keyword: '催眠治療課程', result: '第 3 位' },
+        { keyword: '催眠師', result: '15 → 4' },
+        { keyword: '催眠治療證書', result: '16 → 12' },
+      ],
+      aiOverviewResult: 'Google AI 概覽搜尋「催眠治療課程」及「催眠治療證書」時均主動推薦 Hypnosis Academy，並引用其課程認證及學費。',
+      screenshots: [
+        {
+          src: '/images/hypnosis-rank-1.png',
+          alt: 'SERPROBOT 排名追蹤截圖，顯示催眠治療證書等關鍵字的排名資料。',
+          caption: 'SERPROBOT 排名追蹤（一）',
+        },
+        {
+          src: '/images/hypnosis-rank-2.png',
+          alt: 'SERPROBOT 排名追蹤截圖，顯示催眠相關關鍵字的排名資料。',
+          caption: 'SERPROBOT 排名追蹤（二）',
+        },
+        {
+          src: '/images/hypnosis-ai-overview-1.jpg',
+          alt: 'Google AI 概覽搜尋「催眠治療課程」的結果，列出 Hypnosis Academy 及課程認證資訊。',
+          caption: 'Google AI 概覽：「催眠治療課程」',
+        },
+        {
+          src: '/images/hypnosis-ai-overview-2.jpg',
+          alt: 'Google AI 概覽搜尋「催眠治療證書」的結果，顯示課程認證及學費相關摘要。',
+          caption: 'Google AI 概覽：「催眠治療證書」',
+        },
       ],
     },
     {
       title: '案例二：PAT CPA（patcpa.com.hk）｜公司註冊指南',
       rows: [
         ['客戶', 'PAT CPA，香港會計師事務所'],
-        ['目標關鍵字', '香港公司註冊、公司註冊費用【待補：確認實際目標關鍵字】'],
-        ['基線', '【待補：開始前排名／流量／AI 提及情況及日期】'],
+        ['目標關鍵字', '公司註冊、註冊公司、成立公司、開公司等極短尾大字'],
+        ['基線', '開始追蹤時：公司註冊第 40 位、註冊公司第 55 位、成立公司第 62 位、開公司第 74 位。'],
         ['我們做了什麼', '撰寫約 5,000 字的「香港公司註冊費用 2026」長文：標題包含關鍵字、年份及具體政府收費；首段直接回答；費用與時間比較表；5 步註冊流程；「什麼情況下不應急著成立公司」等決策段落；作者 CPA 資歷信任框；官方資料來源；10 條 FAQ；以及 Article、FAQPage、BreadcrumbList 結構化資料。'],
-        ['結果', '【待補：排名前後數字及日期】【待補：AI Overview／Perplexity／ChatGPT 引用截圖及日期】'],
-        ['連結', '【待補：文章網址】【待補：確認客戶同意公開】'],
+        ['連結', '[《香港註冊公司流程｜開公司費用整理》](https://patcpa.com.hk/blog/%E9%A6%99%E6%B8%AF%E8%A8%BB%E5%86%8A%E5%85%AC%E5%8F%B8%E6%B5%81%E7%A8%8B%EF%BD%9C%E9%96%8B%E5%85%AC%E5%8F%B8%E8%B2%BB%E7%94%A8%E6%95%B4%E7%90%86)、[《香港註冊公司流程｜開公司費用整理》](https://patcpa.com.hk/blog/%E9%A6%99%E6%B8%AF%E8%A8%BB%E5%86%8A%E5%85%AC%E5%8F%B8%E6%B5%81%E7%A8%8B%EF%BD%9C%E9%96%8B%E5%85%AC%E5%8F%B8%E8%B2%BB%E7%94%A8%E6%95%B4%E7%90%86)'],
+      ],
+      rankingResults: [
+        { keyword: '公司註冊', result: '40 → 13', monthlySearches: '2,400' },
+        { keyword: '註冊公司', result: '55 → 17', monthlySearches: '1,300' },
+        { keyword: '公司成立', result: '51 → 19', monthlySearches: '—' },
+        { keyword: '開公司費用', result: '48 → 19', monthlySearches: '—' },
+        { keyword: '成立公司', result: '62 → 20', monthlySearches: '1,600' },
+        { keyword: '開公司', result: '74 → 23', monthlySearches: '2,900' },
+        { keyword: '香港開公司', result: '53 → 24', monthlySearches: '—' },
+        { keyword: '開公司條件', result: '67 → 24', monthlySearches: '—' },
+      ],
+      rankingHighlight: '重點：大部分關鍵字都由同一篇《香港註冊公司流程｜開公司費用整理》收錄——做對一篇文，就能帶動一整組短尾大字上升。',
+      screenshots: [
+        {
+          src: '/images/patcpa-rank-1.png',
+          alt: 'SERPROBOT 排名追蹤截圖，顯示公司註冊、註冊公司及公司成立等關鍵字排名。',
+          caption: 'SERPROBOT 排名追蹤（一）',
+        },
+        {
+          src: '/images/patcpa-rank-2.png',
+          alt: 'SERPROBOT 排名追蹤截圖，顯示開公司、香港開公司及開公司條件等關鍵字排名。',
+          caption: 'SERPROBOT 排名追蹤（二）',
+        },
+        {
+          src: '/images/patcpa-url-found.png',
+          alt: 'SERPROBOT URL Found 截圖，顯示《香港註冊公司流程｜開公司費用整理》頁面的收錄記錄。',
+          caption: 'SERPROBOT URL Found 記錄',
+        },
       ],
     },
   ],
@@ -152,7 +201,7 @@ export const NO_PROMISE = {
   canPromise: [
     '每月按合約完成約定的站內文章、程式碼安裝及 Backlinks 工作',
     '用固定問題公開重測，報告附 AI 原文截圖及引用網址，不會只挑好看的結果',
-    '合約內列明的達標指標（見上方「達標承諾說明」）',
+    '合約內列明的服務範圍及交付內容',
     '只用合規方法：不會製造假評論，不會要求你以優惠換評論（此舉違反 Google 政策，可能導致評論被刪）',
   ],
 }
@@ -169,18 +218,18 @@ export const NOT_YET = {
 export const FAQ = [
   { q: 'GEO 是什麼？同 SEO 有什麼不同？', a: 'GEO（生成式引擎優化）是令 ChatGPT、Google AI Overview、Gemini 及 Perplexity 等 AI 在回答問題時引用或推薦你品牌的優化工作。SEO 的目標是在搜尋結果排名靠前，GEO 的目標是被 AI 答案引用。兩者基礎相同，所以 Native4a 的 GEO 服務已包括 SEO 文章及 Backlinks。' },
   { q: 'GEO 收費多少？', a: '價格視乎行業競爭程度及追蹤問題數量而定，請 WhatsApp 6460 2996 查詢報價。中文 Backlinks 可單獨購買，毋須簽約。' },
-  { q: 'GEO 幾耐見效？', a: '一般需要數個月。技術修正及結構化資料可在首月完成，但 AI 要重新爬取網頁、累積第三方提及後才會較穩定地引用你。我們每月重測，讓你看到每一步的變化。【待補：如有實際案例平均時間，可在此加入】' },
+  { q: 'GEO 幾耐見效？', a: 'GEO 成效會受行業競爭、網站狀況及搜尋平台更新影響。我們會定期重測，並按結果調整內容方向。' },
   { q: '香港用得到 ChatGPT 嗎？還需要優化 ChatGPT 嗎？', a: '香港用戶可透過不同方式使用 ChatGPT，不過香港最常接觸的 AI 答案是 Google AI Overview 及 AI Mode。所以我們首先優化 Google 生態（AI Overview、AI Mode、Gemini），再按你的客群決定 ChatGPT 及 Perplexity 的投入比重。' },
-  { q: '你們保證 ChatGPT 一定會推薦我嗎？', a: '不保證。AI 答案會不斷變化，沒有人可以控制。我們承諾的是按合約完成工作、公開每月重測結果，以及合約內列明的達標指標。' },
+  { q: '你們保證 ChatGPT 一定會推薦我嗎？', a: '不保證。AI 答案會不斷變化，沒有人可以控制。我們會按合約完成約定工作及定期重測，但不保證 AI 推薦。' },
   { q: 'GEO 成效如何量度？', a: '我們在開始前與你揀選 20–40 條固定問題，在各 AI 平台逐條提問並截圖，作為基線。之後每月用同一批問題重測，比較提及率、引用網址及排名變化，報告附 AI 原文截圖。' },
   { q: '已經有 SEO 公司，還需要另外做 GEO 嗎？', a: '不一定要換公司，但要確認現有 SEO 有沒有處理答案型內容、結構化資料、llms.txt、品牌資料一致及第三方提及。如果沒有，AI 未必會引用你。Native4a 的 GEO 已包括 SEO 工作，可以一併處理。' },
   { q: '需要改動我的網站嗎？', a: '需要少量改動，例如加入結構化資料、llms.txt、修正 canonical 及新增或加長文章。程式碼安裝已包括在服務內，我們會先列出改動清單，經你確認後才進行。' },
   { q: '哪些行業最適合做 GEO？', a: '客戶在決定前會先比較或「問人」的行業最適合，例如裝修、維修、搬屋、補習、醫療美容、會計及法律等專業服務，以及教育課程。' },
-  { q: '可以先試做嗎？', a: '可以先 WhatsApp 6460 2996 索取免費 AI 能見度檢查：我們會用數條與你行業相關的問題，看看 AI 現時有沒有提及你及你的對手。【待補：確認是否提供免費檢查及檢查內容】' },
+  { q: '可以先了解 GEO 服務嗎？', a: '可以 WhatsApp 6460 2996 查詢服務內容、追蹤方式及報價，再按實際需要考慮是否合作。' },
 ]
 
 export const CONTACT = {
-  text: '想知道 AI 現時怎樣介紹你的行業、有沒有提及你？WhatsApp 我們，提供你的網站及行業，我們會先做一次 AI 能見度檢查。',
+  text: '想了解 AI 搜尋中的行業能見度及 Native4a GEO 服務？WhatsApp 我們，提供你的網站及行業，我們會說明可行的追蹤及優化方向。',
   company: 'Native4a（NATIVE ADV LTD）',
   address: '新界葵涌葵昌路26-38號 豪華工業大廈22樓',
   phone: '6460 2996',
@@ -188,11 +237,10 @@ export const CONTACT = {
 }
 
 export const AUTHOR = {
-  photo: '【待補：作者相片，alt =「MC 全名 Native4a 創辦人」】',
-  name: '【待補：MC 中英文全名】',
+  name: 'MC（Marcus）',
   role: 'Native4a 創辦人',
-  bio: '【待補：2–3 句簡介：入行年份、專注行業、曾負責的代表案例。年資須與 LinkedIn（2017 年成立）及網站版權年份一致】',
-  linkedin: '【待補：MC 個人 LinkedIn 網址】',
+  bio: '2017 年創立 Native4a，專注香港 SEO 9 年，擅長中文反向連結、長文內容結構及 AI 搜尋優化（GEO）。曾協助催眠學院、會計師事務所、腕錶零售等高競爭行業客戶，以短尾關鍵字取得排名大幅上升。',
+  linkedin: 'https://www.linkedin.com/in/native-mc',
 }
 
 export const RELATED = [
@@ -201,7 +249,6 @@ export const RELATED = [
   '[站外優化](/zh/off-page/)',
   '[肥仔關鍵字計算機](/zh/seo-smart-kit/)',
   '[聯絡我們](/zh/contact-us/)',
-  '【待補：hypnosis.hk 及 PAT CPA 獨立案例頁網址（第 2 週製作）】',
 ]
 
 export const SOURCES = [
@@ -211,4 +258,4 @@ export const SOURCES = [
 ]
 
 export const DISCLAIMER =
-  '本頁內容僅供一般參考，個別成效因行業及競爭情況而異，服務內容及達標承諾以合約為準。'
+  '本頁內容僅供一般參考，個別成效因行業及競爭情況而異，服務範圍及安排以合約為準。'

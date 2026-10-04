@@ -2,15 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { Check } from 'lucide-react'
 
-const TOKEN = /(\*\*[^*]+\*\*|【待補[^】]*】|\[[^\]]+\]\([^)]+\)|✅)/g
-
-export function Placeholder({ children }: { children: React.ReactNode }) {
-  return (
-    <mark className="bg-yellow-200 text-gray-900 rounded px-1 py-0.5 font-medium [box-decoration-break:clone]">
-      {children}
-    </mark>
-  )
-}
+const TOKEN = /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|✅)/g
 
 function renderToken(token: string, key: number): React.ReactNode {
   if (token === '✅') {
@@ -28,9 +20,6 @@ function renderToken(token: string, key: number): React.ReactNode {
         <GeoRichText text={token.slice(2, -2)} />
       </strong>
     )
-  }
-  if (token.startsWith('【待補')) {
-    return <Placeholder key={key}>{token}</Placeholder>
   }
   const match = token.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
   if (match) {

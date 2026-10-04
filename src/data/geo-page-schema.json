@@ -32,8 +32,7 @@
         ]
       },
       "sameAs": [
-        "https://www.instagram.com/nativeaaaa/",
-        "【待補：Native4a LinkedIn 公司頁網址】"
+        "https://www.instagram.com/nativeaaaa/"
       ],
       "knowsAbout": [
         "生成式引擎優化 GEO",
@@ -63,8 +62,14 @@
       "dateModified": "2026-10-03",
       "author": {
         "@type": "Person",
-        "name": "【待補：MC 全名】",
-        "url": "【待補：MC LinkedIn 網址】"
+        "name": "MC (Marcus)",
+        "jobTitle": "Founder",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Native4a",
+          "@id": "https://nativeaaaa.com.hk/#organization"
+        },
+        "sameAs": "https://www.linkedin.com/in/native-mc"
       }
     },
     {
@@ -72,7 +77,7 @@
       "@id": "https://nativeaaaa.com.hk/zh/geo/#service",
       "name": "香港 GEO 服務（生成式引擎優化）",
       "serviceType": "Generative Engine Optimization (GEO)",
-      "description": "令品牌出現在 Google AI Overview、AI Mode、Gemini、Perplexity 及 ChatGPT 答案中的優化服務，包括站內 SEO 文章、程式碼安裝及供應商 Backlinks，簽約設達標承諾。",
+      "description": "令品牌出現在 Google AI Overview、AI Mode、Gemini、Perplexity 及 ChatGPT 答案中的優化服務，包括站內 SEO 文章、程式碼安裝及供應商 Backlinks。",
       "provider": {
         "@id": "https://nativeaaaa.com.hk/#organization"
       },
@@ -108,7 +113,7 @@
           "name": "GEO 幾耐見效？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "一般需要數個月。技術修正及結構化資料可在首月完成，但 AI 要重新爬取網頁、累積第三方提及後才會較穩定地引用你。我們每月重測，讓你看到每一步的變化。【待補：如有實際案例平均時間，可在此加入】"
+            "text": "GEO 成效會受行業競爭、網站狀況及搜尋平台更新影響。我們會定期重測，並按結果調整內容方向。"
           }
         },
         {
@@ -124,7 +129,7 @@
           "name": "你們保證 ChatGPT 一定會推薦我嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "不保證。AI 答案會不斷變化，沒有人可以控制。我們承諾的是按合約完成工作、公開每月重測結果，以及合約內列明的達標指標。"
+            "text": "不保證。AI 答案會不斷變化，沒有人可以控制。我們會按合約完成約定工作及定期重測，但不保證 AI 推薦。"
           }
         },
         {
@@ -161,10 +166,10 @@
         },
         {
           "@type": "Question",
-          "name": "可以先試做嗎？",
+          "name": "可以先了解 GEO 服務嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以先 WhatsApp 6460 2996 索取免費 AI 能見度檢查：我們會用數條與你行業相關的問題，看看 AI 現時有沒有提及你及你的對手。【待補：確認是否提供免費檢查及檢查內容】"
+            "text": "可以 WhatsApp 6460 2996 查詢服務內容、追蹤方式及報價，再按實際需要考慮是否合作。"
           }
         }
       ]

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { PageProps } from 'gatsby'
-import { UserRound, Mail, MapPin, Phone } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import { FaLinkedin as Linkedin } from 'react-icons/fa'
 import Layout from '../components/layout'
-import { GeoRichText, Placeholder } from '../components/geo/GeoRichText'
+import { GeoRichText } from '../components/geo/GeoRichText'
 import {
   GeoSection,
   Paragraph,
@@ -89,7 +89,7 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
               <GeoRichText text={ANSWER} />
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <WhatsAppButton label="WhatsApp 6460 2996 免費 AI 能見度檢查" />
+              <WhatsAppButton label="WhatsApp 6460 2996 查詢 GEO 服務" />
             </div>
           </div>
         </header>
@@ -188,7 +188,6 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
           <DataTable head={SERVICES.head} rows={SERVICES.rows} caption="GEO 服務方案內容" />
           <h3 className="text-xl font-black text-gray-900">{SERVICES.addonTitle}</h3>
           <DataTable head={SERVICES.addonHead} rows={SERVICES.addonRows} caption="附加：中文 Backlinks" />
-          <Callout text={SERVICES.promise} />
           <div>
             <WhatsAppButton label="WhatsApp 6460 2996 索取報價" />
           </div>
@@ -199,6 +198,7 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
           {CASES.items.map((c) => (
             <div key={c.title} className="rounded-3xl border border-gray-200 p-6 md:p-8">
               <h3 className="text-xl font-black text-gray-900 text-balance">{c.title}</h3>
+              {'intro' in c && <p className="mt-3 leading-relaxed">{c.intro}</p>}
               <dl className="mt-5 flex flex-col gap-4">
                 {c.rows.map(([label, text]) => (
                   <div key={label} className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-4">
@@ -209,6 +209,67 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
                   </div>
                 ))}
               </dl>
+              {'rankingResults' in c && (
+                <div className="mt-8">
+                  <h4 className="text-lg font-black text-gray-900">結果</h4>
+                  <p className="mt-1 text-sm leading-relaxed text-gray-600">關鍵字排名數據來自 SERPROBOT 追蹤。</p>
+                  <div className="mt-3 overflow-hidden rounded-2xl border border-gray-200">
+                    <table className="w-full border-collapse text-left text-sm">
+                      <caption className="sr-only">{c.title} SERPROBOT 關鍵字排名結果</caption>
+                      <thead className="bg-gray-50 text-gray-700">
+                        <tr>
+                          <th scope="col" className="px-3 py-3 font-bold sm:px-4">關鍵字</th>
+                          <th scope="col" className="px-3 py-3 font-bold sm:px-4">排名變化</th>
+                          <th scope="col" className="px-3 py-3 font-bold sm:px-4">月搜尋量</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200">
+                        {c.rankingResults.map((item, index) => (
+                          <tr key={`${item.keyword}-${index}`}>
+                            <th scope="row" className="px-3 py-3 font-medium text-gray-800 sm:px-4">{item.keyword}</th>
+                            <td className="px-3 py-3 font-bold text-gray-900 sm:px-4">{item.result}</td>
+                            <td className="px-3 py-3 text-gray-800 sm:px-4">{'monthlySearches' in item ? item.monthlySearches : '—'}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  {'rankingHighlight' in c && (
+                    <p className="mt-4 rounded-xl border-l-4 border-yellow-500 bg-yellow-50 px-4 py-3 leading-relaxed text-gray-900">
+                      <strong>{c.rankingHighlight}</strong>
+                    </p>
+                  )}
+                  {'aiOverviewResult' in c && <p className="mt-4 leading-relaxed">{c.aiOverviewResult}</p>}
+                </div>
+              )}
+              {'screenshots' in c && (
+                <ul className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  {c.screenshots.map((screenshot) => (
+                    <li key={screenshot.src}>
+                      <figure className="overflow-hidden rounded-2xl border border-gray-200 bg-gray-50">
+                        <a
+                          href={screenshot.src}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={`開啟原尺寸截圖：${screenshot.alt}`}
+                          className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+                        >
+                          <img
+                            src={screenshot.src}
+                            alt={screenshot.alt}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-auto w-full"
+                          />
+                        </a>
+                        <figcaption className="px-4 py-3 text-sm leading-relaxed text-gray-700">
+                          {screenshot.caption}
+                        </figcaption>
+                      </figure>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
           <Paragraph text={CASES.footer} />
@@ -282,10 +343,13 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
             <h2 id="author-title" className="sr-only">作者</h2>
             <div className="flex flex-col md:flex-row gap-6 rounded-3xl bg-white border border-gray-200 p-6 md:p-8">
               <div className="flex flex-col items-center gap-2 md:w-48 shrink-0">
-                <div className="flex h-24 w-24 items-center justify-center rounded-full bg-gray-100">
-                  <UserRound className="w-10 h-10 text-gray-400" aria-hidden="true" />
+                <div
+                  role="img"
+                  aria-label="MC 頭像"
+                  className="flex h-24 w-24 items-center justify-center rounded-full bg-[#10b981] text-2xl font-black text-white"
+                >
+                  MC
                 </div>
-                <p className="text-xs text-center"><Placeholder>{AUTHOR.photo}</Placeholder></p>
               </div>
               <div className="flex flex-col gap-3">
                 <p className="text-lg font-black text-gray-900">
@@ -295,7 +359,9 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
                 <p className="leading-relaxed"><GeoRichText text={AUTHOR.bio} /></p>
                 <p className="flex items-center gap-2">
                   <Linkedin className="w-4 h-4 text-gray-500" aria-hidden="true" />
-                  <span>LinkedIn：<GeoRichText text={AUTHOR.linkedin} /></span>
+                  <a href={AUTHOR.linkedin} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                    LinkedIn
+                  </a>
                 </p>
               </div>
             </div>
