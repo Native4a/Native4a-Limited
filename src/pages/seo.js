@@ -147,7 +147,7 @@ class seoIndex extends React.Component {
               <span>
                 <FaSquare />
               </span>
-              <Text tag="p" className="pl-3">
+              <Text tag="span" className="pl-3">
                 {t('seo.freeExposure')}
               </Text>
             </Text>
@@ -198,7 +198,7 @@ class seoIndex extends React.Component {
                 <span>
                   <FaSquare />
                 </span>
-                <Text tag="p" className="pl-3">
+                <Text tag="span" className="pl-3">
                   {t('seo.keywordRanking')}
                 </Text>
               </Text>
@@ -216,7 +216,7 @@ class seoIndex extends React.Component {
                 <span>
                   <FaSquare />
                 </span>
-                <Text tag="p" className="pl-3">
+                <Text tag="span" className="pl-3">
                   {t('seo.brandReputation')}
                 </Text>
               </Text>
@@ -265,7 +265,7 @@ class seoIndex extends React.Component {
                 <span>
                   <FaSquare />
                 </span>
-                <Text tag="p" className="pl-3">
+                <Text tag="span" className="pl-3">
                   {t('seo.keywordResearch')}
                 </Text>
               </Text>
@@ -287,7 +287,7 @@ class seoIndex extends React.Component {
                 <span>
                   <FaSquare />
                 </span>
-                <Text tag="p" className="pl-3">
+                <Text tag="span" className="pl-3">
                   {t('seo.onPageOptimization')}
                 </Text>
               </Text>
@@ -323,7 +323,7 @@ class seoIndex extends React.Component {
                 <span>
                   <FaSquare />
                 </span>
-                <Text tag="p" className="pl-3">
+                <Text tag="span" className="pl-3">
                   {t('seo.contentOptimization')}
                 </Text>
               </Text>
@@ -345,7 +345,7 @@ class seoIndex extends React.Component {
                 <span>
                   <FaSquare />
                 </span>
-                <Text tag="p" className="pl-3">
+                <Text tag="span" className="pl-3">
                   {t('seo.backlinkBuilding')}
                 </Text>
               </Text>

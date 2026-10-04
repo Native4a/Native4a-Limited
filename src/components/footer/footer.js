@@ -21,6 +21,32 @@ const Footer = () => {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    const visitorWindow = window
+    visitorWindow.visitorGlobalObjectAlias = 'vgo'
+    visitorWindow.vgo = visitorWindow.vgo || function (...args) {
+      visitorWindow.vgo.q = visitorWindow.vgo.q || []
+      visitorWindow.vgo.q.push(args)
+    }
+
+    if (!visitorWindow.vgo.l) {
+      visitorWindow.vgo.l = Date.now()
+      const script = document.createElement('script')
+      script.src = 'https://diffuser-cdn.app-us1.com/diffuser/diffuser.js'
+      script.async = true
+      const firstScript = document.getElementsByTagName('script')[0]
+      if (firstScript?.parentNode) {
+        firstScript.parentNode.insertBefore(script, firstScript)
+      } else {
+        document.head.appendChild(script)
+      }
+    }
+
+    visitorWindow.vgo('setAccount', '69060812')
+    visitorWindow.vgo('setTrackByDefault', true)
+    visitorWindow.vgo('process')
+  }, [])
+
+  useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768)
     }
@@ -113,15 +139,6 @@ const Footer = () => {
                 />
               </section>
             )}
-            <script
-              type="text/javascript"
-              dangerouslySetInnerHTML={{
-                __html: `(function(e,t,o,n,p,r,i){e.visitorGlobalObjectAlias=n;e[e.visitorGlobalObjectAlias]=e[e.visitorGlobalObjectAlias]||function(){(e[e.visitorGlobalObjectAlias].q=e[e.visitorGlobalObjectAlias].q||[]).push(arguments)};e[e.visitorGlobalObjectAlias].l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://diffuser-cdn.app-us1.com/diffuser/diffuser.js","vgo");
-vgo('setAccount', '69060812');
-vgo('setTrackByDefault', true);
-vgo('process');`,
-              }}
-            />
           </Container>
         )
       })}

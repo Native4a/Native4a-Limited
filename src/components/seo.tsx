@@ -45,6 +45,18 @@ interface SiteData {
   }
 }
 
+const serializeStructuredData = (data: StructuredData) =>
+  JSON.stringify(data).replace(/[<>&]/g, (character) => {
+    switch (character) {
+      case '<':
+        return '\\u003c'
+      case '>':
+        return '\\u003e'
+      default:
+        return '\\u0026'
+    }
+  })
+
 const Seo: React.FC<SeoProps> = ({
   description = '',
   lang = 'zh-HK',
@@ -174,7 +186,7 @@ const Seo: React.FC<SeoProps> = ({
       <link rel="canonical" href={ogUrl} />
       {structuredData && (
         <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
+          {serializeStructuredData(structuredData)}
         </script>
       )}
     </Helmet>

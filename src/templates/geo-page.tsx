@@ -40,6 +40,18 @@ import {
   DISCLAIMER,
 } from '../data/geoPage'
 
+const serializeStructuredData = (data: unknown) =>
+  JSON.stringify(data).replace(/[<>&]/g, (character) => {
+    switch (character) {
+      case '<':
+        return '\\u003c'
+      case '>':
+        return '\\u003e'
+      default:
+        return '\\u0026'
+    }
+  })
+
 const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
   const language = (pageContext as { language?: string })?.language || 'zh'
   const pageUrl = `https://nativeaaaa.com.hk/${language}/geo/`
@@ -55,7 +67,7 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
         <meta name="twitter:title" content={GEO_TITLE} />
         <meta name="twitter:description" content={GEO_DESCRIPTION} />
         <link rel="canonical" href={pageUrl} />
-        <script type="application/ld+json">{JSON.stringify(geoSchema)}</script>
+        <script type="application/ld+json">{serializeStructuredData(geoSchema)}</script>
       </Helmet>
 
       <article className="bg-white text-gray-800">
