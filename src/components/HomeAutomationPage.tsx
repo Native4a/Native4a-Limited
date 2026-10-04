@@ -1,15 +1,6 @@
 import React from 'react'
 import { ArrowDown, ArrowUpRight, MessageCircle, Workflow } from 'lucide-react'
 import HomeProofScreenshots from './HomeProofScreenshots'
-import awardImage1 from '../img/native4aAward01.webp'
-import awardImage2 from '../img/native4aAward02.webp'
-import awardImage3 from '../img/Award02_2.png'
-
-const homeAwardImages = [
-  { src: awardImage1, alt: 'Native4a 香港企業獎頒獎相片' },
-  { src: awardImage2, alt: 'Native4a 香港企業獎合照' },
-  { src: awardImage3, alt: 'Native4a 香港企業獎活動相片' },
-]
 
 const WHATSAPP_URL = 'https://wa.me/85264602996?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3AI%E8%87%AA%E5%8B%95%E5%8C%96%E6%96%B9%E6%A1%88%E5%8F%8A%E5%A0%B1%E5%83%B9'
 const QUOTE_LABEL = 'WhatsApp 6460 2996 查詢報價'
@@ -99,10 +90,10 @@ function AutomationHero() {
             <Workflow aria-hidden="true" size={16} />
             Native4a · AI 自動化方案
           </p>
-          <h1 className="text-balance text-4xl font-extrabold leading-[1.14] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+          <h1 className="text-balance text-[1.625rem] font-extrabold leading-[1.2] tracking-tight text-slate-950 sm:text-[2.25rem] lg:text-[2.5rem]">
             香港中小企 AI 自動化｜查詢自動回覆、收款自動對數
           </h1>
-          <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-slate-700 sm:text-xl">
+          <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-slate-700 sm:text-lg">
             <strong className="font-semibold text-slate-950">Native4a 為香港中小企建立 AI 自動化系統，把每日重複的 WhatsApp 回覆、客戶跟進及收款記錄交給系統處理。我們以 WATI／Manychat、Make.com、Google Sheets 及 Gemini／OpenAI 搭建固定套餐，毋須自己寫程式，上線後由我們負責維護。</strong>
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -110,16 +101,6 @@ function AutomationHero() {
             <a href="#packages" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:border-emerald-800 hover:text-emerald-900">
               睇自動化套餐 <ArrowDown aria-hidden="true" size={17} />
             </a>
-          </div>
-          <div className="mt-6 flex items-center gap-3" aria-label="Native4a 業界獲獎">
-            <span className="shrink-0 text-xs font-semibold text-slate-600">業界獲獎</span>
-            <div className="flex min-w-0 items-center gap-2">
-              {homeAwardImages.map(({ src, alt }) => (
-                <div key={alt} className="h-12 w-14 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm sm:h-14 sm:w-16">
-                  <img src={src} alt={alt} loading="lazy" decoding="async" className="h-full w-full object-cover" />
-                </div>
-              ))}
-            </div>
           </div>
         </div>
         <figure className="mx-auto w-full max-w-xl">
