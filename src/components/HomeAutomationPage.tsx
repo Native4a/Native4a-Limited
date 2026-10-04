@@ -122,21 +122,20 @@ function AutomationHero() {
             </div>
           </div>
         </div>
-        <figure className="mx-auto w-full max-w-md">
-          <div className="relative h-[28rem] overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,50,35,0.16)] sm:h-[32rem]">
+        <figure className="mx-auto w-full max-w-xl">
+          <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,50,35,0.16)]">
             <img
-              src="/images/wati-autoreply.png"
-              alt="WhatsApp AI 自動回覆真實截圖"
-              width="720"
-              height="1600"
+              src="/images/hero-award-2022.jpg"
+              alt="Native4a 代表手持獎座，於 MYTH FOCUS 香港最有價值企業大獎 2022 背板前留影"
+              width="940"
+              height="788"
               loading="eager"
               decoding="async"
-              className="h-full w-full object-cover object-top"
+              className="h-auto w-full"
             />
-            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-[#f4f8f5]/75 to-[#f4f8f5] sm:h-36" />
           </div>
           <figcaption className="mt-3 px-1 text-center text-xs leading-relaxed text-slate-600 sm:text-sm">
-            真實客戶系統截圖：客人 WhatsApp 查詢，系統即時自動回覆、問清需求並安排跟進（電話已遮蔽）
+            Native4a 榮獲 MYTH FOCUS「香港最有價值企業大獎 2022」
           </figcaption>
         </figure>
       </div>
