@@ -36,6 +36,7 @@ class seoIndex extends React.Component {
           description={t('seo.metaDescription')}
           ogUrl="https://nativeaaaa.com.hk/seo/"
         />
+        <div className={styles.seoPage}>
         <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
@@ -385,6 +386,7 @@ class seoIndex extends React.Component {
         <section className={styles.seoSpanSquare}>
           <ContactForm />
         </section>
+        </div>
       </BacklinkLayout>
     )
   }

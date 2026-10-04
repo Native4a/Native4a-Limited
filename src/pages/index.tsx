@@ -13,7 +13,7 @@ import { buildOrganizationStructuredData } from '../utils/structuredData'
 import awardImage from '../img/native4aAward01.webp'
 
 const HOME_TITLE = '香港中小企 AI 自動化方案｜WhatsApp 自動回覆、自動對數｜Native4a'
-const HOME_DESCRIPTION = 'Native4a 為香港中小企建立 AI 自動化系統：廣告查詢 1 分鐘自動回覆及跟進、WhatsApp 收款截圖自動記錄到 Google Sheets。固定套餐，毋須寫程式。WhatsApp 6460 2996 查詢報價。'
+const HOME_DESCRIPTION = 'Native4a 為香港中小企建立 AI 自動化系統：廣告查詢 1 分鐘自動回覆及跟進、WhatsApp 收款截圖自動記錄到報表。固定套餐，毋須寫程式。WhatsApp 6460 2996 查詢報價。'
 
 function HomePage(props: PageProps) {
   const isChineseHome = props.location.pathname === '/zh/'

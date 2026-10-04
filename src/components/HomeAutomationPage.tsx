@@ -8,10 +8,10 @@ const QUOTE_LABEL = 'WhatsApp 6460 2996 查詢報價'
 const faqs = [
   { question: '甚麼是 AI 自動化？適合我的公司嗎？', answer: '即是把重複、有規律的工作（回覆查詢、跟進、記錄收款）交給系統及 AI 處理。只要你的客戶主要經 WhatsApp 聯絡，而團隊每日花時間做這些事，就適合。' },
   { question: '收費如何計算？', answer: '固定套餐包括一次性設定費及月費，按訊息量及流程複雜程度報價；度身訂造系統按所需功能報價。歡迎 WhatsApp 6460 2996 查詢報價。' },
-  { question: '需要識寫程式嗎？', answer: '不需要。我們負責搭建及設定，你只需要像平時一樣使用 WhatsApp 及 Google Sheets。' },
+  { question: '需要識寫程式嗎？', answer: '不需要。我們負責搭建及設定，你只需要像平時一樣使用日常通訊及報表工具。' },
   { question: 'AI 自動回覆會不會亂答？', answer: '回覆內容按你提供的服務、價錢及常見問題設定，上線前一同測試。AI 答不到的問題，或客人要求與真人對話時，系統會即時轉交你的同事跟進。' },
-  { question: '用你們的 WhatsApp 號碼還是我自己的？', answer: '用你公司自己的 WhatsApp Business 號碼，經 WATI 或 Manychat 連接，客人看到的仍然是你的品牌。' },
-  { question: '客人的資料及收款截圖安全嗎？', answer: '資料只用於處理你自己的訂單及記錄，存放在你的 Google Sheets 等系統，由你控制存取權限。除運作系統所需的工具外，我們不會將資料交給第三方。' },
+  { question: '用你們的 WhatsApp 號碼還是我自己的？', answer: '用你公司自己的 WhatsApp Business 號碼，連接自動化系統，客人看到的仍然是你的品牌。' },
+  { question: '客人的資料及收款截圖安全嗎？', answer: '資料只用於處理你自己的訂單及記錄，存放在你指定的系統，由你控制存取權限。除運作系統所需的工具外，我們不會將資料交給第三方。' },
   { question: '已經是 Native4a 的 SEO／GEO 客戶，可以加自動化嗎？', answer: '可以，現有客戶加購設優惠。Marketing 帶來的查詢可以直接接入自動回覆及跟進，歡迎 WhatsApp 6460 2996 查詢。' },
   { question: '多久可以上線？', answer: '視乎套餐及流程複雜程度。我們會在報價時列明預計上線時間，固定套餐一般較度身訂造系統快。' },
 ]
@@ -90,11 +90,11 @@ function AutomationHero() {
             <Workflow aria-hidden="true" size={16} />
             Native4a · AI 自動化方案
           </p>
-          <h1 className="text-balance text-[1.625rem] font-extrabold leading-[1.2] tracking-tight text-slate-950 [word-break:keep-all] sm:text-[2.25rem] lg:text-[2.5rem]">
+          <h1 className="text-balance text-[clamp(1.5rem,3.2vw,2.5rem)] font-extrabold leading-[1.2] tracking-tight text-slate-950 break-normal md:[word-break:keep-all]">
             香港中小企 AI 自動化<br className="hidden md:block" />查詢自動回覆、收款自動對數
           </h1>
           <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-slate-700 sm:text-lg">
-            <strong className="font-semibold text-slate-950">Native4a 為香港中小企建立 AI 自動化系統，把每日重複的 WhatsApp 回覆、客戶跟進及收款記錄交給系統處理。我們以 WATI／Manychat、Make.com、Google Sheets 及 Gemini／OpenAI 搭建固定套餐，毋須自己寫程式，上線後由我們負責維護。</strong>
+            <strong className="font-semibold text-slate-950">Native4a 為香港中小企建立 AI 自動化系統，把每日重複的 WhatsApp 回覆、客戶跟進及收款記錄交給系統處理。我們以成熟的 AI 及自動化工具搭建固定套餐，毋須自己寫程式，上線後由我們負責維護。</strong>
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <WhatsAppQuoteButton />
@@ -151,9 +151,9 @@ function PainPointSection() {
 }
 
 const packages = [
-  { name: '#1 廣告查詢自動回覆＋跟進', problem: '查詢回覆慢、漏跟進', process: <>客戶經廣告 WhatsApp 查詢，<strong>1 分鐘內</strong> AI 自動回覆；系統於<strong>第 1、3、7 日</strong>自動跟進未落實的客戶</>, tools: 'WATI／Manychat、Gemini／OpenAI' },
-  { name: '#2 自動對數／收款記錄', problem: '人手抄入數截圖、對數出錯', process: '客戶在 WhatsApp 傳付款截圖 → Make.com 接收 → Gemini 讀取金額、日期等資料 → 自動記錄到 Google Sheets', tools: 'WATI／Manychat、Make.com、Gemini、Google Sheets' },
-  { name: '度身訂造系統', problem: 'CRM、利潤報表、派單等', process: '按你的實際流程，以 Glide＋Google Sheets 等工具搭建', tools: 'Glide、Google Sheets、Make.com' },
+  { name: '#1 廣告查詢自動回覆＋跟進', problem: '查詢回覆慢、漏跟進', process: <>客戶經廣告 WhatsApp 查詢，<strong>1 分鐘內</strong> AI 自動回覆；系統於<strong>第 1、3、7 日</strong>自動跟進未落實的客戶</> },
+  { name: '#2 自動對數／收款記錄', problem: '人手抄入數截圖、對數出錯', process: '客戶在 WhatsApp 傳付款截圖 → 系統自動接收 → AI 讀取金額、日期 → 自動記錄到報表' },
+  { name: '度身訂造系統', problem: 'CRM、利潤報表、派單等', process: '按你的實際流程度身搭建' },
 ]
 
 function PackagesSection() {
@@ -162,9 +162,9 @@ function PackagesSection() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow="清晰範圍 · 按需報價" title="AI 自動化套餐" description="AAA 自動化套餐：固定範圍、清楚列明內容，按你的訊息量及流程複雜程度報價。" />
         <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <table className="w-full min-w-[820px] border-collapse text-left">
-            <thead><tr className="bg-slate-900 text-white"><th scope="col" className="px-5 py-4 text-sm font-semibold">套餐</th><th scope="col" className="px-5 py-4 text-sm font-semibold">解決甚麼問題</th><th scope="col" className="px-5 py-4 text-sm font-semibold">運作方式</th><th scope="col" className="px-5 py-4 text-sm font-semibold">使用工具</th></tr></thead>
-            <tbody>{packages.map((item, index) => <tr key={item.name} className={index % 2 ? 'bg-slate-50' : 'bg-white'}><th scope="row" className="min-w-52 border-t border-slate-200 px-5 py-5 align-top text-base font-bold text-slate-950">{item.name}</th><td className="min-w-48 border-t border-slate-200 px-5 py-5 align-top text-sm leading-relaxed text-slate-700">{item.problem}</td><td className="min-w-[22rem] border-t border-slate-200 px-5 py-5 align-top text-sm leading-relaxed text-slate-700">{item.process}</td><td className="min-w-52 border-t border-slate-200 px-5 py-5 align-top text-sm leading-relaxed text-slate-700">{item.tools}</td></tr>)}</tbody>
+          <table className="w-full min-w-[640px] border-collapse text-left">
+            <thead><tr className="bg-slate-900 text-white"><th scope="col" className="px-5 py-4 text-sm font-semibold">套餐</th><th scope="col" className="px-5 py-4 text-sm font-semibold">解決甚麼問題</th><th scope="col" className="px-5 py-4 text-sm font-semibold">運作方式</th></tr></thead>
+            <tbody>{packages.map((item, index) => <tr key={item.name} className={index % 2 ? 'bg-slate-50' : 'bg-white'}><th scope="row" className="min-w-52 border-t border-slate-200 px-5 py-5 align-top text-base font-bold text-slate-950">{item.name}</th><td className="min-w-48 border-t border-slate-200 px-5 py-5 align-top text-sm leading-relaxed text-slate-700">{item.problem}</td><td className="min-w-[22rem] border-t border-slate-200 px-5 py-5 align-top text-sm leading-relaxed text-slate-700">{item.process}</td></tr>)}</tbody>
           </table>
         </div>
         <div className="mt-6 grid gap-2 text-sm leading-relaxed text-slate-600 sm:grid-cols-2">
@@ -180,7 +180,7 @@ function PackagesSection() {
 const steps = [
   ['免費了解流程', 'WhatsApp 或面談，講解你現時怎樣回覆查詢、跟進客戶及記錄收款，我們指出哪部分最值得先自動化。'],
   ['確認套餐及報價', '揀選合適套餐，列明範圍、報價及預計上線時間。'],
-  ['搭建及測試', '我們設定 WhatsApp、AI 回覆內容、Make.com 流程及 Google Sheets，與你一同測試真實情境。'],
+  ['搭建及測試', '我們設定 WhatsApp 自動回覆及資料記錄流程，與你一同測試真實情境。'],
   ['上線及持續維護', '系統正式運作，之後由我們負責維護及按需要調整。'],
 ]
 
@@ -203,9 +203,9 @@ function ProofSection() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow="自家實戰流程" title="我們自己每日都在用" description="我們先在 Native4a 及自家業務使用這些系統，確認行得通才提供給客戶：" />
         <div className="grid gap-4 lg:grid-cols-3">
-          <article className="rounded-2xl border border-emerald-900/10 bg-white p-5"><h3 className="font-bold text-slate-950">Glide＋Google Sheets CRM 及利潤儀表板</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">客戶、訂單及利潤集中一處，手機即時查看。</p></article>
+          <article className="rounded-2xl border border-emerald-900/10 bg-white p-5"><h3 className="font-bold text-slate-950">客戶管理及利潤儀表板</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">客戶、訂單及利潤集中一處，手機即時查看。</p></article>
           <article className="rounded-2xl border border-emerald-900/10 bg-white p-5"><h3 className="font-bold text-slate-950">Backlinks ��告自動檢查器</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">自動檢查 Backlinks 報告內的連結，取代人手逐條核對。</p></article>
-          <article className="rounded-2xl border border-emerald-900/10 bg-white p-5"><h3 className="font-bold text-slate-950">師傅派單 App</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">新訂單自動發佈到 Telegram 及 Glide App，師傅即時接單，毋須人手逐個通知。</p></article>
+          <article className="rounded-2xl border border-emerald-900/10 bg-white p-5"><h3 className="font-bold text-slate-950">師傅派單系統</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">新訂單自動通知合適的師傅，師傅即時接單，毋須人手逐個通知。</p></article>
         </div>
         <div className="mt-10 rounded-3xl border border-slate-200 bg-white px-3 py-8 sm:px-8 sm:py-10">
           <HomeProofScreenshots />
@@ -248,8 +248,8 @@ function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-28 bg-slate-950 px-5 py-16 text-white sm:px-8 sm:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div><p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-emerald-300">Native4a（NATIVE ADV LTD）</p><h2 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">聯絡我們</h2><p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-slate-300">想知道你公司哪部分最適合先自動化？WhatsApp 我們，簡單講解你現時的流程即可。</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><WhatsAppQuoteButton /><a href="tel:+85264602996" className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-6 py-3 font-semibold text-white transition hover:bg-white/10">致電 6460 2996</a></div></div>
-        <address className="not-italic rounded-3xl border border-white/15 bg-white/5 p-6 text-sm leading-relaxed text-slate-200 sm:p-8"><p className="text-lg font-bold text-white">Native4a（NATIVE ADV LTD）</p><p className="mt-5"><span className="font-semibold text-white">地址：</span>新界葵涌葵昌路26-38號 豪華工業大廈22樓</p><p className="mt-2"><span className="font-semibold text-white">電話／WhatsApp：</span>6460 2996</p><p className="mt-2"><span className="font-semibold text-white">電郵：</span><a href="mailto:native4a.inquiry@gmail.com" className="underline underline-offset-4">native4a.inquiry@gmail.com</a></p></address>
+        <div><p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-emerald-300">Native4a（NATIVE ADV LTD）</p><h2 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">聯絡我們</h2><p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-white">想知道你公司哪部分最適合先自動化？WhatsApp 我們，簡單講解你現時的流程即可。</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><WhatsAppQuoteButton /><a href="tel:+85264602996" className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-6 py-3 font-semibold text-white transition hover:bg-white/10">致電 6460 2996</a></div></div>
+        <address className="not-italic rounded-3xl border border-white/20 bg-white/10 p-6 text-sm leading-relaxed text-white sm:p-8"><p className="text-lg font-bold text-white">Native4a（NATIVE ADV LTD）</p><p className="mt-5"><span className="font-semibold text-white">地址：</span>新界葵涌葵昌路26-38號 豪華工業大廈22樓</p><p className="mt-2"><span className="font-semibold text-white">電話／WhatsApp：</span>6460 2996</p><p className="mt-2"><span className="font-semibold text-white">電郵：</span><a href="mailto:native4a.inquiry@gmail.com" className="underline underline-offset-4">native4a.inquiry@gmail.com</a></p></address>
       </div>
     </section>
   )
@@ -257,7 +257,7 @@ function ContactSection() {
 
 export default function HomeAutomationPage({ preservedSections }: { preservedSections?: React.ReactNode }) {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-clip">
       <AutomationHero />
       <PainPointSection />
       <PackagesSection />

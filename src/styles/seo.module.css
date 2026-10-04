@@ -5,9 +5,6 @@ img {
 
 /*-- All area end here--*/
 
-
-
-/*-- Block ① start here --*/
 .title {
     letter-spacing: -0.012em;
     font-size: 2.8vw;
@@ -28,22 +25,8 @@ img {
     border-bottom-width: 2px;
     width: 91.666667%;
     --tw-border-opacity: 1;
-    border-color: rgb(251 191 36 / var(--tw-border-opacity));
+    border-color: rgb(4 120 87 / var(--tw-border-opacity));
 }
-
-/*--
-  .textIndent{
-    text-indent: -30px;
-  }
-  --*/
-
-/*-- Block ① end here --*/
-
-
-/*
-  card 
-  */
-
 
 .modal {
     font-size: 12px;
@@ -56,9 +39,6 @@ img {
 
 .modal>.actions {
     margin: auto;
-}
-
-.modal>.actions {
     width: 100%;
     padding: 10px 5px;
     text-align: center;
@@ -130,16 +110,11 @@ img {
     opacity: 1;
 }
 
-/*
-  video popup 
-  */
-
 .videoContainer {
     position: relative;
     width: 100%;
     overflow: hidden;
     padding-top: 56.25%;
-    /* 16:9 Aspect Ratio */
 }
 
 .responsiveIframe {
@@ -180,52 +155,195 @@ img {
     text-decoration-color: #70A665;
 }
 
-@media screen and (max-width: 1536px) {
-    .title {
-        font-size: 3.9062vw;
+.seoPage {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    background: #ffffff;
+    color: #0f172a;
+    font-family: 'Inter var', Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.seoPage :global(section) {
+    max-width: 100%;
+}
+
+.seoPage :global(h1),
+.seoPage :global(h2),
+.seoPage :global(h3),
+.seoPage :global(h4) {
+    color: #0f172a;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.seoPage :global(h1 span),
+.seoPage :global(h2 span),
+.seoPage :global(h3 span),
+.seoPage :global(h4 span) {
+    color: inherit;
+    font-size: inherit;
+}
+
+.seoPage :global(p),
+.seoPage :global(li) {
+    color: #334155;
+    font-size: 1rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+.seoPage :global(a) {
+    color: #047857;
+    text-underline-offset: 0.2em;
+}
+
+.seoPage :global(a:hover) {
+    color: #065f46;
+}
+
+.seoPage :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.seoPage :global(section:first-of-type) {
+    overflow: hidden;
+    background-color: #f4f8f5;
+    background-image: none;
+    padding: 2rem 0 3rem;
+}
+
+.seoPage :global(section:first-of-type > div) {
+    width: min(100% - 2rem, 80rem);
+    max-width: 80rem;
+    margin-inline: auto;
+}
+
+.seoPage :global(section:first-of-type > div > div) {
+    gap: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 0;
+}
+
+.seoPage :global(section:first-of-type h1) {
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.12;
+}
+
+.seoPage :global(section:first-of-type h2) {
+    margin: 0 0 1rem;
+    font-size: clamp(1.25rem, 4.5vw, 2rem);
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.seoPage :global(section:first-of-type .border) {
+    width: 4rem;
+    border-color: #047857;
+}
+
+.seoPage :global(section:first-of-type .shadow-md),
+.seoPage :global(section:first-of-type .shadow-lg) {
+    border: 1px solid rgb(15 23 42 / 0.08);
+    border-radius: 1.5rem;
+    background: #ffffff;
+    box-shadow: 0 18px 50px rgb(15 23 42 / 0.08);
+}
+
+.seoPage > :global(section:nth-of-type(2)) {
+    padding: 3rem 1rem 5rem;
+    background: #ffffff;
+}
+
+.seoPage > :global(section:nth-of-type(2) > div) {
+    width: min(100%, 80rem);
+    max-width: 80rem;
+    margin-inline: auto;
+}
+
+.seoSpanSquare span {
+    color: #047857;
+}
+
+.seoSpanSquare p,
+.seoSpanSquare h2 {
+    text-decoration-color: #047857;
+}
+
+.seoPage :global(.seoSpanSquare span) {
+    color: #0f172a;
+}
+
+.seoPage :global(.seoSpanSquare p),
+.seoPage :global(.seoSpanSquare h2) {
+    text-decoration-color: #047857;
+}
+
+.seoPage :global(.seoSpanSquare) {
+    padding: clamp(2.5rem, 6vw, 5rem) 1rem;
+    background: #f4f8f5;
+    color: #0f172a;
+}
+
+.seoPage :global(#contactAs) {
+    padding: clamp(2.5rem, 6vw, 5rem) 1rem;
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.seoPage :global(#contactAs h2),
+.seoPage :global(#contactAs p),
+.seoPage :global(#contactAs li),
+.seoPage :global(#contactAs span) {
+    color: #ffffff;
+}
+
+.seoPage :global(#contactAs a) {
+    color: #ffffff;
+}
+
+.seoPage :global(#contactAs button),
+.seoPage :global(#contactAs a.rounded-full) {
+    min-height: 3rem;
+    border-radius: 9999px;
+    background: #047857;
+    padding: 0.75rem 1.5rem;
+    color: #ffffff;
+}
+
+.seoPage :global(#contactAs > div) {
+    width: min(100%, 80rem);
+    max-width: 80rem;
+    margin-inline: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .seoPage :global(section:first-of-type) {
+        padding: 3rem 0 4rem;
     }
 
-    .subTitle {
-        font-size: 2.3437vw;
+    .seoPage :global(section:first-of-type > div > div) {
+        gap: 3rem;
+        padding-top: 2rem;
     }
 
-    .sec2_wrap {
-        margin-top: 0px;
-    }
-
-    .container {
-        max-width: 95%;
+    .seoPage > :global(section:nth-of-type(2)) {
+        padding: 4rem 2rem 6rem;
     }
 }
 
-@media screen and (max-width: 1280px) {
-    .title {
-        font-size: 4.6vw;
-    }
-
-    .subTitle {
-        font-size: 2.7vw;
-    }
-
-    .container {
-        max-width: 100%;
+@media screen and (min-width: 1024px) {
+    .seoPage :global(section:first-of-type > div > div) {
+        align-items: center;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 4rem;
     }
 }
-
-@media screen and (max-width: 1024px) {
-    .title {
-        font-size: 7.1614vw;
-    }
-
-    .subTitle {
-        font-size: 4.1666vw;
-    }
-
-    .container {
-        max-width: 100%;
-    }
-}
-
 
 @media screen and (max-width: 768px) {
     .title {
@@ -249,27 +367,73 @@ img {
     .border {
         display: none;
     }
+}
+
+@media screen and (max-width: 480px) {
+    .seoPage :global(section:first-of-type > div) {
+        width: calc(100% - 2rem);
+    }
+
+    .seoPage :global(section:first-of-type .flex.gap-6) {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .seoPage > :global(section:nth-of-type(2)) {
+        padding-inline: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 1536px) {
+    .title {
+        font-size: 3.9062vw;
+    }
+
+    .subTitle {
+        font-size: 2.3437vw;
+    }
 
     .sec2_wrap {
-        padding: 17px 17px;
+        margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .title {
+        font-size: 4.6vw;
     }
 
-    .container {
-        padding: 0px;
-        max-width: 100%;
+    .subTitle {
+        font-size: 2.7vw;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .title {
+        font-size: 7.1614vw;
     }
 
-    .shadow {
-        box-shadow: #000 0px 0px 15px;
+    .subTitle {
+        font-size: 4.1666vw;
     }
+}
 
-    .sec2_wrap {
-        background-image: none;
+@media screen and (max-width: 1024px) {
+    .seoPage :global(section:first-of-type h1) {
+        font-size: clamp(2rem, 7vw, 3rem);
     }
+}
 
-    .videoContainer {
-        padding-top: 56.25%;
-        /* 16:9 Aspect Ratio */
+@media screen and (max-width: 768px) {
+    .seoPage :global(#contactAs > div) {
+        padding-inline: 0;
     }
+}
 
+@media screen and (max-width: 480px) {
+    .seoPage :global(#contactAs button),
+    .seoPage :global(#contactAs a.rounded-full) {
+        width: 100%;
+        justify-content: center;
+    }
 }
