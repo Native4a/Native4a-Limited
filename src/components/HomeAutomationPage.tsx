@@ -1,6 +1,15 @@
 import React from 'react'
-import { ArrowDown, ArrowRight, ArrowUpRight, Check, Clock3, FileSpreadsheet, MessageCircle, Workflow } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, MessageCircle, Workflow } from 'lucide-react'
 import HomeProofScreenshots from './HomeProofScreenshots'
+import awardImage1 from '../img/native4aAward01.webp'
+import awardImage2 from '../img/native4aAward02.webp'
+import awardImage3 from '../img/Award02_2.png'
+
+const homeAwardImages = [
+  { src: awardImage1, alt: 'Native4a 香港企業獎頒獎相片' },
+  { src: awardImage2, alt: 'Native4a 香港企業獎合照' },
+  { src: awardImage3, alt: 'Native4a 香港企業獎活動相片' },
+]
 
 const WHATSAPP_URL = 'https://wa.me/85264602996?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3AI%E8%87%AA%E5%8B%95%E5%8C%96%E6%96%B9%E6%A1%88%E5%8F%8A%E5%A0%B1%E5%83%B9'
 const QUOTE_LABEL = 'WhatsApp 6460 2996 查詢報價'
@@ -102,34 +111,34 @@ function AutomationHero() {
               睇自動化套餐 <ArrowDown aria-hidden="true" size={17} />
             </a>
           </div>
-        </div>
-        <div className="mx-auto w-full max-w-lg">
-          <div className="rounded-[1.75rem] border border-emerald-950/10 bg-white p-5 shadow-[0_24px_80px_rgba(15,50,35,0.12)] sm:p-7">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-              <div>
-                <p className="text-sm font-semibold text-slate-500">自動化流程</p>
-                <p className="mt-1 text-lg font-bold text-slate-950">WhatsApp 查詢跟進</p>
-              </div>
-              <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800">運作中</span>
+          <div className="mt-6 flex items-center gap-3" aria-label="Native4a 業界獲獎">
+            <span className="shrink-0 text-xs font-semibold text-slate-600">業界獲獎</span>
+            <div className="flex min-w-0 items-center gap-2">
+              {homeAwardImages.map(({ src, alt }) => (
+                <div key={alt} className="h-12 w-14 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm sm:h-14 sm:w-16">
+                  <img src={src} alt={alt} loading="lazy" decoding="async" className="h-full w-full object-cover" />
+                </div>
+              ))}
             </div>
-            <div className="space-y-4 py-5">
-              <div className="flex items-start gap-3 rounded-2xl bg-slate-50 p-4">
-                <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full bg-emerald-100 text-emerald-800"><MessageCircle size={17} aria-hidden="true" /></span>
-                <div><p className="text-sm font-semibold text-slate-900">客戶經廣告發來查詢</p><p className="mt-1 text-sm leading-relaxed text-slate-600">「想了解服務內容，可以報價嗎？」</p></div>
-              </div>
-              <div className="ml-7 h-4 border-l-2 border-dashed border-emerald-200" />
-              <div className="flex items-start gap-3 rounded-2xl bg-emerald-50 p-4">
-                <span className="mt-0.5 grid size-9 shrink-0 place-items-center rounded-full bg-emerald-700 text-white"><Check size={17} aria-hidden="true" /></span>
-                <div><p className="text-sm font-semibold text-slate-900">AI 即時回覆並記錄</p><p className="mt-1 text-sm leading-relaxed text-slate-600">未落實的客戶由系統安排後續跟進</p></div>
-              </div>
-              <div className="grid grid-cols-2 gap-3 pt-1">
-                <div className="rounded-xl border border-slate-100 p-3"><Clock3 size={17} className="text-emerald-800" /><p className="mt-2 text-xs font-semibold text-slate-800">第 1、3、7 日跟進</p></div>
-                <div className="rounded-xl border border-slate-100 p-3"><FileSpreadsheet size={17} className="text-emerald-800" /><p className="mt-2 text-xs font-semibold text-slate-800">同步 Google Sheets</p></div>
-              </div>
-            </div>
-            <p className="border-t border-slate-100 pt-4 text-xs leading-relaxed text-slate-500">流程示意：實際回覆內容及流程會按你的業務設定。</p>
           </div>
         </div>
+        <figure className="mx-auto w-full max-w-md">
+          <div className="relative h-[28rem] overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,50,35,0.16)] sm:h-[32rem]">
+            <img
+              src="/images/wati-autoreply-real.png"
+              alt="WhatsApp AI 自動回覆真實截圖"
+              width="720"
+              height="1600"
+              loading="eager"
+              decoding="async"
+              className="h-full w-full object-cover object-top"
+            />
+            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-[#f4f8f5]/75 to-[#f4f8f5] sm:h-36" />
+          </div>
+          <figcaption className="mt-3 px-1 text-center text-xs leading-relaxed text-slate-600 sm:text-sm">
+            真實客戶系統截圖：客人 WhatsApp 查詢，系統即時自動回覆、問清需求並安排跟進（電話已遮蔽）
+          </figcaption>
+        </figure>
       </div>
     </section>
   )
@@ -215,7 +224,7 @@ function ProofSection() {
         <SectionHeading eyebrow="自家實戰流程" title="我們自己每日都在用" description="我們先在 Native4a 及自家業務使用這些系統，確認行得通才提供給客戶：" />
         <div className="grid gap-4 lg:grid-cols-3">
           <article className="rounded-2xl border border-emerald-900/10 bg-white p-5"><h3 className="font-bold text-slate-950">Glide＋Google Sheets CRM 及利潤儀表板</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">客戶、訂單及利潤集中一處，手機即時查看。</p></article>
-          <article className="rounded-2xl border border-emerald-900/10 bg-white p-5"><h3 className="font-bold text-slate-950">Backlinks 報告自動檢查器</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">自動檢查 Backlinks 報告內的連結，取代人手逐條核對。</p></article>
+          <article className="rounded-2xl border border-emerald-900/10 bg-white p-5"><h3 className="font-bold text-slate-950">Backlinks ��告自動檢查器</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">自動檢查 Backlinks 報告內的連結，取代人手逐條核對。</p></article>
           <article className="rounded-2xl border border-emerald-900/10 bg-white p-5"><h3 className="font-bold text-slate-950">師傅派單 App</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">新訂單自動發佈到 Telegram 及 Glide App，師傅即時接單，毋須人手逐個通知。</p></article>
         </div>
         <div className="mt-10 rounded-3xl border border-slate-200 bg-white px-3 py-8 sm:px-8 sm:py-10">
