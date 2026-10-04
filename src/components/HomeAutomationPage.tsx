@@ -246,7 +246,7 @@ function FAQSection() {
 
 function ContactSection() {
   return (
-    <section id="contact" className="scroll-mt-28 bg-slate-950 px-5 py-16 text-white sm:px-8 sm:py-24">
+    <section id="contact" className="scroll-mt-28 bg-slate-900 px-5 py-16 text-white sm:px-8 sm:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div><p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-emerald-300">Native4a（NATIVE ADV LTD）</p><h2 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">聯絡我們</h2><p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-white">想知道你公司哪部分最適合先自動化？WhatsApp 我們，簡單講解你現時的流程即可。</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><WhatsAppQuoteButton /><a href="tel:+85264602996" className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-6 py-3 font-semibold text-white transition hover:bg-white/10">致電 6460 2996</a></div></div>
         <address className="not-italic rounded-3xl border border-white/20 bg-white/10 p-6 text-sm leading-relaxed text-white sm:p-8"><p className="text-lg font-bold text-white">Native4a（NATIVE ADV LTD）</p><p className="mt-5"><span className="font-semibold text-white">地址：</span>新界葵涌葵昌路26-38號 豪華工業大廈22樓</p><p className="mt-2"><span className="font-semibold text-white">電話／WhatsApp：</span>6460 2996</p><p className="mt-2"><span className="font-semibold text-white">電郵：</span><a href="mailto:native4a.inquiry@gmail.com" className="underline underline-offset-4">native4a.inquiry@gmail.com</a></p></address>
