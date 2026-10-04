@@ -90,8 +90,8 @@ function AutomationHero() {
             <Workflow aria-hidden="true" size={16} />
             Native4a · AI 自動化方案
           </p>
-          <h1 className="text-balance text-[1.625rem] font-extrabold leading-[1.2] tracking-tight text-slate-950 sm:text-[2.25rem] lg:text-[2.5rem]">
-            香港中小企 AI 自動化｜查詢自動回覆、收款自動對數
+          <h1 className="text-balance text-[1.625rem] font-extrabold leading-[1.2] tracking-tight text-slate-950 [word-break:keep-all] sm:text-[2.25rem] lg:text-[2.5rem]">
+            香港中小企 AI 自動化<br className="hidden md:block" />查詢自動回覆、收款自動對數
           </h1>
           <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-slate-700 sm:text-lg">
             <strong className="font-semibold text-slate-950">Native4a 為香港中小企建立 AI 自動化系統，把每日重複的 WhatsApp 回覆、客戶跟進及收款記錄交給系統處理。我們以 WATI／Manychat、Make.com、Google Sheets 及 Gemini／OpenAI 搭建固定套餐，毋須自己寫程式，上線後由我們負責維護。</strong>
