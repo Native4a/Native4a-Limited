@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://nativeaaaa.com.hk/sitemap.xml
