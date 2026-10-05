@@ -23,11 +23,26 @@ import line_icon from '../components/baseTools/Icon/img/line_Icon.svg'
 
 import 'reactjs-popup/dist/index.css'
 import * as styles from '../styles/seo.module.css'
+import SeoZhLanding from '../components/SeoZhLanding'
 
 class seoIndex extends React.Component {
   render() {
     const [seoPage] = get(this, 'props.data.allContentfulSeoPage.nodes')
     const { t } = this.props
+    const pathname = this.props.location?.pathname?.replace(/\/+$/, '')
+
+    if (pathname === '/zh/seo') {
+      return (
+        <BacklinkLayout location={this.props.location}>
+          <Seo
+            title="香港 SEO 公司｜9 年香港 SEO 經驗｜Native4a"
+            description="以真實排名案例了解 Native4a 香港 SEO 服務。從搜尋策略、網站內容到技術優化，讓更多合適客戶找到你的服務。WhatsApp 6460 2996。"
+            ogUrl="https://nativeaaaa.com.hk/zh/seo/"
+          />
+          <SeoZhLanding />
+        </BacklinkLayout>
+      )
+    }
 
     return (
       <BacklinkLayout location={this.props.location}>
