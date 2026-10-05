@@ -22,7 +22,7 @@ export const homeAiStructuredData = {
     {
       '@type': 'Organization',
       '@id': 'https://nativeaaaa.com.hk/zh/#organization',
-      name: 'Native4a（NATIVE ADV LTD）',
+      name: 'Native4a',
       url: 'https://nativeaaaa.com.hk/zh/',
       telephone: '+85264602996',
       email: 'native4a.inquiry@gmail.com',

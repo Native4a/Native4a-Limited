@@ -73,15 +73,6 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
       <article className="bg-white text-gray-800">
         <header className="bg-[url('../img/GRectangle.svg')] bg-cover pt-32 pb-12 md:pt-40 md:pb-16">
           <div className="container mx-auto px-4 max-w-4xl flex flex-col gap-8">
-            <nav aria-label="麵包屑" className="text-sm text-gray-500">
-              <ol className="flex items-center gap-2">
-                <li>
-                  <a href={`/${language}/`} className="hover:text-yellow-700">首頁</a>
-                </li>
-                <li aria-hidden="true">/</li>
-                <li aria-current="page" className="text-gray-900 font-medium">GEO 服務</li>
-              </ol>
-            </nav>
             <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-tight text-gray-900 text-balance">
               {H1}
             </h1>
