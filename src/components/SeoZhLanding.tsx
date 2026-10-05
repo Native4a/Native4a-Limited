@@ -217,7 +217,7 @@ export default function SeoZhLanding() {
             <div className={styles.proofIntro}>
               <p className={styles.sectionEyebrow}>排名不是口號</p>
               <h2 id="proof-title">用看得見的搜尋變化<br className={styles.desktopBreak} />說明優化做了甚麼。</h2>
-              <p>以下只列出現有案例中指定的真實關鍵字排名。不加總、不推算未提供的成果。</p>
+              <p>以下展示部分客戶網站的關鍵字排名變化，讓你了解搜尋優化的實際成效。</p>
             </div>
             <div className={styles.chartGrid} id="cases">
               {rankingGroups.map((group) => <RankingChart group={group} key={group.site} />)}
@@ -225,13 +225,13 @@ export default function SeoZhLanding() {
             <p className={styles.caseNote}>排名為案例記錄中的起始與後續名次。不代表未來排名保證。</p>
             <div className={styles.semCard}>
               <div>
-                <p className={styles.sectionEyebrow}>搜尋曝光的另一種價值</p>
-                <h3>把舊頁面保留的 SEM 等值估算放回原本脈絡。</h3>
-                <p>以上案例只抽取其中 15 組關鍵字作例子。SEM 廣告平均支出是 HK$11.09 × 3,757 次點擊 = 節省 HK$41,665/月。</p>
-                <small>此為原頁面既有案例估算。並非承諾節省或保證結果。</small>
+                <p className={styles.sectionEyebrow}>做好 SEO，等於慳返廣告費</p>
+                <h3>自然排名做得好，就唔使再為同一批關鍵字落 SEM 廣告。</h3>
+                <p>以上案例抽取其中 15 組關鍵字：如果要用 Google 廣告買同樣流量，平均每次點擊 HK$11.09 × 每月 3,757 次點擊，即每月要付約 HK$41,665 廣告費。做好 SEO 之後，呢筆錢就可以慳返。</p>
+                <small>此為案例估算，並非保證結果。</small>
               </div>
-              <div className={styles.semNumbers} aria-label="原頁面既有估算數字">
-                <span>HK$11.09</span><i aria-hidden="true">×</i><span>HK$41,665</span>
+              <div className={styles.semNumbers} aria-label="每月節省約 HK$41,665 廣告費">
+                <span>每月節省約 HK$41,665 廣告費</span>
               </div>
             </div>
             <div className={styles.sectionCta}><WhatsAppLink label="想看看你的網站？WhatsApp 6460 2996" secondary /></div>

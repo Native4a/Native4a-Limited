@@ -461,20 +461,12 @@
 }
 
 .semNumbers {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
   color: var(--brand);
   font-size: clamp(1.3rem, 5vw, 2rem);
   font-weight: 850;
   letter-spacing: -0.06em;
-  white-space: nowrap;
-}
-
-.semNumbers i {
-  color: var(--muted);
-  font-size: 1rem;
-  font-style: normal;
+  line-height: 1.35;
+  text-wrap: balance;
 }
 
 .sectionCta {
