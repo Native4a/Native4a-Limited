@@ -36,7 +36,7 @@ const TESTIMONIALS: Testimonial[] = [{
   quote: '"NATIVE4A積極協助我們達成每月銷售目標。"',
   authorName: 'Max Hung',
   authorTitle: '世紀21 業務經理',
-  authorLogo: easyTransportationLogo,
+  authorLogo: centuryImage,
   rating: 5
 }, {
   id: '3',

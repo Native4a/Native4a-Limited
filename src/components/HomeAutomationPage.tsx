@@ -115,9 +115,6 @@ function AutomationHero() {
               className="h-auto w-full"
             />
           </div>
-          <figcaption className="mt-3 px-1 text-center text-xs leading-relaxed text-slate-600 sm:text-sm">
-            Native4a 榮獲 MYTH FOCUS「香港最有價值企業大獎 2022」
-          </figcaption>
         </figure>
       </div>
     </section>
@@ -189,7 +186,7 @@ function StepsSection() {
     <section className="bg-white px-5 py-16 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow="由構思到落地" title="4 步完成上線" />
-        <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="grid list-none gap-4 pl-0 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map(([title, description], index) => <li key={title} className="rounded-2xl border border-slate-200 p-5 sm:p-6"><span className="mb-5 grid size-10 place-items-center rounded-full bg-emerald-800 text-sm font-bold text-white">{index + 1}</span><h3 className="text-lg font-bold text-slate-950">{title}</h3><p className="mt-3 text-sm leading-relaxed text-slate-600">{description}</p></li>)}
         </ol>
       </div>
@@ -204,7 +201,7 @@ function ProofSection() {
         <SectionHeading eyebrow="自家實戰流程" title="我們自己每日都在用" description="我們先在 Native4a 及自家業務使用這些系統，確認行得通才提供給客戶：" />
         <div className="grid gap-4 lg:grid-cols-3">
           <article className="rounded-2xl border border-emerald-900/10 bg-white p-5"><h3 className="font-bold text-slate-950">客戶管理及利潤儀表板</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">客戶、訂單及利潤集中一處，手機即時查看。</p></article>
-          <article className="rounded-2xl border border-emerald-900/10 bg-white p-5"><h3 className="font-bold text-slate-950">Backlinks ��告自動檢查器</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">自動檢查 Backlinks 報告內的連結，取代人手逐條核對。</p></article>
+          <article className="rounded-2xl border border-emerald-900/10 bg-white p-5"><h3 className="font-bold text-slate-950">Backlinks 報告自動檢查器</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">自動檢查 Backlinks 報告內的連結，取代人手逐條核對。</p></article>
           <article className="rounded-2xl border border-emerald-900/10 bg-white p-5"><h3 className="font-bold text-slate-950">師傅派單系統</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">新訂單自動通知合適的師傅，師傅即時接單，毋須人手逐個通知。</p></article>
         </div>
         <div className="mt-10 rounded-3xl border border-slate-200 bg-white px-3 py-8 sm:px-8 sm:py-10">
@@ -248,8 +245,8 @@ function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-28 bg-slate-900 px-5 py-16 text-white sm:px-8 sm:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div><p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-emerald-300">Native4a（NATIVE ADV LTD）</p><h2 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">聯絡我們</h2><p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-white">想知道你公司哪部分最適合先自動化？WhatsApp 我們，簡單講解你現時的流程即可。</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><WhatsAppQuoteButton /><a href="tel:+85264602996" className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-6 py-3 font-semibold text-white transition hover:bg-white/10">致電 6460 2996</a></div></div>
-        <address className="not-italic rounded-3xl border border-white/20 bg-white/10 p-6 text-sm leading-relaxed text-white sm:p-8"><p className="text-lg font-bold text-white">Native4a（NATIVE ADV LTD）</p><p className="mt-5"><span className="font-semibold text-white">地址：</span>新界葵涌葵昌路26-38號 豪華工業大廈22樓</p><p className="mt-2"><span className="font-semibold text-white">電話／WhatsApp：</span>6460 2996</p><p className="mt-2"><span className="font-semibold text-white">電郵：</span><a href="mailto:native4a.inquiry@gmail.com" className="underline underline-offset-4">native4a.inquiry@gmail.com</a></p></address>
+        <div><p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-emerald-300">Native4a</p><h2 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">聯絡我們</h2><p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-white">想知道你公司哪部分最適合先自動化？WhatsApp 我們，簡單講解你現時的流程即可。</p><div className="mt-8 flex flex-col gap-3 sm:flex-row"><WhatsAppQuoteButton /><a href="tel:+85264602996" className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-6 py-3 font-semibold text-white transition hover:bg-white/10">致電 6460 2996</a></div></div>
+        <address className="not-italic rounded-3xl border border-white/20 bg-white/10 p-6 text-sm leading-relaxed text-white sm:p-8"><p className="text-lg font-bold text-white">Native4a</p><p className="mt-5"><span className="font-semibold text-white">地址：</span>新界葵涌葵昌路26-38號 豪華工業大廈22樓</p><p className="mt-2"><span className="font-semibold text-white">電話／WhatsApp：</span>6460 2996</p><p className="mt-2"><span className="font-semibold text-white">電郵：</span><a href="mailto:native4a.inquiry@gmail.com" className="underline underline-offset-4">native4a.inquiry@gmail.com</a></p></address>
       </div>
     </section>
   )
