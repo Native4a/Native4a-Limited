@@ -26,7 +26,7 @@ const Awards = () => {
           <span className="mr-2">
             <FaSquare />
           </span>
-          <Text tag="p" className="pl-3">
+          <Text tag="span" className="pl-3">
             {t('awards.title')}
           </Text>
         </Text>

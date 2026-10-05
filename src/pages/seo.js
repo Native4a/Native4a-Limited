@@ -11,6 +11,7 @@ import ContactForm from '../components/contactAs'
 import ClientLogos from '../components/clientLogos'
 import SeoSlick from '../components/slickSlider/greenSlider/seoSlider'
 import Awards from '../components/awards'
+import { GeoCrossLink } from '../components/geo/GeoCrossLink'
 import Section from '../components/baseTools/Section'
 import Grid from '../components/baseTools/Grid'
 import Column from '../components/baseTools/Grid/Column'
@@ -22,11 +23,26 @@ import line_icon from '../components/baseTools/Icon/img/line_Icon.svg'
 
 import 'reactjs-popup/dist/index.css'
 import * as styles from '../styles/seo.module.css'
+import SeoZhLanding from '../components/SeoZhLanding'
 
 class seoIndex extends React.Component {
   render() {
     const [seoPage] = get(this, 'props.data.allContentfulSeoPage.nodes')
     const { t } = this.props
+    const pathname = this.props.location?.pathname?.replace(/\/+$/, '')
+
+    if (pathname === '/zh/seo') {
+      return (
+        <BacklinkLayout location={this.props.location}>
+          <Seo
+            title="香港 SEO 公司｜9 年香港 SEO 經驗｜Native4a"
+            description="以真實排名案例了解 Native4a 香港 SEO 服務。從搜尋策略、網站內容到技術優化，讓更多合適客戶找到你的服務。WhatsApp 6460 2996。"
+            ogUrl="https://nativeaaaa.com.hk/zh/seo/"
+          />
+          <SeoZhLanding />
+        </BacklinkLayout>
+      )
+    }
 
     return (
       <BacklinkLayout location={this.props.location}>
@@ -35,6 +51,7 @@ class seoIndex extends React.Component {
           description={t('seo.metaDescription')}
           ogUrl="https://nativeaaaa.com.hk/seo/"
         />
+        <div className={styles.seoPage}>
         <Section SectionClass="bg-[url('../img/GRectangle.svg')] bg-cover">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
@@ -146,7 +163,7 @@ class seoIndex extends React.Component {
               <span>
                 <FaSquare />
               </span>
-              <Text tag="p" className="pl-3">
+              <Text tag="span" className="pl-3">
                 {t('seo.freeExposure')}
               </Text>
             </Text>
@@ -197,7 +214,7 @@ class seoIndex extends React.Component {
                 <span>
                   <FaSquare />
                 </span>
-                <Text tag="p" className="pl-3">
+                <Text tag="span" className="pl-3">
                   {t('seo.keywordRanking')}
                 </Text>
               </Text>
@@ -215,7 +232,7 @@ class seoIndex extends React.Component {
                 <span>
                   <FaSquare />
                 </span>
-                <Text tag="p" className="pl-3">
+                <Text tag="span" className="pl-3">
                   {t('seo.brandReputation')}
                 </Text>
               </Text>
@@ -264,7 +281,7 @@ class seoIndex extends React.Component {
                 <span>
                   <FaSquare />
                 </span>
-                <Text tag="p" className="pl-3">
+                <Text tag="span" className="pl-3">
                   {t('seo.keywordResearch')}
                 </Text>
               </Text>
@@ -286,7 +303,7 @@ class seoIndex extends React.Component {
                 <span>
                   <FaSquare />
                 </span>
-                <Text tag="p" className="pl-3">
+                <Text tag="span" className="pl-3">
                   {t('seo.onPageOptimization')}
                 </Text>
               </Text>
@@ -322,7 +339,7 @@ class seoIndex extends React.Component {
                 <span>
                   <FaSquare />
                 </span>
-                <Text tag="p" className="pl-3">
+                <Text tag="span" className="pl-3">
                   {t('seo.contentOptimization')}
                 </Text>
               </Text>
@@ -344,7 +361,7 @@ class seoIndex extends React.Component {
                 <span>
                   <FaSquare />
                 </span>
-                <Text tag="p" className="pl-3">
+                <Text tag="span" className="pl-3">
                   {t('seo.backlinkBuilding')}
                 </Text>
               </Text>
@@ -371,6 +388,7 @@ class seoIndex extends React.Component {
             </Column>
           </Grid>
         </Section>
+        <GeoCrossLink />
         <section className={styles.seoSpanSquare}>
           <SeoSlick />
         </section>
@@ -383,6 +401,7 @@ class seoIndex extends React.Component {
         <section className={styles.seoSpanSquare}>
           <ContactForm />
         </section>
+        </div>
       </BacklinkLayout>
     )
   }

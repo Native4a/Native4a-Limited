@@ -36,7 +36,7 @@ const TESTIMONIALS: Testimonial[] = [{
   quote: '"NATIVE4A積極協助我們達成每月銷售目標。"',
   authorName: 'Max Hung',
   authorTitle: '世紀21 業務經理',
-  authorLogo: easyTransportationLogo,
+  authorLogo: centuryImage,
   rating: 5
 }, {
   id: '3',
@@ -91,7 +91,15 @@ const TestimonialCard = ({
     <div className="mt-4 w-full bg-amber-500 rounded-full px-4 py-2 flex items-center justify-center shadow-sm"><span className="text-sm md:text-base font-bold text-black text-center truncate px-2">{testimonial.quote}</span></div>
     <div className="mt-6 w-full px-2">
       <div className="grid grid-cols-[auto_1fr] gap-4 items-center">
-        <div className="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-gray-50 overflow-hidden shadow-inner bg-white shrink-0"><img src={testimonial.authorLogo} alt={testimonial.authorName} className="w-full h-full object-contain p-2" /></div>
+        <div className={cn("w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-gray-50 overflow-hidden shadow-inner shrink-0", testimonial.id === '2' ? 'bg-black border-amber-500' : 'bg-white')}>
+          {testimonial.id === '2' ? (
+            <span className="flex h-full w-full items-center justify-center text-center text-base font-black leading-tight text-amber-400 md:text-lg" role="img" aria-label="世紀21">
+              世紀21
+            </span>
+          ) : (
+            <img src={testimonial.authorLogo} alt={testimonial.authorName} className="h-full w-full object-contain p-2" />
+          )}
+        </div>
         <div className="flex flex-col justify-center min-w-0">
           <h3 className="font-bold text-gray-900 leading-tight truncate">{testimonial.authorName}</h3>
           <p className="text-xs text-gray-500 mb-1 truncate">{testimonial.authorTitle}</p>
@@ -100,19 +108,20 @@ const TestimonialCard = ({
       </div>
     </div>
   </div>;
-export const CombinedCustomerSuccess: React.FC = () => {
+export const CombinedCustomerSuccess: React.FC<{ title?: string }> = ({ title }) => {
   const { t } = useTranslation()
+  const sectionTitle = title || t('homepage.customerTestimonial')
   return <section className="w-full bg-white font-sans">
     <div className="w-full pt-[120px] pb-8 flex flex-col items-center">
       <div className="container mx-auto px-4 flex flex-col items-center">
         <div className="block md:hidden w-full max-w-4xl">
           <h2 className="flex items-center text-[24px] font-semibold text-gray-900">
             <span className="text-[#FAAB00] mr-3 flex items-center shrink-0"><Square className="w-8 h-8 fill-current" aria-hidden="true" /></span>
-            <span>{t('homepage.customerTestimonial')}</span>
+            <span>{sectionTitle}</span>
           </h2>
         </div>
         <div className="hidden md:block text-center">
-          <h2 className="text-[50px] font-semibold leading-tight text-gray-900 underline decoration-[#E3A008] decoration-4 underline-offset-[21px]"><span>{t('homepage.customerTestimonial')}</span></h2>
+          <h2 className="text-[50px] font-semibold leading-tight text-gray-900 underline decoration-[#E3A008] decoration-4 underline-offset-[21px]"><span>{sectionTitle}</span></h2>
         </div>
       </div>
     </div>

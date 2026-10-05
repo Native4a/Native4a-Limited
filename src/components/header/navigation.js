@@ -3,7 +3,6 @@ import Navprops from './navprops'
 import { Sling as Hamburger } from 'hamburger-react'
 import { Link } from 'gatsby'
 import Native_logo from '../../img/2023_native4a_logo.svg'
-import Whatsapp from '../baseTools/whatsapp'
 
 const Navigation = () => {
   const [isOpen, setOpen] = useState(false)
@@ -18,27 +17,26 @@ const Navigation = () => {
 
   const listenScrollEvent = () => {
     const isScrolled = window.scrollY > 10
-    setnavColor(isScrolled ? 'rgba(255, 255, 255, 0.85)' : 'transparent')
-    setnavBoxShadow(isScrolled ? '0 8px 32px rgba(0, 0, 0, 0.12)' : 'none')
-    setnavBorderRadius(isScrolled ? '18px' : 'none')
-    setnavPaddingY(isScrolled ? '0.875rem' : '1rem')
-    setnavPaddingX(isScrolled ? '1.75rem' : '1.5rem')
-    setnavBlur(isScrolled ? 'blur(24px)' : 'none')
-    setWebkitNavBlur(isScrolled ? 'blur(24px)' : 'none')
-    settopNav(isScrolled ? '0.75rem' : 'none')
+    setnavColor(isScrolled ? 'rgba(255, 255, 255, 0.92)' : 'rgba(255, 255, 255, 0.94)')
+    setnavBoxShadow(isScrolled ? '0 8px 32px rgba(0, 0, 0, 0.12)' : '0 2px 18px rgba(15, 23, 42, 0.06)')
+    setnavBorderRadius(isScrolled ? '18px' : '18px')
+    setnavPaddingY(isScrolled ? '0.75rem' : '0.75rem')
+    setnavPaddingX(isScrolled ? '1.5rem' : '1.5rem')
+    setnavBlur('blur(24px)')
+    setWebkitNavBlur('blur(24px)')
+    settopNav(isScrolled ? '0.75rem' : '0.75rem')
   }
 
   useEffect(() => {
+    listenScrollEvent()
     window.addEventListener('scroll', listenScrollEvent)
-    return () => {
-      window.removeEventListener('scroll', listenScrollEvent)
-    }
+    return () => window.removeEventListener('scroll', listenScrollEvent)
   }, [])
 
   return (
-    <nav className="flex justify-center m-auto">
+    <nav aria-label="Site navigation" className="flex justify-center">
       <div
-        className="grid grid-cols-12 fixed z-50 w-[95%] md:w-[100%] lg:w-[92%] xl:w-[90%] 2xl:w-[85%]"
+        className="fixed z-[60] grid w-[95%] grid-cols-12 items-center md:w-full lg:w-[92%] xl:w-[96%] 2xl:w-[90%]"
         style={{
           borderRadius: navBorderRadius,
           backgroundColor: navColor,
@@ -53,47 +51,31 @@ const Navigation = () => {
           marginTop: topNav,
         }}
       >
-        {/* Logo Section */}
-        <div className="flex items-center col-start-1 col-end-5 lg:col-end-3">
-          <div className="transition-transform duration-300 hover:scale-105">
-            <Link to="/">
-              <img
-                className="w-10/12 sm:w-7/12 lg:w-10/12 xl:w-9/12 py-1"
-                src={Native_logo}
-                alt="Native4a Logo"
-              />
-            </Link>
-          </div>
+        <div className="col-span-4 flex items-center xl:col-span-2">
+          <Link to="/" aria-label="Native4a home" onClick={() => setOpen(false)}>
+            <img className="w-10/12 py-1 sm:w-7/12 lg:w-10/12 xl:w-9/12" src={Native_logo} alt="Native4a Logo" />
+          </Link>
         </div>
 
-        {/* Mobile Right Section */}
-        <div className="xl:hidden col-start-5 col-end-11 sm:col-end-12 flex items-center justify-end gap-2">
-          <Whatsapp linkto="https://api.whatsapp.com/send/?phone=85264602996">
-            WhatsApp查詢
-          </Whatsapp>
+        <div className="col-span-7 flex items-center justify-end xl:hidden">
+          <a href="https://wa.me/85264602996" target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-2 rounded-full bg-emerald-700 px-3 py-2 text-xs font-bold text-white sm:text-sm">
+            WhatsApp 6460 2996
+          </a>
         </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden xl:flex col-start-3 col-end-13 items-center justify-end">
+        <div className="col-span-10 hidden items-center justify-end xl:col-span-10 xl:flex">
           <Navprops />
         </div>
 
-        {/* Mobile Hamburger Menu */}
-        <div className="xl:hidden col-start-12 col-end-13 flex items-center">
-          <div className="z-50 relative">
-            <Hamburger
-              size={20}
-              label="Show menu"
-              toggled={isOpen}
-              toggle={setOpen}
-            />
-          </div>
-          {isOpen && (
-            <div className="fixed z-40 w-full h-fit left-0 top-20 bg-white rounded-b-3xl shadow-xl border-t border-gray-100">
-              <Navprops />
-            </div>
-          )}
+        <div className="col-span-1 flex items-center justify-end xl:hidden">
+          <Hamburger size={20} label={isOpen ? 'Close menu' : 'Open menu'} toggled={isOpen} toggle={setOpen} />
         </div>
+
+        {isOpen && (
+          <div className="fixed inset-x-0 top-20 z-[1000] max-h-[calc(100dvh-5rem)] overflow-y-auto rounded-b-3xl border-t border-gray-100 bg-white shadow-xl xl:hidden">
+            <Navprops />
+          </div>
+        )}
       </div>
     </nav>
   )

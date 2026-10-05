@@ -15,7 +15,7 @@ interface StructuredData {
 export const buildOrganizationStructuredData = (): StructuredData => ({
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'Native Greater China',
+  name: 'Native4a',
   alternateName: 'Native 4A',
   url: 'https://nativeaaaa.com.hk',
   logo: 'https://images.ctfassets.net/rpza41pe9ev5/6TeposIqKULWL1FRMsnXHJ/9468a014824df34ae106c27c85b940f8/2023_native4a_logo.svg',

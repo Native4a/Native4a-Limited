@@ -1,0 +1,195 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://nativeaaaa.com.hk/#organization",
+      "name": "Native4a",
+      "alternateName": [
+        "NATIVE4A",
+        "native4a"
+      ],
+      "legalName": "NATIVE ADV LTD",
+      "url": "https://nativeaaaa.com.hk/zh/",
+      "logo": "https://images.ctfassets.net/rpza41pe9ev5/6TeposIqKULWL1FRMsnXHJ/9468a014824df34ae106c27c85b940f8/2023_native4a_logo.svg",
+      "telephone": "+852 6460 2996",
+      "email": "native4a.inquiry@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "葵昌路26-38號 豪華工業大廈22樓",
+        "addressLocality": "葵涌",
+        "addressRegion": "新界",
+        "addressCountry": "HK"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+852 6460 2996",
+        "contactType": "sales",
+        "areaServed": "HK",
+        "availableLanguage": [
+          "zh-HK",
+          "en"
+        ]
+      },
+      "sameAs": [
+        "https://www.instagram.com/nativeaaaa/"
+      ],
+      "knowsAbout": [
+        "生成式引擎優化 GEO",
+        "AI 搜尋優化",
+        "SEO",
+        "反向連結 Backlinks"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://nativeaaaa.com.hk/zh/geo/#webpage",
+      "url": "https://nativeaaaa.com.hk/zh/geo/",
+      "name": "GEO公司香港｜AI 搜尋優化服務（ChatGPT／Google AI Overview）｜Native4a",
+      "inLanguage": "zh-HK",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://nativeaaaa.com.hk/#website",
+        "url": "https://nativeaaaa.com.hk/",
+        "name": "Native4a"
+      },
+      "about": {
+        "@id": "https://nativeaaaa.com.hk/zh/geo/#service"
+      },
+      "publisher": {
+        "@id": "https://nativeaaaa.com.hk/#organization"
+      },
+      "dateModified": "2026-10-03",
+      "author": {
+        "@type": "Person",
+        "name": "MC (Marcus)",
+        "jobTitle": "Founder",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Native4a",
+          "@id": "https://nativeaaaa.com.hk/#organization"
+        },
+        "sameAs": "https://www.linkedin.com/in/native-mc"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://nativeaaaa.com.hk/zh/geo/#service",
+      "name": "香港 GEO 服務（生成式引擎優化）",
+      "serviceType": "Generative Engine Optimization (GEO)",
+      "description": "令品牌出現在 Google AI Overview、AI Mode、Gemini、Perplexity 及 ChatGPT 答案中的優化服務，包括站內 SEO 文章、程式碼安裝及供應商 Backlinks。",
+      "provider": {
+        "@id": "https://nativeaaaa.com.hk/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Hong Kong"
+      },
+      "url": "https://nativeaaaa.com.hk/zh/geo/",
+      "inLanguage": "zh-HK"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://nativeaaaa.com.hk/zh/geo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "GEO 是什麼？同 SEO 有什麼不同？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GEO（生成式引擎優化）是令 ChatGPT、Google AI Overview、Gemini 及 Perplexity 等 AI 在回答問題時引用或推薦你品牌的優化工作。SEO 的目標是在搜尋結果排名靠前，GEO 的目標是被 AI 答案引用。兩者基礎相同，所以 Native4a 的 GEO 服務已包括 SEO 文章及 Backlinks。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "GEO 收費多少？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "價格視乎行業競爭程度及追蹤問題數量而定，請 WhatsApp 6460 2996 查詢報價。中文 Backlinks 可單獨購買，毋須簽約。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "GEO 幾耐見效？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GEO 成效會受行業競爭、網站狀況及搜尋平台更新影響。我們會定期重測，並按結果調整內容方向。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "香港用得到 ChatGPT 嗎？還需要優化 ChatGPT 嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "香港用戶可透過不同方式使用 ChatGPT，不過香港最常接觸的 AI 答案是 Google AI Overview 及 AI Mode。所以我們首先優化 Google 生態（AI Overview、AI Mode、Gemini），再按你的客群決定 ChatGPT 及 Perplexity 的投入比重。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "你們保證 ChatGPT 一定會推薦我嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不保證。AI 答案會不斷變化，沒有人可以控制。我們會按合約完成約定工作及定期重測，但不保證 AI 推薦。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "GEO 成效如何量度？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "我們在開始前與你揀選 20–40 條固定問題，在各 AI 平台逐條提問並截圖，作為基線。之後每月用同一批問題重測，比較提及率、引用網址及排名變化，報告附 AI 原文截圖。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "已經有 SEO 公司，還需要另外做 GEO 嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不一定要換公司，但要確認現有 SEO 有沒有處理答案型內容、結構化資料、llms.txt、品牌資料一致及第三方提及。如果沒有，AI 未必會引用你。Native4a 的 GEO 已包括 SEO 工作，可以一併處理。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "需要改動我的網站嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "需要少量改動，例如加入結構化資料、llms.txt、修正 canonical 及新增或加長文章。程式碼安裝已包括在服務內，我們會先列出改動清單，經你確認後才進行。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "哪些行業最適合做 GEO？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "客戶在決定前會先比較或「問人」的行業最適合，例如裝修、維修、搬屋、補習、醫療美容、會計及法律等專業服務，以及教育課程。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以先了解 GEO 服務嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以 WhatsApp 6460 2996 查詢服務內容、追蹤方式及報價，再按實際需要考慮是否合作。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首頁",
+          "item": "https://nativeaaaa.com.hk/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "GEO 服務",
+          "item": "https://nativeaaaa.com.hk/zh/geo/"
+        }
+      ]
+    }
+  ]
+}

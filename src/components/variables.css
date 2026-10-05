@@ -1,12 +1,11 @@
 :root {
   /* primitives */
   /* font-family */
-  --font-sans: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol';
+  --font-sans: 'Poppins', 'Noto Sans TC', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Helvetica, Arial, sans-serif;
   --font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
     'Courier New', monospace;
-  --font-serif: 'Poppins', sans-serif;
+  --font-serif: 'Poppins', 'Noto Sans TC', sans-serif;
 
 
   /* palette */
@@ -104,4 +103,4 @@
 @media (min-width: 	1536px) {
 
 }
-  
+

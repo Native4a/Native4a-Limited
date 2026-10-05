@@ -11,6 +11,7 @@ import { ServiceScopeSlider } from '../components/ServiceScopeSlider'
 import { AboutUsSection } from '../components/AboutUsSection'
 import { PartnerSection } from '../components/PartnerSection'
 import { ContactSection } from '../components/ContactSection'
+import { GeoCrossLink } from '../components/geo/GeoCrossLink'
 
 const BacklinksPage: React.FC<PageProps> = (props) => {
   return (
@@ -23,6 +24,7 @@ const BacklinksPage: React.FC<PageProps> = (props) => {
         <BacklinkHeroSection />
         <SeoBacklinksHero />
         <BacklinkComparisonSection />
+        <GeoCrossLink />
         <BacklinkFeatures />
         <BacklinkShowcase />
         <ServiceScopeSlider />
