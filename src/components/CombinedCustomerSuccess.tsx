@@ -91,7 +91,15 @@ const TestimonialCard = ({
     <div className="mt-4 w-full bg-amber-500 rounded-full px-4 py-2 flex items-center justify-center shadow-sm"><span className="text-sm md:text-base font-bold text-black text-center truncate px-2">{testimonial.quote}</span></div>
     <div className="mt-6 w-full px-2">
       <div className="grid grid-cols-[auto_1fr] gap-4 items-center">
-        <div className="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-gray-50 overflow-hidden shadow-inner bg-white shrink-0"><img src={testimonial.authorLogo} alt={testimonial.authorName} className="w-full h-full object-contain p-2" /></div>
+        <div className={cn("w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-gray-50 overflow-hidden shadow-inner shrink-0", testimonial.id === '2' ? 'bg-black border-amber-500' : 'bg-white')}>
+          {testimonial.id === '2' ? (
+            <span className="flex h-full w-full items-center justify-center text-center text-base font-black leading-tight text-amber-400 md:text-lg" role="img" aria-label="世紀21">
+              世紀21
+            </span>
+          ) : (
+            <img src={testimonial.authorLogo} alt={testimonial.authorName} className="h-full w-full object-contain p-2" />
+          )}
+        </div>
         <div className="flex flex-col justify-center min-w-0">
           <h3 className="font-bold text-gray-900 leading-tight truncate">{testimonial.authorName}</h3>
           <p className="text-xs text-gray-500 mb-1 truncate">{testimonial.authorTitle}</p>
