@@ -116,7 +116,7 @@ export const CASES = {
       rows: [
         ['客戶', 'Hypnosis Academy（hypnosis.hk），香港催眠治療師證書課程'],
         ['目標關鍵字', '催眠師、催眠治療課程、催眠治療課程收費、催眠治療證書（極短尾競爭字）'],
-        ['開始追蹤時排名', '催眠師第 15 位、催眠治療課程收費第 14 位、催眠治療證書第 16 位（排名數據來自 SERPROBOT 追蹤）'],
+        ['開始追蹤時排名', '催眠師第 15 位、催眠治療課程收費第 14 位、催眠治療證書第 16 位（排名數據來自 排名追蹤系統 追蹤）'],
         ['基線（改版前，2026 年 4 月）', '課程頁 /hypnosis/ 約 4,500 字，沒有 H1、沒有結構化資料、只有約 4 個 H2 及 7 條 FAQ。'],
         ['我們做了什麼', '保留原有課程內容，在下方加入約 4,600 字的「2026 香港催眠課程指南」，結構參考我們為 PAT CPA 驗證過的長文格式，包括答案先行速覽、作者及審閱資料、費用表、5 步流程、常見失誤、官方認證來源及 10 條 FAQ，並加入 Course 及 FAQPage 結構化資料。'],
         ['連結', '[https://www.hypnosis.hk/hypnosis/](https://www.hypnosis.hk/hypnosis/)'],
@@ -132,13 +132,13 @@ export const CASES = {
       screenshots: [
         {
           src: '/images/hypnosis-rank-1.png',
-          alt: 'SERPROBOT 排名追蹤截圖，顯示催眠治療證書等關鍵字的排名資料。',
-          caption: 'SERPROBOT 排名追蹤（一）',
+          alt: '排名追蹤系統 排名追蹤截圖，顯示催眠治療證書等關鍵字的排名資料。',
+          caption: '排名追蹤系統 排名追蹤（一）',
         },
         {
           src: '/images/hypnosis-rank-2.png',
-          alt: 'SERPROBOT 排名追蹤截圖，顯示催眠相關關鍵字的排名資料。',
-          caption: 'SERPROBOT 排名追蹤（二）',
+          alt: '排名追蹤系統 排名追蹤截圖，顯示催眠相關關鍵字的排名資料。',
+          caption: '排名追蹤系統 排名追蹤（二）',
         },
         {
           src: '/images/hypnosis-ai-overview-1.jpg',
@@ -175,18 +175,18 @@ export const CASES = {
       screenshots: [
         {
           src: '/images/patcpa-rank-1.png',
-          alt: 'SERPROBOT 排名追蹤截圖，顯示公司註冊、註冊公司及公司成立等關鍵字排名。',
-          caption: 'SERPROBOT 排名追蹤（一）',
+          alt: '排名追蹤系統 排名追蹤截圖，顯示公司註冊、註冊公司及公司成立等關鍵字排名。',
+          caption: '排名追蹤系統 排名追蹤（一）',
         },
         {
           src: '/images/patcpa-rank-2.png',
-          alt: 'SERPROBOT 排名追蹤截圖，顯示開公司、香港開公司及開公司條件等關鍵字排名。',
-          caption: 'SERPROBOT 排名追蹤（二）',
+          alt: '排名追蹤系統 排名追蹤截圖，顯示開公司、香港開公司及開公司條件等關鍵字排名。',
+          caption: '排名追蹤系統 排名追蹤（二）',
         },
         {
           src: '/images/patcpa-url-found.png',
-          alt: 'SERPROBOT URL Found 截圖，顯示《香港註冊公司流程｜開公司費用整理》頁面的收錄記錄。',
-          caption: 'SERPROBOT URL Found 記錄',
+          alt: '排名追蹤系統 URL Found 截圖，顯示《香港註冊公司流程｜開公司費用整理》頁面的收錄記錄。',
+          caption: '排名追蹤系統 URL Found 記錄',
         },
       ],
     },
@@ -220,7 +220,7 @@ export const FAQ = [
   { q: 'GEO 收費多少？', a: '價格視乎行業競爭程度及追蹤問題數量而定，請 WhatsApp 6460 2996 查詢報價。中文 Backlinks 可單獨購買，毋須簽約。' },
   { q: 'GEO 幾耐見效？', a: 'GEO 成效會受行業競爭、網站狀況及搜尋平台更新影響。我們會定期重測，並按結果調整內容方向。' },
   { q: '香港用得到 ChatGPT 嗎？還需要優化 ChatGPT 嗎？', a: '香港用戶可透過不同方式使用 ChatGPT，不過香港最常接觸的 AI 答案是 Google AI Overview 及 AI Mode。所以我們首先優化 Google 生態（AI Overview、AI Mode、Gemini），再按你的客群決定 ChatGPT 及 Perplexity 的投入比重。' },
-  { q: '你們保證 ChatGPT 一定會推薦我���？', a: '不保證。AI 答案會不斷變化，沒有人可以控制。我們會按合約完成約定工作及定期重測，但不保證 AI 推薦。' },
+  { q: '你們保證 ChatGPT 一定會推薦我嗎？', a: '不保證。AI 答案會不斷變化，沒有人可以控制。我們會按合約完成約定工作及定期重測，但不保證 AI 推薦。' },
   { q: 'GEO 成效如何量度？', a: '我們在開始前與你揀選 20–40 條固定問題，在各 AI 平台逐條提問並截圖，作為基線。之後每月用同一批問題重測，比較提及率、引用網址及排名變化，報告附 AI 原文截圖。' },
   { q: '已經有 SEO 公司，還需要另外做 GEO 嗎？', a: '不一定要換公司，但要確認現有 SEO 有沒有處理答案型內容、結構化資料、llms.txt、品牌資料一致及第三方提及。如果沒有，AI 未必會引用你。Native4a 的 GEO 已包括 SEO 工作，可以一併處理。' },
   { q: '需要改動我的網站嗎？', a: '需要少量改動，例如加入結構化資料、llms.txt、修正 canonical 及新增或加長文章。程式碼安裝已包括在服務內，我們會先列出改動清單，經你確認後才進行。' },

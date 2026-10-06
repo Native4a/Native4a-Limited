@@ -207,6 +207,14 @@ export const createPages: GatsbyNode['createPages'] = async ({
     })
   })
 
+  LANGUAGES.forEach((language) => {
+    createPage({
+      path: `/${language}/thank-you/`,
+      component: path.resolve('./src/pages/thank-you.js'),
+      context: { language },
+    })
+  })
+
   // Keep GEO reachable from every localized marketing menu using the existing page content.
   LANGUAGES.forEach((language) => {
     createPage({

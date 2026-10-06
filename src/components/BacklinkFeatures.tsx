@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { useLocation } from '@reach/router';
 interface FeatureItem {
   id: string;
   number: string;
@@ -22,8 +23,8 @@ const features: FeatureItem[] = [{
 }, {
   id: '3',
   number: '03',
-  title: '全繁體中文 WordPress博客文章',
-  description: '所有 反向連結 皆來自以公認為 SEO Friendly 的 WordPress 編寫的繁體中文博客文章。'
+  title: '優質網站平台上的全繁體中文博客文章',
+  description: '所有反向連結皆來自優質網站平台上以繁體中文撰寫的博客文章。'
 }, {
   id: '4',
   number: '04',
@@ -53,7 +54,7 @@ const features: FeatureItem[] = [{
   id: '9',
   number: '09',
   title: '反向連結權重達 DA50+ 或 DR 30+',
-  description: 'DA 和 DR 分別是 MOZ 和 Ahrefs 自行創建的網站權重指標。 雖則這等指標並不是 Google排名的準則，但也代表了網站的權重。我們的 反向連結 都在DA 50+ 或 DR 30＋ 的權重。'
+  description: 'DA 和 DR 是專業 SEO 分析工具常用的網站權重指標，並非 Google 官方排名準則，但可用作比較網站權重。我們的反向連結均達 DA 50+ 或 DR 30+。'
 }, {
   id: '10',
   number: '10',
@@ -97,6 +98,24 @@ const FeatureCard = ({
   </motion.div>;
 };
 export const BacklinkFeatures: React.FC = () => {
+  const isEnglishPage = useLocation().pathname.startsWith('/en/')
+  const localizeFeature = (feature: FeatureItem): FeatureItem => {
+    if (!isEnglishPage) return feature
+    if (feature.id === '3') {
+      return {
+        ...feature,
+        title: 'Traditional Chinese blog articles on quality website platforms',
+        description: 'All backlinks come from Traditional Chinese blog articles published on quality website platforms selected for their SEO suitability.',
+      }
+    }
+    if (feature.id === '9') {
+      return {
+        ...feature,
+        description: 'DA and DR are metrics used by professional SEO analysis tools. They are not official Google ranking criteria, but can be used to compare site authority. Our backlinks meet DA 50+ or DR 30+.',
+      }
+    }
+    return feature
+  }
   return <section className="relative overflow-hidden bg-slate-50/50 py-24 px-6 md:px-12 lg:px-24">
     <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20 overflow-hidden">
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#70a566] rounded-full blur-[120px]" />
@@ -133,7 +152,7 @@ export const BacklinkFeatures: React.FC = () => {
           delay: 0.3
         }} className="text-lg md:text-2xl font-light text-gray-500 tracking-wide">並非所有反向連結都是生而平等的</motion.p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10">{features.map((feature, index) => <FeatureCard key={feature.id} feature={feature} index={index} />)}</div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10">{features.map((feature, index) => <FeatureCard key={feature.id} feature={localizeFeature(feature)} index={index} />)}</div>
     </div>
   </section>;
 };
