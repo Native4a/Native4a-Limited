@@ -1,6 +1,6 @@
 # Native4a
 
-Native4a 是香港 SEO、GEO 及 AI 自動化代理機構，協助企業提升網上搜尋曝光、觸及潛在客戶，並改善日常營運流程。
+Native4a 是香港 SEO、GEO 及 AI 自動化代理機構，協助企業提升網上搜尋曝光、觸及潛在客戶，並改善日常營運流程。創辦人 MC 有 9 年香港 SEO 經驗，公司於 2017 年成立。
 
 ## 主要服務
 - SEO 搜尋引擎優化
@@ -12,6 +12,12 @@ Native4a 是香港 SEO、GEO 及 AI 自動化代理機構，協助企業提升�
 - 中文首頁：https://nativeaaaa.com.hk/zh/
 - SEO 服務：https://nativeaaaa.com.hk/zh/seo/
 - GEO 服務：https://nativeaaaa.com.hk/zh/geo/
+- Backlinks 外鏈服務：https://nativeaaaa.com.hk/zh/backlinks/
+- 網頁設計：https://nativeaaaa.com.hk/zh/web-design/
+- 社交媒體廣告：https://nativeaaaa.com.hk/zh/smm-ads/
+- 小紅書推廣：https://nativeaaaa.com.hk/zh/xiaohongshu/
+- 關於我哋：https://nativeaaaa.com.hk/zh/about-us-2/
+- 聯絡我哋：https://nativeaaaa.com.hk/zh/contact-us/
 - English home: https://nativeaaaa.com.hk/en/
 - SEO services: https://nativeaaaa.com.hk/en/seo/
 - GEO services: https://nativeaaaa.com.hk/en/geo/

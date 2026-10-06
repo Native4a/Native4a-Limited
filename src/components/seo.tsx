@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+import { useLocation } from '@reach/router'
 
 interface StructuredData {
   '@context': string
@@ -84,9 +85,17 @@ const Seo: React.FC<SeoProps> = ({
     `
   )
 
+  const location = useLocation()
+  const pathname = location?.pathname || '/'
+  const isEnglishPage = pathname === '/en' || pathname.startsWith('/en/')
+  const isTraditionalChinesePage = pathname === '/zh' || pathname.startsWith('/zh/')
   const metaDescription = description || site.siteMetadata.description
   const metaKeywords = keywords || site.siteMetadata.keywords
-  const defaultTitle = site.siteMetadata?.title
+  const defaultTitle = isEnglishPage
+    ? 'Native4a Hong Kong SEO Agency'
+    : isTraditionalChinesePage
+      ? 'Native4a 香港 SEO 公司'
+      : site.siteMetadata?.title
   const defaultImage = image || 'https://nativeaaaa.com.hk/og-image.png'
 
   const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow'
@@ -96,9 +105,9 @@ const Seo: React.FC<SeoProps> = ({
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={title || defaultTitle}
       defaultTitle={defaultTitle}
-      titleTemplate={disableTitleTemplate ? false : defaultTitle ? `%s | ${defaultTitle}` : undefined}
+      titleTemplate={disableTitleTemplate || Boolean(title?.trim()) ? false : undefined}
       meta={[
         {
           name: 'robots',
