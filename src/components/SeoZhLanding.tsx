@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import * as styles from '../styles/seo-zh-landing.module.css'
 
@@ -220,7 +221,16 @@ export default function SeoZhLanding() {
               <p>以下展示部分客戶網站的關鍵字排名變化，讓你了解搜尋優化的實際成效。</p>
             </div>
             <div className={styles.chartGrid} id="cases">
-              {rankingGroups.map((group) => <RankingChart group={group} key={group.site} />)}
+              {rankingGroups.map((group) => (
+                <div key={group.site}>
+                  <RankingChart group={group} />
+                  {group.site === 'hypnosis.hk' && (
+                    <p className="mt-3 leading-relaxed">
+                      → <Link to="/zh/case/hypnosis-academy-geo/" className="font-semibold text-yellow-800 underline decoration-yellow-500 underline-offset-4">睇完整 hypnosis.hk 案例</Link>
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
             <p className={styles.caseNote}>排名為案例記錄中的起始與後續名次。不代表未來排名保證。</p>
             <div className={styles.semCard}>

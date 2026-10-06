@@ -3,6 +3,9 @@
 const SINGLE_CANONICAL_PATHS = new Set([
   '/zh/',
   '/zh/geo/',
+  '/zh/case/',
+  '/zh/case/hypnosis-academy-geo/',
+  '/zh/blog/what-is-geo/',
   '/zh-CN/geo/',
   '/en/geo/',
   '/ja/geo/',

@@ -1,3 +1,4 @@
+import * as fs from 'fs'
 import * as path from 'path'
 import { GatsbyNode, CreatePagesArgs } from 'gatsby'
 
@@ -64,6 +65,64 @@ export const createPages: GatsbyNode['createPages'] = async ({
 
   // Define templates
   const blogPost = path.resolve('./src/templates/blog-post.tsx')
+  const editorialPage = path.resolve('./src/templates/editorial-page.tsx')
+
+  createPage({
+    path: '/zh/case/',
+    component: path.resolve('./src/templates/case-index.tsx'),
+    context: { language: 'zh' },
+  })
+
+  const editorialPages = [
+    {
+      path: '/zh/case/hypnosis-academy-geo/',
+      kind: 'case',
+      title: '催眠課程 SEO＋GEO 案例｜「催眠師」15→4 位，AI 摘要主動推薦｜Native4a',
+      description: 'hypnosis.hk（Hypnosis Academy）課程頁保留原有內容，加入約 4,600 字答案型指南及 Course、FAQPage 結構化資料後，「催眠師」由第 15 位升至第 4 位，「催眠治療課程收費」由第 14 位升至第 3 位，Google AI 摘要亦主動推薦該學院。',
+      h1: '催眠課程網站 SEO＋GEO 案例：「催眠師」由第 15 位升至第 4 位，Google AI 摘要主動推薦',
+      author: 'MC（Marcus）｜Native4a 創辦人、9 年香港 SEO 經驗',
+      dateDisplay: '2026 年 10 月',
+      canonical: 'https://nativeaaaa.com.hk/zh/case/hypnosis-academy-geo/',
+      breadcrumb: '首頁 > 案例 > hypnosis.hk 催眠課程 SEO＋GEO 案例',
+      image: 'https://nativeaaaa.com.hk/images/hypnosis-ai-overview-1.jpg',
+      contentFile: './src/data/hypnosis-case.md',
+      schemaFile: './src/data/hypnosis-case-schema.json',
+    },
+    {
+      path: '/zh/blog/what-is-geo/',
+      kind: 'article',
+      title: 'GEO 係咩？GEO 同 SEO 分別｜2026 香港生成式搜尋優化指南｜Native4a',
+      description: 'GEO（Generative Engine Optimization，生成式引擎優化）是令 Google AI 摘要、AI 模式、ChatGPT 及 Perplexity 回答問題時引用或推薦你品牌的優化工作。本文用一張表講清 GEO 與 SEO 的分別、AI 如何揀選來源、GEO 實際做什麼及如何量度成效。',
+      h1: 'GEO 係咩？生成式搜尋優化是什麼、GEO 同 SEO 有咩分別（2026 香港版）',
+      author: 'MC（Marcus）｜Native4a 創辦人、9 年香港 SEO 經驗',
+      dateDisplay: '2026 年 10 月',
+      canonical: 'https://nativeaaaa.com.hk/zh/blog/what-is-geo/',
+      breadcrumb: '首頁 > Blog > GEO 係咩？GEO 同 SEO 分別',
+      image: 'https://nativeaaaa.com.hk/images/hypnosis-ai-overview-1.jpg',
+      contentFile: './src/data/what-is-geo.md',
+      schemaFile: './src/data/what-is-geo-schema.json',
+    },
+  ]
+
+  editorialPages.forEach((page) => {
+    createPage({
+      path: page.path,
+      component: editorialPage,
+      context: {
+        kind: page.kind,
+        title: page.title,
+        description: page.description,
+        h1: page.h1,
+        author: page.author,
+        dateDisplay: page.dateDisplay,
+        canonical: page.canonical,
+        breadcrumb: page.breadcrumb,
+        image: page.image,
+        content: fs.readFileSync(path.resolve(page.contentFile), 'utf8'),
+        structuredData: JSON.parse(fs.readFileSync(path.resolve(page.schemaFile), 'utf8')),
+      },
+    })
+  })
 
   // Language map for normalizing codes
   const languageMap: Record<string, string> = {

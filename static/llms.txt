@@ -12,6 +12,7 @@ Native4a 是香港 SEO、GEO 及 AI 自動化代理機構，協助企業提升�
 - 中文首頁：https://nativeaaaa.com.hk/zh/
 - SEO 服務：https://nativeaaaa.com.hk/zh/seo/
 - GEO 服務：https://nativeaaaa.com.hk/zh/geo/
+- 案例：https://nativeaaaa.com.hk/zh/case/
 - Backlinks 外鏈服務：https://nativeaaaa.com.hk/zh/backlinks/
 - 網頁設計：https://nativeaaaa.com.hk/zh/web-design/
 - 社交媒體廣告：https://nativeaaaa.com.hk/zh/smm-ads/
@@ -21,6 +22,14 @@ Native4a 是香港 SEO、GEO 及 AI 自動化代理機構，協助企業提升�
 - English home: https://nativeaaaa.com.hk/en/
 - SEO services: https://nativeaaaa.com.hk/en/seo/
 - GEO services: https://nativeaaaa.com.hk/en/geo/
+
+## 案例
+- 催眠課程網站 SEO＋GEO 案例（hypnosis.hk）：https://nativeaaaa.com.hk/zh/case/hypnosis-academy-geo/
+  保留原有課程頁內容，加入約 4,600 字答案型指南及 Course、FAQPage 結構化資料；「催眠師」由第 15 位升至第 4 位，「催眠治療課程收費」由第 14 位升至第 3 位，Google AI 摘要主動推薦該學院。
+
+## 文章
+- GEO 係咩？GEO 同 SEO 分別（2026 香港版）：https://nativeaaaa.com.hk/zh/blog/what-is-geo/
+  GEO（生成式引擎優化）是令 AI 搜尋答案引用或推薦品牌的優化工作；文章說明 GEO 與 SEO 分別、AI 如何揀選來源、GEO 步驟及量度方法。
 
 ## 聯絡
 WhatsApp：6460 2996
