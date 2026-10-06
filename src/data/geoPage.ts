@@ -122,7 +122,7 @@ export const CASES = {
         ['連結', '[https://www.hypnosis.hk/hypnosis/](https://www.hypnosis.hk/hypnosis/)'],
       ],
       rankingResults: [
-        { keyword: '催眠治療課程收費', result: '第 1 位' },
+        { keyword: '催眠課程收費', result: '第 1 位' },
         { keyword: '催眠治療課程收費', result: '14 → 3' },
         { keyword: '催眠治療課程', result: '第 3 位' },
         { keyword: '催眠師', result: '15 → 4' },
