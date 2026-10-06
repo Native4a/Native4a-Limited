@@ -138,6 +138,7 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
             </ul>
           </div>
           <Callout text={WHAT_IS_GEO.note} />
+          <Paragraph text="延伸閱讀：[GEO 係咩？GEO 同 SEO 分別（2026 香港版）](/zh/blog/what-is-geo/)" />
         </GeoSection>
 
         <GeoSection id="geo-vs-seo" title="GEO 同 SEO 有咩分別？" muted>
@@ -237,6 +238,11 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
                       </tbody>
                     </table>
                   </div>
+                  {c.title.includes('hypnosis.hk') && (
+                    <p className="mt-3 leading-relaxed">
+                      → 睇完整案例：<a href="/zh/case/hypnosis-academy-geo/" className="font-semibold text-yellow-700 underline underline-offset-4">催眠課程網站 SEO＋GEO 案例</a>
+                    </p>
+                  )}
                   {'rankingHighlight' in c && (
                     <p className="mt-4 rounded-xl border-l-4 border-yellow-500 bg-yellow-50 px-4 py-3 leading-relaxed text-gray-900">
                       <strong>{c.rankingHighlight}</strong>

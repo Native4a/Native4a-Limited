@@ -1,0 +1,53 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://nativeaaaa.com.hk/zh/blog/what-is-geo/#article",
+      "headline": "GEO 係咩？生成式搜尋優化是什麼、GEO 同 SEO 有咩分別（2026 香港版）",
+      "description": "GEO（Generative Engine Optimization，生成式引擎優化）是令 Google AI 摘要、AI 模式、ChatGPT 及 Perplexity 回答問題時引用或推薦你品牌的優化工作。本文用一張表講清 GEO 與 SEO 的分別、AI 如何揀選來源、GEO 實際做什麼及如何量度成效。",
+      "inLanguage": "zh-HK",
+      "datePublished": "2026-10-06",
+      "dateModified": "2026-10-06",
+      "mainEntityOfPage": "https://nativeaaaa.com.hk/zh/blog/what-is-geo/",
+      "image": "https://nativeaaaa.com.hk/images/hypnosis-ai-overview-1.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "MC (Marcus)",
+        "jobTitle": "Native4a 創辦人",
+        "description": "9 年香港 SEO 經驗",
+        "worksFor": { "@id": "https://nativeaaaa.com.hk/#organization" },
+        "sameAs": "https://www.linkedin.com/in/native-mc"
+      },
+      "publisher": { "@id": "https://nativeaaaa.com.hk/#organization" },
+      "about": [
+        { "@type": "DefinedTerm", "name": "GEO（Generative Engine Optimization，生成式引擎優化）", "description": "透過網站內容、結構化資料及第三方提及，提高品牌被 AI 搜尋答案引用及推薦機會的工作。" },
+        { "@type": "Thing", "name": "搜尋引擎優化（SEO）" }
+      ],
+      "citation": [
+        "https://developers.google.com/search/docs/appearance/ai-features",
+        "https://arxiv.org/abs/2311.09735"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://nativeaaaa.com.hk/zh/blog/what-is-geo/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "GEO 係咩？", "acceptedAnswer": { "@type": "Answer", "text": "GEO（Generative Engine Optimization，生成式引擎優化）是令 Google AI 摘要、AI 模式、ChatGPT 及 Perplexity 等 AI 搜尋工具在回答問題時，引用、提及或推薦你品牌的優化工作。" } },
+        { "@type": "Question", "name": "GEO 同 SEO 有咩分別？", "acceptedAnswer": { "@type": "Answer", "text": "SEO 的目標是在搜尋結果中排名靠前；GEO 的目標是出現在 AI 生成的答案之中。兩者基礎相同，GEO 建立在 SEO 之上：網頁要先被收錄及有基本排名，才較有機會被 AI 引用。" } },
+        { "@type": "Question", "name": "GEO 和生成式搜尋優化、AEO、AI SEO 是否同一樣東西？", "acceptedAnswer": { "@type": "Answer", "text": "大致相同。生成式搜尋優化是 GEO 的中文譯名；AEO（答案引擎優化）與 GEO 概念高度重疊；AI SEO 是業界通俗講法，通常包括 GEO 工作。" } },
+        { "@type": "Question", "name": "GEO 多久見效？", "acceptedAnswer": { "@type": "Answer", "text": "視乎行業競爭、網站現況及內容基礎，一般以數個月計。網站已有收錄及排名的，通常較快在 AI 答案中出現。" } },
+        { "@type": "Question", "name": "可以保證 ChatGPT 或 Google AI 推薦我嗎？", "acceptedAnswer": { "@type": "Answer", "text": "不可以。AI 答案會隨時間及平台更新而變化，沒有人能保證。可以做的是完成約定的內容及技術工作，並用固定問題定期重測及公開結果。" } },
+        { "@type": "Question", "name": "怎樣知道我的品牌現在有沒有被 AI 推薦？", "acceptedAnswer": { "@type": "Answer", "text": "揀選 20–40 條客戶真實會問的問題，在 Google AI 摘要、AI 模式、Perplexity 等平台逐條提問並截圖記錄。如需協助，可以 WhatsApp 6460 2996。" } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://nativeaaaa.com.hk/zh/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nativeaaaa.com.hk/zh/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "GEO 係咩？GEO 同 SEO 分別", "item": "https://nativeaaaa.com.hk/zh/blog/what-is-geo/" }
+      ]
+    }
+  ]
+}

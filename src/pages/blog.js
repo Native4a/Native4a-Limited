@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'gatsby'
 
 import '../components/variables.css'
 import '../styles/global.css'
@@ -36,21 +37,6 @@ const BlogIndex = ({ location, pageContext }) => {
     loadPosts()
   }, [language])
 
-  if (loading) {
-    return (
-      <Layout location={location} pageContext={pageContext}>
-        <Seo
-          title={pageTitle}
-          description={pageDescription}
-          lang={isTraditionalChinese ? 'zh-HK' : 'en'}
-        />
-        <div style={{ padding: '2rem', textAlign: 'center' }}>
-          <p>Loading posts...</p>
-        </div>
-      </Layout>
-    )
-  }
-
   return (
     <Layout location={location} pageContext={pageContext}>
       <Seo
@@ -58,8 +44,38 @@ const BlogIndex = ({ location, pageContext }) => {
         description={pageDescription}
         lang={isTraditionalChinese ? 'zh-HK' : 'en'}
       />
-      <div className="mt-10">
-        <ArticlePreview posts={posts} language={language} />
+      <div className="mx-auto mt-10 max-w-6xl px-4">
+        {isTraditionalChinese && (
+          <>
+            <h1 className="text-balance text-3xl font-black leading-tight text-gray-900 md:text-4xl">
+              Native4a Blog｜SEO、GEO 及 AI 搜尋文章
+            </h1>
+            <section aria-labelledby="latest-article-title" className="mt-8">
+              <h2 id="latest-article-title" className="mb-4 text-xl font-black text-gray-900">最新文章</h2>
+              <article className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
+                <Link to="/zh/blog/what-is-geo/" className="block">
+                  <h3 className="text-xl font-bold leading-relaxed text-gray-900 hover:text-yellow-700 md:text-2xl">
+                    GEO 係咩？GEO 同 SEO 分別（2026 香港版）
+                  </h3>
+                </Link>
+                <p className="mt-3 leading-relaxed text-gray-700">
+                  GEO（Generative Engine Optimization，生成式引擎優化）是令 Google AI 摘要、AI 模式、ChatGPT 及 Perplexity 回答問題時引用或推薦你品牌的優化工作。本文用一張表講清 GEO 與 SEO 的分別、AI 如何揀選來源、GEO 實際做什麼及如何量度成效。
+                </p>
+                <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-gray-200 pt-4 text-sm text-gray-600">
+                  <span>MC</span>
+                  <time dateTime="2026-10">2026 年 10 月</time>
+                </div>
+              </article>
+            </section>
+          </>
+        )}
+        <section aria-label={isTraditionalChinese ? '更多文章' : 'Blog posts'} className="mt-8">
+          {loading ? (
+            <p className="py-6 text-center text-gray-600">Loading posts...</p>
+          ) : (
+            <ArticlePreview posts={posts} language={language} />
+          )}
+        </section>
       </div>
     </Layout>
   )

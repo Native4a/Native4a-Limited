@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://nativeaaaa.com.hk/zh/case/hypnosis-academy-geo/#article",
+      "headline": "催眠課程網站 SEO＋GEO 案例：「催眠師」由第 15 位升至第 4 位，Google AI 摘要主動推薦",
+      "description": "hypnosis.hk（Hypnosis Academy）課程頁保留原有內容，加入約 4,600 字答案型指南及 Course、FAQPage 結構化資料後，「催眠師」由第 15 位升至第 4 位，「催眠治療課程收費」由第 14 位升至第 3 位，Google AI 摘要亦主動推薦該學院。",
+      "inLanguage": "zh-HK",
+      "datePublished": "2026-10-06",
+      "dateModified": "2026-10-06",
+      "mainEntityOfPage": "https://nativeaaaa.com.hk/zh/case/hypnosis-academy-geo/",
+      "image": "https://nativeaaaa.com.hk/images/hypnosis-ai-overview-1.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "MC (Marcus)",
+        "jobTitle": "Native4a 創辦人",
+        "description": "9 年香港 SEO 經驗",
+        "worksFor": { "@id": "https://nativeaaaa.com.hk/#organization" },
+        "sameAs": "https://www.linkedin.com/in/native-mc"
+      },
+      "publisher": { "@id": "https://nativeaaaa.com.hk/#organization" },
+      "about": [
+        { "@type": "Thing", "name": "生成式引擎優化（GEO）" },
+        { "@type": "Thing", "name": "搜尋引擎優化（SEO）" }
+      ],
+      "mentions": { "@type": "Organization", "name": "Hypnosis Academy", "url": "https://www.hypnosis.hk/" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://nativeaaaa.com.hk/zh/case/hypnosis-academy-geo/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "這個案例主要改了什麼？", "acceptedAnswer": { "@type": "Answer", "text": "保留 hypnosis.hk 課程頁原有內容，在下方加入約 4,600 字答案型「2026 香港催眠課程指南」（速覽、費用表、5 步流程、常見失誤、官方認證來源、10 條 FAQ），並加入 Course 及 FAQPage 結構化資料。" } },
+        { "@type": "Question", "name": "排名上升了多少？", "acceptedAnswer": { "@type": "Answer", "text": "根據排名追蹤系統記錄，「催眠師」由第 15 位升至第 4 位，「催眠治療課程收費」由第 14 位升至第 3 位，「催眠治療證書」由第 16 位升至第 12 位；「催眠治療課程」排第 3 位，「催眠課程收費」排第 1 位。" } },
+        { "@type": "Question", "name": "Google AI 摘要有沒有推薦這間學院？", "acceptedAnswer": { "@type": "Answer", "text": "有。搜尋「催眠治療課程」及「催眠治療證書」時，Google AI 摘要均主動推薦 Hypnosis Academy，並引用其課程認證及學費資料。" } },
+        { "@type": "Question", "name": "需要重做整個網站嗎？", "acceptedAnswer": { "@type": "Answer", "text": "不需要。這個案例沒有重做網站，也沒有刪除舊內容，只是在原有課程頁下方加入指南及結構化資料。" } },
+        { "@type": "Question", "name": "同樣方法適用於其他行業嗎？", "acceptedAnswer": { "@type": "Answer", "text": "適合客戶在報名或購買前會先搜尋、比較的行業，例如課程、專業服務、裝修及維修等。實際效果視乎行業競爭和網站狀況，建議先做一次搜尋及 AI 能見度檢查。" } },
+        { "@type": "Question", "name": "怎樣知道自己的網站是否適合？", "acceptedAnswer": { "@type": "Answer", "text": "可以 WhatsApp 6460 2996，提供網站及主要服務，我們會說明可行的優化方向。" } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://nativeaaaa.com.hk/zh/" },
+        { "@type": "ListItem", "position": 2, "name": "案例", "item": "https://nativeaaaa.com.hk/zh/case/" },
+        { "@type": "ListItem", "position": 3, "name": "hypnosis.hk 催眠課程 SEO＋GEO 案例", "item": "https://nativeaaaa.com.hk/zh/case/hypnosis-academy-geo/" }
+      ]
+    }
+  ]
+}

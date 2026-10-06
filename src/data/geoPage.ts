@@ -82,7 +82,7 @@ export const WHO_SHOULD = [
   '客戶在決定前會先「問人／問 AI」的服務業，例如裝修、維修、搬屋、補習、醫療美容、專業服務（會計、法律、顧問）',
   '已有網站，但 AI 問起你的行業時從未提及你',
   '同行已開始出現在 AI 答案中，你想在市場未飽和前搶先',
-  '已經做 SEO，想令同一批內容同時在 AI 搜尋中產生效果',
+  '已���做 SEO，想令同一批內容同時在 AI 搜尋中產生效果',
 ]
 
 export const PROCESS = [
@@ -100,7 +100,7 @@ export const SERVICES = {
   head: ['服務項目', '服務內容'],
   rows: [
     ['程式碼安裝（Schema、llms.txt 等）', '包括在 GEO 服務內'],
-    ['每月 AI 重測報告（附截圖及引用網址）', '以同一批問題重測，整理答案、引用及排名變化'],
+    ['每月 AI 重測報告（附截圖及引用網址）', '以同一批���題重測，整理答案、引用及排名變化'],
   ],
   addonTitle: '附加：中文 Backlinks',
   addonHead: ['項目', '條款'],
@@ -244,6 +244,8 @@ export const AUTHOR = {
 }
 
 export const RELATED = [
+  '[催眠課程網站 SEO＋GEO 案例](/zh/case/hypnosis-academy-geo/)',
+  '[GEO 係咩？GEO 同 SEO 分別（2026 香港版）](/zh/blog/what-is-geo/)',
   '[SEO 服務](/zh/seo/)',
   '[中文反向連結 Backlinks](/zh/backlinks/)',
   '[站外優化](/zh/off-page/)',
