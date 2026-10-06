@@ -2,7 +2,6 @@ import React, { type ReactNode } from 'react'
 import { type PageProps, Link } from 'gatsby'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
@@ -104,6 +103,18 @@ const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ locatio
     },
     p: ({ children }) => {
       const text = flattenText(children).trim()
+      if (text === '[[AUTHOR_BOX]]') {
+        return (
+          <section aria-label="作者資料" className="my-10 rounded-3xl border border-gray-200 bg-gray-50 p-6 md:flex md:items-center md:gap-6 md:p-8">
+            <div role="img" aria-label="MC 頭像" className="mb-4 flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-xl font-black text-white md:mb-0">MC</div>
+            <div>
+              <h2 className="mb-2 text-lg font-black text-gray-900">MC（Marcus）｜Native4a 創辦人</h2>
+              <p className="mb-3 leading-relaxed text-gray-700">2017 年創立 Native4a，專注香港 SEO 9 年，擅長中文反向連結、長文內容結構及 AI 搜尋優化（GEO）。</p>
+              <a href="https://www.linkedin.com/in/native-mc" target="_blank" rel="noopener noreferrer" className="font-semibold text-yellow-800 underline underline-offset-4">LinkedIn</a>
+            </div>
+          </section>
+        )
+      }
       const screenshotMatch = text.match(/^【截圖位\s*(\d+)/)
       if (screenshotMatch) {
         const number = screenshotMatch[1]
@@ -149,9 +160,6 @@ const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ locatio
           { property: 'og:image', content: context.image },
         ]}
       />
-      <Helmet>
-        <link rel="canonical" href={context.canonical} />
-      </Helmet>
       <article className="bg-white text-gray-800">
         <header className="bg-[url('../img/GRectangle.svg')] bg-cover px-4 pb-10 pt-28 md:pb-14 md:pt-36">
           <div className="mx-auto flex max-w-4xl flex-col gap-5">
@@ -167,14 +175,6 @@ const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ locatio
           <div className="[&_strong]:font-bold [&_strong]:text-gray-900 [&_li]:leading-relaxed [&_blockquote_p]:mb-0 [&_blockquote_p]:text-gray-800">
             <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>{context.content}</ReactMarkdown>
           </div>
-          <section aria-label="作者資料" className="mt-12 rounded-3xl border border-gray-200 bg-gray-50 p-6 md:flex md:items-center md:gap-6 md:p-8">
-            <div role="img" aria-label="MC 頭像" className="mb-4 flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-xl font-black text-white md:mb-0">MC</div>
-            <div>
-              <h2 className="mb-2 text-lg font-black text-gray-900">MC（Marcus）｜Native4a 創辦人</h2>
-              <p className="mb-3 leading-relaxed text-gray-700">2017 年創立 Native4a，專注香港 SEO 9 年，擅長中文反向連結、長文內容結構及 AI 搜尋優化（GEO）。</p>
-              <a href="https://www.linkedin.com/in/native-mc" target="_blank" rel="noopener noreferrer" className="font-semibold text-yellow-800 underline underline-offset-4">LinkedIn</a>
-            </div>
-          </section>
         </div>
       </article>
     </Layout>

@@ -174,6 +174,8 @@ WhatsApp 我們，提供網站及行業。我們會說明可以追蹤哪些問�
 
 **[WhatsApp 6460 2996](https://wa.me/85264602996)**　｜　[聯絡我們](/zh/contact-us/)　｜　[GEO 服務](/zh/geo/)　｜　[SEO 服務](/zh/seo/)
 
+[[AUTHOR_BOX]]
+
 ### 資料來源
 - Google Search Central：AI 功能與你的網站 https://developers.google.com/search/docs/appearance/ai-features
 - Aggarwal et al.（2023）〈GEO: Generative Engine Optimization〉 https://arxiv.org/abs/2311.09735
