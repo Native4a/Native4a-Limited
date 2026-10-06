@@ -18,6 +18,7 @@ class seoKeywords extends React.Component {
           title={t('seoKeywords.metaTitle')}
           description={t('seoKeywords.metaDescription')}
           ogUrl="https://nativeaaaa.com.hk/seo_keywords/"
+          noindex
         />
         <Section SectionClass="grid gap-6 pt-24 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
           <div className="container mx-auto">

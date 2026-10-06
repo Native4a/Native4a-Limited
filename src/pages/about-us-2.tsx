@@ -50,18 +50,25 @@ interface AboutUsPageProps extends PageProps {
 class aboutUs extends React.Component<AboutUsPageProps> {
   render() {
     const [AboutUsPage] = get(this, 'props.data.allContentfulAboutUsPage.nodes')
+    const isEnglishPage = this.props.location?.pathname.startsWith('/en/')
+    const pageTitle = isEnglishPage
+      ? 'About Native4a | Hong Kong SEO & GEO Agency since 2017'
+      : '關於 Native4a｜2017 年成立嘅香港 SEO 及 GEO 公司'
+    const pageDescription = isEnglishPage
+      ? 'Founded by MC, Native4a brings 9 years of Hong Kong SEO experience across SEO, GEO and AI automation.'
+      : 'Native4a 由創辦人 MC 帶領，擁有 9 年香港 SEO 經驗，專注 SEO、GEO 及 AI 自動化。'
     return (
       <Layout location={this.props.location}>
         <Seo
-          title={AboutUsPage?.title || 'About Us'}
-          description={AboutUsPage?.titleDescription?.titleDescription || 'About Us'}
+          title={pageTitle}
+          description={pageDescription}
           ogUrl="https://nativeaaaa.com.hk/about-us-2/"
         />
         <Section SectionClass="bg-[url('../img/Native_AboutUs_web.png')] bg-cover">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
             <div className="px-6 xl:px-0 py-0 xl:py-6">
               <div className="pt-2 lg:pt-3 2xl:pt-0">
-                <h1 className={styles.title}>{AboutUsPage.title}1</h1>
+                <h1 className={styles.title}>{pageTitle}</h1>
                 <div className={styles.border}></div>
                 <p className="py-5 lg:py-3 text-lg lg:text-lg 2xl:text-2xl">
                   {AboutUsPage.titleDescription.titleDescription}

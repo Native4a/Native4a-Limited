@@ -15,6 +15,7 @@ class thanksYou extends React.Component {
           title={t('thankYou.title')}
           description={t('thankYou.description')}
           ogUrl="https://nativeaaaa.com.hk/thanks-you/"
+          noindex
         />
         <section className="flex justify-center">
           <div className="grid grid-cols-1 gap-6 pt-48 pb-0">

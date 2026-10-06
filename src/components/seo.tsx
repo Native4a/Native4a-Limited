@@ -98,7 +98,7 @@ const Seo: React.FC<SeoProps> = ({
       : site.siteMetadata?.title
   const defaultImage = image || 'https://nativeaaaa.com.hk/og-image.png'
 
-  const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow'
+  const robotsContent = noindex ? 'noindex, follow' : 'index, follow'
 
   return (
     <Helmet

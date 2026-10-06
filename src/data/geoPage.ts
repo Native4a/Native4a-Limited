@@ -82,7 +82,7 @@ export const WHO_SHOULD = [
   '客戶在決定前會先「問人／問 AI」的服務業，例如裝修、維修、搬屋、補習、醫療美容、專業服務（會計、法律、顧問）',
   '已有網站，但 AI 問起你的行業時從未提及你',
   '同行已開始出現在 AI 答案中，你想在市場未飽和前搶先',
-  '已經做 SEO，想令同一批內容同時在 AI 搜尋中產生效果',
+  '已��做 SEO，想令同一批內容同時在 AI 搜尋中產生效果',
 ]
 
 export const PROCESS = [
@@ -116,7 +116,7 @@ export const CASES = {
       rows: [
         ['客戶', 'Hypnosis Academy（hypnosis.hk），香港催眠治療師證書課程'],
         ['目標關鍵字', '催眠師、催眠治療課程、催眠治療課程收費、催眠治療證書（極短尾競爭字）'],
-        ['開始追蹤時排名', '催眠師第 15 位、催眠治療課程收費第 14 位、催眠治療證書第 16 位（排名數據來自 SERPROBOT 追蹤）'],
+        ['開始追蹤時排名', '催眠師第 15 位、催眠治療課程收費第 14 位、催眠治療證書第 16 位（排名數據來自 排名追蹤系統 追蹤）'],
         ['基線（改版前，2026 年 4 月）', '課程頁 /hypnosis/ 約 4,500 字，沒有 H1、沒有結構化資料、只有約 4 個 H2 及 7 條 FAQ。'],
         ['我們做了什麼', '保留原有課程內容，在下方加入約 4,600 字的「2026 香港催眠課程指南」，結構參考我們為 PAT CPA 驗證過的長文格式，包括答案先行速覽、作者及審閱資料、費用表、5 步流程、常見失誤、官方認證來源及 10 條 FAQ，並加入 Course 及 FAQPage 結構化資料。'],
         ['連結', '[https://www.hypnosis.hk/hypnosis/](https://www.hypnosis.hk/hypnosis/)'],
@@ -132,13 +132,13 @@ export const CASES = {
       screenshots: [
         {
           src: '/images/hypnosis-rank-1.png',
-          alt: 'SERPROBOT 排名追蹤截圖，顯示催眠治療證書等關鍵字的排名資料。',
-          caption: 'SERPROBOT 排名追蹤（一）',
+          alt: '排名追蹤系統 排名追蹤截圖，顯示催眠治療證書等關鍵字的排名資料。',
+          caption: '排名追蹤系統 排名追蹤（一）',
         },
         {
           src: '/images/hypnosis-rank-2.png',
-          alt: 'SERPROBOT 排名追蹤截圖，顯示催眠相關關鍵字的排名資料。',
-          caption: 'SERPROBOT 排名追蹤（二）',
+          alt: '排名追蹤系統 排名追蹤截圖，顯示催眠相關關鍵字的排名資料。',
+          caption: '排名追蹤系統 排名追蹤（二）',
         },
         {
           src: '/images/hypnosis-ai-overview-1.jpg',
@@ -175,18 +175,18 @@ export const CASES = {
       screenshots: [
         {
           src: '/images/patcpa-rank-1.png',
-          alt: 'SERPROBOT 排名追蹤截圖，顯示公司註冊、註冊公司及公司成立等關鍵字排名。',
-          caption: 'SERPROBOT 排名追蹤（一）',
+          alt: '排名追蹤系統 排名追蹤截圖，顯示公司註冊、註冊公司及公司成立等關鍵字排名。',
+          caption: '排名追蹤系統 排名追蹤（一）',
         },
         {
           src: '/images/patcpa-rank-2.png',
-          alt: 'SERPROBOT 排名追蹤截圖，顯示開公司、香港開公司及開公司條件等關鍵字排名。',
-          caption: 'SERPROBOT 排名追蹤（二）',
+          alt: '排名追蹤系統 排名追蹤截圖，顯示開公司、香港開公司及開公司條件等關鍵字排名。',
+          caption: '排名追蹤系統 排名追蹤（二）',
         },
         {
           src: '/images/patcpa-url-found.png',
-          alt: 'SERPROBOT URL Found 截圖，顯示《香港註冊公司流程｜開公司費用整理》頁面的收錄記錄。',
-          caption: 'SERPROBOT URL Found 記錄',
+          alt: '排名追蹤系統 URL Found 截圖，顯示《香港註冊公司流程｜開公司費用整理》頁面的收錄記錄。',
+          caption: '排名追蹤系統 URL Found 記錄',
         },
       ],
     },

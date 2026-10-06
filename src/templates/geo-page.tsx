@@ -56,6 +56,9 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
   const language = (pageContext as { language?: string })?.language || 'zh'
   const pageUrl = `https://nativeaaaa.com.hk/${language}/geo/`
   const htmlLanguage = language === 'zh' ? 'zh-HK' : language
+  const isEnglishPage = language === 'en'
+  const localizeRankingSystemText = (text: string) =>
+    isEnglishPage ? text.replace(/排名追蹤系統/g, 'rank tracking system') : text
 
   return (
     <Layout location={location} pageContext={pageContext as { language?: string }}>
@@ -195,7 +198,7 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
                   <div key={label} className="grid grid-cols-1 md:grid-cols-4 gap-1 md:gap-4">
                     <dt className="font-bold text-yellow-700">{label}</dt>
                     <dd className="md:col-span-3 leading-relaxed">
-                      <GeoRichText text={text} />
+                      <GeoRichText text={localizeRankingSystemText(text)} />
                     </dd>
                   </div>
                 ))}
@@ -203,10 +206,19 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
               {'rankingResults' in c && (
                 <div className="mt-8">
                   <h4 className="text-lg font-black text-gray-900">結果</h4>
-                  <p className="mt-1 text-sm leading-relaxed text-gray-600">關鍵字排名數據來自 SERPROBOT 追蹤。</p>
+                  <p className="mt-1 text-sm leading-relaxed text-gray-600">
+                    {isEnglishPage
+                      ? 'Keyword ranking data is provided by a rank tracking system.'
+                      : '關鍵字排名數據由排名追蹤系統提供。'}
+                  </p>
                   <div className="mt-3 overflow-hidden rounded-2xl border border-gray-200">
                     <table className="w-full border-collapse text-left text-sm">
-                      <caption className="sr-only">{c.title} SERPROBOT 關鍵字排名結果</caption>
+                      <caption className="sr-only">
+                        {c.title}{' '}
+                        {isEnglishPage
+                          ? 'rank tracking system keyword ranking results'
+                          : '排名追蹤系統關鍵字排名結果'}
+                      </caption>
                       <thead className="bg-gray-50 text-gray-700">
                         <tr>
                           <th scope="col" className="px-3 py-3 font-bold sm:px-4">關鍵字</th>
@@ -242,19 +254,19 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
                           href={screenshot.src}
                           target="_blank"
                           rel="noreferrer"
-                          aria-label={`開啟原尺寸截圖：${screenshot.alt}`}
+                          aria-label={`開啟原尺寸截圖：${localizeRankingSystemText(screenshot.alt)}`}
                           className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
                         >
                           <img
                             src={screenshot.src}
-                            alt={screenshot.alt}
+                            alt={localizeRankingSystemText(screenshot.alt)}
                             loading="lazy"
                             decoding="async"
                             className="h-auto w-full"
                           />
                         </a>
                         <figcaption className="px-4 py-3 text-sm leading-relaxed text-gray-700">
-                          {screenshot.caption}
+                          {localizeRankingSystemText(screenshot.caption)}
                         </figcaption>
                       </figure>
                     </li>
