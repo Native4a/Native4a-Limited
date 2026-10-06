@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLocation } from '@reach/router'
 import { Helmet } from 'react-helmet'
 interface StructuredData {
   '@context': string
@@ -39,6 +40,8 @@ const Seo: React.FC<SeoProps> = ({
   noindex = false,
   structuredData,
 }) => {
+  const { pathname } = useLocation()
+  const pathLanguage = pathname.split('/').filter(Boolean)[0]
   const siteMetadata: SiteMetadata = {
     title: 'Native4a - SEO Agency Hong Kong | Digital Marketing Services',
     description: 'Native4a is a leading SEO agency in Hong Kong offering professional SEO, digital marketing, web design, and video production services to help your business grow online.',
@@ -48,7 +51,12 @@ const Seo: React.FC<SeoProps> = ({
 
   const metaDescription = description || siteMetadata.description
   const metaKeywords = keywords || siteMetadata.keywords
-  const defaultTitle = siteMetadata.title
+  const defaultTitle =
+    pathLanguage === 'en'
+      ? 'Native4a Hong Kong SEO Agency'
+      : pathLanguage === 'zh'
+        ? 'Native4a 香港 SEO 公司'
+        : siteMetadata.title
   const defaultImage = image || 'https://nativeaaaa.com.hk/og-image.png'
 
   const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow'
@@ -60,7 +68,6 @@ const Seo: React.FC<SeoProps> = ({
       }}
       title={title}
       defaultTitle={defaultTitle}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
       meta={[
         {
           name: 'robots',
