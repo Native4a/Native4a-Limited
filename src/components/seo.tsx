@@ -44,6 +44,42 @@ interface SiteData {
   site: {
     siteMetadata: SiteMetadata
   }
+  allSitePage: {
+    nodes: Array<{ path: string }>
+  }
+}
+
+const normalizePath = (pathname: string) => {
+  const segments = pathname.split('/').filter(Boolean)
+  return segments.length === 0 ? '/' : `/${segments.join('/')}/`
+}
+
+const getCanonicalPath = (pathname: string) => {
+  const normalizedPath = normalizePath(pathname)
+  return /^\/(?:en|ja|zh-CN|zh)(?:\/|$)/.test(normalizedPath)
+    ? normalizedPath
+    : normalizePath(`/zh${normalizedPath}`)
+}
+
+const getLanguagePath = (pathname: string, language: 'zh' | 'en') => {
+  const pathWithoutLanguage = pathname.replace(/^\/(?:en|ja|zh-CN|zh)(?=\/|$)/, '')
+  return normalizePath(`/${language}${pathWithoutLanguage}`)
+}
+
+const SITE_ORIGIN = 'https://nativeaaaa.com.hk'
+
+const makeAbsoluteUrl = (pathname: string) => `${SITE_ORIGIN}${pathname}`
+
+const makeLanguageAlternates = (pathname: string, availablePaths: Set<string>) => {
+  const zhPath = getLanguagePath(pathname, 'zh')
+  const enPath = getLanguagePath(pathname, 'en')
+  if (!availablePaths.has(zhPath) || !availablePaths.has(enPath)) return []
+
+  return [
+    { hrefLang: 'zh-HK', href: makeAbsoluteUrl(zhPath) },
+    { hrefLang: 'en', href: makeAbsoluteUrl(enPath) },
+    { hrefLang: 'x-default', href: makeAbsoluteUrl(zhPath) },
+  ]
 }
 
 const serializeStructuredData = (data: StructuredData) =>
@@ -70,7 +106,7 @@ const Seo: React.FC<SeoProps> = ({
   structuredData,
   disableTitleTemplate = false,
 }) => {
-  const { site } = useStaticQuery<SiteData>(
+  const { site, allSitePage } = useStaticQuery<SiteData>(
     graphql`
       query {
         site {
@@ -81,12 +117,21 @@ const Seo: React.FC<SeoProps> = ({
             author
           }
         }
+        allSitePage {
+          nodes {
+            path
+          }
+        }
       }
     `
   )
 
   const location = useLocation()
   const pathname = location?.pathname || '/'
+  const canonicalPath = getCanonicalPath(pathname)
+  const canonicalUrl = makeAbsoluteUrl(canonicalPath)
+  const availablePaths = new Set(allSitePage.nodes.map(({ path }) => normalizePath(path)))
+  const alternateLinks = makeLanguageAlternates(canonicalPath, availablePaths)
   const isEnglishPage = pathname === '/en' || pathname.startsWith('/en/')
   const isTraditionalChinesePage = pathname === '/zh' || pathname.startsWith('/zh/')
   const metaDescription = description || site.siteMetadata.description
@@ -192,7 +237,10 @@ const Seo: React.FC<SeoProps> = ({
         ...meta,
       ]}
     >
-      <link rel="canonical" href={ogUrl} />
+      <link rel="canonical" href={canonicalUrl} />
+      {alternateLinks.map(({ hrefLang, href }) => (
+        <link key={hrefLang} rel="alternate" hrefLang={hrefLang} href={href} />
+      ))}
       {structuredData && (
         <script type="application/ld+json">
           {serializeStructuredData(structuredData)}

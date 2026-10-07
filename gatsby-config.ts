@@ -54,13 +54,6 @@ if (!isDev) {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: `https://nativeaaaa.com.hk`,
-        stripQueryString: true,
-      },
-    },
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',
