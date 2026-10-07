@@ -203,7 +203,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
       createRedirect({
         fromPath: `/blog/${post.slug}/`,
         toPath: `/${DEFAULT_LANGUAGE}/blog/${post.slug}/`,
-        isPermanent: false,
+        isPermanent: true,
       })
     })
     
@@ -211,7 +211,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
     createRedirect({
       fromPath: '/blog/',
       toPath: '/zh/blog/',
-      isPermanent: false,
+      isPermanent: true,
     })
   } else {
     console.log('[v0] No blog posts found, creating empty blog pages')
@@ -231,7 +231,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
     createRedirect({
       fromPath: '/blog/',
       toPath: '/zh/blog/',
-      isPermanent: false,
+      isPermanent: true,
     })
   }
 
@@ -291,13 +291,13 @@ export const createPages: GatsbyNode['createPages'] = async ({
       createRedirect({
         fromPath: '/',
         toPath: '/zh/',
-        isPermanent: false,
+        isPermanent: true,
       })
     } else {
       createRedirect({
         fromPath: `${pagePath}/`,
         toPath: `/zh${pagePath}/`,
-        isPermanent: false,
+        isPermanent: true,
       })
     }
   })
