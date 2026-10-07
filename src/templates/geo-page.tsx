@@ -69,7 +69,6 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
         <meta property="og:description" content={GEO_DESCRIPTION} />
         <meta name="twitter:title" content={GEO_TITLE} />
         <meta name="twitter:description" content={GEO_DESCRIPTION} />
-        <link rel="canonical" href={pageUrl} />
         <script type="application/ld+json">{serializeStructuredData(geoSchema)}</script>
       </Helmet>
 
