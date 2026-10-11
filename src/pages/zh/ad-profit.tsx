@@ -251,7 +251,7 @@ export default function AdProfitPage() {
           <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
             <div className="max-w-xl">
               <p className="mb-3 text-sm font-bold tracking-[0.16em] text-emerald-700">真實成交，清楚對應</p>
-              <h2 className="text-balance text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">唔止睇點擊，仲要睇邊條廣告��來生意</h2>
+              <h2 className="text-balance text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">唔止睇點擊，仲要睇邊條廣告帶來生意</h2>
               <p className="mt-5 text-pretty leading-relaxed text-slate-600 sm:text-lg">全平台廣告放入同一個列表，來源同花費一齊睇。每放 $1，邊條賺錢、邊條倒水，一眼睇清。</p>
               <div className="mt-7"><WhatsAppLink>WhatsApp 索取 Demo</WhatsAppLink></div>
             </div>
