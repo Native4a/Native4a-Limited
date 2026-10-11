@@ -132,7 +132,7 @@ function PainPointSection() {
   return (
     <section className="bg-white px-5 py-16 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionHeading eyebrow="先處理重複工作" title="你的團隊是否��日都在做這些事？" />
+        <SectionHeading eyebrow="先處理重複工作" title="你的團隊是否���日都在做這些事？" />
         <div className="grid gap-4 sm:grid-cols-2">
           {painPoints.map(([icon, title, description]) => (
             <article key={title} className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
@@ -158,7 +158,10 @@ function PackagesSection() {
     <section id="packages" className="scroll-mt-28 bg-[#f4f8f5] px-5 py-16 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow="清晰範圍 · 按需報價" title="AI 自動化套餐" description="AAA 自動化套餐：固定範圍、清楚列明內容，按你的訊息量及流程複雜程度報價。" />
-  <a href="/zh/ad-profit/" className="mb-6 inline-flex rounded-xl border border-emerald-200 bg-white px-5 py-3 font-semibold text-emerald-800 transition-colors hover:bg-emerald-50">廣告利潤統計器</a>
+        <a href="/zh/ad-profit/" className="mb-6 flex items-center justify-between gap-4 rounded-2xl border border-emerald-200 bg-white p-5 font-semibold text-slate-900 shadow-sm transition hover:border-emerald-500 hover:shadow-md sm:max-w-md">
+          <span className="text-lg">廣告利潤統計器</span>
+          <ArrowUpRight aria-hidden="true" size={20} className="shrink-0 text-emerald-700" />
+        </a>
         <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
           <table className="w-full min-w-[640px] border-collapse text-left">
             <thead><tr className="bg-slate-900 text-white"><th scope="col" className="px-5 py-4 text-sm font-semibold">套餐</th><th scope="col" className="px-5 py-4 text-sm font-semibold">解決甚麼問題</th><th scope="col" className="px-5 py-4 text-sm font-semibold">運作方式</th></tr></thead>

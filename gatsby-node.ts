@@ -67,6 +67,14 @@ export const createPages: GatsbyNode['createPages'] = async ({
   const blogPost = path.resolve('./src/templates/blog-post.tsx')
   const editorialPage = path.resolve('./src/templates/editorial-page.tsx')
 
+  LANGUAGES.forEach((language) => {
+    createPage({
+      path: `/${language}/ad-profit/`,
+      component: path.resolve('./src/templates/ad-profit.tsx'),
+      context: { language },
+    })
+  })
+
   createPage({
     path: '/zh/case/',
     component: path.resolve('./src/templates/case-index.tsx'),
