@@ -12,7 +12,7 @@ const faqs = [
   { question: 'AI 自動回覆會不會亂答？', answer: '回覆內容按你提供的服務、價錢及常見問題設定，上線前一同測試。AI 答不到的問題，或客人要求與真人對話時，系統會即時轉交你的同事跟進。' },
   { question: '用你們的 WhatsApp 號碼還是我自己的？', answer: '用你公司自己的 WhatsApp Business 號碼，連接自動化系統，客人看到的仍然是你的品牌。' },
   { question: '客人的資料及收款截圖安全嗎？', answer: '資料只用於處理你自己的訂單及記錄，存放在你指定的系統，由你控制存取權限。除運作系統所需的工具外，我們不會將資料交給第三方。' },
-  { question: '已經是 Native4a 的 SEO／GEO 客戶，可以加自動化嗎？', answer: '可以，現有客戶加購設優惠。Marketing 帶來的查詢可以直接接入自動回覆及跟進，歡迎 WhatsApp 6460 2996 查詢。' },
+  { question: '已經是 Native4a 的 SEO／GEO 客戶，可以加自動化嗎？', answer: '現有 SEO／GEO 客戶加購自動化套餐設優惠，歡迎查詢。' },
   { question: '多久可以上線？', answer: '視乎套餐及流程複雜程度。我們會在報價時列明預計上線時間，固定套餐一般較度身訂造系統快。' },
 ]
 
@@ -132,7 +132,7 @@ function PainPointSection() {
   return (
     <section className="bg-white px-5 py-16 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionHeading eyebrow="先處理重複工作" title="你的團隊是否���日都在做這些事？" />
+        <SectionHeading eyebrow="先處理重複工作" title="你的團隊是否每日都在做這些事？" />
         <div className="grid gap-4 sm:grid-cols-2">
           {painPoints.map(([icon, title, description]) => (
             <article key={title} className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
