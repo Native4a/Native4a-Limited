@@ -110,9 +110,6 @@ export default function AdProfitPageEn() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <WhatsAppLink>WhatsApp to request a demo</WhatsAppLink>
-                <WhatsAppLink className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-emerald-200 bg-white px-6 py-3 text-center text-sm font-bold text-emerald-900 transition-colors hover:border-emerald-500 hover:bg-emerald-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 sm:text-base">
-                  WhatsApp for a free trial
-                </WhatsAppLink>
               </div>
               <ul className="mt-8 flex flex-wrap gap-2" aria-label="Who it is for and what it shows">
                 {["Hong Kong SMEs", "Retail stores", "Service businesses", "Real sales", "Profit for every $1"].map((tag) => (

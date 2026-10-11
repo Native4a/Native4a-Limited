@@ -110,9 +110,6 @@ export default function AdProfitPage() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <WhatsAppLink>WhatsApp 索取 Demo</WhatsAppLink>
-                <WhatsAppLink className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-emerald-200 bg-white px-6 py-3 text-center text-sm font-bold text-emerald-900 transition-colors hover:border-emerald-500 hover:bg-emerald-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 sm:text-base">
-                  WhatsApp 免費試用
-                </WhatsAppLink>
               </div>
               <ul className="mt-8 flex flex-wrap gap-2" aria-label="適用對象及重點">
                 {["香港中小企", "實體門市", "服務業", "睇真實成交", "每放 $1 計利潤"].map((tag) => (
