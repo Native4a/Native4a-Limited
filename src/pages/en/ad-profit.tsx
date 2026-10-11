@@ -85,10 +85,13 @@ export default function AdProfitPageEn() {
         lang="en"
         disableTitleTemplate
       />
-      <div className="ad-profit-landing overflow-hidden bg-white pb-24 text-slate-900 sm:pb-28">
+      <div className="ad-profit-landing overflow-hidden bg-white pb-24 font-sans text-slate-900 sm:pb-28">
         <style>{`
           body:has(.ad-profit-landing) a:has(img[alt="sticky whatsapp button"]),
-          body:has(.ad-profit-landing) a:has(img[alt="sticky line button"]) { display: none !important; }
+          body:has(.ad-profit-landing) a:has(img[alt="sticky line button"]),
+          body:has(.ad-profit-landing) a[href="https://wa.me/85264602996"],
+          body:has(.ad-profit-landing) a[href="https://api.whatsapp.com/send/?phone=85264602996"] { display: none !important; }
+          body:has(.ad-profit-landing) footer section:first-of-type { display: none !important; }
           body:has(.ad-profit-landing) footer { padding-bottom: 6rem !important; }
         `}</style>
 

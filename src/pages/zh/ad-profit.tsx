@@ -85,10 +85,13 @@ export default function AdProfitPage() {
         lang="zh-HK"
         disableTitleTemplate
       />
-      <div className="ad-profit-landing overflow-hidden bg-white pb-24 text-slate-900 sm:pb-28">
+      <div className="ad-profit-landing overflow-hidden bg-white pb-24 font-sans text-slate-900 sm:pb-28">
         <style>{`
           body:has(.ad-profit-landing) a:has(img[alt="sticky whatsapp button"]),
-          body:has(.ad-profit-landing) a:has(img[alt="sticky line button"]) { display: none !important; }
+          body:has(.ad-profit-landing) a:has(img[alt="sticky line button"]),
+          body:has(.ad-profit-landing) a[href="https://wa.me/85264602996"],
+          body:has(.ad-profit-landing) a[href="https://api.whatsapp.com/send/?phone=85264602996"] { display: none !important; }
+          body:has(.ad-profit-landing) footer section:first-of-type { display: none !important; }
           body:has(.ad-profit-landing) footer { padding-bottom: 6rem !important; }
         `}</style>
 
@@ -251,7 +254,7 @@ export default function AdProfitPage() {
           <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
             <div className="max-w-xl">
               <p className="mb-3 text-sm font-bold tracking-[0.16em] text-emerald-700">真實成交，清楚對應</p>
-              <h2 className="text-balance text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">唔止睇點擊，仲要睇邊條廣告帶來生意</h2>
+              <h2 className="text-balance text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">唔止睇點擊，仲要睇邊條廣告��來生意</h2>
               <p className="mt-5 text-pretty leading-relaxed text-slate-600 sm:text-lg">全平台廣告放入同一個列表，來源同花費一齊睇。每放 $1，邊條賺錢、邊條倒水，一眼睇清。</p>
               <div className="mt-7"><WhatsAppLink>WhatsApp 索取 Demo</WhatsAppLink></div>
             </div>
