@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../../components/layout"
+import Seo from "../../components/seo"
 
 const benefits = [
   {
@@ -20,21 +21,15 @@ const benefits = [
   },
 ]
 
-export function Head() {
-  return (
-    <>
-      <title>廣告利潤統計器｜Native4a</title>
-      <meta
-        name="description"
-        content="廣告費出緊，單從邊條嚟，一眼睇到。"
-      />
-    </>
-  )
-}
-
 export default function AdProfitPage() {
   return (
     <Layout>
+      <Seo
+        title="廣告利潤統計器｜Native4a"
+        description="廣告費出緊，單從邊條嚟，一眼睇到。"
+        lang="zh-HK"
+        disableTitleTemplate
+      />
       <main className="bg-slate-50 text-slate-900">
         <section className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 md:py-24">
           <div className="max-w-3xl">

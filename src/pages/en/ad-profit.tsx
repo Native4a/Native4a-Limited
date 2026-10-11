@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../../components/layout"
+import Seo from "../../components/seo"
 
 const benefits = [
   {
@@ -20,21 +21,15 @@ const benefits = [
   },
 ]
 
-export function Head() {
-  return (
-    <>
-      <title>Ad Profit Tracker | Native4a</title>
-      <meta
-        name="description"
-        content="See at a glance which source is driving your ad spend."
-      />
-    </>
-  )
-}
-
 export default function AdProfitPageEn() {
   return (
     <Layout>
+      <Seo
+        title="Ad Profit Tracker | Native4a"
+        description="See at a glance which source is driving your ad spend."
+        lang="en"
+        disableTitleTemplate
+      />
       <main className="bg-slate-50 text-slate-900">
         <section className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 md:py-24">
           <div className="max-w-3xl">
