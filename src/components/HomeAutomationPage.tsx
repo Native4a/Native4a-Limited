@@ -132,7 +132,7 @@ function PainPointSection() {
   return (
     <section className="bg-white px-5 py-16 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-7xl">
-        <SectionHeading eyebrow="先處理重複工作" title="你的團隊是否每日都在做這些事？" />
+        <SectionHeading eyebrow="先處理重複工作" title="你的團隊是否��日都在做這些事？" />
         <div className="grid gap-4 sm:grid-cols-2">
           {painPoints.map(([icon, title, description]) => (
             <article key={title} className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
@@ -158,6 +158,7 @@ function PackagesSection() {
     <section id="packages" className="scroll-mt-28 bg-[#f4f8f5] px-5 py-16 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHeading eyebrow="清晰範圍 · 按需報價" title="AI 自動化套餐" description="AAA 自動化套餐：固定範圍、清楚列明內容，按你的訊息量及流程複雜程度報價。" />
+  <a href="/zh/ad-profit/" className="mb-6 inline-flex rounded-xl border border-emerald-200 bg-white px-5 py-3 font-semibold text-emerald-800 transition-colors hover:bg-emerald-50">廣告利潤統計器</a>
         <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
           <table className="w-full min-w-[640px] border-collapse text-left">
             <thead><tr className="bg-slate-900 text-white"><th scope="col" className="px-5 py-4 text-sm font-semibold">套餐</th><th scope="col" className="px-5 py-4 text-sm font-semibold">解決甚麼問題</th><th scope="col" className="px-5 py-4 text-sm font-semibold">運作方式</th></tr></thead>
@@ -221,7 +222,7 @@ function MarketingAutomationSection() {
           <article className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8"><p className="text-sm font-bold uppercase tracking-wide text-emerald-800">Marketing 負責帶客</p><p className="mt-3 text-lg leading-relaxed text-slate-800"><a className="font-semibold underline decoration-emerald-700 underline-offset-4" href="/zh/seo/">SEO</a>、<a className="font-semibold underline decoration-emerald-700 underline-offset-4" href="/zh/geo/">GEO（AI 搜尋優化）</a>、<a className="font-semibold underline decoration-emerald-700 underline-offset-4" href="/zh/backlinks/">中文 Backlinks</a>、<a className="font-semibold underline decoration-emerald-700 underline-offset-4" href="/zh/smm-ads/">社交媒體廣告</a>。</p></article>
           <article className="rounded-3xl border border-emerald-900/10 bg-emerald-50 p-6 sm:p-8"><p className="text-sm font-bold uppercase tracking-wide text-emerald-800">AI 自動化負責接客</p><p className="mt-3 text-lg leading-relaxed text-slate-800">查詢 1 分鐘自動回覆、自動跟進，避免辛苦帶來的客流失。</p></article>
         </div>
-        <p className="mt-6 text-center font-semibold text-slate-800">現有 SEO／GEO 客戶加購自動化套餐設優惠，歡迎查詢。</p>
+        <p className="mt-6 text-center font-semibold text-slate-800">現有 SEO／GEO 客戶加購自動化套��設優惠，歡迎查詢。</p>
         <div className="mt-6 flex justify-center"><WhatsAppQuoteButton /></div>
       </div>
     </section>

@@ -236,6 +236,17 @@ export const createPages: GatsbyNode['createPages'] = async ({
   }
 
   // Create language-prefixed routes for main pages
+  LANGUAGES.forEach((language) => {
+    const component = path.resolve(
+      language === 'en' ? './src/pages/en/ad-profit.tsx' : './src/pages/zh/ad-profit.tsx',
+    )
+    createPage({
+      path: `/${language}/ad-profit/`,
+      component,
+      context: { language },
+    })
+  })
+
   const mainPages = [
     { path: '/', component: path.resolve('./src/pages/index.tsx') },
     { path: '/contact-us', component: path.resolve('./src/pages/contact-us.tsx') },
