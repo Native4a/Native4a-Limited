@@ -1,4 +1,5 @@
 import React from "react"
+import { ArrowDown, ArrowRight, ArrowUpRight, ChartLine, List, MessageCircle, Workflow } from "lucide-react"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 
@@ -26,54 +27,103 @@ export default function AdProfitPage() {
     <Layout>
       <Seo
         title="廣告利潤統計器｜Native4a"
-        description="廣告費出緊，單從邊條嚟，一眼睇到。"
+        description="一套系統，整合全平台廣告數據，一眼睇清邊個廣告賺錢"
         lang="zh-HK"
         disableTitleTemplate
       />
-      <main className="bg-slate-50 text-slate-900">
-        <section className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 md:py-24">
-          <div className="max-w-3xl">
-            <p className="mb-4 inline-flex rounded-full bg-emerald-100 px-4 py-2 text-sm font-semibold text-emerald-800">
-              廣告成效，一眼睇清
-            </p>
-            <h1 className="text-balance text-4xl font-bold tracking-tight text-slate-950 md:text-6xl">
-              廣告利潤統計器
-            </h1>
-            <p className="mt-6 text-pretty text-xl leading-relaxed text-slate-700 md:text-2xl">
-              廣告費出緊，單從邊條嚟，一眼睇到。
-            </p>
-            <p className="mt-3 text-lg leading-relaxed text-slate-600">
-              全平台廣告整合，一眼睇晒邊個賺錢。
-            </p>
-          </div>
+      <main className="ad-profit-page bg-slate-50 text-slate-900">
+        <style>{`body:has(.ad-profit-page) img[alt="sticky whatsapp button"], body:has(.ad-profit-page) img[alt="sticky line button"] { display: none !important; }`}</style>
+        <section className="bg-[#f4f8f5] px-5 pb-16 pt-36 sm:px-8 sm:pb-20 sm:pt-40 lg:pb-24 lg:pt-44">
+          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+            <div className="max-w-3xl">
+              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-900/15 bg-white px-4 py-2 text-sm font-semibold text-emerald-900">
+                <ChartLine aria-hidden="true" size={16} />
+                Native4a · 廣告利潤統計器
+              </p>
+              <h1 className="text-balance text-4xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+                廣告利潤統計器
+              </h1>
+              <p className="mt-6 text-balance text-2xl font-bold leading-snug tracking-tight text-emerald-900 sm:text-3xl lg:text-4xl">
+                唔知邊個廣告賺到錢？
+              </p>
+              <p className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-slate-700 sm:text-lg lg:text-xl">
+                一套系統，整合全平台廣告數據，一眼睇清邊個廣告賺錢
+              </p>
+            </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            {benefits.map((item) => (
-              <article
-                key={item.problem}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8"
-              >
-                <p className="text-base font-semibold leading-relaxed text-slate-600">
-                  <span className="text-emerald-700">痛點：</span>{item.problem}
-                </p>
-                <p className="mt-4 text-lg font-semibold leading-relaxed text-slate-900">
-                  <span className="text-emerald-700">解決：</span>{item.solution}
-                </p>
-              </article>
-            ))}
+            <aside aria-label="廣告資料流程" className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_24px_70px_rgba(15,50,35,0.12)] sm:p-7">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-5">
+                <div>
+                  <p className="text-sm font-semibold text-slate-500">由廣告到生意</p>
+                  <h2 className="mt-1 text-xl font-bold text-slate-950 sm:text-2xl">每個來源，清楚對齊</h2>
+                </div>
+                <span className="grid size-12 place-items-center rounded-2xl bg-emerald-50 text-emerald-800">
+                  <Workflow aria-hidden="true" size={24} />
+                </span>
+              </div>
+              <div className="flex flex-col gap-3 pt-5">
+                <div className="flex items-center gap-4 rounded-2xl bg-slate-50 p-4">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-emerald-800 shadow-sm"><ChartLine aria-hidden="true" size={21} /></span>
+                  <div><p className="text-xs font-bold uppercase tracking-wider text-slate-500">來源</p><p className="mt-1 font-semibold text-slate-900">全平台廣告</p></div>
+                  <ArrowRight aria-hidden="true" size={18} className="ml-auto text-emerald-700" />
+                </div>
+                <div className="flex items-center gap-4 rounded-2xl bg-slate-50 p-4">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-emerald-800 shadow-sm"><MessageCircle aria-hidden="true" size={21} /></span>
+                  <div><p className="text-xs font-bold uppercase tracking-wider text-slate-500">查詢</p><p className="mt-1 font-semibold text-slate-900">來源與客戶對應</p></div>
+                  <ArrowRight aria-hidden="true" size={18} className="ml-auto text-emerald-700" />
+                </div>
+                <div className="flex items-center gap-4 rounded-2xl bg-emerald-50 p-4">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-emerald-800 shadow-sm"><List aria-hidden="true" size={21} /></span>
+                  <div><p className="text-xs font-bold uppercase tracking-wider text-emerald-800">結果</p><p className="mt-1 font-semibold text-slate-950">廣告費與生意對齊</p></div>
+                  <ArrowDown aria-hidden="true" size={18} className="ml-auto text-emerald-700" />
+                </div>
+              </div>
+            </aside>
           </div>
+        </section>
 
-          <div className="flex flex-col items-start gap-4 rounded-2xl bg-slate-900 p-6 text-white md:flex-row md:items-center md:justify-between md:p-8">
-            <p className="text-lg font-medium leading-relaxed">
-              睇清廣告帶嚟嘅生意，從而作出更好決定。
-            </p>
+        <section className="px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
+          <div className="mx-auto max-w-7xl">
+            <header className="mb-8 max-w-3xl sm:mb-10">
+              <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-emerald-800">由痛點到解決</p>
+              <h2 className="text-balance text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">廣告成效，逐項睇清</h2>
+            </header>
+            <div className="grid gap-4 sm:grid-cols-2 lg:gap-5">
+              {benefits.map((item, index) => {
+                const BenefitIcon = [ChartLine, MessageCircle, Workflow, List][index]
+                return (
+                  <article key={item.problem} className="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md sm:p-7 lg:p-8">
+                    <div className="mb-6 flex items-center justify-between">
+                      <span className="grid size-12 place-items-center rounded-2xl bg-emerald-50 text-emerald-800 transition-colors group-hover:bg-emerald-100">
+                        <BenefitIcon aria-hidden="true" size={23} />
+                      </span>
+                      <ArrowUpRight aria-hidden="true" size={18} className="text-slate-300" />
+                    </div>
+                    <p className="text-base font-semibold leading-relaxed text-slate-600 sm:text-lg">
+                      <span className="text-emerald-800">痛點：</span>{item.problem}
+                    </p>
+                    <div className="my-5 h-px bg-slate-100" />
+                    <p className="text-lg font-semibold leading-relaxed text-slate-950 sm:text-xl">
+                      <span className="text-emerald-800">解決：</span>{item.solution}
+                    </p>
+                  </article>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-5 pb-16 sm:px-8 sm:pb-24">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-5 rounded-[2rem] bg-slate-900 px-6 py-10 sm:py-12">
             <a
-              href="https://wa.me/85264602996?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E5%BB%A3%E5%91%8A%E5%88%A9%E6%BD%A4%E7%B5%B1%E8%A8%88%E5%99%A8"
+              href="https://wa.me/85264602996"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-emerald-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-emerald-600 px-7 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
             >
+              <MessageCircle aria-hidden="true" size={18} />
               WhatsApp +852 6460 2996
+              <ArrowUpRight aria-hidden="true" size={16} />
             </a>
           </div>
         </section>
