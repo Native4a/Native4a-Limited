@@ -12,7 +12,7 @@ const faqs = [
   { question: 'AI 自動回覆會不會亂答？', answer: '回覆內容按你提供的服務、價錢及常見問題設定，上線前一同測試。AI 答不到的問題，或客人要求與真人對話時，系統會即時轉交你的同事跟進。' },
   { question: '用你們的 WhatsApp 號碼還是我自己的？', answer: '用你公司自己的 WhatsApp Business 號碼，連接自動化系統，客人看到的仍然是你的品牌。' },
   { question: '客人的資料及收款截圖安全嗎？', answer: '資料只用於處理你自己的訂單及記錄，存放在你指定的系統，由你控制存取權限。除運作系統所需的工具外，我們不會將資料交給第三方。' },
-  { question: '已經是 Native4a 的 SEO／GEO 客戶，可以加自動化嗎？', answer: '現有 SEO／GEO 客戶加購自動化套餐設優惠，歡迎查詢。' },
+  { question: '已經是 Native4a 的 SEO／GEO 客戶，可以加自動化嗎？', answer: '可以，現有客戶加購設優惠。Marketing 帶來的查詢可以直接接入自動回覆及跟進，歡迎 WhatsApp 6460 2996 查詢。' },
   { question: '多久可以上線？', answer: '視乎套餐及流程複雜程度。我們會在報價時列明預計上線時間，固定套餐一般較度身訂造系統快。' },
 ]
 
@@ -225,7 +225,7 @@ function MarketingAutomationSection() {
           <article className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8"><p className="text-sm font-bold uppercase tracking-wide text-emerald-800">Marketing 負責帶客</p><p className="mt-3 text-lg leading-relaxed text-slate-800"><a className="font-semibold underline decoration-emerald-700 underline-offset-4" href="/zh/seo/">SEO</a>、<a className="font-semibold underline decoration-emerald-700 underline-offset-4" href="/zh/geo/">GEO（AI 搜尋優化）</a>、<a className="font-semibold underline decoration-emerald-700 underline-offset-4" href="/zh/backlinks/">中文 Backlinks</a>、<a className="font-semibold underline decoration-emerald-700 underline-offset-4" href="/zh/smm-ads/">社交媒體廣告</a>。</p></article>
           <article className="rounded-3xl border border-emerald-900/10 bg-emerald-50 p-6 sm:p-8"><p className="text-sm font-bold uppercase tracking-wide text-emerald-800">AI 自動化負責接客</p><p className="mt-3 text-lg leading-relaxed text-slate-800">查詢 1 分鐘自動回覆、自動跟進，避免辛苦帶來的客流失。</p></article>
         </div>
-        <p className="mt-6 text-center font-semibold text-slate-800">現有 SEO／GEO 客戶加購自動化套��設優惠，歡迎查詢。</p>
+        <p className="mt-6 text-center font-semibold text-slate-800">現有 SEO／GEO 客戶加購自動化套餐設優惠，歡迎查詢。</p>
         <div className="mt-6 flex justify-center"><WhatsAppQuoteButton /></div>
       </div>
     </section>

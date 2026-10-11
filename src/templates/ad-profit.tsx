@@ -106,9 +106,23 @@ function AdProfitPageContent({ isEnglish }: { isEnglish: boolean }) {
   )
 }
 
+export function Head({ pageContext }: AdProfitPageProps) {
+  const isEnglish = pageContext.language === 'en'
+
+  return (
+    <>
+      <title>{isEnglish ? 'Ad Profit Tracker | Native4a' : '廣告利潤統計器｜Native4a'}</title>
+      <meta
+        name="description"
+        content={isEnglish ? 'Your ad spend is running. See at a glance which source is profitable.' : '廣告費出緊，單從邊條嚟，一眼睇到。'}
+      />
+    </>
+  )
+}
+
 export default function AdProfitPage(props: AdProfitPageProps) {
   const isEnglish = props.pageContext.language === 'en'
-  const title = isEnglish ? 'Advertising Profit Tracker | Native4a' : '廣告利潤統計器｜Native4a'
+  const title = isEnglish ? 'Ad Profit Tracker | Native4a' : '廣告利潤統計器｜Native4a'
   const description = isEnglish
     ? 'Your ad spend is running. See at a glance which source is profitable.'
     : '廣告費出緊，單從邊條嚟，一眼睇到。'
