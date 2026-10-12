@@ -20,7 +20,15 @@ const BacklinksPage: React.FC<PageProps> = (props) => {
         title="反向連結服務 | NATIVE4A"
         description="專業反向連結服務，提升網站權威度與Google排名。NATIVE4A提供高質量的反向連結建立策略，幫助企業獲得更多有機流量。"
       />
-      <main>
+      <main className="backlinks-landing">
+        <style>{`
+          @media (max-width: 767px) {
+            body:has(.backlinks-landing) a:has(img[alt="sticky whatsapp button"]),
+            body:has(.backlinks-landing) a:has(img[alt="sticky line button"]) {
+              display: none !important;
+            }
+          }
+        `}</style>
         <BacklinkHeroSection />
         <SeoBacklinksHero />
         <BacklinkComparisonSection />

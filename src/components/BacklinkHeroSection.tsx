@@ -43,13 +43,16 @@ const BackgroundDecoration: React.FC = () => <div className="absolute top-0 righ
   </div>;
 export const BacklinkHeroSection: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState<'awards' | 'media'>('awards');
-  return <section className="relative w-full flex items-center overflow-hidden" style={{
-    backgroundImage: 'linear-gradient(100deg, #FFFFFF 0%, #FFFFFF 60%, #70A665 60%, #70A665 100%)',
-    height: "934.938px"
-  }}>
-      <BackgroundDecoration />
+  return <section className="relative w-full overflow-x-hidden bg-white pt-36 sm:pt-40 lg:flex lg:min-h-[880px] lg:items-center lg:pt-44">
+      <div
+        className="pointer-events-none absolute inset-0 hidden lg:block"
+        style={{ backgroundImage: 'linear-gradient(100deg, #FFFFFF 0%, #FFFFFF 60%, #70A665 60%, #70A665 100%)' }}
+      />
+      <div className="hidden lg:block">
+        <BackgroundDecoration />
+      </div>
 
-      <div className="container relative z-10 mx-auto px-6 py-20 lg:py-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div className="container relative z-10 mx-auto px-6 pb-16 pt-2 lg:py-32 flex flex-col lg:flex-row items-stretch lg:items-center gap-10 lg:gap-20">
         {/* Left Column: Text Content */}
         <motion.div initial={{
         opacity: 0,
@@ -62,12 +65,11 @@ export const BacklinkHeroSection: React.FC = () => {
         ease: "easeOut"
       }} className="flex-1 flex flex-col space-y-6">
             <div className="space-y-2">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
                 「什麼是Backlinks？」
               </h1>
-              <h2 className="text-xl md:text-2xl font-black tracking-tight flex flex-wrap gap-2 items-center">
-                <span className="bg-[#FFC107] px-2 py-0.5 inline-block">無咗佢</span>
-                <span>，你可能都會有排名，但Top 10？No Way</span>
+              <h2 className="text-xl md:text-2xl font-black tracking-tight leading-snug">
+                <span className="bg-[#FFC107] px-2 py-0.5 inline-block">無咗佢，</span><span>你可能都會有排名，但Top 10？No Way</span>
               </h2>
               <div className="h-1 w-full max-w-[480px] bg-[#FBBF24] mt-2" />
             </div>
@@ -80,11 +82,11 @@ export const BacklinkHeroSection: React.FC = () => {
               中文網站 買中文反向連結，實證對改善網站權重和SEO排名有顯著正面效果。歡迎索取外部連結Backlink HK樣本和查詢
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-2">
-              <a href="#contact" className="inline-flex items-center px-8 py-3 bg-[#70A665] text-white font-bold text-lg rounded-full shadow-md hover:bg-[#5e9254] transition-colors duration-200">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 pt-2">
+              <a href="#contact" className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3 bg-[#70A665] text-white font-bold text-lg rounded-full shadow-md hover:bg-[#5e9254] transition-colors duration-200 whitespace-nowrap">
                 <span>免費查詢</span>
               </a>
-              <a href="#samples" className="inline-flex items-center px-8 py-3 bg-[#FBBF24] text-gray-900 font-bold text-lg rounded-full shadow-md hover:bg-[#f59e0b] transition-colors duration-200">
+              <a href="#samples" className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3 bg-[#FBBF24] text-gray-900 font-bold text-lg rounded-full shadow-md hover:bg-[#f59e0b] transition-colors duration-200 whitespace-nowrap">
                 <span>索取樣本</span>
               </a>
             </div>

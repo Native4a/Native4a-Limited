@@ -18,6 +18,7 @@ const Footer = () => {
 
   // ❗在這裡設定你不想顯示 Icon 的路徑
   const hiddenPaths = ['/seo/', '/backlinks/']
+  const pathWithoutLocale = pathname.replace(/^\/(en|ja|zh)(?=\/)/, '')
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
@@ -57,7 +58,7 @@ const Footer = () => {
   }, [])
 
   const shouldShowIcon = !(
-    isMobile && hiddenPaths.some((path) => pathname.startsWith(path))
+    isMobile && hiddenPaths.some((path) => pathWithoutLocale.startsWith(path) || pathname.startsWith(path))
   )
   return (
     <div>
