@@ -38,10 +38,10 @@ export const ServiceScopeSlider: React.FC = () => {
   const activeStep = SERVICE_STEPS[activeIndex];
   return <section className="relative w-full bg-white py-16 md:py-28 overflow-hidden font-sans">
     <div className="max-w-[1520px] mx-auto px-6 md:px-9">
-      <div className="mb-8 md:mb-16 flex items-center gap-6 ml-2">
+      <div className="mb-8 md:mb-16 flex flex-col sm:flex-row sm:items-center gap-6 ml-2">
         <h2 className="flex items-center text-3xl font-bold text-gray-900 gap-3">
           <span className="text-[#70A665]"><Square className="fill-current" size={32} aria-hidden="true" /></span>
-          <span className="font-black">{t('homepage.serviceScope')}</span>
+          <span className="text-3xl font-black text-gray-900">{t('homepage.serviceScope')}</span>
         </h2>
         <div className="flex items-center">
           <ul className="flex items-center gap-4 list-none" style={{
@@ -76,9 +76,9 @@ export const ServiceScopeSlider: React.FC = () => {
           }} className="w-full">
             <div className={cn('grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center', activeIndex % 2 !== 0 ? 'md:flex-row-reverse' : '')}>
               <div className={cn('relative order-2 md:order-1', activeIndex % 2 !== 0 ? 'md:order-2' : 'md:order-1')}>
-                <div className={cn('flex flex-col gap-0 pt-2', activeIndex === 0 || activeIndex === 2 ? 'ml-auto items-end text-right' : '')}>
-                  <div className="flex items-end gap-0 leading-none select-none pointer-events-none mb-2">
-                    <span className="text-[#70a665] text-[120px] md:text-[180px] font-black leading-none opacity-100 tracking-tighter">{activeStep.id}</span>
+            <div className={cn('flex flex-col gap-0 pt-2', activeIndex === 0 || activeIndex === 2 ? 'items-start text-left md:ml-auto md:items-end md:text-right' : '')}>
+              <div className="flex items-end gap-0 leading-none select-none pointer-events-none mb-2">
+                <span className="text-[#70a665] text-[4.5rem] sm:text-[120px] md:text-[180px] font-black leading-none opacity-100 tracking-tighter">{activeStep.id}</span>
                   </div>
                   <div className="relative -mt-8 md:-mt-12">
                     <div className="flex items-center gap-3 mb-5">
