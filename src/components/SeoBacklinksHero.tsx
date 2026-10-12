@@ -52,7 +52,7 @@ export const SeoBacklinksHero: React.FC = () => {
         </clipPath>
       </defs>
     </svg>
-    <section className="relative z-10 mb-[-80px] w-full bg-[#608A51] flex flex-col items-center justify-center selection:bg-white/30" style={{
+    <section className="relative z-10 mb-[-80px] w-full overflow-x-clip bg-[#608A51] flex flex-col items-center justify-center selection:bg-white/30" style={{
       clipPath: 'url(#seo-hero-wave-clip)'
     }}>
     <div className="absolute inset-0 pointer-events-none opacity-10">
@@ -66,7 +66,7 @@ export const SeoBacklinksHero: React.FC = () => {
         <Link2 size={80} className="text-white" />
       </div>
     </div>
-    <div className="container mx-auto px-6 lg:px-24 py-16 lg:py-32 pb-32 relative z-10">
+    <div className="container mx-auto px-6 lg:px-24 pt-28 pb-32 md:pt-32 lg:pt-36 lg:pb-32 relative z-10">
       <div className="max-w-5xl mx-auto flex flex-col items-center lg:items-start text-center lg:text-left text-white">
         <motion.div initial={{
             opacity: 0,
@@ -78,10 +78,10 @@ export const SeoBacklinksHero: React.FC = () => {
             duration: 0.6,
             ease: "easeOut"
           }}>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-4 tracking-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl max-w-full font-black leading-tight mb-4 tracking-tight">
             「SEO+Backlinks懶人包」
             <br />
-            <span className="block mt-2">整合方案</span>
+            <span className="mt-2 block text-2xl text-[#FAAB00] sm:text-3xl md:text-4xl lg:text-5xl">整合方案</span>
           </h1>
         </motion.div>
         <motion.p className="text-lg md:text-2xl lg:text-3xl font-medium leading-relaxed max-w-3xl mb-12 text-white/90" initial={{
