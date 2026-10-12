@@ -65,11 +65,11 @@ export const BacklinkHeroSection: React.FC = () => {
         ease: "easeOut"
       }} className="flex-1 flex flex-col space-y-6">
             <div className="space-y-2">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-black leading-tight tracking-tight">
                 「什麼是Backlinks？」
               </h1>
               <h2 className="text-xl md:text-2xl font-black tracking-tight leading-snug">
-                <span className="bg-[#FFC107] px-2 py-0.5 inline-block">無咗佢，</span><span>你可能都會有排名，但Top 10？No Way</span>
+                <span className="bg-[#2563EB] text-white px-2 py-0.5 inline-block">無咗佢，</span><span className="text-black">你可能都會有排名，但Top 10？No Way</span>
               </h2>
               <div className="h-1 w-full max-w-[480px] bg-[#FBBF24] mt-2" />
             </div>
