@@ -43,7 +43,7 @@ const BackgroundDecoration: React.FC = () => <div className="absolute top-0 righ
   </div>;
 export const BacklinkHeroSection: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState<'awards' | 'media'>('awards');
-  return <section className="relative w-full overflow-x-hidden bg-white pt-36 sm:pt-40 lg:flex lg:min-h-[880px] lg:items-center lg:pt-44">
+  return <section className="relative w-full overflow-x-hidden bg-white pt-44 sm:pt-40 lg:flex lg:min-h-[880px] lg:items-center lg:pt-44">
       <div
         className="pointer-events-none absolute inset-0 hidden lg:block"
         style={{ backgroundImage: 'linear-gradient(100deg, #FFFFFF 0%, #FFFFFF 60%, #70A665 60%, #70A665 100%)' }}
@@ -69,7 +69,7 @@ export const BacklinkHeroSection: React.FC = () => {
                 「什麼是Backlinks？」
               </h1>
               <h2 className="text-xl md:text-2xl font-black tracking-tight leading-snug">
-                <span className="bg-[#2563EB] text-white px-2 py-0.5 inline-block">無咗佢，</span><span className="text-black">你可能都會有排名，但Top 10？No Way</span>
+                <span className="block w-fit bg-[#2563EB] text-white px-2 py-0.5 mb-2">無咗佢，</span><span className="block text-black">你可能都會有排名，但Top 10？No Way</span>
               </h2>
               <div className="h-1 w-full max-w-[480px] bg-[#FBBF24] mt-2" />
             </div>
