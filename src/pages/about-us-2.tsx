@@ -3,8 +3,7 @@ import CountUp from 'react-countup'
 import { FaQuoteLeft } from 'react-icons/fa'
 import { graphql, PageProps } from 'gatsby'
 import get from 'lodash/get'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import { aboutAsDataJP } from '../data/aboutAsConstants'
 
 import Layout from '../components/layout'
 import Seo from '../components/seo'
@@ -49,14 +48,23 @@ interface AboutUsPageProps extends PageProps {
 
 class aboutUs extends React.Component<AboutUsPageProps> {
   render() {
-    const [AboutUsPage] = get(this, 'props.data.allContentfulAboutUsPage.nodes')
-    const isEnglishPage = this.props.location?.pathname.startsWith('/en/')
+    const [AboutUsPage] = get(this, 'props.data.allContentfulAboutUsPage.nodes', [])
+    const pathname = this.props.location?.pathname || ''
+    const isEnglishPage = pathname.startsWith('/en/')
+    const isJapanesePage = pathname.startsWith('/ja/')
     const pageTitle = isEnglishPage
       ? 'About Native4a | Hong Kong SEO & GEO Agency since 2017'
-      : '關於 Native4a｜2017 年成立嘅香港 SEO 及 GEO 公司'
+      : isJapanesePage
+        ? 'NATIVE4Aについて'
+        : '關於 Native4a｜2017 年成立嘅香港 SEO 及 GEO 公司'
     const pageDescription = isEnglishPage
       ? 'Founded by MC, Native4a brings 9 years of Hong Kong SEO experience across SEO, GEO and AI automation.'
-      : 'Native4a 由創辦人 MC 帶領，擁有 9 年香港 SEO 經驗，專注 SEO、GEO 及 AI 自動化。'
+      : isJapanesePage
+        ? aboutAsDataJP[0].description
+        : 'Native4a 由創辦人 MC 帶領，擁有 9 年香港 SEO 經驗，專注 SEO、GEO 及 AI 自動化。'
+    const cmsIntro = AboutUsPage?.titleDescription?.titleDescription
+    const intro = isEnglishPage || isJapanesePage ? pageDescription : cmsIntro
+    const showCmsStats = !isEnglishPage && !isJapanesePage && AboutUsPage
     return (
       <Layout location={this.props.location}>
         <Seo
@@ -66,13 +74,15 @@ class aboutUs extends React.Component<AboutUsPageProps> {
         />
         <Section SectionClass="bg-[url('../img/Native_AboutUs_web.png')] bg-cover">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-32 lg:pt-22 xl:pt-22 2xl:pt-36 pb-0 lg:pb-14 xl:pb-16 2xl:pb-30">
-            <div className="px-6 xl:px-0 py-0 xl:py-6">
+            <div className="min-w-0 px-6 xl:px-0 py-0 xl:py-6">
               <div className="pt-2 lg:pt-3 2xl:pt-0">
                 <h1 className={styles.title}>{pageTitle}</h1>
                 <div className={styles.border}></div>
-                <p className="py-5 lg:py-3 text-lg lg:text-lg 2xl:text-2xl">
-                  {AboutUsPage.titleDescription.titleDescription}
-                </p>
+                {intro && (
+                  <p className="py-5 lg:py-3 text-lg lg:text-lg 2xl:text-2xl">
+                    {intro}
+                  </p>
+                )}
                 <div className="hidden md:grid grid-cols-2 gap-6 py-6">
                   <div className="flex gap-6 w-full items-center">
                     <SocialMediaBtn />
@@ -84,7 +94,7 @@ class aboutUs extends React.Component<AboutUsPageProps> {
                   </div>
                 </div>
               </div>
-              <div className={styles.seoSpanSquare}>
+              <div className={`${styles.seoSpanSquare} min-w-0 max-w-full overflow-hidden`}>
                 <AwardsWeb />
               </div>
             </div>
@@ -102,26 +112,28 @@ class aboutUs extends React.Component<AboutUsPageProps> {
             </div>
           </div>
         </Section>
-        <section className="grid justify-center justify-items-center mt-10">
-          <h2 className="text-xl lg:text-3xl text-gray-700 p-5 lg:p-10">
-            {AboutUsPage.section2Title}
-          </h2>
-          <h3 className="text-3xl lg:text-5xl text-gray-700">
-            {AboutUsPage.section2Description}
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
-            <div className="flex justify-center text-6xl px-8">
-              <div className="overflow-hidden">
-                <div className="flex justify-center font-bold text-7xl mb-2 text-[#c2545c]">
-                  <CountUp end={7} />
+        {showCmsStats && (
+          <section className="grid justify-center justify-items-center mt-10">
+            <h2 className="text-xl lg:text-3xl text-gray-700 p-5 lg:p-10">
+              {AboutUsPage.section2Title}
+            </h2>
+            <h3 className="text-3xl lg:text-5xl text-gray-700">
+              {AboutUsPage.section2Description}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
+              <div className="flex justify-center text-6xl px-8">
+                <div className="overflow-hidden">
+                  <div className="flex justify-center font-bold text-7xl mb-2 text-[#c2545c]">
+                    <CountUp end={7} />
+                  </div>
+                  <p className="text-gray-600 text-xl">
+                    {AboutUsPage.countTitle01}
+                  </p>
                 </div>
-                <p className="text-gray-600 text-xl">
-                  {AboutUsPage.countTitle01}
-                </p>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
         <section>
           <AboutAs />
         </section>

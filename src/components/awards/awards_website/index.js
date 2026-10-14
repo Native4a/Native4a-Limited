@@ -26,7 +26,7 @@ const AwardsWeb = () => {
   }
 
   return (
-    <div className="hidden md:inline">
+    <div className="hidden w-full min-w-0 max-w-full overflow-hidden md:block">
       <h4
         className={`${styles.highlight} flex items-center text-2xl md:text-lg 2xl:text-2xl pt-5 2xl:pt-12 pb-4 ml-4`}
       >
@@ -36,7 +36,7 @@ const AwardsWeb = () => {
         {t('awards.title')}
       </h4>
 
-      <div className="px-4">
+      <div className="w-full min-w-0 max-w-full overflow-hidden px-4">
         <Slider {...settings}>
           {/* 第一頁：年度獎項 */}
           <div>
@@ -46,14 +46,14 @@ const AwardsWeb = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="drop-shadow p-2">
                 <img
-                  className="rounded-sm w-full h-auto object-contain"
+                  className="mx-auto h-auto max-h-72 w-full max-w-full rounded-sm object-contain"
                   src={Award01}
                   alt={t('awards.award01Alt')}
                 />
               </div>
               <div className="drop-shadow p-2">
                 <img
-                  className="rounded-sm w-full h-auto object-contain"
+                  className="mx-auto h-auto max-h-72 w-full max-w-full rounded-sm object-contain"
                   src={Award02}
                   alt={t('awards.award02Alt')}
                 />
@@ -69,14 +69,14 @@ const AwardsWeb = () => {
             <div className="grid grid-cols-2 gap-6 py-4 items-center">
               <div className="p-2">
                 <img
-                  className="rounded-sm w-full h-auto object-contain"
+                  className="mx-auto h-auto max-h-72 w-full max-w-full rounded-sm object-contain"
                   src={Medaia01}
                   alt={t('awards.media01Alt')}
                 />
               </div>
               <div className="p-2">
                 <img
-                  className="rounded-sm w-full h-auto object-contain"
+                  className="mx-auto h-auto max-h-72 w-full max-w-full rounded-sm object-contain"
                   src={Medaia02}
                   alt={t('awards.media02Alt')}
                 />

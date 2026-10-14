@@ -114,9 +114,9 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
         cursor: 'pointer', 
         position: 'relative', 
         width: `${W}px`, 
-        height: isHovered ? `${H_EXPANDED}px` : `${H_COLLAPSED}px`,
-        transition: 'height 0.3s ease-out',
-        overflow: isHovered ? 'visible' : 'hidden'
+        height: `${H_COLLAPSED}px`,
+        overflow: isHovered ? 'visible' : 'hidden',
+        flexShrink: 0,
       }}
     >
       <svg 

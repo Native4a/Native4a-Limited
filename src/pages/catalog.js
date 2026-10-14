@@ -16,9 +16,8 @@ class Catalog extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Seo
-          title="Thank you"
-          description="this is native4a website thanks you page."
-          ogUrl="https://nativeaaaa.com.hk/thanks-you/"
+          title={t('catalog.seoTemplate')}
+          description={t('catalog.seoTemplate')}
         />
         <Section ContainerClass="flex flex-wrap">
           <Grid

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useLocation } from '@reach/router'
+import { Link } from 'gatsby'
 import { useTranslation } from 'react-i18next'
 import Container from '../container'
 import * as styles from '../../styles/footer.module.css'
@@ -73,6 +74,7 @@ const Footer = () => {
 
         const currentYear = new Date().getFullYear()
         const copyrightText = t('footer.copyright', { year: currentYear })
+        const language = pathname.match(/^\/(zh-CN|en|ja|zh)(?:\/|$)/)?.[1] || 'zh'
 
         return (
           <Container as="footer" key={index}>
@@ -92,23 +94,34 @@ const Footer = () => {
             <section className="bg-neutral-200 pt-5 md:pt-0 pb-20 md:py-0 px-5 md:px-11">
               <div className="grid grid-cols-3 gap-1 items-center">
                 <div>
-                  <img
-                    className="rounded-sm w-28 md:w-48 m-0"
-                    src={native4aLogo.url}
-                    alt="service_Video_Production"
-                  />
+                  {native4aLogo?.url && (
+                    <img
+                      className="rounded-sm w-28 md:w-48 m-0"
+                      src={native4aLogo.url}
+                      alt="Native4a"
+                    />
+                  )}
                 </div>
                 <div className="flex text-[10px] md:text-base items-center text-center">
                   <p>
-                    {copyrightText} Privacy-Policy｜Terms of Business
+                    {copyrightText}{' '}
+                    <Link className="underline underline-offset-2" to={`/${language}/privacy-policy/`}>
+                      {t('footer.privacyPolicy')}
+                    </Link>
+                    {'｜'}
+                    <Link className="underline underline-offset-2" to={`/${language}/terms-of-business/`}>
+                      {t('footer.termsOfBusiness')}
+                    </Link>
                   </p>
                 </div>
                 <div>
-                  <img
-                    className="rounded-sm float-right w-8/12 md:w-48"
-                    src={googlePartnerImage.url}
-                    alt="service_Video_Production"
-                  />
+                  {googlePartnerImage?.url && (
+                    <img
+                      className="rounded-sm float-right w-8/12 md:w-48"
+                      src={googlePartnerImage.url}
+                      alt="Google Partner"
+                    />
+                  )}
                 </div>
               </div>
               <div className="mx-auto mt-6 grid max-w-4xl gap-2 border-t border-neutral-300 pt-4 text-center text-xs leading-relaxed text-neutral-700 sm:grid-cols-2 md:text-sm">

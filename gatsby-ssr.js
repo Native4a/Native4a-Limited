@@ -1,4 +1,18 @@
 const React = require('react')
+const i18n = require('./src/i18n/config').default
+
+const languageFromPath = (pathname = '/') =>
+  pathname.match(/^\/(zh-CN|en|ja|zh)(?:\/|$)/)?.[1] || 'zh'
+
+export const wrapPageElement = ({ element, props }) => {
+  const language = props?.pageContext?.language || languageFromPath(props?.location?.pathname)
+  if (i18n.language !== language) {
+    i18n.language = language
+    i18n.languages = [language, 'zh']
+    void i18n.changeLanguage(language)
+  }
+  return element
+}
 
 const normalizePath = (pathname = '/') => {
   const segments = pathname.split('/').filter(Boolean)

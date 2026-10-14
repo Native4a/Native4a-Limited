@@ -1,23 +1,23 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'gatsby'
+import { useLocation } from '@reach/router'
 
 const HyperLink = () => {
   const { t } = useTranslation()
+  const location = useLocation()
 
   const getLocalizedPath = (path) => {
-    // Get current language from window.location if available
-    if (typeof window !== 'undefined') {
-      const currentPath = window.location.pathname
-      const langMatch = currentPath.match(/^\/(en|ja|zh-CN|zh(?!-CN))(\/|$)/)
-      const currentLang = langMatch ? langMatch[1] : 'zh'
+    const langMatch = location?.pathname?.match(/^\/(en|ja|zh-CN|zh(?!-CN))(\/|$)/)
+    const currentLang = langMatch ? langMatch[1] : 'zh'
 
-      if (currentLang === 'zh') {
-        return path === '/' ? '/' : `/${path}`
-      }
-      return path === '/' ? `/${currentLang}/` : `/${currentLang}/${path}`
+    // Homepage has no #aboutAs target. The about page does.
+    if (path.startsWith('#')) {
+      return `/${currentLang}/about-us-2/${path}`
     }
-    return path
+
+    const slug = String(path).replace(/^\/+|\/+$/g, '')
+    return slug ? `/${currentLang}/${slug}/` : `/${currentLang}/`
   }
 
   return (

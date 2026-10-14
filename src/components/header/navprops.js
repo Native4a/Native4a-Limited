@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { useLocation } from '@reach/router'
-import { ChevronDown, MessageCircle, ShoppingBag } from 'lucide-react'
+import { ChevronDown, MessageCircle } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import LanguageSwitcher from '../LanguageSwitcher'
 
@@ -145,11 +145,6 @@ const Navprops = () => {
           <li><NavLink to={`/${language}/about-us-2/`}>{copy.about}</NavLink></li>
           <li><NavLink to={`/${language}/contact-us/`}>{copy.contact}</NavLink></li>
           <li><NavLink to={`/${language}/blog/`}>{copy.blog}</NavLink></li>
-          <li>
-            <a href="https://shop.nativeaaaa.com.hk/" className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-slate-800 transition-colors hover:bg-emerald-50 hover:text-emerald-800">
-              <ShoppingBag aria-hidden="true" size={16} />{copy.shop}
-            </a>
-          </li>
           <li className="px-2"><LanguageSwitcher /></li>
           <li>
             <a href="https://wa.me/85264602996" target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 whitespace-nowrap rounded-full bg-emerald-700 px-4 py-2 text-sm font-bold text-white transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700">
@@ -167,11 +162,6 @@ const Navprops = () => {
           <li><NavLink to={`/${language}/about-us-2/`} onClick={closeMobileMarketing}>{copy.about}</NavLink></li>
           <li><NavLink to={`/${language}/contact-us/`} onClick={closeMobileMarketing}>{copy.contact}</NavLink></li>
           <li><NavLink to={`/${language}/blog/`} onClick={closeMobileMarketing}>{copy.blog}</NavLink></li>
-          <li>
-            <a href="https://shop.nativeaaaa.com.hk/" className="inline-flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-emerald-50">
-              <ShoppingBag aria-hidden="true" size={16} />{copy.shop}
-            </a>
-          </li>
           <li className="border-t border-slate-200 pt-2"><LanguageSwitcher isInMenu /></li>
           <li className="pt-1">
             <a href="https://wa.me/85264602996" target="_blank" rel="noreferrer" className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-emerald-700 px-4 py-3 text-sm font-bold text-white hover:bg-emerald-800">

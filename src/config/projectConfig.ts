@@ -27,7 +27,7 @@ export const projectConfig = {
     quality: 75,
     formats: ['webp', 'jpg'],
     sizes: [320, 640, 1024, 1440],
-    defaultPlaceholder: 'https://nativeaaaa.com.hk/og-image.png',
+    defaultPlaceholder: 'https://nativeaaaa.com.hk/images/hero-award-2022.jpg',
   },
 
   // Supported languages

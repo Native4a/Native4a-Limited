@@ -144,7 +144,7 @@ export const buildArticleStructuredData = (
     name: 'Native4a',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://nativeaaaa.com.hk/og-image.png',
+      url: 'https://nativeaaaa.com.hk/images/hero-award-2022.jpg',
     },
   },
 })

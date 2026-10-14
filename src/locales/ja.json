@@ -86,6 +86,11 @@
     "privacyPolicy": "プライバシーポリシー",
     "termsOfBusiness": "利用規約"
   },
+  "termsPage": {
+    "title": "利用規約",
+    "description": "Native4a は作業開始前に、範囲・費用・日程を見積で確認します。",
+    "body": "Native4a は作業開始前に、各案件の範囲・費用・日程を見積で確認します。今回の案件に適用される条件が必要な場合は、WhatsApp 6460 2996 または native4a.inquiry@gmail.com まで連絡してください。"
+  },
   "awards": {
     "title": "「native4a」ブランド — 受賞歴のある広告代理店",
     "annualAwards": "年間受賞",

@@ -163,7 +163,6 @@ class SEOsmartKit extends Component {
         <Seo
           title={t('seoSmartKit.metaTitle')}
           description={t('seoSmartKit.metaDescription')}
-          ogUrl="seo-smart-kit"
         />
         <Section SectionClass="flex justify-evenly" ContainerClass="grid">
           <div className="grid gap-4 justify-evenly pt-32 lg:pt-22 xl:pt-22 2xl:pt-36">
@@ -357,7 +356,7 @@ class SEOsmartKit extends Component {
               <span>BuildVersion: v3.1.240911-1824 by Native4A</span>
             </div>
             <div className="grid col-span-1 items-center text-xs pt-2">
-              <Button linkto="https://shop.nativeaaaa.com.hk/product/seo%e6%87%b6%e4%ba%ba%e5%8c%85_7%e5%a4%a9%e4%b8%8a%e9%a6%96%e9%a0%81%e5%85%b6%e5%af%a6%e5%94%94%e9%9b%a3/">
+              <Button linkto="https://api.whatsapp.com/send/?phone=85264602996&text=%E6%88%91%E6%83%B3%E4%B8%8B%E8%BC%89%E8%82%A5%E4%BB%94%E8%A8%88%E7%AE%97%E6%A9%9F%E6%B0%B8%E4%B9%85%E4%BD%BF%E7%94%A8%E7%89%88">
                 {t('seoSmartKit.downloadPermanent')}
               </Button>
             </div>
@@ -523,7 +522,7 @@ class SEOsmartKit extends Component {
                 <Text className="text-lg">
                   {t('seoSmartKit.seoToolDesc')}
                 </Text>
-                <Button linkto="https://shop.nativeaaaa.com.hk/product/seo%e6%87%b6%e4%ba%ba%e5%8c%85_7%e5%a4%a9%e4%b8%8a%e9%a6%96%e9%a0%81%e5%85%b6%e5%af%a6%e5%94%94%e9%9b%a3/">
+                <Button linkto="https://api.whatsapp.com/send/?phone=85264602996&text=%E6%88%91%E6%83%B3%E4%B8%8B%E8%BC%89%E8%82%A5%E4%BB%94%E8%A8%88%E7%AE%97%E6%A9%9F%E6%B0%B8%E4%B9%85%E4%BD%BF%E7%94%A8%E7%89%88">
                   {t('seoSmartKit.downloadSmartKit')}
                 </Button>
               </div>
@@ -633,7 +632,7 @@ class SEOsmartKit extends Component {
               <div className="flex flex-col items-center text-white p-10 border-2 border-gray-300 rounded-xl bg-gray-800">
                 <span>{t('seoSmartKit.ctaExperience')}</span>
                 <h3 className="text-3xl m-3">{t('seoSmartKit.ctaTitle')}</h3>
-                <Button linkto="https://shop.nativeaaaa.com.hk/product/seo%e6%87%b6%e4%ba%ba%e5%8c%85_7%e5%a4%a9%e4%b8%8a%e9%a6%96%e9%a0%81%e5%85%b6%e5%af%a6%e5%94%94%e9%9b%a3/">
+                <Button linkto="https://api.whatsapp.com/send/?phone=85264602996&text=%E6%88%91%E6%83%B3%E4%B8%8B%E8%BC%89%E8%82%A5%E4%BB%94%E8%A8%88%E7%AE%97%E6%A9%9F%E6%B0%B8%E4%B9%85%E4%BD%BF%E7%94%A8%E7%89%88">
                   {t('seoSmartKit.downloadSmartKit')}
                 </Button>
               </div>

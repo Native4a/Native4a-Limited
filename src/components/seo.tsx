@@ -141,14 +141,25 @@ const Seo: React.FC<SeoProps> = ({
     : isTraditionalChinesePage
       ? 'Native4a 香港 SEO 公司'
       : site.siteMetadata?.title
-  const defaultImage = image || 'https://nativeaaaa.com.hk/og-image.png'
+  const pathLang = isEnglishPage
+    ? 'en'
+    : pathname === '/ja' || pathname.startsWith('/ja/')
+      ? 'ja'
+      : pathname === '/zh-CN' || pathname.startsWith('/zh-CN/')
+        ? 'zh-CN'
+        : 'zh-HK'
+  const htmlLang = lang === 'zh-HK' ? pathLang : lang
+  const socialTitle = title || defaultTitle
+  const socialUrl = ogUrl || canonicalUrl
+  const defaultImage = image || 'https://nativeaaaa.com.hk/images/hero-award-2022.jpg'
+  const ogLocale = pathLang === 'en' ? 'en_HK' : pathLang === 'ja' ? 'ja_JP' : pathLang === 'zh-CN' ? 'zh_CN' : 'zh_HK'
 
   const robotsContent = noindex ? 'noindex, follow' : 'index, follow'
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: htmlLang,
       }}
       title={title || defaultTitle}
       defaultTitle={defaultTitle}
@@ -188,11 +199,11 @@ const Seo: React.FC<SeoProps> = ({
         },
         {
           property: 'og:url',
-          content: ogUrl,
+          content: socialUrl,
         },
         {
           property: 'og:title',
-          content: title,
+          content: socialTitle,
         },
         {
           property: 'og:description',
@@ -208,7 +219,7 @@ const Seo: React.FC<SeoProps> = ({
         },
         {
           property: 'og:locale',
-          content: 'zh_HK',
+          content: ogLocale,
         },
         {
           property: 'og:site_name',
@@ -224,7 +235,7 @@ const Seo: React.FC<SeoProps> = ({
         },
         {
           name: 'twitter:title',
-          content: title,
+          content: socialTitle,
         },
         {
           name: 'twitter:description',

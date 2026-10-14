@@ -99,7 +99,7 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
         description={post.excerpt || post.content.substring(0, 160)}
         image={post.featuredImage}
       />
-      <section>
+      <section className="pt-28 md:pt-36">
         <div className={styles.container}>
           <Hero title={post.title} />
         </div>
