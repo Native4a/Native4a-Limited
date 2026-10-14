@@ -3,6 +3,7 @@ import Navprops from './navprops'
 import { Sling as Hamburger } from 'hamburger-react'
 import { Link } from 'gatsby'
 import Native_logo from '../../img/2023_native4a_logo.svg'
+import LanguageSwitcher from '../LanguageSwitcher'
 
 const Navigation = () => {
   const [isOpen, setOpen] = useState(false)
@@ -63,8 +64,12 @@ const Navigation = () => {
           </a>
         </div>
 
-        <div className="col-span-10 hidden items-center justify-end xl:col-span-10 xl:flex">
+        <div className="col-span-9 hidden min-w-0 items-center justify-end xl:flex">
           <Navprops />
+        </div>
+
+        <div className="col-span-1 hidden items-center justify-center border-l border-slate-200 xl:flex" role="group" aria-label="Language">
+          <LanguageSwitcher />
         </div>
 
         <div className="col-span-1 flex items-center justify-end xl:hidden">

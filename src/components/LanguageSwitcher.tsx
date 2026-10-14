@@ -6,13 +6,20 @@ import { MdCheck } from 'react-icons/md'
 interface LanguageSwitcherProps {
   className?: string
   isInMenu?: boolean
+  variant?: 'default' | 'compact'
+  collapsed?: boolean
+  onExpandedChange?: (expanded: boolean) => void
 }
 
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ 
   className = '',
-  isInMenu = false
+  isInMenu = false,
+  variant = 'default',
+  collapsed = false,
+  onExpandedChange,
 }) => {
   const { i18n } = useTranslation()
+  const compactRef = React.useRef<HTMLDivElement>(null)
   const [isHovered, setIsHovered] = React.useState(false)
   const [isOpen, setIsOpen] = React.useState(false)
 
@@ -38,6 +45,31 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     return newPath
   }
 
+  const setExpanded = (next: boolean) => {
+    setIsOpen(next)
+    onExpandedChange?.(next)
+  }
+
+  React.useEffect(() => {
+    if (collapsed && isOpen) setIsOpen(false)
+  }, [collapsed, isOpen])
+
+  React.useEffect(() => {
+    if (variant !== 'compact' || !isOpen) return
+    const onPointer = (event: MouseEvent) => {
+      if (!compactRef.current?.contains(event.target as Node)) setExpanded(false)
+    }
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setExpanded(false)
+    }
+    document.addEventListener('mousedown', onPointer)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onPointer)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [isOpen, variant])
+
   const handleLanguageChange = (langCode: string) => {
     i18n.changeLanguage(langCode)
     if (typeof window !== 'undefined') {
@@ -46,7 +78,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
       navigate(newPath)
     }
     setIsHovered(false)
-    setIsOpen(false)
+    setExpanded(false)
   }
 
   // 在菜单内的样式（移动端）
@@ -75,6 +107,53 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
                 className={`w-full flex items-center justify-between px-4 py-2.5 text-left transition-colors ${
                   i18n.language === lang.code
                     ? 'bg-yellow-100 text-yellow-700 font-semibold'
+                    : 'text-gray-700 hover:bg-gray-50'
+                }`}
+              >
+                <span>{lang.name}</span>
+                {i18n.language === lang.code && (
+                  <MdCheck size={18} className="text-yellow-600" />
+                )}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    )
+  }
+
+  if (variant === 'compact') {
+    const menuId = 'header-language-menu'
+    return (
+      <div ref={compactRef} className={`relative h-9 w-9 shrink-0 ${className}`}>
+        <button
+          type="button"
+          aria-expanded={isOpen}
+          aria-controls={menuId}
+          aria-haspopup="listbox"
+          aria-label={currentLanguage.name}
+          onClick={() => setExpanded(!isOpen)}
+          className="flex h-9 w-9 items-center justify-center rounded-full bg-[#faab00] text-xs font-bold text-white"
+        >
+          {currentLanguage.label}
+        </button>
+        {isOpen && (
+          <div
+            id={menuId}
+            role="listbox"
+            aria-label={currentLanguage.name}
+            className="absolute right-0 top-full z-[80] mt-2 w-40 rounded-lg border border-gray-100 bg-white py-1 shadow-md"
+          >
+            {languages.map((lang) => (
+              <button
+                key={lang.code}
+                type="button"
+                role="option"
+                aria-selected={i18n.language === lang.code}
+                onClick={() => handleLanguageChange(lang.code)}
+                className={`flex w-full items-center justify-between px-4 py-2.5 text-left transition-colors ${
+                  i18n.language === lang.code
+                    ? 'bg-yellow-100 font-semibold text-yellow-700'
                     : 'text-gray-700 hover:bg-gray-50'
                 }`}
               >
@@ -146,7 +225,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             cy={isHovered ? CY_4 : CY_TOP}
             r={R} 
             fill="#d1d5db"
-            style={{ transition: 'cy 0.8s ease-out', cursor: 'pointer' }}
+            style={{ transition: 'cy 0.32s ease-out', cursor: 'pointer' }}
             onClick={() => handleLanguageChange(otherLanguages[2].code)}
           />
           {/* 第三个选项圆 */}
@@ -155,7 +234,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             cy={isHovered ? CY_3 : CY_TOP}
             r={R} 
             fill="#d1d5db"
-            style={{ transition: 'cy 0.8s ease-out', cursor: 'pointer' }}
+            style={{ transition: 'cy 0.32s ease-out', cursor: 'pointer' }}
             onClick={() => handleLanguageChange(otherLanguages[1].code)}
           />
           {/* 第二个选项圆 */}
@@ -164,7 +243,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             cy={isHovered ? CY_2 : CY_TOP}
             r={R} 
             fill="#d1d5db"
-            style={{ transition: 'cy 0.8s ease-out', cursor: 'pointer' }}
+            style={{ transition: 'cy 0.32s ease-out', cursor: 'pointer' }}
             onClick={() => handleLanguageChange(otherLanguages[0].code)}
           />
           {/* 当前语言圆 - 固定在顶部 */}
@@ -209,7 +288,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             cursor: 'pointer', 
             pointerEvents: isHovered ? 'auto' : 'none',
             opacity: isHovered ? 1 : 0,
-            transition: 'opacity 0.2s ease 0.5s'
+            transition: 'opacity 0.15s ease 0.1s'
           }}
           onClick={() => handleLanguageChange(otherLanguages[0].code)}
         >
@@ -227,7 +306,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             cursor: 'pointer', 
             pointerEvents: isHovered ? 'auto' : 'none',
             opacity: isHovered ? 1 : 0,
-            transition: 'opacity 0.2s ease 0.5s'
+            transition: 'opacity 0.15s ease 0.1s'
           }}
           onClick={() => handleLanguageChange(otherLanguages[1].code)}
         >
@@ -245,7 +324,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             cursor: 'pointer', 
             pointerEvents: isHovered ? 'auto' : 'none',
             opacity: isHovered ? 1 : 0,
-            transition: 'opacity 0.2s ease 0.5s'
+            transition: 'opacity 0.15s ease 0.1s'
           }}
           onClick={() => handleLanguageChange(otherLanguages[2].code)}
         >
