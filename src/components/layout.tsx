@@ -9,6 +9,9 @@ import TwitterPixel from '../components/TwitterPixel'
 import Navigation from './header/navigation'
 import Footer from './footer/footer'
 
+const languageFromPath = (pathname = '/') =>
+  pathname.match(/^\/(zh-CN|en|ja|zh)(?:\/|$)/)?.[1] || 'zh'
+
 interface LayoutProps {
   children: React.ReactNode
   location?: any
@@ -17,6 +20,12 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, location, pageContext }) => {
   const [isClient, setIsClient] = useState(false)
+  const languageToUse = pageContext?.language || languageFromPath(location?.pathname)
+  if (i18n.language !== languageToUse) {
+    i18n.language = languageToUse
+    i18n.languages = [languageToUse, 'zh']
+    void i18n.changeLanguage(languageToUse)
+  }
 
   useEffect(() => {
     setIsClient(true)
@@ -30,12 +39,12 @@ const Layout: React.FC<LayoutProps> = ({ children, location, pageContext }) => {
       if (!languageToUse) {
         const currentPath = window.location.pathname
         const langMatch = currentPath.match(/^\/(en|ja|zh)/)
-        languageToUse = langMatch ? langMatch[1] : null
+        languageToUse = langMatch ? langMatch[1] : undefined
       }
       
       // Priority 3: Use saved language from localStorage
       if (!languageToUse) {
-        languageToUse = localStorage.getItem('language') || null
+        languageToUse = localStorage.getItem('language') || undefined
       }
       
       // Priority 4: Default to Chinese

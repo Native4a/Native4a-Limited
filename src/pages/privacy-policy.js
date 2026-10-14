@@ -28,9 +28,8 @@ class PrivacyPolicy extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Seo
-          title="Thank you"
-          description="this is native4a website thanks you page."
-          ogUrl="https://nativeaaaa.com.hk/thanks-you/"
+          title={this.props.location?.pathname?.startsWith('/en/') ? 'Privacy Policy | Native4a' : '隱私政策 | Native4a'}
+          description={this.props.location?.pathname?.startsWith('/en/') ? 'Native4a privacy policy.' : 'Native4a 隱私政策。'}
         />
         <Section className="flex justify-center">
           <div className="grid grid-cols-1 gap-6 pt-48 pb-0">

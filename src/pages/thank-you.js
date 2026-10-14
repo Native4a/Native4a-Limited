@@ -14,7 +14,6 @@ class thanksYou extends React.Component {
         <Seo
           title={t('thankYou.title')}
           description={t('thankYou.description')}
-          ogUrl="https://nativeaaaa.com.hk/thanks-you/"
           noindex
         />
         <section className="flex justify-center">

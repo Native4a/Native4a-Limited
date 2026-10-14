@@ -1,8 +1,11 @@
 import React from 'react'
+import { useLocation } from '@reach/router'
 import * as styles from './style.module.css'
 import { FaSquare } from "@react-icons/all-files/fa/FaSquare"
 import { aboutAsDataZH, aboutAsDataEN, aboutAsDataJP } from '../../data/aboutAsConstants'
-import useLanguage from '../../hooks/useLanguage'
+
+const languageFromPath = (pathname = '/') =>
+  pathname.match(/^\/(zh-CN|en|ja|zh)(?:\/|$)/)?.[1] || 'zh'
 
 interface AboutAsItem {
   title: string
@@ -14,7 +17,8 @@ interface AboutAsItem {
 }
 
 const AboutAs: React.FC = () => {
-  const { currentLanguage } = useLanguage()
+  const location = useLocation()
+  const currentLanguage = languageFromPath(location?.pathname)
 
   const getAboutAsData = (lang: string): AboutAsItem[] => {
     switch (lang) {
@@ -23,6 +27,7 @@ const AboutAs: React.FC = () => {
       case 'ja':
         return aboutAsDataJP
       case 'zh':
+      case 'zh-CN':
       default:
         return aboutAsDataZH
     }
@@ -38,7 +43,7 @@ const AboutAs: React.FC = () => {
           description,
           logo } = item
         return (
-          <section className={styles.secAboutus_wrap} key={index} id="aboutAs">
+          <section className={`${styles.secAboutus_wrap} scroll-mt-28`} key={index} id="aboutAs">
             <div className={styles.container}>
               <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-0 items-center">

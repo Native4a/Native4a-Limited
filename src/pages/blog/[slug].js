@@ -122,7 +122,7 @@ const BlogPostPage = ({ location, params }) => {
 
       {/* Featured Image Section */}
       {post.featuredImage && (
-        <section className="flex justify-center items-center py-12 md:py-16 px-4 md:px-8 bg-gray-50 mt-10">
+        <section className="flex justify-center items-center bg-gray-50 px-4 py-12 pt-28 md:px-8 md:py-16 md:pt-36">
           <img
             src={post.featuredImage}
             alt={post.title}
@@ -134,7 +134,7 @@ const BlogPostPage = ({ location, params }) => {
       )}
 
       {/* Article Header */}
-      <section className="py-12 md:py-16 border-b border-gray-200">
+      <section className={`border-b border-gray-200 py-12 md:py-16 ${post.featuredImage ? '' : 'pt-28 md:pt-36'}`}>
         <div className="max-w-5xl mx-auto px-4 md:px-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight tracking-tighter">
             {post.title}

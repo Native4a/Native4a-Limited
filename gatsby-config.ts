@@ -22,6 +22,7 @@ const isDev = process.env.NODE_ENV === 'development'
 // Build plugins array conditionally - keep minimal in dev for faster builds
 const plugins: (string | Plugin)[] = [
   'gatsby-plugin-image',
+  'gatsby-plugin-anchor-links',
   {
     resolve: 'gatsby-plugin-sharp',
     options: {
