@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import { useLocation } from '@reach/router'
 import { ChevronDown, MessageCircle } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from '../LanguageSwitcher'
 
 const languages = ['zh', 'zh-CN', 'en', 'ja']
 
@@ -160,7 +161,8 @@ const Navprops = () => {
           <li><NavLink to={`/${language}/about-us-2/`} onClick={closeMobileMarketing}>{copy.about}</NavLink></li>
           <li><NavLink to={`/${language}/contact-us/`} onClick={closeMobileMarketing}>{copy.contact}</NavLink></li>
           <li><NavLink to={`/${language}/blog/`} onClick={closeMobileMarketing}>{copy.blog}</NavLink></li>
-          <li className="pt-2">
+          <li className="border-t border-slate-200 pt-2"><LanguageSwitcher isInMenu /></li>
+          <li className="pt-1">
             <a href="https://wa.me/85264602996" target="_blank" rel="noreferrer" className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-emerald-700 px-4 py-3 text-sm font-bold text-white hover:bg-emerald-800">
               <MessageCircle aria-hidden="true" size={17} />{copy.quote}
             </a>
