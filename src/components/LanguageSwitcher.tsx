@@ -225,7 +225,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             cy={isHovered ? CY_4 : CY_TOP}
             r={R} 
             fill="#d1d5db"
-            style={{ transition: 'cy 0.8s ease-out', cursor: 'pointer' }}
+            style={{ transition: 'cy 0.32s ease-out', cursor: 'pointer' }}
             onClick={() => handleLanguageChange(otherLanguages[2].code)}
           />
           {/* 第三个选项圆 */}
@@ -234,7 +234,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             cy={isHovered ? CY_3 : CY_TOP}
             r={R} 
             fill="#d1d5db"
-            style={{ transition: 'cy 0.8s ease-out', cursor: 'pointer' }}
+            style={{ transition: 'cy 0.32s ease-out', cursor: 'pointer' }}
             onClick={() => handleLanguageChange(otherLanguages[1].code)}
           />
           {/* 第二个选项圆 */}
@@ -243,7 +243,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             cy={isHovered ? CY_2 : CY_TOP}
             r={R} 
             fill="#d1d5db"
-            style={{ transition: 'cy 0.8s ease-out', cursor: 'pointer' }}
+            style={{ transition: 'cy 0.32s ease-out', cursor: 'pointer' }}
             onClick={() => handleLanguageChange(otherLanguages[0].code)}
           />
           {/* 当前语言圆 - 固定在顶部 */}
@@ -288,7 +288,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             cursor: 'pointer', 
             pointerEvents: isHovered ? 'auto' : 'none',
             opacity: isHovered ? 1 : 0,
-            transition: 'opacity 0.2s ease 0.5s'
+            transition: 'opacity 0.15s ease 0.1s'
           }}
           onClick={() => handleLanguageChange(otherLanguages[0].code)}
         >
@@ -306,7 +306,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             cursor: 'pointer', 
             pointerEvents: isHovered ? 'auto' : 'none',
             opacity: isHovered ? 1 : 0,
-            transition: 'opacity 0.2s ease 0.5s'
+            transition: 'opacity 0.15s ease 0.1s'
           }}
           onClick={() => handleLanguageChange(otherLanguages[1].code)}
         >
@@ -324,7 +324,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
             cursor: 'pointer', 
             pointerEvents: isHovered ? 'auto' : 'none',
             opacity: isHovered ? 1 : 0,
-            transition: 'opacity 0.2s ease 0.5s'
+            transition: 'opacity 0.15s ease 0.1s'
           }}
           onClick={() => handleLanguageChange(otherLanguages[2].code)}
         >
