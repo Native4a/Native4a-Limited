@@ -59,7 +59,6 @@
     "autoprefixer": "^10.4.14",
     "contentful-import": "^8.5.57",
     "gatsby-provision-contentful": "^0.0.5",
-    "netlify-cli": "^10.18.0",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2"
   },
@@ -85,8 +84,6 @@
     "clean": "rm -rf .cache public",
     "postinstall": "node ./bin/hello.js",
     "setup": "node ./bin/setup.js",
-    "netlify:login": "netlify login",
-    "netlify:deploy": "netlify deploy -d public -p",
     "gatsby-provision": "gatsby-provision-contentful --contentful-data-path='./contentful/export.json' --space-id=$CONTENTFUL_SPACE_ID --management-token=$CONTENTFUL_MANAGEMENT_TOKEN"
   },
   "pnpm": {
