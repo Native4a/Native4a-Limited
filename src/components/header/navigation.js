@@ -3,6 +3,7 @@ import Navprops from './navprops'
 import { Sling as Hamburger } from 'hamburger-react'
 import { Link } from 'gatsby'
 import Native_logo from '../../img/2023_native4a_logo.svg'
+import LanguageSwitcher from '../LanguageSwitcher'
 
 const Navigation = () => {
   const [isOpen, setOpen] = useState(false)
@@ -51,24 +52,39 @@ const Navigation = () => {
           marginTop: topNav,
         }}
       >
-        <div className="col-span-4 flex items-center xl:col-span-2">
+        <div className="col-span-3 flex items-center xl:col-span-2">
           <Link to="/" aria-label="Native4a home" onClick={() => setOpen(false)}>
-            <img className="w-10/12 py-1 sm:w-7/12 lg:w-10/12 xl:w-9/12" src={Native_logo} alt="Native4a Logo" />
+            <img className="w-full py-1 sm:w-10/12 lg:w-full xl:w-9/12" src={Native_logo} alt="Native4a Logo" />
           </Link>
         </div>
 
-        <div className="col-span-7 flex items-center justify-end xl:hidden">
-          <a href="https://wa.me/85264602996" target="_blank" rel="noreferrer" className="inline-flex min-h-10 items-center gap-2 rounded-full bg-emerald-700 px-3 py-2 text-xs font-bold text-white sm:text-sm">
+        <div className="col-span-6 flex min-w-0 items-center justify-end xl:hidden">
+          <a href="https://wa.me/85264602996" target="_blank" rel="noreferrer" className="inline-flex min-h-10 max-w-full items-center gap-2 whitespace-nowrap rounded-full bg-emerald-700 px-3 py-2 text-xs font-bold text-white sm:text-sm">
             WhatsApp 6460 2996
           </a>
         </div>
 
-        <div className="col-span-10 hidden items-center justify-end xl:col-span-10 xl:flex">
+        <div className="col-span-9 hidden min-w-0 items-center justify-end xl:flex">
           <Navprops />
         </div>
 
         <div className="col-span-1 flex items-center justify-end xl:hidden">
           <Hamburger size={20} label={isOpen ? 'Close menu' : 'Open menu'} toggled={isOpen} toggle={setOpen} />
+        </div>
+
+        <div className="col-span-2 flex items-center justify-center border-l border-slate-200 pl-2 xl:col-span-1 xl:pl-3" role="group" aria-label="Language">
+          <div className="xl:hidden">
+            <LanguageSwitcher
+              variant="compact"
+              collapsed={isOpen}
+              onExpandedChange={(expanded) => {
+                if (expanded) setOpen(false)
+              }}
+            />
+          </div>
+          <div className="hidden xl:block">
+            <LanguageSwitcher />
+          </div>
         </div>
 
         {isOpen && (
