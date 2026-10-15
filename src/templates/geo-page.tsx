@@ -137,7 +137,7 @@ const GeoPage: React.FC<PageProps> = ({ location, pageContext }) => {
             </ul>
           </div>
           <Callout text={WHAT_IS_GEO.note} />
-          <Paragraph text="延伸閱讀：[GEO 係咩？GEO 同 SEO 分別（2026 香港版）](/zh/blog/what-is-geo/)" />
+              <Paragraph text="延伸閱讀：[GEO 係咩？GEO 同 SEO 分別（2026 香港版）](/zh/blog/what-is-geo/) ｜ [醫美點樣俾 ChatGPT 推薦？](/zh/blog/chatgpt-recommend-meibi-hong-kong/) ｜ [牙醫點樣俾 ChatGPT 推薦？](/zh/blog/chatgpt-recommend-dentist-hong-kong/)" />
         </GeoSection>
 
         <GeoSection id="geo-vs-seo" title="GEO 同 SEO 有咩分別？" muted>
