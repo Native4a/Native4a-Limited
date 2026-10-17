@@ -189,6 +189,9 @@ const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ locatio
             @media (max-width: 767px) {
               body:has(.industry-article) a:has(img[alt="sticky line button"]) { display: none !important; }
               body:has(.industry-article) a:has(img[alt="sticky whatsapp button"]) { right: 0.75rem !important; bottom: 0.75rem !important; transform: none !important; }
+            body:has(.industry-article) .industry-article > header,
+            body:has(.industry-article) .industry-article > main,
+            body:has(.industry-article) .industry-article > footer { padding-right: 4.5rem; }
             }
           `}</style>
         )}
