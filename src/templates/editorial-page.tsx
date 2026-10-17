@@ -186,12 +186,10 @@ const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ locatio
           <style>{`
             .industry-article a { overflow-wrap: anywhere; }
             .industry-article table { max-width: 100%; }
-            @media (max-width: 767px) {
+@media (max-width: 640px) {
               body:has(.industry-article) a:has(img[alt="sticky line button"]) { display: none !important; }
               body:has(.industry-article) a:has(img[alt="sticky whatsapp button"]) { right: 0.75rem !important; bottom: 0.75rem !important; transform: none !important; }
-            body:has(.industry-article) .industry-article > header,
-            body:has(.industry-article) .industry-article > main,
-            body:has(.industry-article) .industry-article > footer { padding-right: 4.5rem; }
+              body:has(.industry-article) .industry-article { padding-right: 5rem; }
             }
           `}</style>
         )}
