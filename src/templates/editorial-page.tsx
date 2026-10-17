@@ -77,6 +77,25 @@ function getHeadingText(children: ReactNode): string {
 
 const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ location, pageContext }) => {
   const context = pageContext
+  const industryArticle = context.canonical.includes('chatgpt-recommend-meibi-hong-kong')
+    ? {
+        hero: '/images/chatgpt-meibi-hero.png',
+        heroAlt: '醫美診所透過 AI 搜尋提升品牌可見度的專業插圖',
+        detail: '/images/hypnosis-ai-overview-1.jpg',
+        detailAlt: 'AI 搜尋結果展示診所推薦與可核實資訊',
+        closing: '/images/hypnosis-ai-overview-2.jpg',
+        closingAlt: '醫美診所整理 AI 推薦訊號的清單插圖',
+      }
+    : context.canonical.includes('chatgpt-recommend-dentist-hong-kong')
+      ? {
+          hero: '/images/chatgpt-dentist-hero.png',
+          heroAlt: '牙科診所透過 AI 搜尋提升品牌可見度的專業插圖',
+          detail: '/images/hypnosis-ai-overview-1.jpg',
+          detailAlt: 'AI 搜尋結果展示牙科診所推薦與可核實資訊',
+          closing: '/images/hypnosis-ai-overview-2.jpg',
+          closingAlt: '牙科診所整理 AI 推薦訊號的清單插圖',
+        }
+      : null
   const components: Components = {
     h2: ({ children }) => {
       const heading = getHeadingText(children)
@@ -165,6 +184,11 @@ const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ locatio
           <div className="mx-auto flex max-w-4xl flex-col gap-5">
             <nav aria-label="Breadcrumb" className="text-sm leading-relaxed text-gray-600">{context.breadcrumb}</nav>
             <h1 className="text-balance text-3xl font-black leading-tight tracking-tight text-gray-900 md:text-5xl">{context.h1}</h1>
+            {industryArticle && (
+              <figure className="mt-2 overflow-hidden rounded-2xl border border-gray-200 bg-gray-50">
+                <img src={industryArticle.hero} alt={industryArticle.heroAlt} width="1600" height="900" className="h-auto w-full" />
+              </figure>
+            )}
             <p className="text-sm leading-relaxed text-gray-600">
               <span>{context.author}</span><span aria-hidden="true">　｜　</span>
               <time dateTime={context.datePublished}>{context.dateDisplay}</time>
@@ -173,7 +197,17 @@ const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ locatio
         </header>
         <div className="mx-auto max-w-4xl px-4 pb-14 pt-8 md:pb-20 md:pt-12">
           <div className="[&_strong]:font-bold [&_strong]:text-gray-900 [&_li]:leading-relaxed [&_blockquote_p]:mb-0 [&_blockquote_p]:text-gray-800">
+            {industryArticle && (
+              <figure className="mb-8 overflow-hidden rounded-2xl border border-gray-200 bg-gray-50">
+                <img src={industryArticle.detail} alt={industryArticle.detailAlt} width="1600" height="900" loading="lazy" decoding="async" className="h-auto w-full" />
+              </figure>
+            )}
             <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>{context.content}</ReactMarkdown>
+            {industryArticle && (
+              <figure className="my-8 overflow-hidden rounded-2xl border border-gray-200 bg-gray-50">
+                <img src={industryArticle.closing} alt={industryArticle.closingAlt} width="1600" height="900" loading="lazy" decoding="async" className="h-auto w-full" />
+              </figure>
+            )}
           </div>
         </div>
       </article>

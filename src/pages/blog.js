@@ -22,7 +22,7 @@ const BlogIndex = ({ location, pageContext }) => {
   useEffect(() => {
     const loadPosts = async () => {
       try {
-        const res = await fetch(`/api/notion-posts/?language=${encodeURIComponent(language)}`)
+        const res = await fetch(`/api/notion-posts?language=${language}`)
         if (!res.ok) throw new Error(`API error: ${res.status}`)
         const data = await res.json()
         setPosts(data.posts || [])
@@ -44,7 +44,7 @@ const BlogIndex = ({ location, pageContext }) => {
         description={pageDescription}
         lang={isTraditionalChinese ? 'zh-HK' : 'en'}
       />
-      <div className="mx-auto max-w-6xl px-4 pb-16 pt-28 md:pt-36">
+      <div className="mx-auto mt-10 max-w-6xl px-4">
         {isTraditionalChinese && (
           <>
             <h1 className="text-balance text-3xl font-black leading-tight text-gray-900 md:text-4xl">
@@ -87,16 +87,7 @@ const BlogIndex = ({ location, pageContext }) => {
         )}
         <section aria-label={isTraditionalChinese ? '更多文章' : 'Blog posts'} className="mt-8">
           {loading ? (
-            <div className="grid gap-4" aria-busy="true" aria-live="polite">
-              <p className="sr-only">{isTraditionalChinese ? '文章載入中' : 'Loading posts'}</p>
-              {[0, 1, 2].map((item) => (
-                <div key={item} className="animate-pulse rounded-2xl border border-gray-200 bg-white p-6">
-                  <div className="h-6 w-2/3 rounded bg-gray-200" />
-                  <div className="mt-4 h-4 w-full rounded bg-gray-100" />
-                  <div className="mt-2 h-4 w-5/6 rounded bg-gray-100" />
-                </div>
-              ))}
-            </div>
+            <p className="py-6 text-center text-gray-600">Loading posts...</p>
           ) : (
             <ArticlePreview posts={posts} language={language} />
           )}
