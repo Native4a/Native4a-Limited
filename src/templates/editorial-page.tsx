@@ -12,6 +12,7 @@ type EditorialContext = {
   h1: string
   author: string
   dateDisplay: string
+  datePublished: string
   canonical: string
   breadcrumb: string
   image: string
@@ -155,7 +156,6 @@ const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ locatio
         structuredData={context.structuredData}
         disableTitleTemplate
         meta={[
-          { name: 'robots', content: 'index, follow' },
           { property: 'og:type', content: 'article' },
           { property: 'og:image', content: context.image },
         ]}
@@ -167,7 +167,7 @@ const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ locatio
             <h1 className="text-balance text-3xl font-black leading-tight tracking-tight text-gray-900 md:text-5xl">{context.h1}</h1>
             <p className="text-sm leading-relaxed text-gray-600">
               <span>{context.author}</span><span aria-hidden="true">　｜　</span>
-              <time dateTime="2026-10-06">{context.dateDisplay}</time>
+              <time dateTime={context.datePublished}>{context.dateDisplay}</time>
             </p>
           </div>
         </header>

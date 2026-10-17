@@ -52,6 +52,21 @@ const BlogIndex = ({ location, pageContext }) => {
             </h1>
             <section aria-labelledby="latest-article-title" className="mt-8">
               <h2 id="latest-article-title" className="mb-4 text-xl font-black text-gray-900">最新文章</h2>
+              <div className="grid gap-6">
+              <article className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
+                <Link to="/zh/blog/chatgpt-recommend-meibi-hong-kong/" className="block">
+                  <h3 className="text-xl font-bold leading-relaxed text-gray-900 hover:text-yellow-700 md:text-2xl">醫美點樣俾 ChatGPT 推薦？香港診所 AI 搜尋清單</h3>
+                </Link>
+                <p className="mt-3 leading-relaxed text-gray-700">整理 Google 商家、療程頁、醫生資歷同 FAQ 等可核實訊號，幫醫美診所提高被 AI Overview／ChatGPT 提及嘅機會。</p>
+                <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-gray-200 pt-4 text-sm text-gray-600"><span>MC</span><time dateTime="2026-10">2026 年 10 月</time></div>
+              </article>
+              <article className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
+                <Link to="/zh/blog/chatgpt-recommend-dentist-hong-kong/" className="block">
+                  <h3 className="text-xl font-bold leading-relaxed text-gray-900 hover:text-yellow-700 md:text-2xl">牙醫點樣俾 ChatGPT 推薦？香港牙科診所 AI 搜尋清單</h3>
+                </Link>
+                <p className="mt-3 leading-relaxed text-gray-700">整理 Google 商家、療程頁、牙醫資歷同 FAQ 等可核實訊號，幫牙科診所提高被 AI Overview／ChatGPT 提及嘅機會。</p>
+                <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-gray-200 pt-4 text-sm text-gray-600"><span>MC</span><time dateTime="2026-10">2026 年 10 月</time></div>
+              </article>
               <article className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
                 <Link to="/zh/blog/what-is-geo/" className="block">
                   <h3 className="text-xl font-bold leading-relaxed text-gray-900 hover:text-yellow-700 md:text-2xl">
@@ -66,6 +81,7 @@ const BlogIndex = ({ location, pageContext }) => {
                   <time dateTime="2026-10">2026 年 10 月</time>
                 </div>
               </article>
+              </div>
             </section>
           </>
         )}
