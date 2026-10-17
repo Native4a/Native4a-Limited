@@ -67,6 +67,14 @@ export const createPages: GatsbyNode['createPages'] = async ({
   const blogPost = path.resolve('./src/templates/blog-post.tsx')
   const editorialPage = path.resolve('./src/templates/editorial-page.tsx')
 
+  LANGUAGES.forEach((language) => {
+    createPage({
+      path: `/${language}/ad-profit/`,
+      component: path.resolve('./src/templates/ad-profit.tsx'),
+      context: { language },
+    })
+  })
+
   createPage({
     path: '/zh/case/',
     component: path.resolve('./src/templates/case-index.tsx'),
@@ -292,8 +300,6 @@ export const createPages: GatsbyNode['createPages'] = async ({
     { path: '/seo_keywords', component: path.resolve('./src/pages/seo_keywords.js') },
     { path: '/off-page', component: path.resolve('./src/pages/off-page.tsx') },
     { path: '/catalog', component: path.resolve('./src/pages/catalog.js') },
-    { path: '/privacy-policy', component: path.resolve('./src/pages/privacy-policy.js') },
-    { path: '/terms-of-business', component: path.resolve('./src/pages/terms-of-business.js') },
   ]
 
   mainPages.forEach(({ path: pagePath, component }) => {
