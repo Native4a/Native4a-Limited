@@ -160,7 +160,9 @@ const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ locatio
     td: ({ children }) => <td className="border-b border-gray-200 px-4 py-3 align-top text-gray-800">{children}</td>,
     ul: ({ children }) => <ul className="mb-6 flex list-disc flex-col gap-2 pl-6 leading-relaxed text-gray-800">{children}</ul>,
     ol: ({ children }) => <ol className="mb-6 flex list-decimal flex-col gap-2 pl-6 leading-relaxed text-gray-800">{children}</ol>,
-    blockquote: ({ children }) => <blockquote className="my-6 border-l-4 border-yellow-500 bg-gray-50 px-5 py-4 leading-relaxed text-gray-800">{children}</blockquote>,
+    blockquote: ({ children }) => <blockquote className="my-6 min-w-0 max-w-full break-words border-l-4 border-yellow-500 bg-gray-50 px-5 py-4 leading-relaxed text-gray-800">{children}</blockquote>,
+    pre: ({ children }) => <pre className="my-6 max-w-full overflow-x-auto rounded-xl bg-gray-900 p-4 text-sm leading-relaxed text-gray-100">{children}</pre>,
+    code: ({ children }) => <code className="break-words">{children}</code>,
     hr: () => <hr className="my-8 border-gray-200" />,
   }
 
@@ -179,7 +181,17 @@ const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ locatio
           { property: 'og:image', content: context.image },
         ]}
       />
-      <article className="bg-white text-gray-800">
+      <article className="industry-article min-w-0 max-w-full overflow-x-hidden bg-white pb-24 text-gray-800">
+        {industryArticle && (
+          <style>{`
+            .industry-article a { overflow-wrap: anywhere; }
+            .industry-article table { max-width: 100%; }
+            @media (max-width: 767px) {
+              body:has(.industry-article) a:has(img[alt="sticky line button"]) { display: none !important; }
+              body:has(.industry-article) a:has(img[alt="sticky whatsapp button"]) { right: 0.75rem !important; bottom: 0.75rem !important; transform: none !important; }
+            }
+          `}</style>
+        )}
         <header className="bg-[url('../img/GRectangle.svg')] bg-cover px-4 pb-10 pt-28 md:pb-14 md:pt-36">
           <div className="mx-auto flex max-w-4xl flex-col gap-5">
             <nav aria-label="Breadcrumb" className="text-sm leading-relaxed text-gray-600">{context.breadcrumb}</nav>
@@ -196,7 +208,7 @@ const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ locatio
           </div>
         </header>
         <div className="mx-auto max-w-4xl px-4 pb-14 pt-8 md:pb-20 md:pt-12">
-          <div className="[&_strong]:font-bold [&_strong]:text-gray-900 [&_li]:leading-relaxed [&_blockquote_p]:mb-0 [&_blockquote_p]:text-gray-800">
+          <div className="min-w-0 max-w-full break-words [overflow-wrap:anywhere] [&_strong]:font-bold [&_strong]:text-gray-900 [&_li]:leading-relaxed [&_blockquote_p]:mb-0 [&_blockquote_p]:text-gray-800">
             {industryArticle && (
               <figure className="mb-8 overflow-hidden rounded-2xl border border-gray-200 bg-gray-50">
                 <img src={industryArticle.detail} alt={industryArticle.detailAlt} width="1600" height="900" loading="lazy" decoding="async" className="h-auto w-full" />
