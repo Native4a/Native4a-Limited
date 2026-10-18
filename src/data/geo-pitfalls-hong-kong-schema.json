@@ -1,0 +1,13 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "揀 GEO 服務防中伏：簽約前必問嘅問題",
+  "description": "簽 GEO／AI SEO 合約前要問咩？拆解保證 AI 推薦、淨做 llms.txt 等迷思，列交付物同量度方法，並說明幾時唔應該買。附 WhatsApp 免費 AI 推薦度檢查。",
+  "inLanguage": "zh-HK",
+  "datePublished": "2026-10-18",
+  "dateModified": "2026-10-18",
+  "author": {"@type": "Person", "name": "MC (Marcus)", "jobTitle": "Founder", "worksFor": {"@type": "Organization", "name": "Native4a"}},
+  "publisher": {"@type": "Organization", "name": "Native4a", "url": "https://nativeaaaa.com.hk/"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://nativeaaaa.com.hk/zh/blog/choose-geo-service-hong-kong-pitfalls/"},
+  "image": "https://nativeaaaa.com.hk/images/hypnosis-ai-overview-1.jpg"
+}

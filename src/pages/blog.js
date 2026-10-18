@@ -54,6 +54,13 @@ const BlogIndex = ({ location, pageContext }) => {
               <h2 id="latest-article-title" className="mb-4 text-xl font-black text-gray-900">最新文章</h2>
               <div className="grid gap-6">
               <article className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
+                <Link to="/zh/blog/choose-geo-service-hong-kong-pitfalls/" className="block">
+                  <h3 className="text-xl font-bold leading-relaxed text-gray-900 hover:text-yellow-700 md:text-2xl">揀 GEO 服務防中伏：簽約前必問嘅問題</h3>
+                </Link>
+                <p className="mt-3 leading-relaxed text-gray-700">簽 GEO／AI SEO 合約前，先問清問題清單、平台、交付物及量度方法，避開保證推薦與只做 llms.txt 等常見伏位。</p>
+                <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-gray-200 pt-4 text-sm text-gray-600"><span>MC</span><time dateTime="2026-10">2026 年 10 月</time></div>
+              </article>
+              <article className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
                 <Link to="/zh/blog/geo-pricing-hong-kong/" className="block">
                   <h3 className="text-xl font-bold leading-relaxed text-gray-900 hover:text-yellow-700 md:text-2xl">香港 GEO 收費幾錢？常見收費模式點揀</h3>
                 </Link>

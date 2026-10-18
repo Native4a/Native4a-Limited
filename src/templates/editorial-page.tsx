@@ -95,8 +95,17 @@ const EditorialPage: React.FC<PageProps<unknown, EditorialContext>> = ({ locatio
           closing: '/images/hypnosis-ai-overview-2.jpg',
           closingAlt: '牙科診所整理 AI 推薦訊號的清單插圖',
         }
-      : context.canonical.includes('geo-pricing-hong-kong')
-        ? {
+        : context.canonical.includes('choose-geo-service-hong-kong-pitfalls')
+          ? {
+              hero: '/images/geo-pricing-hero.png',
+              heroAlt: '揀選 GEO 服務時比較交付範圍與風險的專業插圖',
+              detail: '/images/geo-pricing-checklist.png',
+              detailAlt: '簽署 GEO 服務前核對問題清單與報告方法的插圖',
+              closing: '/images/hypnosis-ai-overview-1.jpg',
+              closingAlt: 'AI 搜尋可見度與品牌引用資料的示意圖',
+            }
+          : context.canonical.includes('geo-pricing-hong-kong')
+            ? {
             hero: '/images/geo-pricing-hero.png',
             heroAlt: '香港 GEO 收費比較與 AI 搜尋服務範圍的專業插圖',
             detail: '/images/geo-pricing-checklist.png',
