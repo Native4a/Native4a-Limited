@@ -89,8 +89,8 @@ AI 不會公開完整的揀選規則，但從 Google 的官方說明及我們的
 
 ## GEO 實際要做什麼？5 個步驟
 
-1. **建立 AI 能見度基線：** 揀選 20–40 條客戶真實會問的問題（例如「香港邊間 XX 公司好？」「XX 收費怎樣計？」），在各 AI 平台逐條提問，記錄你及對手有否被提及，並截圖存檔。
-2. **技術及品牌資料修正：** 確認 robots.txt 容許 AI 爬蟲、修正 canonical 及 sitemap、加入 Organization、Service、FAQPage 等結構化資料，並統一網站、Google 商家檔案及社交平台上的��司資料。
+1. **建立 AI 能見度基線：** 揀選 20–40 條客戶真實會��的問題（例如「香港邊間 XX 公司好？」「XX 收費怎樣計？」），在各 AI 平台逐條提問，記錄你及對手有否被提及，並截圖存檔。
+2. **技術及品牌資料修正：** 確認 robots.txt 容許 AI 爬蟲、修正 canonical 及 sitemap、加入 Organization、Service、FAQPage 等結構化資料，並統一網站、Google 商家檔案及社交平台上的���司資料。
 3. **撰寫答案型內容及 FAQ：** 按基線問題撰寫或加長站內文章：開首直接回答，加入比較表、步驟、服務資料及 FAQ。
 4. **增加第三方提及及反向連結：** 透過行業相關的繁體中文文章及權威網站，增加對品牌的提及及連結。
 5. **每月重測及調整：** 用同一批問題重測，比較提及率、引用網址及排名變化，再決定下個月的內容方向。
@@ -174,7 +174,7 @@ WhatsApp 我們，提供網站及行業。我們會說明可以追蹤哪些問�
 
 **[WhatsApp 6460 2996](https://wa.me/85264602996)**　｜　[聯絡我們](/zh/contact-us/)　｜　[GEO 服務](/zh/geo/)　｜　[SEO 服務](/zh/seo/)
 
-延伸閱讀：[醫美點樣俾 ChatGPT 推薦？香港診所 AI 搜尋清單](/zh/blog/chatgpt-recommend-meibi-hong-kong/) ｜ [牙醫點樣俾 ChatGPT 推薦？香港牙科診所 AI 搜尋清單](/zh/blog/chatgpt-recommend-dentist-hong-kong/)
+延伸閱讀：[香港 GEO 收費幾錢？常見收費模式點揀](/zh/blog/geo-pricing-hong-kong/) ｜ [醫美點樣俾 ChatGPT 推薦？香港診所 AI 搜尋清單](/zh/blog/chatgpt-recommend-meibi-hong-kong/) ｜ [牙醫點樣俾 ChatGPT 推薦？香港牙科診所 AI 搜尋清單](/zh/blog/chatgpt-recommend-dentist-hong-kong/)
 
 [[AUTHOR_BOX]]
 

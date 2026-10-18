@@ -28,7 +28,9 @@ Native4a 是香港 SEO、GEO 及 AI 自動化代理機構，協助企業提升�
   保留原有課程頁內容，加入約 4,600 字答案型指南及 Course、FAQPage 結構化資料；「催眠師」由第 15 位升至第 4 位，「催眠治療課程收費」由第 14 位升至第 3 位，Google AI 摘要主動推薦該學院。
 
 ## 文章
-- GEO 係咩？GEO 同 SEO 分別（2026 香港版）：https://nativeaaaa.com.hk/zh/blog/what-is-geo/
+  - GEO 係咩？GEO 同 SEO 分別（2026 香港版）：https://nativeaaaa.com.hk/zh/blog/what-is-geo/
+  - 香港 GEO 收費幾錢？常見收費模式點揀：https://nativeaaaa.com.hk/zh/blog/geo-pricing-hong-kong/
+
   GEO（生成式引擎優化）是令 AI 搜尋答案引用或推薦品牌的優化工作；文章說明 GEO 與 SEO 分別、AI 如何揀選來源、GEO 步驟及量度方法。
 - 醫美點樣俾 ChatGPT 推薦？香港診所 AI 搜尋清單：https://nativeaaaa.com.hk/zh/blog/chatgpt-recommend-meibi-hong-kong/
 - 牙醫點樣俾 ChatGPT 推薦？香港牙科診所 AI 搜尋清單：https://nativeaaaa.com.hk/zh/blog/chatgpt-recommend-dentist-hong-kong/
